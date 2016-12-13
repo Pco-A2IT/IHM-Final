@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="CSS.css" />
+        <title>Dossier patient</title>
+    </head>
+    
+    <body>
+    <div class="gris">
+            <div  class="gris2">
+            <div id="menu1" class="carreGris">
+            <h4>Menu</h4>
+            <img class="icone_menu" src="Menu.PNG"/>
+            </div>
+                            
+             <div id="menu5" class="carreGris";>
+                <img class="icone_calendrier" src="calendrier.png"/>
+                </div>
+            
+            <div id="menu3" class="carreGris">
+                <h4>Liste Centres</h4>
+                <img class="icone_hopital" src="hopital.PNG"/>
+            </div>
+                
+            <div id="menu2" class="carreGris">
+                <h4>Liste patients</h4>    
+                <img class="icone_patient" src="icone_bonhomme.png"/>
+            </div>
+                           
+                
+            <div id="menu4" class="carreGris" style="background-color:#1270B3">
+                <h4>Dossier Patient</h4>
+                <img class="icone_dossier" src="ajouter.png"/>
+            </div>
+                
+    <div class="titre";   style="border-radius: 5px;">
+        <h1 class="titreGauche">Dossier Patient</h1>
+        <div class="myButton">
+            <a href="#" class="myButton1">Modifier</a>
+            <a href="#" class="myButton2">Supprimer</a>
+        </div>
+    </div>
+    <div class="blanc";   style="border-radius: 5px;">
+            <div class="section4">
+            <div class="div1">
+             <img src='patient.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>Vincent Pasteur</h1><br>
+            </div>
+            <p class="date" style="color:black">Date création dossier : 
+                <script language="JavaScript">writeSource("js10");</script>
+                <input name="date10_jour" value="" size="1" type="text"  placeholder="jj"> /
+                <input name="date10_mois" value="" size="1" type="text"  placeholder="mm"> /
+                <input name="date10_annee" value="" size="2" type="text"  placeholder="aaaa">
+            </p>
+            
+            
+            <div id="conteneur">
+                <div class="patient">
+                    <h2 style="text-align:center">Patient</h2>
+                    <table>
+                        <tr>
+                            <th>Civilité</th>
+                            <td>
+                                <form>
+                                    <select name="nom" size="1">
+                                        <option>Mr</option>
+                                        <option>Mme</option>
+                                    </select>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td><input type="text" name="nom_p"/></td>
+                        </tr>
+                        <tr>
+                            <th>Prénom</th>
+                            <td><input type="text" name="prenom_p"/></td>
+                        </tr>
+                        <tr>
+                            <th>Date de naissance</th>
+                            <td>
+                                <script language="JavaScript">writeSource("js10");</script>
+                                <input class="inputDate" name="date10_jour" value="" size="2" type="text"  placeholder="jj"> /
+                                <input class="inputDate" name="date10_mois" value="" size="2" type="text"  placeholder="mm"> /
+                                <input class="inputDate" name="date10_annee" value="" size="3" type="text"  placeholder="aaaa">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Téléphone</th>
+                            <td><input type="text" name="telephone_p"/></td>
+                        </tr>
+                        <tr>
+                            <th>Adresse</th>
+                            <td><input type="text" name="adresse_p"/></td>
+                        </tr>
+                        <tr>
+                            <th>Ville</th>
+                            <td><input type="text" name="ville_p"/></td>
+                        </tr>
+                        <tr>
+                            <th>Code postal</th>
+                            <td><input type="text" name="codePostal_p"/></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="medecin">
+                    <div class="traitant">
+                        <h2 style="text-align:center">Médecin traitant</h2>
+                        <table>
+                            <tr>
+                                <th>Nom</th>
+                                <td><input type="text" name="nom_mt"/></td>
+                            </tr>
+                            <tr>
+                                <th>Prénom</th>
+                                <td><input type="text" name="prenom_mt"/></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><input type="text" name="email_mt"/></td>
+                            </tr>
+                            <tr>
+                                <th>Téléphone</th>
+                                <td><input type="text" name="telephone_mt"/></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="urgentiste">
+                        <h2 style="text-align:center">Urgentiste</h2>
+                        <table>
+                            <tr>
+                                <th>Nom</th>
+                                <td><input type="text" name="nom_mu"/></td>
+                            </tr>
+                            <tr>
+                                <th>Prénom</th>
+                                <td><input type="text" name="prenom_mu"/></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><input type="text" name="email_mu"/></td>
+                            </tr>
+                            <tr>
+                                <th>Téléphone</th>
+                                <td><input type="text" name="telephone_mu"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            
+                <div class="examens">
+                    <table>
+                        <h2 style="text-align:center">Bilan de 1ères intentions en URGENCES</h2>
+                        <tr>
+                            <th></th>
+                            <th>Réalisé</th>
+                        <tr>
+                            <td>Scan cérébral</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td>AngioScan</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td>Bilan biologique</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <h2 style="text-align:center">Bilan de 2ndes intentions</h2>
+                        <tr>
+                            <th></th>
+                            <th>Planifié</th>
+                            <th>Réalisé</th>
+                        </tr>
+                        <tr>
+                            <td>IRM</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td>Bilan cardiaque ETT</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td>Consultation neurologue</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>Récapitulatif envoyé au médecin traitant</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                        <tr>
+                            <td>Récapitulatif envoyé à l'urgentiste</td>
+                            <td><INPUT type="checkbox" name="choix1" value="1"/></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+
+        </div>
+        </div>
+        </div>
+    
+    </body>
+</html>
