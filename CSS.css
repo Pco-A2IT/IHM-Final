@@ -6,17 +6,6 @@ body{
 
 
 
-.patient {
-    margin-right: 30px;
-    margin-left: 30px;
-}
-
-
-.patient input {
-    border: none;
-    border-bottom: 1px solid #b2b2b2;
-    width: 120px;
-}
 
 .section2 input[type="text"] {
     border: none;
@@ -24,21 +13,6 @@ body{
     width: 120px;
 }
 
-
-.medecin input {
-    border: none;
-    border-bottom: 1px solid #b2b2b2;
-    width: 120px;
-}
-
-.medecin {
-    margin-right: 30px;
-}
-
-
-.inputDate {
-    width: 30px !important;
-}
 
 .div3 th {
     width:100px;
@@ -560,13 +534,52 @@ table tr:hover td {
 
 .title {
 	color: #337ab7;
+    margin-top:20px;
     text-decoration: none; 
     line-height: 1.42857143;
     border-bottom: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
-    padding: 10px 15px;
+    padding: 10px 40px;
     font-weight: bold; 
+    cursor:pointer;
+    font-size:20px;
 }
+
+#container th{
+    width:100px;
+}
+#container td{
+    width:300px;
+}
+
+.onglet{
+    display:flex;
+    flex-wrap:nowrap;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 100px;
+    color:grey;
+}
+
+.onglet input{
+    border: none;
+    background: none;
+    border-bottom: 1px solid #b2b2b2;
+    width: 120px;
+}
+
+.inputDate{
+     width: 15px !important;
+}
+
+
+.date input {
+    width: 30px !important;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #b2b2b2;
+}
+
 
 .active {
 	color: #555;
@@ -574,28 +587,6 @@ table tr:hover td {
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
-}
-.onglet a
-{
-        color:#000000;
-        text-decoration:none;
-}
-
-#onglet1
-{
-   
-        border-bottom:1px solid black;
-}
-#onglet2
-{
-        border-bottom:0px solid black;
-        padding-bottom:4px;
-}
-
-#onglet3
-{
-        border-bottom:0px solid black;
-        padding-bottom:4px;
 }
 
 
