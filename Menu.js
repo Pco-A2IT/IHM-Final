@@ -8,27 +8,29 @@ var boutonElt4 = document.getElementById("btn_nouveau_patient");
 boutonElt.addEventListener("click", function () {
     console.log("clic");
     console.log("Le récapitulatif a été envoyé");
-    window.open('Liste_Centres.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
-    window.close();
+    top.location.href='Liste_Centres.html';
 
 });
 
 boutonElt2.addEventListener("click", function () {
     console.log("clic2");
-    
-    window.open('Liste_Patients.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
-    window.close();
+    //window.open('Liste_Patients.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
+    top.location.href='Liste_Patients.html';
+    //window.close();
 
 });
 
 boutonElt3.addEventListener("click", function () {
     console.log("clic3");
-    window.open('Calendrier.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
-    window.close();
+
+    //window.open('Calendrier.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no', 'target="self"');
+    top.location.href='Calendrier.html';
+    //window.close();
 });
 
 boutonElt4.addEventListener("click", function () {
     console.log("clic4");
-    window.open('Dossier_Patient.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
-    window.close();
+    //window.open('Dossier_Patient.html','nom_de_ma_popup','fullscreen=yes, menubar=no, scrollbars=no');
+    top.location.href='Dossier_Patient.html';
+    //window.close();
 });
