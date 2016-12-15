@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+                <title>Moteur</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="CSS.css" />
         <title>Dossier patient</title>
     </head>
@@ -54,9 +57,16 @@
             </p>
             
             
-            <div id="conteneur">
-                <div class="patient">
-                    <h2 style="text-align:center">Patient</h2>
+         <div id="container">
+
+            <div id="titles"> 
+                <span class="title active"  target="onglet1"> Patient</span> 
+                <span class="title" target="onglet2"> Médecins</span> 
+                <span class="title" target="onglet3"> Examens</span> 
+            </div>
+
+            <div class="onglet" id="onglet1">
+                <div class="infos1_patient">
                     <table>
                         <tr>
                             <th>Civilité</th>
@@ -86,7 +96,11 @@
                                 <input class="inputDate" name="date10_annee" value="" size="3" type="text"  placeholder="aaaa">
                             </td>
                         </tr>
-                        <tr>
+                    </table>
+                </div>
+                <div class="infos2_patient">
+                    <table>
+                      <tr>
                             <th>Téléphone</th>
                             <td><input type="text" name="telephone_p"/></td>
                         </tr>
@@ -102,12 +116,13 @@
                             <th>Code postal</th>
                             <td><input type="text" name="codePostal_p"/></td>
                         </tr>
-                    </table>
+                </table>
                 </div>
-                
-                <div class="medecin">
-                    <div class="traitant">
-                        <h2 style="text-align:center">Médecin traitant</h2>
+            </div>
+            
+            <div class="onglet" id="onglet2">
+                     <div class="traitant">
+                        <h3 style="text-align:center">Médecin traitant</h3>
                         <table>
                             <tr>
                                 <th>Nom</th>
@@ -129,7 +144,7 @@
                     </div>
 
                     <div class="urgentiste">
-                        <h2 style="text-align:center">Urgentiste</h2>
+                        <h3 style="text-align:center">Urgentiste</h3>
                         <table>
                             <tr>
                                 <th>Nom</th>
@@ -149,14 +164,14 @@
                             </tr>
                         </table>
                     </div>
-                </div>
-            
-                <div class="examens">
+            </div>
+            <div class="onglet" id="onglet3">
+                <div class="Bilan1">
                     <table>
-                        <h2 style="text-align:center">Bilan de 1ères intentions en URGENCES</h2>
+                        <h3 style="text-align:center">Bilan 1ères intentions en URGENCES</h3>
                         <tr>
                             <th></th>
-                            <th>Réalisé</th>
+                            <th style="text-align:center">Réalisé</th>
                         <tr>
                             <td>Scan cérébral</td>
                             <td><INPUT type="checkbox" name="choix1" value="1"/></td>
@@ -170,12 +185,14 @@
                             <td><INPUT type="checkbox" name="choix1" value="1"/></td>
                         </tr>
                     </table>
+                </div>
+                <div class="Bilan2">
                     <table>
-                        <h2 style="text-align:center">Bilan de 2ndes intentions</h2>
+                        <h3 style="text-align:center">Bilan 2ndes intentions</h3>
                         <tr>
                             <th></th>
-                            <th>Planifié</th>
-                            <th>Réalisé</th>
+                            <th style="text-align:center">Planifié</th>
+                            <th style="text-align:center">Réalisé</th>
                         </tr>
                         <tr>
                             <td>IRM</td>
@@ -203,13 +220,43 @@
                             <td><INPUT type="checkbox" name="choix1" value="1"/></td>
                         </tr>
                     </table>
-                </div>
             </div>
-            
-
+        </div>
+        </div>
+                </div>
         </div>
         </div>
         </div>
-    
     </body>
+
 </html>
+
+     <script>
+
+        $(document).ready(function(){
+
+           
+            //Initialisation : on cache tous les onglets puis on affiche le premier
+            $('.onglet').hide();
+            $('#onglet1').show();
+
+            //Quand on clique sur un titre
+            $('.title').on('click',function(){
+
+                // On recupere le div global id = container
+                var container = $(this).parent().parent();
+
+                $('.active').removeClass('active');
+
+                
+                // On cache tous les onglets
+                container.children('.onglet').hide();
+
+                //On affiche celui correspondant à l'attribut target
+                container.children('#'+$(this).attr('target')).show();
+                $(this).addClass("active");
+            });
+         }); 
+        
+    </script>
+
