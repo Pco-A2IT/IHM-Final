@@ -554,3 +554,108 @@ table tr:hover td {
 	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
+
+.btn_menu{
+	background-color:#1270B3;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:0px 0px;
+	text-decoration:none;
+}
+
+.centrage {text-align: center}
+.btn_liste_centres{
+	background-color:#1270B3;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:100px 64px;
+	text-decoration:none;
+}
+.btn_liste_centres:hover {
+	background-color:#019ad2;
+}
+.btn_liste_centres:active {
+	position:relative;
+	top:1px;
+}
+.btn_liste_patients{
+	background-color:#1270B3;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:100px 62px;
+	text-decoration:none;
+}
+.btn_liste_patients:hover {
+	background-color:#019ad2;
+}
+.btn_liste_patients:active {
+	position:relative;
+	top:1px;
+}
+.btn_calendrier{
+	background-color:#1270B3;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:100px 75px;
+	text-decoration:none;
+}
+.btn_calendrier:hover {
+	background-color:#019ad2;
+}
+.btn_calendrier:active {
+	position:relative;
+	top:1px;
+}
+.btn_nouveau_patient{
+	background-color:#1270B3;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:100px 50px;
+	text-decoration:none;
+}
+.btn_nouveau_patient:hover {
+	background-color:#019ad2;
+}
+.btn_nouveau_patient:active {
+	position:relative;
+	top:1px;
+}
+.centrage_vertical{
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
