@@ -4,40 +4,34 @@
     <script type="text/javascript" src="RDV.js"></script>
 </head>
 <body>
-    <div class="gris">
+   <div class="gris">
             <div  class="gris2">
-            <div id="menu1" class="carreGris">
-                <script src="Dossier_Patient.js"></script>
-            <h4>Menu</h4>
-            <img class="icone_menu" src="Menu.PNG"/>
+            <div  class="carreGris" id="menu1";>
+                <h4>Menu</h4>
+                <img class="icone_menu" src="Menu.PNG"/>
             </div>
                             
              <div id="menu5" class="carreGris";>
-                 <script src="Dossier_Patient.js"></script>
                 <img class="icone_calendrier" src="calendrier.png"/>
                 </div>
             
-            <div id="menu3" class="carreGris">
-                <script src="Dossier_Patient.js"></script>
+            <div id="menu3" class="carreGris";>
                 <h4>Liste Centres</h4>
                 <img class="icone_hopital" src="hopital.PNG"/>
             </div>
                 
-            <div id="menu2" class="carreGris">
-                <script src="Dossier_Patient.js"></script>
+            <div id="menu2" class="carreGris";>
                 <h4>Liste patients</h4>    
                 <img class="icone_patient" src="icone_bonhomme.png"/>
             </div>
                            
                 
-            <div id="menu4" class="carreGris">
-                <script src="Dossier_Patient.js"></script>
-                <h4>Dossier Patient</h4>
+            <div id="menu4" class="carreGris";>
+                <h4>Nouveau Patient</h4>
                 <img class="icone_dossier" src="ajouter.png"/>
             </div>
                 
             <div class="extra" id="RetourDossierPatient" style="border-radius: 5px;">
-                <script src="Prise_RDV.js"></script>
                 <img class="icone_extra" src="medecin.png"/>
                 <h4>Retour au dossier patient</h4></div>
             </div>
@@ -45,55 +39,51 @@
     
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Prise de Rendez-vous</h1>
-        <div class="mybutton">
-            <a href="#" class="mybutton1">Ajouter</a>
-            <a href="#" class="mybutton2">Supprimer</a>
-        </div>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
           <div class="section1">
-              <div class="div1">
+              <div class="div1" style="color:black">
              <img src='patient.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>Vincent Pasteur</h1><br>
-                  <table>
-                      <tr>
-                          <th class="champ" style='padding-left:0'>Ville</th>
-                          <td><input type="checkbox" name="choix1" value="1"/> Lyon</td>
-                          <td><input type="checkbox" name="choix2" value="2"/> Vienne</td>
-                      </tr>
-                  </table>
-              </div>
-
-              <div class="div2">
-                  <table>
-                      <tr>
-                          <th class="champ" style='padding-left:0'>Examens</th>
-                          <td><input type="checkbox" name="choix1" value="1"/> IRM</td>
-                          <td><input type="checkbox" name="choix2" value="2"/> Bilan Cardiaque</td>
-                          <td><input type="checkbox" name="choix3" value="3"/> RDV neurologue
-                          </td></tr>
-                  </table>      
+                  
+                        <strong>Ville</strong>
+                          <input type="radio" name="choix1" value="1" style="margin-left:50px"/> Lyon
+                          <input type="radio" name="choix1" value="2"/> Vienne
+                  <br><br><strong>Examens</strong>
+                          <input type="radio" name="choix1" value="1" style="margin-left:21px"/> IRM
+                          <input type="radio" name="choix1" value="2"/> Bilan Cardiaque
+                            <input type="radio" name="choix1" value="3"/>RDV neurologue
+                
               </div>
               <div class="div3">
                   <h4 style='color:black; padding-left:2; margin-top:10; margin-bottom:10'>Résultats Recherche</h4>
                   <table ;>
                       <tr><th>Centres</th><th>Examens</th><th>Adresse</th><th>Contact</th><th>Jour</th><th>Horaire</th><th>Planifié</th></tr>
-                      <tr><td>Hospitalisation de jour</td></tr>
+                      <tr><td>Hospitalisation de jour</td><td>IRM<br>Bilan Cardiaque<br>RDV Neurologue</td><td>20 avenue Albert</td><td>0478654312</td> <td>
+                                <script language="JavaScript">writeSource("js10");</script>
+                                <input class="inputDate" name="date10_jour" value="" size="2" type="text"  placeholder="jj"> /
+                                <input class="inputDate" name="date10_mois" value="" size="2" type="text"  placeholder="mm"> /
+                                <input class="inputDate" name="date10_annee" value="" size="3" type="text"  placeholder="aaaa">
+                            </td><td> 
+                                <script language="JavaScript">writeSource("js10");</script>
+                                <input class="inputDate" name="date10_jour" value="" size="2" type="text"  placeholder="jj"> /
+                                <input class="inputDate" name="date10_mois" value="" size="2" type="text"  placeholder="mm"> 
+                            </td><td><input type="radio" name="choix1" value="2"/> Oui</td></tr>
                       </table>
               <div class="section2";>
               <img src='recap.png' align='left' alt='sorry' width="40px" heigh="40px"><h3 style='color:#1270b3;'>Récapitulatif</h3>
-                  <li>
+                
                   Hospitalisation de Jour prévue à l'adresse
                   <input NAME="rep1" TYPE=text SIZE=12 MAXLENGTH=12/>
                   au <input NAME="rep1" TYPE=text SIZE=12 MAXLENGTH=12/>le <input NAME="rep1" TYPE=text SIZE=10 MAXLENGTH=10/> <br>
-                 <input type="checkbox" name="choix1" value="1" aligh='left'/> Récapitulatif envoyé 
-
-  
-                  </li>
+        
              </div>
             
          </div>
     </div>
     </div>
     </div>
+    
+         <script src="General.js"></script>
 </body>
 </html>
+    
