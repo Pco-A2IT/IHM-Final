@@ -1,3 +1,4 @@
+
 body{
     font-family:Calibri;
     background-color:#373737;
@@ -34,6 +35,7 @@ body{
     margin-right:auto; 
     border-radius: 5px;"
     padding-top:100px;
+    cursor:pointer;
     
 }
 .carreGris:hover{
@@ -101,9 +103,10 @@ h4{
     
 }
 .extra{
-    position: absolute;
-    height: 150px;
-    width:150px;
+    position:absolute;
+    right:10px;
+    height: 120px;
+    width:120px;
     right: 10px;
     bottom: 28px;
     background-color:#656565;
@@ -188,7 +191,9 @@ h4{
     right:200px;
     top:10px;
     position:absolute;
+    text-decoration:none;
 }
+
 
 .myButton2 {
 	-moz-box-shadow:inset 0px 4px 0px 43px #ffffff;
@@ -218,6 +223,8 @@ h4{
     right:60px;
     top:10px;
     position:absolute;
+    
+    text-decoration:none;
 }
 
 .myButton:hover {
@@ -295,6 +302,7 @@ h4{
 	padding:9px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
+    
 }
 .myButton3:hover {
 	background-color:#1270b3;
@@ -302,7 +310,18 @@ h4{
 .myButton3:active {
 	position:relative;
 	top:1px;
+    
+    text-decoration-line:none;
 }
+
+
+.boutons_rdv{
+    position:absolute;
+    
+    top:320px;
+    left:300px;
+}
+    
 
 .section2{
     color:black;
@@ -310,12 +329,11 @@ h4{
 
 
 .calendaire{
-    width:1px; 
-    height:1px;
-    background-color: aliceblue;
-    right:50px;
-    bottom: 40px;
-    position: absolute;
+   width:220px; 
+   height:200px;
+   left:90%;
+   top:60%;
+   position: absolute;
 }
 
 
@@ -466,15 +484,17 @@ table th {
 	padding:21px 25px 22px 25px;
 	border-top:1px solid #fafafa;
 	border-bottom:1px solid #e0e0e0;
-
+    text-align: center;
 	background: #ededed;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
 	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
 }
 table th:first-child {
-	text-align: left;
+	text-align: right;
 	padding-left:20px;
 }
+
+
 table tr:first-child th:first-child {
 	-moz-border-radius-topleft:3px;
 	-webkit-border-top-left-radius:3px;
@@ -569,7 +589,8 @@ table tr:hover td {
 }
 
 .inputDate{
-     width: 15px !important;
+    width: 30px !important;
+
 }
 
 
@@ -602,7 +623,9 @@ table tr:hover td {
 	font-size:18px;
 	font-weight:bold;
 	padding:0px 0px;
+    margin-right: 10px;
 	text-decoration:none;
+    border-radius: 50px;
 }
 
 .centrage {text-align: center}
