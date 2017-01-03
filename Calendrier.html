@@ -1,6 +1,7 @@
 <html>
 <head>
    <link href="CSS.css"type="text/css"rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--Calentaire style-->
 </head>
 <body>
@@ -41,38 +42,45 @@
     <div class="blanc";   style="border-radius: 5px;">
           <div class="section1">            
               <img src='recap.png' align='left' alt='sorry' width="60px" heigh="60px" style="padding-top:10"><h1 style="color:black";>Récapitulatif</h1><br>
-        <div class=section5>
-         <div>    
-            <table cellspacing='0'>   
-                     <tr>
-                     <th><strong>Patient</strong></th>
-                     <th><strong>IRM</strong></th>
-                     <th><strong>Bilan Cardiaque</strong></th>
-                     <th><strong>RDV neurologue</strong></th>
-                     </tr>
-                     <tr>
-                     <td>Vincent Pasteur<br>06 85 47 51 45</td>
-                     <td>Lieu: neurologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne1" value="0"/> Terminé<input type="radio" name="choix1_ligne1" value="1"/>Non effectué</td>
-                     <td>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne1" value="0"/> Terminé<input type="radio" name="choix2_ligne1" value="1"/>Non effectué</td>
-                      <td>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne1" value="0"/> Terminé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
-                     </tr>
-                     <tr>
-                     <td>Sophie Martin<br>06 85 47 51 45</td>
-                     <td>Lieu: nerologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne2" value="0"/> Terminé<input type="radio" name="choix1_ligne2" value="1"/>Non effectué</td>
-                     <td>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne2" value="0"/> Terminé<input type="radio" name="choix2_ligne2" value="1"/>Non effectué</td>
-                      <td>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne2" value="0"/> Terminé<input type="radio" name="choix3_ligne2" value="1"/>Non effectué</td>
-                     </tr>
-                     <tr>
-                     <td>Isabelle Albert<br>06 85 47 51 45</td>
-                     <td>Lieu: nerologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne3" value="0"/> Terminé<input type="radio" name="choix1_ligne3" value="1"/>Non effectué</td>
-                     <td>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne3" value="0"/> Terminé<input type="radio" name="choix2_ligne3" value="1"/>Non effectué</td>
-                     <td>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne3" value="0"/> Terminé<input type="radio" name="choix3_ligne3" value="1"/>Non effectué</td>
-                     </tr>
-                    </table>
-        </div>
+              <div class=section5>
+                  <div id="titles"> 
+                        <span class="title active"  target="ongletC1">Jour J</span> 
+                        <span class="title" target="ongletC2">Patients</span>
+                    </div>
             
-    </div>
-    </div>s
+                     <div class="ongletC" id="ongletC1" >    
+                        <table cellspacing='0'>   
+                                 <tr>
+                                 <th><strong>Patient</strong></th>
+                                 <th><strong>Passé</strong></th>
+                                 <th><strong>Aujourd'hui</strong></th>
+                                 <th><strong>A venir</strong></th>
+                                 </tr>
+                                 <tr>
+                                 <td>Vincent Pasteur<br>06 85 47 51 45</td>
+                                 <td>IRM<br>Lieu: neurologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne1" value="0"/> Terminé<input type="radio" name="choix1_ligne1" value="1"/>Non effectué</td>
+                                 <td>Bilan cardiaque<br>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne1" value="0"/> Terminé<input type="radio" name="choix2_ligne1" value="1"/>Non effectué</td>
+                                  <td>Consultation neuro<br>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne1" value="0"/> Terminé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                 </tr>
+                                 <tr>
+                                 <td>Sophie Martin<br>06 85 47 51 45</td>
+                                 <td>Bilan cardiaque<br>Lieu: neurologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne2" value="0"/> Terminé<input type="radio" name="choix1_ligne2" value="1"/>Non effectué</td>
+                                 <td>IRM<br>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne2" value="0"/> Terminé<input type="radio" name="choix2_ligne2" value="1"/>Non effectué</td>
+                                  <td>Consultation neuro<br>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne2" value="0"/> Terminé<input type="radio" name="choix3_ligne2" value="1"/>Non effectué</td>
+                                 </tr>
+                                 <tr>
+                                 <td>Isabelle Albert<br>06 85 47 51 45</td>
+                                 <td>IRM<br>Lieu: neurologie de Lyon<br>horaire: 9:00-17:00<br><input type="radio" name="choix1_ligne3" value="0"/> Terminé<input type="radio" name="choix1_ligne3" value="1"/>Non effectué</td>
+                                 <td>Consultation neuro<br>Lieu: <br>horaire: <br><input type="radio" name="choix2_ligne3" value="0"/> Terminé<input type="radio" name="choix2_ligne3" value="1"/>Non effectué</td>
+                                 <td>Bilan cardiaque<br>Lieu: <br>horaire: <br><input type="radio" name="choix3_ligne3" value="0"/> Terminé<input type="radio" name="choix3_ligne3" value="1"/>Non effectué</td>
+                                 </tr>
+                                </table>
+                    </div>
+                  <div class="ongletC" id="ongletC2" > 
+                  </div>
+            
+            </div>
+        </div>s
     </div>
             <div id="calendar" class="calendaire"><iframe  frameborder="0" width="300px" height="300px" src="calendar.html"/> 
             </div>
@@ -80,3 +88,31 @@
     </div>
 </body>
 </html>
+<script>
+
+        $(document).ready(function(){
+
+           
+            //Initialisation : on cache tous les onglets puis on affiche le premier
+            $('.onglet').hide();
+            $('#onglet1').show();
+
+            //Quand on clique sur un titre
+            $('.title').on('click',function(){
+
+                // On recupere le div global id = container
+                var container = $(this).parent().parent();
+
+                $('.active').removeClass('active');
+
+                
+                // On cache tous les onglets
+                container.children('.onglet').hide();
+
+                //On affiche celui correspondant à l'attribut target
+                container.children('#'+$(this).attr('target')).show();
+                $(this).addClass("active");
+            });
+         }); 
+        
+    </script>
