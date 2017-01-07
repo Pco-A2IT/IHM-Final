@@ -6,7 +6,16 @@ body{
 }
 
 
+.type{
+    color:#1270B3;
+  font-weight: bold; 
+}
 
+.section_centre{
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 70px;
+}
 
 .section2 input[type="text"] {
     border: none;
