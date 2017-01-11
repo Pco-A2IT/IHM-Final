@@ -800,17 +800,63 @@ table tr:hover td {
     height: 20px;
     cursor: pointer;
 }
-.button_add
-{
-	width:143px;
-	height:35px;
-	line-height:14px;
-	font-size:14px;
-	background:url("button_add.jpg") no-repeat left top;
-	color:#959595;
-	padding:0px 0px 2px 14px;	
-}
 .recherche_p{
     margin-top: 30px;
     margin-left: 10px;
+}
+button {   
+  background: none;   
+  border: 0;   
+  box-sizing: border-box;   
+  box-shadow: inset 0 0 0 2px  #ffffff;   
+  color: #000000;   
+  font-size: inherit;   
+  font-weight: 700;   
+  margin: 1em;   
+  padding: 1em 2em;   
+  text-align: center;   
+  text-transform: capitalize;   
+  position: relative;   
+  vertical-align: middle;   
+}   
+button::before, button::after {   
+  box-sizing: border-box;   
+  content: '';   
+  position: absolute;   
+  width: 100%;   
+  height: 100%;   
+}        
+.center:hover {
+  color: #6477b9;
+}
+.center::before, .center::after {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.center::before {
+  border-top: 2px solid #6477b9;
+  border-bottom: 2px solid #6477b9;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+}
+.center::after {
+  border-left: 2px solid #6477b9;
+  border-right: 2px solid #6477b9;
+  -webkit-transform: scale3d(1, 0, 1);
+          transform: scale3d(1, 0, 1);
+}
+.center:hover::before, .center:hover::after {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+  -webkit-transition: -webkit-transform 0.5s;
+          transition: transform 0.5s;
+}
+.btn1
+{
+	background:url("plus.gif") no-repeat 8px center;
 }
