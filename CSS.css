@@ -793,3 +793,11 @@ table tr:hover td {
     margin-top: 50vh;
     transform: translateY(-50%);
 }
+.supprimer {
+    background: url(supprimer.png) 0 -217px;
+    float: right;
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+    cursor: pointer;
+}
