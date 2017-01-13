@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dossier Centre</title>
+        <title>Dossier Service</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="CSS.css" />
-        <title>Dossier patient</title>
+        
     </head>
     
     <body>
@@ -37,7 +37,7 @@
                 <img class="icone_dossier" src="ajouter.png"/>
             </div>
     <div class="titre";   style="border-radius: 5px;">
-        <h1 class="titreGauche">Dossier Centre</h1>
+        <h1 class="titreGauche">Dossier Service</h1>
         <div class="myButton">
             <a href="#" class="myButton1">Valider</a>
             <a href="#" class="myButton2">Modifier</a>
@@ -46,14 +46,8 @@
     <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='hospital.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:black">Unité Neurovasculaire de Lyon</h1><br>
+             <img src='hospital.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:black">Nom du service</h1><br>
             </div>
-            <p class="date" style="color:black">Date création dossier : 
-                <script language="JavaScript">writeSource("js10");</script>
-                <input name="date10_jour" value="" size="1" type="text"  placeholder="jj"> /
-                <input name="date10_mois" value="" size="1" type="text"  placeholder="mm"> /
-                <input name="date10_annee" value="" size="2" type="text"  placeholder="aaaa">
-            </p>
             
             
          <div id="container">
@@ -65,12 +59,21 @@
                             <th>Sevice</th>
                             <td><input type="text" name="service_p" id="nom_p"/></td>
                         </tr>
+                         <tr>
+                          <tr>
+                            <th>Hôpital</th>
+                            <td><input type="text" name="hopital_p" id="hopital_p"/></td>
+                        </tr>
                         <tr>
                             <th>Téléphone</th>
                             <td><input type="text" name="telephone_p" id="telephone_p"/></td>
                         </tr>
                         <tr>
-                            <th>Horaire Ouverture</th>
+                            <th>Examens disponibles</th>
+                            <td><input type="radio" name="choix1_ligne1" value="0"/>IRM <br><input type="radio" name="choix1_ligne1" value="1"/>Bilan cardiaque<br><input type="radio" name="choix1_ligne1" value="2"/>Consultation neurologue></td>
+                        </tr>
+                        <tr>
+                            <th>Horaires Ouverture</th>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="2" type="text"  placeholder="h"> :
@@ -97,6 +100,9 @@
                             <td><input type="text" name="codePostal_p" id="codePostal_p"/></td>
                         </tr>
                 </table>
+                    <FORM class=Zone_Texte>
+                        <TEXTAREA name="nom" rows=4 cols=40>Description</TEXTAREA>
+                    </FORM>
                 </div>
             </div>
             
