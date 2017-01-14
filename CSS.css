@@ -154,7 +154,7 @@ h4{
   width:900px;
   left:50px;
   top:40px;
-  margin-top: 10px;
+  margin-top: 30px;
   position:absolute;
 }
 
@@ -855,5 +855,7 @@ button::before, button::after {
 }
 .btn1
 {
+    margin-top: 20px;
+    padding-bottom: 30px;
 	background:url("plus.gif") no-repeat 8px center;
 }
