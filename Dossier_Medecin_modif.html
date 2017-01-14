@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Médecin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="CSS.css" />
+    </head>
+    
+    <body>
+    <div class="gris">
+                  <div  class="gris2">
+                             
+            <div id="menu1" class="carreGris";>
+                <img class="icone_calendrier" src="recapitulatif.png"/>
+            </div>
+            
+            <div id="menu2" class="carreGris";>
+                <h4>Services</h4>
+                <img class="icone_hopital" src="hopital.PNG"/>
+            </div>
+                
+            <div id="menu3" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_patient" src="icone_bonhomme.png"/>
+            </div> 
+            <div id="menu4" class="carreGris" style="background-color:#1270B3";>
+                <h4>Médecins</h4>    
+                <img class="icone_patient" src="icone_bonhomme.png"/>
+            </div> 
+            
+            <script src="General.js"></script>
+    <div class="titre";   style="border-radius: 5px;">
+        <h1 class="titreGauche">Médecin</h1>
+        <div class="myButton">
+            <a href="#" class="myButton1">Modifier</a>
+        </div>
+    </div>
+    <div class="blanc";   style="border-radius: 5px;">
+            <div class="section4">
+            <div class="div1">
+             <img src='medecin.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:#373737">Luigi Bardi</h1><br>
+            </div>
+         <div id="container">
+            <div class="onglet" id="onglet1">
+                <div class="infos1_patient">
+                    <table>
+                        <tr>
+                          <tr>
+                            <th>N° ADELI :</th>
+                            <td>810000049774</td>
+                        </tr>
+                        <tr>
+                            <th>Civilité :</th>
+                            <td>Monsieur</td>
+                        </tr>
+                        <tr>
+                            <th>Nom :</th>
+                            <td>Bardi</td>
+                        </tr>
+                        <tr>
+                            <th>Prénom :</th>
+                            <td>Luigi</td>
+                        </tr>
+                        <tr>
+                            <th>Email :</th>
+                            <td>luigi.bardi@gmail.com</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="infos2_patient" id="table_medecin">
+                    <table>
+                        <tr>
+                            <th>Service-Centre</th>
+                            <td>Cardiologue</td>
+                        </tr>
+                          <tr>
+                            <th>Téléphone :</th>
+                            <td>Particulier</td>
+                        </tr>
+                        <tr>
+                            <th>Adresse :</th>
+                            <td>47,rue du tonkin</td>
+                        </tr>
+                        <tr>
+                            <th>Ville :</th>
+                            <td>Villeurbanne</td>
+                        </tr>
+                        <tr>
+                            <th>Code postal :</th>
+                            <td>69100</td>
+                        </tr>
+                </table>
+                </div>
+            </div>
+            
+         
+         </div>
+            
+            </div>
+        </div>
+        </div>
+                </div>
+        
+         <script src="General.js"></script>
+    </body>
+
+</html>
+
+     <script>
+
+        $(document).ready(function(){
+
+           
+            //Initialisation : on cache tous les onglets puis on affiche le premier
+            $('.onglet').hide();
+            $('#onglet1').show();
+
+            //Quand on clique sur un titre
+            $('.title').on('click',function(){
+
+                // On recupere le div global id = container
+                var container = $(this).parent().parent();
+
+                $('.active').removeClass('active');
+
+                
+                // On cache tous les onglets
+                container.children('.onglet').hide();
+
+                //On affiche celui correspondant à l'attribut target
+                container.children('#'+$(this).attr('target')).show();
+                $(this).addClass("active");
+            });
+         }); 
+        
+    </script>
