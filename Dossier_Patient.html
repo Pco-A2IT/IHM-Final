@@ -12,31 +12,27 @@
     <body>
     <form action="AjoutBDD_dossierPatient.php" method="post">    
     <div class="gris">
-            <div  class="gris2">
-            <div  class="carreGris" id="menu1";>
-                <h4>Menu</h4>
-                <img class="icone_menu" src="Menu.PNG"/>
-            </div>
-                            
-             <div id="menu5" class="carreGris";>
+                     <div  class="gris2">
+                             
+            <div id="menu1" class="carreGris";>
                 <img class="icone_calendrier" src="recapitulatif.png"/>
-                </div>
+            </div>
             
-            <div id="menu3" class="carreGris";>
-                <h4>Liste Centres</h4>
+            <div id="menu2" class="carreGris";>
+                <h4>Services</h4>
                 <img class="icone_hopital" src="hopital.PNG"/>
             </div>
                 
-            <div id="menu2" class="carreGris";>
-                <h4>Liste patients</h4>    
+            <div id="menu3" class="carreGris" style="background-color:#1270B3" ;>
+                <h4>Patients</h4>    
                 <img class="icone_patient" src="icone_bonhomme.png"/>
-            </div>
-                           
-                
-            <div id="menu4" class="carreGris" style="background-color:#1270B3";>
-                <h4>Nouveau Patient</h4>
-                <img class="icone_dossier" src="ajouter.png"/>
-            </div>
+            </div> 
+            <div id="menu4" class="carreGris";>
+                <h4>Médecins</h4>    
+                <img class="icone_patient" src="icone_bonhomme.png"/>
+            </div> 
+            
+            <script src="General.js"></script>
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Dossier Patient</h1>
         <div class="myButton">
@@ -47,18 +43,13 @@
     <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='patient.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>Prénom NOM</h1><br>
-            </div>
-            <p class="date" style="color:black">Date création dossier : 05/01/2017
-                <script language="JavaScript">writeSource("js10");</script>
-            </p>
-            
+             <img src='patient.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+                </div>
             
          <div id="container">
 
             <div id="titles"> 
                 <span class="title active"  target="onglet1"> Patient</span> 
-                <span class="title" target="onglet2"> Médecins</span> 
                 <span class="title" target="onglet3"> Examens</span> 
             </div>
 
@@ -66,11 +57,11 @@
                 <div class="infos1_patient">
                     <table>
                         <tr>
-                            <th>Civilité</th>
+                            <th>Civilité :</th>
                             <td>
                                  <form>
                                     <select name="civilite_p" id="civilite_p" size="1">
-                                        <option>Mr</option>
+                                        <option>M</option>
                                         <option>Mme</option>
                                     </select>
                                 </form>
@@ -78,20 +69,33 @@
                         </tr>
                         <tr>
                           <tr>
-                            <th>Nom</th>
+                            <th>Nom : </th>
                             <td><input type="text" name="nom_p" id="nom_p"/></td>
                         </tr>
                         <tr>
-                            <th>Prénom</th>
+                            <th>Prénom : </th>
                             <td><input type="text" name="prenom_p" id="prenom_p"/></td>
                         </tr>
                         <tr>
-                            <th>Date de naissance</th>
+                            <th>Date de naissance : </th>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="2" type="text"  placeholder="jj" maxlength="2"> /
                                 <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mm" maxlength="2"> /
                                 <input class="inputDate" name="date10_annee" id="date10_annee" value="" size="5" type="text"  placeholder="aaaa" maxlength="4">
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>Médecin traitant :</th>
+                            <td>
+                                 <form>
+                                    <select>
+                                        <option>Luigi Bardi</option>
+                                        <option>Lucas Delabarre</option>
+                                    </select>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -102,77 +106,39 @@
                 <div class="infos2_patient">
                     <table>
                       <tr>
-                            <th>Téléphone</th>
+                            <th>Téléphone :</th>
                             <td><input type="text" name="telephone_p" id="telephone_p"/></td>
                         </tr>
                         <tr>
-                            <th>Adresse</th>
+                            <th>Adresse :</th>
                             <td><input type="text" name="adresse_p" id="adresse_p"/></td>
                         </tr>
                         <tr>
-                            <th>Ville</th>
+                            <th>Ville :</th>
                             <td><input type="text" name="ville_p" id="ville_p"/></td>
                         </tr>
                         <tr>
-                            <th>Code postal</th>
+                            <th>Code postal :</th>
                             <td><input type="text" name="codePostal_p" id="codePostal_p"/></td>
                         </tr>
                 </table>
+                 <table>
+                        <tr>
+                            <th>Médecin appelant :</th>
+                            <td>
+                                 <form>
+                                    <select>
+                                        <option>Luigi Bardi</option>
+                                        <option>Lucas Delabarre</option>
+                                    </select>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             
-            <div class="onglet" id="onglet2">
-                     <div class="traitant">
-                        <h3 style="text-align:center">Médecin traitant</h3>
-                        <table>
-                            <tr>
-                                <th>Nom</th>
-                                <td><input type="text" name="nom_mt" id="nom_mt"/></td>
-                            </tr>
-                            <tr>
-                                <th>Prénom</th>
-                                <td><input type="text" name="prenom_mt" id="prenom_mt"/></td>
-                            </tr>
-                            <tr>
-                                <th>Service</th>
-                                <td><input type="text" name="service_mt" id="service_mt"/></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td><input type="text" name="email_mt" id="email_mt"/></td>
-                            </tr>
-                            <tr>
-                                <th>Téléphone</th>
-                                <td><input type="text" name="telephone_mt" id="telephone_mt"/></td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="urgentiste">
-                        <h3 style="text-align:center">Autre</h3>
-                        <table>
-                            <tr>
-                                <th>Nom</th>
-                                <td><input type="text" name="nom_mu" id="nom_mu"/></td>
-                            </tr>
-                            <tr>
-                                <th>Prénom</th>
-                                <td><input type="text" name="prenom_mu" id="prenom_mu"/></td>
-                            </tr>
-                            <tr>
-                                <th>Service</th>
-                                <td><input type="text" name="service_mu" id="service_mu"/></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td><input type="text" name="email_mu" id="email_mu"/></td>
-                            </tr>
-                            <tr>
-                                <th>Téléphone</th>
-                                <td><input type="text" name="telephone_mu" id="telephone_mu"/></td>
-                            </tr>
-                        </table>
-                    </div>
+            
             </div>
             <div class="onglet" id="onglet3">
                 <div class="Bilan1">
