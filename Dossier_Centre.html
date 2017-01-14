@@ -69,10 +69,6 @@
                             <td><input type="text" name="telephone_p" id="telephone_p"/></td>
                         </tr>
                         <tr>
-                            <th>Examens disponibles</th>
-                            <td><input type="radio" name="choix1_ligne1" value="0"/>IRM <br><input type="radio" name="choix1_ligne1" value="1"/>Bilan cardiaque<br><input type="radio" name="choix1_ligne1" value="2"/>Consultation neurologue></td>
-                        </tr>
-                        <tr>
                             <th>Horaires Ouverture</th>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
@@ -83,7 +79,26 @@
                                 <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mn"> 
                             </td>
                         </tr>
-                    </table>
+                        </table>
+                    
+                            <TABLE>
+                            <TR> 
+                            <TD rowspan=3>Examens disponibles</TD> 
+                            <TD >IRM</TD> 
+                            <TD ><input type="radio" name="choix1_ligne1" value="0"/></TD>
+                            </TR> 
+                            <TR> 
+                            <TD >Bilan cardiaque</TD>
+                            <TD ><input type="radio" name="choix1_ligne2" value="1"/></TD> 
+                            </TR> 
+                            <TR> 
+                            <TD >Consultation neuro</TD>
+                            <TD ><input type="radio" name="choix1_ligne3" value="2"/></TD> 
+                            </TR> 
+                            </TABLE>
+                        
+                        
+                    
                 </div>
                 <div class="infos2_patient">
                     <table>
@@ -100,8 +115,9 @@
                             <td><input type="text" name="codePostal_p" id="codePostal_p"/></td>
                         </tr>
                 </table>
+                    <br><br>
                     <FORM class=Zone_Texte>
-                        <TEXTAREA name="nom" rows=4 cols=40>Description</TEXTAREA>
+                        <TEXTAREA name="nom" rows=10 cols=40>Description</TEXTAREA>
                     </FORM>
                 </div>
             </div>
