@@ -859,3 +859,9 @@ button::before, button::after {
     padding-bottom: 30px;
 	background:url("plus.gif") no-repeat 8px center;
 }
+
+.infos1_patient
+{
+    width: 600px;
+    height:900px;
+}
