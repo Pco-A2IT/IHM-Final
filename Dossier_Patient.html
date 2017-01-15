@@ -15,6 +15,7 @@
                      <div  class="gris2">
                              
             <div id="menu1" class="carreGris";>
+                <h4>Suivi</h4>
                 <img class="icone_calendrier" src="recapitulatif.png"/>
             </div>
             
@@ -44,7 +45,7 @@
             <div class="section4">
             <div class="div1">
              <img src='patient.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
-                </div>
+            </div>
             
          <div id="container">
 
@@ -137,17 +138,14 @@
                     </table>
                 </div>
             </div>
-            
-            
-            </div>
             <div class="onglet" id="onglet3">
-                <div class="Bilan1">
-                    <table>
-                        <h3 style="text-align:center">Bilan 1ère intention en URGENCES</h3>
+                     <table cellspacing='0'>   
                         <tr>
                             <th></th>
+                            <th>Examen</th>
                             <th style="text-align:center">Réalisé</th>
                         <tr>
+                            <td rowspan="3"> 1ère intention  </td>
                             <td>Scan cérébral</td>
                             <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
                         </tr>
@@ -159,61 +157,23 @@
                             <td>Bilan biologique</td>
                             <td><INPUT type="checkbox" name="BilanBiologique" id="BilanBiologique" value="1"/></td>
                         </tr>
-                    </table>
-                </div>
-                <div class="Bilan2">
-                    <table>
-                        <h3 style="text-align:center">Bilan 2nde intention</h3>
-                        <tr>
-                            <th></th>
-                            <th style="text-align:center">Planifié</th>
-                            <th style="text-align:center">Réalisé</th>
+                         <tr>
+                            <td rowspan="3"> 2nd intention  </td>
+                            <td>Bilan Cardiaque</td>
+                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
                         </tr>
                         <tr>
-                            <td>IRM</td>
-                            <td><INPUT type="checkbox" name="irmp" id="irmp" value="1"/></td>
-                            <td><INPUT type="checkbox" name="irmr" id="irmr" value="1"/></td>
-                        </tr>
-                        <tr>
-                            <td>Bilan cardiaque ETT</td>
-                            <td><INPUT type="checkbox" name="ettp" id="ettp" value="1"/></td>
-                            <td><INPUT type="checkbox" name="ettr" id="ettr" value="1"/></td>
-                        </tr>
-                        <tr>
-                            <td>Consultation neurologue</td>
-                            <td><INPUT type="checkbox" name="neurop" id="neurop" value="1"/></td>
-                            <td><INPUT type="checkbox" name="neuror" id="neuror" value="1"/></td>
+                            <td>RDV neurologue</td>
+                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
                         </tr>
                     </table>
-                    <table>
-                        <tr>
-                            <td>Récapitulatif envoyé au médecin traitant</td>
-                            <td><INPUT type="checkbox" name="recap_mt" id="recap_mt"value="1"/></td>
-                        </tr>
-                        <tr>
-                            <td>Récapitulatif envoyé à l'urgentiste</td>
-                            <td><INPUT type="checkbox" name="recap_mu" id="recap_mu" value="1"/></td>
-                        </tr>   
-                    </table>
-                    
-                            <div class="bouton1" >
-                                <a href="#" id="btn_prise_rdv">Prendre un Rendez-vous</a>
-                                <script src="Dossier_Patient.js"></script>
-                    </div>
-                            <div class="bouton1">
-                                <a href="#" id="btn_recap">Téléchargez le récapitulatif</a>
-                                <script src="Dossier_Patient.js"></script>
-                            </div>
-                    
-            
-            </div>
-        </div>
-        </div>
                 </div>
         </div>
         </div>
         </div>
-        
+        </div>
+        </div>
+        </div>
          <script src="General.js"></script>
         </form>
     </body>

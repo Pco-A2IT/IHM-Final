@@ -556,7 +556,7 @@ table {
 	box-shadow: 0 1px 2px #d1d1d1;
 }
 table th {
-	padding:21px 25px 22px 25px;
+	padding:11px 15px 12px 15px;
 	border-top:1px solid #fafafa;
 	border-bottom:1px solid #e0e0e0;
     text-align: center;
@@ -858,4 +858,8 @@ button::before, button::after {
     margin-top: 20px;
     padding-bottom: 30px;
 	background:url("plus.gif") no-repeat 8px center;
+}
+
+.vertical {
+    -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg)
 }
