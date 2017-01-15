@@ -125,5 +125,5 @@ btn.style.backgroundColor = "#90BFFF"
 } 
 function recoverBgColor(btn){ 
 var btn = document.getElementById(btn); 
-btn.style.backgroundColor = "#448EF3" 
+btn.style.backgroundColor = "#1270B3" 
 } 
