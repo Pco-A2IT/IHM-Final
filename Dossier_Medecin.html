@@ -6,6 +6,17 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="CSS.css" />
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+        <script type="text/javascript"> 
+            function play(){ 
+                document.getElementById("menu_item").style.display = ""; 
+            } 
+            function noplay(){ 
+                document.getElementById("menu_item").style.display = "none"; 
+            } 
+        </script>
     </head>
     
     <body>
@@ -39,80 +50,20 @@
         </div>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
-            <div class="section4">
+        <div class="section4">
             <div class="div1">
              <img src='medecin.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
             </div>
-         <div id="container">
-            <div class="onglet" id="onglet1">
+            <div id="container">
                 <div class="infos1_patient">
-                    <table>
-                        <tr>
-                          <tr>
-                            <th>N° ADELI :</th>
-                            <td><input type="text" placeholder="(ex: 1234567)" name="" id=""/></td>
-                        </tr>
-                        <tr>
-                            <th>Civilité :</th>
-                            <td><form>
-                                    <select name="civilite_p" id="civilite_p" size="1">
-                                        <option>M</option>
-                                        <option>Mme</option>
-                                    </select>
-                                </form></td>
-                        </tr>
-                        <tr>
-                            <th>Nom :</th>
-                            <td><input type="text" placeholder="(ex: Dupont)" name="" id=""/></td>
-                        </tr>
-                        <tr>
-                            <th>Prénom :</th>
-                            <td><input type="text" placeholder="(ex: Lucas)" name="" id=""/></td>
-                        </tr>
-                        <tr>
-                            <th>Email :</th>
-                            <td><input type="text" placeholder="(ex: adresse@example.com)" name="" id=""/></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="infos2_patient" id="table_medecin">
-                    <table>
-                        <tr>
-                            <th>Service - Centre :</th>
-                            <td><form>
-                                    <select name="civilite_p" id="civilite_p" size="1">
-                                        <option>Service Cardiologie - UNV Lyon</option>
-                                        <option>Service Neurologie - UNV Lyon</option>
-                                    </select>
-                                </form></td>
-                        </tr>
-                        <tr>
-                            <th>Téléphone :</th>
-                            <td><input type="text" placeholder="(ex: 0786413073)" name="adresse_p" id="adresse_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Adresse :</th>
-                            <td><input type="text" placeholder="(ex: 10, rue du tonkin)" name="adresse_p" id="adresse_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Ville :</th>
-                            <td><input type="text" placeholder="(ex: Lyon)" name="ville_p" id="ville_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Code postal :</th>
-                            <td><input type="text" placeholder="(ex: 69100)" name="codePostal_p" id="codePostal_p"/></td>
-                        </tr>
-                </table>
+                   <iframe  frameborder="0" width="100%" height="100%" src="test_dossierMedecin.html">
+                  </iframe>
                 </div>
             </div>
-            
-         
-         </div>
-            
-            </div>
         </div>
-        </div>
-                </div>
+    </div>
+</div>
+</div>
         
          <script src="General.js"></script>
     </body>
