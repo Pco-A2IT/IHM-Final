@@ -55,13 +55,14 @@ margin-bottom: 100px;
 } 
     </style>
 </head> 
-<body> 
+<body>
+<form action="AjoutBDD_dossierPatient.php" method="post"> 
 <table align="left" cellspacing="5px" class="table"> 
 <tr> 
 <td align="right">Civilité:</td>
-<td align="left"><input type="text" name="civilite" placeholder="civilité" list="c"/>
+<td align="left"><input type="text" name="civilite_p" placeholder="civilité" list="c"/>
     <datalist id="c">
-            <option>M</option>
+            <option>Mr</option>
             <option>Mme</option>
     </datalist>
     </td>
@@ -72,21 +73,27 @@ margin-bottom: 100px;
 </tr>
 <tr>
 <td align="right">Prénom:</td> 
-<td align="left"><input type="text" name="username" placeholder="prénom" required/></td>
+<td align="left"><input type="text" name="prenom_p" placeholder="prénom" required/></td>
 </tr>  
 <tr> 
 <td align="right">Date de naissance:</td> 
-<td align="left"><input type="date" name="borthday" /></td> 
+<td align="left"><input type="date" name="birthday_p" /></td> 
+    
+<!--script language="JavaScript">writeSource("js10");</script>
+                                <input class="inputDate" style="width:50px" name="date10_jour" id="date10_jour" value="" size="2" type="text"  placeholder="jj"> /
+                                <input class="inputDate" style="width:50px" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mm"> /
+                                <input class="inputDate" style="width:100px" name="date10_annee" id="date10_annee" value="" size="3" type="text"  placeholder="aaaa">  -->
+
 </tr>
 <tr> 
 <td align="right">Mail:</td>
 <td align="left">
-    <input type="email" name="email" placeholder="mail" id="email" required/></td> 
+    <input type="email" name="mail_p" placeholder="mail" id="email" required/></td> 
 </tr> 
 <tr> 
 <td align="right">Téléphone:</td> 
 <td align="left"> 
-<input type="tel" pattern="[0-9]{10}" id="p" name="phone" placeholder="Input 10 numbers" /> 
+<input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="Input 10 numbers" /> 
 </td> 
 </tr> 
 </table> 
@@ -95,7 +102,7 @@ margin-bottom: 100px;
 <tr> 
 <td align="right">Ville:</td> 
 <td align="left"> 
-<input type="text" name="ville" placeholder="choisir une ville" list="l"/> 
+<input type="text" name="ville_p" placeholder="choisir une ville" list="l"/> 
 <datalist id="l"> 
 <option value="LY">Lyon</option> 
 <option value="Pr">Paris</option> 
@@ -110,13 +117,13 @@ margin-bottom: 100px;
 Adresse: 
 </td> 
 <td align="left"> 
-<input type="text" name="adresse" placeholder="Rue,Résidence" required/>
+<input type="text" name="adresse_p" placeholder="Rue,Résidence" required/>
 </td> 
 </tr>
 <tr> 
 <td align="right">Code Postal:</td> 
 <td align="left"> 
-<input type="number" pattern="[0-9]{6}" id="p" name="codePostal" placeholder="Input 6 numbers" /> 
+<input type="number" pattern="[0-9]{6}" id="p" name="codePostal_p" placeholder="Input 6 numbers" /> 
 </td> 
 </tr> 
 <tr>
@@ -142,7 +149,8 @@ Adresse:
     <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
 </td> 
 </tr> 
-</table>    
+</table>
+</form>
     
 </body> 
 </html> 
