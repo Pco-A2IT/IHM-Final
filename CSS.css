@@ -860,13 +860,8 @@ button::before, button::after {
 	background:url("plus.gif") no-repeat 8px center;
 }
 
-<<<<<<< HEAD
-.vertical {
-    -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg)
-=======
 .infos1_patient
 {
     width: 600px;
     height:900px;
->>>>>>> 915de764ddb498082e8501535e88905462ce215a
 }
