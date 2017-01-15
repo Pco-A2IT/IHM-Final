@@ -346,7 +346,14 @@ input[type=button]:active{
 .titre{
   width: 80%;
   height:70px;
-  background:#1270B3;
+  background: #1270B3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #22427C, #1270B3);
+  background: -moz-linear-gradient(right, #22427C, #1270B3);
+  background: -o-linear-gradient(right, #22427C, #1270B3);
+  background: linear-gradient(to left, #22427C, #1270B3);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
   color:#ffffff;
   font-family:Arial,Verdana;
   top:20px;
@@ -897,3 +904,5 @@ width:180px;
 padding:0 9px;
 color:#666;
 }
+
+
