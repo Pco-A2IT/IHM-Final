@@ -28,24 +28,19 @@
             
             <script src="General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Liste Patients</h1>
-                <div class="myButton">
-                    <a href="#" class="myButton1">Modifier</a>
-                    <a href="#" class="myButton2">Supprimer</a>
-                </div>
+                <h1 class="titreGauche">Patients</h1>
+                 <form id="recherche" method="post">
+
+                                        <input name="saisie" type="text" placeholder="Mots-Clefs..." required />
+                                        <input class="loupe" type="submit" value="" />
+
+                    </form>   
+                
             </div>
             
             <div class="blanc";   style="border-radius: 5px;">
-                 <p><a href="Dossier_Patient.html"><button TYPE=button class="btn1 center" VALUE="Ajouter Medecin" ONCLICK="Ajouter centre()" >Ajouter Patient</button></a></p>
-                
-                <div class="recherche_p">
-                    <form action="/search" id="searchthis" method="get">
-                        <input id="search" name="q" type="text" placeholder="Nom" />
-                        <input id="search-btn" type="submit" value="Rechercher" />
-                    </form>
-                </div>
-                
-                
+                <p><a href="Dossier_Patient.html"><button TYPE=button class="btn1 center" VALUE="Ajouter Medecin" ONCLICK="Ajouter centre()" >Ajouter Patient</button></a></p>
+        
                 <div class="section1">
                     <table cellspacing='0'>   
                         <th>Fiche</th>
