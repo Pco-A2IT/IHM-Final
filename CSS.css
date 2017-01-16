@@ -2,6 +2,10 @@
 body{
     font-family:Calibri;
     background-color:#373737;
+  background: -webkit-linear-gradient(right, #696969, #373737);
+  background: -moz-linear-gradient(right, #22427C, #373737);
+  background: -o-linear-gradient(right, #22427C, #373737);
+  background: linear-gradient(to left, #22427C, #373737);
     position:relative;
 }
 
@@ -95,6 +99,11 @@ body{
     display:block;
 }
 
+.icone_ajouter{
+    width:30px;
+    height: 30px;
+}
+
 .icone_extra{
     width:55%;
     height:60%;
@@ -145,7 +154,7 @@ h4{
        left:120px;
        bottom: 100px;
        right: 100px;
-       background-color: #ffffff ;
+       background-color: #EFEFEF ;
        border: 0px solid #ffffff ;
        position: absolute;       
        z-index: 1000}
@@ -266,9 +275,8 @@ input[type=button]:active{
 	padding:5px 9px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
-    margin-top: 0px;
-    
-    position:absolute;
+    margin-top:10px;
+    margin-left:10px;
     text-decoration:none;
 }
 
@@ -291,7 +299,7 @@ input[type=button]:active{
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
-	color:#666666;
+	color:#1270B3;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
