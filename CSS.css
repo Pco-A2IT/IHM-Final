@@ -139,8 +139,8 @@ h4{
              position:relative}
 
 
-.blanc{ width: 80%;
-       height: 150%;
+.blanc{ width: 90%;
+       height:100% ;
        top:70px;
        left:120px;
        bottom: 100px;
@@ -266,8 +266,8 @@ input[type=button]:active{
 	padding:5px 9px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
-    right:200px;
-    top:10px;
+    margin-top: 0px;
+    
     position:absolute;
     text-decoration:none;
 }
@@ -344,8 +344,8 @@ input[type=button]:active{
 }
 
 .titre{
-  width: 80%;
-  height:70px;
+  width: 90%;
+  height:50px;
   background: #1270B3; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #22427C, #1270B3);
   background: -moz-linear-gradient(right, #22427C, #1270B3);
@@ -356,7 +356,7 @@ input[type=button]:active{
   -moz-osx-font-smoothing: grayscale; 
   color:#ffffff;
   font-family:Arial,Verdana;
-  top:20px;
+  top:0px;
   left:120px;
   position: absolute;
   z-index: 1200;
