@@ -6,16 +6,27 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="CSS.css" />
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+        
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+        <script type="text/javascript"> 
+            function play(){ 
+                document.getElementById("menu_item").style.display = ""; 
+            } 
+            function noplay(){ 
+                document.getElementById("menu_item").style.display = "none"; 
+            } 
+        </script>
     </head>
     
     <body>
     <div class="gris">
-                  <div  class="gris2">
+            <div  class="gris2">
              <div id="menu0" class="carreGris" ;>
                 <h4>Logout</h4>
                 <br>
                 <a href="index.html"><img class="icone_hopital" src="logout.png"/></a>
-            </div>               
+            </div>     
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_calendrier" src="recapitulatif.png"/>
@@ -37,76 +48,23 @@
             
             <script src="General.js"></script>
     <div class="titre";   style="border-radius: 5px;">
-        <h1 class="titreGauche">Médecin</h1>
-        <div class="myButton">
-            <a href="#" class="myButton1">Modifier</a>
-        </div>
+        <h1 class="titreGauche">Nouveau Médecin</h1>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
-            <div class="section4">
+        <div class="section4">
             <div class="div1">
-             <img src='medecin.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:#373737">Luigi Bardi</h1><br>
+             <img src='medecin.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">Luigi BARDI</h1><br>
             </div>
-         <div id="container">
-            <div class="onglet" id="onglet1">
+            <div id="container">
                 <div class="infos1_patient">
-                    <table>
-                        <tr>
-                          <tr>
-                            <th>N° ADELI :</th>
-                            <td>810000049774</td>
-                        </tr>
-                        <tr>
-                            <th>Civilité :</th>
-                            <td>Monsieur</td>
-                        </tr>
-                        <tr>
-                            <th>Nom :</th>
-                            <td>Bardi</td>
-                        </tr>
-                        <tr>
-                            <th>Prénom :</th>
-                            <td>Luigi</td>
-                        </tr>
-                        <tr>
-                            <th>Email :</th>
-                            <td>luigi.bardi@gmail.com</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="infos2_patient" id="table_medecin">
-                    <table>
-                        <tr>
-                            <th>Service-Centre</th>
-                            <td>Cardiologue</td>
-                        </tr>
-                          <tr>
-                            <th>Téléphone :</th>
-                            <td>Particulier</td>
-                        </tr>
-                        <tr>
-                            <th>Adresse :</th>
-                            <td>47,rue du tonkin</td>
-                        </tr>
-                        <tr>
-                            <th>Ville :</th>
-                            <td>Villeurbanne</td>
-                        </tr>
-                        <tr>
-                            <th>Code postal :</th>
-                            <td>69100</td>
-                        </tr>
-                </table>
+                   <iframe  frameborder="0" width="100%" height="100%" src="test_dossierMedecin.html">
+                  </iframe>
                 </div>
             </div>
-            
-         
-         </div>
-            
-            </div>
         </div>
-        </div>
-                </div>
+    </div>
+</div>
+</div>
         
          <script src="General.js"></script>
     </body>

@@ -1,7 +1,7 @@
 
 body{
     font-family:Calibri;
-    background-color:#373737;
+        background-color:#373737;
   background: -webkit-linear-gradient(right, #696969, #373737);
   background: -moz-linear-gradient(right, #22427C, #373737);
   background: -o-linear-gradient(right, #22427C, #373737);
@@ -43,8 +43,8 @@ body{
     padding-top:100px;"
 }
 .carreGris {
-    height:75px; 
-    width:75px; 
+    height:85px; 
+    width:85px; 
     background-color: #656565; 
     margin-bottom: 20px; 
     margin-left:auto; 
@@ -102,8 +102,8 @@ body{
 .icone_ajouter{
     width:30px;
     height: 30px;
+    vertical-align: middle;
 }
-
 .icone_extra{
     width:55%;
     height:60%;
@@ -142,8 +142,12 @@ h4{
 .gris{width: 100%;
              height: 100%;
              margin:0;
-             background-color:#373737 ;
-             border:0;
+               background-color:#373737;
+              background: -webkit-linear-gradient(right, #696969, #373737);
+              background: -moz-linear-gradient(right, #22427C, #373737);
+              background: -o-linear-gradient(right, #22427C, #373737);
+              background: linear-gradient(to left, #22427C, #373737);
+                         border:0;
             color:#ffffff;
              position:relative}
 

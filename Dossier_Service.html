@@ -16,7 +16,7 @@
                 <h4>Logout</h4>
                 <br>
                 <a href="index.html"><img class="icone_hopital" src="logout.png"/></a>
-            </div>              
+            </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_calendrier" src="recapitulatif.png"/>
@@ -36,52 +36,27 @@
                 <img class="icone_patient" src="icone_bonhomme.png"/>
             </div> 
             
+            
             <script src="General.js"></script>
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Nouveau Service</h1>
-        <div class="myButton">
-            <a href="#" class="myButton1">Valider</a>
-        </div>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='hospital.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:black">Nom du service</h1><br>
+             <img src='hospital.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:black">... ...</h1><br>
             </div>
             
             
          <div id="container">
             <div class="onglet" id="onglet1">
                 <div class="infos1_patient">
-                    <table>
-                        <tr>
-                          <tr>
-                            <th>Sevice</th>
-                            <td><input type="text" name="service_p" id="nom_p"/></td>
-                        </tr>
-                         <tr>
-                          <tr>
-                            <th>Hôpital</th>
-                            <td><input type="text" name="hopital_p" id="hopital_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Téléphone</th>
-                            <td><input type="text" name="telephone_p" id="telephone_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Horaires Ouverture</th>
-                            <td>
-                                <script language="JavaScript">writeSource("js10");</script>
-                                <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="100" type="text"  placeholder="h" width="100px">       :
-                                <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mn" width="100px">           /
-                                
-                                <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="2" type="text"  placeholder="h" width="100px">      :
-                                <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mn" width="100px"> 
-                            </td>
-                        </tr>
-                        </table>
-                    
-                            <TABLE>
+                    <iframe  frameborder="0" width="100%" height="100%" src="test_dossierService.html">
+                    </iframe>     
+                </div>
+                <div class="infos2_patient">
+                    <br><br>
+                    <TABLE>
                             <TR> 
                             <TD rowspan=3>Examens disponibles</TD> 
                             <TD >IRM</TD> 
@@ -96,26 +71,6 @@
                             <TD ><input type="radio" name="choix1_ligne3" value="2"/></TD> 
                             </TR> 
                             </TABLE>
-                        
-                        
-                    
-                </div>
-                <div class="infos2_patient">
-                    <table>
-                        <tr>
-                            <th>Adresse</th>
-                            <td><input type="text" name="adresse_p" id="adresse_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Ville</th>
-                            <td><input type="text" name="ville_p" id="ville_p"/></td>
-                        </tr>
-                        <tr>
-                            <th>Code postal</th>
-                            <td><input type="text" name="codePostal_p" id="codePostal_p"/></td>
-                        </tr>
-                </table>
-                    <br><br>
                     <FORM class=Zone_Texte>
                         <TEXTAREA name="nom" rows=10 cols=40>Description</TEXTAREA>
                     </FORM>
