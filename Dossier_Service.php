@@ -10,13 +10,10 @@
     </head>
     
     <body>
+        <form action="AjoutBDD_Service.php" method="post">  
        <div class="gris">
             <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <br>
-                <a href="index.html"><img class="icone_hopital" src="logout.png"/></a>
-            </div>              
+                             
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_calendrier" src="recapitulatif.png"/>
@@ -40,7 +37,7 @@
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Nouveau Service</h1>
         <div class="myButton">
-            <a href="#" class="myButton1">Valider</a>
+            <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
         </div>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
@@ -56,27 +53,32 @@
                     <table>
                         <tr>
                           <tr>
-                            <th>Sevice</th>
-                            <td><input type="text" name="service_p" id="nom_p"/></td>
-                        </tr>
-                         <tr>
-                          <tr>
-                            <th>Hôpital</th>
-                            <td><input type="text" name="hopital_p" id="hopital_p"/></td>
+                            <th>Service</th>
+                            <td><input type="text" name="service_s" id="nom_s"/></td>
                         </tr>
                         <tr>
+                                <th>Numero Siret</th>
+                                <td><input type="text" name="siret_s" id="hopital_s"/></td>
+                        </tr>
+                         <tr>
+                            <tr>
+                                <th>Centre</th>
+                                <td><input type="text" name="centre_s" id="centre_s"/></td>
+                            </tr>
+                        
+                        <tr>
                             <th>Téléphone</th>
-                            <td><input type="text" name="telephone_p" id="telephone_p"/></td>
+                            <td><input type="text" name="telephone_s" id="telephone_s"/></td>
                         </tr>
                         <tr>
                             <th>Horaires Ouverture</th>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
-                                <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="100" type="text"  placeholder="h" width="100px">       :
-                                <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mn" width="100px">           /
+                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="time"  placeholder="h"> :
+                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
                                 
-                                <input class="inputDate" name="date10_jour" id="date10_jour" value="" size="2" type="text"  placeholder="h" width="100px">      :
-                                <input class="inputDate" name="date10_mois" id="date10_mois"value="" size="2" type="text"  placeholder="mn" width="100px"> 
+                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
+                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn"> 
                             </td>
                         </tr>
                         </table>
@@ -104,20 +106,20 @@
                     <table>
                         <tr>
                             <th>Adresse</th>
-                            <td><input type="text" name="adresse_p" id="adresse_p"/></td>
+                            <td><input type="text" name="adresse_s" id="adresse_s"/></td>
                         </tr>
                         <tr>
                             <th>Ville</th>
-                            <td><input type="text" name="ville_p" id="ville_p"/></td>
+                            <td><input type="text" name="ville_s" id="ville_s"/></td>
                         </tr>
                         <tr>
                             <th>Code postal</th>
-                            <td><input type="text" name="codePostal_p" id="codePostal_p"/></td>
+                            <td><input type="text" name="codePostal_s" id="codePostal_s"/></td>
                         </tr>
                 </table>
                     <br><br>
                     <FORM class=Zone_Texte>
-                        <TEXTAREA name="nom" rows=10 cols=40>Description</TEXTAREA>
+                        <TEXTAREA name="description_s" rows=10 cols=40>Description</TEXTAREA>
                     </FORM>
                 </div>
             </div>
@@ -131,6 +133,7 @@
                 </div>
         
          <script src="General.js"></script>
+        </form>
     </body>
 
 </html>
