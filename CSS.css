@@ -879,11 +879,6 @@ button::before, button::after {
 	background:url("plus.gif") no-repeat 8px center;
 }
 
-.infos1_patient
-{
-    width: 750px;
-    height:900px;
-}
 
 #recherche {
 margin-top: 15px;
@@ -918,3 +913,42 @@ color:#666;
 }
 
 
+#onglet1 table { 
+width:auto; 
+} 
+#onglet1 tr { 
+width: auto;
+font-family: "Calibri"; 
+font-weight:bold; 
+color: #1270B3; 
+} 
+#onglet1 input{ 
+color: #1270B3; 
+font-weight:bold; 
+font-family: "arial"; 
+height: 35px; 
+width: 150px;
+line-height: 30px; 
+border-radius:5px; 
+} 
+.submit { 
+width: 150px; 
+height: 40px; 
+cursor :hand;
+font-size: 20px; 
+color: #ffffff; 
+font-family: "Calibri"; 
+background-color: #1270B3; 
+border: 0px; 
+} 
+.thead { 
+height: 40px; background : #1270B3; 
+font-family: "Calibri"; 
+font-size: 30px; 
+font-weight: 700; 
+color: #ffffff; 
+background: #1270B3; 
+} 
+#3{ 
+margin-bottom: 100px; 
+} 
