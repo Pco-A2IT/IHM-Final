@@ -3,8 +3,13 @@
    <title> Liste Centres</title>
    <link href="CSS.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+        <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
          <div class="gris">
             <div  class="gris2">
              <div id="menu0" class="carreGris" ;>
@@ -31,17 +36,28 @@
                 <img class="icone_patient" src="icone_bonhomme.png"/>
             </div> 
             
-            <script src="General.js"></script>
+            
             <div class="titre"; style="border-radius: 5px;">
                 <h1 class="titreGauche">Services</h1>
                         <form id="recherche" method="post">
 
-                                        <input name="saisie" type="text" placeholder="Rechercher Service..." required />
-                                        <input class="loupe" type="submit" value="" />
+                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..." required />
+                            <input class="loupe" type="submit" value="" />
 
                     </form>   
                 
             </div>
+            
+            <script>
+                //utilisation de jQuery :
+                $(function($)   {
+                    $('#saisie').autocomplete({
+                        source : 'listeServices.php'
+                    });
+                });
+            </script>    
+             
+            <script src="General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton">
                             <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="ajouter.png"> Ajouter Service</a>
