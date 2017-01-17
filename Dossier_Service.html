@@ -49,14 +49,39 @@
             
             
          <div id="container">
-            <div class="onglet" id="onglet1">
-                <div class="infos1_patient">
-                    <iframe  frameborder="0" width="100%" height="100%" src="test_dossierService.html">
-                    </iframe>     
-                </div>
-                <div class="infos2_patient">
-                    <br><br>
-                    <TABLE>
+         <div class="onglet" id="onglet1">
+                <form action="AjoutBDD_dossierService.php" method="post"> 
+                    <table align="left" cellspacing="5px" class="table"> 
+                         <tr> 
+                                <td align="right">Service:</td>
+                                <td align="left"><input type="text" name="service_c" id="nom_s" placeholder="Nom Service"/>
+                        </tr>
+                        <tr> 
+                                <td align="right">Numéro Siret:</td>
+                                <td align="left"><input type="text" name="siret_s" id="hopital_s" placeholder="Num"/>
+                        </tr>
+                        <tr> 
+                                <td align="right">Centre:</td>
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="Centre associé"/>
+                        </tr>
+                         <tr> 
+                                <td align="right">Téléphone:</td>
+                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="Téléphone"/>
+                        </tr>
+                        <tr>
+                            <th>Horaires Ouverture</th>
+                            <td>
+                                <script language="JavaScript">writeSource("js10");</script>
+                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="time"  placeholder="h"> :
+                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
+                                
+                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
+                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn"> 
+                            </td>
+                        </tr>
+                        </table>
+                    
+                            <TABLE>
                             <TR> 
                             <TD rowspan=3>Examens disponibles</TD> 
                             <TD >IRM</TD> 
@@ -71,11 +96,15 @@
                             <TD ><input type="radio" name="choix1_ligne3" value="2"/></TD> 
                             </TR> 
                             </TABLE>
+                        
+                  
                     <FORM class=Zone_Texte>
-                        <TEXTAREA name="nom" rows=10 cols=40>Description</TEXTAREA>
+                        <TEXTAREA name="description_s" rows=10 cols=40>Description</TEXTAREA>
                     </FORM>
-                </div>
-            </div>
+    
+             </form>
+             </div>
+
             
          
          </div>
