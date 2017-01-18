@@ -161,7 +161,7 @@ h4{
        background-color: #EFEFEF ;
        border: 0px solid #ffffff ;
        position: absolute;       
-       z-index: 1000}
+       z-index: 10}
 
 .section1{
   width:900px;
@@ -371,7 +371,7 @@ input[type=button]:active{
   top:0px;
   left:120px;
   position: absolute;
-  z-index: 1200;
+  z-index: 18;
 }
 
 
