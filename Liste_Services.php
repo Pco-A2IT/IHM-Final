@@ -1,6 +1,6 @@
 <!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
 <!-- <?php
-    include('config.php');
+    //include('config.php');
 ?> -->
 <html>
 <head>
