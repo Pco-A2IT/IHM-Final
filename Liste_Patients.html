@@ -16,26 +16,25 @@
            <div  class="gris2">
              <div id="menu0" class="carreGris" ;>
                 <h4>Logout</h4>
-                <br>
-                <img class="icone_hopital" src="Icones/logout.png"/>
+                <img class="icone_menu" src="Icones/logout.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
-                <img class="icone_calendrier" src="Icones/recapitulatif.png"/>
+                <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             
             <div id="menu2" class="carreGris";>
                 <h4>Services</h4>
-                <img class="icone_hopital" src="Icones/hopital.PNG"/>
+                <img class="icone_menu" src="Icones/hopital.PNG"/>
             </div>
                 
             <div id="menu3" class="carreGris" style="background-color:#1270B3";>
                 <h4>Patients</h4>    
-                <img class="icone_patient" src="Icones/patient_blanc.png"/>
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu4" class="carreGris";>
                 <h4>Médecins</h4>    
-                <img class="icone_patient" src="Icones/medecin_blanc.png"/>
+                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
             
             <div class="titre";   style="border-radius: 5px;">
@@ -95,7 +94,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
 ?><tr>
-                           <td><img src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
+                           <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
                            <td><?php print_r($dnn['date_naissance']); ?></td>

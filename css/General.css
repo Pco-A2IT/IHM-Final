@@ -62,40 +62,20 @@ body{
 }
 
 .icone_menu{
-    width:75%; 
-    height:65%; 
+    width:43%; 
+    height:45%; 
     margin-left:auto; 
-    margin-right:auto; 
-    display:block;
-}
-.icone_hopital{
-    width:55%; 
-    height:45%;
-    margin-left:auto;
-    margin-right:auto; 
-    display:block;
-}
-.icone_calendrier{
-    width:90%; 
-    height:85%; 
-    margin-left:auto; 
-    margin-right:auto; 
+    margin-right:auto;
+    margin-top: 10px;
     display:block;
 }
 
-.icone_patient{
-    width:50%;
-    height:45%;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-}
-
-.icone_dossier{
-    width:40%; 
-    height:40%;
-    margin-left:auto;
-    margin-right:auto;
+.icone_suivi{
+    width:80%; 
+    height:75%; 
+    margin-left:auto; 
+    margin-right:auto; 
+    margin-top: 0px;
     display:block;
 }
 
@@ -104,6 +84,11 @@ body{
     height: 30px;
     vertical-align: middle;
 }
+
+.icone_liste {
+    
+}
+
 .icone_extra{
     width:55%;
     height:60%;
