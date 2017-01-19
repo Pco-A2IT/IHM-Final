@@ -5,7 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script>
+    function deleteRow(obj){
+      if(confirm('Vous êtes sure?'))
+    {
+      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
+    }
+    }
+    </script>
         <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
@@ -62,7 +70,7 @@
                             <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div>
                 <div class="section1">
-                    <table cellspacing='0'>   
+                    <table cellspacing='0' id="tbl">   
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -104,7 +112,7 @@ while($dnn = $pdo_select->fetch() )
                             <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
                             
                            <td><a href="Dossier_Patient_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-                            <td><img class="supprimer" src="Icones/button_supprimer.png"></td>
+                            <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
                         </tr>
                         
                                                 

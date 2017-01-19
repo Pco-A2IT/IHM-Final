@@ -8,6 +8,14 @@
    <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <script>
+    function deleteRow(obj){
+      if(confirm('Vous êtes sure?'))
+    {
+      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
+    }
+    }
+    </script>
         <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
@@ -68,7 +76,7 @@
                             <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
-                    <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+                    <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th>Centre</th>
                         <th>Service</th>
@@ -116,7 +124,7 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
          <td><a href="Dossier_Service_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-        <td><img class="supprimer" src="Icones/button_supprimer.png"></td>
+        <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
             
     </tr>
 <?php
