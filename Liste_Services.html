@@ -27,7 +27,7 @@
             
             <div id="menu2" class="carreGris" style="background-color:#1270B3";>
                 <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital.PNG"/>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
                 
             <div id="menu3" class="carreGris";>
@@ -64,7 +64,7 @@
              
             <script src="js/General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
-                       <div class="myButton">
+                       <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
@@ -105,6 +105,7 @@ while($dnn = $pdo_select->fetch() )
 ?>
        
     <tr>
+        <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"><?php print_r($dnn['id_service']); ?></td>
         <td class="left"> <?php print_r($dnn['numSiret']); ?> </td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
@@ -114,6 +115,8 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
+         <td><a href="Dossier_Patient.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
+        <td><img class="supprimer" src="Icones/button_supprimer.png"></td>
             
     </tr>
 <?php
