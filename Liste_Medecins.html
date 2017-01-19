@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="./CSS.css"type="text/css"rel="stylesheet"/> 
+    <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
         <!--inclusion CSSS pour autocompletion-->
@@ -21,25 +21,25 @@
              <div id="menu0" class="carreGris" ;>
                 <h4>Logout</h4>
                 <br>
-                <img class="icone_hopital" src="logout.png"/>
+                <img class="icone_hopital" src="Icones/logout.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
-                <img class="icone_calendrier" src="recapitulatif.png"/>
+                <img class="icone_calendrier" src="Icones/recapitulatif.png"/>
             </div>
             
             <div id="menu2" class="carreGris";>
                 <h4>Services</h4>
-                <img class="icone_hopital" src="hopital.PNG"/>
+                <img class="icone_hopital" src="Icones/hopital.PNG"/>
             </div>
                 
             <div id="menu3" class="carreGris";>
                 <h4>Patients</h4>    
-                <img class="icone_patient" src="icone_bonhomme.png"/>
+                <img class="icone_patient" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu4" class="carreGris" style="background-color:#1270B3";>
                 <h4>Médecins</h4>    
-                <img class="icone_patient" src="icone_bonhomme.png"/>
+                <img class="icone_patient" src="Icones/medecin_blanc.png"/>
             </div> 
             
             
@@ -66,7 +66,7 @@
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton">
-                            <a href="Dossier_Medecin.html" class="myButton1"><img class="icone_ajouter" src="ajouter.png"> Ajouter Médecin</a>
+                            <a href="Dossier_Medecin.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
                         </div>
                 
                 
@@ -107,7 +107,7 @@ while($dnn = $pdo_select->fetch() )
 {
 ?>
                         <tr>
-                           <td><img src="medecin.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
+                           <td><img src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td><?php print_r($dnn['civilite_m']); ?></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
@@ -115,8 +115,8 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['id_service']); ?></td>
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
-                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
+                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
+                            <td><img class="supprimer" src="Icones/button_supprimer.png"></td>
                         </tr>
                         
 <?php

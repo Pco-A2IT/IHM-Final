@@ -13,7 +13,7 @@ boutonElt0.addEventListener("click", function () {
 
 boutonElt1.addEventListener("click", function () {
     console.log("clic1");
-     top.location.href='Calendrier.html'; 
+     top.location.href='Recapitulatif.html'; 
 });
 
 boutonElt2.addEventListener("click", function () {
