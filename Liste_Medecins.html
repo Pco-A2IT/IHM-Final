@@ -1,10 +1,14 @@
+<?php
+   include('config.php');
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="CSS.css"type="text/css"rel="stylesheet"/> 
+    <link href="./CSS.css"type="text/css"rel="stylesheet"/> 
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-        <!--inclusion CSS pour autocompletion-->
+        <!--inclusion CSSS pour autocompletion-->
     <title>Liste Médecins</title>
 </head>
 <body>
@@ -17,7 +21,7 @@
              <div id="menu0" class="carreGris" ;>
                 <h4>Logout</h4>
                 <br>
-                <a href="index.html"><img class="icone_hopital" src="logout.png"/></a>
+                <img class="icone_hopital" src="logout.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
@@ -43,7 +47,7 @@
                 <h1 class="titreGauche">Médecins</h1>
                         <form id="recherche" method="post">
 
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..." required />
+                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                             <input class="loupe" type="submit" value="" />
 
                     </form>   
@@ -59,7 +63,7 @@
                 });
             </script>
                     
-            <script src="General.js"></script>        
+            <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton">
                             <a href="Dossier_Medecin.html" class="myButton1"><img class="icone_ajouter" src="ajouter.png"> Ajouter Médecin</a>
@@ -78,9 +82,49 @@
                         <th>Ville</th>
                         <th></th>
                         <th></th>
+                        
+                        
+                        
+                        <?php
 
+if(isset($_POST['saisie'])){
+    $query = 'SELECT * FROM medecin WHERE nom_m LIKE :term';
+    $term = $_POST['saisie'];
+}
+else{
+    $query = 'SELECT * FROM medecin ';
+    $term="";
+}
+                        
 
+                        
+try {
+	$pdo_select = $bdd->prepare($query);
+	$pdo_select->execute(array('term' => $term.'%'));
+  } catch (PDOException $e){ echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+
+while($dnn = $pdo_select->fetch() )
+{
+?>
                         <tr>
+                           <td><img src="medecin.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
+                           <td><?php print_r($dnn['civilite_m']); ?></td>
+                           <td><?php print_r($dnn['nom_m']); ?></td>
+                           <td><?php print_r($dnn['prenom_m']); ?></td>
+                           <td><?php print_r($dnn['mail_m']); ?></td>
+                           <td><?php print_r($dnn['id_service']); ?></td>
+                            <td><?php print_r($dnn['telephone_m']); ?></td>
+                            <td><?php print_r($dnn['ville_m']); ?></td>
+                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="loupe.png"> </a></td>
+                            <td><img class="supprimer" src="button_supprimer.png"></td>
+                        </tr>
+                        
+<?php
+}
+?>
+
+
+                       <!-- <tr>
                            <td><img src="medecin.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td>Monsieur</td>
                            <td>Bardi</td>
@@ -103,7 +147,7 @@
                             <td>Villeurbanne</td>
                             <td><img class="supprimer" src="loupe.png"></td>
                             <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
+                        </tr> -->
                     </table> 
 
                 </div>      
