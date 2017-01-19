@@ -38,9 +38,12 @@
             
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
-            <h1 class="titreGauche">Nouveau Service</h1>
+            <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+              <div class="myButton" id="Ajouter_liste">
+                            <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
+                </div>
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
@@ -105,11 +108,7 @@
                             <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_s" placeholder="(ex: 69100)" /> 
                             </td> 
                         </tr>
-                        <tr height="60px"> 
-                            <td align="center"  colspan="2"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
-                        </tr> 
+            
                     </table>
                 </form>
              </div>
@@ -130,9 +129,7 @@
                             <td><input type="radio" name="choix1_ligne3" value="2"/></td> 
                             </tr>
                             <tr>
-                            <td align="center"  colspan="2"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
+        
                              </tr>
                     </table>
                 </div> 
