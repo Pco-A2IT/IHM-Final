@@ -1,7 +1,7 @@
 
 body{
-    font-family:Calibri;
-        background-color:#373737;
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+  background-color:#373737;
   background: -webkit-linear-gradient(right, #696969, #373737);
   background: -moz-linear-gradient(right, #22427C, #373737);
   background: -o-linear-gradient(right, #22427C, #373737);
@@ -62,40 +62,20 @@ body{
 }
 
 .icone_menu{
-    width:75%; 
-    height:65%; 
+    width:43%; 
+    height:45%; 
     margin-left:auto; 
-    margin-right:auto; 
-    display:block;
-}
-.icone_hopital{
-    width:55%; 
-    height:45%;
-    margin-left:auto;
-    margin-right:auto; 
-    display:block;
-}
-.icone_calendrier{
-    width:90%; 
-    height:85%; 
-    margin-left:auto; 
-    margin-right:auto; 
+    margin-right:auto;
+    margin-top: 10px;
     display:block;
 }
 
-.icone_patient{
-    width:50%;
-    height:45%;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-}
-
-.icone_dossier{
-    width:40%; 
-    height:40%;
-    margin-left:auto;
-    margin-right:auto;
+.icone_suivi{
+    width:80%; 
+    height:75%; 
+    margin-left:auto; 
+    margin-right:auto; 
+    margin-top: 0px;
     display:block;
 }
 
@@ -104,6 +84,13 @@ body{
     height: 30px;
     vertical-align: middle;
 }
+
+.icone_liste {
+    width:25px;
+    height:28px;
+    vertical-align: middle;
+}
+
 .icone_extra{
     width:55%;
     height:60%;
@@ -176,7 +163,7 @@ h4{
   width:900px;
   left:80px;
   top:0px;
-  margin-top: 20px;
+  margin-top: 10px;
   position:absolute;
 }
 
@@ -273,9 +260,7 @@ input[type=button]:active{
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:5px 9px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
@@ -304,9 +289,7 @@ input[type=button]:active{
 	display:inline-block;
 	cursor:pointer;
 	color:#1270B3;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:5px 9px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
@@ -317,22 +300,17 @@ input[type=button]:active{
     text-decoration:none;
 }
 
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
-	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
-	background-color:#e9e9e9;
-}
+
 .myButton:active {
 	position:relative;
 	top:1px;
+   
 }
 
-
+#Ajouter_liste{
+    position: relative;
+    left: 940px;
+    }
 .titreGauche{
   left:60px;
   top:-10px;
@@ -363,7 +341,7 @@ input[type=button]:active{
   background: -moz-linear-gradient(right, #22427C, #1270B3);
   background: -o-linear-gradient(right, #22427C, #1270B3);
   background: linear-gradient(to left, #22427C, #1270B3);
-  font-family: "Roboto", sans-serif;
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
   color:#ffffff;
@@ -394,8 +372,7 @@ input[type=button]:active{
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
-	font-size:19px;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:9px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
@@ -558,9 +535,7 @@ table a:hover {
 	text-decoration:underline;
 }
 table {
-	font-family:Arial, Helvetica, sans-serif;
-	color:#666;
-	font-size:12px;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
 	margin:20px;
@@ -652,15 +627,14 @@ table tr:hover td {
 
 .title {
 	color: #337ab7;
-    margin-top:20px;
+    margin-top:30px;
     text-decoration: none; 
     line-height: 1.42857143;
     border-bottom: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
     padding: 10px 40px;
-    font-weight: bold; 
     cursor:pointer;
-    font-size:20px;
+    font-size:15px;
 }
 
 .onglet{
@@ -729,9 +703,7 @@ table tr:hover td {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:100px 64px;
 	text-decoration:none;
 }
@@ -905,7 +877,7 @@ display:block;
 }
   
 #recherche input[type=text] {
-font:300 12px HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 background:none;
 width:180px;
 padding:0 9px;
@@ -913,19 +885,17 @@ color:#666;
 }
 
 
-#onglet1 table { 
+.onglet table { 
 width:auto; 
 } 
-#onglet1 tr { 
+.onglet tr { 
 width: auto;
-font-family: "Calibri"; 
-font-weight:bold; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 color: #1270B3; 
 } 
-#onglet1 input{ 
+.onglet input{ 
 color: #1270B3; 
-font-weight:bold; 
-font-family: "arial"; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
 width: 150px;
 line-height: 30px; 
@@ -937,15 +907,13 @@ height: 40px;
 cursor :hand;
 font-size: 20px; 
 color: #ffffff; 
-font-family: "Calibri"; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 background-color: #1270B3; 
 border: 0px; 
 } 
 .thead { 
 height: 40px; background : #1270B3; 
-font-family: "Calibri"; 
-font-size: 30px; 
-font-weight: 700; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 color: #ffffff; 
 background: #1270B3; 
 } 

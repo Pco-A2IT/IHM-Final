@@ -1,13 +1,21 @@
 <!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<!-- <?php
-    //include('config.php');
-?> -->
+<?php
+    include('config.php');
+?> 
 <html>
 <head>
-   <title> Liste Centres</title>
-   <link href="CSS.css"type="text/css"rel="stylesheet"/> 
+   <title> Liste Services</title>
+   <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <script>
+    function deleteRow(obj){
+      if(confirm('Vous êtes sure?'))
+    {
+      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
+    }
+    }
+    </script>
         <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
@@ -15,30 +23,29 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- inclusion de jQuery et jQuery.ui-->
          <div class="gris">
-            <div  class="gris2">
+             <div  class="gris2">
              <div id="menu0" class="carreGris" ;>
                 <h4>Logout</h4>
-                <br>
-                <a href="index.html"><img class="icone_hopital" src="logout.png"/></a>
-            </div>     
+                <img class="icone_menu" src="Icones/logout.png"/>
+            </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
-                <img class="icone_calendrier" src="recapitulatif.png"/>
+                <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             
             <div id="menu2" class="carreGris" style="background-color:#1270B3";>
                 <h4>Services</h4>
-                <img class="icone_hopital" src="hopital.PNG"/>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
                 
             <div id="menu3" class="carreGris";>
                 <h4>Patients</h4>    
-                <img class="icone_patient" src="icone_bonhomme.png"/>
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu4" class="carreGris";>
                 <h4>Médecins</h4>    
-                <img class="icone_patient" src="icone_bonhomme.png"/>
-            </div> 
+                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
+            </div>
             
             
             <div class="titre"; style="border-radius: 5px;">
@@ -63,13 +70,13 @@
                 });
             </script>    
              
-            <script src="General.js"></script> 
+            <script src="js/General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
-                       <div class="myButton">
-                            <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="ajouter.png"> Ajouter Service</a>
+                       <div class="myButton" id="Ajouter_liste">
+                            <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
-                    <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+                    <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th>Centre</th>
                         <th>Service</th>
@@ -106,6 +113,7 @@ while($dnn = $pdo_select->fetch() )
 ?>
        
     <tr>
+        <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"><?php print_r($dnn['id_service']); ?></td>
         <td class="left"> <?php print_r($dnn['numSiret']); ?> </td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
@@ -115,6 +123,9 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
+        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="loupe.png"></a></td>
+        <td><img class="supprimer" src="Icones/button_supprimer.png"  > </td>
+        
             
     </tr>
 <?php
