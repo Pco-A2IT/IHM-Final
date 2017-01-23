@@ -73,7 +73,7 @@
             <script src="js/General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
                     <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
