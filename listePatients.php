@@ -15,12 +15,15 @@ $requete = $bdd->prepare('SELECT * FROM patient WHERE nom_p LIKE :term'); // j'e
 $requete->execute(array('term' => $term.'%'));
 
 $array = array(); // on créé le tableau
+$row = array();
 
 while($donnee = $requete->fetch(PDO::FETCH_ASSOC)) // on effectue une boucle pour obtenir les données
 {
   //  if (stripos($donnee[''], $_GET['term']) === 0) {
-        array_push($array, $donnee['nom_p']); // et on ajoute celles-ci à notre tableau
-
+    $concat = $donnee['nom_p'] . " " . $donnee['prenom_p'];
+    array_push($array, $concat);
+   // et on ajoute celles-ci à notre tableau
+   // $concat=($array . $row)
    // }
 }
 
