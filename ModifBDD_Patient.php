@@ -67,7 +67,12 @@ while ($donnees = $req->fetch())
     echo $birthday_p;
     }
     
+    $id_medecin_traitant= $donnees['ID_medecin_traitant'];
+    echo $id_medecin_traitant;
     
+    $id_medecin_appelant= $donnees['ID_medecin_autre'];
+    echo $id_medecin_appelant;
+        
     if($_POST['nom_m_traitant']==''){$nom_m_traitant= "";}
     else{$nom_m_traitant=$_POST['nom_m_traitant'];}
     echo $nom_m_traitant;
@@ -96,9 +101,9 @@ if($nom_m_traitant !="" && $prenom_m_traitant !=""){
         $id_medecin_traitant=$donn['id_medecin'];
     }
 }
-else{
+/*else{
     $id_medecin_traitant=$donnees['ID_medecin_traitant'];
-}
+}*/
 
 echo "Nouveau medecin traitant: ".$id_medecin_traitant;
 ///////////////////////////
@@ -109,13 +114,13 @@ $req3->execute(array($nom_m_appelant, $prenom_m_appelant ));
 
 if($nom_m_appelant!="" && $prenom_m_appelant!=""){
 while ($do = $req3->fetch()){
-        $id_medecin_appelant=$do['id_medecin'];
-        
+        $id_medecin_appelant=$do['id_medecin'];        
     }
 }
-else{
+/*else{
     $id_medecin_appelant=$donnees['ID_medecin_appelant'];
-}
+    echo $donnees['ID_medecin_appelant'];
+}*/
 
 echo "Nouveau medecin appelant :".$id_medecin_appelant;
 $req->closeCursor();
@@ -148,6 +153,6 @@ $req->execute(array(
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-//header('Location: Liste_Patients.php');
+header('Location: Liste_Patients.php');
 
 ?>
