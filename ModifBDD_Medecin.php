@@ -105,9 +105,9 @@ $req->execute(array(
 	));
 
 ///////////////////////////
-/*Retour vers la liste_Service*/
+/*Retour vers la liste_patient*/
 ///////////////////////////
 
-//header('Location: Liste_Medecins.php');
+header('Location: Liste_Medecins.php');
 
 ?>

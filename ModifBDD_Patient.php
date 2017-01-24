@@ -144,6 +144,6 @@ $req->execute(array(
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-header('Location: Liste_Services.php');
+header('Location: Liste_Patients.php');
 
 ?>
