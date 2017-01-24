@@ -89,7 +89,7 @@ $req->closeCursor();
 ///////////////////////////
 
 
-$req = $bdd->prepare('UPDATE medecin SET num_adeli_m=:nv_num_adeli_m, id_service= :nv_id_service, civilite_m= :nv_civilite_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m, telephone_m= :nv_telephone_m WHERE id_medecin = :jointure ');
+$req = $bdd->prepare('UPDATE medecin SET num_adeli_m=:nv_num_adeli_m , id_service= :nv_id_service, telephone_m= :nv_telephone_m, civilite_m= :nv_civilite_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m WHERE id_medecin = :jointure ');
 $req->execute(array(
 	'nv_num_adeli_m' => $num_adeli_m,
     'nv_id_service' => $id_service,
@@ -108,6 +108,6 @@ $req->execute(array(
 /*Retour vers la liste_Service*/
 ///////////////////////////
 
-//header('Location: Liste_Services.php');
+//header('Location: Liste_Medecins.php');
 
 ?>
