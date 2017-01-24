@@ -123,7 +123,7 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
-        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="loupe.png"></a></td>
+        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_loupe.png"></a></td>
         <td><img class="supprimer" src="Icones/button_supprimer.png"  > </td>
         
             
