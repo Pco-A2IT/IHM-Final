@@ -19,7 +19,7 @@
             <form class="login-form">
                 <input type="text" placeholder="Identifiant"/>
                 <input type="password" placeholder="Mot de passe"/>
-                <button><a href="Liste_Services.php">Se connecter</a></button>
+                <button><a href="Liste_Patients.php">Se connecter</a></button>
                 <p class="message">Pas encore inscrit? <a href="#">Inscription</a></p>
             </form>
       </div>

@@ -32,7 +32,8 @@ while ($donnees = $req->fetch())
     
     
 
-}                                     
+} 
+if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req2->execute(array($id_service));
 
@@ -42,6 +43,11 @@ $req2->execute(array($id_service));
         $centre_m=$donn['centre_s'];
     
     }
+}
+else{
+        $service_m=0;
+        $centre_m=0;
+}
                         
 $req->closeCursor();            
 ?>
@@ -132,14 +138,14 @@ $req->closeCursor();
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m ?>" />
+                            <input type="text" name="centre_m" placeholder="<?php if($centre_m!=0){echo $centre_m;} else{echo "Centre du médecin";} ?>" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Service: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="service_m" placeholder="<?php echo $service_m ?>" />
+                            <input type="text" name="service_m" placeholder="<?php if($service_m!=0){echo $service_m;} else{echo "Service du médecin";} ?>" />
                             </td>
                             </tr>
                             <tr> 

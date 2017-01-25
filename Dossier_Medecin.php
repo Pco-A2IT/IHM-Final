@@ -87,14 +87,14 @@
                             <td align="right"> Service: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Service associé" required/>
+                            <input type="text" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Centre associé" required/>
+                            <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
                             </td>
                             </tr>
                             <tr> 
