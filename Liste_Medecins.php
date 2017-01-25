@@ -73,14 +73,14 @@
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Medecin.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
+                            <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
                         </div>
                 
                 
                 <div class="section1">
                     <table cellspacing='0' id="tbl">   
                         <th></th>
-                        <th>Civilié </th>
+                        <th>Civilité </th>
                         <th>Nom </th>
                         <th>Prénom </th>
                         <th>Email </th>
@@ -122,8 +122,8 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['id_service']); ?></td>
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
-                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-                            <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
+                            <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
+                            <td><a href="SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
 <?php
