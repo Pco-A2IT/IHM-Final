@@ -115,14 +115,20 @@
                             <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_traitant" placeholder="Rentrer Nom"/>
-                                </td>
+                            <input type="text" name="nom_m_traitant" placeholder="Nom"/>
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                            </td>
                         </tr>
                             <tr>
                             <td align="right">Médecin appelant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_appelant" placeholder="Rentrer nom" list="a"/> 
-                                </td>
+                            <input type="text" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                            </td>
                             </tr>   
                             <tr height="60px"> 
                             <td align="center"  colspan="2"> 

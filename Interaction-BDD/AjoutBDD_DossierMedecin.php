@@ -2,6 +2,10 @@
 // Connexion à la base de données
 include('../config.php');
 
+
+
+
+
 $req = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, ? ,111, ?,?,?,?,?,?,?,?)');
 
 
