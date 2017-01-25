@@ -169,19 +169,19 @@ $req->closeCursor();
                             <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
-                            <input type="text" name="nom_m_traitant" placeholder="<?php echo $nom_m_traitant ?>"/>
+                            <input type="text" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
                             </td>
                             <td align="left"> 
-                            <input type="text" name="prenom_m_traitant" placeholder="<?php echo $prenom_m_traitant ?>"/>
+                            <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                             </td>
                             </tr>
                             <tr>
                             <td align="right">Médecin appelant:</td> 
                             <td align="left"> 
-                            <input type="text" name="nom_m_appelant" placeholder="<?php echo $nom_m_appelant ?>" list="a"/> 
+                            <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
                             </td>
                             <td align="left"> 
-                            <input type="text" name="prenom_m_appelant" placeholder="<?php echo $prenom_m_appelant ?>" list="a"/> 
+                            <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                             </td>
                             </tr>   
                     </table>
