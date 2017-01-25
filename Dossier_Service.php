@@ -10,7 +10,7 @@
     </head>
     
     <body>
-    <form action="AjoutBDD_Service.php" method="post">    
+    <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post">    
     <div class="gris">
               <div  class="gris2">
              <div id="menu0" class="carreGris" ;>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="AjoutBDD_Service.php" method="post"> 
+                <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
                         <tr> 
                                 <td align="right">Service:</td>

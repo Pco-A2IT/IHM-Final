@@ -46,7 +46,7 @@
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="AjoutBDD_dossierMedecin.php" method="post"> 
+                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
                             <tr>
                             <td align="right">N°Adeli:</td> 

@@ -87,7 +87,7 @@ $req->closeCursor();
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
+                    <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
                     <table align="left" cellspacing="5px" class="table">
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
