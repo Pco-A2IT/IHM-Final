@@ -1,13 +1,6 @@
 <?php
+    include('config.php');
 
-  try
-        {
-	       $bdd = new PDO('mysql:host=localhost;dbname=bdd_plateforme;charset=utf8', 'root', '');
-        }
-    catch(Exception $e)
-        {
-    die('Erreur : '.$e->getMessage());
-        }
 
 $term = $_GET['term'];
 
