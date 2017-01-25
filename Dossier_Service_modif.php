@@ -12,7 +12,28 @@
         <title>Service</title>    
 
     </head>
-    
+<?php
+                
+$idservice=$_GET['idservice'];
+//echo $idservice;
+$req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+$req->execute(array($idservice));
+while ($donnees = $req->fetch())
+{
+    $siret_s=$donnees['numSiret'];
+    $centre_s=$donnees['centre_s'];
+    $nom_s=$donnees['nom_s'];
+    $telephone_s=$donnees['telephone_s'];
+    $horairesd_s=$donnees['horairesd_s'];
+    $horairesf_s=$donnees['horairesf_s'];
+    $adresse_s=$donnees['adresse_s'];
+    $codePostal_s=$donnees['codePostal_s'];
+    $ville_s=$donnees['ville_s'];
+    $description_s=$donnees['description_s'];
+
+}                              
+$req->closeCursor();            
+?> 
     <body>
     <form action="ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
     <div class="gris">
@@ -50,7 +71,7 @@
                 </div>
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
             </div>
             
          <div id="container">
@@ -66,28 +87,7 @@
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
                         
-<?php
-                
-$idservice=$_GET['idservice'];
-//echo $idservice;
-$req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
-$req->execute(array($idservice));
-while ($donnees = $req->fetch())
-{
-    $siret_s=$donnees['numSiret'];
-    $centre_s=$donnees['centre_s'];
-    $nom_s=$donnees['nom_s'];
-    $telephone_s=$donnees['telephone_s'];
-    $horairesd_s=$donnees['horairesd_s'];
-    $horairesf_s=$donnees['horairesf_s'];
-    $adresse_s=$donnees['adresse_s'];
-    $codePostal_s=$donnees['codePostal_s'];
-    $ville_s=$donnees['ville_s'];
-    $description_s=$donnees['description_s'];
 
-}                              
-$req->closeCursor();            
-?> 
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
