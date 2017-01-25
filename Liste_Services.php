@@ -73,7 +73,7 @@
             <script src="js/General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
                     <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
@@ -123,8 +123,8 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
-        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="loupe.png"></a></td>
-        <td><img class="supprimer" src="Icones/button_supprimer.png"  > </td>
+        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_loupe.png"></a></td>
+        <td><a href="SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         
             
     </tr>
