@@ -1,15 +1,6 @@
 <?php
 // Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd_plateforme;charset=utf8', 'root', '');
-
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-
-}
+include('../config.php');
 
 //
 
@@ -28,5 +19,5 @@ $req->execute(array($_POST['siret_s'], $_POST['centre_s'],$_POST['service_s'], $
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: Dossier_Patient.php');
+//header('Location: ../Dossier_Patient.php');
 ?>

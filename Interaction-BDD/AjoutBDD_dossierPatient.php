@@ -1,15 +1,6 @@
 <?php
 // Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd_plateforme;charset=utf8', 'root', '');
-
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-
-}
+include('../config.php');
 
 //
 //$reqmt = $bdd->exec('INSERT INTO medecin(id_medecin,nom_m, prenom_m, mail_m,telephone_m) VALUES(NULL,\'YES\',\'YES\',\'YES\',\'YES\')');
@@ -41,5 +32,5 @@ $req->execute(array($_POST['nom_p'], $_POST['prenom_p'],$_POST['civilite_p'] ,  
 
 
 // Redirection du visiteur vers la page du minichat
-header('Location: Dossier_Patient.php');
+header('Location: ../Dossier_Patient.php');
 ?>
