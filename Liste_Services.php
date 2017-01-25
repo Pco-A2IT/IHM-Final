@@ -1,10 +1,10 @@
 <!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<!-- <?php
-    //include('config.php');
-?> -->
+<?php
+    include('config.php');
+?> 
 <html>
 <head>
-   <title> Liste Centres</title>
+   <title> Liste Services</title>
    <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
@@ -123,8 +123,9 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
-         <td><a href="Dossier_Service_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-        <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
+        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="loupe.png"></a></td>
+        <td><img class="supprimer" src="Icones/button_supprimer.png"  > </td>
+        
             
     </tr>
 <?php
