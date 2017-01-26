@@ -19,6 +19,6 @@ $req->execute(array($id_patient));
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-//header('Location: ../Liste_Patients.php');
+header('Location: ../Liste_Patients.php');
 
 ?>

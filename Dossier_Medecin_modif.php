@@ -29,10 +29,8 @@ while ($donnees = $req->fetch())
     $codePostal_m=$donnees['codePostal_m'];
     $adresse_m=$donnees['adresse_m'];
     $telephone_m=$donnees['telephone_m'];
-    
-    
-
-}                                     
+} 
+if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req2->execute(array($id_service));
 
@@ -42,6 +40,13 @@ $req2->execute(array($id_service));
         $centre_m=$donn['centre_s'];
     
     }
+}
+else{
+        $service_m="Service du médecin";
+        $centre_m="Centre du médecin";
+}
+    echo $service_m;
+    echo $centre_m;
                         
 $req->closeCursor();            
 ?>
@@ -49,28 +54,33 @@ $req->closeCursor();
     <body>
     <div class="gris">
            <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+                                    
+            <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris" style="background-color:#1270B3";>
+            <div id="menu2" class="carreGris" style="background-color:#1270B3";>
                 <h4>Médecins</h4>    
                 <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
+                        
+            <div id="menu3" class="carreGris";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
+            
             
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
@@ -132,7 +142,7 @@ $req->closeCursor();
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m ?>" />
+                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
                             <tr> 
