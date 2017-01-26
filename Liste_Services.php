@@ -80,7 +80,8 @@
                 <div class="section1">
                     <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>Centre</th>
+                        <th></th>
+                        <th>Num Siret</th>
                         <th>Service</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
