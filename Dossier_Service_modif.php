@@ -146,24 +146,26 @@ $req->closeCursor();
              </div>
                 
             <div class="onglet" id="onglet3">
-                       <table align="center" cellspacing="5px" class="table"> 
+                       <div class="position_table"> 
+                       <table align="center" cellspacing="5px"  cellpadding="15px" class="table"> 
                             <tr> 
                             <td rowspan=3>Examens disponibles</td> 
                             <td>IRM</td> 
-                            <td><input type="radio" name="choix1_ligne1" value="0"/></td>
+                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
                             </tr> 
                             <tr> 
                             <td>Bilan cardiaque</td>
-                            <td><input type="radio" name="choix1_ligne2" value="1"/></td> 
+                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td> 
                             </tr> 
                             <tr> 
                             <td>Consultation neuro</td>
-                            <td><input type="radio" name="choix1_ligne3" value="2"/></td> 
+                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td> 
                             </tr>
                             <tr>
         
                              </tr>
                     </table>
+                </div>
                 </div> 
                 </div>
         </div>
