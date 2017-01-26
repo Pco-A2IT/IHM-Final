@@ -8,7 +8,7 @@ var boutonElt5 = document.getElementById("RetourDossierPatient");
 
 boutonElt0.addEventListener("click", function () {
     console.log("clic0");
-     top.location.href='Authentification.php'; 
+     top.location.href='Liste_Patient.php'; 
 });
 
 boutonElt1.addEventListener("click", function () {
@@ -18,15 +18,20 @@ boutonElt1.addEventListener("click", function () {
 
 boutonElt2.addEventListener("click", function () {
     console.log("clic2");
-     top.location.href='Liste_Services.php'; 
+     top.location.href='Liste_Medecins.php'; 
 });
 
 boutonElt3.addEventListener("click", function () {
     console.log("clic3");
-    top.location.href='Liste_Patients.php'; 
+    top.location.href='Liste_Services.php'; 
 });
 
 boutonElt4.addEventListener("click", function () {
     console.log("clic4");
-    top.location.href='Liste_Medecins.php';
+    top.location.href='Paramètres.php';
+});
+
+boutonElt5.addEventListener("click", function () {
+    console.log("clic5");
+    top.location.href='Authentification.php';
 });
