@@ -29,8 +29,12 @@ $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
 
 if($nom_m_traitant!="" && $prenom_m_traitant!="" ){
+//$test=false;
 while ($donn = $req2->fetch()){
     $id_medecin_traitant=$donn['id_medecin'];
+    /*if(){
+        $test=true;
+    }*/
 }
 }
 else{
