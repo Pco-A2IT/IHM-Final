@@ -4,31 +4,32 @@
 </head>
 <body>
       <div class="gris">
-            <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+               <div  class="gris2">
+          <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris" style="background-color:#1270B3";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris";>
+            <div id="menu2" class="carreGris" ;>
                 <h4>Médecins</h4>    
                 <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
-            
-            <script src="General.js"></script>
+                        
+            <div id="menu3" class="carreGris";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris"  style="background-color:#1270B3">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
     
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Paramètres</h1>

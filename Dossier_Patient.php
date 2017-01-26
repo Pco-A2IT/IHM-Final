@@ -10,7 +10,7 @@
     </head>
     
     <body>
-    <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">    
+    <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
     <div class="gris">
               <div  class="gris2">
           <div id="menu0" class="carreGris" style="background-color:#1270B3";>

@@ -28,13 +28,19 @@ $date="$a-$m-$j";
 $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
 
-if($nom_m_traitant!="" && $prenom_m_traitant!="" )
+if($nom_m_traitant!="" && $prenom_m_traitant!="" ){
+//$test=false;
 while ($donn = $req2->fetch()){
     $id_medecin_traitant=$donn['id_medecin'];
+    /*if(){
+        $test=true;
+    }*/
+}
 }
 else{
     $id_medecin_traitant=0;
 }
+echo "le medecin traintant: ".$id_medecin_traitant;
 
 $req3 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req3->execute(array($nom_m_appelant, $prenom_m_appelant ));
@@ -56,5 +62,5 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['nom_p'],
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
+header('Location: ../Dossier_Patient.php');
 ?>

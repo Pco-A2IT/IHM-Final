@@ -4,11 +4,12 @@ var boutonElt1 = document.getElementById("menu1");
 var boutonElt2 = document.getElementById("menu2");
 var boutonElt3= document.getElementById("menu3");
 var boutonElt4 = document.getElementById("menu4");
-var boutonElt5 = document.getElementById("RetourDossierPatient");
+
+var boutonElt5 = document.getElementById("menu5");
 
 boutonElt0.addEventListener("click", function () {
     console.log("clic0");
-     top.location.href='Liste_Patient.php'; 
+     top.location.href='Liste_Patients.php'; 
 });
 
 boutonElt1.addEventListener("click", function () {
@@ -28,7 +29,7 @@ boutonElt3.addEventListener("click", function () {
 
 boutonElt4.addEventListener("click", function () {
     console.log("clic4");
-    top.location.href='Paramètres.php';
+    top.location.href='Parametres.php';
 });
 
 boutonElt5.addEventListener("click", function () {

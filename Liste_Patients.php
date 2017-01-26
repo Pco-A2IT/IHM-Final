@@ -80,7 +80,6 @@
                         <th>Code postal </th>
                         <th>Ville </th>
                         <th>Téléphone </th>
-                        <th>Médecin traitant </th>
                         
                          
 <?php

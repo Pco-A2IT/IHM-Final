@@ -29,9 +29,6 @@ while ($donnees = $req->fetch())
     $codePostal_m=$donnees['codePostal_m'];
     $adresse_m=$donnees['adresse_m'];
     $telephone_m=$donnees['telephone_m'];
-    
-    
-
 } 
 if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
@@ -45,9 +42,11 @@ $req2->execute(array($id_service));
     }
 }
 else{
-        $service_m=0;
-        $centre_m=0;
+        $service_m="Service du médecin";
+        $centre_m="Centre du médecin";
 }
+    echo $service_m;
+    echo $centre_m;
                         
 $req->closeCursor();            
 ?>
@@ -143,14 +142,14 @@ $req->closeCursor();
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="<?php if($centre_m!=0){echo $centre_m;} else{echo "Centre du médecin";} ?>" />
+                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Service: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="service_m" placeholder="<?php if($service_m!=0){echo $service_m;} else{echo "Service du médecin";} ?>" />
+                            <input type="text" name="service_m" placeholder="<?php echo $service_m ?>" />
                             </td>
                             </tr>
                             <tr> 
