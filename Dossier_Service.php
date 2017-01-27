@@ -81,8 +81,11 @@
                             <td>Horaires Ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
-                                <input type=time style="width:70px" required> à 
-                                <input type=time style="width:70px" required>
+                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="time"  placeholder="h"> :
+                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
+                                à
+                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
+                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn">
                             </td>
                         </tr>
                         <tr>
