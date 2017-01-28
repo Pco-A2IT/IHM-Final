@@ -1,15 +1,6 @@
 <?php
 // Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd_plateforme;charset=utf8', 'root', '');
-
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-
-}
+include('../config.php');
 
 ///////////////////////////
 /*Récupération de l'id du service qu'on veut modifier via $_GET['idservice']*/
@@ -63,11 +54,13 @@ while ($donnees = $req->fetch())
     
     if($_POST['service_m']==''){$service_m= "";}
     else{$service_m=$_POST['service_m'];}
-    echo $service_m;
+    echo "Le service rentré est ".$service_m;
     
     if($_POST['centre_m']==''){$centre_m= "";}
     else{$centre_m=$_POST['centre_m'];}
-    echo $centre_m;
+    echo "Le service rentré est ".$centre_m;
+    
+    $id_service=$donnees['id_service'];// on récupère l'id_service existant dans le tuple selectionné
 }
 
 $req2 = $bdd->prepare('SELECT * FROM service WHERE centre_s = ? AND nom_s=? ');
@@ -76,11 +69,8 @@ $req2->execute(array($centre_m, $service_m));
 if($centre_m!="" && $service_m!=""){
 while ($donn = $req2->fetch()){
         $id_service=$donn['id_service'];
-        echo $id_service;
+        
     }
-}
-else{
-    $id_service=$donnees['id_service'];
 }
 $req->closeCursor();
 
@@ -108,6 +98,6 @@ $req->execute(array(
 /*Retour vers la liste_patient*/
 ///////////////////////////
 
-header('Location: Liste_Medecins.php');
+//header('Location: ../Liste_Medecins.php');
 
 ?>

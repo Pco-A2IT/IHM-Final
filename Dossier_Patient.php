@@ -10,7 +10,7 @@
     </head>
     
     <body>
-    <form action="AjoutBDD_dossierPatient.php" method="post">    
+    <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
     <div class="gris">
               <div  class="gris2">
           <div id="menu0" class="carreGris" style="background-color:#1270B3";>
@@ -58,11 +58,11 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="AjoutBDD_dossierPatient.php" method="post"> 
+                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right">Civilité:</td>
-                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" list="c"/>
+                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" autocomplete="off" list="c"/>
                                 <datalist id="c">
                                         <option>Mr</option>
                                         <option>Mme</option>
@@ -79,7 +79,7 @@
                             </tr>  
                             <tr> 
                             <td align="right">Date de naissance:</td> 
-                            <td align="left"><input type="date" name="birthday_p" /></td> 
+                            <td align="left"><input type="date" name="birthday_p" placeholder="25/01/2017" value="" required/></td> 
 
                             </tr>
                             <tr> 
@@ -113,20 +113,26 @@
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                            <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                             </td> 
                             </tr> 
                             <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_traitant" placeholder="Rentrer Nom"/>
-                                </td>
+                            <input type="text" name="nom_m_traitant" placeholder="Nom"/>
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                            </td>
                         </tr>
                             <tr>
                             <td align="right">Médecin appelant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_appelant" placeholder="Rentrer nom" list="a"/> 
-                                </td>
+                            <input type="text" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                            </td>
                             </tr>   
                             <tr height="60px"> 
                             <td align="center"  colspan="2"> 

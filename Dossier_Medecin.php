@@ -50,7 +50,7 @@
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="AjoutBDD_dossierMedecin.php" method="post"> 
+                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
                             <tr>
                             <td align="right">N°Adeli:</td> 
@@ -91,14 +91,14 @@
                             <td align="right"> Service: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Service associé" required/>
+                            <input type="text" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Centre associé" required/>
+                            <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
                             </td>
                             </tr>
                             <tr> 

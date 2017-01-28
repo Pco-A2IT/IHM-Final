@@ -1,16 +1,6 @@
 <?php
 // Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd_plateforme;charset=utf8', 'root', '');
-
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-
-}
-
+include('../config.php');
 ///////////////////////////
 /*Récupération de l'id du service qu'on veut modifier via $_GET['idservice']*/
 ///////////////////////////
@@ -83,6 +73,6 @@ $req->execute(array(
 /*Retour vers le dossier service avec modification prise en compte*/
 ///////////////////////////
 
-header('Location: Liste_Services.php');
+header('Location: ../Liste_Services.php');
 
 ?>

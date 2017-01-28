@@ -29,10 +29,8 @@ while ($donnees = $req->fetch())
     $codePostal_m=$donnees['codePostal_m'];
     $adresse_m=$donnees['adresse_m'];
     $telephone_m=$donnees['telephone_m'];
-    
-    
-
-}                                     
+} 
+if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req2->execute(array($id_service));
 
@@ -42,6 +40,13 @@ $req2->execute(array($id_service));
         $centre_m=$donn['centre_s'];
     
     }
+}
+else{
+        $service_m="Service du médecin";
+        $centre_m="Centre du médecin";
+}
+    echo $service_m;
+    echo $centre_m;
                         
 $req->closeCursor();            
 ?>
@@ -92,7 +97,7 @@ $req->closeCursor();
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
+                    <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
                     <table align="left" cellspacing="5px" class="table">
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
@@ -137,7 +142,7 @@ $req->closeCursor();
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m ?>" />
+                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
                             <tr> 

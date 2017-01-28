@@ -35,7 +35,7 @@ while ($donnees = $req->fetch())
 $req->closeCursor();            
 ?> 
     <body>
-    <form action="ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
+    <form action="./Interaction-BDD/ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
     <div class="gris">
               <div  class="gris2">
              <div id="menu0" class="carreGris";>

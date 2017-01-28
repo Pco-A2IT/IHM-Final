@@ -1,24 +1,24 @@
 <?php
 // Connexion à la base de données
-include('config.php');
+include('../config.php');
 ///////////////////////////
 /*Récupération de l'id du service qu'on veut modifier via $_GET['idservice']*/
 ///////////////////////////
 
-$id_patient=$_GET['id_patient'];
-echo $id_patient;
+$idservice=$_GET['idservice'];
+echo $idservice;
 
 ///////////////////////////
 /*Suppression du tuple correspondant*/
 ///////////////////////////
     
-$req = $bdd->prepare('DELETE FROM patient WHERE id_patient = ? ');
-$req->execute(array($id_patient));
+$req = $bdd->prepare('DELETE FROM service WHERE id_service = ? ');
+$req->execute(array($idservice));
 
 ///////////////////////////
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-//header('Location: Liste_Patients.php');
+header('Location: ../Liste_Services.php');
 
 ?>
