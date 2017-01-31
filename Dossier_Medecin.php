@@ -84,7 +84,7 @@
                             </tr> 
                     </table> 
 
-                    <table float="right" cellspacing="5px" class="table"> 
+                    <table float="left" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right"> Service: 
                             </td> 
