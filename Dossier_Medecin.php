@@ -37,7 +37,7 @@
                 <h4>Logout</h4>
                 <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
-            
+            </div>
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Nouveau Médecin</h1>
@@ -47,11 +47,13 @@
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
                     </div>
+                </div>
                     
-            <div class="onglet" id="onglet1">
-                    <div id="container">
-                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
-                    <table align="left" cellspacing="5px" class="table"> 
+                <div id="container">
+                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post">
+                        </form>
+                </div>
+                <table align="left" cellspacing="5px" class="table"> 
                             
                             <tr> 
                             <td align="right">Civilité:</td>
@@ -122,14 +124,11 @@
                                 <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td> 
                             </tr> 
-                    </table>
-                </form>   
-                            </div>
-                        </div>
-                    </div>
-            </div>
+                </table>
+               
+        
+          </div>
     </div>
-        </div>
         
          <script src="General.js"></script>
     </body>
