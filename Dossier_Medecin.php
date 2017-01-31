@@ -49,9 +49,9 @@
                     </div>
                 </div> 
                 <div class="onglet" id="onglet1">
-                    <div id="container">
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
-                        </form>
+                    </form>
+                    <div id="container">
                     <table align="left" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right">Civilité:</td>
