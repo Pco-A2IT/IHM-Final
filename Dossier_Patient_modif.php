@@ -19,7 +19,7 @@ $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
 $req->execute(array($id_patient));
 while ($donnees = $req->fetch())
 {
-
+    $date_ait_p=$donnees['date_ait_p'];
     $nom_p=$donnees['nom_p'];
     $prenom_p=$donnees['prenom_p'];
     $civilite_p=$donnees['civilite_p'];
@@ -114,6 +114,10 @@ $req->closeCursor();
                     <table align="left" cellspacing="5px" class="table">
                         
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                            <tr> 
+                                <td align="right">Date de l'AIT:</td> 
+                                <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                            </tr>
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_p" placeholder="<?php echo $civilite_p ?>" list="c"/>

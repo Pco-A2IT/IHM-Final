@@ -16,6 +16,11 @@ $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
 $req->execute(array($id_patient));
 while ($donnees = $req->fetch())
 {   
+    if($_POST['date_ait_p']==''){$date_ait_p= $donnees['date_ait_p'];}
+    else{
+    $date_ait_p=$_POST['date_ait_p'];
+    }
+    echo $date_ait_p;
     
     if($_POST['nom_p']==''){$nom_p= $donnees['nom_p'];}//s'il ne l'est pas la variable prend la valeur déjà existante dans la bdd
     else{$nom_p=$_POST['nom_p'];}//si le champ est rempli on modifie la bdd
@@ -52,9 +57,6 @@ while ($donnees = $req->fetch())
     if($_POST['birthday_p']==''){$birthday_p= $donnees['date_naissance'];}
     else{
     $birthday_p=$_POST['birthday_p'];
-    //on explose la date de naissance
-    list($j,$m,$a)=explode("/",$birthday_p);
-    $birthday_p="$a-$m-$j";
     echo $birthday_p;
     }
     
@@ -80,22 +82,7 @@ while ($donnees = $req->fetch())
     echo $prenom_m_appelant;
     
 }
-///////////////////////////
-/*recherche de l'ID medecin traitant correspondant*/
-///////////////////////////
-/*$req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
-$req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
 
-if($nom_m_traitant !="" && $prenom_m_traitant !=""){
-    while ($donn = $req2->fetch()){
-        $id_medecin_traitant=$donn['id_medecin'];
-    }
-}
-/*else{
-    $id_medecin_traitant=$donnees['ID_medecin_traitant'];
-}*/
-
-//echo "Nouveau medecin traitant: ".$id_medecin_traitant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*      ID_medecin_traitant                                                          */
@@ -131,21 +118,6 @@ else{
     $id_medecin_traitant=0;
 }
 
-///////////////////////////
-/*recherche de l'ID medecin appelant correspondant*/
-///////////////////////////
-/*$req3 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
-$req3->execute(array($nom_m_appelant, $prenom_m_appelant ));
-
-if($nom_m_appelant!="" && $prenom_m_appelant!=""){
-while ($do = $req3->fetch()){
-        $id_medecin_appelant=$do['id_medecin'];        
-    }
-}
-/*else{
-    $id_medecin_appelant=$donnees['ID_medecin_appelant'];
-    echo $donnees['ID_medecin_appelant'];
-}*/
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*      ID_medecin_appelant                                                          */
@@ -190,8 +162,9 @@ $req3->closeCursor();
 ///////////////////////////
 
 
-$req = $bdd->prepare('UPDATE patient SET nom_p= :nv_nom_p, prenom_p= :nv_prenom_p, civilite_p= :nv_civilite_p, date_naissance= :nv_date_naissance_p, mail_p= :nv_mail_p, telephone_p= :nv_telephone_p, ville_p = :nv_ville_p, codePostal_p = :nv_codePostal_p,  adresse_p = :nv_adresse_p, ID_medecin_traitant= :nv_id_medecin_traitant, ID_medecin_autre= :nv_id_medecin_appelant  WHERE id_patient = :jointure ');
+$req = $bdd->prepare('UPDATE patient SET date_ait_p= :nv_date_ait_p, nom_p= :nv_nom_p, prenom_p= :nv_prenom_p, civilite_p= :nv_civilite_p, date_naissance= :nv_date_naissance_p, mail_p= :nv_mail_p, telephone_p= :nv_telephone_p, ville_p = :nv_ville_p, codePostal_p = :nv_codePostal_p,  adresse_p = :nv_adresse_p, ID_medecin_traitant= :nv_id_medecin_traitant, ID_medecin_autre= :nv_id_medecin_appelant  WHERE id_patient = :jointure ');
 $req->execute(array(
+    'nv_date_ait_p' => $date_ait_p ,
     'nv_nom_p' => $nom_p,
     'nv_prenom_p' => $prenom_p,
     'nv_civilite_p' => $civilite_p,
