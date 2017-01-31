@@ -196,7 +196,8 @@ $req->closeCursor();
              </div>
                 
             <div class="onglet" id="onglet3">
-                     <table cellspacing='0'>   
+                     <div class="position_table">
+                     <table cellspacing='5px'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -204,24 +205,24 @@ $req->closeCursor();
                         <tr>
                             <td rowspan="3"> 1ère intention  </td>
                             <td>Scan cérébral</td>
-                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><INPUT type="checkbox" name="BilanBiologique" id="BilanBiologique" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
                         </tr>
                          <tr>
                             <td rowspan="3"> 2nd intention  </td>
                             <td>Bilan Cardiaque</td>
-                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="2"> 
@@ -230,7 +231,7 @@ $req->closeCursor();
                          </tr>
                     </table>
                 </div> 
-            
+             </div>
         </div>
         </div>
         </div>
