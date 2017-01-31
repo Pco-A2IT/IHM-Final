@@ -47,14 +47,11 @@
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
                     </div>
-                </div>
-                    
-                <div id="container">
-                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post">
-                        </form>
-                </div>
-                <table align="left" cellspacing="5px" class="table"> 
-                            
+                </div> 
+                <div class="onglet" id="onglet1">
+                    <div id="container">
+                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
+                    <table align="left" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
@@ -125,8 +122,9 @@
                             </td> 
                             </tr> 
                 </table>
-               
-        
+             </form>
+          </div>
+          </div>
           </div>
     </div>
         
