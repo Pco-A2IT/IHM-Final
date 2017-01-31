@@ -674,6 +674,10 @@ table tr:hover td {
 }
 
 .onglet{
+    left:120px;
+    width: 90%;
+    right: 100px;
+    top:30%;
     display:flex;
     flex-wrap:nowrap;
     position: relative;
