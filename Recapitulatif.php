@@ -45,8 +45,8 @@
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
                     <div class="section1">            
-                            <div id="titles" style="left:30px;"> 
-                                <span class="title active"  target="ongletC1">Suivi RDV</span> 
+                            <div id="titles"> 
+                                <span class="title active" style="margin-left:30px;" target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
             
