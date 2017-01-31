@@ -662,6 +662,7 @@ table tr:hover td {
 .title {
 	color: #337ab7;
     margin-top:30px;
+    left:10%;
     text-decoration: none; 
     line-height: 1.42857143;
     border-bottom: 1px solid #ddd;
