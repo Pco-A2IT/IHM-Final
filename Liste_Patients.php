@@ -71,9 +71,8 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div>
-                <div class="onglet"> 
-                    <div class="position_table">
-                    <table align="center" cellspacing='5px' id="tbl" class="table">   
+                <div class="section1">
+                    <table cellspacing='0' id="tbl">   
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -148,7 +147,7 @@ while($dnn = $pdo_select->fetch() )
                             <td><img class="supprimer" src="button_supprimer.png"></td>
                         </tr> -->
                     </table> 
-                    </div>
+
                 </div>      
             </div>
         </div>

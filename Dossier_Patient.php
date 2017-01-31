@@ -152,20 +152,20 @@
                         <tr>
                             <td rowspan="3"> 1ère intention  </td>
                             <td>Scan cérébral</td>
-                            <td><input type="checkbox" name="ScanC" id="ScanC"value="1" class="regular-checkbox" /><label for="ScanC"></label></td>
+                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="1" class="regular-checkbox" /><label for="AngioScan"></label></td>
+                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><input type="checkbox" name="BilanBiologique" value="1" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
+                            <td><INPUT type="checkbox" name="BilanBiologique" id="BilanBiologique" value="1"/></td>
                         </tr>
                          <tr>
                             <td rowspan="3"> 2nd intention  </td>
                             <td>Bilan Cardiaque</td>
-                            <td><input type="ScanC" name="ScanC" value="1" id="BilanCardiaque" class="regular-checkbox" /><label for="ScanC"></label></td>
+                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>

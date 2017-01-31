@@ -53,8 +53,8 @@
                             </div>
             
                             <div class="ongletC" id="ongletC1" >  
-                                <div class="section_centre">
-                                 <table align="center" cellspacing="5px" class="table">  
+                                <div class=section_centre>
+                                 <table align="right" cellspacing="5px" class="table">  
                                     <tr>
                                         <th><strong>Patient</strong></th>
                                         <th><strong>Examen 1</strong></th>
@@ -83,9 +83,9 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix1_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix1_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="checkbox" name="choix2_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix2_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="radio" name="choix1_ligne1" value="0"/> Réalisé<input type="radio" name="choix1_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="radio" name="choix2_ligne1" value="0"/> Réalisé<input type="radio" name="choix2_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -104,7 +104,7 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -123,14 +123,14 @@
                                         <td>10:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                 </table>
                                 </div>
                             </div>
                             
                             <div class="ongletC" id="ongletC2" >
-                                <div class="section_centre">
+                                <div class=section_centre>
                                  <table align="right" cellspacing="5px" class="table">   
             
                                     <tr>
