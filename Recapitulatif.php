@@ -52,7 +52,7 @@
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
             
-                            <div class="ongletC" id="ongletC1" >
+                            <div class="onglet" id="ongletC1" >
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                             
-                            <div class="ongletC" id="ongletC2" >
+                            <div class="onglet" id="ongletC2" >
                                 <div class="section_centre">
                                  <table cellspacing="5px" class="table">   
             
