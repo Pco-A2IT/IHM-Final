@@ -53,7 +53,8 @@
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     </form>
                     <div id="container">
-                    <table align="left" cellspacing="5px" class="table"> 
+                    <div style="align:left">
+                    <table cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
@@ -83,6 +84,8 @@
                             </td> 
                             </tr> 
                     </table> 
+                    </div>
+                    <div style="align:right">
                     <table align="right" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right"> Service: 
@@ -124,6 +127,7 @@
                             </tr> 
                 </table>
                 </div>
+          </div>
           </div>
           </div>
     </div>
