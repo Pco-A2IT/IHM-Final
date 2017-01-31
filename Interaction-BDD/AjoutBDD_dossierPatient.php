@@ -8,8 +8,8 @@ $date= $_POST['birthday_p'];
 echo $date;
 
 //on explose la date de naissance
-list($j,$m,$a)=explode("/",$date);
-$date="$a-$m-$j";
+//list($j,$m,$a)=explode("/",$date);
+//$date="$a-$m-$j";
 
 
 ///////////////////////////////////
@@ -97,9 +97,9 @@ else{
 /*      Insertion dans la base donnée                                                  */
 ///////////////////////////////////////////////////////////////////////////////////////
 // Insertion du message à l'aide d'une requête préparée
-$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre,nom_p, prenom_p,civilite_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL, ? ,? , ?,?,?,? ,?,?, ?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
+$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre,nom_p, prenom_p,civilite_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL, ? ,? , ?,?,?,\'2012-12-12\' ,?,?, ?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['nom_p'], $_POST['prenom_p'],$_POST['civilite_p'] ,  $a.'-'. $m.'-'. $j, $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['nom_p'], $_POST['prenom_p'],$_POST['civilite_p'] ,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
 
 
 
