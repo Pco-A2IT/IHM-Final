@@ -42,11 +42,9 @@
                 
                 <div class="blanc";   style="border-radius: 5px;">
                       <p class="date" style="color:black">Date: 05/01/2017
-                <script language="JavaScript">writeSource("js10");</script>
+                      <script language="JavaScript">writeSource("js10");</script>
                     </p>
                     <div class="section1">            
-                        
-                        <div class=section5>
                             <div id="titles"> 
                                 <span class="title active"  target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
@@ -146,7 +144,6 @@
                                 </table>
                             </div>
             
-                        </div>
                     </div>
                 </div>
                 <!--
