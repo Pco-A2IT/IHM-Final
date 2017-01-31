@@ -72,7 +72,7 @@
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
-                                <td align="left"><input type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" minlength=10 maxlength=10/>
+                                <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)"/>
                         </tr>    
                     </table> 
                     
@@ -82,7 +82,7 @@
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
-                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
+                                <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
                                 à
                                 <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
                                 <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn">
@@ -98,7 +98,7 @@
                         <tr> 
                             <td align="right">Code Postale:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
+                            <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
                             </td> 
                         </tr>
                         <tr> 

@@ -105,7 +105,7 @@
                                             <tr> 
                                                 <td align="right">Code Postale:</td> 
                                                 <td align="left"> 
-                                                    <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)"/> 
+                                                    <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_m" placeholder="(ex: 69100)"/> 
                                                 </td> 
                                             </tr>
                                             <tr> 
