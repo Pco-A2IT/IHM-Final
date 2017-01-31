@@ -45,7 +45,7 @@
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
                     <div class="section1">
-                            &nbsp;&nbsp;&nbsp;<div id="titles"> 
+                            <div id="titles"> 
                                 <span class="title active" target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
