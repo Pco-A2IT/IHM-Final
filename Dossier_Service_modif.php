@@ -12,60 +12,6 @@
         <title>Service</title>    
 
     </head>
-    
-    <body>
-    <form action="ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
-    <div class="gris">
-              <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
-            </div> 
-            <div id="menu1" class="carreGris";>
-                <h4>Suivi</h4>
-                <img class="icone_suivi" src="Icones/recapitulatif.png"/>
-            </div>
-            
-            <div id="menu2" class="carreGris" style="background-color:#1270B3";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris";>
-                <h4>Médecins</h4>    
-                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
-            </div>
-            
-            <script src="js/General.js"></script>
-        <div class="titre";   style="border-radius: 5px;">
-            <h1 class="titreGauche">Service</h1>
-        </div>
-        <div class="blanc";   style="border-radius: 5px;">
-              <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
-                </div>
-            <div class="section4">
-            <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
-            </div>
-            
-         <div id="container">
-
-            <div id="titles"> 
-                <span class="title active"  target="onglet1"> Service</span> 
-                <span class="title" target="onglet3"> Examens</span> 
-            </div>
-
-            <div class="onglet" id="onglet1">
-                 
-                    <table align="left" cellspacing="5px" class="table">
-                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
-                        
-                        
 <?php
                 
 $idservice=$_GET['idservice'];
@@ -88,6 +34,63 @@ while ($donnees = $req->fetch())
 }                              
 $req->closeCursor();            
 ?> 
+    <body>
+    <form action="./Interaction-BDD/ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
+    <div class="gris">
+              <div  class="gris2">
+             <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
+            </div> 
+            <div id="menu1" class="carreGris";>
+                <h4>Suivi</h4>
+                <img class="icone_suivi" src="Icones/recapitulatif.png"/>
+            </div>
+            <div id="menu2" class="carreGris" ;>
+                <h4>Médecins</h4>    
+                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
+            </div>
+                        
+            <div id="menu3" class="carreGris" style="background-color:#1270B3";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
+                  
+            <script src="js/General.js"></script>
+        <div class="titre";   style="border-radius: 5px;">
+            <h1 class="titreGauche">Service</h1>
+        </div>
+        <div class="blanc";   style="border-radius: 5px;">
+              <div class="myButton" id="Ajouter_liste">
+                            <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
+                </div>
+            <div class="section4">
+            <div class="div1">
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
+            </div>
+            
+         <div id="container">
+
+            <div id="titles"> 
+                <span class="title active"  target="onglet1"> Service</span> 
+                <span class="title" target="onglet3"> Examens</span> 
+            </div>
+
+            <div class="onglet" id="onglet1">
+                 
+                    <table align="left" cellspacing="5px" class="table">
+                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                        
+                        
+
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >

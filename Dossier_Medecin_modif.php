@@ -1,3 +1,6 @@
+<?php
+   include('config.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,31 +11,76 @@
         <title>Médecin</title>  
     </head>
     
+<?php
+                
+$id_medecin=$_GET['idmedecin'];
+
+$req = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
+$req->execute(array($id_medecin));
+while ($donnees = $req->fetch())
+{
+    $num_adeli_m=$donnees['num_adeli_m'];
+    $id_service=$donnees['id_service'];
+    $civilite_m=$donnees['civilite_m'];
+    $nom_m=$donnees['nom_m'];
+    $prenom_m=$donnees['prenom_m'];
+    $mail_m=$donnees['mail_m'];
+    $ville_m=$donnees['ville_m'];
+    $codePostal_m=$donnees['codePostal_m'];
+    $adresse_m=$donnees['adresse_m'];
+    $telephone_m=$donnees['telephone_m'];
+} 
+if($id_service!=0){
+$req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+$req2->execute(array($id_service));
+
+    while ($donn = $req2->fetch())
+    {
+        $service_m=$donn['nom_s'];
+        $centre_m=$donn['centre_s'];
+    
+    }
+}
+else{
+        $service_m="Service du médecin";
+        $centre_m="Centre du médecin";
+}
+    echo $service_m;
+    echo $centre_m;
+                        
+$req->closeCursor();            
+?>
+    
     <body>
     <div class="gris">
            <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+                                    
+            <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris" style="background-color:#1270B3";>
+            <div id="menu2" class="carreGris" style="background-color:#1270B3";>
                 <h4>Médecins</h4>    
                 <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
+                        
+            <div id="menu3" class="carreGris";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
+            
             
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
@@ -44,20 +92,24 @@
                 </div>
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
+                     <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h1><br>
                     </div>
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="AjoutBDD_dossierMedecin.php" method="post"> 
-                    <table align="left" cellspacing="5px" class="table"> 
+                    <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
+                    <table align="left" cellspacing="5px" class="table">
+                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                        
+
+                        
                             <tr>
                             <td align="right">N°Adeli:</td> 
-                            <td align="left"><input type="text" name="num_adeli_m" placeholder="(ex: 82345678)" required/></td>
+                            <td align="left"><input type="text" name="num_adeli_m" placeholder="<?php echo $num_adeli_m ?>" /></td>
                             </tr>
                             <tr> 
                             <td align="right">Civilité:</td>
-                            <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
+                            <td align="left"><input type="text" name="civilite_m" placeholder="<?php echo $civilite_m ?>" list="c"/>
                                 <datalist id="c">
                                         <option>Mr</option>
                                         <option>Mme</option>
@@ -66,59 +118,59 @@
                             </tr>
                             <tr>
                             <td align="right">Nom:</td> 
-                            <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" required/></td>
+                            <td align="left"><input type="text" name="nom_m" placeholder="<?php echo $nom_m ?>" /></td>
                             </tr>
                             <tr>
                             <td align="right">Prénom:</td> 
-                            <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" required/></td>
+                            <td align="left"><input type="text" name="prenom_m" placeholder="<?php echo $prenom_m ?>" /></td>
                             </tr>  
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email" required/></td> 
+                                <input type="mail" name="mail_m" placeholder="<?php echo $mail_m ?>" id="email" /></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
                             <td align="left"> 
-                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="(ex: 0786413073)" /> 
+                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="<?php echo $telephone_m ?>" /> 
                             </td> 
                             </tr> 
                     </table> 
 
-                    <table align="right" cellspacing="5px" class="table"> 
-                            <tr> 
-                            <td align="right"> Service: 
-                            </td> 
-                            <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Service associé" required/>
-                            </td>
-                            </tr>
+                    <table align="right" cellspacing="5px" class="table">
                             <tr> 
                             <td align="right"> Centre: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="nom_s" placeholder="Rentrer Centre associé" required/>
+                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
                             <tr> 
+                            <td align="right"> Service: 
+                            </td> 
+                            <td align="left"> 
+                            <input type="text" name="service_m" placeholder="<?php echo $service_m ?>" />
+                            </td>
+                            </tr>
+                            <tr> 
+                            <td align="right">Code Postal:</td> 
+                            <td align="left"> 
+                            <input type="text"  id="p" name="codePostal_m" placeholder="<?php echo $codePostal_m ?>" /> 
+                            </td> 
+                            </tr> 
+                            <tr> 
                             <td align="right">Ville:</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)"/> 
+                            <input type="text" name="ville_m" placeholder="<?php echo $ville_m ?>"/> 
                             </td> 
                             </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" required/>
+                            <input type="text" name="adresse_m" placeholder="<?php echo $adresse_m ?>" />
                             </td> 
                             </tr>
-                            <tr> 
-                            <td align="right">Code Postale:</td> 
-                            <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)" /> 
-                            </td> 
-                            </tr> 
                             <tr height="60px">
                             </tr> 
                     </table>
