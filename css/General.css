@@ -677,7 +677,7 @@ table tr:hover td {
     left:120px;
     width: 90%;
     right: 100px;
-    top:30%;
+    top:15%;
     display:flex;
     flex-wrap:nowrap;
     position: relative;

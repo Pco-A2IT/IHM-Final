@@ -38,7 +38,7 @@
                 <img class="icone_menu" src="Icones/logout.png"/>
                
                </div>
-               
+        </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Nouveau Médecin</h1>
@@ -126,7 +126,7 @@
                 </table>
                     </div>
           </div>
-          </div>
+        
           </div>
     </div>
         
