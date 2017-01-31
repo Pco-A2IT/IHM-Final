@@ -54,7 +54,7 @@
             
                             <div class="ongletC" id="ongletC1" >
                                 <div class="section_centre">
-                                 <table align="center" cellspacing="5px" class="table">  
+                                 <table  cellspacing="5px" class="table">  
                                     <tr>
                                         <th><strong>Patient</strong></th>
                                         <th><strong>Examen 1</strong></th>
@@ -131,7 +131,7 @@
                             
                             <div class="ongletC" id="ongletC2" >
                                 <div class="section_centre">
-                                 <table align="right" cellspacing="5px" class="table">   
+                                 <table cellspacing="5px" class="table">   
             
                                     <tr>
                                         <td><span class=type>Sophie Martin</span>
