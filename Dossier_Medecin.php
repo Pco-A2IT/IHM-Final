@@ -52,6 +52,7 @@
                 <div class="onglet" id="onglet1">
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     </form>
+                    <div id="container">
                     <div style="float:left">
                     <table float="left" cellspacing="5px" class="table"> 
                             <tr> 
@@ -85,7 +86,7 @@
                     </table> 
                     </div>
                     <div style="float:left">
-                    <table float="left" cellspacing="5px" class="table"> 
+                    <table float="right" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right"> Service: 
                             </td> 
@@ -127,7 +128,7 @@
                 </table>
                 </div>
           </div>
-        
+          </div>
           </div>
     </div>
         

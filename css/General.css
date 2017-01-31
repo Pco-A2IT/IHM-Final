@@ -654,10 +654,8 @@ table tr:hover td {
 }
 
 #container{
-    left:120px;
-    width: 90%;
-    right: 100px;
-    text-align: center;
+    width: 60%;
+    margin:0px auto;
     color:black;
 }
 
