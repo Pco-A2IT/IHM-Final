@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
     <script>
     function deleteRow(obj){
-      if(confirm('Vous êtes sure?'))
+      var msg="Vous êtes sûr?\n\nConfirmez s'il vous plaît!";
+      if(confirm(msg)==true)
     {
       tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
     }
