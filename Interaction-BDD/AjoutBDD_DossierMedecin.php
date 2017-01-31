@@ -22,10 +22,10 @@ else{
 }
 echo "essai".$id_service;
 
-$req = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, ? ,?, ?,?,?,?,?,?,?,?)');
+$req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,?, ?,?,?,?,?,?,?,?)');
 
 
-$req->execute(array($_POST['num_adeli_m'], $id_service, $_POST['civilite_m'], $_POST['nom_m'], $_POST['prenom_m'], $_POST['email_m'],  $_POST['ville_m'],  $_POST['codePostal_m'],$_POST['adresse_m'] ,$_POST['telephone_m']));
+$req->execute(array( $id_service, $_POST['civilite_m'], $_POST['nom_m'], $_POST['prenom_m'], $_POST['email_m'],  $_POST['ville_m'],  $_POST['codePostal_m'],$_POST['adresse_m'] ,$_POST['telephone_m']));
 
 
 
