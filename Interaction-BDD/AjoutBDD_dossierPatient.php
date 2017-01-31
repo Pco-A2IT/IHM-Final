@@ -15,6 +15,7 @@ $date="$a-$m-$j";
 ///////////////////////////////////
 /*Récupération des champs médecin*/
 ///////////////////////////////////
+
     $nom_m_traitant=$_POST['nom_m_traitant'];
     echo $nom_m_traitant;
     
@@ -28,7 +29,7 @@ $date="$a-$m-$j";
     echo $prenom_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
-/*      ID_medecin_traitant                                                         */
+/*      ID_medecin_traitant                                                          */
 ///////////////////////////////////////////////////////////////////////////////////////
 
 //On prend dans 'medecin' l'éventuel tuple qui correspond au nom et prenom rentré dans le formulaire
