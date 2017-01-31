@@ -24,6 +24,7 @@ USE bdd_plateforme;
 DROP TABLE IF EXISTS `Patient`;
 CREATE TABLE `Patient` (
   `id_patient` int(11) NOT NULL auto_increment,
+    `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
   `nom_p` varchar(250) NOT NULL DEFAULT '',
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
   `civilite_p` enum('Mr','Mme') NOT NULL DEFAULT 'Mr',
@@ -47,9 +48,9 @@ CREATE TABLE `Patient` (
 
 
 /*!40000 ALTER TABLE `Patient` DISABLE KEYS */;
-LOCK TABLES `Patient` WRITE;
+/*LOCK TABLES `Patient` WRITE;
 INSERT INTO `Patient` VALUES (1,'Pasteur','Vincent','Mr','1995-08-25','vincent.pasteur@insa-lyon.fr','0645345654','Savigny','77176', 'rue de ...',NOW(),1,2),(2,'Bardi','Luigi','Mr','1995-09-23','luigi.bardi@insa-lyon.fr','0632123454','Lyon','69006', 'place de ...',NOW(),1,3),(3,'Benchekroun','Amine','Mr','1995-02-12','amine.benchekroun@insa-lyon.fr','0712325411','Villeurbanne','69100', 'impasse de ...',NOW(),4,2),(4,'Billet','Melanie','Mme','1995-12-12','melanie.billet@insa-lyon.fr','0642525411','Paris','75000', 'impasse de ...',NOW(),1,2);
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Patient` ENABLE KEYS */;
 
 --

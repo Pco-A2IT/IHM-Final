@@ -7,14 +7,18 @@ include('../config.php');
 $date= $_POST['birthday_p'];
 echo $date;
 
+$date1= $_POST['date_ait_p'];
+echo $date1;
+
 //on explose la date de naissance
-list($j,$m,$a)=explode("/",$date);
-$date="$a-$m-$j";
+//list($j,$m,$a)=explode("/",$date);
+//$date="$a-$m-$j";
 
 
 ///////////////////////////////////
 /*Récupération des champs médecin*/
 ///////////////////////////////////
+
     $nom_m_traitant=$_POST['nom_m_traitant'];
     echo $nom_m_traitant;
     
@@ -28,7 +32,7 @@ $date="$a-$m-$j";
     echo $prenom_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
-/*      ID_medecin_traitant                                                         */
+/*      ID_medecin_traitant                                                          */
 ///////////////////////////////////////////////////////////////////////////////////////
 
 //On prend dans 'medecin' l'éventuel tuple qui correspond au nom et prenom rentré dans le formulaire
@@ -50,7 +54,7 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 1111 ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\')');
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
         $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
@@ -83,7 +87,7 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 1111 ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\')');
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
         $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();;
     }
@@ -97,9 +101,9 @@ else{
 /*      Insertion dans la base donnée                                                  */
 ///////////////////////////////////////////////////////////////////////////////////////
 // Insertion du message à l'aide d'une requête préparée
-$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre,nom_p, prenom_p,civilite_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL, ? ,? , ?,?,?,? ,?,?, ?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
+$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p,nom_p, prenom_p,civilite_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL,?, ?, ? ,? , ?,?,?,? ,?,?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['nom_p'], $_POST['prenom_p'],$_POST['civilite_p'] ,  $a.'-'. $m.'-'. $j, $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['date_ait_p'] ,$_POST['nom_p'], $_POST['prenom_p'],$_POST['civilite_p'] ,$_POST['birthday_p'],  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
 
 
 
