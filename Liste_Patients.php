@@ -71,8 +71,7 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div>
-                <div class="onglet"> 
-                    <table cellspacing='5px' id="tbl" class="table">   
+                <table cellspacing='5px' id="tbl" class="table">   
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -148,7 +147,7 @@ while($dnn = $pdo_select->fetch() )
                         </tr> -->
                     </table> 
                     
-                </div>      
+                   
             </div>
         </div>
         
