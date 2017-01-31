@@ -19,7 +19,6 @@ $req = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
 $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {
-    $num_adeli_m=$donnees['num_adeli_m'];
     $id_service=$donnees['id_service'];
     $civilite_m=$donnees['civilite_m'];
     $nom_m=$donnees['nom_m'];
@@ -103,10 +102,7 @@ $req->closeCursor();
                         
 
                         
-                            <tr>
-                            <td align="right">N°Adeli:</td> 
-                            <td align="left"><input type="text" name="num_adeli_m" placeholder="<?php echo $num_adeli_m ?>" /></td>
-                            </tr>
+                            
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_m" placeholder="<?php echo $civilite_m ?>" list="c"/>
