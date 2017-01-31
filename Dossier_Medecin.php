@@ -52,10 +52,7 @@
                     <div id="container">
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
-                            <tr>
-                            <td align="right">N°Adeli:</td> 
-                            <td align="left"><input type="text" name="num_adeli_m" placeholder="(ex: 82345678)" required/></td>
-                            </tr>
+                            
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
