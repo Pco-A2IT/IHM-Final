@@ -61,7 +61,7 @@
                                     <table align="left" cellspacing="5px" class="table">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
-                                            <td align="left"><input type="date" name="ait_p" value ="" /></td> 
+                                            <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité:</td>
