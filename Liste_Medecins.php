@@ -26,29 +26,31 @@
     <div class="gris">
         
                 <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+         <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris";>
+            <div id="menu2" class="carreGris"  style="background-color:#1270B3"  ;>
+                <h4>Médecins</h4>    
+                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
+            </div>
+                        
+            <div id="menu3" class="carreGris" ;>
                 <h4>Services</h4>
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
-                
-            <div id="menu3" class="carreGris";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris" style="background-color:#1270B3";>
-                <h4>Médecins</h4>    
-                <img class="icone_menu" src="Icones/medecin_blanc.png"/>
-            </div> 
-            
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
             
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Médecins</h1>
@@ -73,7 +75,7 @@
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Medecin.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
+                            <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
                         </div>
                 
                 
@@ -81,7 +83,7 @@
                     <div class="position_table">
                     <table align="center" cellspacing='0' id="tbl">   
                         <th></th>
-                        <th>Civilié </th>
+                        <th>Civilité </th>
                         <th>Nom </th>
                         <th>Prénom </th>
                         <th>Email </th>
@@ -123,8 +125,8 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['id_service']); ?></td>
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
-                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-                            <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
+                            <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
+                            <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
 <?php

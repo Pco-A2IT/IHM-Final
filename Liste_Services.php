@@ -1,7 +1,7 @@
 <!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<!-- <?php
-    //include('config.php');
-?> -->
+<?php
+    include('config.php');
+?> 
 <html>
 <head>
    <title> Liste Services</title>
@@ -24,29 +24,31 @@
         <!-- inclusion de jQuery et jQuery.ui-->
          <div class="gris">
              <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+                 <div id="menu0" class="carreGris";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris" style="background-color:#1270B3";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris";>
+            <div id="menu2" class="carreGris" ;>
                 <h4>Médecins</h4>    
                 <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
-            
+                        
+            <div id="menu3" class="carreGris" style="background-color:#1270B3";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
             
             <div class="titre"; style="border-radius: 5px;">
                 <h1 class="titreGauche">Services</h1>
@@ -73,12 +75,13 @@
             <script src="js/General.js"></script> 
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div>
                 <div class="section1">
                     <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>Centre</th>
+                        <th></th>
+                        <th>Num Siret</th>
                         <th>Service</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
@@ -123,8 +126,9 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
-         <td><a href="Dossier_Service_modif.html"> <img class="supprimer" src="Icones/button_loupe.png"> </a></td>
-        <td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>
+        <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_loupe.png"></a></td>
+        <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
+        
             
     </tr>
 <?php

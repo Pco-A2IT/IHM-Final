@@ -10,31 +10,35 @@
     </head>
     
     <body>
-    <form action="AjoutBDD_dossierPatient.php" method="post">    
+    <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
     <div class="gris">
               <div  class="gris2">
-             <div id="menu0" class="carreGris" ;>
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
+          <div id="menu0" class="carreGris" style="background-color:#1270B3";>
+                <h4>Patients</h4>    
+                <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
                 <h4>Suivi</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
-            
-            <div id="menu2" class="carreGris";>
-                <h4>Services</h4>
-                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
-            </div>
-                
-            <div id="menu3" class="carreGris" style="background-color:#1270B3";>
-                <h4>Patients</h4>    
-                <img class="icone_menu" src="Icones/patient_blanc.png"/>
-            </div> 
-            <div id="menu4" class="carreGris";>
+            <div id="menu2" class="carreGris" ;>
                 <h4>Médecins</h4>    
                 <img class="icone_menu" src="Icones/medecin_blanc.png"/>
             </div>
+                        
+            <div id="menu3" class="carreGris";>
+                <h4>Services</h4>
+                <img class="icone_menu" src="Icones/hopital_blanc.png"/>
+            </div>
+             <div id="menu4" class="carreGris">
+                <h4>Paramètres</h4>
+                <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
+            </div>
+            <div id="menu5" class="carreGris">
+                <h4>Logout</h4>
+                <img class="icone_menu" src="Icones/logout.png"/>      
+            </div>
+                  
             
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
@@ -54,11 +58,11 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="AjoutBDD_dossierPatient.php" method="post"> 
+                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"> 
                     <table align="left" cellspacing="5px" class="table"> 
                             <tr> 
                             <td align="right">Civilité:</td>
-                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" list="c"/>
+                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" autocomplete="off" list="c"/>
                                 <datalist id="c">
                                         <option>Mr</option>
                                         <option>Mme</option>
@@ -75,7 +79,7 @@
                             </tr>  
                             <tr> 
                             <td align="right">Date de naissance:</td> 
-                            <td align="left"><input type="date" name="birthday_p" /></td> 
+                            <td align="left"><input type="date" name="birthday_p" placeholder="25/01/2017" value="" required/></td> 
 
                             </tr>
                             <tr> 
@@ -109,20 +113,26 @@
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                            <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                             </td> 
                             </tr> 
                             <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_traitant" placeholder="Rentrer Nom"/>
-                                </td>
+                            <input type="text" name="nom_m_traitant" placeholder="Nom"/>
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                            </td>
                         </tr>
                             <tr>
                             <td align="right">Médecin appelant:</td> 
                             <td align="left"> 
-                            <input type="text" name="M_appelant" placeholder="Rentrer nom" list="a"/> 
-                                </td>
+                            <input type="text" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                            </td>
+                            <td align="left"> 
+                            <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                            </td>
                             </tr>   
                             <tr height="60px"> 
                             <td align="center"  colspan="2"> 
