@@ -31,7 +31,7 @@ CREATE TABLE `Patient` (
   `mail_p` varchar(255) NOT NULL DEFAULT '',      
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
-  `codePostal_p` varchar(255) NOT NULL DEFAULT '',       
+  `codePostal_p` varchar(5) NOT NULL DEFAULT '',       
   `adresse_p` varchar(255) NOT NULL DEFAULT '',  
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
@@ -60,16 +60,15 @@ DROP TABLE IF EXISTS `Medecin`;
 CREATE TABLE `Medecin` (
     
     `id_medecin` int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `num_adeli_m` int(10) unsigned NOT NULL,
     `id_service` int(10) unsigned NOT NULL,
     `civilite_m` enum('Mr','Mme') NOT NULL,
-  `nom_m` varchar(255) NOT NULL DEFAUlT '',
-  `prenom_m` varchar(255) NOT NULL,
-  `mail_m` varchar(255) NOT NULL,
-    `ville_m` varchar(255) NOT NULL,
-  `codePostal_m` varchar(255) NOT NULL ,
-    `adresse_m` varchar(255) NOT NULL , 
-  `telephone_m` varchar(255) NOT NULL DEFAULT '-',
+    `nom_m` varchar(255) NOT NULL DEFAUlT '',
+    `prenom_m` varchar(255) NOT NULL,
+    `mail_m` varchar(255) DEFAULT '',
+    `ville_m` varchar(255) DEFAULT '',
+    `codePostal_m` varchar(5) NOT NULL ,
+    `adresse_m` varchar(255) DEFAULT '' , 
+    `telephone_m` varchar(255)  DEFAULT '',
   
   PRIMARY KEY  (`id_medecin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -115,15 +114,15 @@ DROP TABLE IF EXISTS `Service`;
 CREATE TABLE `Service` (
   `id_service` int(11) NOT NULL auto_increment,
   `numSiret` varchar(255) NOT NULL DEFAULT '',
-    `centre_s` varchar(255) NOT NULL DEFAULT '',
+  `centre_s` varchar(255) NOT NULL DEFAULT '',
   `nom_s` varchar(255) NOT NULL DEFAULT '',
   `telephone_s` varchar(255) NOT NULL DEFAULT '',
   `horairesd_s` time NOT NULL DEFAULT '00:00:00',
-    `horairesf_s` time NOT NULL DEFAULT '00:00:00',
+  `horairesf_s` time NOT NULL DEFAULT '00:00:00',
   `adresse_s` varchar(255) NOT NULL DEFAULT '',  
   `codePostal_s` varchar(255) NOT NULL DEFAULT '', 
   `ville_s` varchar(255) NOT NULL DEFAULT '',
-    `description_s` varchar(5000) NOT NULL DEFAULT '',
+  `description_s` varchar(5000) NOT NULL DEFAULT '',
     
   PRIMARY KEY  (`id_service`),
   KEY `numSiret` (`numSiret`)
