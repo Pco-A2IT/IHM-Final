@@ -45,12 +45,12 @@
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
                     <div class="section1">            
-                            <div id="titles" style="margin-left:30px;"> 
+                            <div id="titles" style="left:30px;"> 
                                 <span class="title active"  target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
             
-                            <div class="ongletC" id="ongletC1" >
+                            <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
