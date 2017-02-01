@@ -47,11 +47,11 @@
                     <div class="section4">
                             <br><br>
                             <div id="titles"> 
-                                <span class="title active" target="ongletC1">Suivi RDV</span> 
-                                <span class="title" target="ongletC2">Envoi CR </span>
+                                <span class="title active" target="onglet1">Suivi RDV</span> 
+                                <span class="title" target="onglet2">Envoi CR </span>
                             </div>
             
-                            <div class="ongletC" id="ongletC1">
+                            <div class="onglet" id="onglet1">
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                             
-                            <div class="ongletC" id="ongletC2" >
+                            <div class="onglet" id="onglet2" >
                                 <div class="section_centre">
                                  <table cellspacing="5px" class="table">   
             
@@ -161,8 +161,8 @@
 
            
             //Initialisation : on cache tous les onglets puis on affiche le premier
-            $('.ongletC').hide();
-            $('#ongletC1').show();
+            $('.onglet').hide();
+            $('#onglet1').show();
 
             //Quand on clique sur un titre
             $('.title').on('click',function(){
@@ -174,7 +174,7 @@
 
                 
                 // On cache tous les onglets
-                container.children('.ongletC').hide();
+                container.children('.onglet').hide();
 
                 //On affiche celui correspondant à l'attribut target
                 container.children('#'+$(this).attr('target')).show();
