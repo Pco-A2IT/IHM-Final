@@ -56,9 +56,8 @@
                         
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"></form>
-                                    <div id="container">
-                                    <div style="float:left">
-                                    <table cellspacing="5px" class="table">
+                                    
+                                    <table cellspacing="5px" class="table" style="float:left">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
@@ -97,9 +96,9 @@
                                             </td> 
                                         </tr> 
                                     </table> 
-                                        </div>
-                                    <div style="float:right">
-                                    <table cellspacing="5px" class="table"> 
+                                        
+                                   
+                                    <table cellspacing="5px" class="table" style="float:left"> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
                                             <td align="left" colspan="2"> 
@@ -142,13 +141,13 @@
                                             </td> 
                                         </tr> 
                                         </table>
-                                        </div>
+                                    
                                 </div>
                              </div>
                 
             <div class="onglet" id="onglet3">
                 <div id="container">
-                     <table margin='5px' cellspacing='0'>   
+                     <table cellspacing='5px'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
