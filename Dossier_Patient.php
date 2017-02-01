@@ -114,7 +114,7 @@
                                         </tr>
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
-                                            <td colspan="2"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                                             </td> 
                                         </tr> 
@@ -160,23 +160,23 @@
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="1" class="regular-checkbox" /><label for="AngioScan"></label></td>
+                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="2" class="regular-checkbox" /><label for="AngioScan"></label></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><input type="checkbox" name="BilanBiologique" value="1" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
+                            <td><input type="checkbox" name="BilanBiologique" value="3" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
                         </tr>
                          <tr>
-                            <td rowspan="3"> 2nd intention  </td>
+                            <td rowspan="2"> 2nd intention  </td>
                             <td>Bilan Cardiaque</td>
-                           <td><input type="ScanC" name="ScanC" value="1" id="BilanBiologique" class="regular-checkbox" /><label for="ScanC"></label></td>
+                           <td><input type="checkbox" name="BilanCardiaque" value="4" id="BilanCardiaque" class="regular-checkbox" /><label for="Cardiaque"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" name="RDVneuro" id="RDVneuro" value="5" class="regular-checkbox"/><label for="RDVneuro"></label></td>
                         </tr>
-                         <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
+                         <tr>
+                             <td align="center"  colspan="3"> 
                                  <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
