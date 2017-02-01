@@ -48,7 +48,7 @@
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
                         </div>
-                          
+                          <div class="section1">
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
                                 <span class="title" target="onglet3"> Examens</span> 
@@ -180,7 +180,7 @@
                          </tr>
                     </table>
                  </div>
-        
+             </div>
         </div>
         </div>
         </div>
