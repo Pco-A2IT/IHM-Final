@@ -148,7 +148,7 @@
                 
             <div class="onglet" id="onglet3">
                 <div id="container">
-                     <table cellspacing='0'>   
+                     <table margin='5px' cellspacing='0'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -167,9 +167,9 @@
                             <td><input type="checkbox" name="BilanBiologique" value="3" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
                         </tr>
                          <tr>
-                            <td rowspan="2"> 2nd intention  </td>
+                            <td rowspan="2"> 2ème intention  </td>
                             <td>Bilan Cardiaque</td>
-                           <td><input type="checkbox" name="BilanCardiaque" value="4" id="BilanCardiaque" class="regular-checkbox" /><label for="Cardiaque"></label></td>
+                           <td><input type="checkbox" name="BilanCardiaque" value="4" id="BilanCardiaque" class="regular-checkbox" /><label for="BilanCardiaque"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
