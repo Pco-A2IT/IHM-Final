@@ -156,6 +156,7 @@ h4{
 .section1{
   width:90%;
   top:40px;
+  left: 30px;
   margin-top: 30px;
   position:absolute;
 }
@@ -654,7 +655,7 @@ table tr:hover td {
 }
 
 #container{
-    width: 60%;
+    width: 90%;
     margin:0px auto;
     color:black;
 }
