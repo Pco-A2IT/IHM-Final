@@ -35,7 +35,7 @@
         <h1 class="titreGauche">Paramètres</h1>
     </div>
     <div class="blanc";   style="border-radius: 5px;">
-            <div class="myButton" id="Examens">
+            <div class="myButton" id="Examens" style="margin:0px auto;">
                             <a href="" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Gestion Examens</a>
                         </div>
                 <div class="myButton" id="Utilisateurs">
