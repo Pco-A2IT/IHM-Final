@@ -18,7 +18,7 @@ body{
 .section_centre{
     left:120px;
     width: 90%;
-    position: absolute;
+    position:relative;
 }
 
 .section2 input[type="text"] {
