@@ -57,7 +57,7 @@
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"></form>
                                     <div id="container">
-                                    <div style="align:left">
+                                    <div style="float:left">
                                     <table cellspacing="5px" class="table">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
@@ -98,7 +98,7 @@
                                         </tr> 
                                     </table> 
                                         </div>
-                                    <div style="align:left">
+                                    <div style="float:left">
                                     <table cellspacing="5px" class="table"> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
