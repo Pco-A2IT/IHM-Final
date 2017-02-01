@@ -48,12 +48,12 @@
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
                         </div>
-                          <div style="section1">
+                          
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
                                 <span class="title" target="onglet3"> Examens</span> 
                             </div>
-                        </div>
+                        
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"></form>
                                     <div id="container">
@@ -102,19 +102,19 @@
                                     <table cellspacing="5px" class="table"> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Adresse:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
                                             </td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                                             </td> 
                                         </tr> 
@@ -137,7 +137,7 @@
                                             </td>
                                         </tr>   
                                         <tr height="60px"> 
-                                            <td align="center"  colspan="2"> 
+                                            <td align="center"  colspan="3"> 
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                                             </td> 
                                         </tr> 
