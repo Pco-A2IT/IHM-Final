@@ -47,11 +47,11 @@
                     <div class="section4">
                             <br><br>
                             <div id="titles"> 
-                                <span class="title active" target="onglet1">Suivi RDV</span> 
-                                <span class="title" target="onglet2">Envoi CR </span>
+                                <span class="title active" target="ongletC1">Suivi RDV</span> 
+                                <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
             
-                            <div class="onglet" id="onglet1">
+                            <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
@@ -128,9 +128,9 @@
                             </div>
                         </div>
                             
-                            <div class="onglet" id="onglet2" >
+                            <div class="ongletC" id="ongletC2" >
                                 <div class="section_centre">
-                                 <table cellspacing="5px" class="table">   
+                                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">    
             
                                     <tr>
                                         <td><span class=type>Sophie Martin</span>
@@ -161,8 +161,8 @@
 
            
             //Initialisation : on cache tous les onglets puis on affiche le premier
-            $('.onglet').hide();
-            $('#onglet1').show();
+            $('.ongletC').hide();
+            $('#ongletC1').show();
 
             //Quand on clique sur un titre
             $('.title').on('click',function(){
@@ -174,7 +174,7 @@
 
                 
                 // On cache tous les onglets
-                container.children('.onglet').hide();
+                container.children('.ongletC').hide();
 
                 //On affiche celui correspondant à l'attribut target
                 container.children('#'+$(this).attr('target')).show();
