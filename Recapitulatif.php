@@ -45,10 +45,7 @@
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
                     <div class="section1">
-                            <div id="titles"> 
-                                <span class="title active" target="ongletC1">Suivi RDV</span> 
-                                <span class="title" target="ongletC2">Envoi CR </span>
-                            </div>
+                          
             
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
@@ -64,6 +61,8 @@
                                         <td><span class=type>IRM</span></td>
                                         <td><span class=type>Bilan cardiaque</span></td>
                                         <td><span class=type>Consultation neuro</span></td>
+                                         <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>Neurologie Lyon</td>
@@ -74,11 +73,13 @@
                                         <td>02/01/2017</td>
                                         <td>03/01/2017</td>
                                         <td>05/01/2017</td>
+                                        
                                     </tr>
                                     <tr>
                                         <td>10:00 - 11:00</td>
                                         <td>10:00 - 11:00</td>
                                         <td>14:00 - 15:00</td>
+                                         
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="choix1_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix1_ligne1" value="1"/>Non effectué</td>
@@ -91,6 +92,8 @@
                                         <td><span class=type>Consultation neuro</span></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
+                                        <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>UNV Lyon</td>
@@ -110,6 +113,8 @@
                                         <td><span class=type>Hospitalisation de Jour</span></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
+                                        <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>UNV Lyon</td>

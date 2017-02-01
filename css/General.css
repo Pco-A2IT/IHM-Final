@@ -687,11 +687,15 @@ table tr:hover td {
 .onglet input{
     border: none;
     background: none;
-    border-bottom: 1px solid #b2b2b2;
+    border-bottom: 0px solid #b2b2b2;
     width: 250px;
 }
 
 
+#modif input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #555;
+}
+ 
 .inputDate{
     width: 30px !important;
 
@@ -1000,5 +1004,12 @@ label {
 
 .position_table{
     margin:0 auto;
+}
 
+input[type="placeholder"]{
+ color:red;
+    }
+
+.modif input{
+    color:red;
 }
