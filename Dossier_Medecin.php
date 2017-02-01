@@ -49,7 +49,7 @@
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
                     </div>
-                </div>
+    
                 <div class="onglet" id="onglet1">
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     </form>
@@ -124,7 +124,7 @@
                             </td> 
                             </tr> 
                 </table>
-    
+                    </div>
           </div>
           </div>
     </div>
