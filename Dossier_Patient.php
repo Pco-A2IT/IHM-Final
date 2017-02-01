@@ -48,8 +48,6 @@
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
                         </div>
-            
-                        <div id="container">
 
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
@@ -57,7 +55,8 @@
                             </div>
 
                             <div class="onglet" id="onglet1">
-                                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"> 
+                                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"></form>
+                                    <div id="container">
                                     <table align="left" cellspacing="5px" class="table">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
@@ -141,10 +140,11 @@
                                             </td> 
                                         </tr> 
                                     </table>
-                                </form>
+                                </div>
                              </div>
                 
             <div class="onglet" id="onglet3">
+                <div id="container">
                      <table cellspacing='0'>   
                         <tr>
                             <th></th>
@@ -178,8 +178,8 @@
                             </td> 
                          </tr>
                     </table>
-                </div> 
-            
+                 
+             </div>
         </div>
         </div>
         </div>
