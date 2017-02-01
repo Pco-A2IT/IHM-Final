@@ -12,7 +12,7 @@
     <div class="gris">
             <div  class="gris2">
                             
-<<<<<<< HEAD
+<!-- HEAD-->
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -49,13 +49,11 @@
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
                     </div>
-                </div>
+    
                 <div class="onglet" id="onglet1">
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     </form>
-                    <div id="container">
-                    <div style="align:left">
-                    <table cellspacing="5px" class="table"> 
+                    <table cellspacing="5px" class="table" style="float:left"> 
                             <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
@@ -85,9 +83,8 @@
                             </td> 
                             </tr> 
                     </table> 
-                    </div>
-                    <div style="align:right">
-                    <table align="right" cellspacing="5px" class="table"> 
+                    
+                    <table align="right" cellspacing="5px" class="table" style="float:left"> 
                             <tr> 
                             <td align="right"> Service: 
                             </td> 
@@ -127,12 +124,11 @@
                             </td> 
                             </tr> 
                 </table>
-                </div>
-          </div>
+                    </div>
           </div>
           </div>
     </div>
-=======
+<!--=======
                 <div id="menu0" class="carreGris";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -248,7 +244,7 @@
                     </div>
                 </div>
             </div>
->>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master-->
         
             <script src="General.js"></script>
         </body>
