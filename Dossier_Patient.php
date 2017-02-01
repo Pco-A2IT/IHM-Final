@@ -146,6 +146,7 @@
                              </div>
                 
             <div class="onglet" id="onglet3">
+                <div id="container">
                      <table cellspacing='0'>   
                         <tr>
                             <th></th>
@@ -180,7 +181,7 @@
                          </tr>
                     </table>
                  </div>
-             
+            </div>
         </div>
         </div>
         </div>
