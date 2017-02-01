@@ -47,8 +47,6 @@
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
             </div>
-            
-         <div id="container">
 
             <div id="titles"> 
                 <span class="title active"  target="onglet1"> Service</span> 
@@ -141,7 +139,6 @@
                 </div> 
              </div>
           </div>
-        </div>
         </div>
         </div>
         </div>
