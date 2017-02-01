@@ -50,7 +50,7 @@
                                 <span class="title active" target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
-            
+                            <br><br>
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
