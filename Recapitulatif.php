@@ -42,19 +42,17 @@
                 
                 <div class="blanc";   style="border-radius: 5px;">
                       <p class="date" style="color:black">Date: 05/01/2017
-                <script language="JavaScript">writeSource("js10");</script>
+                      <script language="JavaScript">writeSource("js10");</script>
                     </p>
-                    <div class="section1">            
-                        
-                        <div class=section5>
+                    <div class="section1">
                             <div id="titles"> 
-                                <span class="title active"  target="ongletC1">Suivi RDV</span> 
+                                <span class="title active" target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
             
-                            <div class="ongletC" id="ongletC1" >  
-                                <div class=section_centre>
-                                 <table align="right" cellspacing="5px" class="table">  
+                            <div class="ongletC" id="ongletC1">
+                                <div class="section_centre">
+                                 <table  cellspacing="5px" class="table">  
                                     <tr>
                                         <th><strong>Patient</strong></th>
                                         <th><strong>Examen 1</strong></th>
@@ -83,9 +81,9 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix1_ligne1" value="0"/> Réalisé<input type="radio" name="choix1_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="radio" name="choix2_ligne1" value="0"/> Réalisé<input type="radio" name="choix2_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix1_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix1_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix2_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix2_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -104,7 +102,7 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -123,15 +121,15 @@
                                         <td>10:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                 </table>
-                                </div>
                             </div>
+                        </div>
                             
                             <div class="ongletC" id="ongletC2" >
-                                <div class=section_centre>
-                                 <table align="right" cellspacing="5px" class="table">   
+                                <div class="section_centre">
+                                 <table cellspacing="5px" class="table">   
             
                                     <tr>
                                         <td><span class=type>Sophie Martin</span>
@@ -146,7 +144,6 @@
                                 </table>
                             </div>
             
-                        </div>
                     </div>
                 </div>
                 <!--

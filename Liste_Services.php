@@ -76,8 +76,8 @@
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
-                        </div>
-                <div class="section1">
+                        </div><br>
+               
                     <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th></th>
@@ -161,8 +161,8 @@ while($dnn = $pdo_select->fetch() )
                             <td><img class="supprimer" src="button_supprimer.png"></td>
                         </tr> -->
                     </table> 
-
-                </div>
+            
+            
             </div>
         </div>
     </div>

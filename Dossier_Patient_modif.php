@@ -19,7 +19,7 @@ $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
 $req->execute(array($id_patient));
 while ($donnees = $req->fetch())
 {
-
+    $date_ait_p=$donnees['date_ait_p'];
     $nom_p=$donnees['nom_p'];
     $prenom_p=$donnees['prenom_p'];
     $civilite_p=$donnees['civilite_p'];
@@ -115,6 +115,10 @@ $req->closeCursor();
                         
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                             <tr> 
+                                <td align="right">Date de l'AIT:</td> 
+                                <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                            </tr>
+                            <tr> 
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_p" placeholder="<?php echo $civilite_p ?>" list="c"/>
                                 <datalist id="c">
@@ -192,7 +196,8 @@ $req->closeCursor();
              </div>
                 
             <div class="onglet" id="onglet3">
-                     <table cellspacing='0'>   
+                     <div class="position_table">
+                     <table cellspacing='5px'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -200,24 +205,24 @@ $req->closeCursor();
                         <tr>
                             <td rowspan="3"> 1ère intention  </td>
                             <td>Scan cérébral</td>
-                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><INPUT type="checkbox" name="BilanBiologique" id="BilanBiologique" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
                         </tr>
                          <tr>
                             <td rowspan="3"> 2nd intention  </td>
                             <td>Bilan Cardiaque</td>
-                            <td><INPUT type="checkbox" name="ScanC" id="ScanC"value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="2"> 
@@ -226,7 +231,7 @@ $req->closeCursor();
                          </tr>
                     </table>
                 </div> 
-            
+             </div>
         </div>
         </div>
         </div>
