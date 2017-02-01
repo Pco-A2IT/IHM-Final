@@ -44,12 +44,13 @@
                       <p class="date" style="color:black">Date: 05/01/2017
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
-                    <div class="section1">
+                    <div class="section4">
+                            <br><br>
                             <div id="titles"> 
                                 <span class="title active" target="ongletC1">Suivi RDV</span> 
                                 <span class="title" target="ongletC2">Envoi CR </span>
                             </div>
-            
+                            <br><br>
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
                                  <table  cellspacing="5px" class="table">  
@@ -129,7 +130,7 @@
                             
                             <div class="ongletC" id="ongletC2" >
                                 <div class="section_centre">
-                                 <table cellspacing="5px" class="table">   
+                                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">    
             
                                     <tr>
                                         <td><span class=type>Sophie Martin</span>

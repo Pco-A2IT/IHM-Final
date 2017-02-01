@@ -48,17 +48,16 @@
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
                         </div>
-            
-                        <div id="container">
-
+                        
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
                                 <span class="title" target="onglet3"> Examens</span> 
                             </div>
-
+                        
                             <div class="onglet" id="onglet1">
-                                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"> 
-                                    <table align="left" cellspacing="5px" class="table">
+                                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
+                                    
+                                    <table cellspacing="5px" class="table" style="float:left">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
@@ -97,23 +96,24 @@
                                             </td> 
                                         </tr> 
                                     </table> 
-
-                                    <table align="right" cellspacing="5px" class="table"> 
+                                        
+                                   
+                                    <table cellspacing="5px" class="table" style="float:left"> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Adresse:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
                                             </td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
-                                            <td align="left"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                                             </td> 
                                         </tr> 
@@ -136,16 +136,18 @@
                                             </td>
                                         </tr>   
                                         <tr height="60px"> 
-                                            <td align="center"  colspan="2"> 
+                                            <td align="center"  colspan="3"> 
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                                             </td> 
                                         </tr> 
-                                    </table>
+                                        </table>
                                 </form>
-                             </div>
+                                </div>
+                             
                 
             <div class="onglet" id="onglet3">
-                     <table cellspacing='0'>   
+                <div class="position_table"> 
+                <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -157,31 +159,30 @@
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="1" class="regular-checkbox" /><label for="AngioScan"></label></td>
+                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="2" class="regular-checkbox" /><label for="AngioScan"></label></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><input type="checkbox" name="BilanBiologique" value="1" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
+                            <td><input type="checkbox" name="BilanBiologique" value="3" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
                         </tr>
                          <tr>
-                            <td rowspan="3"> 2nd intention  </td>
+                            <td rowspan="2"> 2ème intention  </td>
                             <td>Bilan Cardiaque</td>
-                           <td><input type="ScanC" name="ScanC" value="1" id="BilanBiologique" class="regular-checkbox" /><label for="ScanC"></label></td>
+                           <td><input type="checkbox" name="BilanCardiaque" value="4" id="BilanCardiaque" class="regular-checkbox" /><label for="BilanCardiaque"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
-                            <td><INPUT type="checkbox" name="AngioScan" id="AngioScan" value="1"/></td>
+                            <td><input type="checkbox" name="RDVneuro" id="RDVneuro" value="5" class="regular-checkbox"/><label for="RDVneuro"></label></td>
                         </tr>
-                         <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
+                         <tr>
+                             <td align="center"  colspan="3"> 
                                  <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
                     </table>
-                </div> 
-            
-        </div>
-        </div>
+                 </div>
+            </div>
+                    </div>
         </div>
         </div>
         </div>
