@@ -16,11 +16,9 @@ body{
 }
 
 .section_centre{
-    left:120px;
+    left:100px;
     width: 90%;
-    right: 100px;
-    padding-top: 30px;
-    padding-left: 70px;
+   
     position: relative;
 }
 
@@ -683,6 +681,8 @@ table tr:hover td {
     margin-top: 40px;
     color:grey;
 }
+
+
 
 .onglet input{
     border: none;
