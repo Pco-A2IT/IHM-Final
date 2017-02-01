@@ -146,7 +146,7 @@
                              </div>
                 
             <div class="onglet" id="onglet3">
-                     <table cellspacing="0" class="table">   
+                     <table cellspacing='0'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
