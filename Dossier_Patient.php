@@ -143,11 +143,11 @@
                                         </table>
                                 </form>
                                 </div>
-                             </div>
+                             
                 
             <div class="onglet" id="onglet3">
-                <div id="container">
-                     <table cellspacing='0'>   
+                <div class="position_table"> 
+                <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -182,6 +182,7 @@
                     </table>
                  </div>
             </div>
+                    </div>
         </div>
         </div>
         </div>
