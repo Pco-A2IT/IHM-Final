@@ -57,7 +57,8 @@
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post"></form>
                                     <div id="container">
-                                    <table align="left" cellspacing="5px" class="table">
+                                    <div style="align:left">
+                                    <table cellspacing="5px" class="table">
                                         <tr> 
                                             <td align="right">Date de l'AIT:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
@@ -96,8 +97,9 @@
                                             </td> 
                                         </tr> 
                                     </table> 
-
-                                    <table align="right" cellspacing="5px" class="table"> 
+                                        </div>
+                                    <div style="align:left">
+                                    <table cellspacing="5px" class="table"> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
                                             <td align="left"> 
@@ -139,7 +141,8 @@
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                                             </td> 
                                         </tr> 
-                                    </table>
+                                        </table>
+                                        </div>
                                 </div>
                              </div>
                 
