@@ -45,10 +45,8 @@
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br><br>
             </div>
-            
-         <div id="container">
 
             <div id="titles"> 
                 <span class="title active"  target="onglet1"> Service</span> 
@@ -57,7 +55,7 @@
 
             <div class="onglet" id="onglet1">
                 <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
-                    <table align="left" cellspacing="5px" class="table"> 
+                    <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
@@ -76,7 +74,7 @@
                         </tr>    
                     </table> 
                     
-                    <table align="right" cellspacing="5px" class="table"> 
+                    <table cellspacing="5px" class="table" style="float:left"> 
                         <tr>
                             <td>Horaires Ouverture</td>
                             <td>
@@ -141,7 +139,6 @@
                 </div> 
              </div>
           </div>
-        </div>
         </div>
         </div>
         </div>
