@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -12,10 +13,10 @@
     <div class="gris">
             <div  class="gris2">
                             
-<<<<<<< HEAD
+<!-- HEAD
 =======
-<!-- HEAD-->
->>>>>>> origin/master
+<!-- HEAD>
+>>>>>>> origin/master-->
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
