@@ -62,7 +62,6 @@ CREATE TABLE `Medecin` (
     
     `id_medecin` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `id_service` int(10) unsigned NOT NULL,
-    `civilite_m` enum('Mr','Mme') NOT NULL,
     `nom_m` varchar(255) NOT NULL DEFAUlT '',
     `prenom_m` varchar(255) NOT NULL,
     `mail_m` varchar(255) DEFAULT '',

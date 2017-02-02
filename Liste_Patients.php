@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--inclusion CSS pour autocompletion-->
     <script>
     function deleteRow(obj){
       if(confirm('Vous êtes sure?'))
@@ -14,7 +15,6 @@
     }
     }
     </script>
-        <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -70,9 +70,8 @@
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
-                </div>
-                <div class="section1">
-                    <table cellspacing='0' id="tbl">   
+                </div><br>
+                <table cellspacing='5px' id="tbl" class="table">   
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -147,8 +146,8 @@ while($dnn = $pdo_select->fetch() )
                             <td><img class="supprimer" src="button_supprimer.png"></td>
                         </tr> -->
                     </table> 
-
-                </div>      
+                    
+                   
             </div>
         </div>
         

@@ -42,19 +42,12 @@
                 
                 <div class="blanc";   style="border-radius: 5px;">
                       <p class="date" style="color:black">Date: 05/01/2017
-                <script language="JavaScript">writeSource("js10");</script>
+                      <script language="JavaScript">writeSource("js10");</script>
                     </p>
-                    <div class="section1">            
-                        
-                        <div class=section5>
-                            <div id="titles"> 
-                                <span class="title active"  target="ongletC1">Suivi RDV</span> 
-                                <span class="title" target="ongletC2">Envoi CR </span>
-                            </div>
-            
-                            <div class="ongletC" id="ongletC1" >  
-                                <div class=section_centre>
-                                 <table align="right" cellspacing="5px" class="table">  
+                    <div class="section4">
+                            <div class="ongletC" id="ongletC1">
+                                <div class="section_centre">
+                                 <table  cellspacing="5px" class="table">  
                                     <tr>
                                         <th><strong>Patient</strong></th>
                                         <th><strong>Examen 1</strong></th>
@@ -66,6 +59,8 @@
                                         <td><span class=type>IRM</span></td>
                                         <td><span class=type>Bilan cardiaque</span></td>
                                         <td><span class=type>Consultation neuro</span></td>
+                                         <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>Neurologie Lyon</td>
@@ -76,16 +71,18 @@
                                         <td>02/01/2017</td>
                                         <td>03/01/2017</td>
                                         <td>05/01/2017</td>
+                                        
                                     </tr>
                                     <tr>
                                         <td>10:00 - 11:00</td>
                                         <td>10:00 - 11:00</td>
                                         <td>14:00 - 15:00</td>
+                                         
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix1_ligne1" value="0"/> Réalisé<input type="radio" name="choix1_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="radio" name="choix2_ligne1" value="0"/> Réalisé<input type="radio" name="choix2_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix1_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix1_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix2_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix2_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -93,6 +90,8 @@
                                         <td><span class=type>Consultation neuro</span></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
+                                        <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>UNV Lyon</td>
@@ -104,7 +103,7 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -112,6 +111,8 @@
                                         <td><span class=type>Hospitalisation de Jour</span></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
                                         <td rowspan="5"><I>Aucun examen à venir</I></td>
+                                        <td rowspan="5"> 
+                            <a href="Dossier_Medecin.php" class="myButton"><img class="icone_ajouter" src="Icones/icone_email.png"> Envoyer récapitulatif au médecin</a> </td>
                                     </tr>
                                     <tr>
                                         <td>UNV Lyon</td>
@@ -123,15 +124,15 @@
                                         <td>10:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" name="choix3_ligne1" value="0"/> Réalisé<input type="radio" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
                                     </tr>
                                 </table>
-                                </div>
                             </div>
+                        </div>
                             
                             <div class="ongletC" id="ongletC2" >
-                                <div class=section_centre>
-                                 <table align="right" cellspacing="5px" class="table">   
+                                <div class="section_centre">
+                                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">    
             
                                     <tr>
                                         <td><span class=type>Sophie Martin</span>
@@ -146,7 +147,6 @@
                                 </table>
                             </div>
             
-                        </div>
                     </div>
                 </div>
                 <!--

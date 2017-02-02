@@ -86,9 +86,7 @@ $req->closeCursor();
                 <h1 class="titreGauche">Médecin</h1>
             </div>
             <div class="blanc";   style="border-radius: 5px;">
-              <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
-                </div>
+            
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h1><br>
@@ -97,7 +95,7 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                     <div id="container">
                     <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
-                    <table align="left" cellspacing="5px" class="table">
+                    <table align="left" cellspacing="5px" class="table" id="modif">
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
 
@@ -133,7 +131,7 @@ $req->closeCursor();
                             </tr> 
                     </table> 
 
-                    <table align="right" cellspacing="5px" class="table">
+                    <table align="right" cellspacing="5px" class="table" id="modif">
                             <tr> 
                             <td align="right"> Centre: 
                             </td> 

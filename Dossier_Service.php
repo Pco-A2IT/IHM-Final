@@ -45,10 +45,8 @@
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br><br>
             </div>
-            
-         <div id="container">
 
             <div id="titles"> 
                 <span class="title active"  target="onglet1"> Service</span> 
@@ -57,7 +55,7 @@
 
             <div class="onglet" id="onglet1">
                 <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
-                    <table align="left" cellspacing="5px" class="table"> 
+                    <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
@@ -76,7 +74,7 @@
                         </tr>    
                     </table> 
                     
-                    <table align="right" cellspacing="5px" class="table"> 
+                    <table cellspacing="5px" class="table" style="float:left"> 
                         <tr>
                             <td>Horaires Ouverture</td>
                             <td>
@@ -117,29 +115,30 @@
              </div>
                 
             <div class="onglet" id="onglet3">
-                       <table align="center" cellspacing="5px" class="table"> 
+                <div class="position_table"> 
+                <table align="center" cellspacing="5px" cellpadding="15px" class="table"> 
                             <tr> 
                             <td rowspan=3>Examens disponibles</td> 
                             <td>IRM</td> 
-                            <td><input type="radio" name="choix1_ligne1" value="0"/></td>
+                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
                             </tr> 
                             <tr> 
                             <td>Bilan cardiaque</td>
-                            <td><input type="radio" name="choix1_ligne2" value="1"/></td> 
+                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
                             </tr> 
                             <tr> 
                             <td>Consultation neuro</td>
-                            <td><input type="radio" name="choix1_ligne3" value="2"/></td> 
+                            <td ><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
                             </tr>
                             <tr>
-                            <td align="center"  colspan="2"> 
+                            <td align="center"  colspan="3"> 
                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td> 
                              </tr>
                     </table>
                 </div> 
-                </div>
-        </div>
+             </div>
+          </div>
         </div>
         </div>
         </div>
