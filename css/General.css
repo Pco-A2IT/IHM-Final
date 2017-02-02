@@ -616,7 +616,7 @@ table td:first-child {
 
 
 table td {
-    text-align: left;
+    text-align: center;
 	padding:auto;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid ##B0C4DE;

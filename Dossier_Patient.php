@@ -181,7 +181,7 @@
                             <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
                         </tr>
                          <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
+                             <td align="center"  colspan="3"> 
                                  <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
