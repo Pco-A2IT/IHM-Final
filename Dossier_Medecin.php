@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -12,7 +13,10 @@
     <div class="gris">
             <div  class="gris2">
                             
-<!-- HEAD-->
+<!-- HEAD
+=======
+<!-- HEAD>
+>>>>>>> origin/master-->
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -120,6 +124,11 @@
                             </tr> 
                             <tr height="60px"> 
                             <td align="center"  colspan="2"> 
+                                <FORM class=Zone_Texte>
+                        <TEXTAREA name="nom" rows=4 cols=40>Commentaire éventuel</TEXTAREA>
+                                </FORM>
+                            <tr height="60px">
+                            <td align="center"  colspan="2"> 
                                 <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td> 
                             </tr> 
@@ -128,6 +137,8 @@
           </div>
           </div>
     </div>
+<<<<<<< HEAD
+=======
 <!--=======
                 <div id="menu0" class="carreGris";>
                     <h4>Patients</h4>    
@@ -245,6 +256,7 @@
                 </div>
             </div>
 >>>>>>> refs/remotes/origin/master-->
+>>>>>>> origin/master
         
             <script src="General.js"></script>
         </body>

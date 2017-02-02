@@ -94,9 +94,6 @@ $req->closeCursor();
             <h1 class="titreGauche">Patient</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-             <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
-                </div>
             <div class="section4">
             <div class="div1">
              <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo $nom_p." ".$prenom_p ?></h1><br>
@@ -111,7 +108,7 @@ $req->closeCursor();
 
             <div class="onglet" id="onglet1">
                 <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
-                    <table align="left" cellspacing="5px" class="table">
+                    <table align="left" cellspacing="5px" class="table" id="modif">
                         
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                             <tr> 
@@ -152,7 +149,7 @@ $req->closeCursor();
                             </tr> 
                     </table> 
 
-                    <table align="right" cellspacing="5px" class="table"> 
+                    <table align="right" cellspacing="5px" class="table" id="modif"> 
                             <tr> 
                             <td align="right">Ville:</td> 
                             <td align="left"> 
@@ -197,7 +194,7 @@ $req->closeCursor();
                 
             <div class="onglet" id="onglet3">
                      <div class="position_table">
-                     <table cellspacing='5px'>   
+                           <table cellspacing='5px'>   
                         <tr>
                             <th></th>
                             <th>Examen</th>
@@ -217,12 +214,16 @@ $req->closeCursor();
                         </tr>
                          <tr>
                             <td rowspan="3"> 2nd intention  </td>
-                            <td>Bilan Cardiaque</td>
+                           <td>Bilan Cardiaque</td>
                             <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
                             <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
+                        </tr>
+                        <tr>
+                           <td>IRM</td>
+                            <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="2"> 

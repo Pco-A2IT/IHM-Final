@@ -69,9 +69,6 @@ $req->closeCursor();
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-              <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.html" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Modifier dossier</a>
-                </div>
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
@@ -86,7 +83,7 @@ $req->closeCursor();
 
             <div class="onglet" id="onglet1">
                  
-                    <table align="left" cellspacing="5px" class="table">
+                    <table align="left" cellspacing="5px" class="table" id="modif">
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
                         
@@ -109,7 +106,7 @@ $req->closeCursor();
                         </tr>    
                     </table> 
                     
-                    <table align="right" cellspacing="5px" class="table"> 
+                    <table align="right" cellspacing="5px" class="table" id="modif"> 
                         <tr>
                             <td>Horaires Ouverture</td>
                             <td>
