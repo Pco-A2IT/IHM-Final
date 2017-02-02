@@ -1000,6 +1000,16 @@ label {
 	left: 3px;
 	color: #99a1a7;
 }
+.small-checkbox + label {
+	padding: 6px;
+}
+
+.small-checkbox:checked + label:after {
+	font-size: 1px;
+    top: -2px;
+	left: 1px;
+}
+
 
 .position_table{
     margin:0 auto;
