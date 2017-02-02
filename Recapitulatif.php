@@ -80,9 +80,9 @@
                                          
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" id="choix1_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix1_ligne1"></label>Réalisé<input type="checkbox" id="choix1_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix1_ligne1"></label>Non effectué</td>
-                                        <td><input type="checkbox" id="choix2_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix2_ligne1"></label>Réalisé<input type="checkbox" id="choix2_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix2_ligne1"></label>Non effectué</td>
-                                        <td><input type="checkbox" id="choix3_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix3_ligne1"></label>Réalisé<input type="checkbox" id="choix3_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix3_ligne1"></label>Non effectué</td>
+                                        <td><input type="checkbox" id="choix1_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix1_ligne1"></label> Réalisé<br><input type="checkbox" id="choix1_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix1_ligne2"></label> Non effectué</td>
+                                        <td><input type="checkbox" id="choix2_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix2_ligne1"></label> Réalisé<br><input type="checkbox" id="choix2_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix2_ligne2"></label> Non effectué</td>
+                                        <td><input type="checkbox" id="choix3_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix3_ligne1"></label> Réalisé<br><input type="checkbox" id="choix3_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix3_ligne2"></label> Non effectué</td>
                                     </tr>
                                     
                                     <tr>

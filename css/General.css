@@ -1001,12 +1001,13 @@ label {
 	color: #99a1a7;
 }
 .small-checkbox + label {
-	padding: 7px;
+	padding: 6px;
 }
 
 .small-checkbox:checked + label:after {
-	font-size: 4px;
-	left: 2px;
+	font-size: 1px;
+    top: -2px;
+	left: 1px;
 }
 
 
