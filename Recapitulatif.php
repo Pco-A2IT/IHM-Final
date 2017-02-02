@@ -80,9 +80,9 @@
                                          
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix1_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix1_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="checkbox" name="choix2_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix2_ligne1" value="1"/>Non effectué</td>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" id="choix1_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix1_ligne1"></label>Réalisé<input type="checkbox" id="choix1_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix1_ligne1"></label>Non effectué</td>
+                                        <td><input type="checkbox" id="choix2_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix2_ligne1"></label>Réalisé<input type="checkbox" id="choix2_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix2_ligne1"></label>Non effectué</td>
+                                        <td><input type="checkbox" id="choix3_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix3_ligne1"></label>Réalisé<input type="checkbox" id="choix3_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix3_ligne1"></label>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -103,7 +103,7 @@
                                         <td>14:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" id="choix4_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix4_ligne1"></label>Réalisé<input type="checkbox" id="choix4_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix4_ligne1"></label>Non effectué</td>
                                     </tr>
                                     
                                     <tr>
@@ -124,7 +124,7 @@
                                         <td>10:00 - 15:00</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="choix3_ligne1" value="0"/> Réalisé<input type="checkbox" name="choix3_ligne1" value="1"/>Non effectué</td>
+                                        <td><input type="checkbox" id="choix5_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix5_ligne1"></label>Réalisé<input type="checkbox" id="choix5_ligne1" value="1" class="regular-checkbox small-checkbox" /><label for="choix5_ligne1"></label>Non effectué</td>
                                     </tr>
                                 </table>
                             </div>
