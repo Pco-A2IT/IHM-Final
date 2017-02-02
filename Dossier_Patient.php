@@ -146,6 +146,7 @@
                              
                 
             <div class="onglet" id="onglet3">
+
                 <div class="position_table"> 
                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
@@ -155,28 +156,33 @@
                         <tr>
                             <td rowspan="3"> 1ère intention  </td>
                             <td>Scan cérébral</td>
-                            <td><input type="checkbox" name="ScanC" id="ScanC"value="1" class="regular-checkbox" /><label for="ScanC"></label></td>
+                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
                         </tr>
                         <tr>
                             <td>AngioScan ou Echo Doppler</td>
-                            <td><input type="checkbox" name="AngioScan" id="AngioScan" value="2" class="regular-checkbox" /><label for="AngioScan"></label></td>
+
+                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
                         </tr>
                         <tr>
                             <td>Bilan biologique</td>
-                            <td><input type="checkbox" name="BilanBiologique" value="3" id="BilanBiologique" class="regular-checkbox" /><label for="BilanBiologique"></label></td>
+                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
                         </tr>
                          <tr>
-                            <td rowspan="2"> 2ème intention  </td>
-                            <td>Bilan Cardiaque</td>
-                           <td><input type="checkbox" name="BilanCardiaque" value="4" id="BilanCardiaque" class="regular-checkbox" /><label for="BilanCardiaque"></label></td>
+                            <td rowspan="3"> 2nd intention  </td>
+                           <td>Bilan Cardiaque</td>
+                            <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
                         </tr>
                         <tr>
                             <td>RDV neurologue</td>
-                            <td><input type="checkbox" name="RDVneuro" id="RDVneuro" value="5" class="regular-checkbox"/><label for="RDVneuro"></label></td>
+                            <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
                         </tr>
-                         <tr>
-                             <td align="center"  colspan="3"> 
-                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                        <tr>
+                           <td>IRM</td>
+                            <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
+                        </tr>
+                         <tr rowspan="3">
+                             <td align="center"  colspan="2"> 
+                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
                     </table>
