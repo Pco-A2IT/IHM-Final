@@ -71,17 +71,12 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div><br>
-                     
-                <table cellspacing="0px" id="tbl" class="table">  
-                    <tr style="float:left;">
-                    <th colspan="7">
-                    <form id="recherche" method="post">
+                <div style="margin:0px auto;">  
+                <form id="recherche" method="post" style="float:left;">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
-                    <input class="loupe" type="submit" value="" />
-
-                            </form></th>
-                     </tr>
+                    <input class="loupe" type="submit" value="" /></form>
+                <table cellspacing="0px" id="tbl" class="table"> 
                     <tr>
                         <th>Fiche</th>
                         <th>Nom </th>
@@ -158,7 +153,7 @@ while($dnn = $pdo_select->fetch() )
                             <td><img class="supprimer" src="button_supprimer.png"></td>
                         </tr> -->
                     </table> 
-                    
+                </div>     
                    
             </div>
         </div>
