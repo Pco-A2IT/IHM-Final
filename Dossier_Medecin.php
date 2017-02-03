@@ -25,11 +25,6 @@
     <div class="gris">
 
             <div  class="gris2">
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-<<<<<<< HEAD
 
               <div id="menu0" class="carreGris";>
 
@@ -255,13 +250,6 @@
 
             </div>
 
-        
-
-=======
-
-=======
-
->>>>>>> master
 
             <div id="menu0" class="carreGris";>
 
@@ -313,9 +301,7 @@
 
                
 
-               </div>
-
-        </div> 
+               </div> 
 
             <script src="js/General.js"></script>
 
@@ -477,11 +463,7 @@
 
                             </td> 
 
-                            </tr>
-
-                                
-
-                                
+                            </tr>       
 
                 </table>
 
@@ -490,22 +472,6 @@
           </div>
 
           </div>
-
-    </div>
-
-<<<<<<< HEAD
-
-
-
->>>>>>> master
-
-=======
-
->>>>>>> master
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
               <div id="menu0" class="carreGris";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -616,12 +582,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         
-=======
-=======
->>>>>>> master
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -648,7 +609,6 @@
                 <img class="icone_menu" src="Icones/logout.png"/>
                
                </div>
-        </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Nouveau Médecin</h1>
@@ -736,13 +696,7 @@
                     </div>
           </div>
           </div>
-    </div>
-<<<<<<< HEAD
 
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> refs/remotes/origin/master
             <script src="General.js"></script>
 
         </body>
