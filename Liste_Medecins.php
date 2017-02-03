@@ -78,7 +78,7 @@
                             <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
                         </div><br>
                 
-                    <table cellspacing='5px' id="tbl" class="table">  
+                    <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
                         <th>Nom </th>
                         <th>Prénom </th>
