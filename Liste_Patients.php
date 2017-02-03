@@ -75,7 +75,7 @@
                 <form id="recherche" method="post" style="float:left;">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
-                    <input class="loupe" type="submit" value="" /></form>
+                    <input class="loupe" type="submit" value="" /></form><br>
                 <table cellspacing="0px" id="tbl" class="table"> 
                     <tr>
                         <th>Fiche</th>
