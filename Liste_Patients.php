@@ -74,7 +74,7 @@
                      
                 <table cellspacing="0px" id="tbl" class="table">  
                     <tr style="float:left;">
-                        <td  colspan="9">
+                        <td colspan="7">
                     <form id="recherche" method="post">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
