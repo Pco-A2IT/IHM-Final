@@ -1025,7 +1025,7 @@ input[type="placeholder"]{
 }
 
 .recherche{
-    top:0;
+    top:-1%;
     left:7.5%;
     position:relative; 
 }
