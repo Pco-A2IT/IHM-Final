@@ -65,13 +65,17 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div><br>
-                    <form id="recherche" method="post">
+                
+                 <form id="recherche" method="post" class="recherche">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
                     <input class="loupe" type="submit" value="" />
 
-                    </form>  
+                    </form> 
+                <table cellspacing="0px" id="tbl" class="table"> 
+                
                 <table cellspacing="0px" id="tbl" class="table">   
+    <tr>
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -79,7 +83,7 @@
                         <th>Code postal </th>
                         <th>Ville </th>
                         <th>Téléphone </th>
-                        
+                    </tr>   
                          
 <?php
 
@@ -101,7 +105,8 @@ try {
 
 while($dnn = $pdo_select->fetch() )
 {
-?><tr>
+                        ?>
+                    <tr>
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
@@ -146,12 +151,11 @@ while($dnn = $pdo_select->fetch() )
                             <td><img class="supprimer" src="button_supprimer.png"></td>
                         </tr> -->
                     </table> 
-                    
+                </div>     
                    
             </div>
         </div>
         
     
-    </div>
 </body>
 </html>

@@ -340,8 +340,8 @@ input[type=button]:active{
     }
 
 .titreGauche{
-  left:60px;
-  top:-10px;
+  left:7.5%;
+  top:0px;
   position:absolute;
     
 }
@@ -568,6 +568,7 @@ table {
 	background:#eaebec;
 	margin:0px auto;
 	border:#ccc 1px solid;
+    width: 85%;
 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -1021,4 +1022,10 @@ input[type="placeholder"]{
 
 .modif input{
     color:red;
+}
+
+.recherche{
+    top:-2%;
+    left:7.5%;
+    position:relative; 
 }
