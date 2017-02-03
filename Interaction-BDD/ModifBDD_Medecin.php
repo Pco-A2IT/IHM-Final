@@ -91,19 +91,6 @@ $test=false;
         $id_service=$bdd->lastInsertId();
     }
 }
-//Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-
-
-
-/*$req2 = $bdd->prepare('SELECT * FROM service WHERE centre_s = ? AND nom_s=? ');
-$req2->execute(array($centre_m, $service_m));
-
-if($centre_m!="" && $service_m!=""){
-while ($donn = $req2->fetch()){
-        $id_service=$donn['id_service'];
-        
-    }
-}*/
 $req->closeCursor();
 
 ///////////////////////////
