@@ -65,6 +65,7 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div><br>
+                
                  <form id="recherche" method="post">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
