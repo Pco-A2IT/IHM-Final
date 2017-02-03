@@ -107,7 +107,7 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                            <input type="text" name="commentaire_s" placeholder="Commentaire éventuel"/> 
+                            <input type="text" name="description_s" placeholder="Commentaire"/> 
                             </td> 
                         </tr>
                         <tr height="60px"> 
