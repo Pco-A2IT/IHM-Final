@@ -57,12 +57,6 @@
             
             <div class="titre"; style="border-radius: 5px;">
                 <h1 class="titreGauche">Services</h1>
-                        <form id="recherche" method="post">
-
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
-                            <input class="loupe" type="submit" value="" />
-
-                    </form>   
                 
             </div>
             
@@ -82,7 +76,12 @@
                        <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div><br>
-               
+                 <form id="recherche" method="post">
+
+                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                            <input class="loupe" type="submit" value="" />
+
+                    </form>   
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th></th>

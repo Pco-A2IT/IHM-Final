@@ -54,12 +54,6 @@
             
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Médecins</h1>
-                        <form id="recherche" method="post">
-
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
-                            <input class="loupe" type="submit" value="" />
-
-                    </form>   
                 
             </div>
             
@@ -76,7 +70,13 @@
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
-                        </div><br>
+                        </div><br>  
+                <form id="recherche" method="post">
+
+                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
+                            <input class="loupe" type="submit" value="" />
+
+                     </form> 
                 
                     <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
