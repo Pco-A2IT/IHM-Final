@@ -63,7 +63,7 @@
                 
             </div>
             
-            <script>
+            <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {
                     $('#saisie').autocomplete({
@@ -78,9 +78,8 @@
                             <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
                         </div><br>
                 
-                    <table cellspacing='0' id="tbl">   
+                    <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
-                        <th>Civilité </th>
                         <th>Nom </th>
                         <th>Prénom </th>
                         <th>Email </th>
@@ -115,7 +114,6 @@ while($dnn = $pdo_select->fetch() )
 ?>
                         <tr>
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
-                           <td><?php print_r($dnn['civilite_m']); ?></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
                            <td><?php print_r($dnn['mail_m']); ?></td>

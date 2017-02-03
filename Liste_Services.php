@@ -83,7 +83,7 @@
                             <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
                         </div><br>
                
-                  <table cellspacing='0' id="tbl"> <!-- cellspacing='0' is important, must stay -->
+                  <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th></th>
                         <th>Num Siret</th>
