@@ -17,12 +17,6 @@ $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {   
     
-   
-    
-    if($_POST['civilite_m']==''){$civilite_m= $donnees['civilite_m'];}//s'il ne l'est pas la variable prend la valeur déjà existante dans la bdd
-    else{$civilite_m=$_POST['civilite_m'];}//si le champ est rempli on modifie la bdd
-    echo $civilite_m;
-    
     if($_POST['telephone_m']==''){$telephone_m= $donnees['telephone_m'];}
     else{$telephone_m=$_POST['telephone_m'];}
     echo $telephone_m;
@@ -98,11 +92,10 @@ $req->closeCursor();
 ///////////////////////////
 
 
-$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, civilite_m= :nv_civilite_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m WHERE id_medecin = :jointure ');
+$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m WHERE id_medecin = :jointure ');
 $req->execute(array(
     'nv_id_service' => $id_service,
     'nv_telephone_m' => $telephone_m,
-    'nv_civilite_m' => $civilite_m,
     'nv_nom_m' => $nom_m,
     'nv_prenom_m' => $prenom_m,
     'nv_mail_m' => $mail_m,
