@@ -48,13 +48,7 @@
                 <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Patients</h1>
-                 <form id="recherche" method="post">
-
-                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
-                    <input class="loupe" type="submit" value="" />
-
-                    </form>   
+                <h1 class="titreGauche">Patients</h1> 
                 
             </div>
             <script>
@@ -71,8 +65,18 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div><br>
+<<<<<<< HEAD
                 <table cellspacing="0px" id="tbl" class="table"> 
                     <tr>
+=======
+                    <form id="recherche" method="post">
+
+                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
+                    <input class="loupe" type="submit" value="" />
+
+                    </form>  
+                <table cellspacing="0px" id="tbl" class="table">   
+>>>>>>> refs/remotes/origin/master
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>

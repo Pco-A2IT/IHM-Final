@@ -260,7 +260,7 @@ input[type=button]:active{
 	cursor:pointer;
 	color:#666666;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	padding:10px 100px;
+	padding:10px 15px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
     margin-top:10px;
@@ -895,8 +895,8 @@ button::before, button::after {
 
 
 #recherche {
-margin-top: 15px;
-margin-left:auto;
+margin-top: 0px;
+margin-left:0px;
 width:208px;
 height:24px;
 background:white;
