@@ -13,6 +13,7 @@
     <div class="gris">
             <div  class="gris2">
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div id="menu0" class="carreGris";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -127,6 +128,8 @@
             </div>
         
 =======
+=======
+>>>>>>> master
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -241,7 +244,10 @@
           </div>
           </div>
     </div>
+<<<<<<< HEAD
 
+>>>>>>> master
+=======
 >>>>>>> master
             <script src="General.js"></script>
         </body>
