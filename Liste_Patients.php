@@ -71,8 +71,7 @@
                 <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
                 </div><br>
-                <div style="margin:0px auto;">  
-                <form id="recherche" method="post" style="float:left;">
+                <form id="recherche" method="post" style="float:left;margin:0px auto;">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
                     <input class="loupe" type="submit" value="" /></form><br>
@@ -159,6 +158,5 @@ while($dnn = $pdo_select->fetch() )
         </div>
         
     
-    </div>
 </body>
 </html>
