@@ -109,17 +109,18 @@
                             <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)" /> 
                             </td> 
                             </tr> 
-                            <tr height="60px"> 
-                            <td align="center"  colspan="2"> 
-                                <FORM class=Zone_Texte>
-                        <TEXTAREA name="nom" rows=4 cols=40>Commentaire éventuel</TEXTAREA>
-                                </FORM>
+                            <tr height="60px">
+                                                <td align="center"  colspan="2">
+                                                <input class="zone_texte" type="text" name="description_m" placeholder="Commentaire"/> 
+                                                </td> 
+                                            </tr>
+                                       
                             <tr height="60px">
                             <td align="center"  colspan="2"> 
                                 <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td> 
                             </tr>
-                                </td>
+                                
                                 
                 </table>
                     </div>
