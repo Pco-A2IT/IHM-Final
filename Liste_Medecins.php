@@ -54,16 +54,10 @@
             
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Médecins</h1>
-                        <form id="recherche" method="post">
-
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
-                            <input class="loupe" type="submit" value="" />
-
-                    </form>   
                 
             </div>
             
-            <script>
+            <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {
                     $('#saisie').autocomplete({
@@ -76,11 +70,16 @@
             <div class="blanc";   style="border-radius: 5px;">
                         <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
-                        </div><br>
+                        </div><br>  
+                <form id="recherche" method="post" class="recherche">
+
+                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
+                            <input class="loupe" type="submit" value="" />
+
+                     </form> 
                 
-                    <table cellspacing='0' id="tbl">   
+                    <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
-                        <th>Civilité </th>
                         <th>Nom </th>
                         <th>Prénom </th>
                         <th>Email </th>
@@ -115,7 +114,6 @@ while($dnn = $pdo_select->fetch() )
 ?>
                         <tr>
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
-                           <td><?php print_r($dnn['civilite_m']); ?></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
                            <td><?php print_r($dnn['mail_m']); ?></td>

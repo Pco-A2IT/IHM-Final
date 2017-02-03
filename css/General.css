@@ -260,7 +260,7 @@ input[type=button]:active{
 	cursor:pointer;
 	color:#666666;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	padding:10px 100px;
+	padding:10px 15px;
 	text-decoration:none;
 	text-shadow:-11px 1px 11px #ffffff;
     margin-top:10px;
@@ -340,8 +340,8 @@ input[type=button]:active{
     }
 
 .titreGauche{
-  left:60px;
-  top:-10px;
+  left:7.5%;
+  top:0px;
   position:absolute;
     
 }
@@ -568,6 +568,7 @@ table {
 	background:#eaebec;
 	margin:0px auto;
 	border:#ccc 1px solid;
+    width: 85%;
 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -616,7 +617,7 @@ table td:first-child {
 
 
 table td {
-    text-align: left;
+    text-align: center;
 	padding:auto;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid ##B0C4DE;
@@ -894,8 +895,8 @@ button::before, button::after {
 
 
 #recherche {
-margin-top: 15px;
-margin-left:auto;
+margin-top: 0px;
+margin-left:0px;
 width:208px;
 height:24px;
 background:white;
@@ -1000,6 +1001,16 @@ label {
 	left: 3px;
 	color: #99a1a7;
 }
+.small-checkbox + label {
+	padding: 6px;
+}
+
+.small-checkbox:checked + label:after {
+	font-size: 1px;
+    top: -2px;
+	left: 1px;
+}
+
 
 .position_table{
     margin:0 auto;
@@ -1012,3 +1023,19 @@ input[type="placeholder"]{
 .modif input{
     color:red;
 }
+
+.recherche{
+    top:-2%;
+    left:7.5%;
+    position:relative; 
+}
+.section {
+color: #000000;
+}
+.placeholder{
+color: #a9a9a9;
+ width: 205px;
+ height: 25px;
+}
+select option:first-child{color:grey; display: none;}
+select option {color:black;}

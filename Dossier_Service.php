@@ -105,6 +105,11 @@
                             <input type="text" name="ville_s" placeholder="(ex: Bron)"/> 
                             </td> 
                         </tr>
+                        <tr height="60px">
+                            <td align="center"  colspan="2">
+                            <input class="zone_texte" type="text" name="description_s" placeholder="Commentaire"/> 
+                            </td> 
+                        </tr>
                         <tr height="60px"> 
                             <td align="center"  colspan="2"> 
                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 

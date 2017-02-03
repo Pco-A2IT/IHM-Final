@@ -64,11 +64,16 @@
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité:</td>
-                                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" autocomplete="off" list="c" required/>
-                                                <datalist id="c">
-                                                        <option>Mr</option>
-                                                        <option>Mme</option>
-                                                </datalist>
+                                            <td align="left"><section id="main">
+                                            <form>
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);">
+                                                    <option value="" >Civilité</option>
+                                                    <option value="homme">Madame</option>
+                                                    <option value="femme">Monsieur</option>
+
+                                                </select>
+                                            </form>
+                                        </section>
                                             </td>
                                         </tr>
                                         <tr>
@@ -134,13 +139,20 @@
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
-                                        </tr>   
+                                        </tr> 
+                                          <tr height="60px">
+                                                <td align="center"  colspan="3">
+                                                <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
+                                                </td> 
+                                            </tr>
+                                       
                                         <tr height="60px"> 
                                             <td align="center"  colspan="3"> 
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                                             </td> 
-                                        </tr> 
-                                        </table>
+                                        </tr>  
+                                    </table>
+                                    
                                 </form>
                                 </div>
                              
@@ -181,7 +193,7 @@
                             <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
                         </tr>
                          <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
+                             <td align="center"  colspan="3"> 
                                  <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
@@ -192,6 +204,7 @@
         </div>
         </div>
         </div>
+        </div>
         </form>
          <script src="General.js"></script>
     </body>
@@ -199,6 +212,17 @@
 </html>
 
      <script>
+         
+         function changeColor(s) {
+    if(s.options[s.selectedIndex].value == "") {
+        s.style.color = "#a9a9a9";
+    }
+     
+    else {
+        s.style.color = "black";
+    }
+}
+         
 
         $(document).ready(function(){
 
