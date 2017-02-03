@@ -1029,3 +1029,13 @@ input[type="placeholder"]{
     left:7.5%;
     position:relative; 
 }
+.section {
+color: #000000;
+}
+.placeholder{
+color: #a9a9a9;
+ width: 205px;
+ height: 25px;
+}
+select option:first-child{color:grey; display: none;}
+select option {color:black;}
