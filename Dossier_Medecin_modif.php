@@ -101,15 +101,7 @@ $req->closeCursor();
 
                         
                             
-                            <tr> 
-                            <td align="right">Civilité:</td>
-                            <td align="left"><input type="text" name="civilite_m" placeholder="<?php echo $civilite_m ?>" list="c"/>
-                                <datalist id="c">
-                                        <option>Mr</option>
-                                        <option>Mme</option>
-                                </datalist>
-                                </td>
-                            </tr>
+                            
                             <tr>
                             <td align="right">Nom:</td> 
                             <td align="left"><input type="text" name="nom_m" placeholder="<?php echo $nom_m ?>" /></td>
