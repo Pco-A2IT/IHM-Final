@@ -74,7 +74,7 @@
                      
                 <table cellspacing="0px" id="tbl" class="table">  
                     <tr style="float:left;">
-                        <td colspan="7">
+                    <td colspan="7">
                     <form id="recherche" method="post">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
@@ -90,7 +90,7 @@
                         <th>Code postal </th>
                         <th>Ville </th>
                         <th>Téléphone </th>
-                        
+                    </tr>   
                          
 <?php
 
@@ -112,7 +112,7 @@ try {
 
 while($dnn = $pdo_select->fetch() )
 {
-                        ?></tr>
+                        ?>
                     <tr>
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
