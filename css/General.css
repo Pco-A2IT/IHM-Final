@@ -340,8 +340,8 @@ input[type=button]:active{
     }
 
 .titreGauche{
-  left:60px;
-  top:-10px;
+  left:10%;
+  top:0px;
   position:absolute;
     
 }
