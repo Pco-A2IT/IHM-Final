@@ -58,15 +58,7 @@
                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     </form>
                     <table cellspacing="5px" class="table" style="float:left"> 
-                            <tr> 
-                            <td align="right">Civilité:</td>
-                            <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
-                                <datalist id="c">
-                                        <option>Mr</option>
-                                        <option>Mme</option>
-                                </datalist>
-                                </td>
-                            </tr>
+                            
                             <tr>
                             <td align="right">Nom:</td> 
                             <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" required/></td>
@@ -180,15 +172,7 @@
                                 <div id="container">
                                     <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                                         <table align="left" cellspacing="5px" class="table"> 
-                                            <tr> 
-                                                <td align="right">Civilité:</td>
-                                                <td align="left"><input type="text" name="civilite_m" placeholder="Choisir Civilité" list="c"/>
-                                                    <datalist id="c">
-                                                        <option>Mr</option>
-                                                        <option>Mme</option>
-                                                    </datalist>
-                                                </td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <td align="right">Nom:</td> 
                                                 <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" required/></td>
