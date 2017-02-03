@@ -82,6 +82,7 @@
 
                             </form></td>
                      </tr>
+                    <tr>
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
@@ -111,7 +112,8 @@ try {
 
 while($dnn = $pdo_select->fetch() )
 {
-?><tr>
+                        ?></tr>
+                    <tr>
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
