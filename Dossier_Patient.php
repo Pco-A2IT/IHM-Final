@@ -134,7 +134,12 @@
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
-                                        </tr>   
+                                        </tr> 
+                                        <tr height="60px"> 
+                                            <td align="center"  colspan="3"> 
+                                                <FORM class=Zone_Texte>
+                                                    <TEXTAREA name="nom" rows=4 cols=50>Commentaire éventuel</TEXTAREA>
+                                                </FORM>
                                         <tr height="60px"> 
                                             <td align="center"  colspan="3"> 
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
@@ -181,7 +186,7 @@
                             <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
                         </tr>
                          <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
+                             <td align="center"  colspan="3"> 
                                  <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
