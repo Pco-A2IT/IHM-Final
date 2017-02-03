@@ -830,7 +830,10 @@ table tr:hover td {
     height: 20px;
     cursor: pointer;
 }
-
+.recherche_p{
+    margin-top: 30px;
+    margin-left: 10px;
+}
 button {   
   background: none;   
   border: 0;   
@@ -1019,4 +1022,10 @@ input[type="placeholder"]{
 
 .modif input{
     color:red;
+}
+
+.recherche{
+    top:20%;
+    left:30%;
+    position:relative; 
 }
