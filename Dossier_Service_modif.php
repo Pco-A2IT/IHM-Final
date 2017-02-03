@@ -111,9 +111,10 @@ $req->closeCursor();
                             <td>Horaires Ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
-                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="time"  placeholder="<?php echo strftime("%H",strtotime($horairesd_s)) ?>"> :
-                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesd_s)) ?>"> 
                                 
+                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="test"  placeholder="<?php echo strftime("%H",strtotime($horairesd_s)) ?>"> :
+                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesd_s)) ?>"> 
+                                à  
                                 <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="<?php echo strftime("%H",strtotime($horairesf_s)) ?>"> :
                                 <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesf_s)) ?>"> 
                             </td>
