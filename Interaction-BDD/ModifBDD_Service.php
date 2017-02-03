@@ -40,14 +40,46 @@ while ($donnees = $req->fetch())
     echo $ville_s;
     
     /* Il manque la case description */
-    
-    
-    $horairesd_s=$_POST['heured'].':'. $_POST['mind'].':'. '00';
-    if ($horairesd_s=="::00"){$horairesd_s= $donnees['horairesd_s'];}
+    $horairesd_s=$donnees['horairesd_s'];
+    if($_POST['heured']=="" && $_POST['mind']==""){
+        $horairesd_s= $donnees['horairesd_s'];
+    }
+    else{
+        if($_POST['heured']==""){
+            $horairesd_s=strftime("%H",strtotime($horairesd_s)).":". $_POST['mind'].":00";
+        }
+        else{
+            if($_POST['mind']==""){
+                $horairesd_s= $_POST['heured'].":".strftime("%M",strtotime($horairesd_s)).":00";
+            }
+            else{
+                $horairesd_s= $_POST['heured'].":".$_POST['mind'].":00";
+            }
+            
+        }
         
-    $horairesf_s=$_POST['heuref'].':'. $_POST['minf'].':'. '00';
-    if ($horairesf_s=="::00"){$horairesf_s= $donnees['horairesf_s'];}
+    }
     
+    echo $horairesd_s;
+    $horairesf_s=$donnees['horairesf_s'];
+    if($_POST['heuref']=="" && $_POST['minf']==""){
+        $horairesf_s= $donnees['horairesf_s'];
+    }
+    else{
+        if($_POST['heuref']==""){
+            $horairesf_s=strftime("%H",strtotime($horairesf_s)).":". $_POST['minf'].":00";
+        }
+        
+        else{
+            if($_POST['minf']==""){
+                $horairesf_s= $_POST['heuref'].":".strftime("%M",strtotime($horairesf_s)).":00";
+            }
+            else{
+                $horairesf_s= $_POST['heuref'].":".$_POST['minf'].":00";
+            }
+        }
+    }
+    echo $horairesf_s;
 }                              
 $req->closeCursor();
 

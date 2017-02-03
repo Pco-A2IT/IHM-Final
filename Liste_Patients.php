@@ -110,14 +110,22 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
                            <td><a href="Dossier_Patient_modif.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
-                            <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
-                            <!--<td><img class="supprimer" src="Icones/button_supprimer.png" onclick='deleteRow(this)'></td>-->
+                            <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
                                                 
 <?php
 }
 ?>
+<!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->                         
+<script> 
+function sure()
+{
+    return(confirm('Etes-vous sûr de vouloir supprimer ce Dossier Patient ?'));
+}                 
+</script>
+
+
 
                         <!--<tr>
                            <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
