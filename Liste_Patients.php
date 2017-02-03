@@ -73,13 +73,14 @@
                 </div><br>
                      
                 <table cellspacing="0px" id="tbl" class="table">  
-                    <tr style="float:left;" colspan="9">
+                    <tr style="float:left;">
+                        <td  colspan="9">
                     <form id="recherche" method="post">
 
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
                     <input class="loupe" type="submit" value="" />
 
-                    </form>
+                            </form></td>
                      </tr>
                         <th>Fiche</th>
                         <th>Nom </th>
