@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--inclusion CSS pour autocompletion-->
     <script>
     function deleteRow(obj){
       if(confirm('Vous êtes sure?'))
@@ -14,7 +15,6 @@
     }
     }
     </script>
-        <!--inclusion CSS pour autocompletion-->
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

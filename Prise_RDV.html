@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta charset="UTF-8">
    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
 </head>
 <body>
