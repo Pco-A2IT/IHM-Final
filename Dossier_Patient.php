@@ -145,7 +145,9 @@
                                                 <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                                             </td> 
                                         </tr> 
-                                        </table>
+                                            </td>   
+                                    </table>
+                                    
                                 </form>
                                 </div>
                              
@@ -194,6 +196,7 @@
                  </div>
             </div>
                     </div>
+        </div>
         </div>
         </div>
         </div>
