@@ -10,10 +10,8 @@
     </head>
     
     <body>
-    <div class="gris">
+        <div class="gris">
             <div  class="gris2">
-<<<<<<< HEAD
-<<<<<<< HEAD
               <div id="menu0" class="carreGris";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -126,10 +124,7 @@
                     </div>
                 </div>
             </div>
-        
-=======
-=======
->>>>>>> master
+        <div>
             <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -161,6 +156,7 @@
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Nouveau Médecin</h1>
             </div>
+        <div>
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="section4">
                     <div class="div1">
@@ -242,14 +238,9 @@
                                 
                 </table>
                     </div>
-          </div>
+            </div>
           </div>
     </div>
-<<<<<<< HEAD
-
->>>>>>> master
-=======
->>>>>>> master
             <script src="General.js"></script>
         </body>
 
