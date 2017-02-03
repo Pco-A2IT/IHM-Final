@@ -107,16 +107,16 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 1111 ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\')');
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
         $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
     }
 }
 //Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-else{
+/*else{
     $id_medecin_traitant=0;
-}
+}*/
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -141,16 +141,16 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, num_adeli_m ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 1111 ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\',\'A renseigner\')');
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
         $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();;
     }
 }
 
 //Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-else{
+/*else{
     $id_medecin_appelant=0;
-}
+}*/
 
 //echo "Nouveau medecin appelant :".$id_medecin_appelant;
 $req->closeCursor();
@@ -184,6 +184,6 @@ $req->execute(array(
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-//header('Location: ../Liste_Patients.php');
+header('Location: ../Liste_Patients.php');
 
 ?>

@@ -109,5 +109,5 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['date_ait
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
+header('Location: ../Dossier_Patient.php');
 ?>

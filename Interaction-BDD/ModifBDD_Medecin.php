@@ -62,13 +62,33 @@ while ($donnees = $req->fetch())
     $id_service=$donnees['id_service'];// on récupère l'id_service existant dans le tuple selectionné
 }
 
-$req2 = $bdd->prepare('SELECT * FROM service WHERE centre_s = ? AND nom_s=? ');
-$req2->execute(array($centre_m, $service_m));
+///////////////////////////////////////////////////////////////////////////////////////
+/*      ID_service                                                        */
+///////////////////////////////////////////////////////////////////////////////////////
 
-if($centre_m!="" && $service_m!=""){
-while ($donn = $req2->fetch()){
-        $id_service=$donn['id_service'];
-        
+//On prend dans 'service' l'éventuel tuple qui correspond au service et centre rentré dans le formulaire
+$req2 = $bdd->prepare('SELECT * FROM service WHERE nom_s = ? AND centre_s=? ');
+$req2->execute(array($service_m, $centre_m));
+//Si on a rempli les champs service
+if($service_m!="" && $centre_m!="" ){
+$test=false;
+//il faut trouver l'id du service correspond
+    while ($donn = $req2->fetch()){
+        //on regarde si le service existe déjà dans la bdd
+        if($service_m==$donn['nom_s'] && $centre_m==$donn['centre_s']){
+            $test=true;
+            if($test==true){
+                echo "olaaaaa";
+                $id_service=$donn['id_service'];
+            }
+        }
+    }
+    //s'il n'existe pas on le crée en renseignant juste le minimum
+    if($test!=true){
+        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL, \'A renseigner\' ,? , ?,\'A renseigner\', \'00:00:00\',\' 00:00:00\',\'A renseigner\' ,\'00000\',\'A renseigner\',\'A renseigner\' )');
+        $reqSer->execute(array($centre_m, $service_m));
+        //$id_medecin_traitant est celui du medecin qu'on vient de créer
+        $id_service=$bdd->lastInsertId();
     }
 }
 $req->closeCursor();

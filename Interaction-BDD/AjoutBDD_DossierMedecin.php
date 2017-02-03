@@ -80,5 +80,5 @@ $req->execute(array( $id_service, $_POST['civilite_m'], $_POST['nom_m'], $_POST[
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Medecin.php');
+header('Location: ../Liste_Medecins.php');
 ?>
