@@ -66,10 +66,10 @@
                                             <td align="right">Civilité:</td>
                                             <td align="left"><section id="main">
                                             <form>
-                                                <select id="choix" class="placeholder" onchange="changeColor(this);">
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p">
                                                     <option value="" >Civilité</option>
-                                                    <option value="homme">Madame</option>
-                                                    <option value="femme">Monsieur</option>
+                                                    <option value="Mr">Mr</option>
+                                                    <option value="Mme">Mme</option>
 
                                                 </select>
                                             </form>
