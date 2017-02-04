@@ -17,12 +17,6 @@ $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {   
     
-   
-    
-    if($_POST['civilite_m']==''){$civilite_m= $donnees['civilite_m'];}//s'il ne l'est pas la variable prend la valeur déjà existante dans la bdd
-    else{$civilite_m=$_POST['civilite_m'];}//si le champ est rempli on modifie la bdd
-    echo $civilite_m;
-    
     if($_POST['telephone_m']==''){$telephone_m= $donnees['telephone_m'];}
     else{$telephone_m=$_POST['telephone_m'];}
     echo $telephone_m;
@@ -62,13 +56,33 @@ while ($donnees = $req->fetch())
     $id_service=$donnees['id_service'];// on récupère l'id_service existant dans le tuple selectionné
 }
 
-$req2 = $bdd->prepare('SELECT * FROM service WHERE centre_s = ? AND nom_s=? ');
-$req2->execute(array($centre_m, $service_m));
+///////////////////////////////////////////////////////////////////////////////////////
+/*      ID_service                                                        */
+///////////////////////////////////////////////////////////////////////////////////////
 
-if($centre_m!="" && $service_m!=""){
-while ($donn = $req2->fetch()){
-        $id_service=$donn['id_service'];
-        
+//On prend dans 'service' l'éventuel tuple qui correspond au service et centre rentré dans le formulaire
+$req2 = $bdd->prepare('SELECT * FROM service WHERE nom_s = ? AND centre_s=? ');
+$req2->execute(array($service_m, $centre_m));
+//Si on a rempli les champs service
+if($service_m!="" && $centre_m!="" ){
+$test=false;
+//il faut trouver l'id du service correspond
+    while ($donn = $req2->fetch()){
+        //on regarde si le service existe déjà dans la bdd
+        if($service_m==$donn['nom_s'] && $centre_m==$donn['centre_s']){
+            $test=true;
+            if($test==true){
+                echo "olaaaaa";
+                $id_service=$donn['id_service'];
+            }
+        }
+    }
+    //s'il n'existe pas on le crée en renseignant juste le minimum
+    if($test!=true){
+        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL, \'A renseigner\' ,? , ?,\'A renseigner\', \'00:00:00\',\' 00:00:00\',\'A renseigner\' ,\'00000\',\'A renseigner\',\'A renseigner\' )');
+        $reqSer->execute(array($centre_m, $service_m));
+        //$id_medecin_traitant est celui du medecin qu'on vient de créer
+        $id_service=$bdd->lastInsertId();
     }
 }
 $req->closeCursor();
@@ -78,11 +92,10 @@ $req->closeCursor();
 ///////////////////////////
 
 
-$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, civilite_m= :nv_civilite_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m WHERE id_medecin = :jointure ');
+$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m WHERE id_medecin = :jointure ');
 $req->execute(array(
     'nv_id_service' => $id_service,
     'nv_telephone_m' => $telephone_m,
-    'nv_civilite_m' => $civilite_m,
     'nv_nom_m' => $nom_m,
     'nv_prenom_m' => $prenom_m,
     'nv_mail_m' => $mail_m,
