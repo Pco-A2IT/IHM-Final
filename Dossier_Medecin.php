@@ -45,13 +45,15 @@
             </div>
         <div>
             <div class="blanc";   style="border-radius: 5px;">
+                
+                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
+                 <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
                     </div>
     
                 <div class="onglet" id="onglet1">
-                    <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                     
                     <table cellspacing="5px" class="table" style="float:left"> 
                             
@@ -116,17 +118,15 @@
                                                 </td> 
                                             </tr>
                                        
-                            <tr height="60px">
-                            <td align="center"  colspan="2"> 
-                                <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
-                            </tr>
+                    
                                 
                                 
                 </table>
-                        </form>
+                    
+                       
                     </div>
             </div>
+                         </form>
           </div>
     </div>
         </div>
