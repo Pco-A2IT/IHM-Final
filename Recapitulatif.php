@@ -41,9 +41,11 @@
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
-                      <p class="date" style="color:black">Date: 05/01/2017
+                    <!--
+                    <p class="date" style="color:black">
                       <script language="JavaScript">writeSource("js10");</script>
                     </p>
+                    -->
                     <div class="section4">
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
@@ -74,9 +76,9 @@
                                         
                                     </tr>
                                     <tr>
-                                        <td>10:00 - 11:00</td>
-                                        <td>10:00 - 11:00</td>
-                                        <td>14:00 - 15:00</td>
+                                        <td>10:00</td>
+                                        <td>10:00</td>
+                                        <td>14:00</td>
                                          
                                     </tr>
                                     <tr>
@@ -100,7 +102,7 @@
                                         <td>04/01/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>14:00 - 15:00</td>
+                                        <td>14:00</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" id="choix4_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix4_ligne1"></label>Réalisé<input type="checkbox" id="choix4_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix4_ligne2"></label>Non effectué</td>
@@ -121,7 +123,7 @@
                                         <td>04/01/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>10:00 - 15:00</td>
+                                        <td>10:00</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" id="choix5_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix5_ligne1"></label>Réalisé<input type="checkbox" id="choix5_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix5_ligne2"></label>Non effectué</td>
@@ -149,9 +151,6 @@
             
                     </div>
                 </div>
-                <!--
-                <div id="calendar" class="calendaire"><iframe  frameborder="0" width="300px" height="300px" src="calendar.html"/>
-                </div>-->
             </div>
         </div>
         </div>
