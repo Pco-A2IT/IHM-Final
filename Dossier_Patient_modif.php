@@ -113,7 +113,7 @@ $req->closeCursor();
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                             <tr> 
                                 <td align="right">Date de l'AIT:</td> 
-                                <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                                <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                             </tr>
                             <tr> 
                             <td align="right">Civilité:</td>
@@ -134,7 +134,7 @@ $req->closeCursor();
                             </tr>  
                             <tr> 
                             <td align="right">Date de naissance:</td> 
-                            <td align="left"><input type="date" name="birthday_p" placeholder="<?php echo strftime("%d",strtotime($date_naissance))."/".strftime("%m",strtotime($date_naissance))."/".strftime("%Y",strtotime($date_naissance)) ?>"/></td> 
+                            <td align="left"><input type="date" name="birthday_p" value="<?php echo $date_naissance; ?>" placeholder=""/></td> 
                             </tr>
                             <tr> 
                             <td align="right">Mail:</td>

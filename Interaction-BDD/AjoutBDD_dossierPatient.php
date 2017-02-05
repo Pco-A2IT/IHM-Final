@@ -5,14 +5,20 @@ include('../config.php');
 
 //On récupère la date de naissance dans l'html
 $date= $_POST['birthday_p'];
+if($date==""){
+    $date= "1970-01-01";
+}
 echo $date;
 
+
 $date1= $_POST['date_ait_p'];
+if($date1==""){
+    $date1 = "1970-01-01";
+}
 echo $date1;
 
-//on explose la date de naissance
-//list($j,$m,$a)=explode("/",$date);
-//$date="$a-$m-$j";
+$civilite_p= $_POST['civilite_p'];
+echo $civilite_p;
 
 
 ///////////////////////////////////
@@ -101,13 +107,13 @@ else{
 /*      Insertion dans la base donnée                                                  */
 ///////////////////////////////////////////////////////////////////////////////////////
 // Insertion du message à l'aide d'une requête préparée
-$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p,nom_p, prenom_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL,?, ?, ? ,? , ?,?,? ,?,?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
+$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance,mail_p,telephone_p,ville_p,codePostal_p,adresse_p,date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?,NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $_POST['date_ait_p'] ,$_POST['nom_p'], $_POST['prenom_p'],$_POST['birthday_p'],  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p']));
 
 
 
 
 // Redirection du visiteur vers la page du minichat
-header('Location: ../Dossier_Patient.php');
+//header('Location: ../Dossier_Patient.php');
 ?>
