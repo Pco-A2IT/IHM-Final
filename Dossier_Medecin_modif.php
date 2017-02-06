@@ -20,7 +20,6 @@ $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {
     $id_service=$donnees['id_service'];
-    $civilite_m=$donnees['civilite_m'];
     $nom_m=$donnees['nom_m'];
     $prenom_m=$donnees['prenom_m'];
     $mail_m=$donnees['mail_m'];
