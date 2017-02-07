@@ -43,7 +43,9 @@
                 <div class="titre";   style="border-radius: 5px;">
                     <h1 class="titreGauche">Nouveau Patient</h1>
                 </div>
+                
                 <div class="blanc";   style="border-radius: 5px;">
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
