@@ -147,12 +147,6 @@
                                                 <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
                                                 </td> 
                                             </tr>
-                                       
-                                        <tr height="60px"> 
-                                            <td align="center"  colspan="3"> 
-                                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                                            </td> 
-                                        </tr>  
                                     </table>
                                     
                                 </form>
@@ -196,7 +190,7 @@
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="3"> 
-                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                                 <a href="Prise_RDV.php">  <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
                     </table>
