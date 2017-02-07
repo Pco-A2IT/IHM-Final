@@ -68,7 +68,7 @@
                 
                  <form id="recherche" method="post" class="recherche">
 
-                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..." required />
+                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
                     <input class="loupe" type="submit" value="" />
 
                     </form> 
