@@ -70,7 +70,7 @@
                                             <form>
                                                 <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p">
                                                     <option value="" >Civilité</option>
-                                                    <option value="Mr">Mr</option>
+                                                    <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>
 
                                                 </select>
@@ -132,6 +132,9 @@
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
                                             </td>
+                                            <td align="left"> 
+                                                <input type="text" name="mail_m_traitant" placeholder="Mail"/>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td align="right">Médecin appelant:</td> 
@@ -140,6 +143,9 @@
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                                            </td>
+                                            <td align="left"> 
+                                                <input type="text" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
                                         </tr> 
                                           <tr height="60px">

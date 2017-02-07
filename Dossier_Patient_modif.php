@@ -42,7 +42,7 @@ while ($donnees = $req->fetch())
     {
         $nom_m_traitant=$donn['nom_m'];
         $prenom_m_traitant=$donn['prenom_m'];
-
+        $mail_m_traitant=$donn['mail_m'];
     
     }
     $req3 = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
@@ -52,6 +52,7 @@ while ($donnees = $req->fetch())
     {
         $nom_m_appelant=$don['nom_m'];
         $prenom_m_appelant=$don['prenom_m'];
+        $mail_m_appelant=$don['mail_m'];
     
     }
 
@@ -178,6 +179,11 @@ $req->closeCursor();
                             <td align="left"> 
                             <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                             </td>
+                            
+                            <td align="left"> 
+                                    <input type="text" name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td align="right">Médecin appelant:</td> 
@@ -186,6 +192,10 @@ $req->closeCursor();
                             </td>
                             <td align="left"> 
                             <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                            </td>
+                            
+                            <td align="left"> 
+                                    <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Prénom du médecin appelant";} ?>"/>
                             </td>
                         </tr>
                         <tr height="60px">
