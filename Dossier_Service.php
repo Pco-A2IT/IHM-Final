@@ -120,27 +120,32 @@
              </div>
                 
             <div class="onglet" id="onglet3">
-                <div class="position_table"> 
-                <table align="center" cellspacing="5px" cellpadding="15px" class="table"> 
-                            <tr> 
-                            <td rowspan=3>Examens disponibles</td> 
-                            <td>IRM</td> 
-                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Bilan cardiaque</td>
-                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Consultation neuro</td>
-                            <td ><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                            </tr>
+                <div class="position_table">
+                
+                <table align="center" cellspacing="5px" class="table"> 
+                           <tr> 
+                            <td>Examens disponibles</td>
+                           </tr>
+                            <?php
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                            ?>
                             <tr>
-                            <td align="center"  colspan="3"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
+                            <td><?php print_r($dnn['typeExamen']); ?></td> 
+                            <td><input type="radio" name="<?php echo($compteur); ?>" value="YES"/></td>
+                            <?php $compteur=$compteur+1; ?>
+                            </tr>
+                            <?php
+                                };
+                            ?>
+                            <tr> 
+                            <tr>
+                            
+                            
                              </tr>
                     </table>
+                    
                 </div> 
              </div>
           </div>
