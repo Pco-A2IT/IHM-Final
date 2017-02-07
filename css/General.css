@@ -308,7 +308,10 @@ input[type=button]:active{
 
 #Ajouter_liste{
     position: relative;
+    top: 10px;
     left: 940px;
+    border-radius:6px;
+	cursor:pointer;
     }
 
 #Examens{
@@ -943,7 +946,11 @@ width: 150px;
 line-height: 30px; 
 border-radius:5px; 
 } 
+
 .submit { 
+position: relative;
+margin-top: 10px;
+left:980px;
 width: 150px; 
 height: 40px; 
 cursor :hand;
@@ -952,7 +959,10 @@ color: #ffffff;
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 background-color: #1270B3; 
 border: 0px; 
+cursor:pointer;
+
 } 
+
 .thead { 
 height: 40px; background : #1270B3; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
@@ -1029,3 +1039,13 @@ input[type="placeholder"]{
     left:7.5%;
     position:relative; 
 }
+.section {
+color: #000000;
+}
+.placeholder{
+color: #a9a9a9;
+ width: 205px;
+ height: 25px;
+}
+select option:first-child{color:grey; display: none;}
+select option {color:black;}

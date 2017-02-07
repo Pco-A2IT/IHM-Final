@@ -64,11 +64,16 @@
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité:</td>
-                                            <td align="left"><input type="text" name="civilite_p" placeholder="Choisir Civilité" autocomplete="off" list="c" required/>
-                                                <datalist id="c">
-                                                        <option>Mr</option>
-                                                        <option>Mme</option>
-                                                </datalist>
+                                            <td align="left"><section id="main">
+                                            <form>
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p">
+                                                    <option value="" >Civilité</option>
+                                                    <option value="Mr">Mr</option>
+                                                    <option value="Mme">Mme</option>
+
+                                                </select>
+                                            </form>
+                                        </section>
                                             </td>
                                         </tr>
                                         <tr>
@@ -197,8 +202,7 @@
             </div>
                     </div>
         </div>
-        </div>
-        </div>
+            </div>
         </div>
         </form>
          <script src="General.js"></script>
@@ -207,6 +211,17 @@
 </html>
 
      <script>
+         
+         function changeColor(s) {
+    if(s.options[s.selectedIndex].value == "") {
+        s.style.color = "#a9a9a9";
+    }
+     
+    else {
+        s.style.color = "black";
+    }
+}
+         
 
         $(document).ready(function(){
 

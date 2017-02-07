@@ -121,38 +121,20 @@ while($dnn = $pdo_select->fetch() )
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
                             <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
-                            <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
+                            <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>" onclick="return sure();"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
 <?php
 }
 ?>
 
+<!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->     
+<script> 
+function sure()
+    {return(confirm('Etes-vous sûr de vouloir supprimer ce Medecin ?'));}
+</script>  
 
-                       <!-- <tr>
-                           <td><img src="medecin.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
-                           <td>Monsieur</td>
-                           <td>Bardi</td>
-                           <td>Luigi</td>
-                           <td>luigi.bardi@gmail.com</td>
-                           <td>Cardiologue</td>
-                            <td>0988834944</td>
-                            <td>Villeurbanne</td>
-                            <td><a href="Dossier_Medecin_modif.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="medecin.png" width="50px" heigh="50px" alt="Photo de patient"  /></td>
-                            <td>Monsieur</td>
-                           <td>Delabarre</td>
-                           <td>Lucas</td>
-                           <td>lucas.d@gmail.com</td>
-                           <td>Généraliste</td>
-                            <td>0788834944</td>
-                            <td>Villeurbanne</td>
-                            <td><img class="supprimer" src="loupe.png"></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr> -->
+
                     </table> 
                     
                      

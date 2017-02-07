@@ -108,12 +108,11 @@ $req->closeCursor();
 
             <div class="onglet" id="onglet1">
                 <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
-                    <table align="left" cellspacing="5px" class="table" id="modif">
+                    <table cellspacing="5px" class="table" id="modif" style="float:left">
                         
-                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                             <tr> 
                                 <td align="right">Date de l'AIT:</td> 
-                                <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                                <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                             </tr>
                             <tr> 
                             <td align="right">Civilité:</td>
@@ -134,7 +133,7 @@ $req->closeCursor();
                             </tr>  
                             <tr> 
                             <td align="right">Date de naissance:</td> 
-                            <td align="left"><input type="date" name="birthday_p" placeholder="<?php echo strftime("%d",strtotime($date_naissance))."/".strftime("%m",strtotime($date_naissance))."/".strftime("%Y",strtotime($date_naissance)) ?>"/></td> 
+                            <td align="left"><input type="date" name="birthday_p" value="<?php echo $date_naissance; ?>" placeholder=""/></td> 
                             </tr>
                             <tr> 
                             <td align="right">Mail:</td>
@@ -149,28 +148,28 @@ $req->closeCursor();
                             </tr> 
                     </table> 
 
-                    <table align="right" cellspacing="5px" class="table" id="modif"> 
-                            <tr> 
+                    <table cellspacing="5px" class="table" id="modif" style="float:left"> 
+                        <tr> 
                             <td align="right">Ville:</td> 
-                            <td align="left"> 
+                            <td align="left" colspan="2"> 
                             <input type="text" name="ville_p" placeholder="<?php echo $ville_p ?>"/> 
                             </td> 
-                            </tr> 
-                            <tr> 
+                        </tr> 
+                        <tr> 
                             <td align="right"> 
                             Adresse: 
                             </td> 
-                            <td align="left"> 
+                            <td align="left" colspan="2"> 
                             <input type="text" name="adresse_p" placeholder="<?php echo $adresse_p ?>" />
                             </td> 
-                            </tr>
-                            <tr> 
+                        </tr>
+                        <tr> 
                             <td align="right">Code Postal:</td> 
-                            <td align="left"> 
+                            <td align="left" colspan="2"> 
                             <input type="text"  id="p" name="codePostal_p" placeholder="<?php echo $codePostal_p ?>" /> 
                             </td> 
-                            </tr> 
-                            <tr>
+                        </tr> 
+                        <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
                             <input type="text" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
@@ -178,8 +177,8 @@ $req->closeCursor();
                             <td align="left"> 
                             <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                             </td>
-                            </tr>
-                            <tr>
+                        </tr>
+                        <tr>
                             <td align="right">Médecin appelant:</td> 
                             <td align="left"> 
                             <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
@@ -187,8 +186,12 @@ $req->closeCursor();
                             <td align="left"> 
                             <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                             </td>
-                            </tr>   
+                        </tr>
+                        <tr height="60px">
+                            <td align="center" colspan="3"><input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                        </tr>
                     </table>
+                    
                 </form>
              </div>
                 
