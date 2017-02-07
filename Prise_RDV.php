@@ -34,7 +34,7 @@
                 <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
             
-            <script src="General.js"></script>
+            <script src="js/General.js"></script>
                 
             <div class="extra" id="RetourDossierPatient" style="border-radius: 5px;">
                 <img class="icone_extra" src="medecin.png"/>
