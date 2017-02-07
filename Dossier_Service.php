@@ -1,3 +1,6 @@
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,7 +57,6 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
                                 <td align="right">Service:</td>
@@ -116,7 +118,7 @@
                             </td> 
                         </tr> 
                     </table>
-                </form>
+                
              </div>
                 
             <div class="onglet" id="onglet3">
