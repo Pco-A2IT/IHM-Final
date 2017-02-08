@@ -31,8 +31,8 @@ if($_POST['choix1_ligne3']=="YES"){
 //echo $neuro;
 //echo $irm;
 
-//$descr=$_POST['description_s'];
-$descr="A changer la description";
+$descr=$_POST['description_s'];
+//$descr="A changer la description";
 
 
 // Insertion du message à l'aide d'une requête préparée
