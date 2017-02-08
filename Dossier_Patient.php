@@ -154,7 +154,7 @@
                                         </tr> 
                                           <tr height="60px">
                                                 <td align="center"  colspan="3">
-                                                <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
+                                                      <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                                 </td> 
                                             </tr>
                                     </table>

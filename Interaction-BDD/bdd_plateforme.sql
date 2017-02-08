@@ -33,7 +33,8 @@ CREATE TABLE `Patient` (
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
   `codePostal_p` varchar(5) NOT NULL DEFAULT '',       
-  `adresse_p` varchar(255) NOT NULL DEFAULT '',  
+  `adresse_p` varchar(255) NOT NULL DEFAULT '',
+    `description_p` varchar(5000) NOT NULL DEFAULT '',
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
   `ID_medecin_autre` int(11) NOT NULL ,
@@ -69,6 +70,7 @@ CREATE TABLE `Medecin` (
     `codePostal_m` varchar(5) NOT NULL ,
     `adresse_m` varchar(255) DEFAULT '' , 
     `telephone_m` varchar(255)  DEFAULT '',
+    `description_m` varchar(5000) NOT NULL DEFAULT '',
   
   PRIMARY KEY  (`id_medecin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
