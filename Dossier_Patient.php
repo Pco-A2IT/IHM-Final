@@ -53,7 +53,7 @@
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
-                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
+                            <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
                         </div>
                         
                             <div id="titles"> 
@@ -110,14 +110,7 @@
                                     </table> 
                                         
                                    
-                                    <table cellspacing="5px" class="table" style="float:left"> 
-                                        <tr> 
-                                            <td align="right">Ville:</td> 
-                                            <td align="left" colspan="2"> 
-                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
+                                    <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
@@ -127,6 +120,12 @@
                                             <td align="right">Code Postal:</td> 
                                             <td align="left" colspan="2"> 
                                                 <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                                            </td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td align="right">Ville:</td> 
+                                            <td align="left" colspan="2"> 
+                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
                                         <tr>
@@ -144,7 +143,7 @@
                                         <tr>
                                             <td align="right">Médecin appelant:</td> 
                                             <td align="left"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
@@ -155,7 +154,7 @@
                                         </tr> 
                                           <tr height="60px">
                                                 <td align="center"  colspan="3">
-                                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                                      <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                                 </td> 
                                             </tr>
                                     </table>
