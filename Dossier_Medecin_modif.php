@@ -27,6 +27,7 @@ while ($donnees = $req->fetch())
     $codePostal_m=$donnees['codePostal_m'];
     $adresse_m=$donnees['adresse_m'];
     $telephone_m=$donnees['telephone_m'];
+    $description_m=$donnees['description_m'];
 } 
 if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
@@ -158,7 +159,7 @@ $req->closeCursor();
                             </tr>
                             <tr>
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_m ?></TEXTAREA> 
                             </td>
                         </tr>
                     </table>
