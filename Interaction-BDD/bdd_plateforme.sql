@@ -27,7 +27,7 @@ CREATE TABLE `Patient` (
     `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
   `nom_p` varchar(250) NOT NULL DEFAULT '',
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
-  `civilite_p` enum('Mr','Mme') NOT NULL DEFAULT 'Mr',
+  `civilite_p` enum('M.','Mme') NOT NULL DEFAULT 'M.',
   `date_naissance` date NOT NULL DEFAULT '0000-00-00',    
   `mail_p` varchar(255) NOT NULL DEFAULT '',      
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
@@ -157,9 +157,9 @@ CREATE TABLE `Examen` (
 
 
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS */;
-LOCK TABLES `Examen` WRITE;
+/*LOCK TABLES `Examen` WRITE;
 INSERT INTO `Examen` VALUES (1,'scan_cerebral',''),(2,'angioscan',''),(3,'bilanBiologique',''),(4,'bilanCardiaque','');
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
 --

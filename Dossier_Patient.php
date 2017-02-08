@@ -5,11 +5,16 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
         <title>Nouveau patient</title>    
 
     </head>
     
     <body>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
     <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
         <div class="gris">
             <div  class="gris2">
@@ -43,10 +48,12 @@
                 <div class="titre";   style="border-radius: 5px;">
                     <h1 class="titreGauche">Nouveau Patient</h1>
                 </div>
+                
                 <div class="blanc";   style="border-radius: 5px;">
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
-                            <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
                         </div>
                         
                             <div id="titles"> 
@@ -68,7 +75,7 @@
                                             <form>
                                                 <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p">
                                                     <option value="" >Civilité</option>
-                                                    <option value="Mr">Mr</option>
+                                                    <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>
 
                                                 </select>
@@ -125,37 +132,36 @@
                                         <tr>
                                             <td align="right">Médecin traitant:</td> 
                                             <td align="left"> 
-                                                <input type="text" name="nom_m_traitant" placeholder="Nom"/>
+                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                                            </td>
+                                            <td align="left"> 
+                                                <input type="text" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right">Médecin appelant:</td> 
                                             <td align="left"> 
-                                                <input type="text" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
+                                            <td align="left"> 
+                                                <input type="text" name="mail_m_appelant" placeholder="Mail"/>
+                                            </td>
                                         </tr> 
                                           <tr height="60px">
                                                 <td align="center"  colspan="3">
-                                                <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
+                                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                                 </td> 
                                             </tr>
-                                       
-                                        <tr height="60px"> 
-                                            <td align="center"  colspan="3"> 
-                                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                                            </td> 
-                                        </tr>  
                                     </table>
                                     
                                 </form>
-                                </div>
-                             
+                                </div>                
                 
             <div class="onglet" id="onglet3">
 
@@ -194,7 +200,7 @@
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="3"> 
-                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                                 <a href="Prise_RDV.php">  <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
                     </table>
@@ -205,6 +211,17 @@
             </div>
         </div>
         </form>
+            <script type="text/javascript">
+                //utilisation de jQuery :
+                $(function($)   {
+                    $('#nom_m_appelant').autocomplete({
+                        source : 'dossierPatient.php'
+                    });
+                    $('#nom_m_traitant').autocomplete({
+                        source : 'dossierPatient.php'
+                    });
+                });
+            </script>  
          <script src="General.js"></script>
     </body>
 
