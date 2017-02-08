@@ -110,7 +110,7 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                             </td>
                         </tr>
                     </table>
