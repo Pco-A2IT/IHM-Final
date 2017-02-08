@@ -145,22 +145,21 @@ $req->closeCursor();
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 
-                       <table align="center" cellspacing="5px"  cellpadding="15px" class="table"> 
+                      <table align="center" cellspacing="5px"  cellpadding="15px" class="table"> 
                             <tr> 
                             <td rowspan=3>Examens disponibles</td> 
                             <td>IRM</td> 
-                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
+                            <td><input type="checkbox" name="checkbox-1" class="regular checkbox" value="YES"/><label for="checkbox-1"></label></td>
                             </tr> 
                             <tr> 
                             <td>Bilan cardiaque</td>
-                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
+                            <td><input type="checkbox" name="checkbox-2" class="regular checkbox" value="YES" /><label for="checkbox-2"></label></td>
                             </tr> 
                             <tr> 
                             <td>Consultation neuro</td>
-                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td> 
+                            <td><input type="checkbox" name="checkbox-3" class="regular checkbox" value="YES" /><label for="checkbox-3"></label></td> 
                             </tr>
                             <tr>
-        
                              </tr>
                     </table>
                 </div>

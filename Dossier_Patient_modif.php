@@ -63,6 +63,7 @@ $req->closeCursor();
    
     <div class="gris">
               <div  class="gris2">
+                  <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
             <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -94,6 +95,7 @@ $req->closeCursor();
             <h1 class="titreGauche">Patient</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo $nom_p." ".$prenom_p ?></h1><br>
@@ -107,7 +109,6 @@ $req->closeCursor();
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
                     <table cellspacing="5px" class="table" id="modif" style="float:left">
                         
                             <tr> 
@@ -238,9 +239,10 @@ $req->closeCursor();
              </div>
         </div>
         </div>
+                  </form>
         </div>
         </div>
-        </div>
+        
          <script src="General.js"></script>
     </body>
 

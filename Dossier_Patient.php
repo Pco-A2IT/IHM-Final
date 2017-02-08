@@ -43,7 +43,9 @@
                 <div class="titre";   style="border-radius: 5px;">
                     <h1 class="titreGauche">Nouveau Patient</h1>
                 </div>
+                
                 <div class="blanc";   style="border-radius: 5px;">
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
                             <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
@@ -145,12 +147,6 @@
                                                 <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
                                                 </td> 
                                             </tr>
-                                       
-                                        <tr height="60px"> 
-                                            <td align="center"  colspan="3"> 
-                                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                                            </td> 
-                                        </tr>  
                                     </table>
                                     
                                 </form>
@@ -194,7 +190,7 @@
                         </tr>
                          <tr rowspan="3">
                              <td align="center"  colspan="3"> 
-                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                                 <a href="Prise_RDV.php">  <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
                             </td> 
                          </tr>
                     </table>
