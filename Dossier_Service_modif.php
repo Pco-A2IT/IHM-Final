@@ -136,7 +136,12 @@ $req->closeCursor();
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
                             <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
-                            </td> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"  colspan="2">
+                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
                         </tr>
             
                     </table>

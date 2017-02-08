@@ -20,7 +20,6 @@ $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {
     $id_service=$donnees['id_service'];
-    $civilite_m=$donnees['civilite_m'];
     $nom_m=$donnees['nom_m'];
     $prenom_m=$donnees['prenom_m'];
     $mail_m=$donnees['mail_m'];
@@ -157,8 +156,11 @@ $req->closeCursor();
                             <input type="text" name="adresse_m" placeholder="<?php echo $adresse_m ?>" />
                             </td> 
                             </tr>
-                            <tr height="60px">
-                            </tr> 
+                            <tr>
+                            <td align="center"  colspan="2">
+                                <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
+                        </tr>
                     </table>
                 
                             </div>
