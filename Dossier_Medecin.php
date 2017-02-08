@@ -50,7 +50,7 @@
                  <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
+                     <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><br>
                     </div>
     
                 <div class="onglet" id="onglet1">
