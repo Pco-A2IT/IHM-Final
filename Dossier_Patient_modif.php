@@ -199,11 +199,11 @@ $req->closeCursor();
                             </td>
                         </tr>
                         <tr height="60px">
-                            <td align="center" colspan="3"><input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                            <td align="center" colspan="3"><TEXTAREA name="commentaires" rows="4" cols="40" placeholder="récupérer depuis BDD"></TEXTAREA></td>
                         </tr>
                     </table>
-                    
-                </form>
+                    <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                
              </div>
                 
             <div class="onglet" id="onglet3">

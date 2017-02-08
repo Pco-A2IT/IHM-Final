@@ -49,7 +49,7 @@
              <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br><br>
+             <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br><br>
             </div>
 
             <div id="titles"> 
@@ -110,8 +110,8 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                            <input class="zone_texte" type="text" name="description_s" placeholder="Commentaire"/> 
-                            </td> 
+                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
                         </tr>
                     </table>
                 
@@ -131,7 +131,7 @@
                             ?>
                             <tr>
                             <td><?php print_r($dnn['typeExamen']); ?></td> 
-                            <td><input type="radio" name="<?php echo($compteur); ?>" value="YES"/></td>
+                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
                             <?php $compteur=$compteur+1; ?>
                             </tr>
                             <?php
