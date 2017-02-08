@@ -112,11 +112,11 @@
                                     <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
                             </tr>
-                            <tr height="60px">
-                                                <td align="center"  colspan="2">
-                                                <input class="zone_texte" type="text" name="description_m" placeholder="Commentaire"/> 
-                                                </td> 
-                                            </tr>
+                            <tr>
+                                <td align="center"  colspan="2">
+                                    <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                                </td>
+                            </tr>
                                        
                     
                                 
