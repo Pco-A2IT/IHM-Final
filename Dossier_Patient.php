@@ -5,11 +5,16 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
         <title>Nouveau patient</title>    
 
     </head>
     
     <body>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
     <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
         <div class="gris">
             <div  class="gris2">
@@ -127,7 +132,7 @@
                                         <tr>
                                             <td align="right">Médecin traitant:</td> 
                                             <td align="left"> 
-                                                <input type="text" name="nom_m_traitant" placeholder="Nom"/>
+                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
@@ -139,7 +144,7 @@
                                         <tr>
                                             <td align="right">Médecin appelant:</td> 
                                             <td align="left"> 
-                                                <input type="text" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
@@ -156,8 +161,7 @@
                                     </table>
                                     
                                 </form>
-                                </div>
-                             
+                                </div>                
                 
             <div class="onglet" id="onglet3">
 
@@ -207,6 +211,17 @@
             </div>
         </div>
         </form>
+            <script type="text/javascript">
+                //utilisation de jQuery :
+                $(function($)   {
+                    $('#nom_m_appelant').autocomplete({
+                        source : 'dossierPatient.php'
+                    });
+                    $('#nom_m_traitant').autocomplete({
+                        source : 'dossierPatient.php'
+                    });
+                });
+            </script>  
          <script src="General.js"></script>
     </body>
 
