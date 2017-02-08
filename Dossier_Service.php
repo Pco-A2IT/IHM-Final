@@ -1,3 +1,6 @@
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,9 +46,10 @@
             <h1 class="titreGauche">Nouveau Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br><br>
+             <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br><br>
             </div>
 
             <div id="titles"> 
@@ -54,7 +58,6 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
                                 <td align="right">Service:</td>
@@ -107,40 +110,40 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                            <input class="zone_texte" type="text" name="description_s" placeholder="Commentaire"/> 
-                            </td> 
+                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
                         </tr>
-                        <tr height="60px"> 
-                            <td align="center"  colspan="2"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
-                        </tr> 
                     </table>
-                </form>
+                
              </div>
                 
             <div class="onglet" id="onglet3">
-                <div class="position_table"> 
-                <table align="center" cellspacing="5px" cellpadding="15px" class="table"> 
-                            <tr> 
-                            <td rowspan=3>Examens disponibles</td> 
-                            <td>IRM</td> 
-                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Bilan cardiaque</td>
-                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Consultation neuro</td>
-                            <td ><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                            </tr>
+                <div class="position_table">
+                
+                <table align="center" cellspacing="5px" class="table"> 
+                           <tr> 
+                            <td>Examens disponibles</td>
+                           </tr>
+                            <?php
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                            ?>
                             <tr>
-                            <td align="center"  colspan="3"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
+                            <td><?php print_r($dnn['typeExamen']); ?></td> 
+                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
+                            <?php $compteur=$compteur+1; ?>
+                            </tr>
+                            <?php
+                                };
+                            ?>
+                            <tr> 
+                            <tr>
+                            
+                            
                              </tr>
                     </table>
+                    
                 </div> 
              </div>
           </div>

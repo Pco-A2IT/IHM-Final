@@ -131,39 +131,21 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
         <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
         <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_modifier.png"></a></td>
-        <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="javascript:confirm(idservice)"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
+        <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         
             
     </tr>
 <?php
 }
 ?>
-                        
-                        
-                        <!--<tr>
-                            <td><img src="hospital.png" width="50px" heigh="50px"  alt="Photo de hopital" /></td>
-                            <td>Hopital de Lyon</td>
-                            <td>Service neurovasculaire</td>
-                            <td>59 boulevard Pinel</td>
-                            <td>69100</td>
-                            <td>Bron</td>
-                            <td>0988834944</td>
-                            <td>9:00 - 18:00</td>
-                            <td><a href="Dossier_Service_modif.html"><img class="supprimer" src="loupe.png"></a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="hospital.png" width="50px" heigh="50px"  alt="Photo de hopital" /></td>
-                            <td>Hôpital de la Croix-Rousse</td>
-                            <td>Service cardio</td>
-                            <td>103 rue de la vie</td>
-                            <td>69000</td>
-                            <td>Lyon</td>
-                            <td>0988834944</td>
-                            <td>9:00 - 18:00</td>
-                            <td><img class="supprimer" src="loupe.png"></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr> -->
+<!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->                  
+<script> 
+function sure()
+{
+    return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
+}                 
+</script>
+      
                     </table> 
             
             
