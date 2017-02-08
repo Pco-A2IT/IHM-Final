@@ -120,8 +120,6 @@ while ($donnees = $req->fetch())
     echo $neuro_s;
     
     
-    /* Il manque la case description */
-    
     
     $horairesd_s=$_POST['heured'].':'. $_POST['mind'].':'. '00';
     if ($horairesd_s=="::00"){$horairesd_s= $donnees['horairesd_s'];}
