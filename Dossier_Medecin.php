@@ -68,7 +68,7 @@
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email" required/></td> 
+                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email"/></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
@@ -92,26 +92,26 @@
                             <td align="left"> 
                             <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
                             </td>
-                            </tr>
-                            <tr> 
-                            <td align="right">Ville:</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)"/> 
-                            </td> 
                             </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" required/>
+                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)"/>
                             </td> 
                             </tr>
                             <tr> 
-                            <td align="right">Code Postale:</td> 
+                            <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)" /> 
+                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)"/> 
                             </td> 
                             </tr> 
+                            <tr> 
+                                <td align="right">Ville:</td> 
+                                <td align="left"> 
+                                    <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
+                                </td> 
+                            </tr>
                             <tr height="60px">
                                                 <td align="center"  colspan="2">
                                                 <input class="zone_texte" type="text" name="description_m" placeholder="Commentaire"/> 

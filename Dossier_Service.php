@@ -79,7 +79,7 @@
                     
                     <table cellspacing="5px" class="table" style="float:left"> 
                         <tr>
-                            <td>Horaires Ouverture</td>
+                            <td>Horaires ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
@@ -97,7 +97,7 @@
                             </td> 
                         </tr>
                         <tr> 
-                            <td align="right">Code Postale:</td> 
+                            <td align="right">Code Postal:</td> 
                             <td align="left"> 
                             <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
                             </td> 
@@ -110,7 +110,7 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                             </td>
                         </tr>
                     </table>
