@@ -48,7 +48,7 @@
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
-                            <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
                         </div>
                         
                             <div id="titles"> 
@@ -144,7 +144,7 @@
                                         </tr> 
                                           <tr height="60px">
                                                 <td align="center"  colspan="3">
-                                                <input class="zone_texte" type="text" name="description_p" placeholder="Commentaire"/> 
+                                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                                 </td> 
                                             </tr>
                                     </table>
