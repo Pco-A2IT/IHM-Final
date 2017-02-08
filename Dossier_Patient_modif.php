@@ -120,7 +120,7 @@ $req->closeCursor();
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_p" placeholder="<?php echo $civilite_p ?>" list="c"/>
                                 <datalist id="c">
-                                        <option>Mr</option>
+                                        <option>M.</option>
                                         <option>Mme</option>
                                 </datalist>
                                 </td>
