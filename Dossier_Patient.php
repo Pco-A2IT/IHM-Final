@@ -53,7 +53,7 @@
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
-                            <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br>
+                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
                         </div>
                         
                             <div id="titles"> 
@@ -112,19 +112,19 @@
                                    
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
-                                            <td align="left" colspan="2"> 
+                                            <td align="left" colspan="3"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
                                             </td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
-                                            <td align="left" colspan="2"> 
-                                                <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                                            <td align="left" colspan="3"> 
+                                                <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
-                                            <td align="left" colspan="2"> 
+                                            <td align="left" colspan="3"> 
                                                 <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
@@ -153,7 +153,7 @@
                                             </td>
                                         </tr> 
                                           <tr height="60px">
-                                                <td align="center"  colspan="3">
+                                                <td align="center"  colspan="4">
                                                       <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                                 </td> 
                                             </tr>
