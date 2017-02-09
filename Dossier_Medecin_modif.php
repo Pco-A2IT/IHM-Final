@@ -20,7 +20,6 @@ $req->execute(array($id_medecin));
 while ($donnees = $req->fetch())
 {
     $id_service=$donnees['id_service'];
-    $civilite_m=$donnees['civilite_m'];
     $nom_m=$donnees['nom_m'];
     $prenom_m=$donnees['prenom_m'];
     $mail_m=$donnees['mail_m'];
@@ -28,6 +27,7 @@ while ($donnees = $req->fetch())
     $codePostal_m=$donnees['codePostal_m'];
     $adresse_m=$donnees['adresse_m'];
     $telephone_m=$donnees['telephone_m'];
+    $description_m=$donnees['description_m'];
 } 
 if($id_service!=0){
 $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
@@ -52,6 +52,7 @@ $req->closeCursor();
     
     <body>
     <div class="gris">
+         <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
            <div  class="gris2">
                                     
             <div id="menu0" class="carreGris";>
@@ -86,7 +87,7 @@ $req->closeCursor();
                 <h1 class="titreGauche">Médecin</h1>
             </div>
             <div class="blanc";   style="border-radius: 5px;">
-            
+             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h1><br>
@@ -94,7 +95,6 @@ $req->closeCursor();
                     
             <div class="onglet" id="onglet1">
                     <div id="container">
-                    <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
                     <table align="left" cellspacing="5px" class="table" id="modif">
                         <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                         
@@ -157,15 +157,19 @@ $req->closeCursor();
                             <input type="text" name="adresse_m" placeholder="<?php echo $adresse_m ?>" />
                             </td> 
                             </tr>
-                            <tr height="60px">
-                            </tr> 
+                            <tr>
+                            <td align="center"  colspan="2">
+                                <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_m ?></TEXTAREA> 
+                            </td>
+                        </tr>
                     </table>
-                </form>   
+                
                             </div>
                         </div>
                     </div>
             </div>
     </div>
+                </form>
         </div>
         
          <script src="General.js"></script>

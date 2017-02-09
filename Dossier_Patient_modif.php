@@ -29,6 +29,7 @@ while ($donnees = $req->fetch())
     $ville_p=$donnees['ville_p'];
     $codePostal_p=$donnees['codePostal_p'];
     $adresse_p=$donnees['adresse_p'];
+    $description_p=$donnees['description_p'];
 
     
     $ID_medecin_traitant=$donnees['ID_medecin_traitant'];
@@ -42,7 +43,7 @@ while ($donnees = $req->fetch())
     {
         $nom_m_traitant=$donn['nom_m'];
         $prenom_m_traitant=$donn['prenom_m'];
-
+        $mail_m_traitant=$donn['mail_m'];
     
     }
     $req3 = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
@@ -52,6 +53,7 @@ while ($donnees = $req->fetch())
     {
         $nom_m_appelant=$don['nom_m'];
         $prenom_m_appelant=$don['prenom_m'];
+        $mail_m_appelant=$don['mail_m'];
     
     }
 
@@ -63,6 +65,7 @@ $req->closeCursor();
    
     <div class="gris">
               <div  class="gris2">
+                  <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
             <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -94,6 +97,7 @@ $req->closeCursor();
             <h1 class="titreGauche">Patient</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo $nom_p." ".$prenom_p ?></h1><br>
@@ -107,7 +111,6 @@ $req->closeCursor();
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
                     <table cellspacing="5px" class="table" id="modif" style="float:left">
                         
                             <tr> 
@@ -118,7 +121,7 @@ $req->closeCursor();
                             <td align="right">Civilité:</td>
                             <td align="left"><input type="text" name="civilite_p" placeholder="<?php echo $civilite_p ?>" list="c"/>
                                 <datalist id="c">
-                                        <option>Mr</option>
+                                        <option>M.</option>
                                         <option>Mme</option>
                                 </datalist>
                                 </td>
@@ -177,6 +180,11 @@ $req->closeCursor();
                             <td align="left"> 
                             <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                             </td>
+                            
+                            <td align="left"> 
+                                    <input type="text" name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td align="right">Médecin appelant:</td> 
@@ -186,13 +194,17 @@ $req->closeCursor();
                             <td align="left"> 
                             <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                             </td>
+                            
+                            <td align="left"> 
+                                    <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Prénom du médecin appelant";} ?>"/>
+                            </td>
                         </tr>
                         <tr height="60px">
-                            <td align="center" colspan="3"><input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                            <td align="center" colspan="3"><TEXTAREA name="description_p" rows="4" cols="40"  ><?php echo $description_p ?></TEXTAREA></td>
                         </tr>
                     </table>
-                    
-                </form>
+                    <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                
              </div>
                 
             <div class="onglet" id="onglet3">
@@ -238,9 +250,10 @@ $req->closeCursor();
              </div>
         </div>
         </div>
+                  </form>
         </div>
         </div>
-        </div>
+        
          <script src="General.js"></script>
     </body>
 

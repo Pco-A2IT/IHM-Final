@@ -37,7 +37,7 @@
     </div>
     <div class="blanc";   style="border-radius: 5px;">
             <div class="myButton" id="Examens">
-                            <a href="" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Gestion Examens</a>
+                            <a href="Liste_Examens.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Gestion Examens</a>
                         </div>
                 <div class="myButton" id="Utilisateurs">
                             <a href="" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Gestion Utilisateurs</a>
