@@ -48,9 +48,9 @@
             </div>
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
-        <table cellspacing="5px" id="tbl" class="table" style="margin-top:70px;">  
+        <table cellspacing="0px" id="tbl" class="table" style="margin-top:70px;">  
                         
-                        <th>Nom Examen </th>
+                        <th style="width:70px;">Nom Examen </th>
                         <th>Description </th>
         <?php
             $reponse = $bdd->query('SELECT * FROM Examen');
@@ -71,7 +71,7 @@
             }                 
         </script>                                                                                                                       
         </table>
-        <table cellspacing="5px" class="table" style="margin-top:30px;">
+        <table cellspacing="0px" class="table" style="margin-top:30px;">
         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
         <tr> 
             <td align="right">Nom de l'examen:</td> 
