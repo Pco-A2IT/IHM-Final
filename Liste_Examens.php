@@ -85,8 +85,8 @@
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
-        <tr height="60px"> 
-                <td align="center"  colspan="2"> 
+        <tr rowspan="2"> 
+                <td align="center"  colspan="3"> 
                     <input align="center" type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                 </td> 
         </tr>
