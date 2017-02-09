@@ -50,7 +50,7 @@
     <div class="blanc";   style="border-radius: 5px;">
         <table cellspacing="0px" id="tbl" class="table" style="margin-top:70px;">  
                         
-                        <th align="right">Nom Examen </th>
+                        <th style="align:right;">Nom Examen </th>
                         <th>Description </th>
         <?php
             $reponse = $bdd->query('SELECT * FROM Examen');
