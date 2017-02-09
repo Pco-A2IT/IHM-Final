@@ -71,7 +71,8 @@
                 return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
             }                 
         </script>                                                                                                                       
-        </table><br><br><br>
+        </table>
+            <div><br><br><br>
         <table cellspacing="5px" class="table">
         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
         <tr> 
@@ -93,7 +94,7 @@
         </tr>
         </form>
         </table>
-        </div>
+
     </div>
     </div>
     </div>
