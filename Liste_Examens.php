@@ -48,6 +48,7 @@
             </div>
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
+        <div class="onglet">
         <table cellspacing="0px" id="tbl" class="table">  
                         
                         <th>Nom Examen </th>
@@ -70,8 +71,8 @@
                 return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
             }                 
         </script>                                                                                                                       
-        </table>
-        <table cellspacing="5px" class="table" style="float:left">
+        </table><br><br><br>
+        <table cellspacing="5px" class="table">
         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
         <tr> 
             <td align="right">Nom de l'examen:</td> 
@@ -92,6 +93,7 @@
         </tr>
         </form>
         </table>
+        </div>
     </div>
     </div>
     </div>
