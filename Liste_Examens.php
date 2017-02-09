@@ -48,7 +48,7 @@
             </div>
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
-        <table cellspacing="0px" id="tbl" class="table">  
+        <table cellspacing="0px" id="tbl" class="table" style="top:70px;">  
                         
                         <th>Nom Examen </th>
                         <th>Description </th>
@@ -71,8 +71,7 @@
             }                 
         </script>                                                                                                                       
         </table>
-        <br><br><br>
-        <table cellspacing="5px" class="table">
+        <table cellspacing="5px" class="table" style="margin-top:30px;">
         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
         <tr> 
             <td align="right">Nom de l'examen:</td> 
