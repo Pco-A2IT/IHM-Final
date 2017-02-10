@@ -71,8 +71,8 @@
             }                 
         </script>                                                                                                                       
         </table>
-        <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <table cellspacing="0px" class="table" style="margin-top:30px;">
+            <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <tr> 
             <td align="right">Nom de l'examen:</td> 
             <td align="left" > 
@@ -86,7 +86,7 @@
             </td> 
         </tr>
         <tr rowspan="3"> 
-                <td align="center"> 
+                <td align="center" colspan="2"> 
                     <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                 </td>
         </tr>
