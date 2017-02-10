@@ -74,14 +74,14 @@
         <table cellspacing="0px" class="table" style="margin-top:30px;">
             <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <tr> 
-            <td align="right">Nom de l'examen:</td> 
-            <td align="left" > 
+            <td class="left">Nom de l'examen:</td> 
+            <td class="left" > 
                 <input type="text" name="type_examen" placeholder="(ex: IRM)"/> 
             </td> 
         </tr> 
         <tr> 
-            <td align="right">Description:</td> 
-            <td align="left"> 
+            <td class="left">Description:</td> 
+            <td class="left"> 
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
