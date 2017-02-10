@@ -92,6 +92,11 @@
             </td> 
         </tr>
         <tr height="60px"> 
+<td align="center" colspan="2"> 
+<input type="button" value="转到登录" onclick="window.location.replace('login.html')" id="btn1" onmousemove="changeBgColor('btn1')" onmouseout="recoverBgColor('btn1')" class="submit" /> <input type="submit" accesskey="enter" value="注册" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
+</td> 
+</tr> 
+        <tr height="60px"> 
                 <td align="center" colspan="2"> 
                     <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                     <input type="button" value="转到登录" onclick="window.location.replace('login.html')" id="btn1" onmousemove="changeBgColor('btn1')" onmouseout="recoverBgColor('btn1')" class="submit" /> 
