@@ -87,7 +87,7 @@
         </tr>
         <tr height="60px"> 
                 <td align="center" colspan="2"> 
-                    <input type="submit" accesskey="enter" value="Ajouter" id="btn1" onmousemove="changeBgColor('btn1')" onmouseout="recoverBgColor('btn1');" class="submit1" formmethod="post"/>
+                    <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit1" formmethod="post"/>
                 </td>
         </tr>
         </table>
