@@ -946,6 +946,7 @@ width: 150px;
 height: 40px; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 cursor :hand; 
+font-weight:bold; 
 font-size: 20px; 
 color: #ffffff; 
 background-color: #1270B3; 
