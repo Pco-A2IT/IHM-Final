@@ -72,26 +72,26 @@
         </script>                                                                                                                       
         </table>
         <table cellspacing="0px" class="table" style="margin-top:30px;">
-        <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
+            <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <tr> 
-            <td align="right">Nom de l'examen:</td> 
-            <td align="left" colspan="2"> 
+            <td class="left">Nom de l'examen:</td> 
+            <td class="left" > 
                 <input type="text" name="type_examen" placeholder="(ex: IRM)"/> 
             </td> 
         </tr> 
         <tr> 
-            <td align="right">Description:</td> 
-            <td align="left" colspan="2"> 
+            <td class="left">Description:</td> 
+            <td class="left"> 
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
         <tr height="60px"> 
-                <td align="center"  colspan="3"> 
-                    <input align="center" type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                </td> 
+                <td align="center" colspan="2"> 
+                    <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/>
+                </td>
         </tr>
-        </form>
         </table>
+
     </div>
     </div>
     </div>
