@@ -72,7 +72,7 @@
         </script>                                                                                                                       
         </table>
         <table cellspacing="0px" class="table" style="margin-top:30px;">
-            
+            <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <tr> 
             <td class="left">Nom de l'examen:</td> 
             <td class="left" > 
@@ -85,10 +85,16 @@
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
+         <tr> 
+            <td class="left">Description:</td> 
+            <td class="left"> 
+                <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
+            </td> 
+        </tr>
         <tr height="60px"> 
                 <td align="center" colspan="2"> 
                     <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
-                    <input type="button" value="转到登录" onclick="window.location.replace('login.html')" id="btn1" onmousemove="changeBgColor('btn1')" onmouseout="recoverBgColor('btn1')" class="submit" /> <input type="submit" accesskey="enter" value="注册" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
+                    <input type="button" value="转到登录" onclick="window.location.replace('login.html')" id="btn1" onmousemove="changeBgColor('btn1')" onmouseout="recoverBgColor('btn1')" class="submit" /> 
                 </td>
         </tr>
         </table>
