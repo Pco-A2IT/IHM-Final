@@ -943,8 +943,6 @@ border-radius:5px;
 
 .submit { 
 position: relative;
-margin-top: 10px;
-left:980px;
 width: 150px; 
 height: 40px; 
 cursor :hand;
@@ -956,16 +954,6 @@ border: 0px;
 cursor:pointer;
 
 } 
-
-.submit1 { 
-width: 150px; 
-height: 40px; 
-cursor :hand; 
-font-size: 20px; 
-color: #ffffff; 
-background-color: #448EF3; 
-border: 0px; 
-}
 
 .thead { 
 height: 40px; background : #1270B3; 
