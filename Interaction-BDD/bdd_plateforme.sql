@@ -148,7 +148,7 @@ UNLOCK TABLES;*/
 DROP TABLE IF EXISTS `Examen`;
 CREATE TABLE `Examen` (
   `id_examen` int(11) NOT NULL auto_increment,
-  `typeExamen` varchar(255) DEFAUlT '', 
+  `typeExamen` varchar(255) NOT NULL, 
   `details` varchar(255) DEFAUlT '',
   PRIMARY KEY  (`id_examen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

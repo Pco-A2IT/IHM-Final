@@ -141,12 +141,12 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Médecin appelant:</td> 
+                                            <td align="right">Médecin appelant:</td>
                                             <td align="left"> 
                                                 <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
@@ -216,6 +216,11 @@
                     $('#nom_m_appelant').autocomplete({
                         source : 'dossierPatient.php'
                     });
+                    
+                    $('#prenom_m_appelant').autocomplete({
+                        source : 'dossierPatient1.php'
+                    });
+                    
                     $('#nom_m_traitant').autocomplete({
                         source : 'dossierPatient.php'
                     });
