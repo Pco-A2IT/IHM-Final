@@ -50,7 +50,7 @@
                  <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h1 style="color:grey">.... ....</h1><br>
+                     <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><br>
                     </div>
     
                 <div class="onglet" id="onglet1">
@@ -68,7 +68,7 @@
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email" required/></td> 
+                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email"/></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
@@ -92,31 +92,31 @@
                             <td align="left"> 
                             <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
                             </td>
-                            </tr>
-                            <tr> 
-                            <td align="right">Ville:</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)"/> 
-                            </td> 
                             </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" required/>
+                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)"/>
                             </td> 
                             </tr>
                             <tr> 
-                            <td align="right">Code Postale:</td> 
+                            <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)" /> 
+                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)"/> 
                             </td> 
                             </tr> 
-                            <tr height="60px">
-                                                <td align="center"  colspan="2">
-                                                <input class="zone_texte" type="text" name="description_m" placeholder="Commentaire"/> 
-                                                </td> 
-                                            </tr>
+                            <tr> 
+                                <td align="right">Ville:</td> 
+                                <td align="left"> 
+                                    <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td align="center"  colspan="2">
+                                    <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                                </td>
+                            </tr>
                                        
                     
                                 

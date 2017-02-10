@@ -8,6 +8,11 @@ include('../config.php');
 $ouv=$_POST['heured'].':'. $_POST['mind'].':'. '00';
 $ferm=$_POST['heuref'].':'. $_POST['minf'].':'. '00';
 
+$horairesd_s=$_POST['heured'].':'. $_POST['mind'].':'. '00';
+if ($horairesd_s=="::00"){$horairesd_s= "00:00:00";}
+        
+$horairesf_s=$_POST['heuref'].':'. $_POST['minf'].':'. '00';
+if ($horairesf_s=="::00"){$horairesf_s= "00:00:00";}
 //Brouillon
 //echo $irm;
 /*if($_POST['choix1_ligne1']=="YES"){
@@ -31,8 +36,8 @@ if($_POST['choix1_ligne3']=="YES"){
 //echo $neuro;
 //echo $irm;
 
-//$descr=$_POST['description_s'];
-$descr="A changer la description";
+$descr=$_POST['description_s'];
+//$descr="A changer la description";
 
 
 // Insertion du message à l'aide d'une requête préparée
@@ -94,7 +99,7 @@ echo $statique;
 //$req1->execute($array1);
 //$req1=$bdd->prepare("INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s, `Test IRM`, `Test Musculaire`, `Test Neuro`) VALUES(NULL, ? ,? , ?,?, ?,?,? ,?,?, ?, ?, ?, ? )");
 //$req1=$bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s, `Test Poumon`, `Test du Foie`, `Test Musculaire`) VALUES(NULL, ? ,? , ?,?, ?,?,? ,?,?, ?, "NO", "NO", "NO")');
-$req1->execute(array($_POST['siret_s'], $_POST['centre_s'],$_POST['service_s'], $_POST['telephone_s'], $ouv,$ferm, $_POST['adresse_s'], $_POST['codePostal_s'],$_POST['ville_s'], $descr));
+$req1->execute(array($_POST['siret_s'], $_POST['centre_s'],$_POST['service_s'], $_POST['telephone_s'], $horairesd_s, $horairesf_s, $_POST['adresse_s'], $_POST['codePostal_s'],$_POST['ville_s'], $descr));
 echo "c'est pas req1 execute qui merde";
 //Modification des attributs enum examens (la construction les initialise à NON)
 $id_dernier=$bdd->lastInsertId();

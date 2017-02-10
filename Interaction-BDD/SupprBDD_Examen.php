@@ -9,15 +9,16 @@ $id_examen=$_GET['idexamen'];
 echo $id_examen;
 
 
-echo 'SELECT typeExamen FROM Examen WHERE id_examen = '.$id_examen;
+
+    
 $req3=$bdd->prepare('SELECT typeExamen FROM Examen WHERE id_examen = ? ');
 $req3->execute(array($id_examen));
 
 while($dnn = $req3->fetch()){
     echo $dnn['typeExamen'];
     echo 'amine';
-    $req2 = $bdd->prepare("ALTER TABLE Service DROP `".$dnn[typeExamen]."`");
-    echo "ALTER TABLE Service DROP `".$dnn[typeExamen]."`";
+    $req2 = $bdd->prepare("ALTER TABLE Service DROP `".$dnn['typeExamen']."`");
+    echo "ALTER TABLE Service DROP `".$dnn['typeExamen']."`";
     $req2->execute();
     echo 'done';
 }

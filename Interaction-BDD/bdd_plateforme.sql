@@ -24,16 +24,17 @@ USE bdd_plateforme;
 DROP TABLE IF EXISTS `Patient`;
 CREATE TABLE `Patient` (
   `id_patient` int(11) NOT NULL auto_increment,
-    `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
+  `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
   `nom_p` varchar(250) NOT NULL DEFAULT '',
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
-  `civilite_p` enum('Mr','Mme') NOT NULL DEFAULT 'Mr',
+  `civilite_p` enum('M.','Mme') NOT NULL DEFAULT 'M.',
   `date_naissance` date NOT NULL DEFAULT '0000-00-00',    
   `mail_p` varchar(255) NOT NULL DEFAULT '',      
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
   `codePostal_p` varchar(5) NOT NULL DEFAULT '',       
-  `adresse_p` varchar(255) NOT NULL DEFAULT '',  
+  `adresse_p` varchar(255) NOT NULL DEFAULT '',
+  `description_p` varchar(5000) NOT NULL DEFAULT '',
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
   `ID_medecin_autre` int(11) NOT NULL ,
@@ -69,6 +70,7 @@ CREATE TABLE `Medecin` (
     `codePostal_m` varchar(5) NOT NULL ,
     `adresse_m` varchar(255) DEFAULT '' , 
     `telephone_m` varchar(255)  DEFAULT '',
+    `description_m` varchar(5000) NOT NULL DEFAULT '',
   
   PRIMARY KEY  (`id_medecin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -157,9 +159,9 @@ CREATE TABLE `Examen` (
 
 
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS */;
-LOCK TABLES `Examen` WRITE;
+/*LOCK TABLES `Examen` WRITE;
 INSERT INTO `Examen` VALUES (1,'scan_cerebral',''),(2,'angioscan',''),(3,'bilanBiologique',''),(4,'bilanCardiaque','');
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
 --

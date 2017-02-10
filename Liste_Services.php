@@ -75,7 +75,10 @@
             <div class="blanc"; style="border-radius: 5px;">
                        <div class="myButton" id="Ajouter_liste">
                             <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
-                        </div><br>
+                        </div>
+                <br>
+                <br>
+                <br>
                  <form id="recherche" method="post" class="recherche">
 
                             <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
@@ -84,9 +87,10 @@
                     </form>   
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th></th>
+                        <th>ID</th>
                         <th>Num Siret</th>
                         <th>Service</th>
+                        <th>Centre</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
                         <th>Ville</th>
@@ -123,6 +127,7 @@ while($dnn = $pdo_select->fetch() )
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"><?php print_r($dnn['id_service']); ?></td>
         <td class="left"> <?php print_r($dnn['numSiret']); ?> </td>
+        <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
         <td class="left"> <?php print_r($dnn['adresse_s']); ?></td>
         <td class="left"> <?php print_r($dnn['codePostal_s']); ?></td>

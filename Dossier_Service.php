@@ -1,3 +1,6 @@
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,9 +46,10 @@
             <h1 class="titreGauche">Nouveau Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";>... ...</h1><br><br>
+             <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br><br>
             </div>
 
             <div id="titles"> 
@@ -54,7 +58,6 @@
             </div>
 
             <div class="onglet" id="onglet1">
-                <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post"> 
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
                                 <td align="right">Service:</td>
@@ -76,7 +79,7 @@
                     
                     <table cellspacing="5px" class="table" style="float:left"> 
                         <tr>
-                            <td>Horaires Ouverture</td>
+                            <td>Horaires ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
@@ -94,9 +97,9 @@
                             </td> 
                         </tr>
                         <tr> 
-                            <td align="right">Code Postale:</td> 
+                            <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
+                            <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
                             </td> 
                         </tr>
                         <tr> 
@@ -107,16 +110,11 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                            <input class="zone_texte" type="text" name="description_s" placeholder="Commentaire"/> 
-                            </td> 
+                                <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
                         </tr>
-                        <tr height="60px"> 
-                            <td align="center"  colspan="2"> 
-                                <input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                            </td> 
-                        </tr> 
                     </table>
-                </form>
+                
              </div>
                 
             <div class="onglet" id="onglet3">
@@ -133,17 +131,13 @@
                             ?>
                             <tr>
                             <td><?php print_r($dnn['typeExamen']); ?></td> 
-                            <td><input type="radio" name="<?php echo($compteur); ?>" value="YES"/></td>
+                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
                             <?php $compteur=$compteur+1; ?>
                             </tr>
                             <?php
                                 };
                             ?>
-                            <tr> 
-                            <tr>
-                            
-                            
-                             </tr>
+                           
                     </table>
                     
                 </div> 
