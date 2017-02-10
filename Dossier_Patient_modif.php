@@ -172,28 +172,31 @@ $req->closeCursor();
                                 </td> 
                             </tr>
                             <tr>
-                                <td align="right">Médecin traitant:</td> 
+                                <td align="right" rowspan="2">Médecin traitant:</td> 
                                 <td align="left"> 
                                     <input type="text" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
                                 </td>
                                 <td align="left"> 
                                     <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                                 </td>
-                                <td align="left"> 
-                                    <input type="text" name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
+                            </tr>
+                            <tr>
+                                <td align="left" colspan="2"> 
+                                    <input type="text" name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">Médecin appelant:</td> 
+                                <td align="right" rowspan="2">Médecin appelant:</td> 
                                 <td align="left"> 
                                     <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
                                 </td>
                                 <td align="left"> 
                                     <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                                 </td>
-
-                                <td align="left"> 
-                                        <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Prénom du médecin appelant";} ?>"/>
+                            </tr>
+                            <tr>
+                                <td align="left" colspan="2"> 
+                                    <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Mail du médecin appelant";} ?>"/>
                                 </td>
                             </tr>
                             <tr height="60px">
@@ -207,47 +210,58 @@ $req->closeCursor();
                     <div class="onglet" id="onglet3">
                         <div class="position_table">
                            <table cellspacing='5px'>   
-                        <tr>
-                            <th colspan="2">Examen</th>
-                            <th style="text-align:center">Réalisé</th>
-                        </tr>
-                        <tr>
-                            <td rowspan="3"> 1ère intention  </td>
-                            <td>Scan cérébral</td>
-                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
-                        </tr>
-                        <tr>
-                            <td>AngioScan ou Echo Doppler</td>
-                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
-                        </tr>
-                        <tr>
-                            <td>Bilan biologique</td>
-                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                        </tr>
-                         <tr>
-                            <td rowspan="3"> 2nd intention  </td>
-                           <td>Bilan Cardiaque</td>
-                            <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
-                        </tr>
-                        <tr>
-                            <td>RDV neurologue</td>
-                            <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
-                        </tr>
-                        <tr>
-                           <td>IRM</td>
-                            <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
-                        </tr>
-                         <tr rowspan="3">
-                             <td align="center"  colspan="2"> 
-                                 <a href="Prise_RDV.html">  <input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
-                            </td> 
-                         </tr>
-                    </table>
-                </div> 
-             </div>
-        </div>
-        </div>
-                  </form>
+                                <tr>
+                                    <th colspan="2">Examen</th>
+                                    <th style="text-align:center">Réalisé</th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3"> 1ère intention  </td>
+                                    <td>Scan cérébral</td>
+                                    <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>AngioScan ou Echo Doppler</td>
+                                    <td>
+                                        <input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bilan biologique</td>
+                                    <td>
+                                        <input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3"> 2nd intention  </td>
+                                    <td>Bilan Cardiaque</td>
+                                    <td>
+                                        <input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>RDV neurologue</td>
+                                    <td>
+                                        <input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                   <td>IRM</td>
+                                    <td>
+                                        <input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label>
+                                    </td>
+                                </tr>
+                                <tr rowspan="3">
+                                     <td align="center"  colspan="2"> 
+                                         <a href="Prise_RDV.html"><input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                                    </td> 
+                                </tr>
+                            </table>
+                        </div> 
+                    </div>
+                </div>
+                </div>
+                </div>
+            </form>
         </div>
         </div>
         
