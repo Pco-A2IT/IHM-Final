@@ -309,7 +309,8 @@ input[type=button]:active{
 #Ajouter_liste{
     position: relative;
     top: 10px;
-    left: 940px;
+    float:right ;
+    margin-right: 90px;
     border-radius:6px;
 	cursor:pointer;
     }
@@ -333,14 +334,7 @@ input[type=button]:active{
     width: 200px;
     }
 
-#Ajouter_liste{
-    position: relative;
-    left: 940px;
-    }
-#Ajouter_liste{
-    position: relative;
-    left: 940px;
-    }
+
 
 .titreGauche{
   left:7.5%;
