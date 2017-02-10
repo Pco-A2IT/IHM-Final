@@ -31,7 +31,32 @@ while ($donnees = $req->fetch())
     $ville_s=$donnees['ville_s'];
     $description_s=$donnees['description_s'];
 
-}                              
+}
+/* Cocher automatiquement les checkbox
+
+$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req2->execute();
+$compteur3=1;
+while($dnn = $req2->fetch()){
+  $($compteur3)
+  if($_POST[$compteur3]=="YES"){
+            $bool="YES";
+  }else{
+            $bool="NO";
+  }
+  echo $bool;
+  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
+  //echo $sql;
+  //$id_boucle=7;
+  //echo $id_boucle;
+  
+  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$id_dernier."");
+  echo "prepare effectué";
+  $stmt->execute(array($bool));
+  echo "requete executée";
+  $compteur3=$compteur3+1;
+
+}*/
 $req->closeCursor();            
 ?> 
     <body>
@@ -150,23 +175,34 @@ $req->closeCursor();
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 
-                      <table align="center" cellspacing="5px"  cellpadding="15px" class="table"> 
-                            <tr> 
-                            <td rowspan=3>Examens disponibles</td> 
-                            <td>IRM</td> 
-                            <td><input type="checkbox" name="checkbox-1" class="regular checkbox" value="YES"/><label for="checkbox-1"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Bilan cardiaque</td>
-                            <td><input type="checkbox" name="checkbox-2" class="regular checkbox" value="YES" /><label for="checkbox-2"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Consultation neuro</td>
-                            <td><input type="checkbox" name="checkbox-3" class="regular checkbox" value="YES" /><label for="checkbox-3"></label></td> 
-                            </tr>
+                            <table align="center" cellspacing="5px" class="table"> 
+                           <tr> 
+                            <td>Examens disponibles</td>
+                           </tr>
+                            <?php
+                                
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                            ?>
                             <tr>
-                             </tr>
-                    </table>
+                            <td><?php print_r($dnn['typeExamen']); ?></td>
+                            <?php
+                                    $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+                                    $req2->execute(array($idservice));
+                                    while($donnee = $req2->fetch()){
+                                        if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
+                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
+                                        <?php }else{ ?>
+                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
+                                        <?php }
+                                    }
+                                    $compteur=$compteur+1;
+                                
+                                }
+                            ?>
+                            </tr>
+                            </table>
                 </div>
                 </div> 
                 </div>
