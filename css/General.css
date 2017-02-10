@@ -944,6 +944,7 @@ border-radius:5px;
 .submit { 
 width: 150px; 
 height: 40px; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 cursor :hand; 
 font-size: 20px; 
 color: #ffffff; 
@@ -951,6 +952,12 @@ background-color: #1270B3;
 border: 0px;
 cursor:pointer;
 } 
+
+.position_submit{
+    position: relative;
+    left:980px;
+    margin-top: 10px;
+}
 
 .thead { 
 height: 40px; background : #1270B3; 
