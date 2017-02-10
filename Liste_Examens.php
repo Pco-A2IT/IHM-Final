@@ -72,7 +72,7 @@
         </script>                                                                                                                       
         </table>
         <table cellspacing="0px" class="table" style="margin-top:30px;">
-            <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
+            
         <tr> 
             <td class="left">Nom de l'examen:</td> 
             <td class="left" > 
