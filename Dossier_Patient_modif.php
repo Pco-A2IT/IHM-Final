@@ -29,6 +29,7 @@ while ($donnees = $req->fetch())
     $ville_p=$donnees['ville_p'];
     $codePostal_p=$donnees['codePostal_p'];
     $adresse_p=$donnees['adresse_p'];
+    $description_p=$donnees['description_p'];
 
     
     $ID_medecin_traitant=$donnees['ID_medecin_traitant'];
@@ -151,26 +152,27 @@ $req->closeCursor();
                     </table> 
 
                     <table cellspacing="5px" class="table" id="modif" style="float:left"> 
-                        <tr> 
-                            <td align="right">Ville:</td> 
-                            <td align="left" colspan="2"> 
-                            <input type="text" name="ville_p" placeholder="<?php echo $ville_p ?>"/> 
-                            </td> 
-                        </tr> 
+                         
                         <tr> 
                             <td align="right"> 
                             Adresse: 
                             </td> 
-                            <td align="left" colspan="2"> 
+                            <td align="left" colspan="3"> 
                             <input type="text" name="adresse_p" placeholder="<?php echo $adresse_p ?>" />
                             </td> 
                         </tr>
                         <tr> 
                             <td align="right">Code Postal:</td> 
-                            <td align="left" colspan="2"> 
+                            <td align="left" colspan="3"> 
                             <input type="text"  id="p" name="codePostal_p" placeholder="<?php echo $codePostal_p ?>" /> 
                             </td> 
                         </tr> 
+                        <tr> 
+                            <td align="right">Ville:</td> 
+                            <td align="left" colspan="3"> 
+                            <input type="text" name="ville_p" placeholder="<?php echo $ville_p ?>"/> 
+                            </td> 
+                        </tr>
                         <tr>
                             <td align="right">Médecin traitant:</td> 
                             <td align="left"> 
@@ -199,7 +201,7 @@ $req->closeCursor();
                             </td>
                         </tr>
                         <tr height="60px">
-                            <td align="center" colspan="3"><TEXTAREA name="commentaires" rows="4" cols="40" placeholder="récupérer depuis BDD"></TEXTAREA></td>
+                            <td align="center" colspan="4"><TEXTAREA name="description_p" rows="4" cols="40"  ><?php echo $description_p ?></TEXTAREA></td>
                         </tr>
                     </table>
                     <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
