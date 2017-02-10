@@ -112,51 +112,55 @@
                                    
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
-                                            <td align="left" colspan="3"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
                                             </td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
-                                            <td align="left" colspan="3"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Ville:</td> 
-                                            <td align="left" colspan="3"> 
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
                                         <tr>
-                                            <td align="right">Médecin traitant:</td> 
+                                            <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left"> 
                                                 <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
-                                            </td>
-                                            <td align="left"> 
+                                            </td>    
+                                        </tr>
+                                        <tr>
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Médecin appelant:</td> 
+                                            <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left"> 
                                                 <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
-                                            <td align="left"> 
+                                        </tr> 
+                                        <tr>
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
-                                        </tr> 
-                                          <tr height="60px">
-                                                <td align="center"  colspan="4">
-                                                      <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
-                                                </td> 
-                                            </tr>
+                                        </tr>
+                                        <tr height="60px">
+                                            <td align="center"  colspan="4">
+                                                <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                            </td> 
+                                        </tr>
                                     </table>
                                     
                                 </form>
