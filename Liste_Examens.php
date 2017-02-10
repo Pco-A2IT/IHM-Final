@@ -75,18 +75,18 @@
         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
         <tr> 
             <td align="right">Nom de l'examen:</td> 
-            <td align="left" colspan="2"> 
+            <td align="left" > 
                 <input type="text" name="type_examen" placeholder="(ex: IRM)"/> 
             </td> 
         </tr> 
         <tr> 
             <td align="right">Description:</td> 
-            <td align="left" colspan="2"> 
+            <td align="left"> 
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
         <tr rowspan="3"> 
-                <td align="center"  colspan="3"> 
+                <td align="center"> 
                     <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
                 </td>
         </tr>
