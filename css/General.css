@@ -620,7 +620,27 @@ table tr:hover td {
 #modif input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #555;
 }
- 
+
+textarea:focus{
+ background-color:none;
+background: none;
+    border:none;
+ }
+
+textarea:{
+ background-color:none;
+background: none;
+    border:none;
+ }
+textarea{
+	width: 90%;
+	height: 100%;
+	border: 3px solid #ffffff;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-repeat: no-repeat;
+}
+
 .inputDate{
     width: 30px !important;
 
