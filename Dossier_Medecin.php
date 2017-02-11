@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
-        <title>Nouveau Médecin</title>  
+        <title>Médecins</title>  
     </head>
     
     <body>
@@ -41,7 +41,7 @@
         </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Nouveau Médecin</h1>
+                <h1 class="titreGauche">Médecins</h1>
             </div>
         <div>
             <div class="blanc";   style="border-radius: 5px;">
@@ -50,8 +50,8 @@
                  <input type="submit" accesskey="enter" value="" style="background:url('Icones/valider.png') no-repeat;" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                 <div class="section4">
                     <div class="div1">
-                     <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><br>
-                    </div>
+                        <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
+                 
     
                 <div class="onglet" id="onglet1">
                     
@@ -125,8 +125,10 @@
                     
                        
                     </div>
-            </div>
-                         </form>
+                        
+                    </div>
+                     </div>
+       </form>
           </div>
     </div>
         </div>

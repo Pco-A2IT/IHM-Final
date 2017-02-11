@@ -96,7 +96,7 @@ $req->closeCursor();
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             </div>
             
          <div id="container">

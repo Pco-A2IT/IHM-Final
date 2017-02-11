@@ -100,7 +100,7 @@ $req->closeCursor();
                  <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo $nom_p." ".$prenom_p ?></h1><br>
+                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?></h1><br>
                     </div>
             
                 <div id="container">
