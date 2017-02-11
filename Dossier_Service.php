@@ -121,7 +121,7 @@
                 
             <div class="onglet" id="onglet3">
                 <div class="position_table">
-                
+                <div class="liste">
                 <table align="center" cellspacing="5px" class="table"> 
                            <tr> 
                             <td>Examens disponibles</td>
@@ -141,7 +141,7 @@
                             ?>
                            
                     </table>
-                    
+                    </div>    
                 </div> 
              </div>
           </div>

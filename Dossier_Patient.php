@@ -169,6 +169,7 @@
             <div class="onglet" id="onglet3">
 
                 <div class="position_table"> 
+                <div class="liste">
                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
                             <th></th>
@@ -207,11 +208,13 @@
                             </td> 
                          </tr>
                     </table>
+                    </div>
                  </div>
             </div>
                     </div>
         </div>
             </div>
+        </div>
         </div>
         </form>
             <script type="text/javascript">

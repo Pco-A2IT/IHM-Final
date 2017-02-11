@@ -353,71 +353,14 @@ input[type=button]:active{
 }
 
 
-.calendaire{
-   width:220px; 
-   height:200px;
-   left:90%;
-   top:60%;
-   position: absolute;
-}
 
-
-#table1 {  
-  
-     border-collapse: collapse;  
-  
-}  
-  
-#table1 caption {  
-  
-     font-size: larger;  
-  
-     margin: 1em auto;  
-  
-} 
 
 th {
     text-align: right;
     padding-right: 10px;
 }
   
-  
-#table1 th {  
-     height:30px;
-     background: #555 nonerepeat scroll 0 0;  
-     border: 0px solid #777;
-     color: #fff;  
-  }  
-  
-#table1 td {
-     text-align: center;
-     width:auto;
-     height:50px;
-     border: 0px solid #777;
-  }  
-  
-#table1 tbody tr:nth-child(odd) {  
-     background: #777;  
-  }  
-  
-#table1 th:first-child {  
-     border-radius: 9px 0 0 0;  
-  }  
-  
-#table1 th:last-child {  
-  
-     border-radius: 0 9px 0 0;  
-  }  
-  
-#table1 tr:last-child td:first-child {  
-  
-     border-radius: 0 0 0 9px;  
-  }  
-  
-#table1 tr:last-child td:last-child {  
-  
-     border-radius: 0 0 9px 0;  
-  }  
+
 
 .nav ul{
      width:980px;
@@ -472,109 +415,7 @@ height:100px;
     top:10px;
 }
 
-table a:link {
-	color: #666;
-	font-weight: bold;
-	text-decoration:none;
-}
-table a:visited {
-	color: #999999;
-	font-weight:bold;
-	text-decoration:none;
-}
-table a:active,
-table a:hover {
-	color: #bd5a35;
-	text-decoration:underline;
-}
-table {
-	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	text-shadow: 1px 1px 0px #fff;
-	background:#eaebec;
-	margin:0px auto;
-	border:#ccc 1px solid;
-    width: 85%;
 
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-
-	-moz-box-shadow: 0 1px 2px #d1d1d1;
-	-webkit-box-shadow: 0 1px 2px #d1d1d1;
-	box-shadow: 0 1px 2px #d1d1d1;
-}
-table th {
-	padding:11px 15px 12px 15px;
-	border-top:1px solid #fafafa;
-	border-bottom:1px solid #e0e0e0;
-    text-align: center;
-	background: #ededed;
-	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
-	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
-}
-table th:first-child {
-	text-align: center;
-    padding:5px;
-    width: auto;
-}
-
-
-table tr:first-child th:first-child {
-	-moz-border-radius-topleft:3px;
-	-webkit-border-top-left-radius:3px;
-	border-top-left-radius:3px;
-    text-align: center;
-    border-left:0;
-}
-table tr:first-child th:last-child {
-	-moz-border-radius-topright:3px;
-	-webkit-border-top-right-radius:3px;
-	border-top-right-radius:3px;
-}
-
-
-table td:first-child {
-	text-align: center;
-    padding:5px;
-	border-left: 0;
-    width: auto;
-}
-
-
-table td {
-    text-align: center;
-	padding:auto;
-	border-top: 1px solid #ffffff;
-	border-bottom:1px solid ##B0C4DE;
-	border-left: 1px solid ##B0C4DE;
-
-	background: #fafafa;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
-	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
-}
-table tr.even td {
-	background: #f6f6f6;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
-	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
-}
-table tr:last-child td {
-	border-bottom:0;
-}
-table tr:last-child td:first-child {
-	-moz-border-radius-bottomleft:3px;
-	-webkit-border-bottom-left-radius:3px;
-	border-bottom-left-radius:3px;
-}
-table tr:last-child td:last-child {
-	-moz-border-radius-bottomright:3px;
-	-webkit-border-bottom-right-radius:3px;
-	border-bottom-right-radius:3px;
-}
-table tr:hover td {
-	background: #B0C4DE;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
-	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
-}
 
 #container{
     width: 90%;
@@ -605,6 +446,7 @@ table tr:hover td {
     position: relative;
     margin-top: 40px;
     color:grey;
+    background:none
 }
 
 
@@ -613,7 +455,7 @@ table tr:hover td {
     border: none;
     background: none;
     border-bottom: 0px solid #b2b2b2;
-    width: 250px;
+ 
 }
 
 
@@ -623,22 +465,16 @@ table tr:hover td {
 
 textarea:focus{
  background-color:none;
-background: none;
-    border:none;
+background: #efefef;
+    border:#efefef;
  }
 
-textarea:{
- background-color:none;
-background: none;
-    border:none;
- }
 textarea{
 	width: 90%;
 	height: 100%;
-	border: 3px solid #ffffff;
+	border: 3px solid #efefef;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-	background-repeat: no-repeat;
 }
 
 .inputDate{
@@ -656,9 +492,9 @@ textarea{
 
 
 .active {
-	color: #555;
+	color: black;
     cursor: default;
-    background-color: #fff;
+    background-color:#efefef;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
@@ -873,20 +709,20 @@ color:#666;
 
 
 .onglet table { 
-width:auto; 
+width:50%; 
 } 
+
 .onglet tr { 
 width: auto;
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 color: #1270B3; 
 } 
+
 .onglet input{ 
 color: #1270B3; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
 width: 150px;
-line-height: 30px; 
-border-radius:5px; 
 } 
 
 .submit { 
@@ -994,3 +830,127 @@ color: #a9a9a9;
 }
 select option:first-child{color:grey; display: none;}
 select option {color:black;}
+
+
+.liste table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+.liste table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+.liste table a:active,
+.liste table a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+.liste table {
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:0px auto;
+	border:#ccc 1px solid;
+    width: 85%;
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+.liste table th {
+	padding:11px 15px 12px 15px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+    text-align: center;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+.liste table th:first-child {
+	text-align: center;
+    padding:5px;
+    width: auto;
+}
+
+
+.liste table tr:first-child th:first-child {
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+    text-align: center;
+    border-left:0;
+}
+.liste table tr:first-child th:last-child {
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+
+
+.liste table td:first-child {
+	text-align: center;
+    padding:5px;
+	border-left: 0;
+    width: auto;
+}
+
+
+.liste table td {
+    text-align: center;
+	padding:auto;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid ##B0C4DE;
+	border-left: 1px solid ##B0C4DE;
+
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+.liste table tr.even td {
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+.liste table tr:last-child td {
+	border-bottom:0;
+}
+.liste table tr:last-child td:first-child {
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+.liste table tr:last-child td:last-child {
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+.liste table tr:hover td {
+	background: #B0C4DE;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+
+
+
+table{
+	margin-left:40px;
+}
+table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+table td {
+    text-align: left;
+	padding:auto;
+	border-bottom: 1px solid #fff;
+
+}

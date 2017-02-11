@@ -74,7 +74,7 @@
                     <input class="loupe" type="submit" value="" />
 
                     </form> 
-                <table cellspacing="0px" id="tbl" class="table"> 
+                <div class="liste">
                 
                 <table cellspacing="0px" id="tbl" class="table">   
     <tr>
@@ -164,6 +164,7 @@ function sure()
                 </div>     
                    
             </div>
+        </div>
         </div>
         
     
