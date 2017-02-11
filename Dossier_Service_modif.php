@@ -94,6 +94,7 @@ $req->closeCursor();
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
@@ -109,9 +110,6 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
-                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
-                        
-                        
 
                         <tr> 
                                 <td align="right">Service:</td>
