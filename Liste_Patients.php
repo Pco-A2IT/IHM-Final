@@ -63,7 +63,7 @@
             <script src="js/General.js"></script>
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Patient</a>
+                            <a href="Dossier_Patient.php" class="myButton1">Ajouter Patient</a>
                 </div>
                 <br>
                 <br>

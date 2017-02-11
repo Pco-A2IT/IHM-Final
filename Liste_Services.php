@@ -72,9 +72,10 @@
             </script>    
              
             <script src="js/General.js"></script> 
-            <div class="blanc"; style="border-radius: 5px;">
+            <div class="blanc"; style="border-radius: 5px;">  
+                
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"> Ajouter Service</a>
                         </div>
                 <br>
                 <br>

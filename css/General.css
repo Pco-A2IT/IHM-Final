@@ -241,86 +241,42 @@ input[type=button]:active{
 }
 
 .myButton1 {
-	-moz-box-shadow:inset 0px 4px 0px 43px #ffffff;
-	-webkit-box-shadow:inset 0px 4px 0px 43px #ffffff;
-	box-shadow:inset 0px 4px 0px 43px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
-	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
-	background-color:#f9f9f9;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
+	color:#ffffff;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:10px 15px;
 	text-decoration:none;
-	text-shadow:-11px 1px 11px #ffffff;
     margin-top:10px;
     margin-left:10px;
-    text-decoration:none;
-}
-
-
-.myButton2 {
-	-moz-box-shadow:inset 0px 4px 0px 43px #ffffff;
-	-webkit-box-shadow:inset 0px 4px 0px 43px #ffffff;
-	box-shadow:inset 0px 4px 0px 43px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
-	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
-	background-color:#f9f9f9;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#1270B3;
-	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	padding:5px 9px;
-	text-decoration:none;
-	text-shadow:-11px 1px 11px #ffffff;
-    right:60px;
-    top:10px;
-    position:absolute;
-    
-    text-decoration:none;
+    cursor: pointer;
+    background-color: #1270b3
 }
 
 
 .myButton:active {
-	position:relative;
-	top:1px;
+	 position: relative;
+    left:980px;
+    margin-top: 10px;
    
 }
 
-#Ajouter_liste{
+#Examens{
     position: relative;
-    top: 10px;
-    float:right ;
+    left:50px;
+    margin-top: 50px;
     margin-right: 90px;
     border-radius:6px;
 	cursor:pointer;
     }
 
-#Examens{
-    margin-top: 100px;
-     margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+#Ajouter_liste{
+ position: relative;
+    left:980px;
+    margin-top: 20px;
+    margin-right: 90px;
+    border-radius:6px;
+	cursor:pointer;
     }
+
 
 #Utilisateurs{
      margin-left: auto;
@@ -385,34 +341,6 @@ input[type=button]:active{
 .Recap{
   color:#1270B3;
 }
-
-.myButton3 {
-	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
-	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
-	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background-color:#1270b3;
-	-moz-border-radius:31px;
-	-webkit-border-radius:31px;
-	border-radius:31px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	padding:9px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
-    
-}
-.myButton3:hover {
-	background-color:#1270b3;
-}
-.myButton3:active {
-	position:relative;
-	top:1px;
-    
-    text-decoration-line:none;
-}
-
 
 .boutons_rdv{
     position: absolute;
