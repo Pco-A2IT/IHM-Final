@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- inclusion de jQuery et jQuery.ui-->
     <div class="gris">
-        
+         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
                 <div  class="gris2">
          <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
@@ -43,11 +43,15 @@
                 <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Examens</h1>
-                
+                <h1 class="titreGauche">Paramètres</h1>
+    
             </div>
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
+        <div class="section4">
+                        <div class="div1">
+                            <br><img src='Icones/parametres_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Examens<br></h2>
+        <div class="liste">
         <table cellspacing="0px" id="tbl" class="table" style="margin-top:70px;">  
                         
                         <th>Nom Examen </th>
@@ -72,7 +76,6 @@
         </script>                                                                                                                       
         </table>
         <table cellspacing="0px" class="table" style="margin-top:30px;">
-            <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post"></form>
         <tr> 
             <td class="left">Nom de l'examen:</td> 
             <td class="left" > 
@@ -91,9 +94,12 @@
                 </td>
         </tr>
         </table>
-
+</div>
     </div>
     </div>
+         </div>
+                </div>
+        </form>
     </div>
 </body>
 </html>

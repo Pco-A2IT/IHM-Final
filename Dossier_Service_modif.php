@@ -94,9 +94,10 @@ $req->closeCursor();
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             </div>
             
          <div id="container">
@@ -109,9 +110,6 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
-                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
-                        
-                        
 
                         <tr> 
                                 <td align="right">Service:</td>
@@ -165,7 +163,7 @@ $req->closeCursor();
                         </tr>
                         <tr>
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s ?></TEXTAREA> 
                             </td>
                         </tr>
             
@@ -175,6 +173,7 @@ $req->closeCursor();
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 
+                      <div class="liste">
                             <table align="center" cellspacing="5px" class="table"> 
                            <tr> 
                             <td>Examens disponibles</td>
@@ -206,6 +205,7 @@ $req->closeCursor();
                 </div>
                 </div> 
                 </div>
+             </div>
         </div>
         </div>
         </div>

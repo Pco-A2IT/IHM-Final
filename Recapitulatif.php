@@ -37,7 +37,7 @@
             
             <script src="js/General.js"></script>
                 <div class="titre"; style="border-radius: 5px;">
-                    <h1 class="titreGauche">Récapitulatif</h1>
+                    <h1 class="titreGauche">Suivi</h1>
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
@@ -49,6 +49,7 @@
                     <div class="section4">
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
+                                <div class="liste">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
                                         <th><strong>Patient</strong></th>
@@ -152,6 +153,7 @@
                     </div>
                 </div>
             </div>
+                 </div>
         </div>
         </div>
     </body>
