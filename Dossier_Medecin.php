@@ -47,7 +47,7 @@
             <div class="blanc";   style="border-radius: 5px;">
                 
                  <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
-                 <input type="submit" accesskey="enter" value="" style="background:url('Icones/valider.png') no-repeat;" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
+                 <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                 <div class="section4">
                     <div class="div1">
                         <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
@@ -116,10 +116,7 @@
                                 <td align="center"  colspan="2">
                                     <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
                                 </td>
-                            </tr>
-                                       
-                    
-                                
+                        </tr>         
                                 
                 </table>
                     
