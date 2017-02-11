@@ -46,16 +46,16 @@
                 <script src="js/General.js"></script>
                 
                 <div class="titre";   style="border-radius: 5px;">
-                    <h1 class="titreGauche">Nouveau Patient</h1>
+                    <h1 class="titreGauche">Patients</h1>
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
                      <input type="submit" accesskey="enter" value="" style="background:url('Icones/valider.png') no-repeat;" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                     <div class="section4">
                         <div class="div1">
-                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
-                        </div>
-                        
+                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
+                      
+                        <br><br><br><br>
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
                                 <span class="title" target="onglet3"> Examens</span> 
