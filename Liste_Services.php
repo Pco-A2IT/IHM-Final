@@ -86,6 +86,7 @@
                             <input class="loupe" type="submit" value="" />
 
                     </form>   
+                <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
                         <th>ID</th>
@@ -154,7 +155,7 @@ function sure()
       
                     </table> 
             
-            
+                </div>
             </div>
         </div>
     </div>
