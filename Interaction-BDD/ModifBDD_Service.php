@@ -44,7 +44,7 @@ while ($donnees = $req->fetch())
     else{$description_s=$_POST['description_s'];}
     echo $description_s;
     
-    /* Il manque la case description */
+    /* Horaire ouverture*/
     $horairesd_s=$donnees['horairesd_s'];
     if($_POST['heured']=="" && $_POST['mind']==""){
         $horairesd_s= $donnees['horairesd_s'];
@@ -63,7 +63,25 @@ while ($donnees = $req->fetch())
             
         }
     }
-
+    /* Horaire fermeture*/
+    $horairesf_s=$donnees['horairesf_s'];
+    if($_POST['heuref']=="" && $_POST['minf']==""){
+        $horairesf_s= $donnees['horairesf_s'];
+    }
+    else{
+        if($_POST['heuref']==""){
+            $horairesf_s=strftime("%H",strtotime($horairesf_s)).":". $_POST['minf'].":00";
+        }
+        else{
+            if($_POST['minf']==""){
+                $horairesf_s= $_POST['heuref'].":".strftime("%M",strtotime($horairesf_s)).":00";
+            }
+            else{
+                $horairesf_s= $_POST['heuref'].":".$_POST['minf'].":00";
+            }
+            
+        }
+    }
     
 }
            
@@ -92,7 +110,7 @@ $req2=$bdd->prepare('SELECT typeExamen FROM Examen');
 $req2->execute();
 $compteur3=1;
 while($dnn = $req2->fetch()){
-  if($_POST[$compteur3]=="YES"){
+  if(isset($_POST[$compteur3])){
             $bool="YES";
   }else{
             $bool="NO";
