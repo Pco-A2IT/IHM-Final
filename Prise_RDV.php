@@ -51,6 +51,7 @@
                 <div class="div1" style="color:black">
                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";>Vincent Pasteur</h1><br>
                     <div id="container"> 
+                  
                         <br><br>
               
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
@@ -70,6 +71,7 @@
                                 <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td>
                         </form>
+                     
        
                     </div>
             
@@ -119,6 +121,7 @@
                         
     ?>
                     <div class="div3">
+                          <div class="liste">
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Résultats Recherche</h4>
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
@@ -193,7 +196,7 @@
                    
                         </table>
                       
-                  
+                        </div>
                     </div>
                 </div>
             </div>
