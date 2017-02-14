@@ -163,7 +163,7 @@ $req->closeCursor();
                         </tr>
                         <tr>
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s ?></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
                             </td>
                         </tr>
             
