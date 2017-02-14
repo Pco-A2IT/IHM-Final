@@ -50,7 +50,8 @@
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
-                     <input type="submit" accesskey="enter" value="" style="background:url('Icones/valider.png') no-repeat;" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
+                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
+                    
                     <div class="section4">
                         <div class="div1">
                             <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
@@ -158,7 +159,7 @@
                                         </tr>
                                         <tr height="60px">
                                             <td align="center"  colspan="4">
-                                                <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                                <TEXTAREA cname="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                                             </td> 
                                         </tr>
                                     </table>
