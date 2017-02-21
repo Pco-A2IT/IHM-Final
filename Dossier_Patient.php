@@ -67,7 +67,7 @@
                                     
                                     <table cellspacing="5px" class="table" style="float:left">
                                         <tr> 
-                                            <td align="right">Date de l'AIT:</td> 
+                                            <td align="right">Date des symptomes:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
                                         </tr>
                                         <tr> 
