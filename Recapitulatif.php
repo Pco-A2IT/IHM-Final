@@ -49,6 +49,17 @@
                     <div class="section4">
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
+                                    <style>
+                            #divConteneur{
+                           min-height:600px;
+                            height:600px;
+                            min-width:100%;
+                            width:100%;/*pour IE qui comprend rien*/
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                            </style>
+
+                            <div id="divConteneur">
                                 <div class="liste">
                                  <table  cellspacing="5px" class="table">  
                                     <tr>
@@ -130,6 +141,9 @@
                                         <td><input type="checkbox" id="choix5_ligne1" value="0" class="regular-checkbox small-checkbox" /><label for="choix5_ligne1"></label>Réalisé<input type="checkbox" id="choix5_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix5_ligne2"></label>Non effectué</td>
                                     </tr>
                                 </table>
+                            </div>
+ 
+                                
                             </div>
                         </div>
                             

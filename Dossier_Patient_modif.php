@@ -114,7 +114,7 @@ $req->closeCursor();
                         <table cellspacing="5px" class="table" id="modif" style="float:left">
                         
                             <tr> 
-                                <td align="right">Date de l'AIT:</td> 
+                                <td align="right">Date des symptomes:</td> 
                                 <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                             </tr>
                             <tr> 

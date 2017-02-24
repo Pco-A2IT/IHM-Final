@@ -83,17 +83,17 @@
                     while($donnees= $req->fetch()){
                       $nbexam=$nbexam+1;
                     }
-                    echo $nbexam;
+                    //echo $nbexam;
                     
                     $premier=true;
                     $req1= $bdd->prepare('SELECT * FROM Examen');
                     $req1->execute();
                     $compteur=1;
                     $comptExamVrai=1;
-                    $chaine = 'SELECT * FROM Service';
+                    $chaine = 'SELECT * FROM Service ';
                     while($donnee= $req1->fetch()){
                       if(isset($_POST[$compteur])){
-                            echo "ola";
+                            //echo "ola";
                             if($premier==true){
                               $chaine=$chaine.' WHERE( `'.$donnee['typeExamen'].'`="YES"';
                               $premier=false;
@@ -105,9 +105,9 @@
                         }
                         $compteur=$compteur+1;
                     }
-                    $chaine=$chaine.")";
+                    $chaine=$chaine.") ORDER BY centre_s";
                     if($comptExamVrai==1){
-                        $chaine = 'SELECT * FROM Service';
+                        $chaine = 'SELECT * FROM Service ORDER BY centre_s';
                         $aucune_demande=true;
                     }
                     else{
@@ -138,12 +138,15 @@
                                     $nb=1;
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
+                                    $nbcroix=1;
                                     $comptspan=0;
                                         while($dnn= $req3->fetch()){//sinon on compte ombien d'examn sont à YES
-                                            if($donnees[$dnn['typeExamen']]=="YES"){
+                                            if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                                 $comptspan=$comptspan+1;
                                             }
+                                            $nbcroix=$nbcroix+1;
                                         }
+                                    echo $comptspan;
                                     ?>
                             
                             <tr>
