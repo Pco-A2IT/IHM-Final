@@ -76,47 +76,57 @@
                     </div>
             
     <?php
-                    /*Compter le nombre d'exmen dans la bdd*/
+                    /*Compter le nombre d'examen dans la bdd*/
                     $req= $bdd->prepare('SELECT * FROM Examen');
                     $req->execute();
                     $nbexam=0;
-                    while($donnees= $req->fetch()){
-                      $nbexam=$nbexam+1;
+                    while($donnees= $req->fetch()){//Parcour de la table examen
+                      $nbexam=$nbexam+1;//on incrémente à chaque examen
                     }
-                    //echo $nbexam;
-                    
+                    ///////////////////////////////////////////////////////////////////
+                    /*Construction de la requete sql en fonction des checkbox cochées*/
+                    ///////////////////////////////////////////////////////////////////
                     $premier=true;
                     $req1= $bdd->prepare('SELECT * FROM Examen');
                     $req1->execute();
-                    $compteur=1;
-                    $comptExamVrai=1;
-                    $chaine = 'SELECT * FROM Service ';
+                    $compteur=1;//va parcourir toutes les checkbox de la page (créees plus haut)
+                    $comptExamVrai=1;//Désigne le nombre d'examen cochées par l'utilisateur
+                    $chaine = 'SELECT * FROM Service ';//désigne le début de la requete que nous allons faire à la bdd
                     while($donnee= $req1->fetch()){
-                      if(isset($_POST[$compteur])){
-                            //echo "ola";
-                            if($premier==true){
+                      if(isset($_POST[$compteur])){//si la checkbox de name $compteur est cochée on complète la requête "$chaine"
+                            //selon que la checkbox est la première ou pas l'ajout à la requete est différent
+                            if($premier==true){//WHERE pour la première checkbox cochée
                               $chaine=$chaine.' WHERE( `'.$donnee['typeExamen'].'`="YES"';
                               $premier=false;
                             }
-                            else{
+                            else{//OR pour les autres checkbox
                                 $chaine=$chaine.' OR `'.$donnee['typeExamen'].'`="YES"';
                             } 
-                            $comptExamVrai=$comptExamVrai+1;
+                            $comptExamVrai=$comptExamVrai+1;//on incrémente le compteur des examens cochés
                         }
-                        $compteur=$compteur+1;
+                        $compteur=$compteur+1;//on incrémente le compteur qui parturt TOUTES les checkbox
                     }
-                    $chaine=$chaine.") ORDER BY centre_s";
-                    if($comptExamVrai==1){
-                        $chaine = 'SELECT * FROM Service ORDER BY centre_s';
+                    $chaine=$chaine.") ORDER BY centre_s";//la requete est contruite
+                    //////////////////////////////////////////
+                    
+                    
+                    
+                    ///////////////////////////////////////////////////////////////////
+                    /*          Execution de la requete                              */
+                    ///////////////////////////////////////////////////////////////////
+                    
+                    if($comptExamVrai==1){//Si aucune cases n'est cochée on ne veut rien afficher
+                        $chaine = 'Cocher au moins une case examen';
                         $aucune_demande=true;
                     }
-                    else{
+                    else{//sinon, on execute la requete
+                        
                         $aucune_demande=false;
+                        $req2=$bdd->prepare($chaine);
+                        $req2->execute();
                     }
-                  echo $chaine;
-                  $req2=$bdd->prepare($chaine);
-                  $req2->execute();
-                  
+                    echo $chaine;
+                    ///////////////////////////////////////////
                   
                         
     ?>
@@ -133,20 +143,37 @@
                                 <th>Horaire</th>
                                 <th>Planifié</th>
                             </tr>
-            <?php  while ($donnees = $req2->fetch()){ ?>
+                            
+            <?php  
+                            
+                    ///////////////////////////////////////////////////////////////////
+                    /*          Affichage de Prise de RDV                            */
+                    ///////////////////////////////////////////////////////////////////        
+                    
+                    //On affiche que si au moins une case est cochée
+                    if($aucune_demande==false){
+                        //on parcourt tous les services qui effectue les examens cochés
+                        while ($donnees = $req2->fetch()){ ?>
                             <?php
                                     $nb=1;
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
-                                    $nbcroix=1;
+                                    
+                            
+                                    /////////////////////////////////////////////////////////////////////
+                                    /* Calcul du nbre de ligne a afficher à partir de la colonne examen*/
+                                    /////////////////////////////////////////////////////////////////////
+                            
+                                    $nbcroix=1;//désigne le parcours des checkbox 
                                     $comptspan=0;
-                                        while($dnn= $req3->fetch()){//sinon on compte ombien d'examn sont à YES
+                                        while($dnn= $req3->fetch()){
+                                            //on affiche une ligne lorsque les examens cochés sont dispensés dans le service considéré
                                             if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                                 $comptspan=$comptspan+1;
                                             }
                                             $nbcroix=$nbcroix+1;
                                         }
-                                    echo $comptspan;
+                                    /////////////////////////////////////////////////////////////////////
                                     ?>
                             
                             <tr>
@@ -155,12 +182,16 @@
                                 <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
                             
                                 <?php
-    
+                                    
+                                    /////////////////////////////////////////////////////////////////////
+                                    /* affichage des colonnes examens, jour, horaires, planifié        */
+                                    /////////////////////////////////////////////////////////////////////
+                            
                                     $req4= $bdd->prepare('SELECT * FROM Examen');
                                     $req4->execute();
                                     $nbcroix=1;
+                                    //on parcourt les examens cochés ET dispensé par le service considéré
                                     while($dnn= $req4->fetch()){
-                                        if($aucune_demande==false){
                                             if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                     ?>
                                     <td><?php echo $dnn['typeExamen'] ?></td>
@@ -171,29 +202,13 @@
                                     <tr>
                                     <?php 
                                             }
-                                        }
-                                        else{
-                                            if($donnees[$dnn['typeExamen']]=="YES"){
-                                        ?>
-                                        <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="date" type="date" value=""/></td>
-                                        <td><label for="heure"></label><input id="heure" type="time" value=""/></td>
-                                        <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                                        </tr>
-                                        <tr>
-                                    <?php 
-                                            }
-                                        }
-                                        $nbcroix=$nbcroix+1;
+                                            $nbcroix=$nbcroix+1;
                                     }
-                                ?>
-                            
-                            
-                                               
-                                
-                                <?php 
-                                   $nb=$nb+1; 
-                                   } ?>
+                                    $nb=$nb+1;
+                                    ///////////////////////////////////////////////////////////////////////
+                        }
+                    }
+                    ?>
                             </tr>
                             
                    
