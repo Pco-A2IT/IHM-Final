@@ -139,8 +139,11 @@
                                             </td>    
                                         </tr>
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left"> 
                                                 <input type="text" name="mail_m_traitant" placeholder="Mail"/>
+                                            </td>
+                                            <td align="left"> 
+                                                <input type="text" name="ville_m_traitant" placeholder="ville"/>
                                             </td>
                                         </tr>
                                         <tr>
@@ -153,8 +156,11 @@
                                             </td>
                                         </tr> 
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
+                                            </td>
+                                            <td align="left"> 
+                                                <input type="text" name="ville_m_appelant" placeholder="ville"/>
                                             </td>
                                         </tr>
                                         <tr height="60px">
