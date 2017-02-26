@@ -68,8 +68,9 @@
                     
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
+                
                         <div class="myButton" id="Ajouter_liste"> 
-                            <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
+                            <a href="Dossier_Medecin.php" class="myButton1">Ajouter Médecin</a>
                         </div>  
                 <br>
                 <br>
@@ -80,7 +81,7 @@
                             <input class="loupe" type="submit" value="" />
 
                      </form> 
-                
+                <div class="liste">
                     <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
                         <th>Nom </th>
@@ -140,7 +141,7 @@ function sure()
 
                     </table> 
                     
-                     
+                </div>
             </div>
         </div>
         

@@ -51,6 +51,7 @@
                 <div class="div1" style="color:black">
                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";>Vincent Pasteur</h1><br>
                     <div id="container"> 
+                  
                         <br><br>
               
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
@@ -70,39 +71,67 @@
                                 <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td>
                         </form>
+                     
        
                     </div>
             
     <?php
-                  echo $_POST[1];
-                  echo $_POST[2];
-                  echo $_POST[3];
-                  $premier=true;
-                  $req1= $bdd->prepare('SELECT * FROM Examen');
-                  $req1->execute();
-                  $compteur=1;
-                  $chaine = 'SELECT * FROM Service WHERE(';
-                  while($donnee= $req1->fetch()){
-                      if($_POST[$compteur]=="YES"){
-                          if($premier==true){
-                              $chaine=$chaine.' `'.$donnee['typeExamen'].'`="YES"';
+                    /*Compter le nombre d'examen dans la bdd*/
+                    $req= $bdd->prepare('SELECT * FROM Examen');
+                    $req->execute();
+                    $nbexam=0;
+                    while($donnees= $req->fetch()){//Parcour de la table examen
+                      $nbexam=$nbexam+1;//on incrémente à chaque examen
+                    }
+                    ///////////////////////////////////////////////////////////////////
+                    /*Construction de la requete sql en fonction des checkbox cochées*/
+                    ///////////////////////////////////////////////////////////////////
+                    $premier=true;
+                    $req1= $bdd->prepare('SELECT * FROM Examen');
+                    $req1->execute();
+                    $compteur=1;//va parcourir toutes les checkbox de la page (créees plus haut)
+                    $comptExamVrai=1;//Désigne le nombre d'examen cochées par l'utilisateur
+                    $chaine = 'SELECT * FROM Service ';//désigne le début de la requete que nous allons faire à la bdd
+                    while($donnee= $req1->fetch()){
+                      if(isset($_POST[$compteur])){//si la checkbox de name $compteur est cochée on complète la requête "$chaine"
+                            //selon que la checkbox est la première ou pas l'ajout à la requete est différent
+                            if($premier==true){//WHERE pour la première checkbox cochée
+                              $chaine=$chaine.' WHERE( `'.$donnee['typeExamen'].'`="YES"';
                               $premier=false;
-                          }else{
-                              $chaine=$chaine.' OR `'.$donnee['typeExamen'].'`="YES"';
-                          }
-                          
-                      }
-                      $compteur=$compteur+1;
-                  }
-                  $chaine=$chaine.")";
-                  echo $chaine;
-                  $req2=$bdd->prepare($chaine);
-                  $req2->execute();
-                  
+                            }
+                            else{//OR pour les autres checkbox
+                                $chaine=$chaine.' OR `'.$donnee['typeExamen'].'`="YES"';
+                            } 
+                            $comptExamVrai=$comptExamVrai+1;//on incrémente le compteur des examens cochés
+                        }
+                        $compteur=$compteur+1;//on incrémente le compteur qui parturt TOUTES les checkbox
+                    }
+                    $chaine=$chaine.") ORDER BY centre_s";//la requete est contruite
+                    //////////////////////////////////////////
+                    
+                    
+                    
+                    ///////////////////////////////////////////////////////////////////
+                    /*          Execution de la requete                              */
+                    ///////////////////////////////////////////////////////////////////
+                    
+                    if($comptExamVrai==1){//Si aucune cases n'est cochée on ne veut rien afficher
+                        $chaine = 'Cocher au moins une case examen';
+                        $aucune_demande=true;
+                    }
+                    else{//sinon, on execute la requete
+                        
+                        $aucune_demande=false;
+                        $req2=$bdd->prepare($chaine);
+                        $req2->execute();
+                    }
+                    echo $chaine;
+                    ///////////////////////////////////////////
                   
                         
     ?>
                     <div class="div3">
+                          <div class="liste">
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Résultats Recherche</h4>
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
@@ -114,17 +143,37 @@
                                 <th>Horaire</th>
                                 <th>Planifié</th>
                             </tr>
-            <?php  while ($donnees = $req2->fetch()){ ?>
+                            
+            <?php  
+                            
+                    ///////////////////////////////////////////////////////////////////
+                    /*          Affichage de Prise de RDV                            */
+                    ///////////////////////////////////////////////////////////////////        
+                    
+                    //On affiche que si au moins une case est cochée
+                    if($aucune_demande==false){
+                        //on parcourt tous les services qui effectue les examens cochés
+                        while ($donnees = $req2->fetch()){ ?>
                             <?php
                                     $nb=1;
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
-                                    $comptspan=0; 
-                                    while($dnn= $req3->fetch()){ 
-                                        if($donnees[$dnn['typeExamen']]=="YES"){
-                                            $comptspan=$comptspan+1;
+                                    
+                            
+                                    /////////////////////////////////////////////////////////////////////
+                                    /* Calcul du nbre de ligne a afficher à partir de la colonne examen*/
+                                    /////////////////////////////////////////////////////////////////////
+                            
+                                    $nbcroix=1;//désigne le parcours des checkbox 
+                                    $comptspan=0;
+                                        while($dnn= $req3->fetch()){
+                                            //on affiche une ligne lorsque les examens cochés sont dispensés dans le service considéré
+                                            if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
+                                                $comptspan=$comptspan+1;
+                                            }
+                                            $nbcroix=$nbcroix+1;
                                         }
-                                    }
+                                    /////////////////////////////////////////////////////////////////////
                                     ?>
                             
                             <tr>
@@ -134,12 +183,16 @@
                             
                                 <?php
                                     
-                                    
+                                    /////////////////////////////////////////////////////////////////////
+                                    /* affichage des colonnes examens, jour, horaires, planifié        */
+                                    /////////////////////////////////////////////////////////////////////
+                            
                                     $req4= $bdd->prepare('SELECT * FROM Examen');
                                     $req4->execute();
                                     $nbcroix=1;
-                                    while($dnn= $req4->fetch()){ 
-                                        if($donnees[$dnn['typeExamen']]=="YES" && $_POST[$nbcroix]=="YES"){
+                                    //on parcourt les examens cochés ET dispensé par le service considéré
+                                    while($dnn= $req4->fetch()){
+                                            if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                     ?>
                                     <td><?php echo $dnn['typeExamen'] ?></td>
                                     <td><label for="date"></label><input id="date" type="date" value=""/></td>
@@ -148,23 +201,20 @@
                                     </tr>
                                     <tr>
                                     <?php 
-                                        }
-                                        $nbcroix=$nbcroix+1;
+                                            }
+                                            $nbcroix=$nbcroix+1;
                                     }
-                                ?>
-                            
-                            
-                                               
-                                
-                                <?php 
-                                   $nb=$nb+1; 
-                                   } ?>
+                                    $nb=$nb+1;
+                                    ///////////////////////////////////////////////////////////////////////
+                        }
+                    }
+                    ?>
                             </tr>
                             
                    
                         </table>
                       
-                  
+                        </div>
                     </div>
                 </div>
             </div>
