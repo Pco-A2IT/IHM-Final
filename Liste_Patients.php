@@ -73,7 +73,21 @@
                     <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
                     <input class="loupe" type="submit" value="" />
 
-                    </form> 
+                    </form>
+                
+                <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+
+                <div id="divConteneur">
+                
                 <div class="liste">
                 
                 <table cellspacing="0px" id="tbl" class="table">   
@@ -162,7 +176,7 @@ function sure()
                         </tr> -->
                     </table> 
                 </div>     
-                   
+                </div> 
             </div>
         </div>
         </div>

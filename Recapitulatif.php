@@ -50,13 +50,14 @@
                             <div class="ongletC" id="ongletC1">
                                 <div class="section_centre">
                                     <style>
-                            #divConteneur{
-                           min-height:600px;
-                            height:600px;
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
                             min-width:100%;
-                            width:100%;/*pour IE qui comprend rien*/
+                            width:100%;
                             overflow:auto;/*pour activer les scrollbarres*/
                             }
+                           
                             </style>
 
                             <div id="divConteneur">
