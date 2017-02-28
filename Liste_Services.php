@@ -86,6 +86,18 @@
                             <input class="loupe" type="submit" value="" />
 
                     </form>   
+                <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+
+                <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -154,7 +166,7 @@ function sure()
 </script>
       
                     </table> 
-            
+                    </div>
                 </div>
             </div>
         </div>
