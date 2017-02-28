@@ -46,16 +46,17 @@
                 <script src="js/General.js"></script>
                 
                 <div class="titre";   style="border-radius: 5px;">
-                    <h1 class="titreGauche">Nouveau Patient</h1>
+                    <h1 class="titreGauche">Patients</h1>
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
-                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
+                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
+                    
                     <div class="section4">
                         <div class="div1">
-                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br>
-                        </div>
-                        
+                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
+                      
+                        <br><br><br><br>
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> Patient</span> 
                                 <span class="title" target="onglet3"> Examens</span> 
@@ -66,14 +67,14 @@
                                     
                                     <table cellspacing="5px" class="table" style="float:left">
                                         <tr> 
-                                            <td align="right">Date de l'AIT:</td> 
+                                            <td align="right">Date des symptomes:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité:</td>
                                             <td align="left"><section id="main">
                                             <form>
-                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p">
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required>
                                                     <option value="" >Civilité</option>
                                                     <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>
@@ -110,14 +111,7 @@
                                     </table> 
                                         
                                    
-                                    <table cellspacing="5px" class="table" style="float:left"> 
-                                        <tr> 
-                                            <td align="right">Ville:</td> 
-                                            <td align="left" colspan="2"> 
-                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
-                                            </td> 
-                                        </tr> 
-                                        <tr> 
+                                    <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
@@ -126,38 +120,48 @@
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                                                <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                                            </td> 
+                                        </tr> 
+                                        <tr> 
+                                            <td align="right">Ville:</td> 
+                                            <td align="left" colspan="2"> 
+                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
                                             </td> 
                                         </tr> 
                                         <tr>
-                                            <td align="right">Médecin traitant:</td> 
+                                            <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left"> 
                                                 <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
-                                            </td>
-                                            <td align="left"> 
+                                            </td>    
+                                        </tr>
+                                        <tr>
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Médecin appelant:</td> 
+                                            <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
-                                            <td align="left"> 
+                                        </tr> 
+                                        <tr>
+                                            <td align="left" colspan="2"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
-                                        </tr> 
-                                          <tr height="60px">
-                                                <td align="center"  colspan="3">
-                                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
-                                                </td> 
-                                            </tr>
+                                        </tr>
+                                        <tr height="60px">
+                                            <td align="center"  colspan="4">
+                                                <TEXTAREA name="description_p" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                            </td> 
+                                        </tr>
                                     </table>
                                     
                                 </form>
@@ -166,6 +170,7 @@
             <div class="onglet" id="onglet3">
 
                 <div class="position_table"> 
+                <div class="liste">
                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
                             <th></th>
@@ -204,11 +209,13 @@
                             </td> 
                          </tr>
                     </table>
+                    </div>
                  </div>
             </div>
                     </div>
         </div>
             </div>
+        </div>
         </div>
         </form>
             <script type="text/javascript">

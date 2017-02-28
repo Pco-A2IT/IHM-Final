@@ -43,13 +43,15 @@
             </div>
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
-            <h1 class="titreGauche">Nouveau Service</h1>
+            <h1 class="titreGauche">Services</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" id="btn" formmethod="post"/> 
+             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><br><br>
+             <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>    
+              Nouveau Service<br></h2>
+            <br><br><br><br>
             </div>
 
             <div id="titles"> 
@@ -79,7 +81,7 @@
                     
                     <table cellspacing="5px" class="table" style="float:left"> 
                         <tr>
-                            <td>Horaires Ouverture</td>
+                            <td>Horaires ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
@@ -97,9 +99,9 @@
                             </td> 
                         </tr>
                         <tr> 
-                            <td align="right">Code Postale:</td> 
+                            <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
+                            <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
                             </td> 
                         </tr>
                         <tr> 
@@ -110,7 +112,7 @@
                         </tr>
                         <tr height="60px">
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="commentaires" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
                             </td>
                         </tr>
                     </table>
@@ -119,7 +121,7 @@
                 
             <div class="onglet" id="onglet3">
                 <div class="position_table">
-                
+                <div class="liste">
                 <table align="center" cellspacing="5px" class="table"> 
                            <tr> 
                             <td>Examens disponibles</td>
@@ -137,13 +139,9 @@
                             <?php
                                 };
                             ?>
-                            <tr> 
-                            <tr>
-                            
-                            
-                             </tr>
+                           
                     </table>
-                    
+                    </div>    
                 </div> 
              </div>
           </div>
