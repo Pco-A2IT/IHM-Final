@@ -49,13 +49,22 @@
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
                 <div class="div1" style="color:black">
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";>Vincent Pasteur</h1><br>
+                    <?php
+                        $id_patient=$_GET['idpatient'];
+                        $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
+                        $req->execute(array($id_patient));
+                        while ($donnees = $req->fetch()){
+                            $nom_p=$donnees['nom_p'];
+                            $prenom_p=$donnees['prenom_p'];
+                        }
+                    ?>
+                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?></h1><br>
                     <div id="container"> 
                   
                         <br><br>
               
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
-                        <form action="Prise_RDV.php" method="post">
+                        <form action="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" method="post">
                     <?php
                         $compteur=1;
                         $reponse = $bdd->query('SELECT * FROM Examen');      
@@ -71,8 +80,6 @@
                                 <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
                             </td>
                         </form>
-                     
-       
                     </div>
             
     <?php
