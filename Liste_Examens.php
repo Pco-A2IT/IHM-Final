@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!-- inclusion de jQuery et jQuery.ui-->
     <div class="gris">
-        
+         <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
                 <div  class="gris2">
          <div id="menu0" class="carreGris";>
                 <h4>Patients</h4>    
@@ -43,12 +43,16 @@
                 <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Examens</h1>
-                
+                <h1 class="titreGauche">Paramètres</h1>
+    
             </div>
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
-        <table cellspacing="0px" id="tbl" class="table">  
+        <div class="section4">
+                        <div class="div1">
+                            <br><img src='Icones/parametres_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Examens<br></h2>
+        <div class="liste">
+        <table cellspacing="0px" id="tbl" class="table" style="margin-top:70px;">  
                         
                         <th>Nom Examen </th>
                         <th>Description </th>
@@ -71,29 +75,31 @@
             }                 
         </script>                                                                                                                       
         </table>
-        <table cellspacing="5px" class="table" style="float:left">
-        <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
+        <table cellspacing="0px" class="table" style="margin-top:30px;">
         <tr> 
-            <td align="right">Nom de l'examen:</td> 
-            <td align="left" colspan="2"> 
+            <td class="left">Nom de l'examen:</td> 
+            <td class="left" > 
                 <input type="text" name="type_examen" placeholder="(ex: IRM)"/> 
             </td> 
         </tr> 
         <tr> 
-            <td align="right">Description:</td> 
-            <td align="left" colspan="2"> 
+            <td class="left">Description:</td> 
+            <td class="left"> 
                 <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
             </td> 
         </tr>
         <tr height="60px"> 
-                <td align="center"  colspan="3"> 
-                    <input align="center" type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
-                </td> 
+                <td align="center" colspan="2"> 
+                    <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/>
+                </td>
         </tr>
-        </form>
         </table>
+</div>
     </div>
     </div>
+         </div>
+                </div>
+        </form>
     </div>
 </body>
 </html>

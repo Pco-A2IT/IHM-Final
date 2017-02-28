@@ -31,7 +31,32 @@ while ($donnees = $req->fetch())
     $ville_s=$donnees['ville_s'];
     $description_s=$donnees['description_s'];
 
-}                              
+}
+/* Cocher automatiquement les checkbox
+
+$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req2->execute();
+$compteur3=1;
+while($dnn = $req2->fetch()){
+  $($compteur3)
+  if($_POST[$compteur3]=="YES"){
+            $bool="YES";
+  }else{
+            $bool="NO";
+  }
+  echo $bool;
+  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
+  //echo $sql;
+  //$id_boucle=7;
+  //echo $id_boucle;
+  
+  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$id_dernier."");
+  echo "prepare effectué";
+  $stmt->execute(array($bool));
+  echo "requete executée";
+  $compteur3=$compteur3+1;
+
+}*/
 $req->closeCursor();            
 ?> 
     <body>
@@ -69,12 +94,13 @@ $req->closeCursor();
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
+            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
-             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h1 style="color:black";><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h1><br>
+             <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
+            <br><br><br><br>
             </div>
             
-         <div id="container">
 
             <div id="titles"> 
                 <span class="title active"  target="onglet1"> Service</span> 
@@ -84,9 +110,6 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
-                        <input type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/>
-                        
-                        
 
                         <tr> 
                                 <td align="right">Service:</td>
@@ -136,7 +159,12 @@ $req->closeCursor();
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
                             <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
-                            </td> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"  colspan="2">
+                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                            </td>
                         </tr>
             
                     </table>
@@ -145,30 +173,43 @@ $req->closeCursor();
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 
-                      <table align="center" cellspacing="5px"  cellpadding="15px" class="table"> 
-                            <tr> 
-                            <td rowspan=3>Examens disponibles</td> 
-                            <td>IRM</td> 
-                            <td><input type="checkbox" name="checkbox-1" class="regular checkbox" value="YES"/><label for="checkbox-1"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Bilan cardiaque</td>
-                            <td><input type="checkbox" name="checkbox-2" class="regular checkbox" value="YES" /><label for="checkbox-2"></label></td>
-                            </tr> 
-                            <tr> 
-                            <td>Consultation neuro</td>
-                            <td><input type="checkbox" name="checkbox-3" class="regular checkbox" value="YES" /><label for="checkbox-3"></label></td> 
-                            </tr>
+                      <div class="liste">
+                            <table align="center" cellspacing="5px" class="table"> 
+                           <tr> 
+                            <td>Examens disponibles</td>
+                           </tr>
+                            <?php
+                                
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                            ?>
                             <tr>
-                             </tr>
-                    </table>
+                            <td><?php print_r($dnn['typeExamen']); ?></td>
+                            <?php
+                                    $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+                                    $req2->execute(array($idservice));
+                                    while($donnee = $req2->fetch()){
+                                        if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
+                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
+                                        <?php }else{ ?>
+                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
+                                        <?php }
+                                    }
+                                    $compteur=$compteur+1;
+                                
+                                }
+                            ?>
+                            </tr>
+                            </table>
                 </div>
                 </div> 
                 </div>
+             </div>
         </div>
         </div>
         </div>
-        </div>
+    
         </form>
     </body>
 

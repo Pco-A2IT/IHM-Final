@@ -68,16 +68,32 @@
                     
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
-                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Medecin.php" class="myButton1"><img class="icone_ajouter" src="Icones/button_ajouter.png"> Ajouter Médecin</a>
-                        </div><br>  
+                
+                        <div class="myButton" id="Ajouter_liste"> 
+                            <a href="Dossier_Medecin.php" class="myButton1">Ajouter Médecin</a>
+                        </div>  
+                <br>
+                <br>
+                <br>
                 <form id="recherche" method="post" class="recherche">
 
                             <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                             <input class="loupe" type="submit" value="" />
 
                      </form> 
-                
+                <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+
+                            <div id="divConteneur">
+                <div class="liste">
                     <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
                         <th>Nom </th>
@@ -137,7 +153,8 @@ function sure()
 
                     </table> 
                     
-                     
+                </div>
+                </div>
             </div>
         </div>
         

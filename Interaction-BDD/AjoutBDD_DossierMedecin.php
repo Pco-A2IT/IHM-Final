@@ -17,7 +17,7 @@ include('../config.php');
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-/*      ID_service                                                        */
+/*      ID_service                                                                   */
 ///////////////////////////////////////////////////////////////////////////////////////
 
 //On prend dans 'service' l'éventuel tuple qui correspond au service et centre rentré dans le formulaire
@@ -69,10 +69,10 @@ echo "essai".$id_service;
 
 */
 
-$req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,?, ?,?,?,?,?,?,?)');
+$req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m, description_m) VALUES(NULL ,?, ?,?,?,?,?,?,?, ?)');
 
 
-$req->execute(array( $id_service, $_POST['nom_m'], $_POST['prenom_m'], $_POST['email_m'],  $_POST['ville_m'],  $_POST['codePostal_m'],$_POST['adresse_m'] ,$_POST['telephone_m']));
+$req->execute(array( $id_service, $_POST['nom_m'], $_POST['prenom_m'], $_POST['email_m'],  $_POST['ville_m'],  $_POST['codePostal_m'],$_POST['adresse_m'] ,$_POST['telephone_m'], $_POST['description_m']));
 
 
 
