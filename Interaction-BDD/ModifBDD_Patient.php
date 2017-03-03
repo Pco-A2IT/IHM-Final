@@ -180,10 +180,36 @@ $req->execute(array(
 	':jointure' => $id_patient
 	));
 
+$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req2->execute();
+$compteur3=1;
+while($dnn = $req2->fetch()){
+  if(isset($_POST[$compteur3])){
+            $bool="YES";
+  }else{
+            $bool="NO";
+  }
+  echo $bool;
+  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
+  //echo $sql;
+  //$id_boucle=7;
+  //echo $id_boucle;
+  
+  $stmt = $bdd->prepare("UPDATE Patient SET`".$dnn['typeExamen']."`= ? WHERE id_patient =".$id_patient."");
+  echo "prepare effectué";
+  $stmt->execute(array($bool));
+  echo "requete executée";
+  $compteur3=$compteur3+1;
+
+}
+
+
+
+
 ///////////////////////////
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-header('Location: ../Liste_Patients.php');
+//header('Location: ../Liste_Patients.php');
 
 ?>
