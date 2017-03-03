@@ -1,6 +1,6 @@
 <?php
-include 'PHPExcel.php';
-include 'PHPExcel/Writer/Excel2007.php';
+include 'PHPExcel-1.8/classes/PHPExcel.php';
+include 'PHPExcel-1.8/classes/PHPExcel/Writer/Excel2007.php';
 
 $objPHPExcel = new PHPExcel();
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "Excel2007");
