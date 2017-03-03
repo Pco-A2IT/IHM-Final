@@ -23,8 +23,11 @@ $req->execute(array($_POST['type_examen'],$_POST['details_examen']));
 
 
 $req2 = $bdd->prepare("ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'");
-echo "ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'";
+
 $req2->execute();
+    
+$req4 = $bdd->prepare("ALTER TABLE Patient ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'");
+$req4->execute();
   
 }
 else{

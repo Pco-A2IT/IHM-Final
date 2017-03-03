@@ -24,11 +24,11 @@ USE bdd_plateforme;
 DROP TABLE IF EXISTS `Patient`;
 CREATE TABLE `Patient` (
   `id_patient` int(11) NOT NULL auto_increment,
-  `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
+  `date_ait_p` date NOT NULL DEFAULT '1970-01-01',  
   `nom_p` varchar(250) NOT NULL DEFAULT '',
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
   `civilite_p` enum('M.','Mme') NOT NULL DEFAULT 'M.',
-  `date_naissance` date NOT NULL DEFAULT '0000-00-00',    
+  `date_naissance` date NOT NULL DEFAULT '1970-01-01',    
   `mail_p` varchar(255) NOT NULL DEFAULT '',      
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
