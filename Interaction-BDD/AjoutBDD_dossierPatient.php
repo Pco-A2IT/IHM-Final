@@ -115,11 +115,23 @@ else{
 // Insertion du message à l'aide d'une requête préparée
 $req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p'], ));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p']));
 
 
+///////////////////////////////////////////////////////////////////////////////////////
+/*            Récupérer l'id_patient de celui qu'on vient de créer                   */
+///////////////////////////////////////////////////////////////////////////////////////
 
-
+$req1 =$bdd->prepare('SELECT * FROM Patient');
+$req1->execute();
+$id_patient_cree=0;
+while($donnee= $req1->fetch()){
+    $id_patient_cree=$id_patient_cree+1;
+}
+echo "          ".$id_patient_cree;
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
 ?>
+
+<script>
+top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_patient_cree; ?>";
+</script>
