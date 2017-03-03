@@ -122,9 +122,11 @@
             <div class="onglet" id="onglet3">
                 <div class="position_table">
                 <div class="liste">
-                <table align="center" cellspacing="5px" class="table"> 
-                           <tr> 
-                            <td>Examens disponibles</td>
+                <table align="center" cellspacing="5px" class="table">
+                    
+                           <tr>
+                                <th></th>
+                                <td>Examens disponibles</td>
                            </tr>
                             <?php
                                 $compteur=1;
