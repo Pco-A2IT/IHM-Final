@@ -11,12 +11,12 @@ mysql_select_db("image",$conn);
 $sql = mysql_query("select * from test");
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Fiche')
-            ->setCellValue('B1', 'Nom')
-            ->setCellValue('C1', 'Prénom')
-            ->setCellValue('D1', 'Date de naissance')
+            ->setCellValue('A1', 'Fiche');
+            ->setCellValue('B1', 'Nom');
+            ->setCellValue('C1', 'Prénom');
+            ->setCellValue('D1', 'Date de naissance');
             ->setCellValue('E1', 'Code postal');
-            ->setCellValue('F1', 'Ville')
+            ->setCellValue('F1', 'Ville');
             ->setCellValue('G1', 'Téléphone');
 
 $db = new Mysql($dbconfig);
