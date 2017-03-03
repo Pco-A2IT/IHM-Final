@@ -36,5 +36,4 @@ for ($i = 2; $i <= $count+1; $i++) {
 echo date('H:i:s') . " Create new Worksheet object\n";
 $objPHPExcel->getActiveSheet()->setTitle('patient');      //设置sheet的名称
 $objPHPExcel->setActiveSheetIndex(0);                            //设置sheet的起始位置
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');   //通过PHPExcel_IOFactory的写函数将上面数据写出来
 ?>
