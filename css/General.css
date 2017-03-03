@@ -261,13 +261,11 @@ input[type=button]:active{
 }
 
 #Examens{
-    position: relative;
-    left:50px;
+ text-align: center;
+    margin: 20px 0;
     margin-top: 50px;
-    margin-right: 90px;
-    border-radius:6px;
-	cursor:pointer;
     }
+
 
 #Ajouter_liste{
  position: relative;
