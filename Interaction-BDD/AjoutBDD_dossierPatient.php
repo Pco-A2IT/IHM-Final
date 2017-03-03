@@ -113,13 +113,76 @@ else{
 /*      Insertion dans la base donnée                                                */
 ///////////////////////////////////////////////////////////////////////////////////////
 // Insertion du message à l'aide d'une requête préparée
-$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
+/*$req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p'], ));
-
-
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p']));*/
 
 
+$req=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req->execute();
+$statique1='INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier';
+$statique2='VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() ';
+$compteur=1;
+while($dnn = $req->fetch()){
+  $statique1=$statique1.', `'.$dnn['typeExamen'].'`';
+  $statique2=$statique2.', "NO"';
+  $compteur=$compteur+1;
+
+}
+$compteur=$compteur-1;
+$compteur2=1;
+$statique1=$statique1.') ';
+$statique2=$statique2.') ';
+$statique=$statique1.$statique2;
+$req1=$bdd->prepare($statique);
+echo $statique;
+
+$req1->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p']));
+
+
+//Modification des attributs enum examens (la construction les initialise à NON)
+$id_dernier=$bdd->lastInsertId();
+echo $id_dernier;
+
+$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req2->execute();
+$compteur3=1;
+
+
+echo "c'est la boucle qui merde";
+while($dnn = $req2->fetch()){
+  if(isset($_POST[$compteur3])){
+            $bool="YES";
+  }else{
+            $bool="NO";
+  }
+  echo $bool;
+  
+  $stmt = $bdd->prepare("UPDATE Patient SET`".$dnn['typeExamen']."`= ? WHERE id_patient =".$id_dernier."");
+  echo "prepare effectué";
+  $stmt->execute(array($bool));
+  echo "requete executée";
+  $compteur3=$compteur3+1;
+
+}
+echo "boucle effectuée";
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+/*            Récupérer l'id_patient de celui qu'on vient de créer                   */
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+$req1 =$bdd->prepare('SELECT * FROM Patient');
+$req1->execute();
+$id_patient_cree=0;
+while($donnee= $req1->fetch()){
+    $id_patient_cree=$id_patient_cree+1;
+}
+echo "          ".$id_patient_cree;
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
 ?>
+
+<script>
+//top.location.href="../Prise_RDV.php?idpatient=<?php //echo $id_patient_cree; ?>";
+</script>

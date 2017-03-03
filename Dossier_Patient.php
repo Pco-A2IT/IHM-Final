@@ -1,3 +1,6 @@
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -73,14 +76,12 @@
                                         <tr> 
                                             <td align="right">Civilité:</td>
                                             <td align="left"><section id="main">
-                                            <form>
                                                 <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required>
                                                     <option value="" >Civilité</option>
                                                     <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>
 
                                                 </select>
-                                            </form>
                                         </section>
                                             </td>
                                         </tr>
@@ -173,40 +174,25 @@
                 <div class="liste">
                 <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
                         <tr>
-                            <th></th>
                             <th>Examen</th>
                             <th style="text-align:center">Réalisé</th>
-                        <tr>
-                            <td rowspan="3"> 1ère intention  </td>
-                            <td>Scan cérébral</td>
-                            <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
-                        </tr>
-                        <tr>
-                            <td>AngioScan ou Echo Doppler</td>
-
-                            <td><input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label></td>
-                        </tr>
-                        <tr>
-                            <td>Bilan biologique</td>
-                            <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                        </tr>
-                         <tr>
-                            <td rowspan="3"> 2nd intention  </td>
-                           <td>Bilan Cardiaque</td>
-                            <td><input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label></td>
-                        </tr>
-                        <tr>
-                            <td>RDV neurologue</td>
-                            <td><input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label></td>
-                        </tr>
-                        <tr>
-                           <td>IRM</td>
-                            <td><input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label></td>
-                        </tr>
+                        <?php
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                            ?>
+                            <tr>
+                            <td><?php print_r($dnn['typeExamen']); ?></td> 
+                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
+                            <?php $compteur=$compteur+1; ?>
+                            </tr>
+                            <?php
+                                };
+                            ?>
                          <tr rowspan="3">
                              <td align="center"  colspan="3"> 
-                                 <a href="Prise_RDV.php">  <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
-                            </td> 
+                                 <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post" onclick="window.location.href='Prise_RDV.php?'"/>
+                             </td> 
                          </tr>
                     </table>
                     </div>
