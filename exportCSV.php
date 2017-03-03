@@ -10,7 +10,7 @@ $conn = mysql_connect("localhost","root","") or die("fail to connect！");
 mysql_select_db("image",$conn); 
 $sql = mysql_query("select * from test");
 
-$objPHPExcel->setActiveSheetIndex(0)
+$objPHPExcel->setActiveSheetIndex(0);
             ->setCellValue('A1', 'Fiche');
             ->setCellValue('B1', 'Nom');
             ->setCellValue('C1', 'Prénom');
