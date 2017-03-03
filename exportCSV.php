@@ -4,11 +4,11 @@ include('config.php');
  
 // on indique au navigateur qu'on va exporter un CSV 
 header('Content-Type: text/csv'); 
-header('Content-Disposition: attachment;filename='.$_GET['patient'].'patient.csv');  
+header('Content-Disposition: attachment;filename=bdd_plateforme.csv');  
  
 // selection de la table à exporter 
-$select_table = mysql_query('select * from '.$_GET['patient']); 
-$rows = mysql_fetch_assoc($select_table); 
+$select_table = $bdd->prepare('select * from patient' /*.$_GET['patient']*/); 
+$rows = $select_table->fetch(PDO::FETCH_ASSOC); 
  
 if($rows) { 
   makecsv(array_keys($rows)); 
@@ -16,7 +16,7 @@ if($rows) {
  
 while($rows) { 
   makecsv($rows); 
-  $rows = mysql_fetch_assoc($select_table);  
+  $rows = $select_table->fetch(PDO::FETCH_ASSOC);  
 } 
  
 // la fonction magique 
