@@ -40,7 +40,7 @@
              <div class="myButton" id="Examens">
                             <a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a>
                         </div>
-        <p><a href="exportCSV.php?nom_table=<?php echo 'ma_table1'; ?>">Cliquer ici pour telecharger</a></p>
+        <p><a href="exportCSV.php?nom_table=<?php echo 'patient'; ?>">Cliquer ici pour telecharger</a></p>
                 
     </div>
          <script src="js/General.js"></script>
