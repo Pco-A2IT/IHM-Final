@@ -3,7 +3,7 @@ include 'PHPExcel.php';
 include 'PHPExcel/Writer/Excel2007.php';
 
 $objPHPExcel = new PHPExcel();
-$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "Excel5");
 $objWriter->save("patient.xlsx");
 
 $conn = mysql_connect("localhost","root","") or die("fail to connect！");   
