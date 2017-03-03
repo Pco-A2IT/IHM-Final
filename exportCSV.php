@@ -6,9 +6,8 @@ $objPHPExcel = new PHPExcel();
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "Excel2007");
 $objWriter->save("patient.xlsx");
 
-$conn = mysql_connect("localhost","root","") or die("fail to connect！");   
-mysql_select_db("image",$conn); 
-$sql = mysql_query("select * from test");
+include('config.php');//$conn = mysql_connect("localhost","root","") or die("fail to connect！");    
+$sql = $bdd->prepare("select * from patient");
 
 $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A1', 'Fiche')
@@ -19,8 +18,6 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('F1', 'Ville')
             ->setCellValue('G1', 'Téléphone');
 
-$db = new Mysql($dbconfig);
-$sql = "SELECT * FROM patient";
 $row = $db->GetAll($sql); 
 $count = count($row);
 for ($i = 2; $i <= $count+1; $i++) {
