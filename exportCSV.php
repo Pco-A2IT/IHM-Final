@@ -1,37 +1,49 @@
 <?php
 include 'PHPExcel-1.8/classes/PHPExcel.php';
-include 'PHPExcel-1.8/classes/PHPExcel/Writer/Excel2007.php';
+include 'PHPExcel-1.8/classes/PHPExcel/Writer/CSV.php';
+
+header('Content-Type: text/csv'); 
+header('Content-Disposition: attachment;filename=patients.csv');
+
 
 $objPHPExcel = new PHPExcel();
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "Excel2007");
-$objWriter->save("patient.xlsx");
+$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "CSV");
 
-include('config.php');//$conn = mysql_connect("localhost","root","") or die("fail to connect！");    
-$sql = $bdd->prepare("select * from patient");
+
+include('config.php');
+$sql = $bdd->prepare('select * from patient');
+$sql->execute();
 
 $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', 'Fiche')
-            ->setCellValue('B1', 'Nom')
-            ->setCellValue('C1', 'Prénom')
-            ->setCellValue('D1', 'Date de naissance')
-            ->setCellValue('E1', 'Code postal')
-            ->setCellValue('F1', 'Ville')
-            ->setCellValue('G1', 'Téléphone');
+            ->setCellValue('A1', 'id_patient')
+            ->setCellValue('B1', 'date_ait')
+            ->setCellValue('C1', 'nom')
+            ->setCellValue('D1', 'prenom')
+            ->setCellValue('E1', 'civilité')
+            ->setCellValue('F1', 'date_naissance')
+            ->setCellValue('G1', 'mail')
+            ->setCellValue('H1', 'téléphone')
+            ->setCellValue('I1', 'ville')
+            ->setCellValue('J1', 'codePostal')
+            ->setCellValue('K1', 'adresse')
+            ->setCellValue('L1', 'description')
+            ->setCellValue('M1', 'date_creation_dossier')
+            ->setCellValue('N1', 'ID_medecin_traitant')
+            ->setCellValue('O1', 'ID_medecin_autre');
 
-//$row = $bdd->GetAll($sql); 
-//$count = count($row);
-$i=2;                //定义一个i变量，目的是在循环输出数据是控制行数
-while($rs=mysql_fetch_array($sql)){
- $objPHPExcel->getActiveSheet()->setCellValue('A1' . $i,  $rs[0]);
- $objPHPExcel->getActiveSheet()->setCellValue('B1' . $i,  $rs[1]);
- $objPHPExcel->getActiveSheet()->setCellValue('C1' . $i,  $rs[2]);
- $objPHPExcel->getActiveSheet()->setCellValue('D1' . $i,  date("d-m-Y", $rs[3]));
- $objPHPExcel->getActiveSheet()->setCellValue('E1' . $i,  $rs[4]);
- $objPHPExcel->getActiveSheet()->setCellValue('F1' . $i,  $rs[5]);
- $objPHPExcel->getActiveSheet()->setCellValue('G1' . $i,  $rs[6]);
+$row=2;
+while($row_data=$sql->fetch(PDO::FETCH_ASSOC))
+{
+    $col=0;
+    foreach($row_data as $key=>$value){
+        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col,$row,$value);
+        $col++;
+    }
+    $row++;
 }
- 
-echo date('H:i:s') . " Create new Worksheet object\n";
+
 $objPHPExcel->getActiveSheet()->setTitle('patient');      //设置sheet的名称
-$objPHPExcel->setActiveSheetIndex(0);                            //设置sheet的起始位置
+$objPHPExcel->setActiveSheetIndex(0);  //设置sheet的起始位置
+$objWriter->save('php://output');
+exit;
 ?>
