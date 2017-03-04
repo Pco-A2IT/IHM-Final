@@ -249,8 +249,9 @@ $req->closeCursor();
                                     </td>
                                 </tr>
                                 <tr rowspan="3">
-                                     <td align="center"  colspan="2"> 
-                                         <a href="Prise_RDV.html"><input type="submit" accesskey="enter" value="Modifier" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> </a>
+                                    <td align="center"  colspan="2">
+                                       <!-- <form action="Prise_RDV.php" method="post"><input type="submit" accesskey="enter" value="Prise de RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/></form>-->
+                                        <form action="Prise_RDV.php" method="post"><input type="submit" value="Prise de RDV" id="btn"  class="submit" /></form>
                                     </td> 
                                 </tr>
                             </table>
