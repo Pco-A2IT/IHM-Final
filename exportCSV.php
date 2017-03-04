@@ -2,9 +2,9 @@
 include 'PHPExcel-1.8/classes/PHPExcel.php';
 include 'PHPExcel-1.8/classes/PHPExcel/Writer/CSV.php';
 
-header('Content-Type: text/csv'); 
+header('Content-Type: text/csv;charset=ISO-8859-15'); 
 header('Content-Disposition: attachment;filename=patients.csv');
-
+header('Content-type:application/vnd.ms-csv;ISO-8859-15');  
 
 $objPHPExcel = new PHPExcel();
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "CSV");
@@ -30,13 +30,26 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('M1', 'date_creation_dossier')
             ->setCellValue('N1', 'ID_medecin_traitant')
             ->setCellValue('O1', 'ID_medecin_autre');
+/*
+function convertUTF8($str)
+{
+   if(empty($str)) return '';
+   return  iconv('utf-8', 'ISO-8859-1', $str);
+}*/
+
+function convertUTF8($str)
+{
+   if(empty($str)) " ";
+   return  iconv('ISO-8859-1', 'utf-8', $str);
+}
+
 
 $row=2;
-while($row_data=$sql->fetch(PDO::FETCH_ASSOC))
+while($row_data=$sql ->fetch(PDO::FETCH_ASSOC))
 {
     $col=0;
     foreach($row_data as $key=>$value){
-        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col,$row,$value);
+        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col,$row,convertUTF8($value));
         $col++;
     }
     $row++;
