@@ -212,42 +212,19 @@ $req->closeCursor();
                                     <th colspan="2">Examen</th>
                                     <th style="text-align:center">Réalisé</th>
                                 </tr>
+                                <?php
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                                ?>
                                 <tr>
-                                    <td rowspan="3"> 1ère intention  </td>
-                                    <td>Scan cérébral</td>
-                                    <td><input type="checkbox" id="checkbox-1" class="regular-checkbox" /><label for="checkbox-1"></label></td>
+                                    <td><?php print_r($dnn['typeExamen']); ?></td>
+                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
+                                    <?php $compteur=$compteur+1; ?>
                                 </tr>
-                                <tr>
-                                    <td>AngioScan ou Echo Doppler</td>
-                                    <td>
-                                        <input type="checkbox" id="checkbox-2" class="regular-checkbox" /><label for="checkbox-2"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Bilan biologique</td>
-                                    <td>
-                                        <input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3"> 2nd intention  </td>
-                                    <td>Bilan Cardiaque</td>
-                                    <td>
-                                        <input type="checkbox" id="checkbox-4" class="regular-checkbox" /><label for="checkbox-4"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>RDV neurologue</td>
-                                    <td>
-                                        <input type="checkbox" id="checkbox-5" class="regular-checkbox" /><label for="checkbox-5"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                   <td>IRM</td>
-                                    <td>
-                                        <input type="checkbox" id="checkbox-6" class="regular-checkbox" /><label for="checkbox-6"></label>
-                                    </td>
-                                </tr>
+                                <?php
+                                };
+                                ?>
                                 <tr rowspan="3">
                                     <td align="center"  colspan="2">
                                        <!-- <form action="Prise_RDV.php" method="post"><input type="submit" accesskey="enter" value="Prise de RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/></form>-->
