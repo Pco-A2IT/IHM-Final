@@ -140,7 +140,7 @@ while($dnn = $pdo_select->fetch() )
     <tr>
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"><?php print_r($dnn['id_service']); ?></td>
-        <td class="left"> <?php print_r($dnn['numSiret']); ?> </td>
+        <td class="left"> <?php print_r($dnn['numSiret']); ?></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
         <td class="left"> <?php print_r($dnn['adresse_s']); ?></td>

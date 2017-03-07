@@ -184,5 +184,5 @@ echo "          ".$id_patient_cree;
 ?>
 
 <script>
-//top.location.href="../Prise_RDV.php?idpatient=<?php //echo $id_patient_cree; ?>";
+top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_patient_cree; ?>";
 </script>
