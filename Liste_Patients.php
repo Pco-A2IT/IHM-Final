@@ -91,7 +91,7 @@
                 <div class="liste">
                 
                 <table cellspacing="0px" id="tbl" class="table">   
-    <tr>
+                    <tr>
                         <th>Fiche</th>
                         <th>Nom </th>
                         <th>Prénom </th>
