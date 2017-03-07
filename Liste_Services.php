@@ -118,7 +118,7 @@
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM service WHERE numSiret LIKE :term';
+    $query = 'SELECT * FROM service WHERE nom_s LIKE :term';
     $term = $_POST['saisie'];
 }
 else{
