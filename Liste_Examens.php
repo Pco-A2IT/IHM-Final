@@ -71,7 +71,7 @@
         <script> 
             function sure()
             {
-                return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
+                return(confirm('Etes-vous sûr de vouloir supprimer cet examen ?'));
             }                 
         </script>                                                                                                                       
         </table>
