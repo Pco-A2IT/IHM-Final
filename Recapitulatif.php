@@ -1,3 +1,6 @@
+<?php
+   include('config.php');
+?>
 <html>
     <head>
         <title>Récapitulatif</title>
@@ -62,13 +65,35 @@
 
                             <div id="divConteneur">
                                 <div class="liste">
-                                 <table  cellspacing="5px" class="table">  
+                                 <table  cellspacing="5px" class="table">
+                                     <!-- Ligne d'en-tête -->
                                     <tr>
                                         <th><strong>Patient</strong></th>
-                                        <th><strong>Examen 1</strong></th>
-                                        <th><strong>Examen 2</strong></th>
-                                        <th><strong>Examen 3</strong></th>
+                                        <?php
+                                        $req1= $bdd->prepare('SELECT * FROM Examen');
+                                        $req1->execute();
+                                        $nbexam=1;
+                                        while($dnn1= $req1->fetch()){
+                                        ?>
+                                            <th><strong><?php echo "Examen $nbexam"; ?></strong></th>
+                                        <?php
+                                            $nbexam=$nbexam+1;
+                                        }
+                                        ?>
                                     </tr>
+                                    
+                                        <?php
+                                        $req2= $bdd->exec('SELECT * FROM Patient');
+                                        while($dnn2=$req2->fetch()){
+                                            $id_patient= $dnn2["id_patient"];
+                                            $aAfficher=false;
+                                            $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
+                                            $req3->execute(array($id_patient));
+                                            while($dnn3= $req3->fetch()){
+                                                if($dnn3["realise"]==true && $dnn3["realise"]==true )
+                                            }
+                                        ?>
+                                    
                                     <tr>
                                         <td rowspan="5"><span class=type>Vincent Pasteur</span><br><I>06 85 47 51 45</I></td>
                                         <td><span class=type>IRM</span></td>
