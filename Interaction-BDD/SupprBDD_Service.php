@@ -15,9 +15,9 @@ echo $idservice;
 $req = $bdd->prepare('DELETE FROM service WHERE id_service = ? ');
 $req->execute(array($idservice));
 
-///////////////////////////
+/////////////////////////////////
 /*Retour vers la liste_Patients*/
-///////////////////////////
+/////////////////////////////////
 
 header('Location: ../Liste_Services.php');
 

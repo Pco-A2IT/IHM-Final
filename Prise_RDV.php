@@ -78,9 +78,9 @@
                             $req1->execute(array($id_patient));
                             
                             while ($dnn2 = $req1->fetch()){
-                                    if($dnn2["typeExamen"] == $dnn["typeExamen"]){
-                                        $dejaRealise=true;
-                                    }
+                                if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                    $dejaRealise=true;
+                                }
                             }
                             if($dejaRealise==true){
                         
@@ -166,8 +166,11 @@
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
                                 <th>Centres</th>
+                                <th>Service</th>
                                 <th>Adresse</th>
                                 <th>Contact</th>
+                                <th>Ouverture</th>
+                                <th>Fermeture</th>
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
@@ -208,9 +211,12 @@
                             
                                 <tr>
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
-
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesd_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesf_s']; ?></td>
+                                    
                                     <?php
 
                                         /////////////////////////////////////////////////////////////////////
