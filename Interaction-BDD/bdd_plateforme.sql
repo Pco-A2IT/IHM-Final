@@ -126,8 +126,7 @@ CREATE TABLE `Service` (
   `ville_s` varchar(255) NOT NULL DEFAULT '',
   `description_s` varchar(5000) NOT NULL DEFAULT '',
     
-  PRIMARY KEY  (`id_service`),
-  KEY `numSiret` (`numSiret`)
+  PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
