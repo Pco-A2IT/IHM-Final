@@ -20,7 +20,6 @@ $req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req->execute(array($idservice));
 while ($donnees = $req->fetch())
 {
-    $siret_s=$donnees['numSiret'];
     $centre_s=$donnees['centre_s'];
     $nom_s=$donnees['nom_s'];
     $telephone_s=$donnees['telephone_s'];
@@ -114,10 +113,6 @@ $req->closeCursor();
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
-                        </tr>
-                        <tr> 
-                                <td align="right">Numéro Siret:</td>
-                                <td align="left"><input type="text" name="siret_s" id="hopital_s" placeholder="<?php echo $siret_s ?>" >
                         </tr>
                         <tr> 
                                 <td align="right">Centre:</td>

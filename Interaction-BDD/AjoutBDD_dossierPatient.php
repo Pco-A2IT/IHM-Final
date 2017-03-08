@@ -149,7 +149,7 @@ $req2->execute();
 $compteur3=1;
 
 
-echo "c'est la boucle qui merde";
+/*echo "c'est la boucle qui merde";
 while($dnn = $req2->fetch()){
   if(isset($_POST[$compteur3])){
             $bool="YES";
@@ -165,24 +165,43 @@ while($dnn = $req2->fetch()){
   $compteur3=$compteur3+1;
 
 }
-echo "boucle effectuée";
-
+echo "boucle effectuée";*/
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*            Récupérer l'id_patient de celui qu'on vient de créer                   */
 ///////////////////////////////////////////////////////////////////////////////////////
 
-
+/*
 $req1 =$bdd->prepare('SELECT * FROM Patient');
 $req1->execute();
 $id_patient_cree=0;
 while($donnee= $req1->fetch()){
     $id_patient_cree=$id_patient_cree+1;
 }
-echo "          ".$id_patient_cree;
+echo "          ".$id_patient_cree;*/
+
+///////////////////////////////////////////////////////////////////////////////////////
+/*                         Créer les rendez-vous déjà réalisé avant appel SOS AIT    */
+///////////////////////////////////////////////////////////////////////////////////////
+
+$req2=$bdd->prepare('SELECT * FROM Examen');
+$req2->execute();
+
+$comptCheckBox=1;
+while($dnn = $req2->fetch()){
+    if(isset($_POST[$comptCheckBox])){
+            $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, realise) VALUES(?, ?,?,?,?,?)');
+            $req->execute(array( $dnn["id_examen"], $id_dernier , 0, "1970-01-01", "00:00", "YES"));
+    }
+    $comptCheckBox=$comptCheckBox+1;
+}
+echo "boucle effectuée";
+
+
+
 // Redirection du visiteur vers la page du minichat
 ?>
 
 <script>
-top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_patient_cree; ?>";
+top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_dernier; ?>";
 </script>
