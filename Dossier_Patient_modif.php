@@ -61,7 +61,7 @@ while ($donnees = $req->fetch())
 $req->closeCursor();            
 ?> 
     
-    <body>
+<body>
    
     <div class="gris">
         <div  class="gris2">
@@ -204,9 +204,9 @@ $req->closeCursor();
                             </tr>
                         </table>
                     </div>
-                
                     <div class="onglet" id="onglet3">
                         <div class="position_table">
+<<<<<<< HEAD
                            <table cellspacing='5px'>   
                                 <tr>
                                     <th colspan="2">Examen</th>
@@ -231,6 +231,96 @@ $req->closeCursor();
                                         <form action="Prise_RDV.php" method="post"><input type="submit" value="Prise de RDV" id="btn"  class="submit" /></form>
                                     </td> 
                                 </tr>
+=======
+                            <!-- AFFICHAGE des EXAMENS PLANIFIES -->
+                            <table cellspacing="0px" id="tbl" class="table">   
+                    <tr>
+                        <th>Examen</th>
+                        <th>Centre </th>
+                        <th>Service </th>
+                        <th>Jour </th>
+                        <th>Horaire </th>
+                        <th>Réalisé </th>
+                        <th></th>
+                    </tr>
+                                
+                    
+<?php
+    
+    $req= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
+    $req->execute(array($id_patient));
+    $cmpt=1;
+    while ($donnees = $req->fetch()){ ?>
+        
+        <tr>
+            
+        <?php 
+        $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen=?');
+        $req1->execute(array($donnees["id_examen"]));
+        while ($dnn= $req1->fetch()){
+        
+?>
+                        
+                            <td><?php echo $dnn["typeExamen"];?></td> 
+                            
+        <?php } 
+        
+        $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
+        $req2->execute(array($donnees["id_service"]));
+        while ($dnn2= $req2->fetch()){
+        ?>
+            
+        
+                            <td><?php echo $dnn2["centre_s"]; ?></td>
+                            <td><?php echo $dnn2["nom_s"]; ?></td>
+        <?php 
+        }
+        ?>
+            
+                            <td><?php echo $donnees["date_examen"] ?></td>
+                            <td><?php echo $donnees["heure_examen"] ?></td>
+        <?php 
+            if($donnees["realise"]=="YES"){
+        ?> 
+                            <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" checked/></td>
+        <?php
+            }
+            else{
+        ?>  
+                            <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES"/></td>
+        <?php
+            }
+        ?>
+                            <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td> 
+            
+        </tr>
+<?php
+        $cmpt=$cmpt+1;
+    }
+?>  
+                            
+                            </table>
+                            <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
+                            <br>
+                           
+                            <table cellspacing="0px" id="tbl" class="table">   
+                            <tr>
+                                <th>Examens à planifier </th>
+                            </tr>
+                    
+<?php
+                                
+    $req3= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+    $req3->execute(array($id_patient));
+    while ($donnees3 = $req3->fetch()){
+?>   
+                        <tr>
+                            <td align="center"> <?php echo $donnees3["typeExamen"]; ?></td> 
+                        </tr>
+<?php
+    }
+?>     
+>>>>>>> refs/remotes/origin/master
                             </table>
                         </div> 
                     </div>
@@ -238,13 +328,20 @@ $req->closeCursor();
                 </div>
                 </div>
             </form>
+            <td><a href="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" ><input value="Prendre RDV"/></a></td>                            
         </div>
-        </div>
+    </div>
         
          <script src="General.js"></script>
-    </body>
+</body>
 
 </html>
+    <script> 
+            function sure()
+            {
+                return(confirm('Etes-vous sûr de vouloir supprimer cet examen ?'));
+            }                 
+    </script>   
 
      <script>
 

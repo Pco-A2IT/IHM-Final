@@ -48,7 +48,7 @@ $compteur3=1;
 
 echo "c'est la boucle qui merde";
 while($dnn = $req2->fetch()){
-  if($_POST[$compteur3]=="YES"){
+  if(isset($_POST[$compteur3])){
             $bool="YES";
   }else{
             $bool="NO";

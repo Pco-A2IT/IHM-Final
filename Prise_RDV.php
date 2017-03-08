@@ -148,7 +148,7 @@
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
-                                <th>Planifié</th>
+                                <th></th>
                             </tr>
                             
             <?php  
@@ -160,9 +160,8 @@
                     //On affiche que si au moins une case est cochée
                     if($aucune_demande==false){
                         //on parcourt tous les services qui effectue les examens cochés
-                        while ($donnees = $req2->fetch()){ ?>
-                            <?php
-                                    $nb=1;
+                        $nb=1;
+                        while ($donnees = $req2->fetch()){
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
                                     
@@ -183,31 +182,38 @@
                                     /////////////////////////////////////////////////////////////////////
                                     ?>
                             
-                            <tr>
-                                <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
-                                <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
-                                <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
                             
-                                <?php
-                                    
-                                    /////////////////////////////////////////////////////////////////////
-                                    /* affichage des colonnes examens, jour, horaires, planifié        */
-                                    /////////////////////////////////////////////////////////////////////
+                                <tr>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
+
+                                    <?php
+
+                                        /////////////////////////////////////////////////////////////////////
+                                        /*  affichage des colonnes examens, jour, horaires, planifié       */
+                                        /////////////////////////////////////////////////////////////////////
+
+                                        $req4= $bdd->prepare('SELECT * FROM Examen');
+                                        $req4->execute();
+                                        $nbcroix=1;
+                                        $nbcroixValide=1;
+                                
+                                        //on parcourt les examens cochés ET dispensé par le service considéré
+                                        while($dnn= $req4->fetch()){
+                                                if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
+                                        ?>
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?idpatient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                        <td><?php echo $dnn['typeExamen'] ?></td>
+                                        <td><label for="date"></label><input id="date" name="date" type="date" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                    </form>
+                                </tr>
                             
-                                    $req4= $bdd->prepare('SELECT * FROM Examen');
-                                    $req4->execute();
-                                    $nbcroix=1;
-                                    //on parcourt les examens cochés ET dispensé par le service considéré
-                                    while($dnn= $req4->fetch()){
-                                            if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
-                                    ?>
-                                    <td><?php echo $dnn['typeExamen'] ?></td>
-                                    <td><label for="date"></label><input id="date" type="date" value=""/></td>
-                                    <td><label for="heure"></label><input id="heure" type="time" value=""/></td>
-                                    <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                                    </tr>
                                     <tr>
                                     <?php 
+                                                $nbcroixValide=$nbcroixValide+1;
                                             }
                                             $nbcroix=$nbcroix+1;
                                     }
