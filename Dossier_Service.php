@@ -69,10 +69,6 @@
                                 <td align="right">Centre:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
                         </tr>
-                        <tr> 
-                                <td align="right">Numéro Siret:</td>
-                                <td align="left"><input type="text" name="siret_s" id="hopital_s" placeholder="(ex: 12345678)"/>
-                        </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
                                 <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)"/>
