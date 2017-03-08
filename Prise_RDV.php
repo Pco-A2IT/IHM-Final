@@ -66,14 +66,37 @@
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
                         <form action="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" method="post">
                     <?php
+                        
+                        //marche mais ne prend pas en compte les examens déjà planifié
                         $compteur=1;
+                            
                         $reponse = $bdd->query('SELECT * FROM Examen');      
                         while($dnn = $reponse->fetch()){
+                            $dejaRealise=false;
+                            
+                            $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                            $req1->execute(array($id_patient));
+                            
+                            while ($dnn2 = $req1->fetch()){
+                                    if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                        $dejaRealise=true;
+                                    }
+                            }
+                            if($dejaRealise==true){
+                        
                     ?>     
-                            <input type="checkbox" name="<?php echo($compteur); ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           
                     <?php
-                          $compteur= $compteur+1;
+                            }
+                            else{
+                        
+                    ?>     
+                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          
+                    <?php
+                            }
+                            $compteur= $compteur+1;
                         }
                     ?>
                             <td align="center"  colspan="2">
