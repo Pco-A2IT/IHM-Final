@@ -35,10 +35,10 @@
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Paramètres</h1>
     </div>
-    <div class="blanc";   style="border-radius: 5px;">
+    <div class="blanc"; style="border-radius: 5px;">
           
-             <div class="myButton" id="Examens">
-                            <a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a>
+             <div>
+                            <a href="Liste_Examens.php" class="myButton1">Gestion Examens</a>
             </div>
         <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>">Cliquez ici pour exporter la table patient</a></p>
         
