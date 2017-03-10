@@ -37,6 +37,7 @@
     </div>
     <div class="blanc"; style="border-radius: 5px;">
           
+
              <div>
                             <a href="Liste_Examens.php" class="myButton1">Gestion Examens</a>
             </div>
@@ -49,6 +50,7 @@
         <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>">Cliquez ici pour exporter la table examen_patient</a></p>
         
         <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>">Cliquez ici pour exporter la table service</a></p>
+
                 
     </div>
          <script src="js/General.js"></script>
