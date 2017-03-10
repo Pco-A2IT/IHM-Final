@@ -39,7 +39,8 @@ if($_POST['type_examen']!=""){//On ne peux pas créer d'examen
 else{
     echo "Remplissez le champ examen";
 }
-/*$req2='ALTER TABLE produit ADD image ENUM("YES","NO") NOT NULL;';
-$connexion=mysqli_connect("localhost","root","root","bdd_plateforme");
-$envoi=mysqli_query($connexion,$req2) or die("execution de la requete impossible");*/
+
+// Redirection du visiteur vers la page du minichat
+header('Location: ../Liste_Examens.php');
+
 ?>

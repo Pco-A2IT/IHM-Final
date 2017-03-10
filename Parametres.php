@@ -37,9 +37,9 @@
     </div>
     <div class="blanc";   style="border-radius: 5px;">
           
-             <div class="myButton" id="Examens">
-                            <a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a>
-                        </div>
+            <div class="myButton" id="Examens">
+                <a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a>
+            </div>
                 
     </div>
          <script src="js/General.js"></script>

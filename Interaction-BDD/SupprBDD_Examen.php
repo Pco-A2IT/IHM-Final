@@ -36,6 +36,6 @@ $req = $bdd->prepare('DELETE FROM Examen WHERE id_examen = ? ');
 $req->execute(array($id_examen));
 
 
-//header('Location: ../Liste_Examen.php');
+header('Location: ../Liste_Examens.php');
 
 ?>

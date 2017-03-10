@@ -26,3 +26,6 @@ $req->execute(array($id_patient, $id_examen));
 //header('Location: ../Liste_Patients.php');
 
 ?>
+<script>
+top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_patient; ?>";
+</script>
