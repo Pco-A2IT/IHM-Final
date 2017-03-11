@@ -168,7 +168,8 @@ h4{
 }
 
 .section2{
-     margin-top:50px;
+     margin-top:200px;
+    margin-right: 400px;
 }
 .bouton1{
 	padding: 5px 15px;
@@ -252,6 +253,20 @@ input[type=button]:active{
     background-color: #1270b3
 }
 
+#btn1{
+    float:right;
+	text-align:left;
+}
+
+#btn2{
+	float:right;
+	text-align:center;
+}
+
+#btn3{
+	float:right;
+	text-align:right;
+}
 
 .myButton:active {
 	 position: relative;
@@ -306,12 +321,6 @@ input[type=button]:active{
   position:absolute;   
 }
 
-.section5{
-  left:20px;
-  padding-top: 20px;
-  color:black;
-  position:absolute;   
-}
 
 .titre{
   width: 90%;

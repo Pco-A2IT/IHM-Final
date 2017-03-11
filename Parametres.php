@@ -37,24 +37,15 @@
     </div>
     <div class="blanc"; style="border-radius: 5px;">
           
-
-             <div>
-                            <a href="Liste_Examens.php" class="myButton1">Gestion Examens</a>
-            </div>
-        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>">Cliquez ici pour exporter la table patient</a></p>
-        
-        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>">Cliquez ici pour exporter la table medecin</a></p>
-        
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>">Cliquez ici pour exporter la table examen</a></p>
-        
-        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>">Cliquez ici pour exporter la table examen_patient</a></p>
-        
-        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>">Cliquez ici pour exporter la table service</a></p>
-
-                
-    </div>
+        <div class="section2">
+               <a href="Liste_Examens.php" class="myButton1" id="btn1">Gestion Examens</a>
+             <a href="Parametres_Export.php" class="myButton1" id="btn2">Export Données</a>
+           <a href="Authentification.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
+       
+   </div>
          <script src="js/General.js"></script>
 </div>
+    </div>
     </div>
 </body>
 </html>
