@@ -23,17 +23,15 @@ $req->execute(array($_POST['type_examen'],$_POST['details_examen']));
 
 
 $req2 = $bdd->prepare("ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'");
-
+echo "ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'";
 $req2->execute();
-    
-$req4 = $bdd->prepare("ALTER TABLE Patient ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'");
-$req4->execute();
   
 }
 else{
     echo "Il y a déjà un examen du même nom";
 }
-/*$req2='ALTER TABLE produit ADD image ENUM("YES","NO") NOT NULL;';
-$connexion=mysqli_connect("localhost","root","root","bdd_plateforme");
-$envoi=mysqli_query($connexion,$req2) or die("execution de la requete impossible");*/
+
+// Redirection du visiteur vers la page du minichat
+header('Location: ../Liste_Examens.php');
+
 ?>

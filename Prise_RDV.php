@@ -66,14 +66,37 @@
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
                         <form action="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" method="post">
                     <?php
+                        
+                        //marche mais ne prend pas en compte les examens déjà planifié
                         $compteur=1;
+                            
                         $reponse = $bdd->query('SELECT * FROM Examen');      
                         while($dnn = $reponse->fetch()){
+                            $dejaRealise=false;
+                            
+                            $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                            $req1->execute(array($id_patient));
+                            
+                            while ($dnn2 = $req1->fetch()){
+                                if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                    $dejaRealise=true;
+                                }
+                            }
+                            if($dejaRealise==true){
+                        
                     ?>     
-                            <input type="checkbox" name="<?php echo($compteur); ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           
                     <?php
-                          $compteur= $compteur+1;
+                            }
+                            else{
+                        
+                    ?>     
+                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          
+                    <?php
+                            }
+                            $compteur= $compteur+1;
                         }
                     ?>
                             <td align="center"  colspan="2">
@@ -143,12 +166,15 @@
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
                                 <th>Centres</th>
+                                <th>Service</th>
                                 <th>Adresse</th>
                                 <th>Contact</th>
+                                <th>Ouverture</th>
+                                <th>Fermeture</th>
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
-                                <th>Planifié</th>
+                                <th></th>
                             </tr>
                             
             <?php  
@@ -160,9 +186,8 @@
                     //On affiche que si au moins une case est cochée
                     if($aucune_demande==false){
                         //on parcourt tous les services qui effectue les examens cochés
-                        while ($donnees = $req2->fetch()){ ?>
-                            <?php
-                                    $nb=1;
+                        $nb=1;
+                        while ($donnees = $req2->fetch()){
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
                                     
@@ -183,31 +208,41 @@
                                     /////////////////////////////////////////////////////////////////////
                                     ?>
                             
-                            <tr>
-                                <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
-                                <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
-                                <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
                             
-                                <?php
+                                <tr>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesd_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesf_s']; ?></td>
                                     
-                                    /////////////////////////////////////////////////////////////////////
-                                    /* affichage des colonnes examens, jour, horaires, planifié        */
-                                    /////////////////////////////////////////////////////////////////////
+                                    <?php
+
+                                        /////////////////////////////////////////////////////////////////////
+                                        /*  affichage des colonnes examens, jour, horaires, planifié       */
+                                        /////////////////////////////////////////////////////////////////////
+
+                                        $req4= $bdd->prepare('SELECT * FROM Examen');
+                                        $req4->execute();
+                                        $nbcroix=1;
+                                        $nbcroixValide=1;
+                                
+                                        //on parcourt les examens cochés ET dispensé par le service considéré
+                                        while($dnn= $req4->fetch()){
+                                                if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
+                                        ?>
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?idpatient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                        <td><?php echo $dnn['typeExamen'] ?></td>
+                                        <td><label for="date"></label><input id="date" name="date" type="date" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                    </form>
+                                </tr>
                             
-                                    $req4= $bdd->prepare('SELECT * FROM Examen');
-                                    $req4->execute();
-                                    $nbcroix=1;
-                                    //on parcourt les examens cochés ET dispensé par le service considéré
-                                    while($dnn= $req4->fetch()){
-                                            if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
-                                    ?>
-                                    <td><?php echo $dnn['typeExamen'] ?></td>
-                                    <td><label for="date"></label><input id="date" type="date" value=""/></td>
-                                    <td><label for="heure"></label><input id="heure" type="time" value=""/></td>
-                                    <td><input type="checkbox" id="checkbox-3" class="regular-checkbox" /><label for="checkbox-3"></label></td>
-                                    </tr>
                                     <tr>
                                     <?php 
+                                                $nbcroixValide=$nbcroixValide+1;
                                             }
                                             $nbcroix=$nbcroix+1;
                                     }
