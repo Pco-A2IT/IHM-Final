@@ -115,7 +115,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `Service`;
 CREATE TABLE `Service` (
   `id_service` int(11) NOT NULL auto_increment,
-  `numSiret` varchar(255) NOT NULL DEFAULT '',
+  /*`numSiret` varchar(255) NOT NULL DEFAULT '',*/
   `centre_s` varchar(255) NOT NULL DEFAULT '',
   `nom_s` varchar(255) NOT NULL DEFAULT '',
   `telephone_s` varchar(255) NOT NULL DEFAULT '',
@@ -171,7 +171,7 @@ DROP TABLE IF EXISTS `Examen_patient`;
 CREATE TABLE `Examen_patient` (
   `id_examen` int(11) NOT NULL,  
   `id_patient` int(11) NOT NULL,
-  `num_siret` int(11) NOT NULL, 
+  /*`num_siret` int(11) NOT NULL, */
   `date_examen` date default '0000-00-00',  
   `heure_examen` varchar(255) DEFAUlT '', 
   `planifie` enum('YES','NO') NOT NULL, 
@@ -187,7 +187,7 @@ CREATE TABLE `Examen_patient` (
 
 /*!40000 ALTER TABLE `Examen_patient` DISABLE KEYS */;
 LOCK TABLES `Examen_patient` WRITE;
-INSERT INTO `Examen_patient` VALUES (1,1,967,'','','NO','NO'),(2,1,967,'1995-08-25','14h','YES','NO'),(3,1,112,'1995-08-22','10h','YES','YES'),(1,2,967,'1995-03-22','17h','YES','YES');
+INSERT INTO `Examen_patient` VALUES (1,1,'','','NO','NO'),(2,1,'1995-08-25','14h','YES','NO'),(3,1,'1995-08-22','10h','YES','YES'),(1,2,'1995-03-22','17h','YES','YES');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen_patient` ENABLE KEYS */;
 

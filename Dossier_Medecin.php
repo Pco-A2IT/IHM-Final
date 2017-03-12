@@ -59,21 +59,21 @@
                             
                             <tr>
                             <td align="right">Nom:</td> 
-                            <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" required/></td>
+                            <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" autocomplete="off" required/></td>
                             </tr>
                             <tr>
                             <td align="right">Prénom:</td> 
-                            <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" required/></td>
+                            <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" autocomplete="off" required/></td>
                             </tr>  
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email"/></td> 
+                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email" autocomplete="off"/></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
                             <td align="left"> 
-                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="(ex: 0786413073)" /> 
+                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="(ex: 0786413073)" autocomplete="off" /> 
                             </td> 
                             </tr> 
                     </table> 
@@ -97,7 +97,7 @@
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)"/>
+                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" autocomplete="off"/>
                             </td> 
                             </tr>
                             <tr> 
