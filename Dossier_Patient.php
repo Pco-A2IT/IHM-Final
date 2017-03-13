@@ -87,11 +87,11 @@
                                         </tr>
                                         <tr>
                                             <td align="right">Nom:</td> 
-                                            <td align="left"><input type="text" name="nom_p" placeholder="(ex: Bardi)" required/></td>
+                                            <td align="left"><input type="text" name="nom_p" placeholder="(ex: Bardi)" autocomplete="off" required/></td>
                                         </tr>
                                         <tr>
                                             <td align="right">Prénom:</td> 
-                                            <td align="left"><input type="text" name="prenom_p" placeholder="(ex: Luigi)" required/></td>
+                                            <td align="left"><input type="text" name="prenom_p" placeholder="(ex: Luigi)" autocomplete="off" required/></td>
                                         </tr>  
                                         <tr> 
                                             <td align="right">Date de naissance:</td> 
@@ -100,13 +100,13 @@
                                         <tr> 
                                             <td align="right">Mail:</td>
                                             <td align="left">
-                                                <input type="email" name="mail_p" placeholder="(ex: adresse@gmail.com)" id="email"/>
+                                                <input type="email" name="mail_p" placeholder="(ex: adresse@gmail.com)" id="email" autocomplete="off"/>
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Téléphone:</td> 
                                             <td align="left"> 
-                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" /> 
+                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
                                             </td> 
                                         </tr> 
                                     </table> 
@@ -115,7 +115,7 @@
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)"/>
+                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"/>
                                             </td> 
                                         </tr>
                                         <tr> 
