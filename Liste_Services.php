@@ -7,8 +7,9 @@
    <title> Liste Services</title>
    <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-   <script type="text/javascript">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--inclusion CSS pour autocompletion-->
+   <!--script type="text/javascript">
       function confirm(idservice){
       var msg="Vous êtes sûr?\n\nConfirmez s'il vous plaît!";
       if(confirm(msg)==true)
@@ -20,8 +21,15 @@
       return false;
     }
     }
-    </script> 
-        <!--inclusion CSS pour autocompletion-->
+    </script--> 
+    <script>
+    function deleteRow(obj){
+      if(confirm('Vous êtes sure?'))
+    {
+      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
+    }
+    }
+    </script>    
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -104,7 +112,6 @@
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>ID</th>
                         <th>Service</th>
                         <th>Centre</th>
                         <th>Adresse</th>
@@ -141,7 +148,6 @@ while($dnn = $pdo_select->fetch() )
        
     <tr>
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
-        <td class="left"><?php print_r($dnn['id_service']); ?></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
         <td class="left"> <?php print_r($dnn['adresse_s']); ?></td>
