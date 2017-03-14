@@ -53,16 +53,15 @@
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
-                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
-                    
+                  
                     <div class="section4">
                         <div class="div1">
                             <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
                       
                         <br><br><br><br>
                             <div id="titles"> 
-                                <span class="title active"  target="onglet1"> Patient</span> 
-                                <span class="title" target="onglet3"> Examens</span> 
+                                <span class="title active"  target="onglet1"> 1. Patient</span> 
+                                <span class="title" target="onglet3"> 2. Examens</span> 
                             </div>
                         
                             <div class="onglet" id="onglet1">
@@ -166,7 +165,10 @@
                                     </table>
                                     
                                 </form>
-                                </div>                
+                   
+                                </div>  
+                             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
+                                       
                 
             <div class="onglet" id="onglet3">
 
