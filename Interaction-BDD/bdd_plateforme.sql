@@ -115,7 +115,6 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `Service`;
 CREATE TABLE `Service` (
   `id_service` int(11) NOT NULL auto_increment,
-  /*`numSiret` varchar(255) NOT NULL DEFAULT '',*/
   `centre_s` varchar(255) NOT NULL DEFAULT '',
   `nom_s` varchar(255) NOT NULL DEFAULT '',
   `telephone_s` varchar(255) NOT NULL DEFAULT '',
