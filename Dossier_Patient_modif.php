@@ -195,7 +195,7 @@ $req->closeCursor();
                             </tr>
                             <tr>
                                 <td align="left" colspan="2"> 
-                                    <input type="text" name="mail_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Mail du médecin appelant";} ?>"/>
+                                    <input type="text" name="mail_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>"/>
                                 </td>
                             </tr>
                             <tr height="60px">
