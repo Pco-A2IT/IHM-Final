@@ -37,22 +37,21 @@
     </div>
     <div class="blanc"; style="border-radius: 5px;">
           
-             <div class="myButton" id="Examens">
-                 <p><a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a></p><br>
-                        
-        
-        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1">Cliquez ici pour exporter la table patient</a></p><br>
 
+             <div>
+                            <a href="Liste_Examens.php" class="myButton1">Gestion Examens</a>
+            </div>
+        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1">Cliquez ici pour exporter la table patient</a></p>
         
-        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Cliquez ici pour exporter la table medecin</a></p><br>
+        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>">Cliquez ici pour exporter la table medecin</a></p>
         
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Cliquez ici pour exporter la table examen</a></p><br>
+        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>">Cliquez ici pour exporter la table examen</a></p>
         
-        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Cliquez ici pour exporter la table examen_patient</a></p><br>
-    
-        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>" class="myButton1">Cliquez ici pour exporter la table service</a></p><br>
-        </div>      
-
+        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>">Cliquez ici pour exporter la table examen_patient</a></p>
+        
+        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>">Cliquez ici pour exporter la table service</a></p>
+        
+        <p><a href="exportExcel.php?nom_table=<?php echo 'excel'; ?>">Cliquez ici pour exporter tous les tables</a></p>
 
                 
     </div>
