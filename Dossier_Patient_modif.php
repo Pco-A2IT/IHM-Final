@@ -205,6 +205,8 @@ $req->closeCursor();
                     </div>
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     <div class="onglet" id="onglet3">
+                <div class="liste">
+                
                         <div class="position_table">
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                             <table cellspacing="0px" id="tbl" class="table">   
@@ -295,15 +297,21 @@ $req->closeCursor();
     }
 ?>     
                             </table>
+                            <br>
+                               <div class="myButton" id="Prendre_rdv">
+                            <a href="Prise_RDV.php" class="myButton1"> Prendre RDV</a>
+                        </div>
                         </div> 
                     </div>
                 </div>
                 </div>
                 </div>
+                </div>
             </form>
-            <td><a href="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" ><input value="Prendre RDV"/></a></td>                            
+          
         </div>
-    </div>
+        </div>
+    
         
          <script src="General.js"></script>
 </body>
