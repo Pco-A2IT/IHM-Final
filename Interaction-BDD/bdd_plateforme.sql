@@ -200,3 +200,14 @@ UNLOCK TABLES;*/
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(255) DEFAUlT '', 
+  `email` varchar(255) DEFAUlT '',
+  `password` varchar(255) DEFAUlT '',
+  `confirmation_token` varchar(60) DEFAUlT '',
+  `confirmed_at` DATETIME,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
