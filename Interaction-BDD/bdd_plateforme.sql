@@ -187,7 +187,7 @@ CREATE TABLE `Examen_patient` (
 
 /*!40000 ALTER TABLE `Examen_patient` DISABLE KEYS */;
 LOCK TABLES `Examen_patient` WRITE;
-INSERT INTO `Examen_patient` VALUES (1,1,'','','NO','NO'),(2,1,'1995-08-25','14h','YES','NO'),(3,1,'1995-08-22','10h','YES','YES'),(1,2,'1995-03-22','17h','YES','YES');
+/*INSERT INTO `Examen_patient` VALUES (1,1,'','','NO','NO'),(2,1,'1995-08-25','14h','YES','NO'),(3,1,'1995-08-22','10h','YES','YES'),(1,2,'1995-03-22','17h','YES','YES')*/;
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen_patient` ENABLE KEYS */;
 
