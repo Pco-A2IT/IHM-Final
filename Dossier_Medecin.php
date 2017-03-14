@@ -47,7 +47,6 @@
             <div class="blanc";   style="border-radius: 5px;">
                 
                  <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
-                 <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                 <div class="section4">
                     <div class="div1">
                         <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
@@ -59,21 +58,21 @@
                             
                             <tr>
                             <td align="right">Nom:</td> 
-                            <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" required/></td>
+                            <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" autocomplete="off" required/></td>
                             </tr>
                             <tr>
                             <td align="right">Prénom:</td> 
-                            <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" required/></td>
+                            <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" autocomplete="off" required/></td>
                             </tr>  
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email"/></td> 
+                                <input type="email" name="email_m" placeholder="(ex: adresse@gmail.com)" id="email" autocomplete="off"/></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
                             <td align="left"> 
-                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="(ex: 0786413073)" /> 
+                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="(ex: 0786413073)" autocomplete="off" /> 
                             </td> 
                             </tr> 
                     </table> 
@@ -97,7 +96,7 @@
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)"/>
+                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" autocomplete="off"/>
                             </td> 
                             </tr>
                             <tr> 
@@ -122,7 +121,7 @@
                     
                        
                     </div>
-                        
+                        <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     </div>
                      </div>
        </form>

@@ -46,7 +46,6 @@
             <h1 class="titreGauche">Services</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>    
@@ -69,13 +68,9 @@
                                 <td align="right">Centre:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
                         </tr>
-                        <tr> 
-                                <td align="right">Numéro Siret:</td>
-                                <td align="left"><input type="text" name="siret_s" id="hopital_s" placeholder="(ex: 12345678)"/>
-                        </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
-                                <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)"/>
+                                <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off"/>
                         </tr>    
                     </table> 
                     
@@ -95,7 +90,7 @@
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
                             </td> 
                         </tr>
                         <tr> 
@@ -118,6 +113,7 @@
                     </table>
                 
              </div>
+              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                 
             <div class="onglet" id="onglet3">
                 <div class="position_table">

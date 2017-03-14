@@ -97,7 +97,6 @@ $req->closeCursor();
                 <h1 class="titreGauche">Patient</h1>
             </div>
             <div class="blanc";   style="border-radius: 5px;">
-                 <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?></h1><br>
@@ -106,8 +105,8 @@ $req->closeCursor();
                 <div id="container">
 
                     <div id="titles"> 
-                        <span class="title active"  target="onglet1"> Patient</span> 
-                        <span class="title" target="onglet3"> Examens</span> 
+                        <span class="title active"  target="onglet1"> 1. Patient</span> 
+                        <span class="title" target="onglet3"> 2. Examens</span> 
                     </div>
 
                     <div class="onglet" id="onglet1">
@@ -204,7 +203,10 @@ $req->closeCursor();
                             </tr>
                         </table>
                     </div>
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     <div class="onglet" id="onglet3">
+                <div class="liste">
+                
                         <div class="position_table">
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                             <table cellspacing="0px" id="tbl" class="table">   
@@ -295,15 +297,21 @@ $req->closeCursor();
     }
 ?>     
                             </table>
+                            <br>
+                               <div class="myButton" id="Prendre_rdv">
+                            <a href="Prise_RDV.php" class="myButton1"> Prendre RDV</a>
+                        </div>
                         </div> 
                     </div>
                 </div>
                 </div>
                 </div>
+                </div>
             </form>
-            <td><a href="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" ><input value="Prendre RDV"/></a></td>                            
+          
         </div>
-    </div>
+        </div>
+    
         
          <script src="General.js"></script>
 </body>

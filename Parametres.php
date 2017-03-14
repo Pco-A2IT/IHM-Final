@@ -35,15 +35,17 @@
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Paramètres</h1>
     </div>
-    <div class="blanc";   style="border-radius: 5px;">
+    <div class="blanc"; style="border-radius: 5px;">
           
-             <div class="myButton" id="Examens">
-                            <a href="Liste_Examens.php" class="myButton1"> Gestion Examens</a>
-                        </div>
-                
-    </div>
+        <div class="section2">
+               <a href="Liste_Examens.php" class="myButton1" id="btn1">Gestion Examens</a>
+             <a href="Parametres_Export.php" class="myButton1" id="btn2">Export Données</a>
+           <a href="Authentification.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
+       
+   </div>
          <script src="js/General.js"></script>
 </div>
+    </div>
     </div>
 </body>
 </html>

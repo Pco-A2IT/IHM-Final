@@ -20,7 +20,6 @@ $req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req->execute(array($idservice));
 while ($donnees = $req->fetch())
 {
-    $siret_s=$donnees['numSiret'];
     $centre_s=$donnees['centre_s'];
     $nom_s=$donnees['nom_s'];
     $telephone_s=$donnees['telephone_s'];
@@ -94,7 +93,6 @@ $req->closeCursor();
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
@@ -114,10 +112,6 @@ $req->closeCursor();
                         <tr> 
                                 <td align="right">Service:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
-                        </tr>
-                        <tr> 
-                                <td align="right">Numéro Siret:</td>
-                                <td align="left"><input type="text" name="siret_s" id="hopital_s" placeholder="<?php echo $siret_s ?>" >
                         </tr>
                         <tr> 
                                 <td align="right">Centre:</td>
@@ -170,6 +164,7 @@ $req->closeCursor();
                     </table>
 
              </div>
+             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 

@@ -18,4 +18,9 @@ $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_servic
 $req->execute(array( $id_examen, $id_patient, $id_service, $_POST["date"], $_POST["heure"], "NO"));
 
 
+
 ?>
+
+<script>
+top.location.href="../Prise_RDV.php?idpatient=<?php echo $id_patient; ?>";
+</script>
