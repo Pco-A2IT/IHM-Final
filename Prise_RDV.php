@@ -155,7 +155,6 @@
                         $req2=$bdd->prepare($chaine);
                         $req2->execute();
                     }
-                    echo $chaine;
                     ///////////////////////////////////////////
                   
                         
