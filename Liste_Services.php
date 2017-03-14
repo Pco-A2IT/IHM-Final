@@ -84,6 +84,9 @@
 
                             <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                             <input class="loupe" type="submit" value="" />
+                   <form>
+                      <input type="button"  value="Retour" onclick="history.go(-1)">
+                    </form>
 
                     </form>   
                 <style>

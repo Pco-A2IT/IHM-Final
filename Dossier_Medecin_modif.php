@@ -87,7 +87,6 @@ $req->closeCursor();
                 <h1 class="titreGauche">Médecin</h1>
             </div>
             <div class="blanc";   style="border-radius: 5px;">
-              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>  
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
@@ -159,6 +158,7 @@ $req->closeCursor();
                     </table>
                 
                             </div>
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                         </div>
                     </div>
             </div>
