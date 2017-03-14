@@ -53,28 +53,29 @@
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
-                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
-                    
+                  
                     <div class="section4">
                         <div class="div1">
                             <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
                       
                         <br><br><br><br>
                             <div id="titles"> 
-                                <span class="title active"  target="onglet1"> Patient</span> 
-                                <span class="title" target="onglet3"> Examens</span> 
+                                <span class="title active"  target="onglet1"> 1. Patient</span> 
+                                <span class="title" target="onglet3"> 2. Examens</span> 
                             </div>
                         
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
-                                    
+                                    <br>
                                     <table cellspacing="5px" class="table" style="float:left">
+                                        
+                                        <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                         <tr> 
                                             <td align="right">Date des symptomes:</td> 
                                             <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
                                         </tr>
                                         <tr> 
-                                            <td align="right">Civilité:</td>
+                                            <td align="right">Civilité: *</td>
                                             <td align="left"><section id="main">
                                                 <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required>
                                                     <option value="" >Civilité</option>
@@ -86,11 +87,11 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Nom:</td> 
+                                            <td align="right">Nom: *</td> 
                                             <td align="left"><input type="text" name="nom_p" placeholder="(ex: Bardi)" autocomplete="off" required/></td>
                                         </tr>
                                         <tr>
-                                            <td align="right">Prénom:</td> 
+                                            <td align="right">Prénom: *</td> 
                                             <td align="left"><input type="text" name="prenom_p" placeholder="(ex: Luigi)" autocomplete="off" required/></td>
                                         </tr>  
                                         <tr> 
@@ -104,14 +105,12 @@
                                             </td> 
                                         </tr> 
                                         <tr> 
-                                            <td align="right">Téléphone:</td> 
+                                            <td align="right">Téléphone: *</td> 
                                             <td align="left"> 
                                                 <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
                                             </td> 
                                         </tr> 
                                     </table> 
-                                        
-                                   
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
@@ -172,7 +171,9 @@
                                     </table>
                                     
                                 </form>
-                                </div>                
+                                </div> 
+                             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
+                                       
                 
             <div class="onglet" id="onglet3">
 
@@ -195,11 +196,6 @@
                             <?php
                                 };
                             ?>
-                         <tr rowspan="3">
-                             <td align="center"  colspan="3"> 
-                                 <input type="submit" accesskey="enter" value="Prendre RDV"  id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post" />
-                             </td> 
-                         </tr>
                     </table>
                     </div>
                  </div>
