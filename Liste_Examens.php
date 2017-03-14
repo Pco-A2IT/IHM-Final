@@ -5,15 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-        <!--inclusion CSSS pour autocompletion-->
     <title>Liste Examens</title>
 </head>
     <body>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- inclusion de jQuery et jQuery.ui-->
     <div class="gris">
          <form action="./Interaction-BDD/AjoutBDD_Examen.php" method="post">
                 <div  class="gris2">
@@ -79,13 +73,13 @@
         <tr> 
             <td class="left">Nom de l'examen:</td> 
             <td class="left" > 
-                <input type="text" name="type_examen" placeholder="(ex: IRM)"/> 
+                <input type="text" name="type_examen" placeholder="(ex: IRM)" autocomplete="off"/> 
             </td> 
         </tr> 
         <tr> 
             <td class="left">Description:</td> 
             <td class="left"> 
-                <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)"/>
+                <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)" autocomplete="off"/>
             </td> 
         </tr>
         <tr height="60px"> 

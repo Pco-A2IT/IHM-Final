@@ -71,7 +71,7 @@
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
-                                <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)"/>
+                                <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off"/>
                         </tr>    
                     </table> 
                     
@@ -91,7 +91,7 @@
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
                             </td> 
                         </tr>
                         <tr> 
