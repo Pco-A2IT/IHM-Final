@@ -118,7 +118,7 @@ $req->closeCursor();
                             </tr>
                             <tr> 
                                 <td align="right">Civilité:</td>
-                                <td align="left"><input type="text" name="civilite_p" placeholder="<?php echo $civilite_p ?>" list="c"/>
+                                <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
                                     <datalist id="c">
                                             <option>M.</option>
                                             <option>Mme</option>
@@ -127,11 +127,11 @@ $req->closeCursor();
                             </tr>
                             <tr>
                                 <td align="right">Nom:</td> 
-                                <td align="left"><input type="text" name="nom_p" placeholder="<?php echo $nom_p ?>" /></td>
+                                <td align="left"><input type="text" name="nom_p" value="<?php echo $nom_p ?>" /></td>
                             </tr>
                             <tr>
                                 <td align="right">Prénom:</td> 
-                                <td align="left"><input type="text" name="prenom_p" placeholder="<?php echo $prenom_p ?>" /></td>
+                                <td align="left"><input type="text" name="prenom_p" value="<?php echo $prenom_p ?>" /></td>
                             </tr>  
                             <tr> 
                                 <td align="right">Date de naissance:</td> 
@@ -140,13 +140,13 @@ $req->closeCursor();
                             <tr> 
                                 <td align="right">Mail:</td>
                                 <td align="left">
-                                    <input type="email" name="mail_p" placeholder="<?php echo $mail_p ?>" id="email" />
+                                    <input type="email" name="mail_p" value="<?php echo $mail_p ?>" id="email" />
                                 </td> 
                             </tr> 
                             <tr> 
                                 <td align="right">Téléphone:</td> 
                                 <td align="left"> 
-                                    <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="<?php echo $telephone_p ?>" /> 
+                                    <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" /> 
                                 </td> 
                             </tr> 
                         </table> 
@@ -155,47 +155,47 @@ $req->closeCursor();
                             <tr> 
                                 <td align="right">Adresse:</td> 
                                 <td align="left" colspan="3"> 
-                                    <input type="text" name="adresse_p" placeholder="<?php echo $adresse_p ?>" />
+                                    <input type="text" name="adresse_p" value="<?php echo $adresse_p ?>" />
                                 </td> 
                             </tr>
                             <tr> 
                                 <td align="right">Code Postal:</td> 
                                 <td align="left" colspan="3"> 
-                                    <input type="text"  id="p" name="codePostal_p" placeholder="<?php echo $codePostal_p ?>" /> 
+                                    <input type="text"  id="p" name="codePostal_p" value="<?php echo $codePostal_p ?>" /> 
                                 </td> 
                             </tr> 
                             <tr> 
                                 <td align="right">Ville:</td> 
                                 <td align="left" colspan="3"> 
-                                    <input type="text" name="ville_p" placeholder="<?php echo $ville_p ?>"/> 
+                                    <input type="text" name="ville_p" value="<?php echo $ville_p ?>"/> 
                                 </td> 
                             </tr>
                             <tr>
                                 <td align="right" rowspan="2">Médecin traitant:</td> 
                                 <td align="left"> 
-                                    <input type="text" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
+                                    <input type="text" name="nom_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
                                 </td>
                                 <td align="left"> 
-                                    <input type="text" name="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
+                                    <input type="text" name="prenom_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" colspan="2"> 
-                                    <input type="text" name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
+                                    <input type="text" name="mail_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" rowspan="2">Médecin appelant:</td> 
                                 <td align="left"> 
-                                    <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
+                                    <input type="text" name="nom_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
                                 </td>
                                 <td align="left"> 
-                                    <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                    <input type="text" name="prenom_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" colspan="2"> 
-                                    <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Mail du médecin appelant";} ?>"/>
+                                    <input type="text" name="mail_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Mail du médecin appelant";} ?>"/>
                                 </td>
                             </tr>
                             <tr height="60px">
