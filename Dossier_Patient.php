@@ -173,7 +173,9 @@
 
                 <div class="position_table"> 
                 <div class="liste">
-                <table align="center" cellspacing="5px" cellpadding="15px" class="table">  
+                <table align="center" cellspacing="5px" cellpadding="15px" class="table">
+                
+                
                         <tr>
                             <th>Examen</th>
                             <th style="text-align:center">Réalisé</th>
@@ -190,6 +192,7 @@
                             <?php
                                 };
                             ?>
+                   
                     </table>
                     </div>
                  </div>

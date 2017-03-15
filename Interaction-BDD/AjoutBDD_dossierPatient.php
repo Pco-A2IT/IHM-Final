@@ -129,6 +129,22 @@ $req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_med
 
 $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p'], ));
 
+// Création des examens déjà réalisés
+
+$id_patient = $bdd->lastInsertId();
+echo $id_patient;
+//Parcours des checkbox
+$compteur=1;
+$reponse = $bdd->query('SELECT * FROM Examen');
+while($dnn = $reponse->fetch()){
+    $id_examen=$dnn['id_examen'];
+    if(isset($_POST[$compteur])){
+        $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue) VALUES(?, ?,?,?,?,?)');
+        $req->execute(array( $id_examen, $id_patient, 0, "1970-01-01", "00:00:00", "YES"));
+    }
+    $compteur=$compteur+1;
+}
+
 
 
 
