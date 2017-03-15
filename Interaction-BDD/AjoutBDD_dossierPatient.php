@@ -33,6 +33,13 @@ echo $civilite_p;
 
     $mail_m_traitant=$_POST['mail_m_traitant'];
     echo $mail_m_traitant;
+
+    if($_POST['mail_m_traitant']!=""){
+        $mail_m_traitant=$_POST['mail_m_traitant'];
+    }
+    else{
+        $mail_m_traitant="A Renseigner";
+    }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
     echo $nom_m_appelant;
@@ -40,7 +47,12 @@ echo $civilite_p;
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
     echo $prenom_m_appelant;
 
-    $mail_m_appelant=$_POST['mail_m_appelant'];
+    if($_POST['mail_m_appelant']!=""){
+        $mail_m_appelant=$_POST['mail_m_appelant'];
+    }
+    else{
+        $mail_m_appelant="A Renseigner";
+    }
     echo $mail_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -121,5 +133,5 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
+header('Location: ../Liste_Patients.php');
 ?>

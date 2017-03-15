@@ -155,7 +155,6 @@
                         $req2=$bdd->prepare($chaine);
                         $req2->execute();
                     }
-                    echo $chaine;
                     ///////////////////////////////////////////
                   
                         
@@ -163,6 +162,18 @@
                     <div class="div3">
                           <div class="liste">
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Résultats Recherche</h4>
+                        <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+
+                            <div id="divConteneur">
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
                                 <th>Centres</th>
@@ -255,7 +266,7 @@
                             
                    
                         </table>
-                      
+                              </div>
                         </div>
                     </div>
                 </div>

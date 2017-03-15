@@ -54,6 +54,10 @@ while ($donnees = $req->fetch())
     else{$adresse_p=$_POST['adresse_p'];}
     echo $adresse_p;
     
+    if($_POST['description_p']==''){$description_p= $donnees['description_p'];}
+    else{$description_p=$_POST['description_p'];}
+    echo $description_p;
+    
     if($_POST['birthday_p']==''){$birthday_p= $donnees['date_naissance'];}
     else{
     $birthday_p=$_POST['birthday_p'];
@@ -75,11 +79,17 @@ while ($donnees = $req->fetch())
     $prenom_m_traitant=$_POST['prenom_m_traitant'];
     echo $prenom_m_traitant;
     
+    $mail_m_traitant=$_POST['mail_m_traitant'];
+    echo $mail_m_traitant;
+    
     $nom_m_appelant=$_POST['nom_m_appelant'];
     echo $nom_m_appelant;
     
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
     echo $prenom_m_appelant;
+    
+    $mail_m_appelant=$_POST['mail_m_appelant'];
+    echo $mail_m_appelant;
     
 }
 
@@ -88,31 +98,54 @@ while ($donnees = $req->fetch())
 /*      ID_medecin_traitant                                                          */
 ///////////////////////////////////////////////////////////////////////////////////////
 
+//$reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+//$reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant ));
+//$id_medecin_traitant est celui du medecin qu'on vient de créer
+//$id_medecin_traitant=$bdd->lastInsertId();
+
+
 //On prend dans 'medecin' l'éventuel tuple qui correspond au nom et prenom rentré dans le formulaire
 $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
-//Si on a rempli les champs medecin
-if($nom_m_traitant!="" && $prenom_m_traitant!="" ){
-$test=false;
-//il faut trouver l'id du medecin correspond
+
+$rows = $req2->fetchAll();
+if (count($rows) != 0) {//le medecin rentré existe
+    $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
+    $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
     while ($donn = $req2->fetch()){
+        $id_medecin_traitant=$donn['id_medecin'];
+    }
+}
+else{
+    
+    $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+    $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant ));
+    //$id_medecin_traitant est celui du medecin qu'on vient de créer
+    $id_medecin_traitant=$bdd->lastInsertId();
+}
+                                            
+//Si on a rempli les champs medecin
+//if($nom_m_traitant!="" && $prenom_m_traitant!="" && $mail_m_traitant!=""){
+//$test=false;
+//il faut trouver l'id du medecin correspond
+    /*while ($donn = $req2->fetch()){*/
         //on regarde si le médecin existe déjà dans la bdd
-        if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
+        /*if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
             $test=true;
             if($test==true){
                 echo "olaaaaa";
                 $id_medecin_traitant=$donn['id_medecin'];
             }
         }
-    }
+    }*/
     //s'il n'existe pas on le crée en renseignant juste le minimum
-    if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
-        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant));
+    /*if($test!=true){
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');*/
+        //$reqmt->execute(array($nom_m_traitant, $prenom_m_traitant));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
-        $id_medecin_traitant=$bdd->lastInsertId();
-    }
-}
+        //$id_medecin_traitant=$bdd->lastInsertId();
+    //}
+//}
 //Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
 /*else{
     $id_medecin_traitant=0;
@@ -141,7 +174,7 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, civilite_m, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2, \'Mr\',?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
         $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();;
     }
@@ -154,7 +187,7 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
 
 //echo "Nouveau medecin appelant :".$id_medecin_appelant;
 $req->closeCursor();
-$req2->closeCursor();
+//$req2->closeCursor();
 $req3->closeCursor();
 
 ///////////////////////////
@@ -162,7 +195,7 @@ $req3->closeCursor();
 ///////////////////////////
 
 
-$req = $bdd->prepare('UPDATE patient SET date_ait_p= :nv_date_ait_p, nom_p= :nv_nom_p, prenom_p= :nv_prenom_p, civilite_p= :nv_civilite_p, date_naissance= :nv_date_naissance_p, mail_p= :nv_mail_p, telephone_p= :nv_telephone_p, ville_p = :nv_ville_p, codePostal_p = :nv_codePostal_p,  adresse_p = :nv_adresse_p, ID_medecin_traitant= :nv_id_medecin_traitant, ID_medecin_autre= :nv_id_medecin_appelant  WHERE id_patient = :jointure ');
+$req = $bdd->prepare('UPDATE patient SET date_ait_p= :nv_date_ait_p, nom_p= :nv_nom_p, prenom_p= :nv_prenom_p, civilite_p= :nv_civilite_p, date_naissance= :nv_date_naissance_p, mail_p= :nv_mail_p, telephone_p= :nv_telephone_p, ville_p = :nv_ville_p, codePostal_p = :nv_codePostal_p,  adresse_p = :nv_adresse_p, description_p = :nv_description_p, ID_medecin_traitant= :nv_id_medecin_traitant, ID_medecin_autre= :nv_id_medecin_appelant  WHERE id_patient = :jointure ');
 $req->execute(array(
     'nv_date_ait_p' => $date_ait_p ,
     'nv_nom_p' => $nom_p,
@@ -174,6 +207,7 @@ $req->execute(array(
     'nv_ville_p' => $ville_p,
     'nv_codePostal_p' => $codePostal_p,
     'nv_adresse_p' => $adresse_p,
+    'nv_description_p' => $description_p,
     'nv_id_medecin_traitant' => $id_medecin_traitant,
     'nv_id_medecin_appelant' => $id_medecin_appelant,
     
