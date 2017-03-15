@@ -256,7 +256,7 @@ $req->closeCursor();
                             <td><?php echo $donnees["date_examen"] ?></td>
                             <td><?php echo $donnees["heure_examen"] ?></td>
         <?php 
-            if($donnees["realise"]=="YES"){
+            if($donnees["effectue"]=="YES"){
         ?> 
                             <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" checked/></td>
         <?php
@@ -299,7 +299,7 @@ $req->closeCursor();
                             </table>
                             <br>
                                <div class="myButton" id="Prendre_rdv">
-                            <a href="Prise_RDV.php" class="myButton1"> Prendre RDV</a>
+                            <a href="Prise_RDV.php?id_patient=<?php echo $_GET['id_patient'];?>" class="myButton1"> Prendre RDV</a>
                         </div>
                         </div> 
                     </div>
