@@ -240,21 +240,34 @@ $req->closeCursor();
                             <td><?php echo $dnn["typeExamen"];?></td> 
                             
         <?php } 
-        
-        $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
-        $req2->execute(array($donnees["id_service"]));
-        while ($dnn2= $req2->fetch()){
+        if($donnees["id_service"]==0){ ?>
+            <td><?php echo "NC"; ?></td>
+            <td><?php echo "NC"; ?></td>
+  <?php }else{
+                 $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
+                 $req2->execute(array($donnees["id_service"]));
+                 while ($dnn2= $req2->fetch()){
         ?>
             
-        
+                            
                             <td><?php echo $dnn2["centre_s"]; ?></td>
                             <td><?php echo $dnn2["nom_s"]; ?></td>
         <?php 
+                }
         }
         ?>
-            
-                            <td><?php echo $donnees["date_examen"] ?></td>
-                            <td><?php echo $donnees["heure_examen"] ?></td>
+        <?php 
+       
+        
+        if($donnees["date_examen"]=="1970-01-01" /*&& $donnees["heure_examen"]="00:00:00"*/){ ?>
+                            <td><?php echo "NC"; ?></td>
+                            <td><?php echo "NC"; ?></td>
+                            
+        <?php }else{ ?>
+                            <?php echo "on entre dans la boucle"; ?>
+                            <td><?php echo $donnees["date_examen"]; ?></td>
+                            <td><?php echo $donnees["heure_examen"]; ?></td>
+        <?php } ?>
         <?php 
             if($donnees["effectue"]=="YES"){
         ?> 
