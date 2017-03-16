@@ -14,7 +14,7 @@ echo $idservice;
 $req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req->execute(array($idservice));
 while ($donnees = $req->fetch())
-{
+{       
     if($_POST['centre_s']==''){$centre_s= $donnees['centre_s'];}
     else{$centre_s=$_POST['centre_s'];}
     echo $centre_s;
@@ -58,7 +58,6 @@ while ($donnees = $req->fetch())
             
         }
     }
-    
     /* Horaire fermeture*/
     $horairesf_s=$donnees['horairesf_s'];
     if($_POST['heuref']=="" && $_POST['minf']==""){
@@ -127,6 +126,6 @@ while($dnn = $req2->fetch()){
 /*Retour vers le dossier service avec modification prise en compte*/
 ///////////////////////////
 
-header('Location: ../Liste_Services.php');
+//header('Location: ../Liste_Services.php');
 
 ?>
