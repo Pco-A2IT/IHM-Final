@@ -68,13 +68,11 @@
                 <br>
                 <br>
                 <br>
-                 <form id="recherche" method="post" class="recherche">
+                    <form id="recherche" method="post" class="recherche">
 
-                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
-                    <input class="loupe" type="submit" value="" />
-                     <form>
-                      <input type="button"  value="Retour" onclick="history.go(-1)">
-                    </form>
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit"  value="Retour" >
                     </form>
                 <style>
                                         #divConteneur{
