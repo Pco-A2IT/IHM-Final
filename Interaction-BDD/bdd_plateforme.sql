@@ -209,5 +209,6 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAUlT '',
   `confirmation_token` varchar(60) DEFAUlT '',
   `confirmed_at` DATETIME,
+  `last_connection` DATETIME,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
