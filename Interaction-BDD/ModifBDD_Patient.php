@@ -105,11 +105,11 @@ while ($donnees = $req->fetch())
 
 
 //On prend dans 'medecin' l'éventuel tuple qui correspond au nom et prenom rentré dans le formulaire
-$req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
+/*$req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
 
 $rows = $req2->fetchAll();
-if (count($rows) != 0) {//le medecin rentré existe
+if (count($rows) != 0) {
     $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
     $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
     while ($donn = $req2->fetch()){
@@ -118,38 +118,40 @@ if (count($rows) != 0) {//le medecin rentré existe
 }
 else{
     
-    $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+    $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
     $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant ));
     //$id_medecin_traitant est celui du medecin qu'on vient de créer
     $id_medecin_traitant=$bdd->lastInsertId();
-}
-                                            
+}*/
+
+$req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
+$req2->execute(array($nom_m_traitant, $prenom_m_traitant ));                                            
 //Si on a rempli les champs medecin
-//if($nom_m_traitant!="" && $prenom_m_traitant!="" && $mail_m_traitant!=""){
-//$test=false;
+if($nom_m_traitant!="" && $prenom_m_traitant!=""){
+$test=false;
 //il faut trouver l'id du medecin correspond
-    /*while ($donn = $req2->fetch()){*/
+    while ($donn = $req2->fetch()){
         //on regarde si le médecin existe déjà dans la bdd
-        /*if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
+        if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
             $test=true;
             if($test==true){
                 echo "olaaaaa";
                 $id_medecin_traitant=$donn['id_medecin'];
             }
         }
-    }*/
+    }
     //s'il n'existe pas on le crée en renseignant juste le minimum
-    /*if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');*/
-        //$reqmt->execute(array($nom_m_traitant, $prenom_m_traitant));
+    if($test!=true){
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
-        //$id_medecin_traitant=$bdd->lastInsertId();
-    //}
-//}
+        $id_medecin_traitant=$bdd->lastInsertId();
+    }
+}
 //Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-/*else{
+else{
     $id_medecin_traitant=0;
-}*/
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -174,16 +176,16 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,\'A renseigner\',\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
-        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant));
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();;
     }
 }
 
 //Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-/*else{
+else{
     $id_medecin_appelant=0;
-}*/
+}
 
 //echo "Nouveau medecin appelant :".$id_medecin_appelant;
 $req->closeCursor();
