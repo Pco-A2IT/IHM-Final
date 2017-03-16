@@ -101,9 +101,9 @@ $req->closeCursor();
                     <div class="div1">
                      <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?></h1><br>
                     </div>
-            
+        
                 <div id="container">
-
+                    <br>
                     <div id="titles"> 
                         <span class="title active"  target="onglet1"> 1. Patient</span> 
                         <span class="title" target="onglet3"> 2. Examens</span> 
@@ -119,7 +119,7 @@ $req->closeCursor();
                             <tr> 
                                 <td align="right">Civilité:</td>
                                 <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
-                                    <datalist id="c">
+                                    <datalist id="c" style="background-color:eeeeee">
                                             <option>M.</option>
                                             <option>Mme</option>
                                     </datalist>
