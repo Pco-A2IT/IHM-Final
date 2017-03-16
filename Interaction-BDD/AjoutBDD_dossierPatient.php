@@ -33,6 +33,13 @@ echo $civilite_p;
 
     $mail_m_traitant=$_POST['mail_m_traitant'];
     echo $mail_m_traitant;
+
+    if($_POST['mail_m_traitant']!=""){
+        $mail_m_traitant=$_POST['mail_m_traitant'];
+    }
+    else{
+        $mail_m_traitant="A Renseigner";
+    }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
     echo $nom_m_appelant;
@@ -40,7 +47,12 @@ echo $civilite_p;
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
     echo $prenom_m_appelant;
 
-    $mail_m_appelant=$_POST['mail_m_appelant'];
+    if($_POST['mail_m_appelant']!=""){
+        $mail_m_appelant=$_POST['mail_m_appelant'];
+    }
+    else{
+        $mail_m_appelant="A Renseigner";
+    }
     echo $mail_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -117,9 +129,25 @@ $req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_med
 
 $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $_POST['mail_p'],$_POST['telephone_p'], $_POST['ville_p'],$_POST['codePostal_p'],$_POST['adresse_p'],$_POST['description_p'], ));
 
+// Création des examens déjà réalisés
+
+$id_patient = $bdd->lastInsertId();
+echo $id_patient;
+//Parcours des checkbox
+$compteur=1;
+$reponse = $bdd->query('SELECT * FROM Examen');
+while($dnn = $reponse->fetch()){
+    $id_examen=$dnn['id_examen'];
+    if(isset($_POST[$compteur])){
+        $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue) VALUES(?, ?,?,?,?,?)');
+        $req->execute(array( $id_examen, $id_patient, 0, "1970-01-01", "00:00:00", "YES"));
+    }
+    $compteur=$compteur+1;
+}
+
 
 
 
 // Redirection du visiteur vers la page du minichat
-//header('Location: ../Dossier_Patient.php');
+header('Location: ../Liste_Patients.php');
 ?>
