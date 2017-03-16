@@ -40,7 +40,7 @@ while ($donnees = $req->fetch())
     echo $description_s;
     
     /* Horaire ouverture*/
-    $horairesd_s=$donnees['horairesd_s'];
+    /*$horairesd_s=$donnees['horairesd_s'];
     if($_POST['heured']=="" && $_POST['mind']==""){
         $horairesd_s= $donnees['horairesd_s'];
     }
@@ -57,9 +57,9 @@ while ($donnees = $req->fetch())
             }
             
         }
-    }
+    }*/
     /* Horaire fermeture*/
-    $horairesf_s=$donnees['horairesf_s'];
+    /*$horairesf_s=$donnees['horairesf_s'];
     if($_POST['heuref']=="" && $_POST['minf']==""){
         $horairesf_s= $donnees['horairesf_s'];
     }
@@ -76,7 +76,7 @@ while ($donnees = $req->fetch())
             }
             
         }
-    }
+    }*/
     
 }
            
@@ -91,8 +91,8 @@ $req1 = $bdd->prepare('UPDATE service SET centre_s = :nv_centre_s, telephone_s= 
 $req1->execute(array(
     'nv_centre_s' => $centre_s,
     'nv_telephone_s' => $telephone_s,
-    'nv_horairesd_s' => $horairesd_s,
-    'nv_horairesf_s' => $horairesf_s,
+    'nv_horairesd_s' => $_POST['heured'],
+    'nv_horairesf_s' => $_POST['heuref'],
     'nv_adresse_s' => $adresse_s,
     'nv_codePostal_s' => $codePostal_s,
     'nv_ville_s' => $ville_s,
