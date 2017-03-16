@@ -90,7 +90,7 @@
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
                             </td> 
                         </tr>
                         <tr> 

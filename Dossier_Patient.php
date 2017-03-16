@@ -110,7 +110,7 @@
                                         <tr> 
                                             <td align="right">Téléphone: *</td> 
                                             <td align="left"> 
-                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
+                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off" required/> 
                                             </td> 
                                         </tr> 
                                     </table> 
@@ -135,10 +135,10 @@
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
+                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
                                         <tr>
@@ -152,10 +152,10 @@
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
                                             </td>
                                         </tr> 
                                         <tr>
