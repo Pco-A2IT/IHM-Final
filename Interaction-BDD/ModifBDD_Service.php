@@ -39,48 +39,7 @@ while ($donnees = $req->fetch())
     else{$description_s=$_POST['description_s'];}
     echo $description_s;
     
-    /* Horaire ouverture*/
-    /*$horairesd_s=$donnees['horairesd_s'];
-    if($_POST['heured']=="" && $_POST['mind']==""){
-        $horairesd_s= $donnees['horairesd_s'];
-    }
-    else{
-        if($_POST['heured']==""){
-            $horairesd_s=strftime("%H",strtotime($horairesd_s)).":". $_POST['mind'].":00";
-        }
-        else{
-            if($_POST['mind']==""){
-                $horairesd_s= $_POST['heured'].":".strftime("%M",strtotime($horairesd_s)).":00";
-            }
-            else{
-                $horairesd_s= $_POST['heured'].":".$_POST['mind'].":00";
-            }
-            
-        }
-<<<<<<< HEAD
-    }
-=======
-    }*/
->>>>>>> origin/master
-    /* Horaire fermeture*/
-    /*$horairesf_s=$donnees['horairesf_s'];
-    if($_POST['heuref']=="" && $_POST['minf']==""){
-        $horairesf_s= $donnees['horairesf_s'];
-    }
-    else{
-        if($_POST['heuref']==""){
-            $horairesf_s=strftime("%H",strtotime($horairesf_s)).":". $_POST['minf'].":00";
-        }
-        else{
-            if($_POST['minf']==""){
-                $horairesf_s= $_POST['heuref'].":".strftime("%M",strtotime($horairesf_s)).":00";
-            }
-            else{
-                $horairesf_s= $_POST['heuref'].":".$_POST['minf'].":00";
-            }
-            
-        }
-    }*/
+    
     
 }
            
