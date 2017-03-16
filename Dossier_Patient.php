@@ -58,7 +58,10 @@
                         <div class="div1">
                             <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
                       
-                        <br><br><br><br>
+                        
+            
+                <div id="container">
+                    <br>
                             <div id="titles"> 
                                 <span class="title active"  target="onglet1"> 1. Patient</span> 
                                 <span class="title" target="onglet3"> 2. Examens</span> 
@@ -77,7 +80,7 @@
                                         <tr> 
                                             <td align="right">Civilité: *</td>
                                             <td align="left"><section id="main">
-                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required>
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required style="background-color:eeeeee">
                                                     <option value="" >Civilité</option>
                                                     <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>
@@ -112,9 +115,9 @@
                                         </tr> 
                                     </table> 
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
-                                            <td align="right">Adresse:</td> 
+                                            <td align="right">Adresse: *</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"/>
+                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"required/>
                                             </td> 
                                         </tr>
                                         <tr> 
@@ -206,6 +209,7 @@
                     </div>
         </div>
             </div>
+        </div>
         </div>
         </div>
         </form>

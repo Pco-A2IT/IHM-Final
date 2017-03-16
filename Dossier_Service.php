@@ -61,11 +61,11 @@
             <div class="onglet" id="onglet1">
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
+                                <td align="right">Hôpital:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
                         </tr>
                          <tr> 
@@ -79,11 +79,11 @@
                             <td>Horaires ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
-                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
-                                <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
-                                à
-                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
-                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn">
+                                
+                                <input id="heured" name="heured" type="time" value=""/> 
+                                <br> à <br>
+                                <input id="heuref" name="heuref" type="time" value=""/>
+                                
                             </td>
                         </tr>
                         <tr>
