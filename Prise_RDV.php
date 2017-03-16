@@ -50,7 +50,7 @@
             <div class="section4">
                 <div class="div1" style="color:black">
                     <?php
-                        $id_patient=$_GET['idpatient'];
+                        $id_patient=$_GET['id_patient'];
                         $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
                         $req->execute(array($id_patient));
                         while ($donnees = $req->fetch()){
@@ -64,7 +64,7 @@
                         <br><br>
               
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Examens</h4>
-                        <form action="Prise_RDV.php?idpatient=<?php echo $id_patient; ?>" method="post">
+                        <form action="Prise_RDV.php?id_patient=<?php echo $id_patient; ?>" method="post">
                     <?php
                         
                         //marche mais ne prend pas en compte les examens déjà planifié
@@ -162,6 +162,18 @@
                     <div class="div3">
                           <div class="liste">
                         <h4 style='color:grey padding-left:2; margin-top:10; margin-bottom:10'>Résultats Recherche</h4>
+                        <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+
+                            <div id="divConteneur">
                         <table align="right" cellspacing="5px" class="table"> 
                             <tr>
                                 <th>Centres</th>
@@ -231,7 +243,8 @@
                                         while($dnn= $req4->fetch()){
                                                 if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                         ?>
-                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?idpatient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                   
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
                                         <td><?php echo $dnn['typeExamen'] ?></td>
                                         <td><label for="date"></label><input id="date" name="date" type="date" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
@@ -254,7 +267,7 @@
                             
                    
                         </table>
-                      
+                              </div>
                         </div>
                     </div>
                 </div>
