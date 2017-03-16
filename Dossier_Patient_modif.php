@@ -213,8 +213,8 @@ $req->closeCursor();
                             <table cellspacing="0px" id="tbl" class="table">   
                     <tr>
                         <th>Examen</th>
-                        <th>Centre </th>
-                        <th>Service </th>
+                        <th>Hôpital </th>
+                        <th>Service/Centre d'examen </th>
                         <th>Jour </th>
                         <th>Horaire </th>
                         <th>Réalisé </th>

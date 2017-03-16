@@ -61,11 +61,11 @@
             <div class="onglet" id="onglet1">
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen:</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
+                                <td align="right">Hôpital:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
                         </tr>
                          <tr> 

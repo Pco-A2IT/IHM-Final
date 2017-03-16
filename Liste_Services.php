@@ -110,8 +110,8 @@
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>Service</th>
-                        <th>Centre</th>
+                        <th>Service/Centre d'examen</th>
+                        <th>Hôpital</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
                         <th>Ville</th>
