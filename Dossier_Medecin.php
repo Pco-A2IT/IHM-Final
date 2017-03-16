@@ -57,11 +57,11 @@
                     <table cellspacing="5px" class="table" style="float:left"> 
                             
                             <tr>
-                            <td align="right">Nom:</td> 
+                            <td align="right">Nom: *</td> 
                             <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" autocomplete="off" required/></td>
                             </tr>
                             <tr>
-                            <td align="right">Prénom:</td> 
+                            <td align="right">Prénom: *</td> 
                             <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" autocomplete="off" required/></td>
                             </tr>  
                             <tr> 

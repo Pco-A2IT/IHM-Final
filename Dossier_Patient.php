@@ -112,9 +112,9 @@
                                         </tr> 
                                     </table> 
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
-                                            <td align="right">Adresse:</td> 
+                                            <td align="right">Adresse: *</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"/>
+                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"required/>
                                             </td> 
                                         </tr>
                                         <tr> 
