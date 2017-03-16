@@ -65,7 +65,7 @@ $req->closeCursor();
    
     <div class="gris">
         <div  class="gris2">
-            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" method="post"> 
+            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" id= "form" class ="form" method="post"> 
             <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -173,29 +173,30 @@ $req->closeCursor();
                             <tr>
                                 <td align="right" rowspan="2">Médecin traitant:</td> 
                                 <td align="left"> 
-                                    <input type="text" name="nom_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>"/>
+                                    <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
+                                    onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')"/>
                                 </td>
                                 <td align="left"> 
-                                    <input type="text" name="prenom_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>"/>
+                                    <input type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" colspan="2"> 
-                                    <input type="text" name="mail_m_traitant" value="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
+                                    <input type="text"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" rowspan="2">Médecin appelant:</td> 
                                 <td align="left"> 
-                                    <input type="text" name="nom_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" list="a"/> 
+                                    <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')" list="a"/> 
                                 </td>
                                 <td align="left"> 
-                                    <input type="text" name="prenom_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                    <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" colspan="2"> 
-                                    <input type="text" name="mail_m_appelant" value="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{echo "Mail du médecin appelant";} ?>"/>
+                                    <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>"/>
                                 </td>
                             </tr>
                             <tr height="60px">
@@ -266,23 +267,36 @@ $req->closeCursor();
                             <td><?php echo $dnn["typeExamen"];?></td> 
                             
         <?php } 
-        
-        $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
-        $req2->execute(array($donnees["id_service"]));
-        while ($dnn2= $req2->fetch()){
+        if($donnees["id_service"]==0){ ?>
+            <td><?php echo "NC"; ?></td>
+            <td><?php echo "NC"; ?></td>
+  <?php }else{
+                 $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
+                 $req2->execute(array($donnees["id_service"]));
+                 while ($dnn2= $req2->fetch()){
         ?>
             
-        
+                            
                             <td><?php echo $dnn2["centre_s"]; ?></td>
                             <td><?php echo $dnn2["nom_s"]; ?></td>
         <?php 
+                }
         }
         ?>
-            
-                            <td><?php echo $donnees["date_examen"] ?></td>
-                            <td><?php echo $donnees["heure_examen"] ?></td>
         <?php 
-            if($donnees["realise"]=="YES"){
+       
+        
+        if($donnees["date_examen"]=="1970-01-01" /*&& $donnees["heure_examen"]="00:00:00"*/){ ?>
+                            <td><?php echo "NC"; ?></td>
+                            <td><?php echo "NC"; ?></td>
+                            
+        <?php }else{ ?>
+                            <?php echo "on entre dans la boucle"; ?>
+                            <td><?php echo $donnees["date_examen"]; ?></td>
+                            <td><?php echo $donnees["heure_examen"]; ?></td>
+        <?php } ?>
+        <?php 
+            if($donnees["effectue"]=="YES"){
         ?> 
                             <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" checked/></td>
         <?php
@@ -326,7 +340,7 @@ $req->closeCursor();
                             </table>
                             <br>
                                <div class="myButton" id="Prendre_rdv">
-                            <a href="Prise_RDV.php" class="myButton1"> Prendre RDV</a>
+                            <a href="Prise_RDV.php?id_patient=<?php echo $_GET['id_patient'];?>" class="myButton1"> Prendre RDV</a>
                         </div>
                         </div> 
                     </div>
@@ -344,6 +358,11 @@ $req->closeCursor();
 </body>
 
 </html>
+    <script> 
+        function activer() {
+            document.getElementById("prenom_m_traitant").addEventListener.onfocus();
+        }
+    </script> 
     <script> 
             function sure()
             {
