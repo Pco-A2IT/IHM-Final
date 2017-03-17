@@ -68,6 +68,7 @@ if (isset($_POST['envoye']))
     elseif (!isset($_COOKIE['sent']))
     {
         /* Destinataire (votre adresse e-mail) */
+        $to = 'patient@gmail.com';
  
         /* Construction du message */
         $msg  = 'Bonjour,'."\r\n\r\n";
