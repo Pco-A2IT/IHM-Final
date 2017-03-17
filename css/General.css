@@ -825,6 +825,9 @@ background-color:#eeeeee;
 select option:first-child{color:grey; display: none;}
 select option {color:black;}
 
+.liste {
+color: black;
+}
 
 .liste table a:link {
 	color: #666;

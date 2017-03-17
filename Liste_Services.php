@@ -1,10 +1,7 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
+<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
+<?php
+    include('config.php');
+?> 
 <html>
 <head>
    <title> Liste Services</title>
@@ -181,5 +178,3 @@ function sure()
     </div>
 </body>
 </html>
-
-<?php require 'inc/footer.php'; ?>
