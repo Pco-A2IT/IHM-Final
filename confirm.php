@@ -18,3 +18,5 @@ if($user && $user->confirmation_token == $token){
     $_SESSION['flash']['danger'] = "Ce token n'est plus valide";
     header('Location: login.php');
 }
+
+$>
