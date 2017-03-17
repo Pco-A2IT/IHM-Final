@@ -19,4 +19,4 @@ if($user && $user->confirmation_token == $token){
     header('Location: login.php');
 }
 
-$>
+?>
