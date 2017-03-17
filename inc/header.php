@@ -34,6 +34,9 @@ if(session_status() == PHP_SESSION_NONE){
           <a class="navbar-brand">Plateforme AIT</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <?php if (isset($_SESSION['auth'])): ?>
+            <a>Connecté en tant que <?= $_SESSION['auth']->username; ?></a>
+            <?php endif; ?>
           <ul class="nav navbar-nav">
             <?php if (isset($_SESSION['auth'])): ?>
                 <li><a href="logout.php">Se déconnecter</a></li>              
