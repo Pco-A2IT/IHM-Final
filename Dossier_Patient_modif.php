@@ -213,6 +213,32 @@ $req->closeCursor();
                 <div class="liste">
                 
                         <div class="position_table">
+<<<<<<< HEAD
+                           <table cellspacing='5px'>   
+                                <tr>
+                                    <th colspan="2">Examen</th>
+                                    <th style="text-align:center">Réalisé</th>
+                                </tr>
+                                <?php
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                                ?>
+                                <tr>
+                                    <td><?php print_r($dnn['typeExamen']); ?></td>
+                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
+                                    <?php $compteur=$compteur+1; ?>
+                                </tr>
+                                <?php
+                                };
+                                ?>
+                                <tr rowspan="3">
+                                    <td align="center"  colspan="2">
+                                       <!-- <form action="Prise_RDV.php" method="post"><input type="submit" accesskey="enter" value="Prise de RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/></form>-->
+                                        <form action="Prise_RDV.php" method="post"><input type="submit" value="Prise de RDV" id="btn"  class="submit" /></form>
+                                    </td> 
+                                </tr>
+=======
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                             <table cellspacing="0px" id="tbl" class="table">   
                     <tr>
@@ -314,6 +340,7 @@ $req->closeCursor();
 <?php
     }
 ?>     
+>>>>>>> refs/remotes/origin/master
                             </table>
                             <br>
                                <div class="myButton" id="Prendre_rdv">
