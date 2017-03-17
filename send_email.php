@@ -37,12 +37,14 @@ if (isset($_POST['envoye']))
  
     /* Si le formulaire n'est pas posté de notre site on renvoie 
     * vers la page d'accueil */
-    if($_SERVER['HTTP_REFERER'] != 'send_email.php')
+    
+    /*if($_SERVER['HTTP_REFERER'] != 'send_email.php')
     {
       header('Location: Recapitulatif.php');
-    }
+    }*/
+    
     /* On vérifie que tous les champs sont remplis */
-    elseif (empty($civilite) 
+    if (empty($civilite) 
            || empty($nom) 
            || empty($expediteur) 
            || empty($sujet) 
@@ -66,7 +68,6 @@ if (isset($_POST['envoye']))
     elseif (!isset($_COOKIE['sent']))
     {
         /* Destinataire (votre adresse e-mail) */
-        $to = 'zineb.sen30@gmail.com';
  
         /* Construction du message */
         $msg  = 'Bonjour,'."\r\n\r\n";
