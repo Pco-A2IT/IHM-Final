@@ -68,7 +68,7 @@ if (isset($_POST['envoye']))
     elseif (!isset($_COOKIE['sent']))
     {
         /* Destinataire (votre adresse e-mail) */
-        $to = 'patient@gmail.com';
+        $to = 'cyril.machillot0@gmail.com';
  
         /* Construction du message */
         $msg  = 'Bonjour,'."\r\n\r\n";
@@ -79,7 +79,8 @@ if (isset($_POST['envoye']))
         $msg .= '***************************'."\r\n";
  
         /* En-têtes de l'e-mail */
-        $headers = 'From: '.$nom.' <'.$expediteur.'>'."\r\n\r\n";
+        /*$headers = 'From: '.$nom.' <'.$expediteur.'>'."\r\n\r\n";*/
+        $headers = 'From: '.$nom.' <plateforme.ait@gmail.com>'."\r\n\r\n";
  
         /* Envoi de l'e-mail */
         if (mail($to, $sujet, $msg, $headers))
