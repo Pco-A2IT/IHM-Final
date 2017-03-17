@@ -1,6 +1,10 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -68,13 +72,11 @@
                 <br>
                 <br>
                 <br>
-                 <form id="recherche" method="post" class="recherche">
+                    <form id="recherche" method="post" class="recherche">
 
-                    <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
-                    <input class="loupe" type="submit" value="" />
-                     <form>
-                      <input type="button"  value="Retour" onclick="history.go(-1)">
-                    </form>
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit"  value="Retour" >
                     </form>
                 <style>
                                         #divConteneur{
@@ -185,3 +187,5 @@ function sure()
     
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

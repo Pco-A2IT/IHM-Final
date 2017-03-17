@@ -98,32 +98,6 @@ while ($donnees = $req->fetch())
 /*      ID_medecin_traitant                                                          */
 ///////////////////////////////////////////////////////////////////////////////////////
 
-//$reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,2,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
-//$reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant ));
-//$id_medecin_traitant est celui du medecin qu'on vient de créer
-//$id_medecin_traitant=$bdd->lastInsertId();
-
-
-//On prend dans 'medecin' l'éventuel tuple qui correspond au nom et prenom rentré dans le formulaire
-/*$req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
-$req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
-
-$rows = $req2->fetchAll();
-if (count($rows) != 0) {
-    $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
-    $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));
-    while ($donn = $req2->fetch()){
-        $id_medecin_traitant=$donn['id_medecin'];
-    }
-}
-else{
-    
-    $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
-    $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant ));
-    //$id_medecin_traitant est celui du medecin qu'on vient de créer
-    $id_medecin_traitant=$bdd->lastInsertId();
-}*/
-
 $req2 = $bdd->prepare('SELECT * FROM medecin WHERE nom_m = ? AND prenom_m=? ');
 $req2->execute(array($nom_m_traitant, $prenom_m_traitant ));                                            
 //Si on a rempli les champs medecin
@@ -148,10 +122,7 @@ $test=false;
         $id_medecin_traitant=$bdd->lastInsertId();
     }
 }
-//Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-else{
-    $id_medecin_traitant=0;
-}
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -182,10 +153,6 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
 }
 
-//Si on n'a pas rempli les champs medecin on met l'id medecin traitant à 0 pour pas qu'il y ai de pb dans la bdd
-else{
-    $id_medecin_appelant=0;
-}
 
 //echo "Nouveau medecin appelant :".$id_medecin_appelant;
 $req->closeCursor();
@@ -215,6 +182,32 @@ $req->execute(array(
     
 	':jointure' => $id_patient
 	));
+
+
+///////////////////////////
+/*Changement champ planfie table examen_patient*/
+///////////////////////////
+
+
+
+$req4 = $bdd->prepare('SELECT * FROM examen');
+$req4->execute();
+
+$cmpt=1;
+while ($donn4 = $req4->fetch()){
+    
+if(isset($_POST[$cmpt])){
+    $bool="YES";
+}
+else{  
+    $bool="NO";
+}
+echo $bool;
+$req5 = $bdd->prepare(' UPDATE examen_patient SET effectue=?  WHERE id_patient=? and id_examen=? ');
+$req5->execute(array($bool, $id_patient, $donn4['id_examen'] ));
+$cmpt=$cmpt+1;   
+}
+
 
 ///////////////////////////
 /*Retour vers la liste_Patients*/

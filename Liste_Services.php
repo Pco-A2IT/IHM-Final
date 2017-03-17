@@ -1,7 +1,10 @@
-<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <html>
 <head>
    <title> Liste Services</title>
@@ -90,11 +93,9 @@
                 <br>
                  <form id="recherche" method="post" class="recherche">
 
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
-                            <input class="loupe" type="submit" value="" />
-                   <form>
-                      <input type="button"  value="Retour" onclick="history.go(-1)">
-                    </form>
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit"  value="Retour" >
 
                     </form>   
                 <style>
@@ -112,8 +113,8 @@
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>Service</th>
-                        <th>Centre</th>
+                        <th>Service/Centre d'examen</th>
+                        <th>Hôpital</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
                         <th>Ville</th>
@@ -154,8 +155,8 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['codePostal_s']); ?></td>
         <td class="left"> <?php print_r($dnn['ville_s']); ?></td>
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
-        <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
-        <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
+        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesd_s']))); ?></td>
+        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesf_s']))); ?></td>
         <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_modifier.png"></a></td>
         <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         
@@ -180,3 +181,5 @@ function sure()
     </div>
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

@@ -1,7 +1,10 @@
-<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -129,11 +132,10 @@ $req->closeCursor();
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 
-                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="test"  placeholder="<?php echo strftime("%H",strtotime($horairesd_s)) ?>"> :
-                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesd_s)) ?>"> 
-                                à  
-                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="<?php echo strftime("%H",strtotime($horairesf_s)) ?>"> :
-                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesf_s)) ?>"> 
+                                <input id="heured" name="heured" type="time" value="<?php echo strftime("%H",strtotime($horairesd_s)).":".strftime("%M",strtotime($horairesd_s)) ?>"  /> 
+                                <br> à <br>
+                                <input id="heuref" name="heuref" type="time" value="<?php echo strftime("%H",strtotime($horairesf_s)).":".strftime("%M",strtotime($horairesf_s)) ?>"/>
+                                 
                             </td>
                         </tr>
                         <tr> 
@@ -209,6 +211,8 @@ $req->closeCursor();
     </body>
 
 </html>
+
+<?php require 'inc/footer.php'; ?>
 
      <script>
 

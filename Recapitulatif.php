@@ -1,6 +1,10 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <html>
     <head>
         <title>Récapitulatif</title>
@@ -91,7 +95,7 @@
                                             $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
                                             $req3->execute(array($id_patient));
                                             while($dnn3= $req3->fetch()){
-                                                if($dnn3["realise"]==true && strtotime($dnn3["date_examen"]) <= strtotime(date("Y-m-d")) ){
+                                                if($dnn3["effectue"]==true && strtotime($dnn3["date_examen"]) <= strtotime(date("Y-m-d")) ){
                                                     $patientaAfficher=true;
                                                 }
                                             }
@@ -183,7 +187,7 @@
                                             $req51->execute(array($id_patient, $dnn5["id_examen"]));
                                             while($dnn51= $req51->fetch()){
                                                 if(strtotime($dnn51["date_examen"]) <= strtotime(date("Y-m-d")) ){
-                                                    if($dnn51["realise"] == "YES"){
+                                                    if($dnn51["effectue"] == "YES"){
                                     ?>
                                                         <td><input type="checkbox" id="choix3_ligne1" value="0" class="regular-checkbox small-checkbox" checked/><label for="choix3_ligne2" ></label>Réalisé
                                                         <input type="checkbox" id="choix3_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix3_ligne2"></label>Non effectué</td>
@@ -291,6 +295,9 @@
         </div>
     </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>
+
 <script>
 
         $(document).ready(function(){
