@@ -112,7 +112,7 @@ require 'inc/header.php';
                             </td> 
                             </tr> 
                             <tr> 
-                                <td align="right">Ville:</td> 
+                                <td align="right">Ville: *</td> 
                                 <td align="left"> 
                                     <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
