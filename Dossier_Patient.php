@@ -11,6 +11,15 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
         <title>Nouveau patient</title>    
+        
+        <script language="javascript" type="text/javascript">  
+	    $(document).ready(function() {
+		$(".required").each(function() {
+			var $this  = $(this);
+			$(this).html($this.html()+"<font color='red'>*</font>");
+		});
+	    });
+        </script>  //ajoute le rouge * pour les champs obligatoires
 
     </head>
     
@@ -79,7 +88,7 @@
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité: *</td>
-                                            <td align="left"><section id="main">
+                                            <td align="left" class="required"><section id="main">
                                                 <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required style="background-color:eeeeee">
                                                     <option value="" >Civilité</option>
                                                     <option value="M.">M.</option>
@@ -91,11 +100,11 @@
                                         </tr>
                                         <tr>
                                             <td align="right">Nom: *</td> 
-                                            <td align="left"><input type="text" name="nom_p" placeholder="(ex: Bardi)" autocomplete="off" required/></td>
+                                            <td align="left" class="required"><input type="text" name="nom_p" placeholder="(ex: Bardi)" autocomplete="off" required/></td>
                                         </tr>
                                         <tr>
                                             <td align="right">Prénom: *</td> 
-                                            <td align="left"><input type="text" name="prenom_p" placeholder="(ex: Luigi)" autocomplete="off" required/></td>
+                                            <td align="left" class="required"><input type="text" name="prenom_p" placeholder="(ex: Luigi)" autocomplete="off" required/></td>
                                         </tr>  
                                         <tr> 
                                             <td align="right">Date de naissance:</td> 
@@ -109,14 +118,14 @@
                                         </tr> 
                                         <tr> 
                                             <td align="right">Téléphone: *</td> 
-                                            <td align="left"> 
+                                            <td align="left" class="required"> 
                                                 <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off" required/> 
                                             </td> 
                                         </tr> 
                                     </table> 
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
                                             <td align="right">Adresse: *</td> 
-                                            <td align="left" colspan="2"> 
+                                            <td align="left" colspan="2" class="required"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"required/>
                                             </td> 
                                         </tr>
@@ -134,11 +143,11 @@
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom" required/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
                                         <tr>
@@ -151,19 +160,19 @@
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/>
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" name="prenom_m_appelant" placeholder="Prénom" list="a" required/>
                                             </td>
                                         </tr> 
                                         <tr>
                                             <td align="left"> 
-                                                <input type="text" name="mail_m_appelant" placeholder="Mail"/>
+                                                <input type="text" style="width:140px" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" name="ville_m_appelant" placeholder="ville"/>
+                                                <input type="text" style="width:140px" name="ville_m_appelant" placeholder="ville"/>
                                             </td>
                                         </tr>
                                         <tr height="60px">
