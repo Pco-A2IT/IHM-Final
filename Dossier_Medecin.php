@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+?>
+
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -127,12 +133,9 @@
        </form>
           </div>
     </div>
-        </div>
-            <script src="General.js"></script>
-        </body>
         
-
-</html>
+            <script src="General.js"></script>
+<?php require 'inc/footer.php'; ?>
 
      <script>
 

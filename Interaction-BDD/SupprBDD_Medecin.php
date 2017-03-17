@@ -38,6 +38,6 @@ while($donnee= $req1->fetch()){
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-//header('Location: ../Liste_Medecins.php');
+header('Location: ../Liste_Medecins.php');
 
 ?>

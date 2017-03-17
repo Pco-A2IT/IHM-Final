@@ -146,7 +146,7 @@ h4{
        left:120px;
        bottom: 100px;
        right: 100px;
-       background-color: #EFEFEF ;
+       background-color: #eeeeee ;
        border: 0px solid #ffffff ;
        position: absolute;       
        z-index: 10}
@@ -457,14 +457,16 @@ height:100px;
 }
 
 textarea:focus{
- background-color:none;
-background: #efefef;
+ background-color:#eeeeee;
+background: #eeeeee;
     border:#efefef;
  }
 
 textarea{
 	width: 90%;
 	height: 100%;
+ background-color:#eeeeee;
+background: #eeeeee;
 	border: 3px solid #efefef;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
@@ -816,12 +818,16 @@ color: #000000;
 }
 .placeholder{
 color: #a9a9a9;
+background-color:#eeeeee;
  width: 205px;
  height: 25px;
 }
 select option:first-child{color:grey; display: none;}
 select option {color:black;}
 
+.liste {
+color: black;
+}
 
 .liste table a:link {
 	color: #666;

@@ -183,10 +183,9 @@ CREATE TABLE `Examen_patient` (
 
 
 /*!40000 ALTER TABLE `Examen_patient` DISABLE KEYS */;
-/*LOCK TABLES `Examen_patient` WRITE;*/
-/*INSERT INTO `Examen_patient` VALUES (1,1,'','','NO','NO'),(2,1,'1995-08-25','14h','YES','NO'),(3,1,'1995-08-22','10h','YES','YES'),(1,2,'1995-03-22','17h','YES','YES');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Examen_patient` ENABLE KEYS */;
+
+LOCK TABLES `Examen_patient` WRITE;
+UNLOCK TABLES;
 
 
 
@@ -200,3 +199,15 @@ UNLOCK TABLES;*/
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(255) DEFAUlT '', 
+  `email` varchar(255) DEFAUlT '',
+  `password` varchar(255) DEFAUlT '',
+  `confirmation_token` varchar(60) DEFAUlT '',
+  `confirmed_at` DATETIME,
+  `last_connection` DATETIME,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

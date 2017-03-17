@@ -1,6 +1,10 @@
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,8 +69,10 @@
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
                         </tr>
                         <tr> 
+
                                 <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"
+                                
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
@@ -87,10 +93,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="right"> Adresse: 
+                            <td align="right"> Adresse: * 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
                             </td> 
                         </tr>
                         <tr> 
@@ -150,6 +156,8 @@
     </body>
 
 </html>
+
+<?php require 'inc/footer.php'; ?>
 
      <script>
 
