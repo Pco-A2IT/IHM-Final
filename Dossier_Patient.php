@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,16 +10,7 @@ include('config.php');
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-        <title>Nouveau patient</title>   
-        
-        <script language="javascript" type="text/javascript">  
-	    $(document).ready(function() {
-		$(".required").each(function() {
-			var $this  = $(this);
-			$(this).html("<font>*</font>"+$this.html());
-		});
-	    });
-        </script>  //ajoute le rouge * pour les champs obligatoires
+        <title>Nouveau patient</title>    
 
     </head>
     
@@ -123,7 +110,7 @@ include('config.php');
                                         <tr> 
                                             <td align="right">Téléphone: *</td> 
                                             <td align="left"> 
-                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off" required/> 
+                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
                                             </td> 
                                         </tr> 
                                     </table> 
@@ -147,11 +134,11 @@ include('config.php');
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left" class="required"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
+                                            <td align="left"> 
+                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
-                                            <td align="left" class="required"> 
-                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom" required/>
+                                            <td align="left"> 
+                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
                                             </td>    
                                         </tr>
                                         <tr>
@@ -161,11 +148,11 @@ include('config.php');
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
-                                            <td align="left" class="required"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/> 
+                                            <td align="left"> 
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
-                                            <td align="left" class="required"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
+                                            <td align="left"> 
+                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
                                             </td>
                                         </tr> 
                                         <tr>
@@ -235,8 +222,6 @@ include('config.php');
     </body>
 
 </html>
-
-<?php require 'inc/footer.php'; ?>
 
      <script>
          
