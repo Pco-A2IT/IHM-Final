@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+<?php
+   include('config.php');
 ?>
-
 <html>
 <head>
    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
@@ -283,4 +279,3 @@ include('config.php');
 </body>
 </html>
     
-<?php require 'inc/footer.php'; ?>

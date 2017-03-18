@@ -1,10 +1,4 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-?>
-
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -112,7 +106,7 @@ require 'inc/header.php';
                             </td> 
                             </tr> 
                             <tr> 
-                                <td align="right">Ville:</td> 
+                                <td align="right">Ville: *</td> 
                                 <td align="left"> 
                                     <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
@@ -133,9 +127,12 @@ require 'inc/header.php';
        </form>
           </div>
     </div>
-        
+        </div>
             <script src="General.js"></script>
-<?php require 'inc/footer.php'; ?>
+        </body>
+        
+
+</html>
 
      <script>
 

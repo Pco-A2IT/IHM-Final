@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+<?php
+   include('config.php');
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -173,9 +169,6 @@ $req->closeCursor();
     </body>
 
 </html>
-
-<?php require 'inc/footer.php'; ?>
-
 
      <script>
 

@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+<?php
+   include('config.php');
 ?>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -58,11 +54,11 @@ include('config.php');
         
         <div class="liste">                    
         <br>
-            <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Exporter les données patients <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
+            <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Exporter la table patient <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
         <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Exporter la table medecin <img src="Icones/medecin_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Exporter les données des examens <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
+        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Exporter la table examen <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
         <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Exporter les liens examen_patient <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
@@ -80,4 +76,3 @@ include('config.php');
 </body>
 </html>
         
-<?php require 'inc/footer.php'; ?>

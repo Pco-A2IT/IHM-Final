@@ -1,10 +1,3 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
 <?php
 /* Si le formulaire est envoyé alors on fait les traitements */
 if (isset($_POST['envoye']))
@@ -37,14 +30,12 @@ if (isset($_POST['envoye']))
  
     /* Si le formulaire n'est pas posté de notre site on renvoie 
     * vers la page d'accueil */
-    
-    /*if($_SERVER['HTTP_REFERER'] != 'send_email.php')
+    if($_SERVER['HTTP_REFERER'] != 'send_email.php')
     {
       header('Location: Recapitulatif.php');
-    }*/
-    
+    }
     /* On vérifie que tous les champs sont remplis */
-    if (empty($civilite) 
+    elseif (empty($civilite) 
            || empty($nom) 
            || empty($expediteur) 
            || empty($sujet) 
@@ -68,7 +59,7 @@ if (isset($_POST['envoye']))
     elseif (!isset($_COOKIE['sent']))
     {
         /* Destinataire (votre adresse e-mail) */
-        $to = 'patient@gmail.com';
+        $to = 'zineb.sen30@gmail.com';
  
         /* Construction du message */
         $msg  = 'Bonjour,'."\r\n\r\n";
@@ -192,5 +183,3 @@ if (!empty($alert))
  
 </body>
 </html>
-
-<?php require 'inc/footer.php'; ?>

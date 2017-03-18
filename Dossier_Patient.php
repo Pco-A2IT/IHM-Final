@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +19,7 @@ include('config.php');
 			$(this).html("<font>*</font>"+$this.html());
 		});
 	    });
-        </script>  //ajoute le rouge * pour les champs obligatoires
+        </script>  //ajoute le rouge * pour les champs obligatoires   
 
     </head>
     
@@ -147,10 +143,10 @@ include('config.php');
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left" class="required"> 
+                                            <td align="left"> 
                                                 <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
-                                            <td align="left" class="required"> 
+                                            <td align="left"> 
                                                 <input type="text" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
@@ -166,7 +162,6 @@ include('config.php');
                                             </td>
                                             <td align="left" class="required"> 
                                                 <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
-                                            </td>
                                         </tr> 
                                         <tr>
                                             <td align="left" colspan="2"> 
@@ -235,8 +230,6 @@ include('config.php');
     </body>
 
 </html>
-
-<?php require 'inc/footer.php'; ?>
 
      <script>
          
