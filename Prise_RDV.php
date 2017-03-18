@@ -56,9 +56,13 @@
                         while ($donnees = $req->fetch()){
                             $nom_p=$donnees['nom_p'];
                             $prenom_p=$donnees['prenom_p'];
+                            $telephone_p=$donnees['telephone_p'];
+                            $ville_p=$donnees['ville_p'];
+                            $codePostal_p=$donnees['codePostal_p'];
+                            $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?></h1><br>
+                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h1>
                     <div id="container"> 
                   
                         <br><br>

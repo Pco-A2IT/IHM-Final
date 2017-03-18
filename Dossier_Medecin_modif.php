@@ -97,57 +97,59 @@ $req->closeCursor();
                     <table align="left" cellspacing="5px" class="table" id="modif">
                             <tr>
                             <td align="right">Nom:</td> 
-                            <td align="left"><input type="text" name="nom_m" placeholder="<?php echo $nom_m ?>" /></td>
+                            <td align="left"><input type="text" name="nom_m" value="<?php echo $nom_m ?>" /></td>
                             </tr>
                             <tr>
                             <td align="right">Prénom:</td> 
-                            <td align="left"><input type="text" name="prenom_m" placeholder="<?php echo $prenom_m ?>" /></td>
+                            <td align="left"><input type="text" name="prenom_m" value="<?php echo $prenom_m ?>" /></td>
                             </tr>  
                             <tr> 
                             <td align="right">Mail:</td>
                             <td align="left">
-                                <input type="mail" name="mail_m" placeholder="<?php echo $mail_m ?>" id="email" /></td> 
+                                <input type="mail" name="mail_m" value="<?php echo $mail_m ?>" id="email" /></td> 
                             </tr> 
                             <tr> 
                             <td align="right">Téléphone:</td> 
                             <td align="left"> 
-                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" placeholder="<?php echo $telephone_m ?>" /> 
+                            <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_m" value="<?php echo $telephone_m ?>" /> 
                             </td> 
                             </tr> 
                     </table> 
 
                     <table align="right" cellspacing="5px" class="table" id="modif">
-                            <tr> 
-                            <td align="right"> Centre: 
+                                                        <tr> 
+                            <td align="right"> Service/Centre d'examen: * 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="<?php echo $centre_m; ?>" />
+                            <input type="text" name="service_m" value="<?php echo $service_m ?>" />
                             </td>
                             </tr>
+                        
                             <tr> 
-                            <td align="right"> Service: 
+                            <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="service_m" placeholder="<?php echo $service_m ?>" />
+                            <input type="text" name="centre_m" value="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
+
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_m" placeholder="<?php echo $codePostal_m ?>" /> 
+                            <input type="text"  id="p" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
                             </td> 
                             </tr> 
                             <tr> 
                             <td align="right">Ville:</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_m" placeholder="<?php echo $ville_m ?>"/> 
+                            <input type="text" name="ville_m" value="<?php echo $ville_m ?>"/> 
                             </td> 
                             </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="<?php echo $adresse_m ?>" />
+                            <input type="text" name="adresse_m" value="<?php echo $adresse_m ?>" />
                             </td> 
                             </tr>
                             <tr>

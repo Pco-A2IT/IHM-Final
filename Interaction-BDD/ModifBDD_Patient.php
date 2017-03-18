@@ -116,7 +116,7 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
         $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
@@ -147,7 +147,7 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'A renseigner\',\'00000\',\'A renseigner\',\'A renseigner\')');
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin ,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL ,0,?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
         $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();;
     }

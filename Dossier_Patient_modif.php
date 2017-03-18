@@ -65,7 +65,7 @@ $req->closeCursor();
    
     <div class="gris">
         <div  class="gris2">
-            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?>" id= "form" class ="form" method="post"> 
+            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $_GET['id_patient']; ?> " id= "form" class ="form" method="post"> 
             <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                 <h4>Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -99,7 +99,7 @@ $req->closeCursor();
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?></h1><br>
+                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?>
                     </div>
         
                 <div id="container">
@@ -265,7 +265,6 @@ $req->closeCursor();
                             <td><?php echo "NC"; ?></td>
                             
         <?php }else{ ?>
-                            <?php echo "on entre dans la boucle"; ?>
                             <td><?php echo $donnees["date_examen"]; ?></td>
                             <td><?php echo $donnees["heure_examen"]; ?></td>
         <?php } ?>
