@@ -83,7 +83,7 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL, \'A renseigner\' ,? , ?,\'A renseigner\', \'00:00:00\',\' 00:00:00\',\'A renseigner\' ,\'00000\',\'A renseigner\',\'A renseigner\' )');
+        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL, \'NC\' ,? , ?,\'NC\', \'00:00\',\' 00:00\',\'NC\' ,\'NC\',\'NC\',\'NC\' )');
         $reqSer->execute(array($centre_m, $service_m));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_service=$bdd->lastInsertId();
