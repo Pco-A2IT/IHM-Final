@@ -56,9 +56,13 @@
                         while ($donnees = $req->fetch()){
                             $nom_p=$donnees['nom_p'];
                             $prenom_p=$donnees['prenom_p'];
+                            $telephone_p=$donnees['telephone_p'];
+                            $ville_p=$donnees['ville_p'];
+                            $codePostal_p=$donnees['codePostal_p'];
+                            $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?></h1><br>
+                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h1>
                     <div id="container"> 
                   
                         <br><br>
@@ -246,7 +250,7 @@
                                    
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="date" name="date" type="date" value=""/></td>
+                                        <td><label for="date"></label><input id="valeur" name="date" type="date" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
                                         <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
                                     </form>
@@ -278,4 +282,28 @@
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+<!--
+function verif(){
+    var date_pas_sure = document.getElementById('valeur').value;
+    var format = /^(\d{1,2}\/){2}\d{4}$/;
+    if(!format.test(date_pas_sure)){alert('Date non valable !')}
+    else{
+        var date_temp = date_pas_sure.split('/');
+        date_temp[1] -=1;        // On rectifie le mois !!!
+        var ma_date = new Date();
+        ma_date.setFullYear(date_temp[2]);
+        ma_date.setMonth(date_temp[1]);
+        ma_date.setDate(date_temp[0]);
+        if(ma_date.getFullYear()==date_temp[2] && ma_date.getMonth()==date_temp[1] && ma_date.getDate()==date_temp[0]){
+            alert('Date valable !');
+        }
+        else{
+            alert('Date non valable !');
+        }
+    }
+}
+//-->
+</script>
     

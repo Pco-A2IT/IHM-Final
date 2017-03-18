@@ -3,7 +3,65 @@
 include('../config.php');
 
   
+///////////////////////////////////
+/*Récupération des champs formulaires*/
+///////////////////////////////////
 
+if($_POST['nom_m']==""){
+    $nom_m="NC";
+}
+else{
+    $nom_m=$_POST['nom_m'];
+}
+
+if($_POST['prenom_m']==""){
+    $prenom_m="NC";
+}
+else{
+    $prenom_m=$_POST['prenom_m'];
+}
+
+if($_POST['email_m']==""){
+    $email_m="NC";
+}
+else{
+    $email_m=$_POST['email_m'];
+}
+
+if($_POST['ville_m']==""){
+    $ville_m="NC";
+}
+else{
+    $ville_m=$_POST['ville_m'];
+}
+
+if($_POST['codePostal_m']==""){
+    $codePostal_m="NC";
+}
+else{
+    $codePostal_m=$_POST['codePostal_m'];
+}
+
+if($_POST['adresse_m']==""){
+    $adresse_m="NC";
+}
+else{
+    $adresse_m=$_POST['adresse_m'];
+}
+
+if($_POST['telephone_m']==""){
+    $telephone_m="NC";
+}
+else{
+    $telephone_m=$_POST['telephone_m'];
+}
+
+if($_POST['description_m']==""){
+    $description_m="NC";
+}
+else{
+    $description_m=$_POST['description_m'];
+}
 
 ///////////////////////////////////
 /*Récupération des champs service et centre*/
@@ -39,7 +97,7 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL, \'A renseigner\' ,? , ?,\'A renseigner\', \'00:00:00\',\' 00:00:00\',\'A renseigner\' ,\'00000\',\'A renseigner\',\'A renseigner\' )');
+        $reqSer = $bdd->prepare('INSERT INTO Service(id_service, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s) VALUES(NULL ,? , ?,\'NC\', \'00:00\',\' 00:00\',\'NC\' ,\'NC\',\'NC\',\'NC\' )');
         $reqSer->execute(array($centre_m, $service_m));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_service=$bdd->lastInsertId();
@@ -72,7 +130,7 @@ echo "essai".$id_service;
 $req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m, description_m) VALUES(NULL ,?, ?,?,?,?,?,?,?, ?)');
 
 
-$req->execute(array( $id_service, $_POST['nom_m'], $_POST['prenom_m'], $_POST['email_m'],  $_POST['ville_m'],  $_POST['codePostal_m'],$_POST['adresse_m'] ,$_POST['telephone_m'], $_POST['description_m']));
+$req->execute(array( $id_service, $nom_m, $prenom_m, $email_m,  $ville_m,  $codePostal_m, $adresse_m ,$telephone_m, $description_m));
 
 
 
