@@ -4,7 +4,8 @@
 <html>
 <head>
     <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -262,11 +263,17 @@ jQuery(document).ready(function() {
                                         ?>
                                    
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                        
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="datepick" name="date" class="datepick" type="date"  value=""/></td>
+                                        <td><label for="date"></label><input id="valeur" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
                                         <span id="erreurdate"></span>
+                                        
+                                        
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                        <span id="Champ_cache_1">
+                                                  <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td> 
+                                        </span>
+                                        
                                     </form>
                                 </tr>
                             
@@ -297,16 +304,32 @@ jQuery(document).ready(function() {
 </body>
 </html>
 <script language="JavaScript">
+   
+document.getElementById("Champ_cache_1").style.display = "block";
+console.log("Bouton afficher");
+function Afficher_1()
+{   
+    document.getElementById("Champ_cache_1").style.display = "block";
+}
+function Cacher_1()
+{   
+    document.getElementById("Champ_cache_1").style.display = "none";
+    document.getElementById('Champ_cache_1').disabled= true;
+    console.log("Bouton caché");
+}
+    
 function verifDate(champ)
 {
 	var date = new Date();
 	var date_n = document.getElementById('valeur').value;
 	var date2 = new Date(date_n);
-	if(date2 < date){
+	if(date2 > date){
 		document.getElementById('erreurdate').innerHTML = 'OK';
+        Afficher_1();
 		return true;
 	}else{
-	  document.getElementById('erreurdate').innerHTML = 'Pas OK';
+        document.getElementById('erreurdate').innerHTML = 'Pas OK';
+        Cacher_1();
       return false;
 	}
 }
