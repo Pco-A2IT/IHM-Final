@@ -4,8 +4,6 @@
 <html>
 <head>
     <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -263,7 +261,7 @@ jQuery(document).ready(function() {
                                                 if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                         ?>
                                    
-                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> &amp; numname= <?php echo $donnees["id_service"];?> " method="post">
                                         
                                         <td><?php echo $dnn['typeExamen'] ?></td>
                                         <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
