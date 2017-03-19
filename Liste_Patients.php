@@ -69,7 +69,7 @@
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Retour" >
+                        <input  type="submit"  value="Afficher liste complète" >
                     </form>
                 <style>
                                         #divConteneur{
