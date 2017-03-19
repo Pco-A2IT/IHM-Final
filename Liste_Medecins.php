@@ -1,8 +1,5 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+<?php
+   include('config.php');
 ?>
 
 <html>
@@ -47,13 +44,10 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+         
             
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Médecins</h1>
@@ -82,7 +76,7 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Retour" >
+                        <input  type="submit"  value="Afficher liste complète" >
 
                 </form> 
                 <style>
@@ -137,7 +131,6 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
                            <td><?php print_r($dnn['mail_m']); ?></td>
-                           <td><?php print_r($dnn['id_service']); ?></td>
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
                             <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
@@ -166,5 +159,3 @@ function sure()
     </div>
 </body>
 </html>
-
-<?php require 'inc/footer.php'; ?>

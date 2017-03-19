@@ -1,10 +1,4 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-?>
-
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -36,14 +30,10 @@ require 'inc/header.php';
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
-               
-               </div>
+       
         </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
@@ -85,14 +75,14 @@ require 'inc/header.php';
                     
                     <table align="right" cellspacing="5px" class="table" style="float:left"> 
                             <tr> 
-                            <td align="right"> Service: 
+                            <td align="right">Service/Centre d'examen: * 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
-                            <td align="right"> Centre: 
+                            <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
@@ -112,7 +102,7 @@ require 'inc/header.php';
                             </td> 
                             </tr> 
                             <tr> 
-                                <td align="right">Ville:</td> 
+                                <td align="right">Ville: *</td> 
                                 <td align="left"> 
                                     <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
@@ -133,9 +123,12 @@ require 'inc/header.php';
        </form>
           </div>
     </div>
-        
+        </div>
             <script src="General.js"></script>
-<?php require 'inc/footer.php'; ?>
+        </body>
+        
+
+</html>
 
      <script>
 

@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,13 +34,9 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
-            </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+       
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Services</h1>
@@ -65,12 +57,12 @@ include('config.php');
             <div class="onglet" id="onglet1">
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
-                                <td align="right">Service/Centre d'examen:</td>
+                                <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
                         </tr>
                         <tr> 
                                 <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
@@ -91,10 +83,10 @@ include('config.php');
                             </td>
                         </tr>
                         <tr>
-                            <td align="right"> Adresse: 
+                            <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
                             </td> 
                         </tr>
                         <tr> 
@@ -104,9 +96,9 @@ include('config.php');
                             </td> 
                         </tr>
                         <tr> 
-                            <td align="right">Ville:</td> 
+                            <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="(ex: Bron)"/> 
+                            <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
                             </td> 
                         </tr>
                         <tr height="60px">
@@ -154,8 +146,6 @@ include('config.php');
     </body>
 
 </html>
-
-<?php require 'inc/footer.php'; ?>
 
      <script>
 

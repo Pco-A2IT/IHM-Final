@@ -1,10 +1,3 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -31,16 +24,13 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris"  style="background-color:#1270B3">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+         
     
     <div class="titre";   style="border-radius: 5px;">
-        <h1 class="titreGauche">Paramètres</h1>
+        <h1 class="titreGauche">Outils</h1>
     </div>
     <div class="blanc"; style="border-radius: 5px;">
           
@@ -57,4 +47,3 @@ include('config.php');
 </body>
 </html>
     
-<?php require 'inc/footer.php'; ?>

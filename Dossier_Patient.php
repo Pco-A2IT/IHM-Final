@@ -1,10 +1,6 @@
-<?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
-?>
-
+<?php
+    include('config.php');
+?> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +10,16 @@ include('config.php');
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-        <title>Nouveau patient</title>    
+        <title>Nouveau patient</title>   
+        
+        <script language="javascript" type="text/javascript">  
+	    $(document).ready(function() {
+		$(".required").each(function() {
+			var $this  = $(this);
+			$(this).html("<font>*</font>"+$this.html());
+		});
+	    });
+        </script>  //ajoute le rouge * pour les champs obligatoires   
 
     </head>
     
@@ -27,8 +32,8 @@ include('config.php');
             <div  class="gris2">
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
-                    <img class="icone_menu" src="Icones/patient_blanc.png"/>
-                </div> 
+                    <img class="icone_menu" src="Icones/patient_blanc.png"/>  
+                </div>
                 <div id="menu1" class="carreGris";>
                     <h4>Suivi</h4>
                     <img class="icone_suivi" src="Icones/recapitulatif.png"/>
@@ -42,13 +47,10 @@ include('config.php');
                     <img class="icone_menu" src="Icones/hopital_blanc.png"/>
                 </div>
                 <div id="menu4" class="carreGris">
-                    <h4>Paramètres</h4>
+                    <h4>Outils</h4>
                     <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
                 </div>
-                <div id="menu5" class="carreGris">
-                    <h4>Logout</h4>
-                    <img class="icone_menu" src="Icones/logout.png"/>      
-                </div>
+             
                 
                 <script src="js/General.js"></script>
                 
@@ -114,7 +116,7 @@ include('config.php');
                                         <tr> 
                                             <td align="right">Téléphone: *</td> 
                                             <td align="left"> 
-                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
+                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off" required/> 
                                             </td> 
                                         </tr> 
                                     </table> 
@@ -138,29 +140,34 @@ include('config.php');
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom"/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left">
+                                                <input type="text" name="ville_m_traitant" placeholder="Ville"/>
+                                            </td>
+                                            <td align="left">
                                                 <input type="text" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/> 
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
-                                            </td>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
                                         </tr> 
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left"> 
+                                                <input type="text" name="ville_m_appelant" placeholder="Ville"/>
+                                            </td>
+                                            <td align="left"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
                                         </tr>
@@ -226,8 +233,6 @@ include('config.php');
     </body>
 
 </html>
-
-<?php require 'inc/footer.php'; ?>
 
      <script>
          

@@ -41,17 +41,17 @@ body{
 .gris2{
     height:620px; 
     width:100px; 
-    padding-top:70px;"
+    padding-top:130px;"
 }
 .carreGris {
     height:77px; 
     width:85px; 
     background-color: #656565; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; 
     margin-left:auto; 
     margin-right:auto; 
     border-radius: 5px;"
-    padding-top:2px;
+    padding-top:10px;
     cursor:pointer;
     
 }
@@ -720,16 +720,6 @@ height: 35px;
 width: 150px;
 } 
 
-.submit { 
-
-font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-padding:10px 15px;
-cursor :hand; 
-color: #ffffff; 
-background-color: #1270B3; 
-border: 0px;
-cursor:pointer;
-} 
 
 .position_submit{
     position: relative;
@@ -804,6 +794,25 @@ input[type="placeholder"]{
  color:red;
     }
 
+input[type="submit"]{
+ background-color: aliceblue;
+ border-radius: 5px;"
+    color:grey;
+    cursor:context-menu;
+    
+    }
+
+.recherche input {
+    cursor:context-menu;
+    color:grey;
+    }
+
+
+input[type="submit"]:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color:black;
+
+}
 .modif input{
     color:red;
 }
@@ -825,6 +834,9 @@ background-color:#eeeeee;
 select option:first-child{color:grey; display: none;}
 select option {color:black;}
 
+.liste {
+color: black;
+}
 
 .liste table a:link {
 	color: #666;
