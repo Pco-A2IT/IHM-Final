@@ -5,7 +5,6 @@ include('../config.php');
 $id_patient=$_GET['id_patient'];
 $id_service=$_GET['idservice'];
 $id_examen=$_GET['idexamen'];
-$id_examen=$_GET['numname'];
 
 
 echo $id_patient;
