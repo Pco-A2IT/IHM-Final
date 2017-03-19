@@ -134,7 +134,6 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
                            <td><?php print_r($dnn['mail_m']); ?></td>
-                           <td><?php print_r($dnn['id_service']); ?></td>
                             <td><?php print_r($dnn['telephone_m']); ?></td>
                             <td><?php print_r($dnn['ville_m']); ?></td>
                             <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>

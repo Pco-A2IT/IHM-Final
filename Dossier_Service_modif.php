@@ -110,11 +110,11 @@ $req->closeCursor();
                     <table align="left" cellspacing="5px" class="table" id="modif">
 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
+                                <td align="right">Hôpital:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 

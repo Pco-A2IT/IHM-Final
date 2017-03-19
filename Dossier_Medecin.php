@@ -79,14 +79,14 @@
                     
                     <table align="right" cellspacing="5px" class="table" style="float:left"> 
                             <tr> 
-                            <td align="right"> Service: 
+                            <td align="right">Service/Centre d'examen: * 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
-                            <td align="right"> Centre: 
+                            <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />

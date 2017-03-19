@@ -32,8 +32,8 @@
             <div  class="gris2">
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
-                    <img class="icone_menu" src="Icones/patient_blanc.png"/>
-                </div> 
+                    <img class="icone_menu" src="Icones/patient_blanc.png"/>  
+                </div>
                 <div id="menu1" class="carreGris";>
                     <h4>Suivi</h4>
                     <img class="icone_suivi" src="Icones/recapitulatif.png"/>
@@ -52,7 +52,7 @@
                 </div>
                 <div id="menu5" class="carreGris">
                     <h4>Logout</h4>
-                    <img class="icone_menu" src="Icones/logout.png"/>      
+                    <img class="icone_menu" src="Icones/logout.png"/>
                 </div>
                 
                 <script src="js/General.js"></script>
@@ -143,28 +143,34 @@
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" name="prenom_m_traitant" placeholder="Prénom" required/>
+                                            <td align="left" class="required"> 
+                                                <input type="text" style="width:140px" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left">
+                                                <input type="text" name="ville_m_traitant" placeholder="Ville"/>
+                                            </td>
+                                            <td align="left">
                                                 <input type="text" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left" class="required"> 
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/> 
+                                                <input type="text" style="width:140px" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/> 
                                             </td>
                                             <td align="left" class="required"> 
-                                                <input type="text" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
+                                                <input type="text" style="width:140px" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
                                         </tr> 
                                         <tr>
-                                            <td align="left" colspan="2"> 
+                                            <td align="left"> 
+                                                <input type="text" name="ville_m_appelant" placeholder="Ville"/>
+                                            </td>
+                                            <td align="left"> 
                                                 <input type="text" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
                                         </tr>
