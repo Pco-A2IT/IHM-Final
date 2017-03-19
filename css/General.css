@@ -41,17 +41,17 @@ body{
 .gris2{
     height:620px; 
     width:100px; 
-    padding-top:70px;"
+    padding-top:130px;"
 }
 .carreGris {
     height:77px; 
     width:85px; 
     background-color: #656565; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; 
     margin-left:auto; 
     margin-right:auto; 
     border-radius: 5px;"
-    padding-top:2px;
+    padding-top:10px;
     cursor:pointer;
     
 }
