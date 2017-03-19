@@ -3,7 +3,8 @@
 ?>
 <html>
 <head>
-   <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+
 </head>
 <body>
     <div class="gris">
@@ -42,6 +43,17 @@
     
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Prise de Rendez-vous</h1>
+            <script>
+
+jQuery(document).ready(function() {
+	jQuery(".datepick").datepicker({
+		minDate: '0'
+	});
+});
+
+
+</script>
+
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
@@ -101,7 +113,7 @@
                         }
                     ?>
                             <td align="center"  colspan="2">
-                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
+                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
                             </td>
                         </form>
                     </div>
@@ -239,27 +251,31 @@
                                         $req4->execute();
                                         $nbcroix=1;
                                         $nbcroixValide=1;
+                                        $cmpt=1;
                                 
                                         //on parcourt les examens cochés ET dispensé par le service considéré
                                         while($dnn= $req4->fetch()){
                                                 if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                         ?>
                                    
-                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> &amp; numname= <?php echo $donnees["id_service"];?> " method="post">
+                                        
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="valeur" name="date" type="date" value=""/></td>
+                                        <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post"/></td>
+                                        <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
+                                        
                                     </form>
                                 </tr>
                             
                                     <tr>
                                     <?php 
-                                                $nbcroixValide=$nbcroixValide+1;
-                                            }
-                                            $nbcroix=$nbcroix+1;
-                                    }
-                                    $nb=$nb+1;
+                                                    $nbcroixValide=$nbcroixValide+1;
+                                                }
+                                                $nbcroix=$nbcroix+1;
+                                        }
+                                        $nb=$nb+1;
                                     ///////////////////////////////////////////////////////////////////////
                         }
                     }
@@ -279,28 +295,44 @@
     </div>
 </body>
 </html>
+<script language="JavaScript">
+    
+//document.getElementsByClassName("validation").disabled= true;   
+//document.getElementById("Champ_cache_1").style.display = "none";
+console.log("Bouton afficher");
 
-<script type="text/javascript">
-<!--
-function verif(){
-    var date_pas_sure = document.getElementById('valeur').value;
-    var format = /^(\d{1,2}\/){2}\d{4}$/;
-    if(!format.test(date_pas_sure)){alert('Date non valable !')}
-    else{
-        var date_temp = date_pas_sure.split('/');
-        date_temp[1] -=1;        // On rectifie le mois !!!
-        var ma_date = new Date();
-        ma_date.setFullYear(date_temp[2]);
-        ma_date.setMonth(date_temp[1]);
-        ma_date.setDate(date_temp[0]);
-        if(ma_date.getFullYear()==date_temp[2] && ma_date.getMonth()==date_temp[1] && ma_date.getDate()==date_temp[0]){
-            alert('Date valable !');
-        }
-        else{
-            alert('Date non valable !');
-        }
-    }
+function Afficher_1(id)
+{ 
+    console.log('valider'+id);
+    
+    document.getElementById('valider'+id).disabled= false;
 }
-//-->
+function Cacher_1(id)
+{   
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= true;
+    //console.log("Bouton caché");
+}
+    
+function verifDate(champ)
+{
+    id=champ.id;
+    console.log(id);
+	var date = new Date();
+	var date_n = document.getElementById(id).value;
+    console.log(date_n);
+	var date2 = new Date(date_n);
+	if(date2 > date){
+		document.getElementById('erreurdate'+id).innerHTML = '';
+        Afficher_1(id);
+		return true;
+	}else{
+        document.getElementById('erreurdate'+id).innerHTML = 'Date déjà passée';
+        Cacher_1(id);
+      return false;
+	}
+}
 </script>
+
+
     
