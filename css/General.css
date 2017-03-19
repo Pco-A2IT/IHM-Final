@@ -226,8 +226,14 @@ input[type=button]{
 	text-decoration:none;
     margin-top:10px;
     margin-left:10px;
-    cursor: pointer;
+    cursor: copy;
+    border-radius: 5px;
     background-color: #1270b3
+}
+
+.myButton1:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color:black;
 }
 
 #btn1{
