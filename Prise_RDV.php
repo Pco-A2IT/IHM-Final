@@ -3,7 +3,9 @@
 ?>
 <html>
 <head>
-   <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="gris">
@@ -45,6 +47,17 @@
     
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Prise de Rendez-vous</h1>
+            <script>
+
+jQuery(document).ready(function() {
+	jQuery(".datepick").datepicker({
+		minDate: '0'
+	});
+});
+
+
+</script>
+
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
@@ -250,7 +263,8 @@
                                    
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="valeur" name="date" type="date" value=""/></td>
+                                        <td><label for="date"></label><input id="datepick" name="date" class="datepick" type="date"  value=""/></td>
+                                        <span id="erreurdate"></span>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
                                         <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
                                     </form>
@@ -282,28 +296,21 @@
     </div>
 </body>
 </html>
-
-<script type="text/javascript">
-<!--
-function verif(){
-    var date_pas_sure = document.getElementById('valeur').value;
-    var format = /^(\d{1,2}\/){2}\d{4}$/;
-    if(!format.test(date_pas_sure)){alert('Date non valable !')}
-    else{
-        var date_temp = date_pas_sure.split('/');
-        date_temp[1] -=1;        // On rectifie le mois !!!
-        var ma_date = new Date();
-        ma_date.setFullYear(date_temp[2]);
-        ma_date.setMonth(date_temp[1]);
-        ma_date.setDate(date_temp[0]);
-        if(ma_date.getFullYear()==date_temp[2] && ma_date.getMonth()==date_temp[1] && ma_date.getDate()==date_temp[0]){
-            alert('Date valable !');
-        }
-        else{
-            alert('Date non valable !');
-        }
-    }
+<script language="JavaScript">
+function verifDate(champ)
+{
+	var date = new Date();
+	var date_n = document.getElementById('valeur').value;
+	var date2 = new Date(date_n);
+	if(date2 < date){
+		document.getElementById('erreurdate').innerHTML = 'OK';
+		return true;
+	}else{
+	  document.getElementById('erreurdate').innerHTML = 'Pas OK';
+      return false;
+	}
 }
-//-->
 </script>
+
+
     
