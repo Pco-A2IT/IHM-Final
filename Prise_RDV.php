@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
                         }
                     ?>
                             <td align="center"  colspan="2">
-                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
+                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
                             </td>
                         </form>
                     </div>
@@ -256,6 +256,7 @@ jQuery(document).ready(function() {
                                         $req4->execute();
                                         $nbcroix=1;
                                         $nbcroixValide=1;
+                                        $cmpt=1;
                                 
                                         //on parcourt les examens cochés ET dispensé par le service considéré
                                         while($dnn= $req4->fetch()){
@@ -265,25 +266,21 @@ jQuery(document).ready(function() {
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
                                         
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="valeur" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
-                                        <span id="erreurdate"></span>
-                                        
-                                        
+                                        <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <span id="Champ_cache_1">
-                                                  <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td> 
-                                        </span>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post"/></td>
+                                        <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
                                         
                                     </form>
                                 </tr>
                             
                                     <tr>
                                     <?php 
-                                                $nbcroixValide=$nbcroixValide+1;
-                                            }
-                                            $nbcroix=$nbcroix+1;
-                                    }
-                                    $nb=$nb+1;
+                                                    $nbcroixValide=$nbcroixValide+1;
+                                                }
+                                                $nbcroix=$nbcroix+1;
+                                        }
+                                        $nb=$nb+1;
                                     ///////////////////////////////////////////////////////////////////////
                         }
                     }
@@ -304,32 +301,39 @@ jQuery(document).ready(function() {
 </body>
 </html>
 <script language="JavaScript">
-   
-document.getElementById("Champ_cache_1").style.display = "block";
+    
+//document.getElementsByClassName("validation").disabled= true;   
+//document.getElementById("Champ_cache_1").style.display = "none";
 console.log("Bouton afficher");
-function Afficher_1()
-{   
-    document.getElementById("Champ_cache_1").style.display = "block";
+
+function Afficher_1(id)
+{ 
+    console.log('valider'+id);
+    
+    document.getElementById('valider'+id).disabled= false;
 }
-function Cacher_1()
+function Cacher_1(id)
 {   
-    document.getElementById("Champ_cache_1").style.display = "none";
-    document.getElementById('Champ_cache_1').disabled= true;
-    console.log("Bouton caché");
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= true;
+    //console.log("Bouton caché");
 }
     
 function verifDate(champ)
 {
+    id=champ.id;
+    console.log(id);
 	var date = new Date();
-	var date_n = document.getElementById('valeur').value;
+	var date_n = document.getElementById(id).value;
+    console.log(date_n);
 	var date2 = new Date(date_n);
 	if(date2 > date){
-		document.getElementById('erreurdate').innerHTML = 'OK';
-        Afficher_1();
+		document.getElementById('erreurdate'+id).innerHTML = '';
+        Afficher_1(id);
 		return true;
 	}else{
-        document.getElementById('erreurdate').innerHTML = 'Pas OK';
-        Cacher_1();
+        document.getElementById('erreurdate'+id).innerHTML = 'Date déjà passée';
+        Cacher_1(id);
       return false;
 	}
 }
