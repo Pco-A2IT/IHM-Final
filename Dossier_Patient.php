@@ -1,6 +1,7 @@
-<?php
-    include('config.php');
-?> 
+<?php 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,8 +11,8 @@
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
-        <title>Nouveau patient</title>   
-        
+        <title>Nouveau patient</title>    
+
         <script language="javascript" type="text/javascript">  
 	    $(document).ready(function() {
 		$(".required").each(function() {
@@ -19,8 +20,7 @@
 			$(this).html("<font>*</font>"+$this.html());
 		});
 	    });
-        </script>  //ajoute le rouge * pour les champs obligatoires   
-
+        </script>  //ajoute le rouge * pour les champs obligatoires 
     </head>
     
     <body>
@@ -32,8 +32,8 @@
             <div  class="gris2">
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
-                    <img class="icone_menu" src="Icones/patient_blanc.png"/>  
-                </div>
+                    <img class="icone_menu" src="Icones/patient_blanc.png"/>
+                </div> 
                 <div id="menu1" class="carreGris";>
                     <h4>Suivi</h4>
                     <img class="icone_suivi" src="Icones/recapitulatif.png"/>
@@ -47,10 +47,13 @@
                     <img class="icone_menu" src="Icones/hopital_blanc.png"/>
                 </div>
                 <div id="menu4" class="carreGris">
-                    <h4>Outils</h4>
+                    <h4>Paramètres</h4>
                     <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
                 </div>
-             
+                <div id="menu5" class="carreGris">
+                    <h4>Logout</h4>
+                    <img class="icone_menu" src="Icones/logout.png"/>      
+                </div>
                 
                 <script src="js/General.js"></script>
                 
@@ -116,7 +119,7 @@
                                         <tr> 
                                             <td align="right">Téléphone: *</td> 
                                             <td align="left"> 
-                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off" required/> 
+                                                <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
                                             </td> 
                                         </tr> 
                                     </table> 
@@ -140,35 +143,35 @@
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left" class="required"> 
-                                                <input type="text" style="width:140px" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
+                                            <td align="left"> 
+                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
                                             </td>
-                                            <td align="left" class="required"> 
-                                                <input type="text" style="width:140px" name="prenom_m_traitant" placeholder="Prénom" required/>
+                                            <td align="left"> 
+                                                <input type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom"/>
                                             </td>    
                                         </tr>
                                         <tr>
                                             <td align="left">
-                                                <input type="text" name="ville_m_traitant" placeholder="Ville"/>
+                                                <input type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville"/>
                                             </td>
-                                            <td align="left">
-                                                <input type="text" name="mail_m_traitant" placeholder="Mail"/>
+                                            <td align="left"> 
+                                                <input type="text" id="mail_m_traitant" name="mail_m_traitant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
-                                            <td align="left" class="required"> 
-                                                <input type="text" style="width:140px" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a" required/> 
+                                            <td align="left">             <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
-                                            <td align="left" class="required"> 
-                                                <input type="text" style="width:140px" name="prenom_m_appelant" placeholder="Prénom" list="a" required/> 
+                                            <td align="left"> 
+                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                                            </td>
                                         </tr> 
                                         <tr>
-                                            <td align="left"> 
-                                                <input type="text" name="ville_m_appelant" placeholder="Ville"/>
+                                             <td align="left"> 
+                                                <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="Ville"/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" name="mail_m_appelant" placeholder="Mail"/>
+                                                <input type="text" id="mail_m_appelant" name="mail_m_appelant" placeholder="Mail"/>
                                             </td>
                                         </tr>
                                         <tr height="60px">
@@ -222,17 +225,79 @@
                 //utilisation de jQuery :
                 $(function($)   {
                     $('#nom_m_appelant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
+                         source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionMedecin.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#nom_m_appelant").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#nom_m_appelant" ).val( obj.nom_m )
+	                       $( "#prenom_m_appelant" ).val( obj.prenom_m);
+	                       $( "#mail_m_appelant" ).val( obj.mail_m);
+	                       $( "#ville_m_appelant" ).val( obj.ville_m );
+	                       return false;
+                    }
+				});
                     $('#nom_m_traitant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
+                        source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionMedecin.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#nom_m_traitant").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#nom_m_traitant" ).val( obj.nom_m )
+	                       $( "#prenom_m_traitant" ).val( obj.prenom_m);
+	                       $( "#mail_m_traitant" ).val( obj.mail_m);
+	                       $( "#ville_m_traitant" ).val( obj.ville_m );
+	                       return false;
+                    }
+				}); 
                 });
             </script>  
          <script src="General.js"></script>
     </body>
 
 </html>
+
+<?php require 'inc/footer.php'; ?>
 
      <script>
          
