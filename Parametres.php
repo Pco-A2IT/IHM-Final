@@ -1,3 +1,10 @@
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -47,3 +54,4 @@
 </body>
 </html>
     
+<?php require 'inc/footer.php'; ?>
