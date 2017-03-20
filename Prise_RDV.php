@@ -258,12 +258,12 @@ jQuery(document).ready(function() {
                                                 if($donnees[$dnn['typeExamen']]=="YES" && isset($_POST[$nbcroix])){
                                         ?>
                                    
-                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> &amp; numname= <?php echo $donnees["id_service"];?> " method="post">
+                                    <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
                                         
                                         <td><?php echo $dnn['typeExamen'] ?></td>
                                         <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
-                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post"/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post" /></td>
                                         <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
                                         
                                     </form>
@@ -304,13 +304,15 @@ console.log("Bouton afficher");
 function Afficher_1(id)
 { 
     console.log('valider'+id);
-    
     document.getElementById('valider'+id).disabled= false;
+    document.getElementById('valider'+id).style.background="#1270B3";
 }
 function Cacher_1(id)
 {   
     console.log('valider'+id);
     document.getElementById('valider'+id).disabled= true;
+    document.getElementById('valider'+id).style.background="red";
+    
     //console.log("Bouton caché");
 }
     
@@ -323,7 +325,7 @@ function verifDate(champ)
     console.log(date_n);
 	var date2 = new Date(date_n);
 	if(date2 > date){
-		document.getElementById('erreurdate'+id).innerHTML = '';
+		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne';
         Afficher_1(id);
 		return true;
 	}else{
