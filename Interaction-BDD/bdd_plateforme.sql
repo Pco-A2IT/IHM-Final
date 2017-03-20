@@ -24,11 +24,11 @@ USE bdd_plateforme;
 DROP TABLE IF EXISTS `Patient`;
 CREATE TABLE `Patient` (
   `id_patient` int(11) NOT NULL auto_increment,
-  `date_ait_p` date NOT NULL DEFAULT '0000-00-00',  
+  `date_ait_p` date,  
   `nom_p` varchar(250) NOT NULL DEFAULT '',
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
   `civilite_p` enum('M.','Mme') NOT NULL DEFAULT 'M.',
-  `date_naissance` date NOT NULL DEFAULT '0000-00-00',    
+  `date_naissance` date,    
   `mail_p` varchar(255) NOT NULL DEFAULT '',      
   `telephone_p` varchar(255) NOT NULL DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
@@ -115,12 +115,11 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `Service`;
 CREATE TABLE `Service` (
   `id_service` int(11) NOT NULL auto_increment,
-  /*`numSiret` varchar(255) NOT NULL DEFAULT '',*/
   `centre_s` varchar(255) NOT NULL DEFAULT '',
   `nom_s` varchar(255) NOT NULL DEFAULT '',
   `telephone_s` varchar(255) NOT NULL DEFAULT '',
-  `horairesd_s` time NOT NULL DEFAULT '00:00:00',
-  `horairesf_s` time NOT NULL DEFAULT '00:00:00',
+  `horairesd_s` time NOT NULL DEFAULT '00:00',
+  `horairesf_s` time NOT NULL DEFAULT '00:00',
   `adresse_s` varchar(255) NOT NULL DEFAULT '',  
   `codePostal_s` varchar(255) NOT NULL DEFAULT '', 
   `ville_s` varchar(255) NOT NULL DEFAULT '',
@@ -171,13 +170,11 @@ DROP TABLE IF EXISTS `Examen_patient`;
 CREATE TABLE `Examen_patient` (
   `id_examen` int(11) NOT NULL,  
   `id_patient` int(11) NOT NULL,
-  /*`num_siret` int(11) NOT NULL, */
+    `id_service` int(11) NOT NULL,
   `date_examen` date default '0000-00-00',  
-  `heure_examen` varchar(255) DEFAUlT '', 
-  `planifie` enum('YES','NO') NOT NULL, 
+  `heure_examen` varchar(255) DEFAUlT '',
   `effectue` enum('YES','NO') NOT NULL,
-  KEY `id_examen` (`id_examen`),
-  KEY `id_patient` (`id_patient`)
+    PRIMARY KEY  (`id_examen`, `id_patient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -186,10 +183,9 @@ CREATE TABLE `Examen_patient` (
 
 
 /*!40000 ALTER TABLE `Examen_patient` DISABLE KEYS */;
+
 LOCK TABLES `Examen_patient` WRITE;
-INSERT INTO `Examen_patient` VALUES (1,1,'','','NO','NO'),(2,1,'1995-08-25','14h','YES','NO'),(3,1,'1995-08-22','10h','YES','YES'),(1,2,'1995-03-22','17h','YES','YES');
 UNLOCK TABLES;
-/*!40000 ALTER TABLE `Examen_patient` ENABLE KEYS */;
 
 
 
@@ -203,3 +199,15 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(255) DEFAUlT '', 
+  `email` varchar(255) DEFAUlT '',
+  `password` varchar(255) DEFAUlT '',
+  `confirmation_token` varchar(60) DEFAUlT '',
+  `confirmed_at` DATETIME,
+  `last_connection` DATETIME,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -30,13 +30,10 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+        
             
             <script src="js/General.js"></script>
                 <div class="titre"; style="border-radius: 5px;">
@@ -91,7 +88,7 @@
                                             $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
                                             $req3->execute(array($id_patient));
                                             while($dnn3= $req3->fetch()){
-                                                if($dnn3["realise"]==true && strtotime($dnn3["date_examen"]) <= strtotime(date("Y-m-d")) ){
+                                                if($dnn3["effectue"]==true && strtotime($dnn3["date_examen"]) <= strtotime(date("Y-m-d")) ){
                                                     $patientaAfficher=true;
                                                 }
                                             }
@@ -183,7 +180,7 @@
                                             $req51->execute(array($id_patient, $dnn5["id_examen"]));
                                             while($dnn51= $req51->fetch()){
                                                 if(strtotime($dnn51["date_examen"]) <= strtotime(date("Y-m-d")) ){
-                                                    if($dnn51["realise"] == "YES"){
+                                                    if($dnn51["effectue"] == "YES"){
                                     ?>
                                                         <td><input type="checkbox" id="choix3_ligne1" value="0" class="regular-checkbox small-checkbox" checked/><label for="choix3_ligne2" ></label>Réalisé
                                                         <input type="checkbox" id="choix3_ligne2" value="1" class="regular-checkbox small-checkbox" /><label for="choix3_ligne2"></label>Non effectué</td>

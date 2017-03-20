@@ -34,19 +34,14 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
-            </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+       
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Services</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>    
@@ -62,12 +57,12 @@
             <div class="onglet" id="onglet1">
                     <table  cellspacing="5px" class="table" style="float:left"> 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/>
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" required/>
+                                <td align="right">Hôpital:</td>
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone:</td>
@@ -80,18 +75,18 @@
                             <td>Horaires ouverture</td>
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
-                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="text"  placeholder="h"> :
-                                <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="mn"> 
-                                à
-                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="h"> :
-                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="mn">
+                                
+                                <input id="heured" name="heured" type="time" value=""/> 
+                                <br> à <br>
+                                <input id="heuref" name="heuref" type="time" value=""/>
+                                
                             </td>
                         </tr>
                         <tr>
-                            <td align="right"> Adresse: 
+                            <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off"/>
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
                             </td> 
                         </tr>
                         <tr> 
@@ -101,9 +96,9 @@
                             </td> 
                         </tr>
                         <tr> 
-                            <td align="right">Ville:</td> 
+                            <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="(ex: Bron)"/> 
+                            <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
                             </td> 
                         </tr>
                         <tr height="60px">
@@ -114,6 +109,7 @@
                     </table>
                 
              </div>
+              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                 
             <div class="onglet" id="onglet3">
                 <div class="position_table">

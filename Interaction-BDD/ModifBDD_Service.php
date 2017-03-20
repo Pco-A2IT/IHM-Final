@@ -14,12 +14,7 @@ echo $idservice;
 $req = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
 $req->execute(array($idservice));
 while ($donnees = $req->fetch())
-{   
-    
-    if($_POST['siret_s']==''){$siret_s= $donnees['numSiret'];}//s'il ne l'est pas la variable prend la valeur déjà existante dans la bdd
-    else{$siret_s=$_POST['siret_s'];}
-    echo $siret_s;//si le champ est rempli on modifie la bdd
-    
+{       
     if($_POST['centre_s']==''){$centre_s= $donnees['centre_s'];}
     else{$centre_s=$_POST['centre_s'];}
     echo $centre_s;
@@ -44,44 +39,7 @@ while ($donnees = $req->fetch())
     else{$description_s=$_POST['description_s'];}
     echo $description_s;
     
-    /* Horaire ouverture*/
-    $horairesd_s=$donnees['horairesd_s'];
-    if($_POST['heured']=="" && $_POST['mind']==""){
-        $horairesd_s= $donnees['horairesd_s'];
-    }
-    else{
-        if($_POST['heured']==""){
-            $horairesd_s=strftime("%H",strtotime($horairesd_s)).":". $_POST['mind'].":00";
-        }
-        else{
-            if($_POST['mind']==""){
-                $horairesd_s= $_POST['heured'].":".strftime("%M",strtotime($horairesd_s)).":00";
-            }
-            else{
-                $horairesd_s= $_POST['heured'].":".$_POST['mind'].":00";
-            }
-            
-        }
-    }
-    /* Horaire fermeture*/
-    $horairesf_s=$donnees['horairesf_s'];
-    if($_POST['heuref']=="" && $_POST['minf']==""){
-        $horairesf_s= $donnees['horairesf_s'];
-    }
-    else{
-        if($_POST['heuref']==""){
-            $horairesf_s=strftime("%H",strtotime($horairesf_s)).":". $_POST['minf'].":00";
-        }
-        else{
-            if($_POST['minf']==""){
-                $horairesf_s= $_POST['heuref'].":".strftime("%M",strtotime($horairesf_s)).":00";
-            }
-            else{
-                $horairesf_s= $_POST['heuref'].":".$_POST['minf'].":00";
-            }
-            
-        }
-    }
+    
     
 }
            
@@ -92,13 +50,12 @@ while ($donnees = $req->fetch())
 ///////////////////////////
 
 
-$req1 = $bdd->prepare('UPDATE service SET numSiret=:nv_NumSiret, centre_s = :nv_centre_s, telephone_s= :nv_telephone_s, horairesd_s= :nv_horairesd_s, horairesf_s= :nv_horairesf_s, adresse_s = :nv_adresse_s, codePostal_s = :nv_codePostal_s, ville_s = :nv_ville_s, description_s= :nv_description_s WHERE id_service = :jointure');
+$req1 = $bdd->prepare('UPDATE service SET centre_s = :nv_centre_s, telephone_s= :nv_telephone_s, horairesd_s= :nv_horairesd_s, horairesf_s= :nv_horairesf_s, adresse_s = :nv_adresse_s, codePostal_s = :nv_codePostal_s, ville_s = :nv_ville_s, description_s= :nv_description_s WHERE id_service = :jointure');
 $req1->execute(array(
-	'nv_NumSiret' => $siret_s,
     'nv_centre_s' => $centre_s,
     'nv_telephone_s' => $telephone_s,
-    'nv_horairesd_s' => $horairesd_s,
-    'nv_horairesf_s' => $horairesf_s,
+    'nv_horairesd_s' => $_POST['heured'],
+    'nv_horairesf_s' => $_POST['heuref'],
     'nv_adresse_s' => $adresse_s,
     'nv_codePostal_s' => $codePostal_s,
     'nv_ville_s' => $ville_s,
@@ -132,6 +89,6 @@ while($dnn = $req2->fetch()){
 /*Retour vers le dossier service avec modification prise en compte*/
 ///////////////////////////
 
-//header('Location: ../Liste_Services.php');
+header('Location: ../Liste_Services.php');
 
 ?>

@@ -30,14 +30,10 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
-               
-               </div>
+       
         </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
@@ -47,7 +43,6 @@
             <div class="blanc";   style="border-radius: 5px;">
                 
                  <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
-                 <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                 <div class="section4">
                     <div class="div1">
                         <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
@@ -58,11 +53,11 @@
                     <table cellspacing="5px" class="table" style="float:left"> 
                             
                             <tr>
-                            <td align="right">Nom:</td> 
+                            <td align="right">Nom: *</td> 
                             <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" autocomplete="off" required/></td>
                             </tr>
                             <tr>
-                            <td align="right">Prénom:</td> 
+                            <td align="right">Prénom: *</td> 
                             <td align="left"><input type="text" name="prenom_m" placeholder="(ex: Marion)" autocomplete="off" required/></td>
                             </tr>  
                             <tr> 
@@ -80,14 +75,14 @@
                     
                     <table align="right" cellspacing="5px" class="table" style="float:left"> 
                             <tr> 
-                            <td align="right"> Service: 
+                            <td align="right">Service/Centre d'examen: * 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
-                            <td align="right"> Centre: 
+                            <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
                             <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
@@ -107,7 +102,7 @@
                             </td> 
                             </tr> 
                             <tr> 
-                                <td align="right">Ville:</td> 
+                                <td align="right">Ville: *</td> 
                                 <td align="left"> 
                                     <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
@@ -122,7 +117,7 @@
                     
                        
                     </div>
-                        
+                        <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     </div>
                      </div>
        </form>

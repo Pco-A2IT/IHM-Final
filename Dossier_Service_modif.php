@@ -80,20 +80,15 @@ $req->closeCursor();
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
-                  
+          
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Service</h1>
         </div>
         <div class="blanc";   style="border-radius: 5px;">
-            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
@@ -111,11 +106,11 @@ $req->closeCursor();
                     <table align="left" cellspacing="5px" class="table" id="modif">
 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
+                                <td align="right">Hôpital:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 
@@ -130,11 +125,10 @@ $req->closeCursor();
                             <td>
                                 <script language="JavaScript">writeSource("js10");</script>
                                 
-                                <input class="inputDate" name="heured" id="heured" value="" size="2" type="test"  placeholder="<?php echo strftime("%H",strtotime($horairesd_s)) ?>"> :
-                               <input class="inputDate" name="mind" id="mind"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesd_s)) ?>"> 
-                                à  
-                                <input class="inputDate" name="heuref" id="heuref" value="" size="2" type="text"  placeholder="<?php echo strftime("%H",strtotime($horairesf_s)) ?>"> :
-                                <input class="inputDate" name="minf" id="minf"value="" size="2" type="text"  placeholder="<?php echo strftime("%M",strtotime($horairesf_s)) ?>"> 
+                                <input id="heured" name="heured" type="time" value="<?php echo strftime("%H",strtotime($horairesd_s)).":".strftime("%M",strtotime($horairesd_s)) ?>"  /> 
+                                <br> à <br>
+                                <input id="heuref" name="heuref" type="time" value="<?php echo strftime("%H",strtotime($horairesf_s)).":".strftime("%M",strtotime($horairesf_s)) ?>"/>
+                                 
                             </td>
                         </tr>
                         <tr> 
@@ -158,13 +152,14 @@ $req->closeCursor();
                         </tr>
                         <tr>
                             <td align="center"  colspan="2">
-                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"></TEXTAREA> 
+                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s?></TEXTAREA> 
                             </td>
                         </tr>
             
                     </table>
 
              </div>
+             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                 
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 

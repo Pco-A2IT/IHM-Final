@@ -41,17 +41,17 @@ body{
 .gris2{
     height:620px; 
     width:100px; 
-    padding-top:70px;"
+    padding-top:130px;"
 }
 .carreGris {
     height:77px; 
     width:85px; 
     background-color: #656565; 
-    margin-bottom: 20px; 
+    margin-bottom: 30px; 
     margin-left:auto; 
     margin-right:auto; 
     border-radius: 5px;"
-    padding-top:2px;
+    padding-top:10px;
     cursor:pointer;
     
 }
@@ -146,7 +146,7 @@ h4{
        left:120px;
        bottom: 100px;
        right: 100px;
-       background-color: #EFEFEF ;
+       background-color: #eeeeee ;
        border: 0px solid #ffffff ;
        position: absolute;       
        z-index: 10}
@@ -168,7 +168,8 @@ h4{
 }
 
 .section2{
-     margin-top:50px;
+     margin-top:200px;
+    margin-right: 400px;
 }
 .bouton1{
 	padding: 5px 15px;
@@ -215,32 +216,9 @@ input[type=button]{
     color: #ffffff ;
     font-size: 15px;
     cursor: pointer;
-    background: #4095ff ;
-    background: linear-gradient(top, #4095ff  0%, #277ce6  100%);
-    background: -moz-linear-gradient(top, #4095ff  0%, #277ce6  100%);
-    background: -webkit-linear-gradient(top, #4095ff  0%, #277ce6  100%);
-    background: -o-linear-gradient(top, #4095ff  0%, #277ce6  100%);
-    border: 1px solid #338bf6 ;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
-    box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-    -moz-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-    -webkit-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-    -o-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.50);
+    background: #ffffff ;
+    
 }
-input[type=button]:hover{
-    background: linear-gradient(top, #5aafff  0%, #4095ff  100%);
-    background: -moz-linear-gradient(top, #5aafff  0%, #4095ff  100%);
-    background: -webkit-linear-gradient(top, #5aafff  0%, #4095ff  100%);
-    background: -o-linear-gradient(top, #5aafff  0%, #4095ff  100%);
-}
-input[type=button]:active{
-    opacity:0.8;
-}
-
 .myButton1 {
 	color:#ffffff;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
@@ -252,6 +230,20 @@ input[type=button]:active{
     background-color: #1270b3
 }
 
+#btn1{
+    float:right;
+	text-align:left;
+}
+
+#btn2{
+	float:right;
+	text-align:center;
+}
+
+#btn3{
+	float:right;
+	text-align:right;
+}
 
 .myButton:active {
 	 position: relative;
@@ -272,6 +264,14 @@ input[type=button]:active{
     left:980px;
     margin-top: 20px;
     margin-right: 90px;
+    border-radius:6px;
+	cursor:pointer;
+    }
+
+#Prendre_rdv{
+ position: relative;
+    left:200px;
+    margin-top: 20px;
     border-radius:6px;
 	cursor:pointer;
     }
@@ -306,12 +306,6 @@ input[type=button]:active{
   position:absolute;   
 }
 
-.section5{
-  left:20px;
-  padding-top: 20px;
-  color:black;
-  position:absolute;   
-}
 
 .titre{
   width: 90%;
@@ -463,14 +457,16 @@ height:100px;
 }
 
 textarea:focus{
- background-color:none;
-background: #efefef;
+ background-color:#eeeeee;
+background: #eeeeee;
     border:#efefef;
  }
 
 textarea{
 	width: 90%;
 	height: 100%;
+ background-color:#eeeeee;
+background: #eeeeee;
 	border: 3px solid #efefef;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
@@ -724,21 +720,11 @@ height: 35px;
 width: 150px;
 } 
 
-.submit { 
-
-font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-padding:10px 15px;
-cursor :hand; 
-color: #ffffff; 
-background-color: #1270B3; 
-border: 0px;
-cursor:pointer;
-} 
 
 .position_submit{
     position: relative;
-    left:980px;
-    margin-top: 10px;
+    margin-top: 5px;
+   left: 850px;
 }
 
 .thead { 
@@ -808,6 +794,25 @@ input[type="placeholder"]{
  color:red;
     }
 
+input[type="submit"]{
+ background-color: aliceblue;
+ border-radius: 5px;"
+    color:grey;
+    cursor:context-menu;
+    
+    }
+
+.recherche input {
+    cursor:context-menu;
+    color:grey;
+    }
+
+
+input[type="submit"]:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color:black;
+
+}
 .modif input{
     color:red;
 }
@@ -822,12 +827,16 @@ color: #000000;
 }
 .placeholder{
 color: #a9a9a9;
+background-color:#eeeeee;
  width: 205px;
  height: 25px;
 }
 select option:first-child{color:grey; display: none;}
 select option {color:black;}
 
+.liste {
+color: black;
+}
 
 .liste table a:link {
 	color: #666;

@@ -24,37 +24,25 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris"  style="background-color:#1270B3">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+         
     
     <div class="titre";   style="border-radius: 5px;">
-        <h1 class="titreGauche">Paramètres</h1>
+        <h1 class="titreGauche">Outils</h1>
     </div>
     <div class="blanc"; style="border-radius: 5px;">
           
-
-             <div>
-                            <a href="Liste_Examens.php" class="myButton1">Gestion Examens</a>
-            </div>
-        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>">Cliquez ici pour exporter la table patient</a></p>
-        
-        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>">Cliquez ici pour exporter la table medecin</a></p>
-        
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>">Cliquez ici pour exporter la table examen</a></p>
-        
-        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>">Cliquez ici pour exporter la table examen_patient</a></p>
-        
-        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>">Cliquez ici pour exporter la table service</a></p>
-
-                
-    </div>
+        <div class="section2">
+               <a href="Liste_Examens.php" class="myButton1" id="btn1">Gestion Examens</a>
+             <a href="Parametres_Export.php" class="myButton1" id="btn2">Export Données</a>
+           <a href="Authentification.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
+       
+   </div>
          <script src="js/General.js"></script>
 </div>
+    </div>
     </div>
 </body>
 </html>

@@ -7,8 +7,9 @@
    <title> Liste Services</title>
    <link href="css/General.css"type="text/css"rel="stylesheet"/> 
     <meta charset="UTF-8">    
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-   <script type="text/javascript">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--inclusion CSS pour autocompletion-->
+   <!--script type="text/javascript">
       function confirm(idservice){
       var msg="Vous êtes sûr?\n\nConfirmez s'il vous plaît!";
       if(confirm(msg)==true)
@@ -20,8 +21,15 @@
       return false;
     }
     }
-    </script> 
-        <!--inclusion CSS pour autocompletion-->
+    </script--> 
+    <script>
+    function deleteRow(obj){
+      if(confirm('Vous êtes sure?'))
+    {
+      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
+    }
+    }
+    </script>    
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -47,13 +55,10 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+        
             
             <div class="titre"; style="border-radius: 5px;">
                 <h1 class="titreGauche">Services</h1>
@@ -82,8 +87,9 @@
                 <br>
                  <form id="recherche" method="post" class="recherche">
 
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
-                            <input class="loupe" type="submit" value="" />
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit"  value="Afficher liste complète" >
 
                     </form>   
                 <style>
@@ -101,9 +107,8 @@
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
-                        <th>ID</th>
-                        <th>Service</th>
-                        <th>Centre</th>
+                        <th>Service/Centre d'examen</th>
+                        <th>Hôpital</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
                         <th>Ville</th>
@@ -138,15 +143,14 @@ while($dnn = $pdo_select->fetch() )
        
     <tr>
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
-        <td class="left"><?php print_r($dnn['id_service']); ?></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
         <td class="left"> <?php print_r($dnn['adresse_s']); ?></td>
         <td class="left"> <?php print_r($dnn['codePostal_s']); ?></td>
         <td class="left"> <?php print_r($dnn['ville_s']); ?></td>
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
-        <td class="left"> <?php print_r($dnn['horairesd_s']); ?></td>
-        <td class="left"> <?php print_r($dnn['horairesf_s']); ?></td>
+        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesd_s']))); ?></td>
+        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesf_s']))); ?></td>
         <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_modifier.png"></a></td>
         <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         
