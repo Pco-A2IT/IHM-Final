@@ -54,7 +54,7 @@ while ($donnees = $req->fetch())
         $nom_m_traitant=$donn['nom_m'];
         $prenom_m_traitant=$donn['prenom_m'];
         $mail_m_traitant=$donn['mail_m'];
-        $ville_m_traitant=$don['ville_m'];
+        $ville_m_traitant=$donn['ville_m'];
     
     }
     $req3 = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
