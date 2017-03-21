@@ -1,3 +1,10 @@
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <?php
 /* Si le formulaire est envoyé alors on fait les traitements */
 if (isset($_POST['envoye']))
@@ -183,3 +190,5 @@ if (!empty($alert))
  
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

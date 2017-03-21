@@ -23,9 +23,7 @@ include('config.php');
 			$(this).html("<font>*</font>"+$this.html());
 		});
 	    });
-
-        </script>  
-
+        </script>  //ajoute le rouge * pour les champs obligatoires 
     </head>
     
     <body>
@@ -76,6 +74,10 @@ include('config.php');
             
                 <div id="container">
                     <br>
+                            <div id="titles"> 
+                                <span class="title active"  target="onglet1"> 1. Patient</span> 
+                                <span class="title" target="onglet3"> 2. Examens</span> 
+                            </div>
                         
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
@@ -181,10 +183,10 @@ include('config.php');
                                             </td> 
                                         </tr>
                                     </table>
+                                    
                                 </form>
-                            </div>
-                            <input type="submit" accesskey="enter" value="Suivant" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" >
-                    
+                                </div> 
+                             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
                                        
                 
             <div class="onglet" id="onglet3">
