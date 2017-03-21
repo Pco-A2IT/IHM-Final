@@ -173,10 +173,9 @@
                                             </td> 
                                         </tr>
                                     </table>
-                                    
                                 </form>
-                                </div> 
-                    <input type="submit" accesskey="enter" value="Suivant" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" ><?php echo $_GET['id_patient'];?>"/>  
+                            </div>
+                            <input type="submit" accesskey="enter" value="Suivant" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" >
                     
                                        
                 

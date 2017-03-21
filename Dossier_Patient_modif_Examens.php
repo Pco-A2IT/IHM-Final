@@ -99,7 +99,7 @@ $req->closeCursor();
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="section4">
                     <div class="div1">
-                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?>
+                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $prenom_p." ".$nom_p ?><br><br><?php echo $telephone_p; ?>
                 
         
                 <div id="container">
