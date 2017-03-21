@@ -58,13 +58,10 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+        
             
             <div class="titre"; style="border-radius: 5px;">
                 <h1 class="titreGauche">Services</h1>
@@ -95,7 +92,7 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Retour" >
+                        <input  type="submit"  value="Afficher liste complète" >
 
                     </form>   
                 <style>

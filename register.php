@@ -1,4 +1,10 @@
 <!-- Verification des erreurs de saisi des informations -->
+<body style="background: #1270B3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #22427C, #1270B3);
+  background: -moz-linear-gradient(right, #22427C, #1270B3);
+  background: -o-linear-gradient(right, #22427C, #1270B3);
+  background: linear-gradient(to left, #22427C, #1270B3);"      
+      
 <?php
 require_once 'inc/functions.php';
 session_start();
@@ -35,7 +41,7 @@ if(!empty($_POST)){
         $user_id = $bdd->lastInsertId(); // preparation de l'id a envoyer dans le mail
         
         //--ajouter ici l'envoi du mail--//
-        die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token"); // Envoie d'un mail pour valider le compte
+        die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token<br><br>ATTENTION : Remplacez http://localhost/GitHub/IHM-Final/ par le chemin correspondant sur votre poste !!"); // Envoie d'un mail pour valider le compte
         
         $_SESSION['flash']['success'] = 'Un lien de confirmation vous a été envoyé pour valider votre compte';
         header('Location: login.php');
@@ -61,30 +67,36 @@ if(!empty($_POST)){
 </div>
 <?php endif; ?>
 
+ <!-- <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="Identifiant"/>
+                <input type="password" placeholder="Mot de passe"/>
+                <input type="text" placeholder="Email"/>
+                <button>create</button>
+                <p class="message">Déjà inscrit? <a href="#">Connexion</a></p>
+            </form>
+            <form class="login-form">
+                <input type="text" placeholder="Identifiant"/>
+                <input type="password" placeholder="Mot de passe"/>
+                <a href="Liste_Patients.php">Se connecter</a>
+                <p class="message">Pas encore inscrit? <a href="#">Inscription</a></p>
+            </form>
+      </div>
+    </div> -->
 
 <!-- Formulaire de saisie -->
 <form action="" method="POST">
-    <div class="form-group">
-        <label for="">Pseudo</label>
-        <input type="text" name="username" class="form-control"/>
+<div class="login-page">
+    <div class="form">
+        <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
+        <input type="text" name="email" class="form-control" placeholder="Email"/>
+        <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+        <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
     </div>
-    
-    <div class="form-group">
-        <label for="">Email</label>
-        <input type="text" name="email" class="form-control"/>
-    </div>
-    
-    <div class="form-group">
-        <label for="">Mot de passe</label>
-        <input type="password" name="password" class="form-control"/>
-    </div>
-    
-    <div class="form-group">
-        <label for="">Confirmez votre mot de passe</label>
-        <input type="password" name="password_confirm" class="form-control"/>
-    </div>
-    
+</div>    
     <button type="submit" class="btn btn-primary">M'inscrire</button>
 </form>
 
 <?php require 'inc/footer.php'; ?>
+

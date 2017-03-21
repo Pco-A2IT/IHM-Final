@@ -7,7 +7,8 @@ include('config.php');
 
 <html>
 <head>
-   <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+
 </head>
 <body>
     <div class="gris">
@@ -30,13 +31,10 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
             <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+         
             
             <script src="js/General.js"></script>
                 
@@ -49,6 +47,17 @@ include('config.php');
     
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Prise de Rendez-vous</h1>
+            <script>
+
+jQuery(document).ready(function() {
+	jQuery(".datepick").datepicker({
+		minDate: '0'
+	});
+});
+
+
+</script>
+
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
@@ -60,9 +69,13 @@ include('config.php');
                         while ($donnees = $req->fetch()){
                             $nom_p=$donnees['nom_p'];
                             $prenom_p=$donnees['prenom_p'];
+                            $telephone_p=$donnees['telephone_p'];
+                            $ville_p=$donnees['ville_p'];
+                            $codePostal_p=$donnees['codePostal_p'];
+                            $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?></h1><br>
+                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h1 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h1>
                     <div id="container"> 
                   
                         <br><br>
@@ -104,7 +117,7 @@ include('config.php');
                         }
                     ?>
                             <td align="center"  colspan="2">
-                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
+                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
                             </td>
                         </form>
                     </div>
@@ -242,6 +255,7 @@ include('config.php');
                                         $req4->execute();
                                         $nbcroix=1;
                                         $nbcroixValide=1;
+                                        $cmpt=1;
                                 
                                         //on parcourt les examens cochés ET dispensé par le service considéré
                                         while($dnn= $req4->fetch()){
@@ -249,20 +263,23 @@ include('config.php');
                                         ?>
                                    
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                        
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="date" name="date" type="date" value=""/></td>
-                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                        <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post" /></td>
+                                        <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
+                                        
                                     </form>
                                 </tr>
                             
                                     <tr>
                                     <?php 
-                                                $nbcroixValide=$nbcroixValide+1;
-                                            }
-                                            $nbcroix=$nbcroix+1;
-                                    }
-                                    $nb=$nb+1;
+                                                    $nbcroixValide=$nbcroixValide+1;
+                                                }
+                                                $nbcroix=$nbcroix+1;
+                                        }
+                                        $nb=$nb+1;
                                     ///////////////////////////////////////////////////////////////////////
                         }
                     }
@@ -282,5 +299,49 @@ include('config.php');
     </div>
 </body>
 </html>
-    
+
 <?php require 'inc/footer.php'; ?>
+
+<script language="JavaScript">
+    
+//document.getElementsByClassName("validation").disabled= true;   
+//document.getElementById("Champ_cache_1").style.display = "none";
+console.log("Bouton afficher");
+
+function Afficher_1(id)
+{ 
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= false;
+    document.getElementById('valider'+id).style.background="#1270B3";
+}
+function Cacher_1(id)
+{   
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= true;
+    document.getElementById('valider'+id).style.background="red";
+    
+    //console.log("Bouton caché");
+}
+    
+function verifDate(champ)
+{
+    id=champ.id;
+    console.log(id);
+	var date = new Date();
+	var date_n = document.getElementById(id).value;
+    console.log(date_n);
+	var date2 = new Date(date_n);
+	if(date2 > date){
+		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne';
+        Afficher_1(id);
+		return true;
+	}else{
+        document.getElementById('erreurdate'+id).innerHTML = 'Date déjà passée';
+        Cacher_1(id);
+      return false;
+	}
+}
+</script>
+
+
+    

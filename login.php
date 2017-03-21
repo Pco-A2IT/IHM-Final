@@ -1,3 +1,10 @@
+<body style="background: #1270B3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #22427C, #1270B3);
+  background: -moz-linear-gradient(right, #22427C, #1270B3);
+  background: -o-linear-gradient(right, #22427C, #1270B3);
+  background: linear-gradient(to left, #22427C, #1270B3);"      
+      
+
 <?php require 'inc/header.php'; ?>
 
 <?php
@@ -8,14 +15,11 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
     $req->execute(['username' => $_POST['username']]);
     $user = $req->fetch();
     if(password_verify($_POST['password'], $user->password)){
-        $_SESSION['auth'] = $user;
-        //$bdd->prepare('UPDATE users SET last_connection = ? WHERE id = ?')->execute([$user_id]);
+       //$bdd->prepare('UPDATE users SET last_connection = ? WHERE id = ?')->execute([$user_id]);
         
         $req3 = $bdd->prepare('UPDATE users SET last_connection = NOW() WHERE username = ?');
         $req3->execute(array($_POST['username']));
-
-        
-        $_SESSION['flash']['success']='Vous êtes maintenant connecté';
+         $_SESSION['auth'] = $user;
         header('Location: Liste_Patients.php');
         exit();        
     }else{
@@ -29,14 +33,12 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
     <h1> Se connecter</h1>
 
         <form action="" method="POST">
-            <div class="form-group">
-                <label for="">Pseudo</label>
-                <input type="text" name="username" class="form-control"/>
-            </div>
-
-            <div class="form-group">
-                <label for="">Mot de passe</label>
-                <input type="password" name="password" class="form-control"/>
+          <div class="login-page">
+               <div class="form">
+              <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
+        
+        <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+    </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Se connecter</button>

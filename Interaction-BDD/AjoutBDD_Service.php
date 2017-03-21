@@ -4,46 +4,67 @@ include('../config.php');
 
 //
 
-//Récupérer certaines données du formulaires
-/*$ouv=$_POST['heured'].':'. $_POST['mind'].':'. '00';
-$ferm=$_POST['heuref'].':'. $_POST['minf'].':'. '00';
-
-$horairesd_s=$_POST['heured'].':'. $_POST['mind'].':'. '00';
-if ($horairesd_s=="::00"){$horairesd_s= "00:00:00";}
-        
-$horairesf_s=$_POST['heuref'].':'. $_POST['minf'].':'. '00';
-if ($horairesf_s=="::00"){$horairesf_s= "00:00:00";}*/
-
-    
-//Brouillon
-//echo $irm;
-/*if($_POST['choix1_ligne1']=="YES"){
-    $irm="YES";
-}else{
-    $irm="NO";
+//Récupérer données du formulaires
+if($_POST['centre_s']==""){
+    $centre_s="NC";
 }
-if($_POST['choix1_ligne2']=="YES"){
-    $cardiaque="YES";
-}else{
-    $cardiaque="NO";
+else{
+    $centre_s=$_POST['centre_s'];
 }
-if($_POST['choix1_ligne3']=="YES"){
-    $neuro="YES";
-}else{
-    $neuro="NO";
-}*/
+
+if($_POST['service_s']==""){
+    $service_s="NC";
+}
+else{
+    $service_s=$_POST['service_s'];
+}
+
+if($_POST['telephone_s']==""){
+    $telephone_s="NC";
+}
+else{
+    $telephone_s=$_POST['telephone_s'];
+}
+
+if($_POST['heured']==""){
+    $heured="00:00";
+}
+else{
+    $heured=$_POST['heured'];
+}
+
+if($_POST['heuref']==""){
+    $heuref="00:00";
+}
+else{
+    $heuref=$_POST['heuref'];
+}
+
+if($_POST['adresse_s']==""){
+    $adresse_s="NC";
+}
+else{
+    $adresse_s=$_POST['adresse_s'];
+}
+
+if($_POST['codePostal_s']==""){
+    $codePostal_s="NC";
+}
+else{
+    $codePostal_s=$_POST['codePostal_s'];
+}
+
+if($_POST['ville_s']==""){
+    $ville_s="NC";
+}
+else{
+    $ville_s=$_POST['ville_s'];
+}
 
 
-//echo $cardiaque;
-//echo $neuro;
-//echo $irm;
-
-$descr=$_POST['description_s'];
+$descr=$_POST['codePostal_s'];
 //$descr="A changer la description";
 
-
-// Insertion du message à l'aide d'une requête préparée
-//$req =$bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s,irm_s,cardiaque_s,neuro_s) VALUES(NULL, ? ,? , ?,?, ?,?,? ,?,?, ?,?,?,? )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
 
 //$req->execute(array($_POST['siret_s'], $_POST['centre_s'],$_POST['service_s'], $_POST['telephone_s'], $ouv,$ferm, $_POST['adresse_s'], $_POST['codePostal_s'],$_POST['ville_s'], $descr, $irm, $cardiaque, $neuro));*/
@@ -62,32 +83,7 @@ while($dnn = $req->fetch()){
 }
 $compteur=$compteur-1;
 $compteur2=1;
-// Construction d'un tableau contenant les valeurs des POST --Fausse Piste mais pourra servir plus tard
-/*$array1=array(
-    'key1' => $_POST['siret_s'],
-    'key2' => $_POST['centre_s'],
-    'key3' => $_POST['service_s'],
-    'key4' => $_POST['telephone_s'],
-    'key5' => $ouv,
-    'key6' => $ferm,
-    'key7' => $_POST['adresse_s'],
-    'key8' => $_POST['codePostal_s'],
-    'key9' => $_POST['ville_s'],
-    'key10' => $descr,
-);
-while($compteur2<=$compteur){
-        if($_POST[$compteur2]=="YES"){
-            $valeur="YES";
-        }else{
-            $valeur="NO";
-        }
-        $array1[] = $valeur;
-        $compteur2=$compteur2+1;
-}
 
-foreach ($array1 as $value) {
-    echo $value;
-}*/
 
 //Concaténation des chaînes pour executer la requete d'ajout
         
@@ -98,10 +94,8 @@ $statique=$statique1.$statique2;
 //echo $statique;
 $req1=$bdd->prepare($statique);
 echo $statique;
-//$req1->execute($array1);
-//$req1=$bdd->prepare("INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s, `Test IRM`, `Test Musculaire`, `Test Neuro`) VALUES(NULL, ? ,? , ?,?, ?,?,? ,?,?, ?, ?, ?, ? )");
-//$req1=$bdd->prepare('INSERT INTO Service(id_service, numSiret, centre_s,nom_s, telephone_s,horairesd_s, horairesf_s, adresse_s,codePostal_s,ville_s, description_s, `Test Poumon`, `Test du Foie`, `Test Musculaire`) VALUES(NULL, ? ,? , ?,?, ?,?,? ,?,?, ?, "NO", "NO", "NO")');
-$req1->execute(array($_POST['centre_s'],$_POST['service_s'], $_POST['telephone_s'], $_POST['heured'], $_POST['heuref'], $_POST['adresse_s'], $_POST['codePostal_s'],$_POST['ville_s'], $descr));
+
+$req1->execute(array($centre_s,$service_s, $telephone_s, $heured, $heuref, $adresse_s, $codePostal_s ,$ville_s, $descr));
 echo "c'est pas req1 execute qui merde";
 //Modification des attributs enum examens (la construction les initialise à NON)
 $id_dernier=$bdd->lastInsertId();
@@ -115,7 +109,7 @@ $compteur3=1;
 //echo "requete executée";
 echo "c'est la boucle qui merde";
 while($dnn = $req2->fetch()){
-  if($_POST[$compteur3]=="YES"){
+  if(isset($_POST[$compteur3])){
             $bool="YES";
   }else{
             $bool="NO";

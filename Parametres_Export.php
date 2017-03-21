@@ -39,15 +39,12 @@ include('config.php');
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris" style="background-color:#1270B3"  >
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+        
             <div class="titre";   style="border-radius: 5px;">
-                <h1 class="titreGauche">Paramètres</h1>
+                <h1 class="titreGauche">Outils</h1>
     
             </div>
             <script src="js/General.js"></script>
@@ -58,11 +55,11 @@ include('config.php');
         
         <div class="liste">                    
         <br>
-            <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Exporter les données patients <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
+            <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Exporter la table patient <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
         <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Exporter la table medecin <img src="Icones/medecin_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Exporter les données des examens <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
+        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Exporter la table examen <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>
         <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Exporter les liens examen_patient <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
         <br>

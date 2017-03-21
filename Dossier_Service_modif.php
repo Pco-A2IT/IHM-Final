@@ -83,14 +83,10 @@ $req->closeCursor();
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
-                  
+          
             <script src="js/General.js"></script>
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Service</h1>
@@ -113,11 +109,11 @@ $req->closeCursor();
                     <table align="left" cellspacing="5px" class="table" id="modif">
 
                         <tr> 
-                                <td align="right">Service:</td>
+                                <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
                         </tr>
                         <tr> 
-                                <td align="right">Centre:</td>
+                                <td align="right">Hôpital:</td>
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 
