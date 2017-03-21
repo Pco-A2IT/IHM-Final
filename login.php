@@ -30,18 +30,17 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
 }
 ?>
 
-    <h1> Se connecter</h1>
 
         <form action="" method="POST">
           <div class="login-page">
-               <div class="form">
+             <div class="form">
               <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
-        
-        <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
-    </div>
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+            <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
+            <li><a href="register.php">Pas encore inscrit ?</a></li>
+                   </div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
+
 
 <?php require 'inc/footer.php'; ?>
