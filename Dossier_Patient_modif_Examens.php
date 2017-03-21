@@ -210,8 +210,9 @@ $req->closeCursor();
 ?>     
                             </table>
                             <br>
-                               <div class="myButton" id="Prendre_rdv">
+                            <div class="myButton" id="Prendre_rdv">
                             <a href="Prise_RDV.php?id_patient=<?php echo $_GET['id_patient'];?>" class="myButton1"> Prendre RDV</a>
+                            <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
                         </div>
                         </div> 
                     </div>
