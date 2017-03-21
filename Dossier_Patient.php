@@ -1,4 +1,7 @@
 <?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
 include('config.php');
 ?>
 
