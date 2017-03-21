@@ -183,8 +183,7 @@ include('config.php');
                                     </table>
                                 </form>
                             </div>
-                            <input type="submit" accesskey="enter" value="Suivant" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" >
-                    
+                            
                                        
                 
             <div class="onglet" id="onglet3">
