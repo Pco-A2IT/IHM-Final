@@ -87,7 +87,7 @@ if(!empty($_POST)){
 <!-- Formulaire de saisie -->
 <form action="" method="POST">
 <div class="login-page">
-    <div class="form">
+    <div class="form2">
         <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
         <input type="text" name="email" class="form-control" placeholder="Email"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
