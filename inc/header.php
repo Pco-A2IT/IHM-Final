@@ -14,10 +14,11 @@ if(session_status() == PHP_SESSION_NONE){
     <meta name="description" content="">
     <meta name="author" content="">
 
+   
     <title>Plateforme AIT</title>
 
     <!-- Bootstrap core CSS -->
-      <link href="css/app.css" rel="stylesheet">
+      <link href="css/General.css" rel="stylesheet">
   </head>
 
   <body>
@@ -31,24 +32,26 @@ if(session_status() == PHP_SESSION_NONE){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>-->
-          <a class="navbar-brand">Plateforme AIT</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
+       <div class=entete>
+            <div class="carre";>    
+                <img class="icone_logo" src="Icones/logo.png" 
+                align='left' alt='sorry' width="60px" heigh="60px"/>
             <?php if (isset($_SESSION['auth'])): ?>
             <a>Connecté en tant que <?= $_SESSION['auth']->username; ?></a>
             <?php endif; ?>
           <ul class="nav navbar-nav">
             <?php if (isset($_SESSION['auth'])): ?>
-                <li><a href="logout.php">Se déconnecter</a></li>              
+              <li><img class="supprimer" src="Icones/logout.png"  align='right' alt='sorry' ><a href="logout.php"><div style="color:#ffffff">Se déconnecter</div></a></li>              
             <?php else: ?>
                 <li><a href="register.php">S'inscrire</a></li>
                 <li><a href="login.php">Se connecter</a></li>
             <?php endif; ?>
           </ul>
+             </div> 
+            
         </div><!--/.nav-collapse -->
       </div>
-    </nav>
-
+   
     <div class="container">
         <?php if(isset($_SESSION['flash'])): ?>
             <?php foreach($_SESSION['flash'] as $type => $message): ?>
@@ -58,3 +61,7 @@ if(session_status() == PHP_SESSION_NONE){
             <?php endforeach; ?>
             <?php unset($_SESSION['flash']); ?>
         <?php endif; ?>
+    
+      </div>
+      </div>
+      </nav>
