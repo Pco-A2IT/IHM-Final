@@ -15,6 +15,8 @@ include('config.php');
     <title>Nouveau patient</title>    
 
 </head>
+
+<body>
     
 <?php
                 
@@ -65,11 +67,11 @@ while ($donnees = $req->fetch())
 $req->closeCursor();            
 ?> 
     
-<body>
    
     <div class="gris">
-        <div  class="gris2">
             <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $id_patient; ?> " id= "form" class ="form" method="post"> 
+                
+        <div  class="gris2">
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -108,7 +110,9 @@ $req->closeCursor();
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         </div>
 
-                        <div id="container">
+            <div class="onglet" id="onglet1">
+                   
+                
                             <br>
                             <table cellspacing="5px" class="table" id="modif" style="float:left">
                                 <tr> 
@@ -148,7 +152,8 @@ $req->closeCursor();
                                         <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" /> 
                                     </td> 
                                 </tr> 
-
+                        </table>
+                                <table cellspacing="5px" class="table" id="modif" style="float:left">
                                 <tr> 
                                     <td align="right">Adresse:</td> 
                                     <td align="left" colspan="3"> 
@@ -200,14 +205,16 @@ $req->closeCursor();
                                     <td align="center" colspan="4"><TEXTAREA name="description_p" rows="4" cols="40"  ><?php echo $description_p ?></TEXTAREA></td>
                                 </tr>
                             </table>
-                        </div>
+                      
                         <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"> <?php echo $_GET['id_patient'];?>"/>  
-                    
+                
                     </div>
-                </div>                
+                </div> 
+            </div>
+                </div>
             </form>          
         </div>
-    </div>
+    
     
     <script src="General.js"></script>
     
@@ -257,3 +264,5 @@ $req->closeCursor();
          }); 
         
     </script>
+
+

@@ -52,7 +52,7 @@ if(session_status() == PHP_SESSION_NONE){
             
 
    
-    <div class="container">
+    <div class="container2">
         <?php if(isset($_SESSION['flash'])): ?>
             <?php foreach($_SESSION['flash'] as $type => $message): ?>
                 <div class="alert alert-<?= $type; ?>">
