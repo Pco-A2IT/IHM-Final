@@ -192,5 +192,5 @@ while($dnn = $reponse->fetch()){
 
 
 // Redirection du visiteur vers la page du minichat
-header('Location: ../Liste_Patients.php');
+header('Location: ../Dossier_Patient_examens.php');
 ?>

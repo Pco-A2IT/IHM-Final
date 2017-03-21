@@ -100,14 +100,13 @@ $req->closeCursor();
                 <div class="section4">
                     <div class="div1">
                      <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?>
+                    
+                        </h2>
                     </div>
         
                 <div id="container">
                     <br>
-                    <div id="titles"> 
-                        <span class="title active"  target="onglet1"> 1. Patient</span> 
-                        <span class="title" target="onglet3"> 2. Examens</span> 
-                    </div>
+                
 
                     <div class="onglet" id="onglet1">
                         <table cellspacing="5px" class="table" id="modif" style="float:left">
@@ -204,127 +203,17 @@ $req->closeCursor();
                             </tr>
                         </table>
                     </div>
-                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
-                    <div class="onglet" id="onglet3">
-                <div class="liste">
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"> <?php echo $_GET['id_patient'];?>"/>  
+                    
                 
-                        <div class="position_table">
-                            <!-- AFFICHAGE des EXAMENS PLANIFIES -->
-                            <table cellspacing="0px" id="tbl" class="table">   
-                    <tr>
-                        <th>Examen</th>
-                        <th>Hôpital </th>
-                        <th>Service/Centre d'examen </th>
-                        <th>Jour </th>
-                        <th>Horaire </th>
-                        <th>Réalisé </th>
-                        <th></th>
-                    </tr>
-                                
-                    
-<?php
-    
-    $req= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
-    $req->execute(array($id_patient));
-    $cmpt=1;
-    while ($donnees = $req->fetch()){ ?>
-        
-        <tr>
-            
-        <?php 
-        $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen=?');
-        $req1->execute(array($donnees["id_examen"]));
-        while ($dnn= $req1->fetch()){
-        
-?>
-                        
-                            <td><?php echo $dnn["typeExamen"];?></td> 
-                            
-        <?php } 
-        if($donnees["id_service"]==0){ ?>
-            <td><?php echo "NC"; ?></td>
-            <td><?php echo "NC"; ?></td>
-  <?php }else{
-                 $req2= $bdd->prepare('SELECT * FROM Service WHERE id_service=?');
-                 $req2->execute(array($donnees["id_service"]));
-                 while ($dnn2= $req2->fetch()){
-        ?>
-            
-                            
-                            <td><?php echo $dnn2["centre_s"]; ?></td>
-                            <td><?php echo $dnn2["nom_s"]; ?></td>
-        <?php 
-                }
-        }
-        ?>
-        <?php 
-       
-        
-        if($donnees["date_examen"]=="1970-01-01" /*&& $donnees["heure_examen"]="00:00:00"*/){ ?>
-                            <td><?php echo "NC"; ?></td>
-                            <td><?php echo "NC"; ?></td>
-                            
-        <?php }else{ ?>
-                            <td><?php echo $donnees["date_examen"]; ?></td>
-                            <td><?php echo $donnees["heure_examen"]; ?></td>
-        <?php } ?>
-        <?php 
-            if($donnees["effectue"]=="YES"){
-        ?> 
-                            <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" checked/></td>
-        <?php
-            }
-            else{
-        ?>  
-                            <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES"/></td>
-        <?php
-            }
-        ?>
-                            <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td> 
-            
-        </tr>
-<?php
-        $cmpt=$cmpt+1;
-    }
-?>  
-                            
-                            </table>
-                            <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
-                            <br>
-                           
-                            <table cellspacing="0px" id="tbl" class="table">   
-                            <tr>
-                                <th>Examens à planifier </th>
-                            </tr>
-                    
-<?php
-                                
-    $req3= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
-    $req3->execute(array($id_patient));
-    while ($donnees3 = $req3->fetch()){
-?>   
-                        <tr>
-                            <td align="center"> <?php echo $donnees3["typeExamen"]; ?></td> 
-                        </tr>
-<?php
-    }
-?>     
-                            </table>
-                            <br>
-                               <div class="myButton" id="Prendre_rdv">
-                            <a href="Prise_RDV.php?id_patient=<?php echo $_GET['id_patient'];?>" class="myButton1"> Prendre RDV</a>
                         </div>
-                        </div> 
                     </div>
-                </div>
-                </div>
-                </div>
                 </div>
             </form>
           
         </div>
-        </div>
-    
+                </div>
+
         
          <script src="General.js"></script>
 </body>

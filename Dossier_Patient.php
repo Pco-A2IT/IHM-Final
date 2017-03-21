@@ -19,7 +19,7 @@
 			$(this).html("<font>*</font>"+$this.html());
 		});
 	    });
-        </script>  //ajoute le rouge * pour les champs obligatoires   
+        </script>  
 
     </head>
     
@@ -68,10 +68,6 @@
             
                 <div id="container">
                     <br>
-                            <div id="titles"> 
-                                <span class="title active"  target="onglet1"> 1. Patient</span> 
-                                <span class="title" target="onglet3"> 2. Examens</span> 
-                            </div>
                         
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
@@ -180,7 +176,8 @@
                                     
                                 </form>
                                 </div> 
-                             <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
+                    <input type="submit" accesskey="enter" value="Suivant" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" ><?php echo $_GET['id_patient'];?>"/>  
+                    
                                        
                 
             <div class="onglet" id="onglet3">
