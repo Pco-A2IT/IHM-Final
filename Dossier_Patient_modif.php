@@ -69,7 +69,7 @@ $req->closeCursor();
    
     <div class="gris">
         <div  class="gris2">
-            <form action="./Dossier_Patient_Examens.php?id_patient=<?php echo $id_patient; ?> " id= "form" class ="form" method="post"> 
+            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $id_patient; ?> " id= "form" class ="form" method="post"> 
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>

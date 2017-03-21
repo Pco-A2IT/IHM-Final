@@ -213,6 +213,9 @@ $cmpt=$cmpt+1;
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-header('Location: ../Dossier_Patient_modif_Examens.php');
 
 ?>
+
+<script>
+    top.location.href="../Dossier_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>";
+</script>
