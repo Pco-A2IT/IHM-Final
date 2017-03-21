@@ -41,10 +41,13 @@ if(session_status() == PHP_SESSION_NONE){
             <?php if (isset($_SESSION['auth'])): ?>
               <li><img class="supprimer" src="Icones/logout.png"  align='right' alt='sorry' ><a href="logout.php"><div style="color:#ffffff">Se déconnecter</div></a></li>              
             <?php else: ?>
-                <li><a href="register.php">S'inscrire</a></li>
-                <li><a href="login.php">Se connecter</a></li>
+             <li><a href="register.php" style="text-decoration:none";style="color:none">
+                 <div style="color:#22427C" >S'inscrire</div></a></li>
+                <li><a href="login.php" style="text-decoration:none"> <div style="color:#22427C">Se connecter</div></a></li>
+           
             <?php endif; ?>
           </ul>
+           
              </div> 
             
 

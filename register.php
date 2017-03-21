@@ -53,7 +53,6 @@ if(!empty($_POST)){
 
 <?php require 'inc/header.php'; ?>
 
-<h1>S'inscrire</h1>
 
 <!-- Affichage des erreurs -->
 <?php if(!empty($errors)): ?>
@@ -93,9 +92,11 @@ if(!empty($_POST)){
         <input type="text" name="email" class="form-control" placeholder="Email"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
+        <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
+          <li><a href="login.php">Déjà inscrit ?</a></li>
+
     </div>
 </div>    
-    <button type="submit" class="btn btn-primary">M'inscrire</button>
 </form>
 
 <?php require 'inc/footer.php'; ?>
