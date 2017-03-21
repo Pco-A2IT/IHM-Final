@@ -12,9 +12,6 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         
         $req3 = $bdd->prepare('UPDATE users SET last_connection = NOW() WHERE username = ?');
         $req3->execute(array($_POST['username']));
-
-        
-        $_SESSION['flash']['success']='Vous êtes maintenant connecté';
          $_SESSION['auth'] = $user;
         header('Location: Liste_Patients.php');
         exit();        
