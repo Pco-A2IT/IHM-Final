@@ -213,6 +213,6 @@ $cmpt=$cmpt+1;
 /*Retour vers la liste_Patients*/
 ///////////////////////////
 
-header('Location: ../Liste_Patients.php');
+header('Location: ../Dossier_Patient_modif_Examens.php');
 
 ?>
