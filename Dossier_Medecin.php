@@ -154,7 +154,7 @@ include('config.php');
 								success: function (data){
 				                    response( $.map( data, function( item ){ 
 	                                   return {
-		                                  label: item.nom_s + ", " + item.centre_s,
+		                                  label: item.nom_s + ", " + item.centre_s + ", " + item.ville_s,
 		                                  value: item
 	                                   }
                                     }));
