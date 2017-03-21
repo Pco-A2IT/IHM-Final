@@ -201,7 +201,7 @@ $pdf->AddPage("L");
     $pdf->Cell(40,10,'Ci dessous se trouve le tableau récapitulatif des rendez-vous de '.$patientPrenom." ".$patientNom." :");
 $pdf->Ln(15);
 // Titres des colonnes
-$header = array('Examen', 'Centre', 'Service', 'Date','Heure','Effectué');
+$header = array('Examen', 'Centre', 'Service', 'Date','Heure','Réalisé');
 $pdf->FancyTable($header,$data);
 
 $pdf->Output();
