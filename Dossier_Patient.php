@@ -118,16 +118,16 @@ include('config.php');
                                             </td> 
                                         </tr> 
                                         <tr> 
-                                            <td align="right">Téléphone: *</td> 
+                                            <td align="right">Téléphone:</td> 
                                             <td align="left"> 
                                                 <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" placeholder="(ex: 0786413073)" autocomplete="off"/> 
                                             </td> 
                                         </tr> 
                                     </table> 
                                     <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
-                                            <td align="right">Adresse: *</td> 
+                                            <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"required/>
+                                                <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"/>
                                             </td> 
                                         </tr>
                                         <tr> 
@@ -137,23 +137,23 @@ include('config.php');
                                             </td> 
                                         </tr> 
                                         <tr> 
-                                            <td align="right">Ville:</td> 
+                                            <td align="right">Ville: *</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)"/> 
+                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)" required/> 
                                             </td> 
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left"> 
-                                                <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom"/>
+                                            <td align="left" class="required"> 
+                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
                                             </td>
-                                            <td align="left"> 
-                                                <input type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom"/>
+                                            <td align="left" class="required"> 
+                                                <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" required/>
                                             </td>    
                                         </tr>
                                         <tr>
-                                            <td align="left">
-                                                <input type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville"/>
+                                            <td align="left" class="required">
+                                                <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville" required/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" id="mail_m_traitant" name="mail_m_traitant" placeholder="Mail"/>
@@ -161,7 +161,8 @@ include('config.php');
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
-                                            <td align="left">             <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
+                                            <td align="left">             
+                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
@@ -183,7 +184,7 @@ include('config.php');
                                     </table>
                                 </form>
                             </div>
-                            
+                            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>
                                        
                 
             <div class="onglet" id="onglet3">
