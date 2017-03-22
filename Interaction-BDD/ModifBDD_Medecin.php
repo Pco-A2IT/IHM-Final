@@ -60,9 +60,9 @@ while ($donnees = $req->fetch())
     $id_service=$donnees['id_service'];// on récupère l'id_service existant dans le tuple selectionné
 }
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 /*      ID_service                                                        */
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 //On prend dans 'service' l'éventuel tuple qui correspond au service et centre rentré dans le formulaire
 $req2 = $bdd->prepare('SELECT * FROM service WHERE nom_s = ? AND centre_s=? ');
@@ -91,9 +91,9 @@ $test=false;
 }
 $req->closeCursor();
 
-///////////////////////////
+//////////////////////////////////////
 /*Changement dans la base de données*/
-///////////////////////////
+//////////////////////////////////////
 
 
 $req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m, description_m= :nv_description_m WHERE id_medecin = :jointure ');

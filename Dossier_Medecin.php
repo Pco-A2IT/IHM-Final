@@ -1,3 +1,10 @@
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,10 +13,15 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
+        <link href="css/General.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
         <title>Médecins</title>  
     </head>
     
     <body>
+       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
         <div class="gris">
             <div  class="gris2">
             <div id="menu0" class="carreGris";>
@@ -30,14 +42,10 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>
-               
-               </div>
+       
         </div> 
             <script src="js/General.js"></script>
             <div class="titre";   style="border-radius: 5px;">
@@ -77,38 +85,38 @@
                             </tr> 
                     </table> 
                     
-                    <table align="right" cellspacing="5px" class="table" style="float:left"> 
+                    <table align="right" cellspacing="5px"  style="float:left"> 
                             <tr> 
                             <td align="right">Service/Centre d'examen: * 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="service_m" placeholder="Rentrer Service associé" />
+                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" placeholder="Rentrer Centre associé" />
+                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" />
                             </td>
                             </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" autocomplete="off"/>
+                            <input type="text" id="adresse_m" name="adresse_m" placeholder="(ex: 10, rue du tonkin)" autocomplete="off"/>
                             </td> 
                             </tr>
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="p" name="codePostal_m" placeholder="(ex: 69100)"/> 
+                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)"/> 
                             </td> 
                             </tr> 
                             <tr> 
                                 <td align="right">Ville: *</td> 
                                 <td align="left"> 
-                                    <input type="text" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
+                                    <input type="text" id="ville_m" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
                                 </td> 
                             </tr>
                             <tr>
@@ -128,11 +136,52 @@
           </div>
     </div>
         </div>
+        <script type="text/javascript">
+                //utilisation de jQuery :
+                $(function()   {
+                    $('#service_m').autocomplete({
+                        source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionService.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#service_m").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_s + ", " + item.centre_s + ", " + item.ville_s,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#service_m" ).val( obj.nom_s )
+	                       $( "#centre_m" ).val( obj.centre_s );
+	                       $( "#adresse_m" ).val( obj.adresse_s);
+	                       $( "#codePostal_m" ).val( obj.codePostal_s );
+                            $( "#ville_m").val( obj.ville_s);
+	                       return false;
+                    }
+				});
+                });
+        </script>
             <script src="General.js"></script>
         </body>
         
 
 </html>
+
+<?php require 'inc/footer.php'; ?>
 
      <script>
 

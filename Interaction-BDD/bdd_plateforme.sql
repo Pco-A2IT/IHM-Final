@@ -133,11 +133,11 @@ CREATE TABLE `Service` (
 --
 
 
-/*!40000 ALTER TABLE `Service` DISABLE KEYS */;
-/*LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,967,'cardiologie','0423556768','10h-20h','20 rue de la fontaine','69100','Villeurbanne');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Service` ENABLE KEYS */;
+!40000 ALTER TABLE `Service` DISABLE KEYS ;
+LOCK TABLES `Service` WRITE;
+INSERT INTO `Service` VALUES (1,"HCL LYON","Unité neurovasculaire",'NC','00:00', '00:00','3 Quai des Célestins','69002 ','Lyon','');
+UNLOCK TABLES;
+!40000 ALTER TABLE `Service` ENABLE KEYS ;
 
 --
 -- Table structure for table `Examen`

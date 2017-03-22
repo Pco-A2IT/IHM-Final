@@ -7,9 +7,9 @@ header('Content-Type: text/pdf; charset=utf-8');
 fopen('texteEcrire.txt', 'w');
 
 
-
-$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,centre_de_sante,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND centre_de_sante.nom_c=service.centre_s AND patient.id_patient=1');
-$reqExam->execute();
+$id_patient=$_GET['id_patient'];
+$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,centre_de_sante,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND centre_de_sante.nom_c=service.centre_s AND patient.id_patient=?');
+$reqExam->execute(array($id_patient));
 $examen="";
 $centre="";
 $service="";

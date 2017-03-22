@@ -1,5 +1,8 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
 
 <html>
@@ -44,13 +47,10 @@
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
              <div id="menu4" class="carreGris">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
             </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
-            </div>
+         
             
             <div class="titre";   style="border-radius: 5px;">
                 <h1 class="titreGauche">Médecins</h1>
@@ -79,7 +79,7 @@
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Retour" >
+                        <input  type="submit"  value="Afficher liste complète" >
 
                 </form> 
                 <style>
@@ -129,7 +129,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
 ?>
-                        <tr>
+                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'">
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
@@ -162,3 +162,5 @@ function sure()
     </div>
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>
