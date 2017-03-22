@@ -15,6 +15,15 @@ include('config.php');
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
     <title>Nouveau patient</title>    
 
+    <script language="javascript" type="text/javascript">  
+	    $(document).ready(function() {
+		$(".required").each(function() {
+			var $this  = $(this);
+			$(this).html("<font>*</font>"+$this.html());
+		});
+	    });
+
+        </script> 
 </head>
 
 <body>
@@ -117,12 +126,13 @@ $req->closeCursor();
                 
                             <br>
                             <table cellspacing="5px" class="table" id="modif" style="float:left">
+                                <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                 <tr> 
                                     <td align="right">Date des symptomes:</td> 
                                     <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                                 </tr>
                                 <tr> 
-                                    <td align="right">Civilité:</td>
+                                    <td align="right">Civilité: *</td>
                                     <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
                                         <datalist id="c" style="background-color:eeeeee">
                                                 <option>M.</option>
@@ -131,11 +141,11 @@ $req->closeCursor();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right">Nom:</td> 
+                                    <td align="right">Nom: *</td> 
                                     <td align="left"><input type="text" name="nom_p" value="<?php echo $nom_p ?>" /></td>
                                 </tr>
                                 <tr>
-                                    <td align="right">Prénom:</td> 
+                                    <td align="right">Prénom: *</td> 
                                     <td align="left"><input type="text" name="prenom_p" value="<?php echo $prenom_p ?>" /></td>
                                 </tr>  
                                 <tr> 
@@ -169,24 +179,24 @@ $req->closeCursor();
                                     </td> 
                                 </tr> 
                                 <tr> 
-                                    <td align="right">Ville:</td> 
+                                    <td align="right">Ville: *</td> 
                                     <td align="left" colspan="3"> 
                                         <input type="text" name="ville_p" value="<?php echo $ville_p ?>"/> 
                                     </td> 
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin traitant:</td> 
-                                    <td align="left"> 
-                                        <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
+                                    <td align="left" class="required"> 
+                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
                                         onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')"/>
                                     </td>
-                                    <td align="left"> 
-                                        <input type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
+                                    <td align="left" class="required"> 
+                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left">
-                                        <input type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>"/>
+                                    <td align="left" class="required">
+                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>"/>
                                     </td>
                                     <td align="left"> 
                                         <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>

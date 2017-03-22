@@ -59,6 +59,7 @@ include('config.php');
 
                             <div class="onglet" id="onglet1">
                                 <table  cellspacing="5px" class="table" style="float:left"> 
+                                    <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
                                         <td align="right">Service/Centre d'examen: *</td>
                                         <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/></td>
@@ -68,8 +69,8 @@ include('config.php');
                                         <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
                                     </tr>
                                     <tr> 
-                                        <td align="right">Téléphone:</td>
-                                        <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off"/>
+                                        <td align="right">Téléphone: *</td>
+                                        <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off" required/>
                                     </tr>    
                                 </table> 
                     
@@ -85,6 +86,12 @@ include('config.php');
 
                                         </td>
                                     </tr>
+                                    <tr> 
+                                        <td align="right">Ville: *</td> 
+                                        <td align="left"> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        </td> 
+                                    </tr>
                                     <tr>
                                         <td align="right"> Adresse: *
                                         </td> 
@@ -93,15 +100,9 @@ include('config.php');
                                         </td> 
                                     </tr>
                                     <tr> 
-                                        <td align="right">Code Postal:</td> 
+                                        <td align="right">Code Postal: *</td> 
                                         <td align="left"> 
-                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
-                                        </td> 
-                                    </tr>
-                                    <tr> 
-                                        <td align="right">Ville: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
                                         </td> 
                                     </tr>
                                     <tr height="60px">
