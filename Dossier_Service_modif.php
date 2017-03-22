@@ -107,7 +107,7 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
-
+                        <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                         <tr> 
                                 <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
@@ -117,7 +117,7 @@ $req->closeCursor();
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 
-                                <td align="right">Téléphone:</td>
+                                <td align="right">Téléphone: *</td>
                                 <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="<?php echo $telephone_s ?>" >
                         </tr>    
                     </table> 
@@ -135,20 +135,20 @@ $req->closeCursor();
                             </td>
                         </tr>
                         <tr> 
-                            <td align="right">Ville:</td> 
+                            <td align="right">Ville: *</td> 
                             <td align="left"> 
                             <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
                             </td> 
                             </tr> 
                         <tr>
-                            <td align="right"> Adresse: 
+                            <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
                             <input type="text" name="adresse_s" placeholder="<?php echo $adresse_s ?>" />
                             </td> 
                          </tr>
                         <tr> 
-                            <td align="right">Code Postal:</td> 
+                            <td align="right">Code Postal: *</td> 
                             <td align="left"> 
                             <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
                             </td>

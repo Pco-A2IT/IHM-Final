@@ -12,11 +12,24 @@ include('config.php');
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="css/General.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
     <title>Nouveau patient</title>    
 
+    <script language="javascript" type="text/javascript">  
+	    $(document).ready(function() {
+		$(".required").each(function() {
+			var $this  = $(this);
+			$(this).html("<font>*</font>"+$this.html());
+		});
+	    });
+
+        </script> 
 </head>
 
 <body>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
     
 <?php
                 
@@ -50,6 +63,7 @@ while ($donnees = $req->fetch())
         $nom_m_traitant=$donn['nom_m'];
         $prenom_m_traitant=$donn['prenom_m'];
         $mail_m_traitant=$donn['mail_m'];
+        $ville_m_traitant=$donn['ville_m'];
     
     }
     $req3 = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
@@ -60,7 +74,7 @@ while ($donnees = $req->fetch())
         $nom_m_appelant=$don['nom_m'];
         $prenom_m_appelant=$don['prenom_m'];
         $mail_m_appelant=$don['mail_m'];
-    
+        $ville_m_appelant=$don['ville_m'];
     }
 
 }                              
@@ -89,13 +103,10 @@ $req->closeCursor();
                     <img class="icone_menu" src="Icones/hopital_blanc.png"/>
                 </div>
                 <div id="menu4" class="carreGris">
-                    <h4>Paramètres</h4>
+                    <h4>Outils</h4>
                     <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
                 </div>
-                <div id="menu5" class="carreGris">
-                    <h4>Logout</h4>
-                    <img class="icone_menu" src="Icones/logout.png"/>      
-                </div>
+
 
                 <script src="js/General.js"></script>
                 <div class="titre";   style="border-radius: 5px;">
@@ -115,12 +126,13 @@ $req->closeCursor();
                 
                             <br>
                             <table cellspacing="5px" class="table" id="modif" style="float:left">
+                                <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                 <tr> 
                                     <td align="right">Date des symptomes:</td> 
                                     <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                                 </tr>
                                 <tr> 
-                                    <td align="right">Civilité:</td>
+                                    <td align="right">Civilité: *</td>
                                     <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
                                         <datalist id="c" style="background-color:eeeeee">
                                                 <option>M.</option>
@@ -129,11 +141,11 @@ $req->closeCursor();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right">Nom:</td> 
+                                    <td align="right">Nom: *</td> 
                                     <td align="left"><input type="text" name="nom_p" value="<?php echo $nom_p ?>" /></td>
                                 </tr>
                                 <tr>
-                                    <td align="right">Prénom:</td> 
+                                    <td align="right">Prénom: *</td> 
                                     <td align="left"><input type="text" name="prenom_p" value="<?php echo $prenom_p ?>" /></td>
                                 </tr>  
                                 <tr> 
@@ -153,7 +165,7 @@ $req->closeCursor();
                                     </td> 
                                 </tr> 
                         </table>
-                                <table cellspacing="5px" class="table" id="modif" style="float:left">
+                                <table cellspacing="5px"  id="modif" style="float:left">
                                 <tr> 
                                     <td align="right">Adresse:</td> 
                                     <td align="left" colspan="3"> 
@@ -167,24 +179,27 @@ $req->closeCursor();
                                     </td> 
                                 </tr> 
                                 <tr> 
-                                    <td align="right">Ville:</td> 
+                                    <td align="right">Ville: *</td> 
                                     <td align="left" colspan="3"> 
                                         <input type="text" name="ville_p" value="<?php echo $ville_p ?>"/> 
                                     </td> 
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin traitant:</td> 
-                                    <td align="left"> 
-                                        <input type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
+                                    <td align="left" class="required"> 
+                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
                                         onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')"/>
                                     </td>
-                                    <td align="left"> 
-                                        <input type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
+                                    <td align="left" class="required"> 
+                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="2"> 
-                                        <input type="text"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
+                                    <td align="left" class="required">
+                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>"/>
+                                    </td>
+                                    <td align="left"> 
+                                        <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -197,7 +212,10 @@ $req->closeCursor();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="left" colspan="2"> 
+                                    <td align="left">
+                                        <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $ville_m_appelant;} else{ echo "Ville du médecin appelant"; } ?>"/>
+                                    </td>
+                                    <td align="left"> 
                                         <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>"/>
                                     </td>
                                 </tr>
@@ -212,7 +230,78 @@ $req->closeCursor();
                 </div> 
             </div>
                 </div>
-            </form>          
+            </form>
+        <script type="text/javascript">
+                //utilisation de jQuery :
+                $(function($)   {
+                    $('#nom_m_appelant').autocomplete({
+                         source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionMedecin.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#nom_m_appelant").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#nom_m_appelant" ).val( obj.nom_m )
+	                       $( "#prenom_m_appelant" ).val( obj.prenom_m);
+	                       $( "#mail_m_appelant" ).val( obj.mail_m);
+	                       $( "#ville_m_appelant" ).val( obj.ville_m );
+	                       return false;
+                    }
+				});
+                    $('#nom_m_traitant').autocomplete({
+                        source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionMedecin.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#nom_m_traitant").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#nom_m_traitant" ).val( obj.nom_m )
+	                       $( "#prenom_m_traitant" ).val( obj.prenom_m);
+	                       $( "#mail_m_traitant" ).val( obj.mail_m);
+	                       $( "#ville_m_traitant" ).val( obj.ville_m );
+	                       return false;
+                    }
+				}); 
+                });
+            </script>  
         </div>
     
     
