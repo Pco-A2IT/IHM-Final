@@ -1,3 +1,10 @@
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -37,7 +44,7 @@
         <div class="section2">
                <a href="Liste_Examens.php" class="myButton1" id="btn1">Gestion Examens</a>
              <a href="Parametres_Export.php" class="myButton1" id="btn2">Export Données</a>
-           <a href="Authentification.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
+           <a href="account.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
        
    </div>
          <script src="js/General.js"></script>
@@ -47,3 +54,4 @@
 </body>
 </html>
     
+<?php require 'inc/footer.php'; ?>

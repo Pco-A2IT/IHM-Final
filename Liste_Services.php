@@ -1,7 +1,10 @@
-<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <html>
 <head>
    <title> Liste Services</title>
@@ -141,7 +144,7 @@ while($dnn = $pdo_select->fetch() )
 {
 ?>
        
-    <tr>
+    <tr onclick="document.location='Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>' ">
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
@@ -175,3 +178,5 @@ function sure()
     </div>
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

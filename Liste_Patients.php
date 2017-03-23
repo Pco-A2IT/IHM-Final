@@ -1,6 +1,10 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -118,7 +122,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
                         ?>
-                    <tr>
+                        <tr onclick="document.location='Dossier_Patient_modif.php?id_patient=<?php echo $dnn['id_patient'];?>'">
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
@@ -126,7 +130,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
-                           <td><a href="Dossier_Patient_modif.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
+                           <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
                             <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
@@ -180,3 +184,5 @@ function sure()
     
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

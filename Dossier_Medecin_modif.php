@@ -1,6 +1,10 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +12,7 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link href="css/General.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
         <title>Médecin</title>  
     </head>
     
@@ -51,6 +56,9 @@ $req->closeCursor();
 ?>
     
     <body>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- inclusion de jQuery et jQuery.ui-->
     <div class="gris">
          <form action="./Interaction-BDD/ModifBDD_Medecin.php?idmedecin=<?php echo $_GET['idmedecin']; ?>" method="post"> 
            <div  class="gris2">
@@ -91,12 +99,13 @@ $req->closeCursor();
             <div class="onglet" id="onglet1">
                    
                     <table align="left" cellspacing="5px" class="table" id="modif">
+                            <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                             <tr>
-                            <td align="right">Nom:</td> 
+                            <td align="right">Nom: *</td> 
                             <td align="left"><input type="text" name="nom_m" value="<?php echo $nom_m ?>" /></td>
                             </tr>
                             <tr>
-                            <td align="right">Prénom:</td> 
+                            <td align="right">Prénom: *</td> 
                             <td align="left"><input type="text" name="prenom_m" value="<?php echo $prenom_m ?>" /></td>
                             </tr>  
                             <tr> 
@@ -114,10 +123,10 @@ $req->closeCursor();
 
                     <table align="right" cellspacing="5px" class="table" id="modif">
                                                         <tr> 
-                            <td align="right"> Service/Centre d'examen: * 
+                            <td align="right"> Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="service_m" value="<?php echo $service_m ?>" />
+                            <input type="text" id="service_m" name="service_m" value="<?php echo $service_m ?>" />
                             </td>
                             </tr>
                         
@@ -125,29 +134,28 @@ $req->closeCursor();
                             <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="centre_m" value="<?php echo $centre_m; ?>" />
+                            <input type="text" id="centre_m" name="centre_m" value="<?php echo $centre_m; ?>" />
                             </td>
                             </tr>
-
-                            <tr> 
-                            <td align="right">Code Postal:</td> 
-                            <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
-                            </td> 
-                            </tr> 
-                            <tr> 
-                            <td align="right">Ville:</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_m" value="<?php echo $ville_m ?>"/> 
-                            </td> 
-                            </tr> 
                             <tr>
                             <td align="right"> Adresse: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_m" value="<?php echo $adresse_m ?>" />
+                            <input type="text" id="adresse_m" name="adresse_m" value="<?php echo $adresse_m ?>" />
                             </td> 
                             </tr>
+                            <tr> 
+                            <td align="right">Code Postal:</td> 
+                            <td align="left"> 
+                            <input type="text"  id="codePostal_m" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
+                            </td> 
+                            </tr> 
+                            <tr> 
+                            <td align="right">Ville: *</td> 
+                            <td align="left"> 
+                            <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>"/> 
+                            </td> 
+                            </tr> 
                             <tr>
                             <td align="center"  colspan="2">
                                 <TEXTAREA name="description_m" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_m ?></TEXTAREA> 
@@ -162,11 +170,51 @@ $req->closeCursor();
             </div>
          </form>
         </div>
-        
+                <script type="text/javascript">
+                //utilisation de jQuery :
+                $(function()   {
+                    $('#service_m').autocomplete({
+                        source: function(request, response) {
+						  $.ajax({
+								// Fichier servant à récuperer les valeurs dans la BDD
+								url: "autocompletionService.php",
+								// Définition du type de données que l'on reçoit de la part de autoServeur.php
+								dataType: "json",
+								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+								data: {nom: $("#service_m").val(), maxRows: 10},
+								// Type d'envoie des données vers le serveur
+								type: 'POST',
+								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
+								success: function (data){
+				                    response( $.map( data, function( item ){ 
+	                                   return {
+		                                  label: item.nom_s + ", " + item.centre_s + ", " + item.ville_s,
+		                                  value: item
+	                                   }
+                                    }));
+			                     }
+	                   });
+                    },
+                    minLength: 2,
+                   // delay: 400,
+                    select : function( event, ui ){
+	                   var obj = ui.item.value;
+	                       $( "#service_m" ).val( obj.nom_s )
+	                       $( "#centre_m" ).val( obj.centre_s );
+	                       $( "#adresse_m" ).val( obj.adresse_s);
+	                       $( "#codePostal_m" ).val( obj.codePostal_s );
+                            $( "#ville_m").val( obj.ville_s);
+	                       return false;
+                    }
+				});
+                });
+        </script>
          <script src="General.js"></script>
     </body>
 
 </html>
+
+<?php require 'inc/footer.php'; ?>
 
      <script>
 

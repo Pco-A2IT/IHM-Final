@@ -1,5 +1,8 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
 
 <html>
@@ -126,7 +129,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
 ?>
-                        <tr>
+                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'">
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
@@ -159,3 +162,5 @@ function sure()
     </div>
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>
