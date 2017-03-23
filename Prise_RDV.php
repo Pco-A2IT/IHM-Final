@@ -1,9 +1,14 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <html>
 <head>
-   <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+    <link href="css/General.css"type="text/css"rel="stylesheet"/>    <!-- BOOTSTRAP -->
+
 </head>
 <body>
     <div class="gris">
@@ -42,6 +47,17 @@
     
         <div class="titre";   style="border-radius: 5px;">
             <h1 class="titreGauche">Prise de Rendez-vous</h1>
+            <script>
+
+jQuery(document).ready(function() {
+	jQuery(".datepick").datepicker({
+		minDate: '0'
+	});
+});
+
+
+</script>
+
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
@@ -74,34 +90,36 @@
                         $reponse = $bdd->query('SELECT * FROM Examen');      
                         while($dnn = $reponse->fetch()){
                             $dejaRealise=false;
+                            if($dnn['id_examen']!=1){
                             
-                            $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
-                            $req1->execute(array($id_patient));
-                            
-                            while ($dnn2 = $req1->fetch()){
-                                if($dnn2["typeExamen"] == $dnn["typeExamen"]){
-                                    $dejaRealise=true;
+                                $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                                $req1->execute(array($id_patient));
+
+                                while ($dnn2 = $req1->fetch()){
+                                    if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                        $dejaRealise=true;
+                                    }
                                 }
+                                if($dejaRealise==true){
+
+                        ?>     
+                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <?php
+                                }
+                                else{
+
+                        ?>     
+                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <?php
+                                }
+                                $compteur= $compteur+1;
                             }
-                            if($dejaRealise==true){
-                        
-                    ?>     
-                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          
-                    <?php
-                            }
-                            else{
-                        
-                    ?>     
-                            <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          
-                    <?php
-                            }
-                            $compteur= $compteur+1;
                         }
                     ?>
                             <td align="center"  colspan="2">
-                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/> 
+                                <input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
                             </td>
                         </form>
                     </div>
@@ -188,18 +206,48 @@
                                 <th>Horaire</th>
                                 <th></th>
                             </tr>
+<?php 
+    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="HC LYON" and nom_s="Unité neurovasculaire" ');
+    $req1->execute();
+    while($donnees= $req1->fetch()){
+?>
+                            <tr>
+                                <td><?php echo $donnees['centre_s']; ?> </td>
+                                <td><?php echo $donnees['nom_s']; ?></td>
+                                <td><?php echo $donnees['adresse_s']; ?></td>
+                                <td><?php echo $donnees['telephone_s']; ?></td>
+                                <td><?php echo $donnees['horairesd_s']; ?></td>
+                                <td><?php echo $donnees['horairesf_s']; ?></td>
+<?php 
+        $req11= $bdd->prepare('SELECT * FROM examen WHERE id_examen=1 ');
+        $req11->execute();
+        while($donnees11= $req11->fetch()){
+?>
+                                <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $donnees11["id_examen"];?>" method="post">
+                                        
+                                        <td><?php echo $donnees11['typeExamen'] ?></td>
+                                        <td><input name="date" class="datepick" type="date"/></td>
+                                        <td><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" /></td>
+                                        
+                                </form>
+                            </tr>
                             
-            <?php  
+<?php 
+        }
+     }
                             
                     ///////////////////////////////////////////////////////////////////
                     /*          Affichage de Prise de RDV                            */
                     ///////////////////////////////////////////////////////////////////        
-                    
+                    echo "on entre dans la boucleaaaaa";
+                            
                     //On affiche que si au moins une case est cochée
                     if($aucune_demande==false){
                         //on parcourt tous les services qui effectue les examens cochés
                         $nb=1;
                         while ($donnees = $req2->fetch()){
+                            if($donnees["nom_s"]!="Unité neurovasculaire" && $donnees["centre_s"]!="HC LYON"){
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
                                     
@@ -239,6 +287,7 @@
                                         $req4->execute();
                                         $nbcroix=1;
                                         $nbcroixValide=1;
+                                        $cmpt=1;
                                 
                                         //on parcourt les examens cochés ET dispensé par le service considéré
                                         while($dnn= $req4->fetch()){
@@ -246,25 +295,30 @@
                                         ?>
                                    
                                     <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $dnn["id_examen"];?> " method="post">
+                                        
                                         <td><?php echo $dnn['typeExamen'] ?></td>
-                                        <td><label for="date"></label><input id="valeur" name="date" type="date" value=""/></td>
-                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value=""/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                        <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post" /></td>
+                                        <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
+                                        
                                     </form>
                                 </tr>
                             
                                     <tr>
                                     <?php 
-                                                $nbcroixValide=$nbcroixValide+1;
-                                            }
-                                            $nbcroix=$nbcroix+1;
-                                    }
-                                    $nb=$nb+1;
+                                                    $nbcroixValide=$nbcroixValide+1;
+                                                }
+                                                $nbcroix=$nbcroix+1;
+                                        }
+                            }
+                                        $nb=$nb+1;
+                            
                                     ///////////////////////////////////////////////////////////////////////
                         }
                     }
                     ?>
-                            </tr>
+                                    </tr>
                             
                    
                         </table>
@@ -280,27 +334,48 @@
 </body>
 </html>
 
-<script type="text/javascript">
-<!--
-function verif(){
-    var date_pas_sure = document.getElementById('valeur').value;
-    var format = /^(\d{1,2}\/){2}\d{4}$/;
-    if(!format.test(date_pas_sure)){alert('Date non valable !')}
-    else{
-        var date_temp = date_pas_sure.split('/');
-        date_temp[1] -=1;        // On rectifie le mois !!!
-        var ma_date = new Date();
-        ma_date.setFullYear(date_temp[2]);
-        ma_date.setMonth(date_temp[1]);
-        ma_date.setDate(date_temp[0]);
-        if(ma_date.getFullYear()==date_temp[2] && ma_date.getMonth()==date_temp[1] && ma_date.getDate()==date_temp[0]){
-            alert('Date valable !');
-        }
-        else{
-            alert('Date non valable !');
-        }
-    }
+<?php require 'inc/footer.php'; ?>
+
+<script language="JavaScript">
+    
+//document.getElementsByClassName("validation").disabled= true;   
+//document.getElementById("Champ_cache_1").style.display = "none";
+console.log("Bouton afficher");
+
+function Afficher_1(id)
+{ 
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= false;
+    document.getElementById('valider'+id).style.background="#1270B3";
 }
-//-->
+function Cacher_1(id)
+{   
+    console.log('valider'+id);
+    document.getElementById('valider'+id).disabled= true;
+    document.getElementById('valider'+id).style.background="red";
+    
+    //console.log("Bouton caché");
+}
+    
+function verifDate(champ)
+{
+    id=champ.id;
+    console.log(id);
+	var date = new Date();
+	var date_n = document.getElementById(id).value;
+    console.log(date_n);
+	var date2 = new Date(date_n);
+	if(date2 > date){
+		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne';
+        Afficher_1(id);
+		return true;
+	}else{
+        document.getElementById('erreurdate'+id).innerHTML = 'Date déjà passée';
+        Cacher_1(id);
+      return false;
+	}
+}
 </script>
+
+
     

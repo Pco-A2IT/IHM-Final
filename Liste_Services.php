@@ -1,7 +1,10 @@
-<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <html>
 <head>
    <title> Liste Services</title>
@@ -80,7 +83,7 @@
             <div class="blanc"; style="border-radius: 5px;">  
                 
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.php" class="myButton1"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"  style=" cursor:copy;"> Ajouter Service</a>
                         </div>
                 <br>
                 <br>
@@ -89,7 +92,7 @@
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
 
                     </form>   
                 <style>
@@ -103,7 +106,6 @@
                            
                             </style>
 
-                <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -141,7 +143,7 @@ while($dnn = $pdo_select->fetch() )
 {
 ?>
        
-    <tr>
+    <tr onclick="document.location='Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>'" style="cursor:zoom-in">
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
@@ -166,12 +168,14 @@ function sure()
     return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
 }                 
 </script>
-      
+       
                     </table> 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+  
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

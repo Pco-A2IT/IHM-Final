@@ -81,7 +81,14 @@ echo $civilite_p;
         $mail_m_traitant=$_POST['mail_m_traitant'];
     }
     else{
-        $mail_m_traitant="NC";
+        $mail_m_traitant="NC@mail.fr";
+    }
+
+    if($_POST['ville_m_traitant']!=""){
+        $ville_m_traitant=$_POST['ville_m_traitant'];
+    }
+    else{
+        $ville_m_traitant="NC";
     }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
@@ -94,7 +101,14 @@ echo $civilite_p;
         $mail_m_appelant=$_POST['mail_m_appelant'];
     }
     else{
-        $mail_m_appelant="NC";
+        $mail_m_appelant="NC@mail.fr";
+    }
+
+    if($_POST['ville_m_appelant']!=""){
+        $ville_m_appelant=$_POST['ville_m_appelant'];
+    }
+    else{
+        $ville_m_appelant="NC";
     }
     echo $mail_m_appelant;
 
@@ -121,8 +135,8 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
-        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant));
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant, $ville_m_traitant ));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
     }
@@ -154,8 +168,8 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
-        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant));
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant, $ville_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();
     }
 }
@@ -176,21 +190,9 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['
 
 $id_patient = $bdd->lastInsertId();
 echo $id_patient;
-//Parcours des checkbox
-$compteur=1;
-$reponse = $bdd->query('SELECT * FROM Examen');
-while($dnn = $reponse->fetch()){
-    $id_examen=$dnn['id_examen'];
-    if(isset($_POST[$compteur])){
-        $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue) VALUES(?, ?,?,?,?,?)');
-        $req->execute(array( $id_examen, $id_patient, 0, "1900-01-01", "00:00", "YES"));
-    }
-    $compteur=$compteur+1;
-}
 
-
-
-
-// Redirection du visiteur vers la page du minichat
-header('Location: ../Dossier_Patient_examens.php');
 ?>
+
+<script>
+top.location.href="../Dossier_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>";
+</script>

@@ -14,7 +14,7 @@ boutonElt0.addEventListener("click", function () {
 
 boutonElt1.addEventListener("click", function () {
     console.log("clic1");
-     top.location.href='Recapitulatif.php'; 
+     top.location.href='suivi_email.php'; 
 });
 
 boutonElt2.addEventListener("click", function () {
@@ -32,7 +32,3 @@ boutonElt4.addEventListener("click", function () {
     top.location.href='Parametres.php';
 });
 
-boutonElt5.addEventListener("click", function () {
-    console.log("clic5");
-    top.location.href='Authentification.php';
-});

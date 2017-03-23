@@ -2,10 +2,6 @@
 body{
   font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
   background-color:#373737;
-  background: -webkit-linear-gradient(right, #696969, #373737);
-  background: -moz-linear-gradient(right, #22427C, #373737);
-  background: -o-linear-gradient(right, #22427C, #373737);
-  background: linear-gradient(to left, #22427C, #373737);
     position:relative;
 }
 
@@ -39,21 +35,20 @@ body{
 }
 
 .gris2{
-    height:620px; 
+    height:600px; 
     width:100px; 
-    padding-top:130px;"
+    padding-top:70px;"
 }
 .carreGris {
     height:77px; 
     width:85px; 
     background-color: #656565; 
-    margin-bottom: 30px; 
-    margin-left:auto; 
+    margin-bottom: 25px; 
+   margin-left: auto;
     margin-right:auto; 
     border-radius: 5px;"
-    padding-top:10px;
+    padding-left: 0px;
     cursor:pointer;
-    
 }
 .carreGris:hover{
 
@@ -131,10 +126,6 @@ h4{
              height: 100%;
              margin:0;
                background-color:#373737;
-              background: -webkit-linear-gradient(right, #696969, #373737);
-              background: -moz-linear-gradient(right, #22427C, #373737);
-              background: -o-linear-gradient(right, #22427C, #373737);
-              background: linear-gradient(to left, #22427C, #373737);
                          border:0;
             color:#ffffff;
              position:relative}
@@ -148,8 +139,8 @@ h4{
        right: 100px;
        background-color: #eeeeee ;
        border: 0px solid #ffffff ;
-       position: absolute;       
-       z-index: 10}
+       position: absolute;
+       }
 
 .section1{
   width:90%;
@@ -160,11 +151,15 @@ h4{
 
 
 .section4{
-  width:900px;
-  left:80px;
-  top:0px;
-  margin-top: 10px;
+  width: 90%;
+       height:100% ;
+       top:10px;
+       left:50px;
+  margin-top: 0px;
   position:absolute;
+    display: inline-block;
+    
+    
 }
 
 .section2{
@@ -219,42 +214,32 @@ input[type=button]{
     background: #ffffff ;
     
 }
+
 .myButton1 {
 	color:#ffffff;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:10px 15px;
 	text-decoration:none;
-    margin-top:10px;
-    margin-left:10px;
-    cursor: copy;
+    cursor:pointer;
     border-radius: 5px;
-    background-color: #1270b3
+    background-color: #1270b3;
+    display: inline-block;
+    margin-top: 10px;
+   
 }
+
 
 .myButton1:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color:black;
 }
 
-#btn1{
-    float:right;
-	text-align:left;
-}
 
-#btn2{
-	float:right;
-	text-align:center;
-}
-
-#btn3{
-	float:right;
-	text-align:right;
-}
-
-.myButton:active {
+.myButton{
 	 position: relative;
-    left:980px;
-    margin-top: 10px;
+    margin:0px auto;
+    text-align: right;
+    width:98%;
    
 }
 
@@ -265,14 +250,7 @@ input[type=button]{
     }
 
 
-#Ajouter_liste{
- position: relative;
-    left:980px;
-    margin-top: 20px;
-    margin-right: 90px;
-    border-radius:6px;
-	cursor:pointer;
-    }
+
 
 #Prendre_rdv{
  position: relative;
@@ -317,13 +295,6 @@ input[type=button]{
   width: 90%;
   height:50px;
   background: #1270B3; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #22427C, #1270B3);
-  background: -moz-linear-gradient(right, #22427C, #1270B3);
-  background: -o-linear-gradient(right, #22427C, #1270B3);
-  background: linear-gradient(to left, #22427C, #1270B3);
-  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
   color:#ffffff;
   font-family:Arial,Verdana;
   top:0px;
@@ -436,16 +407,18 @@ height:100px;
 }
 
 .onglet{
-    left:120px;
+    left:auto;
     width: 90%;
     right: 100px;
-    top:15%;
     display:flex;
     flex-wrap:nowrap;
     position: relative;
-    margin-top: 40px;
     color:grey;
-    background:none
+    background:none;
+    margin:0px auto;
+    margin-top: 20px;
+    
+
 }
 
 
@@ -454,6 +427,8 @@ height:100px;
     border: none;
     background: none;
     border-bottom: 0px solid #b2b2b2;
+     display: inline-block;
+    width: 100%;
  
 }
 
@@ -519,88 +494,7 @@ background: #eeeeee;
 }
 
 .centrage {text-align: center}
-.btn_liste_centres{
-	background-color:#1270B3;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-	padding:100px 64px;
-	text-decoration:none;
-}
-.btn_liste_centres:hover {
-	background-color:#019ad2;
-}
-.btn_liste_centres:active {
-	position:relative;
-	top:1px;
-}
-.btn_liste_patients{
-	background-color:#1270B3;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:100px 62px;
-	text-decoration:none;
-}
-.btn_liste_patients:hover {
-	background-color:#019ad2;
-}
-.btn_liste_patients:active {
-	position:relative;
-	top:1px;
-}
-.btn_calendrier{
-	background-color:#1270B3;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:100px 75px;
-	text-decoration:none;
-}
-.btn_calendrier:hover {
-	background-color:#019ad2;
-}
-.btn_calendrier:active {
-	position:relative;
-	top:1px;
-}
-.btn_nouveau_patient{
-	background-color:#1270B3;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:100px 50px;
-	text-decoration:none;
-}
-.btn_nouveau_patient:hover {
-	background-color:#019ad2;
-}
-.btn_nouveau_patient:active {
-	position:relative;
-	top:1px;
-}
+
 .centrage_vertical{
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -703,9 +597,16 @@ display:block;
 #recherche input[type=text] {
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 background:none;
-width:180px;
+width:100%px;
 padding:0 9px;
 color:#666;
+}
+
+input[type=text] {
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+background:none;
+width:280px;
+padding:0 9px;
 }
 
 
@@ -714,7 +615,7 @@ width:50%;
 } 
 
 .onglet tr { 
-width: auto;
+width: 50%;
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 color: #1270B3; 
 } 
@@ -723,7 +624,7 @@ color: #1270B3;
 color: #1270B3; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
-width: 150px;
+width: 100%;
 } 
 
 
@@ -731,6 +632,11 @@ width: 150px;
     position: relative;
     margin-top: 5px;
    left: 850px;
+    cursor:alias;
+    border-radius:6px;
+    border:none;
+   display: inline-block;
+
 }
 
 .thead { 
@@ -792,21 +698,39 @@ label {
 }
 
 
+
+
 .position_table{
+    
     margin:0 auto;
 }
 
-input[type="placeholder"]{
- color:red;
-    }
 
 input[type="submit"]{
- background-color: aliceblue;
- border-radius: 5px;"
-    color:grey;
     cursor:context-menu;
+    color:#ffffff;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	padding:10px 15px;
+	text-decoration:none;
+    margin-top:10px;
+    margin-left:10px;
+    cursor:alias;
+    border-radius: 5px;
+    background-color: #1270b3;
+    border:none;
+     text-align: right;
     
     }
+
+#afficher {
+    
+    background-color: aliceblue;
+ border-radius: 5px;"
+    color:grey;
+    margin: none;
+    padding:none;
+}
+
 
 .recherche input {
     cursor:context-menu;
@@ -815,10 +739,16 @@ input[type="submit"]{
 
 
 input[type="submit"]:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color:black;
 
 }
+
+input[type="placeholder"]{
+     width:100%;
+
+}
+
 .modif input{
     color:red;
 }
@@ -834,7 +764,7 @@ color: #000000;
 .placeholder{
 color: #a9a9a9;
 background-color:#eeeeee;
- width: 205px;
+ width: 100%;
  height: 25px;
 }
 select option:first-child{color:grey; display: none;}
@@ -951,7 +881,8 @@ color: black;
 
 
 table{
-	margin-left:40px;
+	margin-left:70px;
+    margin-right: 0px;
 }
 table a:visited {
 	color: #999999;
@@ -966,3 +897,122 @@ table td {
 	border-bottom: 1px solid #fff;
 
 }
+
+.entete {
+    text-align: left;
+    color:aliceblue;
+    width:98%;
+    height:65px;
+
+}
+
+.icone_logo
+{
+     width:59px; 
+    height:66px; 
+
+}
+
+.carre {
+    margin-left: 10px;
+    text-align: right;
+    height:200px; 
+    width:100%; 
+    cursor:pointer;
+    margin-bottom: 0px;
+    
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 500px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+.form2 {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 380px;
+  margin: 0 auto 200px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form2 input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form2 button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ffffff;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form2 button:hover,.form button:active,.form button:focus {
+  background: #ffffff;
+}
+.form2 .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form2 .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form2 .register-form {
+  display: none;
+}
+.container2 {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.container2:before, .container2:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container2 .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container2 .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container2 .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container2 .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container2 .info span .fa {
+  color: #EF3B3A;
+}
+
+
+
