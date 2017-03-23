@@ -134,11 +134,11 @@ CREATE TABLE `Service` (
 --
 
 
-!40000 ALTER TABLE `Service` DISABLE KEYS ;
+/*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
 INSERT INTO `Service` VALUES (1,"HC LYON","Unité neurovasculaire",'NC','00:00', '00:00','3 Quai des Célestins','69002 ','Lyon','', 'YES');
 UNLOCK TABLES;
-!40000 ALTER TABLE `Service` ENABLE KEYS ;
+/*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
 --
 -- Table structure for table `Examen`
@@ -157,11 +157,11 @@ CREATE TABLE `Examen` (
 --
 
 
-!40000 ALTER TABLE `Examen` DISABLE KEYS ;
+/*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
 LOCK TABLES `Examen` WRITE;
 INSERT INTO `Examen` VALUES (1,'Examens HCL','');
 UNLOCK TABLES;
-!40000 ALTER TABLE `Examen` ENABLE KEYS ;
+/*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
 --
 -- Table structure for table `Examen_patient`
