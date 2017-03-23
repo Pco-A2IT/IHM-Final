@@ -180,7 +180,7 @@ include('config.php');
                                     </table>
                                 </form>
                             </div>
-                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="position_submit" formmethod="post"/>
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="position_submit" formmethod="post" style="cursor:e-resize;"/>
                                        
                 
             <div class="onglet" id="onglet3">

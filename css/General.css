@@ -222,7 +222,7 @@ input[type=button]{
 	text-decoration:none;
     margin-top:10px;
     margin-left:10px;
-    cursor: copy;
+    cursor:pointer;
     border-radius: 5px;
     background-color: #1270b3
 }
@@ -713,7 +713,7 @@ width: 150px;
     position: relative;
     margin-top: 5px;
    left: 850px;
-    cursor: copy;
+    cursor:alias;
     border-radius:6px;
     border:none;
 
@@ -797,7 +797,7 @@ input[type="submit"]{
 	text-decoration:none;
     margin-top:10px;
     margin-left:10px;
-    cursor: copy;
+    cursor:alias;
     border-radius: 5px;
     background-color: #1270b3;
     border:none;
@@ -825,6 +825,8 @@ input[type="submit"]:hover{
     color:black;
 
 }
+
+
 .modif input{
     color:red;
 }
