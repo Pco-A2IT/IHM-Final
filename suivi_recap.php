@@ -331,6 +331,8 @@ include('config.php');
     </body>
 </html>
 
+<?php require 'inc/footer.php'; ?>
+
 <script>
          
          function changeColor(s) {
@@ -341,16 +343,18 @@ include('config.php');
     else {
         s.style.color = "black";
     }
+        
 }
-         
+
 
         $(document).ready(function(){
 
            
             //Initialisation : on cache tous les onglets puis on affiche le premier
             $('.onglet').hide();
-               $('.onglet3').hide();
-            $('#onglet4').show();
+            $('.onglet1').hide();
+            $('#onglet1').show();
+            
 
             //Quand on clique sur un titre
             $('.title').on('click',function(){

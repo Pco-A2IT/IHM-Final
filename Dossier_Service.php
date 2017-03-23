@@ -52,10 +52,7 @@ include('config.php');
                                 <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Service<br></h2>
                                 <br><br><br><br>
                             </div>
-                            <div id="titles"> 
-                                <span class="title active"  target="onglet1"> Service</span> 
-                                <span class="title" target="onglet3"> Examens</span> 
-                            </div>
+                           
 
                             <div class="onglet" id="onglet1">
                                 <table  cellspacing="5px" class="table" style="float:left"> 
@@ -113,37 +110,7 @@ include('config.php');
                                 </table>
 
                             </div>
-                            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
-
-                            <div class="onglet" id="onglet3">
-                                <div class="position_table">
-                                    <div class="liste">
-                                        <table align="center" cellspacing="5px" class="table">
-
-                                            <tr>
-                                                <th></th>
-                                                <td>Examens disponibles</td>
-                                            </tr>
-    <?php
-        $compteur=1;
-        $reponse = $bdd->query('SELECT * FROM Examen');
-        while($dnn = $reponse->fetch()){
-            if($dnn["id_examen"]!=1){
-    ?>
-                                            <tr>
-                                                <td><?php print_r($dnn['typeExamen']); ?></td> 
-                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-    <?php $compteur=$compteur+1; ?>
-                                            </tr>
-    <?php
-            }
-        }
-    ?>
-                           
-                                        </table>
-                                    </div>    
-                                </div> 
-                            </div>                                    
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
                         </div>
                     </div>
                 </div>

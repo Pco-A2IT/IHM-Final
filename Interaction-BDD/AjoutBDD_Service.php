@@ -132,5 +132,5 @@ echo "boucle effectuée";
 
 
 // Redirection du visiteur vers la page du minichat
-header('Location: ../Liste_Services.php');
+header('Location: ../Dossier_Service_Examens.php');
 ?>
