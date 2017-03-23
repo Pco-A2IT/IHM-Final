@@ -70,7 +70,7 @@ include('config.php');
             <div class="blanc";   style="border-radius: 5px;">
                 
                         <div class="myButton" id="Ajouter_liste"> 
-                            <a href="Dossier_Medecin.php" class="myButton1">Ajouter Médecin</a>
+                            <a href="Dossier_Medecin.php" class="myButton1" style=" cursor:copy;">Ajouter Médecin</a>
                         </div>  
                 <br>
                 <br>

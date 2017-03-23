@@ -83,7 +83,7 @@ include('config.php');
             <div class="blanc"; style="border-radius: 5px;">  
                 
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.php" class="myButton1"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"  style=" cursor:copy;"> Ajouter Service</a>
                         </div>
                 <br>
                 <br>
