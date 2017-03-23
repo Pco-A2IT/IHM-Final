@@ -344,7 +344,8 @@
            
             //Initialisation : on cache tous les onglets puis on affiche le premier
             $('.onglet').hide();
-            $('#onglet1').show();
+               $('.onglet3').hide();
+            $('#onglet4').show();
 
             //Quand on clique sur un titre
             $('.title').on('click',function(){
