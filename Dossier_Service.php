@@ -128,6 +128,7 @@ include('config.php');
         $compteur=1;
         $reponse = $bdd->query('SELECT * FROM Examen');
         while($dnn = $reponse->fetch()){
+            if($dnn["id_examen"]!=1){
     ?>
                                             <tr>
                                                 <td><?php print_r($dnn['typeExamen']); ?></td> 
@@ -135,7 +136,8 @@ include('config.php');
     <?php $compteur=$compteur+1; ?>
                                             </tr>
     <?php
-        };
+            }
+        }
     ?>
                            
                                         </table>
