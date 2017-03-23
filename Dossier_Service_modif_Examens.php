@@ -93,13 +93,11 @@ $req->closeCursor();
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
-            <div class="div1">
+            
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             <br><br><br><br>
-            </div>
+         
             
-
-          
             <div class="onglet" id="onglet3">
                   <div class="position_table"> 
                       <div class="liste">
@@ -159,32 +157,3 @@ $req->closeCursor();
 </html>
 
 <?php require 'inc/footer.php'; ?>
-
-     <script>
-
-        $(document).ready(function(){
-
-           
-            //Initialisation : on cache tous les onglets puis on affiche le premier
-            $('.onglet').hide();
-            $('#onglet1').show();
-
-            //Quand on clique sur un titre
-            $('.title').on('click',function(){
-
-                // On recupere le div global id = container
-                var container = $(this).parent().parent();
-
-                $('.active').removeClass('active');
-
-                
-                // On cache tous les onglets
-                container.children('.onglet').hide();
-
-                //On affiche celui correspondant à l'attribut target
-                container.children('#'+$(this).attr('target')).show();
-                $(this).addClass("active");
-            });
-         }); 
-        
-    </script>

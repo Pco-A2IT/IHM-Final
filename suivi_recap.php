@@ -339,18 +339,15 @@ include('config.php');
     else {
         s.style.color = "black";
     }
-        
 }
-
+         
 
         $(document).ready(function(){
 
            
             //Initialisation : on cache tous les onglets puis on affiche le premier
             $('.onglet').hide();
-            $('.onglet1').hide();
-            $('#onglet3').show();
-            
+            $('#onglet1').show();
 
             //Quand on clique sur un titre
             $('.title').on('click',function(){
