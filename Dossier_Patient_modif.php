@@ -83,9 +83,10 @@ $req->closeCursor();
     
    
     <div class="gris">
-            <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $id_patient; ?> " id= "form" class ="form" method="post"> 
+           
                 
         <div  class="gris2">
+             <form action="./Interaction-BDD/ModifBDD_Patient.php?id_patient=<?php echo $id_patient; ?> " id= "form" class ="form" method="post"> 
                 <div id="menu0" class="carreGris" style="background-color:#1270B3";>
                     <h4>Patients</h4>    
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
@@ -121,7 +122,11 @@ $req->closeCursor();
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         </div>
 
-            <div class="onglet" id="onglet1">
+                         <div id="container">
+                    <br>
+                        
+                            <div class="onglet" id="onglet1">
+                                <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                    
                 
                             <br>
@@ -224,13 +229,17 @@ $req->closeCursor();
                                 </tr>
                             </table>
                       
-                        <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"> <?php echo $_GET['id_patient'];?>"/>  
-                
+                      
+                                </form>
                     </div>
+                             
                 </div> 
-            </div>
-                </div>
-            </form>
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> <?php echo $_GET['id_patient'];?>
+                 </div>
+              
+         
+        
+                  </div>
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {
