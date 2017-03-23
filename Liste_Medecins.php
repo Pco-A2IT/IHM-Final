@@ -79,7 +79,7 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
 
                 </form> 
                 <style>
@@ -129,7 +129,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
 ?>
-                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'">
+                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'" style="cursor:zoom-in">
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>

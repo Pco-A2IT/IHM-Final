@@ -140,7 +140,7 @@ while($dnn = $reponse->fetch()){
 ?>
 
                         </table>
-                              <input type="submit" accesskey="enter" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit"  formmethod="post" /> 
                         </div>
                     </div>
                 </div>

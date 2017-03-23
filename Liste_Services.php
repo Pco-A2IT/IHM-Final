@@ -92,7 +92,7 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
 
                     </form>   
                 <style>
@@ -144,7 +144,7 @@ while($dnn = $pdo_select->fetch() )
 {
 ?>
        
-    <tr onclick="document.location='Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>' ">
+    <tr onclick="document.location='Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>'" style="cursor:zoom-in">
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>

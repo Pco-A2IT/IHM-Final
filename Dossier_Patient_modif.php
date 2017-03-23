@@ -234,7 +234,7 @@ $req->closeCursor();
                     </div>
                              
                 </div> 
-                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> <?php echo $_GET['id_patient'];?>
+                     <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" formmethod="post"/> <?php echo $_GET['id_patient'];?>
                  </div>
               
          
