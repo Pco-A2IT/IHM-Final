@@ -416,6 +416,7 @@ height:100px;
     color:grey;
     background:none;
     margin:0px auto;
+    margin-top: 20px;
     
 
 }
@@ -604,9 +605,8 @@ color:#666;
 input[type=text] {
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 background:none;
-width:200%px;
+width:280px;
 padding:0 9px;
-color:#666;
 }
 
 
@@ -624,7 +624,7 @@ color: #1270B3;
 color: #1270B3; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
-width: 50%;
+width: 100%;
 } 
 
 
@@ -881,7 +881,7 @@ color: black;
 
 
 table{
-	margin-left:100px;
+	margin-left:70px;
     margin-right: 0px;
 }
 table a:visited {
