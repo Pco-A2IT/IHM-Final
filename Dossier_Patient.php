@@ -74,7 +74,7 @@ include('config.php');
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                                     <br>
-                                    <table cellspacing="10px" class="table" >
+                                    <table cellspacing="5px" class="table" >
                                         
                                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                         <tr> 
@@ -118,7 +118,7 @@ include('config.php');
                                             </td> 
                                         </tr> 
                                     </table> 
-                                    <table cellspacing="5px" class="table" style="float:left">                                   <tr> 
+                                    <table cellspacing="5px" class="table">                                   <tr> 
                                             <td align="right">Adresse:</td> 
                                             <td align="left" colspan="2"> 
                                                 <input type="text" name="adresse_p" placeholder="(ex: 20, avenue albert Einstein)" autocomplete="off"/>
