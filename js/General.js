@@ -14,7 +14,7 @@ boutonElt0.addEventListener("click", function () {
 
 boutonElt1.addEventListener("click", function () {
     console.log("clic1");
-     top.location.href='suivi_email.php'; 
+     top.location.href='suivi_recap.php'; 
 });
 
 boutonElt2.addEventListener("click", function () {
