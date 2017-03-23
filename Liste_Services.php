@@ -106,7 +106,6 @@ include('config.php');
                            
                             </style>
 
-                <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -169,13 +168,13 @@ function sure()
     return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
 }                 
 </script>
-      
+       
                     </table> 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+  
 </body>
 </html>
 

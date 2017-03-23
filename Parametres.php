@@ -12,9 +12,9 @@ include('config.php');
 </head>
 <body>
       <div class="gris">
-               <div  class="gris2">
+               <div  class="gris2";>
           <div id="menu0" class="carreGris";>
-                <h4>Patients</h4>    
+                <h4 >Patients</h4>    
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
