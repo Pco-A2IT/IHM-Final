@@ -222,7 +222,7 @@ $req->closeCursor();
                                     </td>
                                 </tr>
                                 <tr height="60px">
-                                    <td align="center" colspan="4"><TEXTAREA name="description_p" rows="4" cols="40"  ><?php echo $description_p ?></TEXTAREA></td>
+                                    <td align="center" colspan="4"><TEXTAREA name="description_p" rows="4" cols="40" placeholder="Commentaires" ><?php echo $description_p ?></TEXTAREA></td>
                                 </tr>
                             </table>
                       
@@ -308,7 +308,9 @@ $req->closeCursor();
 				}); 
                 });
             </script>  
+            </form>
         </div>
+    </div>
     
     
     <script src="General.js"></script>

@@ -95,7 +95,8 @@ $req->closeCursor();
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
                     </div>
-                    
+            <br>
+          
             <div class="onglet" id="onglet1">
                    
                     <table align="left" cellspacing="5px" class="table" id="modif">
