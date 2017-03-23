@@ -232,20 +232,6 @@ input[type=button]{
     color:black;
 }
 
-#btn1{
-    float:right;
-	text-align:left;
-}
-
-#btn2{
-	float:right;
-	text-align:center;
-}
-
-#btn3{
-	float:right;
-	text-align:right;
-}
 
 .myButton:active {
 	 position: relative;
@@ -727,6 +713,10 @@ width: 150px;
     position: relative;
     margin-top: 5px;
    left: 850px;
+    cursor: copy;
+    border-radius:6px;
+    border:none;
+
 }
 
 .thead { 
@@ -788,7 +778,10 @@ label {
 }
 
 
+
+
 .position_table{
+    
     margin:0 auto;
 }
 
@@ -797,12 +790,29 @@ input[type="placeholder"]{
     }
 
 input[type="submit"]{
- background-color: aliceblue;
- border-radius: 5px;"
-    color:grey;
     cursor:context-menu;
+    color:#ffffff;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	padding:10px 15px;
+	text-decoration:none;
+    margin-top:10px;
+    margin-left:10px;
+    cursor: copy;
+    border-radius: 5px;
+    background-color: #1270b3;
+    border:none;
     
     }
+
+#afficher {
+    
+    background-color: aliceblue;
+ border-radius: 5px;"
+    color:grey;
+    margin: none;
+    padding:none;
+}
+
 
 .recherche input {
     cursor:context-menu;
@@ -811,7 +821,7 @@ input[type="submit"]{
 
 
 input[type="submit"]:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     color:black;
 
 }
