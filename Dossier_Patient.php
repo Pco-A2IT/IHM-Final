@@ -65,18 +65,16 @@ include('config.php');
                 <div class="blanc";   style="border-radius: 5px;">
                   
                     <div class="section4">
-                        <div class="div1">
+                     
                             <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Patient<br></h2>
                       
-                        
-            
-                <div id="container">
+             
                     <br>
                         
                             <div class="onglet" id="onglet1">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                                     <br>
-                                    <table cellspacing="5px" class="table" style="float:left">
+                                    <table cellspacing="10px" class="table" >
                                         
                                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                         <tr> 
@@ -178,47 +176,18 @@ include('config.php');
                                             </td> 
                                         </tr>
                                     </table>
-                                    <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post">
-                                    
+                                   
                                 </form>
                             </div>
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="position_submit" formmethod="post" style="cursor:e-resize;"/>
                                        
                 
-            <div class="onglet" id="onglet3">
-
-                <div class="position_table"> 
-                <div class="liste">
-                <table align="center" cellspacing="5px" cellpadding="15px" class="table">
-                
-                
-                        <tr>
-                            <th>Examen</th>
-                            <th style="text-align:center">Réalisé</th>
-                        <?php
-                                $compteur=1;
-                                $reponse = $bdd->query('SELECT * FROM Examen');
-                                while($dnn = $reponse->fetch()){
-                            ?>
-                            <tr>
-                            <td><?php print_r($dnn['typeExamen']); ?></td> 
-                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-                            <?php $compteur=$compteur+1; ?>
-                            </tr>
-                            <?php
-                                };
-                            ?>
-                   
-                    </table>
-                    </div>
-                 </div>
-            </div>
+      
                     </div>
         </div>
             </div>
         </div>
-        </div>
-        </div>
+       
         </form>
             <script type="text/javascript">
                 //utilisation de jQuery :

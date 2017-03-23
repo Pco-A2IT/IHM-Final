@@ -116,13 +116,10 @@ $req->closeCursor();
                 
                 <div class="blanc";   style="border-radius: 5px;">
                     <div class="section4">
-                        <div class="div1">
 
                          <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
-                        </div>
-
-                         <div id="container">
+                        
                     <br>
                         
                             <div class="onglet" id="onglet1">
@@ -233,13 +230,13 @@ $req->closeCursor();
                                 </form>
                     </div>
                              
-                </div> 
+              
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" formmethod="post"/> <?php echo $_GET['id_patient'];?>
                  </div>
+                       </div>
               
          
         
-                  </div>
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {

@@ -68,8 +68,7 @@ include('config.php');
                     
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
-                
-                        <div class="myButton" id="Ajouter_liste"> 
+                 <div class="myButton" id="Ajouter_liste"> 
                             <a href="Dossier_Medecin.php" class="myButton1" style=" cursor:copy;">Ajouter Médecin</a>
                         </div>  
                 <br>
@@ -93,7 +92,7 @@ include('config.php');
                            
                             </style>
 
-                            <div id="divConteneur">
+              
                 <div class="liste">
                     <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
@@ -152,14 +151,14 @@ function sure()
 
 
                     </table> 
-                    
+                   
                 </div>
                 </div>
             </div>
         </div>
         
     
-    </div>
+    
 </body>
 </html>
 
