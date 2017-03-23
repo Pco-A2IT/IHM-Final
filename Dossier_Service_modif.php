@@ -173,25 +173,39 @@ $req->closeCursor();
                            </tr>
                             <?php
                                 
+                            if($idservice!=1){
                                 $compteur=1;
                                 $reponse = $bdd->query('SELECT * FROM Examen');
                                 while($dnn = $reponse->fetch()){
+                                    if($dnn["id_examen"]!=1){
                             ?>
                             <tr>
                             <td><?php print_r($dnn['typeExamen']); ?></td>
                             <?php
-                                    $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
-                                    $req2->execute(array($idservice));
-                                    while($donnee = $req2->fetch()){
-                                        if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
-                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
-                                        <?php }else{ ?>
-                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
-                                        <?php }
+                                        $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+                                        $req2->execute(array($idservice));
+                                        while($donnee = $req2->fetch()){
+                                            if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
+                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
+                                            <?php }else{ ?>
+                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
+                                            <?php }
+                                        }
+                                        $compteur=$compteur+1;
+
                                     }
-                                    $compteur=$compteur+1;
-                                
                                 }
+                            }
+                            else{
+                                $reponse2 = $bdd->query('SELECT * FROM Examen where id_examen=1');
+                                while($dnn2 = $reponse2->fetch()){
+                            ?>
+                                <tr>
+                                    <td><?php print_r($dnn2['typeExamen']); ?></td>
+                                    <td><input type="checkbox" name="" value="YES" checked disabled>
+                            <?php 
+                                }
+                            }
                             ?>
                             </tr>
                             </table>

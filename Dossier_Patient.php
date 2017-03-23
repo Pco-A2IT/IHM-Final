@@ -178,6 +178,8 @@ include('config.php');
                                             </td> 
                                         </tr>
                                     </table>
+                                    <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post">
+                                    
                                 </form>
                             </div>
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="position_submit" formmethod="post" style="cursor:e-resize;"/>
