@@ -92,7 +92,7 @@ if(!empty($_POST)){
         <input type="text" name="email" class="form-control" placeholder="Email"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
-        <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
+        <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
           <li><a href="login.php">Déjà inscrit ?</a></li>
 
     </div>
