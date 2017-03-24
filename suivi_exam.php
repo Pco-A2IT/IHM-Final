@@ -54,13 +54,16 @@ include('config.php');
                 <div id="container">
                     <br>
                             <div id="titles"> 
-                                <span class="title active" target="onglet1"> Examens à réaliser</span> 
-                                <span class="title" target="onglet3"> Examens à planifier</span>
+                                <span class="title active" target="onglet1">Planification</span> 
+                                <span class="title" target="onglet3">Suivi</span>
+                                <span class="title" target="onglet4"> Récapitulatif 1</span>
+                                <span class="title" target="onglet5"> Récapitulatif 2</span>
+                                <span class="title" target="onglet6"> Récapitulatif 3</span>
                                 
                             </div>
                              
                             
-                            <div class="onglet" id="onglet1">
+                            <div class="onglet" id="onglet3">
                                 <div class="position_table">
                 
                                     <div class="liste">
@@ -173,7 +176,7 @@ include('config.php');
                         </div>
                     <br>
                     
-                              <div class="onglet" id="onglet3">
+                              <div class="onglet" id="onglet1">
                                 <div class="position_table">
                 
                                     <div class="liste">
@@ -250,6 +253,255 @@ include('config.php');
                                   
                             
                         </div>
+                          <div class="onglet" id="onglet4">
+                                <div class="position_table">
+                
+                                    <div class="liste">
+                                        <table cellspacing="0px"  class="table">   
+                                            <tr>
+                                                <th>Patient</th>
+                                                <th>Medecin Traitant </th>
+                                                <th>Medecin Appelant</th>
+                                                <th>Date de création du dossier</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                            <!-- AFFICHAGE des EXAMENS PLANIFIES -->
+                                    <?php
+                                        
+                                        
+                                        //Parcours de tous les patients
+                                        $rep1= $bdd->prepare('SELECT * FROM Patient ORDER BY "date_creation_dossier"');
+                                        $rep1->execute(array());
+                                   
+                                        while ($dnn1= $rep1->fetch()){ ?>
+                                            <tr>
+                                            <?php
+                                            //Calcul du nombre d'examens
+                                            $calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
+                                            $nb= $calcul->fetch();
+                                            //echo $nb['NB'];
+                                        //Calcul du nombre d'examenspatient
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2->execute(array($dnn1['id_patient']));
+                                            $nb2=$calcul2->fetch();
+                                            //echo $nb2['NB2'];
+                                        //Condition pour apparaître dans le tableau
+                                            if($nb2['NB2']==$nb['NB']){ ?>
+                                                <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
+                                                <?php
+                                                if($dnn1['ID_medecin_traitant']==0){?>
+                                                    <td><?php echo "Pas de medecin traitant attribué"; ?></td>
+                                          <?php }else{
+                                                    $rep2= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep2->execute(array($dnn1['ID_medecin_traitant']));
+                                                    while($dnn2=$rep2->fetch()){?>
+                                                        <td><?php echo $dnn2['prenom_m'].' '.$dnn2['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn2['mail_m'].' - '.$dnn2['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                                }
+                                                if($dnn1['ID_medecin_autre']==0){?>
+                                                    <td><?php echo "Pas de medecin appelant attribué"; ?></td>
+                                        <?php }else{
+                                                    $rep3= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep3->execute(array($dnn1['ID_medecin_autre']));
+                                                    while($dnn3=$rep3->fetch()){ ?>
+                                                        <td><?php echo $dnn3['prenom_m'].' '.$dnn3['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn3['mail_m'].' - '.$dnn3['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                               }?>
+                                               <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
+                                               <td></td>
+                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/></td>
+                                        <?php
+                                            } ?>
+                                            </tr>
+                                        <?php                             
+                                            }?>
+                                            </table>
+                                    </div>
+                            </div>
+                               
+
+              
+                                  
+                        </div>
+                        <div class="onglet" id="onglet5">
+                                       <div class="position_table">
+                
+                                    <div class="liste">
+                                        <table cellspacing="0px"  class="table">   
+                                            <tr>
+                                                <th>Patient</th>
+                                                <th>Medecin Traitant </th>
+                                                <th>Medecin Appelant</th>
+                                                <th>Date de création du dossier</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                            <!-- AFFICHAGE des EXAMENS PLANIFIES -->
+                                    <?php
+                                        
+                                        
+                                        //Parcours de tous les patients
+                                        $rep1= $bdd->prepare('SELECT * FROM Patient ORDER BY "date_creation_dossier"');
+                                        $rep1->execute(array());
+                                   
+                                        while ($dnn1= $rep1->fetch()){ ?>
+                                            <tr>
+                                            <?php
+                                            //récupérer l'id de l'examen neuro
+                                            
+                                            $idexam = $bdd->query('SELECT id_examen AS ID FROM Examen WHERE neuro="YES" ');
+                                            $idef=$idexam->fetch();
+                                            
+                                            //Calcul du nombre d'examens
+                                            $calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
+                                            $nb= $calcul->fetch();
+                                            //echo $nb['NB'];
+                                        //Calcul du nombre d'examens réalisés sauf neuro
+                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES" AND id_examen <> ?');
+                                            $calcul3->execute(array($dnn1['id_patient'],$idef['ID']));
+                                            $nb3=$calcul3->fetch();
+                                        //Calcul du nombre d'examens plannifiés
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2->execute(array($dnn1['id_patient']));
+                                            $nb2=$calcul2->fetch();
+                                            
+                                            //echo $nb2['NB2'];
+                                        //Condition pour apparaître dans le tableau
+                                            if($nb2['NB2']==$nb['NB'] && $nb3['NB3']==$nb['NB']-1){ ?>
+                                                <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
+                                                <?php
+                                                if($dnn1['ID_medecin_traitant']==0){?>
+                                                    <td><?php echo "Pas de medecin traitant attribué"; ?></td>
+                                          <?php }else{
+                                                    $rep2= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep2->execute(array($dnn1['ID_medecin_traitant']));
+                                                    while($dnn2=$rep2->fetch()){?>
+                                                        <td><?php echo $dnn2['prenom_m'].' '.$dnn2['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn2['mail_m'].' - '.$dnn2['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                                }
+                                                if($dnn1['ID_medecin_autre']==0){?>
+                                                    <td><?php echo "Pas de medecin appelant attribué"; ?></td>
+                                        <?php }else{
+                                                    $rep3= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep3->execute(array($dnn1['ID_medecin_autre']));
+                                                    while($dnn3=$rep3->fetch()){ ?>
+                                                        <td><?php echo $dnn3['prenom_m'].' '.$dnn3['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn3['mail_m'].' - '.$dnn3['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                               }?>
+                                               <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
+                                               <td></td>
+                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/></td>
+                                        <?php
+                                            } ?>
+                                            </tr>
+                                        <?php                             
+                                            }?>
+                                            </table>
+                                    </div>
+                            </div>
+                        
+                                  
+                            
+                        </div>
+                           <div class="onglet" id="onglet6">
+                                     <div class="position_table">
+                
+                                    <div class="liste">
+                                        <table cellspacing="0px"  class="table">   
+                                            <tr>
+                                                <th>Patient</th>
+                                                <th>Medecin Traitant </th>
+                                                <th>Medecin Appelant</th>
+                                                <th>Date de création du dossier</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                            <!-- AFFICHAGE des EXAMENS PLANIFIES -->
+                                    <?php
+                                        
+                                        
+                                        //Parcours de tous les patients
+                                        $rep1= $bdd->prepare('SELECT * FROM Patient ORDER BY "date_creation_dossier"');
+                                        $rep1->execute(array());
+                                   
+                                        while ($dnn1= $rep1->fetch()){ ?>
+                                            <tr>
+                                            <?php
+                                            //récupérer l'id de l'examen neuro
+                                            
+                                            //$idexam = $bdd->query('SELECT id_examen AS ID FROM Examen WHERE neuro="YES" ');
+                                            //$idef=$idexam->fetch();
+                                            
+                                            //Calcul du nombre d'examens
+                                            $calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
+                                            $nb= $calcul->fetch();
+                                            //echo $nb['NB'];
+                                        //Calcul du nombre d'examens réalisés sauf neuro
+                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES"');
+                                            $calcul3->execute(array($dnn1['id_patient']));
+                                            $nb3=$calcul3->fetch();
+                                        //Calcul du nombre d'examens plannifiés
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2->execute(array($dnn1['id_patient']));
+                                            $nb2=$calcul2->fetch();
+                                            
+                                            //echo $nb2['NB2'];
+                                        //Condition pour apparaître dans le tableau
+                                            if($nb2['NB2']==$nb['NB'] && $nb3['NB3']==$nb['NB']){ ?>
+                                                <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
+                                                <?php
+                                                if($dnn1['ID_medecin_traitant']==0){?>
+                                                    <td><?php echo "Pas de medecin traitant attribué"; ?></td>
+                                          <?php }else{
+                                                    $rep2= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep2->execute(array($dnn1['ID_medecin_traitant']));
+                                                    while($dnn2=$rep2->fetch()){?>
+                                                        <td><?php echo $dnn2['prenom_m'].' '.$dnn2['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn2['mail_m'].' - '.$dnn2['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                                }
+                                                if($dnn1['ID_medecin_autre']==0){?>
+                                                    <td><?php echo "Pas de medecin appelant attribué"; ?></td>
+                                        <?php }else{
+                                                    $rep3= $bdd->prepare('SELECT * FROM Medecin WHERE id_medecin=?');
+                                                    $rep3->execute(array($dnn1['ID_medecin_autre']));
+                                                    while($dnn3=$rep3->fetch()){ ?>
+                                                        <td><?php echo $dnn3['prenom_m'].' '.$dnn3['nom_m']; ?>
+                                                            <br>
+                                                            <?php echo $dnn3['mail_m'].' - '.$dnn3['telephone_m']; ?>
+                                                        </td>
+                                        <?php       }
+                                               }?>
+                                               <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
+                                               <td></td>
+                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/></td>
+                                        <?php
+                                            } ?>
+                                            </tr>
+                                        <?php                             
+                                            }?>
+                                            </table>
+                                    </div>
+                            </div>
+                                  
+                       
+                        </div>
+                    
                        
                     
                    

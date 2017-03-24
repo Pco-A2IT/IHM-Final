@@ -86,7 +86,7 @@ include('config.php');
                                         </td> 
                                     </tr>
                                     <tr> 
-                                        <td class="left">Examen Neurologie</td> 
+                                        <td class="left">Précisez s'il s'agit d'un examen neurologique</td> 
                                         <td class="left"> 
                                             <input type="checkbox" name="neuro" class="regular checkbox" value="YES"/>
                                         </td> 
