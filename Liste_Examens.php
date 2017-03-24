@@ -85,6 +85,12 @@ include('config.php');
                                             <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)" autocomplete="off"/>
                                         </td> 
                                     </tr>
+                                    <tr> 
+                                        <td class="left">Précisez s'il s'agit d'un examen neurologique</td> 
+                                        <td class="left"> 
+                                            <input type="checkbox" name="neuro" class="regular checkbox" value="YES"/>
+                                        </td> 
+                                    </tr>
                                     <tr height="60px"> 
                                         <td align="center" colspan="2"> 
                                             <input type="submit" accesskey="enter" value="Ajouter" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn')" class="submit" formmethod="post"/>

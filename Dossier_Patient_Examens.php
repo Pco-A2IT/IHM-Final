@@ -89,7 +89,7 @@ include('config.php');
 
                     <div class="position_table"> 
                         <div class="liste">
-                        <table align="center" cellspacing="5px" cellpadding="15px" class="table">
+                        <table cellspacing="0px" id="tbl" class="table"> 
 
 
                                 <tr>

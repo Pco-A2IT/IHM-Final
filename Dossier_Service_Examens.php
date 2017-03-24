@@ -59,7 +59,7 @@ include('config.php');
                             <div class="onglet" id="onglet3">
                                 <div class="position_table">
                                     <div class="liste">
-                                        <table align="center" cellspacing="5px" class="table">
+                                         <table cellspacing="0px" id="tbl" class="table"> 
 
                                             <tr>
                                                 <th></th>
