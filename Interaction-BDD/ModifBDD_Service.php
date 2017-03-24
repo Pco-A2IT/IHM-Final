@@ -42,8 +42,6 @@ while ($donnees = $req->fetch())
     
     
 }
-           
-//$req->closeCursor();
 
 ///////////////////////////
 /*Changement dans la base de données*/
@@ -63,32 +61,15 @@ $req1->execute(array(
 	':jointure' => $idservice
     
 	));
-$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
-$req2->execute();
-$compteur3=1;
-while($dnn = $req2->fetch()){
-  if(isset($_POST[$compteur3])){
-            $bool="YES";
-  }else{
-            $bool="NO";
-  }
-  echo $bool;
-  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
-  //echo $sql;
-  //$id_boucle=7;
-  //echo $id_boucle;
-  
-  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$idservice."");
-  echo "prepare effectué";
-  $stmt->execute(array($bool));
-  echo "requete executée";
-  $compteur3=$compteur3+1;
 
-}
 ///////////////////////////
 /*Retour vers le dossier service avec modification prise en compte*/
 ///////////////////////////
 
-header('Location: ../Dossier_Service_modif_Examens.php');
+//header('Location: ../Dossier_Service_modif_Examens.php');
 
 ?>
+
+<script>
+    top.location.href="../Dossier_Service_modif_Examens.php?idservice=<?php echo $idservice; ?>";
+</script>

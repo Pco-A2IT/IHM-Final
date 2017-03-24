@@ -2,8 +2,6 @@
 // Connexion à la base de données
 include('../config.php');
 
-//
-
 //Récupérer données du formulaires
 if($_POST['centre_s']==""){
     $centre_s="NC";
@@ -63,12 +61,6 @@ else{
 
 
 $descr=$_POST['codePostal_s'];
-//$descr="A changer la description";
-
-
-
-//$req->execute(array($_POST['siret_s'], $_POST['centre_s'],$_POST['service_s'], $_POST['telephone_s'], $ouv,$ferm, $_POST['adresse_s'], $_POST['codePostal_s'],$_POST['ville_s'], $descr, $irm, $cardiaque, $neuro));*/
-//Brouillon
 //Construction de requêtes en fonction du nombre d'attributs examen
 $req=$bdd->prepare('SELECT typeExamen FROM Examen');
 $req->execute();
@@ -98,39 +90,10 @@ echo $statique;
 $req1->execute(array($centre_s,$service_s, $telephone_s, $heured, $heuref, $adresse_s, $codePostal_s ,$ville_s, $descr));
 echo "c'est pas req1 execute qui merde";
 //Modification des attributs enum examens (la construction les initialise à NON)
-$id_dernier=$bdd->lastInsertId();
-echo $id_dernier;
-$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
-$req2->execute();
-$compteur3=1;
-//$stmt = $bdd->prepare("UPDATE Service SET `Test IRM`=? WHERE id_service =".$id_dernier."");
-//echo "prepare effectué";
-//$stmt->execute(array("YES"));
-//echo "requete executée";
-echo "c'est la boucle qui merde";
-while($dnn = $req2->fetch()){
-  if(isset($_POST[$compteur3])){
-            $bool="YES";
-  }else{
-            $bool="NO";
-  }
-  echo $bool;
-  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
-  //echo $sql;
-  //$id_boucle=7;
-  //echo $id_boucle;
-  
-  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$id_dernier."");
-  echo "prepare effectué";
-  $stmt->execute(array($bool));
-  echo "requete executée";
-  $compteur3=$compteur3+1;
-
-}
-echo "boucle effectuée";
-
-
-
-// Redirection du visiteur vers la page du minichat
-header('Location: ../Dossier_Service_Examens.php');
+$id_service=$bdd->lastInsertId();
+echo $id_service;
 ?>
+
+<script>
+    top.location.href="../Dossier_Service_Examens.php?id_service=<?php echo $id_service; ?>";
+</script>

@@ -130,7 +130,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
-                           <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
+                           <td><a href="Dossier_Patient_modif_Examens.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
                             <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
@@ -138,6 +138,7 @@ while($dnn = $pdo_select->fetch() )
 <?php
 }
 ?>
+                    
 <!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->                         
 <script> 
 function sure()
@@ -146,34 +147,6 @@ function sure()
 }                 
 </script>
 
-
-
-                        <!--<tr>
-                           <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
-                           <td>Pasteur</td>
-                           <td>Vincent</td>
-                           <td>12/07/1990</td>
-                           <td>77700</td>
-                           <td>Carré</td>
-                           <td>0988834944</td>
-                            <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient"  /></td>
-                            <td>Pasteur</td>
-                            <td>Vincent</td>
-                            <td>12/07/1990</td>
-                            <td>77700</td>
-                            <td>Carré</td>
-                            <td>0988834944</td>
-                               <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr> -->
                     </table> 
                 </div>     
                 </div> 
