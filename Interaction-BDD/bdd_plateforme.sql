@@ -149,6 +149,7 @@ CREATE TABLE `Examen` (
   `id_examen` int(11) NOT NULL auto_increment,
   `typeExamen` varchar(255) DEFAUlT '', 
   `details` varchar(255) DEFAUlT '',
+  `neuro` ENUM("YES","NO") DEFAULT "NO",
   PRIMARY KEY  (`id_examen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -159,7 +160,7 @@ CREATE TABLE `Examen` (
 
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
 LOCK TABLES `Examen` WRITE;
-INSERT INTO `Examen` VALUES (1,'Examens HCL','');
+INSERT INTO `Examen` VALUES (1,'Examens HCL','',"NO");
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
