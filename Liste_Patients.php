@@ -1,6 +1,10 @@
-<?php
-   include('config.php');
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
 ?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -60,7 +64,7 @@
             <script src="js/General.js"></script>
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Patient.php" class="myButton1">Ajouter Patient</a>
+                            <a href="Dossier_Patient.php" class="myButton1"  style=" cursor:copy;">Ajouter Patient</a>
                 </div>
                 <br>
                 <br>
@@ -69,7 +73,7 @@
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
                     </form>
                 <style>
                                         #divConteneur{
@@ -118,7 +122,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
                         ?>
-                    <tr>
+                        <tr onclick="document.location='Dossier_Patient_modif.php?id_patient=<?php echo $dnn['id_patient'];?>'" style="cursor:zoom-in">
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
@@ -126,7 +130,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
-                           <td><a href="Dossier_Patient_modif.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
+                           <td><a href="Dossier_Patient_modif_Examens.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
                             <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
@@ -134,6 +138,7 @@ while($dnn = $pdo_select->fetch() )
 <?php
 }
 ?>
+                    
 <!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->                         
 <script> 
 function sure()
@@ -142,34 +147,6 @@ function sure()
 }                 
 </script>
 
-
-
-                        <!--<tr>
-                           <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
-                           <td>Pasteur</td>
-                           <td>Vincent</td>
-                           <td>12/07/1990</td>
-                           <td>77700</td>
-                           <td>Carré</td>
-                           <td>0988834944</td>
-                            <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient"  /></td>
-                            <td>Pasteur</td>
-                            <td>Vincent</td>
-                            <td>12/07/1990</td>
-                            <td>77700</td>
-                            <td>Carré</td>
-                            <td>0988834944</td>
-                               <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr> -->
                     </table> 
                 </div>     
                 </div> 
@@ -180,3 +157,5 @@ function sure()
     
 </body>
 </html>
+
+<?php require 'inc/footer.php'; ?>

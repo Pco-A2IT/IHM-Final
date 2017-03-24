@@ -1,7 +1,10 @@
-<!--Connexion à la bdd 'bdd_plateforme' à travers un fichier annexe-->
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -96,15 +99,10 @@ $req->closeCursor();
             </div>
             
 
-            <div id="titles"> 
-                <span class="title active"  target="onglet1"> Service</span> 
-                <span class="title" target="onglet3"> Examens</span> 
-            </div>
-
             <div class="onglet" id="onglet1">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
-
+                        <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                         <tr> 
                                 <td align="right">Service/Centre d'examen: *</td>
                                 <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
@@ -114,7 +112,7 @@ $req->closeCursor();
                                 <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 
-                                <td align="right">Téléphone:</td>
+                                <td align="right">Téléphone: *</td>
                                 <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="<?php echo $telephone_s ?>" >
                         </tr>    
                     </table> 
@@ -132,20 +130,20 @@ $req->closeCursor();
                             </td>
                         </tr>
                         <tr> 
-                            <td align="right">Ville:</td> 
+                            <td align="right">Ville: *</td> 
                             <td align="left"> 
                             <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
                             </td> 
                             </tr> 
                         <tr>
-                            <td align="right"> Adresse: 
+                            <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
                             <input type="text" name="adresse_s" placeholder="<?php echo $adresse_s ?>" />
                             </td> 
                          </tr>
                         <tr> 
-                            <td align="right">Code Postal:</td> 
+                            <td align="right">Code Postal: *</td> 
                             <td align="left"> 
                             <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
                             </td>
@@ -161,40 +159,8 @@ $req->closeCursor();
              </div>
              <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
                 
-            <div class="onglet" id="onglet3">
-                  <div class="position_table"> 
-                      <div class="liste">
-                            <table align="center" cellspacing="5px" class="table"> 
-                           <tr> 
-                            <td>Examens disponibles</td>
-                           </tr>
-                            <?php
-                                
-                                $compteur=1;
-                                $reponse = $bdd->query('SELECT * FROM Examen');
-                                while($dnn = $reponse->fetch()){
-                            ?>
-                            <tr>
-                            <td><?php print_r($dnn['typeExamen']); ?></td>
-                            <?php
-                                    $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
-                                    $req2->execute(array($idservice));
-                                    while($donnee = $req2->fetch()){
-                                        if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
-                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
-                                        <?php }else{ ?>
-                                            <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
-                                        <?php }
-                                    }
-                                    $compteur=$compteur+1;
-                                
-                                }
-                            ?>
-                            </tr>
-                            </table>
-                </div>
-                </div> 
-                </div>
+           
+               
              </div>
         </div>
         </div>
@@ -205,31 +171,6 @@ $req->closeCursor();
 
 </html>
 
-     <script>
+<?php require 'inc/footer.php'; ?>
 
-        $(document).ready(function(){
-
-           
-            //Initialisation : on cache tous les onglets puis on affiche le premier
-            $('.onglet').hide();
-            $('#onglet1').show();
-
-            //Quand on clique sur un titre
-            $('.title').on('click',function(){
-
-                // On recupere le div global id = container
-                var container = $(this).parent().parent();
-
-                $('.active').removeClass('active');
-
-                
-                // On cache tous les onglets
-                container.children('.onglet').hide();
-
-                //On affiche celui correspondant à l'attribut target
-                container.children('#'+$(this).attr('target')).show();
-                $(this).addClass("active");
-            });
-         }); 
-        
-    </script>
+  

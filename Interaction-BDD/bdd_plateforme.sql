@@ -124,6 +124,7 @@ CREATE TABLE `Service` (
   `codePostal_s` varchar(255) NOT NULL DEFAULT '', 
   `ville_s` varchar(255) NOT NULL DEFAULT '',
   `description_s` varchar(5000) NOT NULL DEFAULT '',
+    `Examens HCL` enum('YES','NO') NOT NULL,
     
   PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -134,10 +135,10 @@ CREATE TABLE `Service` (
 
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
-/*LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,967,'cardiologie','0423556768','10h-20h','20 rue de la fontaine','69100','Villeurbanne');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Service` ENABLE KEYS */;
+LOCK TABLES `Service` WRITE;
+INSERT INTO `Service` VALUES (1,"HC LYON","Unité neurovasculaire",'NC','00:00', '00:00','3 Quai des Célestins','69002 ','Lyon','', 'YES');
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
 --
 -- Table structure for table `Examen`
@@ -148,6 +149,7 @@ CREATE TABLE `Examen` (
   `id_examen` int(11) NOT NULL auto_increment,
   `typeExamen` varchar(255) DEFAUlT '', 
   `details` varchar(255) DEFAUlT '',
+  `neuro` ENUM("YES","NO") DEFAULT "NO",
   PRIMARY KEY  (`id_examen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -156,10 +158,10 @@ CREATE TABLE `Examen` (
 --
 
 
-/*!40000 ALTER TABLE `Examen` DISABLE KEYS */;
-/*LOCK TABLES `Examen` WRITE;
-INSERT INTO `Examen` VALUES (1,'scan_cerebral',''),(2,'angioscan',''),(3,'bilanBiologique',''),(4,'bilanCardiaque','');
-UNLOCK TABLES;*/
+/*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
+LOCK TABLES `Examen` WRITE;
+INSERT INTO `Examen` VALUES (1,'Examens HCL','',"NO");
+UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
 --
