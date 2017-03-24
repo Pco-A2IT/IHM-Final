@@ -4,19 +4,19 @@ include('../config.php');
 
 
 //On récupère les champs du formulaires
-if($_POST['mail_p']==""){
+/*if($_POST['mail_p']==""){
     $mail_p= "NC";
 }
 else{
     $mail_p=$_POST['mail_p'];
-}
+}*/
 
-if($_POST['telephone_p']==""){
+/*if($_POST['telephone_p']==""){
     $telephone_p= "NC";
 }
 else{
     $telephone_p=$_POST['telephone_p'];
-}
+}*/
 
 if($_POST['ville_p']==""){
     $ville_p= "NC";

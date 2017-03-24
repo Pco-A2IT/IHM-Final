@@ -175,12 +175,12 @@ $req->closeCursor();
             <?php 
                 if($donnees["effectue"]=="YES"){
             ?> 
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><?php echo $cmpt; ?></td>
+                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /></td>
             <?php
                 }
                 else{
             ?>  
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/><?php echo $cmpt; ?></td>
+                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/></td>
             <?php
                 }
             ?>
