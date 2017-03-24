@@ -16,9 +16,13 @@ while($donnee = $req4->fetch()){
 }
     
 if($existe==false){
-
-$req = $bdd->prepare('INSERT INTO Examen(id_examen, typeExamen, details) VALUES(NULL,?,?)');
-$req->execute(array($_POST['type_examen'],$_POST['details_examen']));
+    if(isset($_POST['neuro'])){
+        $neuro="YES";
+    }else{
+        $neuro="NO";
+    }
+$req = $bdd->prepare('INSERT INTO Examen(id_examen, typeExamen, details, neuro) VALUES(NULL,?,?,?)');
+$req->execute(array($_POST['type_examen'],$_POST['details_examen'],$neuro));
 
 
 
