@@ -39,17 +39,25 @@ include('config.php');
     <div class="titre";   style="border-radius: 5px;">
         <h1 class="titreGauche">Outils</h1>
     </div>
-    <div class="blanc"; style="border-radius: 5px;">
-          
-        <div class="section2">
-               <a href="Liste_Examens.php" class="myButton1" id="btn1">Gestion Examens</a>
-             <a href="Parametres_Export.php" class="myButton1" id="btn2">Export Données</a>
-           <a href="account.php" class="myButton1" id="btn3">Gestion Utilisateurs</a>
+     <div class="blanc"; style="border-radius: 5px;">
+               <div class="section4">
+                            
+
+                <form action="" method="POST">
+                    <div class="login-page">
+                        <div class="form2">
+              <p><a href="Liste_Examens.php" class="myButton1">Gestion Examens</a></p> 
+             <p><a href="Parametres_Export.php" class="myButton1" >Export Données</a></p>
+           <p><a href="account.php" class="myButton1">Gestion Utilisateurs</a></p>
        
    </div>
+              
          <script src="js/General.js"></script>
 </div>
+                   </form>
     </div>
+         </div>
+                   </div>
     </div>
 </body>
 </html>
