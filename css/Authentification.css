@@ -1,3 +1,8 @@
+/*
+Le code css suivant sert au visuel de toute la partie de la plateforme relative à l'authentification.
+Il est appelé dans header.php, lui même appelé dans toutes les pages
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {

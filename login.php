@@ -1,3 +1,5 @@
+<!-- Page de connexion -->
+
 <body style="background: #1270B3; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #22427C, #1270B3);
   background: -moz-linear-gradient(right, #22427C, #1270B3);
@@ -32,13 +34,13 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
 
 
         <form action="" method="POST">
-          <div class="login-page">
-             <div class="form2">
-              <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
-            <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
-            <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
-            <li><a href="register.php">Pas encore inscrit ?</a></li>
-                   </div>
+            <div class="login-page">
+                <div class="form2">
+                    <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+                    <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
+                    <li><a href="register.php">Pas encore inscrit ?</a></li>
+                </div>
             </div>
         </form>
 
