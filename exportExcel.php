@@ -1,3 +1,5 @@
+<!-- fichier permettant l'export les données de l'ensemble des tables de la bdd (excepté la table des utilisateurs) ; appelé depuis la page Parametres_Export.php -->
+
 <?php
     include 'PHPExcel-1.8/classes/PHPExcel.php';
     include 'PHPExcel-1.8/classes/PHPExcel/Writer/Excel2007.php'; //inclusion de phpExcel et de fichier type excel 2007 (.xlsx)
