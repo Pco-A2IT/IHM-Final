@@ -1,5 +1,8 @@
+<!-- Fonctions utilisees dans le cadre de l'authentification -->
+
 <?php
 
+/* affichage des erreurs pour la programmation */
 function debug($variable){
     echo '<pre>' . print_r($variable, true) . '</pre>';
 }
