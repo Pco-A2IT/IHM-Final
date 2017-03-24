@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
                                     <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                      <div class="myButton" id="Prendre_rdv">
-                                            <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
+                                            <a href="./ExportPDF/extractionPDFrealise.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
                                         </div>
                                      <div class="liste">
                                         <table cellspacing="0px" id="tbl" class="table">   
