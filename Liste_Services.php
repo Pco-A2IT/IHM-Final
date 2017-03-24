@@ -124,11 +124,11 @@ include('config.php');
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM service WHERE nom_s LIKE :term';
+    $query = 'SELECT * FROM service ORDER BY centre_s WHERE nom_s LIKE :term';
     $term = $_POST['saisie'];
 }
 else{
-    $query = 'SELECT * FROM service ';
+    $query = 'SELECT * FROM service ORDER BY centre_s ';
     $term="";
 }
                         

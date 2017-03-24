@@ -92,11 +92,11 @@
                         
                                 <?php
                                     if(isset($_POST['saisie'])){
-                                        $query = 'SELECT * FROM medecin WHERE nom_m LIKE :term';
+                                        $query = 'SELECT * FROM medecin ORDER BY nom_m WHERE nom_m LIKE :term';
                                         $term = $_POST['saisie'];
                                     }
                                     else{
-                                        $query = 'SELECT * FROM medecin ';
+                                        $query = 'SELECT * FROM medecin ORDER BY nom_m';
                                         $term="";
                                     }  
                                     try {
@@ -117,6 +117,7 @@
                                         <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
                                         <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>" onclick="return sure();"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                                     </tr>
+
 
                                 <?php
                                     }
