@@ -254,8 +254,10 @@ input[type=button]{
 
 #Prendre_rdv{
  position: relative;
-    left:200px;
     margin-top: 20px;
+    margin-bottom: 10px;
+    vertical-align: bottom;
+    text-align: right;
     border-radius:6px;
 	cursor:pointer;
     }
@@ -615,6 +617,15 @@ width: 100%;
 } 
 
 
+#afficher {
+    
+    background-color: aliceblue;
+ border-radius: 5px;"
+    color:black;
+    margin: none;
+    padding:none;
+}
+
 .position_submit{
     position: relative;
     margin-top: 5px;
@@ -695,7 +706,7 @@ label {
 
 input[type="submit"]{
     cursor:context-menu;
-    color:black;
+    color:#ffffff;
 	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 	padding:10px 15px;
 	text-decoration:none;
@@ -708,15 +719,6 @@ input[type="submit"]{
     text-align: right;
     
     }
-
-#afficher {
-    
-    background-color: aliceblue;
- border-radius: 5px;"
-    color:grey;
-    margin: none;
-    padding:none;
-}
 
 
 .recherche input {
@@ -792,6 +794,8 @@ color: black;
 	-webkit-box-shadow: 0 1px 2px #d1d1d1;
 	box-shadow: 0 1px 2px #d1d1d1;
 }
+
+
 .liste table th {
 	padding:11px 15px 12px 15px;
 	border-top:1px solid #fafafa;
@@ -827,13 +831,14 @@ color: black;
     padding:5px;
 	border-left: 0;
     width: auto;
+    color:black;
 }
 
 
 .liste table td {
     text-align: center;
 	padding:auto;
-	border-top: 1px solid #ffffff;
+    
 	border-bottom:1px solid ##B0C4DE;
 	border-left: 1px solid ##B0C4DE;
 

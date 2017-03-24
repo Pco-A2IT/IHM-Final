@@ -90,10 +90,9 @@ include('config.php');
                 <br>
                  <form id="recherche" method="post" class="recherche">
 
-                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                           <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
                         <input  type="submit" id="afficher" value="Afficher liste complète" >
-
                     </form>   
                 <style>
                                         #divConteneur{
