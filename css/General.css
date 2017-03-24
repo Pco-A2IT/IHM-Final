@@ -476,23 +476,6 @@ background: #eeeeee;
 }
 
 
-.btn_menu{
-	background-color:#1270B3;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:0px 0px;
-    margin-right: 10px;
-	text-decoration:none;
-    border-radius: 50px;
-}
-
 .centrage {text-align: center}
 
 .centrage_vertical{
