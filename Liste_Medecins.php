@@ -1,3 +1,6 @@
+<!--fichier permettant d'afficher la liste des médecins ; appelé depuis le menu principal, en appuyant sur le bouton Medecins (id=menu2)-->
+
+<!--authentification-->
 <?php 
     require 'inc/functions.php';
     logged_only();
@@ -10,7 +13,7 @@
         <meta charset="UTF-8">
         <link href="css/General.css"type="text/css"rel="stylesheet"/> 
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-            <!--inclusion CSSS pour autocompletion-->
+            <!--inclusion CSS pour autocompletion-->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
         <title>Liste Médecins</title>
     </head>
@@ -18,7 +21,7 @@
     <body>
             <!-- inclusion de jQuery et jQuery.ui-->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <div class="gris">
             <div  class="gris2">
                 <div id="menu0" class="carreGris";>
@@ -118,12 +121,11 @@
                                         <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>" onclick="return sure();"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                                     </tr>
 
-
                                 <?php
                                     }
                                 ?>
 
-<!-- Fonction permettant de demander une confirmation lors de la demande de suppression-->     
+                                <!-- Fonction permettant de demander une confirmation lors de la demande de suppression-->     
                                 <script> 
                                     function sure() {
                                         return(confirm('Etes-vous sûr de vouloir supprimer ce Medecin ?'));}
