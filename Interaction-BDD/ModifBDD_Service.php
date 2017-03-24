@@ -89,6 +89,6 @@ while($dnn = $req2->fetch()){
 /*Retour vers le dossier service avec modification prise en compte*/
 ///////////////////////////
 
-header('Location: ../Liste_Services.php');
+header('Location: ../Dossier_Service_modif_Examens.php');
 
 ?>

@@ -56,14 +56,13 @@ include('config.php');
                 
                  <form action="./Interaction-BDD/AjoutBDD_dossierMedecin.php" method="post"> 
                 <div class="section4">
-                    <div class="div1">
                         <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
                  
-    
+                        <br>
                 <div class="onglet" id="onglet1">
-                    
+
                     <table cellspacing="5px" class="table" style="float:left"> 
-                            
+                            <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                             <tr>
                             <td align="right">Nom: *</td> 
                             <td align="left"><input type="text" name="nom_m" placeholder="(ex: Dupont)" autocomplete="off" required/></td>
@@ -87,7 +86,7 @@ include('config.php');
                     
                     <table align="right" cellspacing="5px"  style="float:left"> 
                             <tr> 
-                            <td align="right">Service/Centre d'examen: * 
+                            <td align="right">Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
                             <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" />
@@ -131,11 +130,13 @@ include('config.php');
                     </div>
                         <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     </div>
-                     </div>
+                  
+           
        </form>
+            </div>
           </div>
     </div>
-        </div>
+       
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function()   {

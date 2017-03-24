@@ -52,13 +52,11 @@ include('config.php');
                                 <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Service<br></h2>
                                 <br><br><br><br>
                             </div>
-                            <div id="titles"> 
-                                <span class="title active"  target="onglet1"> Service</span> 
-                                <span class="title" target="onglet3"> Examens</span> 
-                            </div>
+                           
 
                             <div class="onglet" id="onglet1">
                                 <table  cellspacing="5px" class="table" style="float:left"> 
+                                    <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
                                         <td align="right">Service/Centre d'examen: *</td>
                                         <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/></td>
@@ -68,8 +66,8 @@ include('config.php');
                                         <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
                                     </tr>
                                     <tr> 
-                                        <td align="right">Téléphone:</td>
-                                        <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off"/>
+                                        <td align="right">Téléphone: *</td>
+                                        <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off" required/>
                                     </tr>    
                                 </table> 
                     
@@ -85,6 +83,12 @@ include('config.php');
 
                                         </td>
                                     </tr>
+                                    <tr> 
+                                        <td align="right">Ville: *</td> 
+                                        <td align="left"> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        </td> 
+                                    </tr>
                                     <tr>
                                         <td align="right"> Adresse: *
                                         </td> 
@@ -93,15 +97,9 @@ include('config.php');
                                         </td> 
                                     </tr>
                                     <tr> 
-                                        <td align="right">Code Postal:</td> 
+                                        <td align="right">Code Postal: *</td> 
                                         <td align="left"> 
-                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)"/> 
-                                        </td> 
-                                    </tr>
-                                    <tr> 
-                                        <td align="right">Ville: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
                                         </td> 
                                     </tr>
                                     <tr height="60px">
@@ -112,35 +110,7 @@ include('config.php');
                                 </table>
 
                             </div>
-                            <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
-
-                            <div class="onglet" id="onglet3">
-                                <div class="position_table">
-                                    <div class="liste">
-                                        <table align="center" cellspacing="5px" class="table">
-
-                                            <tr>
-                                                <th></th>
-                                                <td>Examens disponibles</td>
-                                            </tr>
-    <?php
-        $compteur=1;
-        $reponse = $bdd->query('SELECT * FROM Examen');
-        while($dnn = $reponse->fetch()){
-    ?>
-                                            <tr>
-                                                <td><?php print_r($dnn['typeExamen']); ?></td> 
-                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-    <?php $compteur=$compteur+1; ?>
-                                            </tr>
-    <?php
-        };
-    ?>
-                           
-                                        </table>
-                                    </div>    
-                                </div> 
-                            </div>                                    
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
                         </div>
                     </div>
                 </div>

@@ -35,11 +35,11 @@ if(session_status() == PHP_SESSION_NONE){
                 <img class="icone_logo" src="Icones/logo.png" 
                 align='left' alt='sorry' width="60px" heigh="60px"/>
             <?php if (isset($_SESSION['auth'])): ?>
-            <a>Connecté en tant que <?= $_SESSION['auth']->username; ?></a>
+            <a>Connecté(e) en tant que <?= $_SESSION['auth']->username; ?></a>
             <?php endif; ?>
           <ul class="nav navbar-nav">
             <?php if (isset($_SESSION['auth'])): ?>
-              <li><img class="supprimer" src="Icones/logout.png"  align='right' alt='sorry' ><a href="logout.php"><div style="color:#ffffff">Se déconnecter</div></a></li>              
+              <li><img class="supprimer" src="Icones/logout.png"  align='right' alt='sorry' style="margin-left:10px"><a href="logout.php" style="text-decoration:none"><div style="color:#ffffff">Se déconnecter</div></a></li>              
             <?php else: ?>
              <li><a href="register.php" style="text-decoration:none";style="color:none">
                  <div style="color:#22427C" >S'inscrire</div></a></li>

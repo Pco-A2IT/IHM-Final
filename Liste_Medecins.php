@@ -68,9 +68,8 @@ include('config.php');
                     
             <script src="js/General.js"></script>        
             <div class="blanc";   style="border-radius: 5px;">
-                
-                        <div class="myButton" id="Ajouter_liste"> 
-                            <a href="Dossier_Medecin.php" class="myButton1">Ajouter Médecin</a>
+                 <div class="myButton" id="Ajouter_liste"> 
+                            <a href="Dossier_Medecin.php" class="myButton1" style=" cursor:copy;">Ajouter Médecin</a>
                         </div>  
                 <br>
                 <br>
@@ -79,7 +78,7 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
 
                 </form> 
                 <style>
@@ -93,7 +92,7 @@ include('config.php');
                            
                             </style>
 
-                            <div id="divConteneur">
+              
                 <div class="liste">
                     <table cellspacing="0px" id="tbl" class="table">  
                         <th></th>
@@ -129,7 +128,7 @@ try {
 while($dnn = $pdo_select->fetch() )
 {
 ?>
-                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'">
+                        <tr onclick="document.location='Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>'" style="cursor:zoom-in">
                            <td><img class="icone_liste" src="Icones/medecin_bleu.png"width="50px" heigh="50px" alt="Photo de médecin" /></td>
                            <td><?php print_r($dnn['nom_m']); ?></td>
                            <td><?php print_r($dnn['prenom_m']); ?></td>
@@ -152,14 +151,14 @@ function sure()
 
 
                     </table> 
-                    
+                   
                 </div>
                 </div>
             </div>
         </div>
         
     
-    </div>
+    
 </body>
 </html>
 

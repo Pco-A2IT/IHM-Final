@@ -95,16 +95,18 @@ $req->closeCursor();
                     <div class="div1">
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
                     </div>
-                    
+            <br>
+          
             <div class="onglet" id="onglet1">
                    
                     <table align="left" cellspacing="5px" class="table" id="modif">
+                            <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                             <tr>
-                            <td align="right">Nom:</td> 
+                            <td align="right">Nom: *</td> 
                             <td align="left"><input type="text" name="nom_m" value="<?php echo $nom_m ?>" /></td>
                             </tr>
                             <tr>
-                            <td align="right">Prénom:</td> 
+                            <td align="right">Prénom: *</td> 
                             <td align="left"><input type="text" name="prenom_m" value="<?php echo $prenom_m ?>" /></td>
                             </tr>  
                             <tr> 
@@ -122,7 +124,7 @@ $req->closeCursor();
 
                     <table align="right" cellspacing="5px" class="table" id="modif">
                                                         <tr> 
-                            <td align="right"> Service/Centre d'examen: * 
+                            <td align="right"> Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
                             <input type="text" id="service_m" name="service_m" value="<?php echo $service_m ?>" />
@@ -150,7 +152,7 @@ $req->closeCursor();
                             </td> 
                             </tr> 
                             <tr> 
-                            <td align="right">Ville:</td> 
+                            <td align="right">Ville: *</td> 
                             <td align="left"> 
                             <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>"/> 
                             </td> 

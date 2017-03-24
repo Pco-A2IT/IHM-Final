@@ -36,7 +36,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
              <div class="form2">
               <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
             <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
-            <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/> 
+            <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
             <li><a href="register.php">Pas encore inscrit ?</a></li>
                    </div>
             </div>
