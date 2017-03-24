@@ -64,9 +64,9 @@ include('config.php');
                 <br>
                     <form id="recherche" method="post" class="recherche">
 
-                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
-                        <input class="loupe" type="submit" value=""/>
-                        <input  type="submit" id="afficher" style="background-image:url(Icones/back.png)"/>
+                          <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
                     </form>
 
                 <style>
