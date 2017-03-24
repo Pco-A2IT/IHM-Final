@@ -11,14 +11,7 @@ include('config.php');
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!--inclusion CSS pour autocompletion-->
-    <script>
-    function deleteRow(obj){
-      if(confirm('Vous êtes sure?'))
-    {
-      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
-    }
-    }
-    </script>
+   
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -72,9 +65,10 @@ include('config.php');
                     <form id="recherche" method="post" class="recherche">
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
-                        <input class="loupe" type="submit" value="" />
-                        <input  type="submit" id="afficher" value="Afficher liste complète" >
+                        <input class="loupe" type="submit" value=""/>
+                        <input  type="submit" id="afficher" style="background-image:url(Icones/back.png)"/>
                     </form>
+
                 <style>
                                         #divConteneur{
                            min-height:630px;
@@ -104,11 +98,11 @@ include('config.php');
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM patient WHERE nom_p LIKE :term';
+    $query = 'SELECT * FROM patient ORDER BY nom_p WHERE nom_p LIKE :term';
     $term = $_POST['saisie'];
 }
 else{
-    $query = 'SELECT * FROM patient ';
+    $query = 'SELECT * FROM patient ORDER BY nom_p';
     $term="";
 }
                         
