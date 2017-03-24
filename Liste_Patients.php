@@ -11,14 +11,7 @@ include('config.php');
     <link href="css/General.css"type="text/css"rel="stylesheet"/> 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!--inclusion CSS pour autocompletion-->
-    <script>
-    function deleteRow(obj){
-      if(confirm('Vous êtes sure?'))
-    {
-      tbl.deleteRow(obj.parentElement.parentElement.rowIndex);
-    }
-    }
-    </script>
+   
 </head>
 <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -72,9 +65,10 @@ include('config.php');
                     <form id="recherche" method="post" class="recherche">
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher patient..."/>
-                        <input class="loupe" type="submit" value="" />
-                        <input  type="submit" id="afficher" value="Afficher liste complète" >
+                        <input class="loupe" type="submit" value=""/>
+                        <input  type="submit" id="afficher" style="background-image:url(Icones/back.png)"/>
                     </form>
+
                 <style>
                                         #divConteneur{
                            min-height:630px;
@@ -104,11 +98,11 @@ include('config.php');
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM patient WHERE nom_p LIKE :term';
+    $query = 'SELECT * FROM patient ORDER BY nom_p WHERE nom_p LIKE :term';
     $term = $_POST['saisie'];
 }
 else{
-    $query = 'SELECT * FROM patient ';
+    $query = 'SELECT * FROM patient ORDER BY nom_p';
     $term="";
 }
                         
@@ -130,7 +124,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
-                           <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
+                           <td><a href="Dossier_Patient_modif_Examens.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
                             <td><a href="./Interaction-BDD/SupprBDD_Patient.php?id_patient=<?php echo $dnn['id_patient'];?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                         </tr>
                         
@@ -138,6 +132,7 @@ while($dnn = $pdo_select->fetch() )
 <?php
 }
 ?>
+                    
 <!--La fonction qui permet de demander une confirmation lors de la demande de suppression-->                         
 <script> 
 function sure()
@@ -146,34 +141,6 @@ function sure()
 }                 
 </script>
 
-
-
-                        <!--<tr>
-                           <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
-                           <td>Pasteur</td>
-                           <td>Vincent</td>
-                           <td>12/07/1990</td>
-                           <td>77700</td>
-                           <td>Carré</td>
-                           <td>0988834944</td>
-                            <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr>
-                        <tr>
-                            <td><img src="patient.png" width="50px" heigh="50px" alt="Photo de patient"  /></td>
-                            <td>Pasteur</td>
-                            <td>Vincent</td>
-                            <td>12/07/1990</td>
-                            <td>77700</td>
-                            <td>Carré</td>
-                            <td>0988834944</td>
-                               <td><a href="Dossier_Medecin_modif.html">Luigi Bardi</a></td>
-                            
-                           <td><a href="Dossier_Patient.html"> <img class="supprimer" src="loupe.png"> </a></td>
-                            <td><img class="supprimer" src="button_supprimer.png"></td>
-                        </tr> -->
                     </table> 
                 </div>     
                 </div> 

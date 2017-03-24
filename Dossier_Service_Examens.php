@@ -15,9 +15,12 @@ include('config.php');
         <title>Service</title>    
 
     </head>
+<?php
+    $id_service=$_GET['id_service'];
+?>
     
     <body>
-        <form action="./Interaction-BDD/AjoutBDD_Service.php" method="post">    
+        <form action="./Interaction-BDD/AjoutBDD_Service_Examens.php?id_service=<?php echo $id_service; ?>" method="post">    
             <div class="gris">
                 <div  class="gris2">
                     <div id="menu0" class="carreGris";>
@@ -71,14 +74,16 @@ include('config.php');
                                             <tr>
                                                 <td><?php print_r($dnn['typeExamen']); ?></td> 
                                                 <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-    <?php $compteur=$compteur+1; ?>
+    
                                             </tr>
     <?php
             }
+            $compteur=$compteur+1;
         }
     ?>
                            
                                         </table>
+                                        <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
                                     </div>    
                                 </div> 
                             </div>                                    

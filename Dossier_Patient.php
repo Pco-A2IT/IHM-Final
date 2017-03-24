@@ -139,7 +139,7 @@ include('config.php');
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="Nom" required/>
+                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" onblur="verifDate(this)" placeholder="Nom" required/>
                                             </td>
                                             <td align="left" class="required"> 
                                                 <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" required/>
@@ -156,7 +156,7 @@ include('config.php');
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left">             
-                                                <input type="text" id="nom_m_appelant" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" onblur="verifDate(this)" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
@@ -189,6 +189,14 @@ include('config.php');
         </div>
        
         </form>
+        
+        <script>
+            function verifDate(champ){
+                if(champ.value!=""){
+                    document.getElementById("prenom_m_appelant").required=true;
+                }
+            }
+        </script>
             <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {

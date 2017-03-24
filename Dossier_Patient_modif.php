@@ -190,7 +190,7 @@ $req->closeCursor();
                                     <td align="right" rowspan="2">Médecin traitant:</td> 
                                     <td align="left" class="required"> 
                                         <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
-                                        onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')"/>
+                                        />
                                     </td>
                                     <td align="left" class="required"> 
                                         <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
@@ -207,10 +207,10 @@ $req->closeCursor();
                                 <tr>
                                     <td align="right" rowspan="2">Médecin appelant:</td> 
                                     <td align="left"> 
-                                        <input type="text" name="nom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" onFocus="alert('Si vous voulez attribuer un nouveau medecin au patient, remplir les champs nom et prénom obligatoirement')" list="a"/> 
+                                        <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>"  list="a"/> 
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -236,7 +236,14 @@ $req->closeCursor();
                        </div>
               
          
+        <script>
+            function verifDate(champ){
+                if(champ.value!=""){
+                    document.getElementById("prenom_m_appelant").required=true;
+                }
+            }
         
+        </script>   
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function($)   {

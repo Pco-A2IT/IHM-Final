@@ -62,7 +62,7 @@ while($dnn = $req2->fetch()){
 $req->closeCursor();            
 ?> 
     <body>
-    <form action="./Interaction-BDD/ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
+    <form action="./Interaction-BDD/ModifBDD_Service_Examens.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
     <div class="gris">
               <div  class="gris2">
              <div id="menu0" class="carreGris";>
@@ -143,6 +143,7 @@ $req->closeCursor();
                             ?>
                             </tr>
                             </table>
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
                 </div>
                 </div> 
                 </div>
