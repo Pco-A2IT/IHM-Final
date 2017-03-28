@@ -46,9 +46,9 @@ include('config.php');
                 <form action="" method="POST">
                     <div class="login-page">
                         <div class="form2">
-              <p><a href="Liste_Examens.php" class="myButton1">Gestion Examens</a></p> 
-             <p><a href="Parametres_Export.php" class="myButton1" >Export Données</a></p>
-           <p><a href="account.php" class="myButton1">Gestion Utilisateurs</a></p>
+              <p><a href="Liste_Examens.php" class="myButton1" id="btn_outils">Gestion Examens</a></p> 
+             <p><a href="Parametres_Export.php" class="myButton1" id="btn_outils">Export Données</a></p>
+           <p><a href="account.php" class="myButton1" id="btn_outils">Gestion Utilisateurs</a></p>
        
    </div>
               
