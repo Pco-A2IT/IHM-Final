@@ -66,11 +66,10 @@ include('config.php');
 
                         <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit" id="afficher" value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète"/>
                     </form>
-                        <input type="submit"  id="afficher" value="Afficher liste complète" >
                 <style>
-                                        #divConteneur{
+                          #divConteneur{
                            min-height:630px;
                             height:630px;
                             min-width:100%;
@@ -81,7 +80,6 @@ include('config.php');
                             </style>
 
                 <div id="divConteneur">
-                
                 <div class="liste">
                 
                 <table cellspacing="0px" id="tbl" class="table">   
