@@ -570,11 +570,11 @@ border-radius:2em;
 background:url(http://www.larevuedekenza.fr/wp-content/themes/quarter/images/sidebar/loupe.png) no-repeat 0 0;
 width:24px;
 float: left;
+cursor:pointer;
 }
   
 #recherche input {
    
-border-radius:2em 0 0 2em ;
 width:150px;
 margin:0;
 height:24px;
@@ -585,6 +585,7 @@ outline:none;
   
 #recherche input[type=text] {
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+border-radius:2em 0 0 2em ;
 background:none;
 width:100%px;
 padding:0 9px;
@@ -621,10 +622,13 @@ width: 100%;
 #afficher {
     
     background-color: aliceblue;
- border-radius: 5px;"
+    border-radius: 5px;"
     color:black;
     margin: none;
     padding:none;
+    top:-2%;
+    left:7.5%;
+    position:relative; 
 }
 
 .position_submit{
