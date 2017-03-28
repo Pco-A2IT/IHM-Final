@@ -64,11 +64,11 @@ include('config.php');
                 <br>
                     <form id="recherche" method="post" class="recherche">
 
-                          <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
                         <input class="loupe" type="submit" value="" />
                         <input  type="submit" id="afficher" value="Afficher liste complète" >
                     </form>
-
+                        <input type="submit"  id="afficher" value="Afficher liste complète" >
                 <style>
                                         #divConteneur{
                            min-height:630px;
