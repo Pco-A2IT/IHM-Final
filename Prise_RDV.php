@@ -121,7 +121,8 @@ jQuery(document).ready(function() {
 
                                                 <td><?php echo $dnn["typeExamen"];?></td> 
 
-            <?php } 
+            <?php 
+            } 
             if($donnees["id_service"]==0){ ?>
                                                 <td><?php echo "NC"; ?></td>
                                                 <td><?php echo "NC"; ?></td>
@@ -221,6 +222,7 @@ jQuery(document).ready(function() {
                         $compteur=$compteur+1;//on incrémente le compteur qui parturt TOUTES les checkbox
                     }
                     $chaine=$chaine.") ORDER BY centre_s";//la requete est contruite
+                    echo $chaine;
                     //////////////////////////////////////////
                     
                     
@@ -239,6 +241,7 @@ jQuery(document).ready(function() {
                         $req2=$bdd->prepare($chaine);
                         $req2->execute();
                     }
+                    
                     ///////////////////////////////////////////
                   
                         
@@ -256,58 +259,59 @@ jQuery(document).ready(function() {
                             }
                            
                             </style>
-                            <table  cellspacing="0px" id="tbl" class="table">
-                              <tr><td></td>
-                                <td colspan="" >   <?php
-                        
-                        //marche mais ne prend pas en compte les examens déjà planifié
-                        $compteur=1;
-                            
-                        $reponse = $bdd->query('SELECT * FROM Examen');      
-                        while($dnn = $reponse->fetch()){
-                            $dejaRealise=false;
-                            if($dnn['id_examen']!=1){
-                            
-                                $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
-                                $req1->execute(array($id_patient));
+                            <form>
+                                <table  cellspacing="0px" id="tbl" class="table">
+                                  <tr><td></td>
+                                    <td colspan="" >   <?php
 
-                                while ($dnn2 = $req1->fetch()){
-                                    if($dnn2["typeExamen"] == $dnn["typeExamen"]){
-                                        $dejaRealise=true;
+                            //marche mais ne prend pas en compte les examens déjà planifié
+                            $compteur=1;
+
+                            $reponse = $bdd->query('SELECT * FROM Examen');      
+                            while($dnn = $reponse->fetch()){
+                                $dejaRealise=false;
+                                if($dnn['id_examen']!=1){
+
+                                    $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                                    $req1->execute(array($id_patient));
+
+                                    while ($dnn2 = $req1->fetch()){
+                                        if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                            $dejaRealise=true;
+                                        }
                                     }
-                                }
-                                if($dejaRealise==true){
+                                    if($dejaRealise==true){
 
-                        ?>     
-                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ?>     
+                                    <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <?php
-                                }
-                                else{
+                            <?php
+                                    }
+                                    else{
 
-                        ?>     
-                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ?>     
+                                    <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <?php
+                            <?php
+                                    }
+                                    
                                 }
                                 $compteur= $compteur+1;
                             }
-                        }
-                    ?></td>
+                        ?></td>
+
+                                    <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
+                                    </tr>
                                 
-                                <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
-                                </tr>
-                              </table>
+                                </table>
+                            </form>
                          <div class="liste">
                         <table cellspacing="0px" id="tbl" class="table"> 
                             
                             <tr>
                                 <th>Centres</th>
                                 <th>Service</th>
-                                <th>Adresse</th>
-                                 <!--<th>Contact</th>
-                               <th>Ouverture</th>
-                                <th>Fermeture</th> !-->
+                                <th>Adresse</th> 
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
@@ -322,9 +326,9 @@ jQuery(document).ready(function() {
                                 <td><?php echo $donnees['centre_s']; ?> </td>
                                 <td><?php echo $donnees['nom_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
-                                <!--<td>/*<?php echo $donnees['telephone_s']; ?></td>
+                                <td><?php echo $donnees['telephone_s']; ?></td>
                                 <td><?php echo $donnees['horairesd_s']; ?></td>
-                                <td><?php echo $donnees['horairesf_s']; ?>*/</td> !-->
+                                <td><?php echo $donnees['horairesf_s']; ?></td>
 <?php 
         $req11= $bdd->prepare('SELECT * FROM examen WHERE id_examen=1 ');
         $req11->execute();
