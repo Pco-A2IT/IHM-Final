@@ -54,11 +54,12 @@ include('config.php');
                     <div class="login-page">
                         <div class="form2" align="vertical">
         <input  style="text-align:center" value="Export Données">
-        <a href="exportExcel.php?nom_table=<?php echo 'total'; ?>" class="myButton1">Ensemble des données <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
-        <a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Données Patients <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
-        <a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Données Médecins <img src="Icones/medecin_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
-        <a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Données Examens <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
-        <a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Données Examens par patient <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a><a href="exportService.php?nom_table=<?php echo 'service'; ?>" class="myButton1">Données Services <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
+        <p><a href="exportExcel.php?nom_table=<?php echo 'total'; ?>" class="myButton1" id="btn_outils">Ensemble des données</a></p>
+        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" id="btn_outils" >Données Patients</a></p>
+        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1" id="btn_outils">Données Médecins</a></p>
+        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1" id="btn_outils">Données Examens</a></p>
+        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1" id="btn_outils">Données Examens par patient</a></p>
+        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>" class="myButton1" id="btn_outils">Données Services</a></p>
 
                             </div>
        
