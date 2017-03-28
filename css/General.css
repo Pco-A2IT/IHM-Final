@@ -225,6 +225,7 @@ input[type=button]{
     background-color: #1270b3;
     display: inline-block;
     margin-top: 10px;
+    width: 100px;
    
 }
 
@@ -1006,5 +1007,7 @@ table td {
   color: #EF3B3A;
 }
 
-
+#btn_outils {
+  width:150px;
+}
 
