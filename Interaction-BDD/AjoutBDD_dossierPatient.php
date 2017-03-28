@@ -11,12 +11,12 @@ else{
     $mail_p=$_POST['mail_p'];
 }*/
 
-/*if($_POST['telephone_p']==""){
+if($_POST['telephone_p']==""){
     $telephone_p= "NC";
 }
 else{
     $telephone_p=$_POST['telephone_p'];
-}*/
+}
 
 if($_POST['ville_p']==""){
     $ville_p= "NC";
@@ -39,11 +39,11 @@ else{
     $adresse_p=$_POST['adresse_p'];
 }
 
-if($_POST['adresse_p']==""){
-    $adresse_p= "NC";
+if($_POST['mail_p']==""){
+    $mail_p= "NC";
 }
 else{
-    $adresse_p=$_POST['adresse_p'];
+    $mail_p=$_POST['mail_p'];
 }
 
 //On récupère la date de naissance dans l'html
@@ -184,7 +184,7 @@ else{
 // Insertion du message à l'aide d'une requête préparée
 $req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $mail_p,$telephone_p, $ville_p,$codePostal_p ,$adresse_p,$_POST['description_p'], ));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date, $mail_p,$telephone_p, $ville_p,$codePostal_p ,$adresse_p,$_POST['description_p'], ));
 
 // Création des examens déjà réalisés
 
