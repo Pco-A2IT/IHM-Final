@@ -105,6 +105,7 @@ include('config.php');
                            
                             </style>
 
+                  <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -173,7 +174,7 @@ function sure()
                 </div>
             </div>
         </div>
-  
+    </div>
 </body>
 </html>
 

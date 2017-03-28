@@ -81,8 +81,13 @@
                                 overflow:auto;/*pour activer les scrollbarres*/
                             }
                         </style>
-                        <div class="liste">
-                            <table cellspacing="0px" id="tbl" class="table">  
+                    
+                    <div id="divConteneur">
+                
+                <div class="liste">
+                
+                <table cellspacing="0px" id="tbl" class="table">   
+                        
                                 <th></th>
                                 <th>Nom </th>
                                 <th>Prénom </th>
@@ -135,6 +140,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>
