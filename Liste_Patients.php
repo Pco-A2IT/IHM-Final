@@ -118,7 +118,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
-                           <td><?php print_r($dnn['date_naissance']); ?></td>
+                           <td><?php if(($dnn['date_naissance'])!= "1900-01-01"){print_r($dnn['date_naissance']);} else{ print_r("NC");}  ?></td>
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
