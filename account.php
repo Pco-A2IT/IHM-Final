@@ -1,3 +1,5 @@
+<!-- Cette page permet à l'utilisateur connecté de modifier son mot de passe -->
+
 <?php 
 require 'inc/functions.php';
 logged_only();

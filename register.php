@@ -1,4 +1,5 @@
-<!-- Verification des erreurs de saisi des informations -->
+<!-- Inscription d'un nouvel utilisateur -->
+
 <body style="background: #1270B3; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #22427C, #1270B3);
   background: -moz-linear-gradient(right, #22427C, #1270B3);
@@ -13,6 +14,7 @@ if(!empty($_POST)){
     $errors=array();
     require_once 'config2.php';
     
+    /* Verification de erreurs */
     if(empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])){
         $errors['username'] = "Votre pseudo n'est pas valide (ne pas mettre de caractères spéciaux)";
     }
@@ -33,6 +35,7 @@ if(!empty($_POST)){
         $errors['password'] = "Rentrez un mot de passe valide s'il vous plait";
     }
     
+    /* Inscription */
     if(empty($errors)){
         $req = $bdd->prepare("INSERT INTO users SET username = ?, password = ?, email = ?, confirmation_token = ?");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);         // cryptage du mdp pour le securiser dans la bdd
@@ -93,7 +96,7 @@ if(!empty($_POST)){
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
         <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
-          <li><a href="login.php">Déjà inscrit ?</a></li>
+        <li><a href="login.php">Déjà inscrit ?</a></li>
 
     </div>
 </div>    

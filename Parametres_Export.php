@@ -50,30 +50,24 @@ include('config.php');
             <script src="js/General.js"></script>
     <div class="blanc";   style="border-radius: 5px;">
         <div class="section4">
-                        <div class="div1">
-                            <br><img src='Icones/parametres_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Export<br></h2>
-        
-        <div class="liste">                    
-        <br>
-        <p><a href="exportExcel.php?nom_table=<?php echo 'total'; ?>" class="myButton1">Exporter l'ensemble des données <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-        <br>
-        <p><a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Exporter la table patient <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-        <br>
-        <p><a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Exporter la table medecin <img src="Icones/medecin_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-        <br>
-        <p><a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Exporter la table examen <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-        <br>
-        <p><a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Exporter les liens examen_patient <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-        <br>
-        <p><a href="exportService.php?nom_table=<?php echo 'service'; ?>" class="myButton1">Exporter les données des services <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a></p>
-    
+                <form action="" method="POST">
+                    <div class="login-page">
+                        <div class="form2" align="vertical">
+        <input  style="text-align:center" value="Export Données">
+        <a href="exportExcel.php?nom_table=<?php echo 'total'; ?>" class="myButton1">Ensemble des données <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
+        <a href="exportPatient.php?nom_table=<?php echo 'patient'; ?>" class="myButton1" >Données Patients <img src="Icones/patient_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
+        <a href="exportMedecin.php?nom_table=<?php echo 'medecin'; ?>" class="myButton1">Données Médecins <img src="Icones/medecin_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
+        <a href="exportExamen.php?nom_table=<?php echo 'examen'; ?>" class="myButton1">Données Examens <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
+        <a href="exportExamPatient.php?nom_table=<?php echo 'examPatient'; ?>" class="myButton1">Données Examens par patient <img src="Icones/parametres_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a><a href="exportService.php?nom_table=<?php echo 'service'; ?>" class="myButton1">Données Services <img src="Icones/hopital_bleu.png" align='left' alt='sorry' width="25px" heigh="25px"/></a>
 
                             </div>
        
     </div>
-    </div>
+                            </form>
+            </div>
+        </div>
          </div>
-                </div>
+                
         </form>
     </div>
 </body>

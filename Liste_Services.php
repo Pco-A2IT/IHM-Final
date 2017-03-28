@@ -90,10 +90,9 @@ include('config.php');
                 <br>
                  <form id="recherche" method="post" class="recherche">
 
-                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                           <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
                         <input  type="submit" id="afficher" value="Afficher liste complète" >
-
                     </form>   
                 <style>
                                         #divConteneur{
@@ -106,6 +105,7 @@ include('config.php');
                            
                             </style>
 
+                  <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -174,7 +174,7 @@ function sure()
                 </div>
             </div>
         </div>
-  
+    </div>
 </body>
 </html>
 

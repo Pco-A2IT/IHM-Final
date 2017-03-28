@@ -1,3 +1,6 @@
+<!--fichier permettant d'afficher la liste des médecins ; appelé depuis le menu principal, en appuyant sur le bouton Medecins (id=menu2)-->
+
+<!--authentification-->
 <?php 
     require 'inc/functions.php';
     logged_only();
@@ -10,7 +13,7 @@
         <meta charset="UTF-8">
         <link href="css/General.css"type="text/css"rel="stylesheet"/> 
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-            <!--inclusion CSSS pour autocompletion-->
+            <!--inclusion CSS pour autocompletion-->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
         <title>Liste Médecins</title>
     </head>
@@ -18,7 +21,7 @@
     <body>
             <!-- inclusion de jQuery et jQuery.ui-->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <div class="gris">
             <div  class="gris2">
                 <div id="menu0" class="carreGris";>
@@ -64,9 +67,9 @@
                     <br>
                     <br>
                         <form id="recherche" method="post" class="recherche">
-                            <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
-                            <input class="loupe" type="submit" value="" />
-                            <input  type="submit" id="afficher" value="Afficher liste complète" >
+                               <input name="saisie" id="saisie" type="text" placeholder="Rechercher médecin..."  />
+                        <input class="loupe" type="submit" value="" />
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
 
                         </form> 
                         <style>
@@ -78,8 +81,13 @@
                                 overflow:auto;/*pour activer les scrollbarres*/
                             }
                         </style>
-                        <div class="liste">
-                            <table cellspacing="0px" id="tbl" class="table">  
+                    
+                    <div id="divConteneur">
+                
+                <div class="liste">
+                
+                <table cellspacing="0px" id="tbl" class="table">   
+                        
                                 <th></th>
                                 <th>Nom </th>
                                 <th>Prénom </th>
@@ -118,12 +126,11 @@
                                         <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>" onclick="return sure();"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                                     </tr>
 
-
                                 <?php
                                     }
                                 ?>
 
-<!-- Fonction permettant de demander une confirmation lors de la demande de suppression-->     
+                                <!-- Fonction permettant de demander une confirmation lors de la demande de suppression-->     
                                 <script> 
                                     function sure() {
                                         return(confirm('Etes-vous sûr de vouloir supprimer ce Medecin ?'));}
@@ -133,6 +140,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>
