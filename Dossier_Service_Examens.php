@@ -55,15 +55,17 @@ include('config.php');
                                 <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Service<br></h2>
                                 <br><br><br><br>
                             </div>
-                           
-                            <div class="onglet" id="onglet3">
-                                <div class="position_table">
-                                    <div class="liste">
-                                         <table cellspacing="0px" id="tbl" class="table"> 
+                           <div id="container">
+                            <br>
 
-                                            <tr>
-                                                <th></th>
-                                                <td>Examens disponibles</td>
+                                <div class="liste">
+
+                                    <div class="position_table">
+                                         <table cellspacing="0px" id="tbl" class="table"> 
+                          <tr>
+                                               
+                                                <th colspan="2">Examens disponibles</th>
+                                               
                                             </tr>
     <?php
         $compteur=1;
@@ -73,6 +75,7 @@ include('config.php');
     ?>
                                             <tr>
                                                 <td><?php print_r($dnn['typeExamen']); ?></td> 
+                                                <td></td>
                                                 <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
     
                                             </tr>

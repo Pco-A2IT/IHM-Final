@@ -183,14 +183,11 @@ include('config.php');
                                         <table cellspacing="0px"  class="table">   
                                             <tr>
                                                 <th>Patient</th>
-                                                <th colspan=2> Examens à planifier</th>
-                                            </tr>
-                                            <tr>
+                                                <th> Examens à planifier</th>
                                                 <th></th>
-                                                <th >Examen</th>
-                                                <th></th>
-                                                
                                             </tr>
+                                            
+                                           
                                             
                             
                                     <?php
@@ -238,7 +235,8 @@ include('config.php');
                                                     <?php 
                                                     }
                                                     ?>
-                                                    <td><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                                
+                                                    <td rowspan=""><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
                                                 </tr>
                     <?php 
                                                 }
