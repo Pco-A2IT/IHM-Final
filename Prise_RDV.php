@@ -80,7 +80,7 @@ jQuery(document).ready(function() {
                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h3 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h3>
                 
         
-                        <form action="Prise_RDV.php?id_patient=<?php echo $id_patient; ?>" method="post">
+                        
                              
 
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
@@ -107,7 +107,7 @@ jQuery(document).ready(function() {
 
         $req= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
         $req->execute(array($id_patient));
-        $cmpt=1;
+        //$cmpt=1;
         while ($donnees = $req->fetch()){ ?>
 
                                             <tr>
@@ -153,25 +153,28 @@ jQuery(document).ready(function() {
             <?php 
                 if($donnees["effectue"]=="YES"){
             ?> 
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><?php echo $donnees["id_examen"]; ?></td>
             <?php
                 }
                 else{
             ?>  
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/><?php echo $donnees["id_examen"]; ?></td>
             <?php
                 }
             ?>
-                                                  <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"  id="afficher" style="color:black"/></td>
-
-                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td> 
+                                                <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"  id="afficher" style="color:black"/></td>
+                                                <form>
+                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
+                                                </form>
                                               
                                             </tr>
     <?php
-            $cmpt=$cmpt+1;
+            //$cmpt=$cmpt+1;
         }
     ?>  
                                         </table>
+                                         
+                                        <input type="submit" accesskey="enter" value="Valider Modification" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btntest" formmethod="post" >
                                      
                                     <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
                                         <br>
@@ -186,10 +189,10 @@ jQuery(document).ready(function() {
                                  
                                      </div>
                             
-                        </form>
+                            </form>
                        
                  
-            
+   <form action="Prise_RDV.php?id_patient=<?php echo $id_patient; ?>" method="post">         
     <?php
                     /*Compter le nombre d'examen dans la bdd*/
                     $req= $bdd->prepare('SELECT * FROM Examen');
@@ -222,7 +225,6 @@ jQuery(document).ready(function() {
                         $compteur=$compteur+1;//on incrémente le compteur qui parturt TOUTES les checkbox
                     }
                     $chaine=$chaine.") ORDER BY centre_s";//la requete est contruite
-                    echo $chaine;
                     //////////////////////////////////////////
                     
                     
@@ -311,7 +313,8 @@ jQuery(document).ready(function() {
                             <tr>
                                 <th>Centres</th>
                                 <th>Service</th>
-                                <th>Adresse</th> 
+                                <th>Adresse</th>
+                                <th>Téléphone</th> 
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
@@ -327,8 +330,6 @@ jQuery(document).ready(function() {
                                 <td><?php echo $donnees['nom_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
                                 <td><?php echo $donnees['telephone_s']; ?></td>
-                                <td><?php echo $donnees['horairesd_s']; ?></td>
-                                <td><?php echo $donnees['horairesf_s']; ?></td>
 <?php 
         $req11= $bdd->prepare('SELECT * FROM examen WHERE id_examen=1 ');
         $req11->execute();
@@ -385,8 +386,6 @@ jQuery(document).ready(function() {
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesd_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesf_s']; ?></td>
                                     
                                     <?php
 
@@ -488,6 +487,14 @@ function verifDate(champ)
       return false;
 	}
 }
+ 
+function test(){
+console.log("tester");
+<?php
+    echo "olaaaa";
+?>
+}
+    
 </script>
 
 

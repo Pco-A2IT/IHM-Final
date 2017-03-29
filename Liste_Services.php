@@ -115,8 +115,6 @@ include('config.php');
                         <th>Code postal</th>
                         <th>Ville</th>
                         <th>Téléphone</th>
-                        <th>Horaires Ouverture</th>
-                        <th>Horaires Fermeture</th>
                         <th></th>
                         <th></th>
 
@@ -151,8 +149,6 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['codePostal_s']); ?></td>
         <td class="left"> <?php print_r($dnn['ville_s']); ?></td>
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
-        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesd_s']))); ?></td>
-        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesf_s']))); ?></td>
         <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_modifier.png"></a></td>
         <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         

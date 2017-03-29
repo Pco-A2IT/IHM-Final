@@ -27,5 +27,5 @@ $req->execute(array($id_patient, $id_examen));
 
 ?>
 <script>
-    top.location.href="../Dossier_Patient_modif_Examens.php?id_patient=<?php echo $id_patient; ?>";
+    top.location.href="../Prise_RDV.php?id_patient=<?php echo $id_patient; ?>";
 </script>

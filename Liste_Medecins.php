@@ -92,15 +92,13 @@
                                 <th>Nom </th>
                                 <th>Prénom </th>
                                 <th>Email </th>
-                                
                                 <th>Téléphone</th>
                                 <th>Ville</th>
-                                <th></th>
                                 <th></th>
                         
                                 <?php
                                     if(isset($_POST['saisie'])){
-                                        $query = 'SELECT * FROM medecin WHERE nom_m LIKE :term ORDER BY nom_m ';
+                                        $query = 'SELECT * FROM medecin ORDER BY nom_m WHERE nom_m LIKE :term';
                                         $term = $_POST['saisie'];
                                     }
                                     else{
