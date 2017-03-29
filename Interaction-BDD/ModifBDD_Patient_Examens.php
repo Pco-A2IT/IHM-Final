@@ -45,5 +45,5 @@ $cmpt=$cmpt+1;
 ?>
 
 <script>
-    top.location.href="../Prise_RDV.php?id_patient=<?php //echo $id_patient; ?>";
+    top.location.href="../Prise_RDV.php?id_patient=<?php echo $id_patient; ?>";
 </script>

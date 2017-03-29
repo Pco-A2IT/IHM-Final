@@ -163,8 +163,9 @@ jQuery(document).ready(function() {
                 }
             ?>
                                                 <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"  id="afficher" style="color:black"/></td>
-
-                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td> 
+                                                <form>
+                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
+                                                </form>
                                               
                                             </tr>
     <?php
@@ -313,7 +314,8 @@ jQuery(document).ready(function() {
                             <tr>
                                 <th>Centres</th>
                                 <th>Service</th>
-                                <th>Adresse</th> 
+                                <th>Adresse</th>
+                                <th>Téléphone</th> 
                                 <th>Examens</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
@@ -329,8 +331,6 @@ jQuery(document).ready(function() {
                                 <td><?php echo $donnees['nom_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
                                 <td><?php echo $donnees['telephone_s']; ?></td>
-                                <td><?php echo $donnees['horairesd_s']; ?></td>
-                                <td><?php echo $donnees['horairesf_s']; ?></td>
 <?php 
         $req11= $bdd->prepare('SELECT * FROM examen WHERE id_examen=1 ');
         $req11->execute();
@@ -387,8 +387,6 @@ jQuery(document).ready(function() {
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesd_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesf_s']; ?></td>
                                     
                                     <?php
 
