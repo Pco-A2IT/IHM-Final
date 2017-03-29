@@ -93,7 +93,7 @@ $req->closeCursor();
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
-            
+            <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             <br><br><br><br>
          
@@ -107,7 +107,7 @@ $req->closeCursor();
                                          <table cellspacing="0px" id="tbl" class="table"> 
                           <tr>
                                                
-                                                <th colspan="2">Examens disponibles</th>
+                                                <th >Examens disponibles</th>
                                                
                                             </tr>
                             <?php
@@ -139,9 +139,9 @@ $req->closeCursor();
                                 $reponse2 = $bdd->query('SELECT * FROM Examen where id_examen=1');
                                 while($dnn2 = $reponse2->fetch()){
                             ?>
-                            
+                            <td></td>
                                     <td><?php print_r($dnn2['typeExamen']); ?></td>
-                                    <td></td>
+                                    
                                     <td><input type="checkbox" name="" value="YES" checked disabled></td>
                                      </tr>
                                    
@@ -156,6 +156,7 @@ $req->closeCursor();
                 </div> 
                 </div>
              </div>
+        </div>
         </div>
         </div>
         </div>
