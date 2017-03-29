@@ -193,7 +193,7 @@ include('config.php');
         <script>
             function verifDate(champ){
                 if(champ.value!=""){
-                    document.getElementById("prenom_m_appelant").required=true;
+                    //document.getElementById("prenom_m_appelant").required=true;
                 }
             }
         </script>
