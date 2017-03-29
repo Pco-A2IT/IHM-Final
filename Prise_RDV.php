@@ -225,7 +225,6 @@ jQuery(document).ready(function() {
                         $compteur=$compteur+1;//on incrémente le compteur qui parturt TOUTES les checkbox
                     }
                     $chaine=$chaine.") ORDER BY centre_s";//la requete est contruite
-                    echo $chaine;
                     //////////////////////////////////////////
                     
                     
