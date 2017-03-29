@@ -100,7 +100,7 @@
                         
                                 <?php
                                     if(isset($_POST['saisie'])){
-                                        $query = 'SELECT * FROM medecin ORDER BY nom_m WHERE nom_m LIKE :term';
+                                        $query = 'SELECT * FROM medecin WHERE nom_m LIKE :term ORDER BY nom_m ';
                                         $term = $_POST['saisie'];
                                     }
                                     else{
