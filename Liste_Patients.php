@@ -96,7 +96,7 @@ include('config.php');
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM patient ORDER BY nom_p WHERE nom_p LIKE :term';
+    $query = 'SELECT * FROM patient WHERE nom_p LIKE :term ORDER BY nom_p';
     $term = $_POST['saisie'];
 }
 else{
