@@ -759,6 +759,23 @@ input[type="submit"]{
     
     }
 
+.form2 input[type="submit"]{
+    cursor:context-menu;
+    color:#ffffff;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	padding:10px 15px;
+	text-decoration:none;
+    margin-top:10px;
+    margin-left:10px;
+    cursor:alias;
+    border-radius: 5px;
+    background-color: #1270b3;
+    border:none;
+    text-align: right;
+    
+    }
+
+
 
 .recherche input {
     cursor:context-menu;
