@@ -230,17 +230,27 @@ include('config.php');
                                                     $rep3= $bdd->prepare('SELECT * FROM Examen WHERE id_examen=?');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
-                                                        <td><?php echo $dnn3["typeExamen"];?></td> 
+                                                        <td><?php echo $dnn3["typeExamen"];?></td>
+                                                        <td><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                            
+                                            
+                                            
+                                                    </tr>
+                                                        
                             
                                                     <?php 
                                                     }
                                                     ?>
+                                                        
                                                 
-                                                    <td rowspan=""><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
-                                                </tr>
+                                                  
+                                                
                     <?php 
-                                                }
-                                        }
+                                                }?>
+                                                 
+                                                
+                                        <?php
+                                            }
                                 }
                     ?>
                                           
