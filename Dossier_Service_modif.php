@@ -99,7 +99,7 @@ $req->closeCursor();
             </div>
             
 
-            <div class="onglet" id="onglet1">
+            <div class="onglet_d">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>

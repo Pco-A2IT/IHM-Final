@@ -122,7 +122,7 @@ $req->closeCursor();
                         
                     <br>
                         
-                            <div class="onglet" id="onglet1">
+                            <div class="onglet_d">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                    
                 
