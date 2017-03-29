@@ -139,7 +139,7 @@ $req->closeCursor();
                                 $reponse2 = $bdd->query('SELECT * FROM Examen where id_examen=1');
                                 while($dnn2 = $reponse2->fetch()){
                             ?>
-                            <td></td>
+                           
                                     <td><?php print_r($dnn2['typeExamen']); ?></td>
                                     
                                     <td><input type="checkbox" name="" value="YES" checked disabled></td>

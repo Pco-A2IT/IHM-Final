@@ -92,7 +92,7 @@
                                 <th>Nom </th>
                                 <th>Prénom </th>
                                 <th>Email </th>
-                                <th>Service</th>
+                                
                                 <th>Téléphone</th>
                                 <th>Ville</th>
                                 <th></th>
