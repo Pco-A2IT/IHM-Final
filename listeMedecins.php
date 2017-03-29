@@ -1,6 +1,9 @@
-<!-- Export des données pour l'autocomplétion du nom des médecins dans la barre de recherche de la liste des médecins ; appelé depuis la page Liste_Medecins.php -->
-
 <?php
+
+    ///////////////////
+    /*Export des données pour l'autocomplétion du nom des médecins dans la barre de recherche de la liste des médecins ; appelé depuis la page Liste_Medecins.php*/
+    ///////////////////
+
     include('config.php'); //connexion à la bdd
     $term = $_GET['term'];
     $requete = $bdd->prepare('SELECT * FROM medecin WHERE nom_m LIKE :term'); 

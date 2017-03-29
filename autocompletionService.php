@@ -1,6 +1,9 @@
-<!-- Export des données pour l'autocomplétion des données du service ou centre d'examen dans le dossier médecin et le dossier médecin modifiable ; appelé depuis la page Dossier_medecin.php et Dossier_medecin_modif.php -->
-
 <?php
+
+    /////////////////////////
+    /* Export des données pour l'autocomplétion des données du service ou centre d'examen dans le dossier médecin et le dossier médecin modifiable ; appelé depuis la page Dossier_medecin.php et Dossier_medecin_modif.php */
+    /////////////////////////
+
     include('config.php'); // connexion à la bdd
     require_once('AutoCompletionNomService.php'); // nécessite le fichier mentionné
 
