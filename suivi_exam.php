@@ -67,7 +67,7 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
-                                        <table cellspacing="0px"  class="table">   
+                                        <table cellspacing="0px" id="tbl" class="table" >   
                                             <tr>
                                                 <th>Patient</th>
                                                 <th colspan=5>A réaliser aujourd'hui au plus tard</th>
@@ -180,7 +180,7 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
-                                        <table cellspacing="0px"  class="table">   
+                                        <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
                                                 <th> Examens à planifier</th>
@@ -265,7 +265,7 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
-                                        <table cellspacing="0px"  class="table">   
+                                        <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
                                                 <th>Medecin Traitant </th>
@@ -342,7 +342,7 @@ include('config.php');
                                        <div class="position_table">
                 
                                     <div class="liste">
-                                        <table cellspacing="0px"  class="table">   
+                                        <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
                                                 <th>Medecin Traitant </th>
@@ -428,7 +428,7 @@ include('config.php');
                                      <div class="position_table">
                 
                                     <div class="liste">
-                                        <table cellspacing="0px"  class="table">   
+                                        <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
                                                 <th>Medecin Traitant </th>

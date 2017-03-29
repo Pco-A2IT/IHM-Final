@@ -54,7 +54,7 @@ include('config.php');
                             </div>
                            
 
-                            <div class="onglet" id="onglet1">
+                            <div class="onglet_d" >
                                 <table  cellspacing="5px" class="table" style="float:left"> 
                                     <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
