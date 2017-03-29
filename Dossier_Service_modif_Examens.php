@@ -93,18 +93,23 @@ $req->closeCursor();
         </div>
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
-            
+            <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             <br><br><br><br>
          
-            
-            <div class="onglet" id="onglet3">
-                  <div class="position_table"> 
-                      <div class="liste">
-                            <table align="center" cellspacing="5px" class="table"> 
-                           <tr> 
-                            <td>Examens disponibles</td>
-                           </tr>
+         
+                               <div id="container">
+                            <br>
+
+                                <div class="liste">
+
+                                    <div class="position_table">
+                                         <table cellspacing="0px" id="tbl" class="table"> 
+                          <tr>
+                                               
+                                                <th >Examens disponibles</th>
+                                               
+                                            </tr>
                             <?php
                                 
                             if($idservice!=1){
@@ -134,20 +139,24 @@ $req->closeCursor();
                                 $reponse2 = $bdd->query('SELECT * FROM Examen where id_examen=1');
                                 while($dnn2 = $reponse2->fetch()){
                             ?>
-                                <tr>
+                           
                                     <td><?php print_r($dnn2['typeExamen']); ?></td>
-                                    <td><input type="checkbox" name="" value="YES" checked disabled>
+                                    
+                                    <td><input type="checkbox" name="" value="YES" checked disabled></td>
+                                     </tr>
+                                   
                             <?php 
                                 }
                             }
                             ?>
-                            </tr>
+                           
                             </table>
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
                 </div>
                 </div> 
                 </div>
              </div>
+        </div>
         </div>
         </div>
         </div>
