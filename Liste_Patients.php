@@ -64,13 +64,12 @@ include('config.php');
                 <br>
                     <form id="recherche" method="post" class="recherche">
 
-                          <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
+                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Patient..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit" id="afficher" value="Afficher liste complète" >
+                        <input  type="submit" id="afficher" value="Afficher liste complète"/>
                     </form>
-
                 <style>
-                                        #divConteneur{
+                          #divConteneur{
                            min-height:630px;
                             height:630px;
                             min-width:100%;
@@ -81,7 +80,6 @@ include('config.php');
                             </style>
 
                 <div id="divConteneur">
-                
                 <div class="liste">
                 
                 <table cellspacing="0px" id="tbl" class="table">   
@@ -120,7 +118,7 @@ while($dnn = $pdo_select->fetch() )
                            <td><img class="icone_liste" src="Icones/patient_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
                            <td><?php print_r($dnn['nom_p']); ?></td>
                            <td><?php print_r($dnn['prenom_p']); ?></td>
-                           <td><?php print_r($dnn['date_naissance']); ?></td>
+                           <td><?php if(($dnn['date_naissance'])!= "1900-01-01"){print_r($dnn['date_naissance']);} else{ print_r("NC");}  ?></td>
                            <td><?php print_r($dnn['codePostal_p']); ?></td>
                            <td><?php print_r($dnn['ville_p']); ?></td>
                            <td><?php print_r($dnn['telephone_p']); ?></td>                            
