@@ -88,9 +88,22 @@ jQuery(document).ready(function() {
                                      <div class="myButton" id="Prendre_rdv">
                                             <a href="./ExportPDF/extractionPDFrealise.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
                                         </div>
+                                    
+                                      <style>
+                                        #divConteneur2{
+                           min-height:200px;
+                            height:200px;
+                            min-width:100%;
+                            width:100%;
+                          
+                            }
+                           
+                            </style>
+                        <div id="divConteneur2">
+                            
                                      <div class="liste">
                                         <table cellspacing="0px" id="tbl" class="table">   
-                                        
+                                        <tr><th colspan="8">  <h4>Récapitulatif des rendez-vous planifiés :</h4></th></tr>
                                             <tr>
                                                 <th>Examen</th>
                                                 <th>Hôpital </th>
@@ -162,7 +175,7 @@ jQuery(document).ready(function() {
             <?php
                 }
             ?>
-                                                <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"  id="afficher" style="color:black"/></td>
+                                                <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" /></td>
                                                 <form>
                                                 <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
                                                 </form>
@@ -174,14 +187,10 @@ jQuery(document).ready(function() {
     ?>  
                                         </table>
                                          
-                                        <input type="submit" accesskey="enter" value="Valider Modification" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btntest" formmethod="post" >
+                            </div>
                                      
                                     <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
-                                        <br>
-
-                                    
-                                        <br>
-                                    
+                                       
                                         
                                  
                                     </div> 
@@ -248,6 +257,8 @@ jQuery(document).ready(function() {
                   
                         
     ?>
+       
+                   
                     <div class="div3">
                          
                        
@@ -261,10 +272,15 @@ jQuery(document).ready(function() {
                             }
                            
                             </style>
-                            <form>
-                                <table  cellspacing="0px" id="tbl" class="table">
-                                  <tr><td></td>
-                                    <td colspan="" >   <?php
+                        
+                        <div id="divConteneur">
+                            
+                         <div class="liste">
+                        <table cellspacing="0px" id="tbl" class="table"> 
+                           <tr><th colspan="7"><h4>Veuillez choisir les examens et planifier les rendez-vous :</h4></th></tr>
+                            <tr>  <form>
+                                 
+                                    <td colspan="7" >   <?php
 
                             //marche mais ne prend pas en compte les examens déjà planifié
                             $compteur=1;
@@ -303,19 +319,16 @@ jQuery(document).ready(function() {
                         ?></td>
 
                                     <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
-                                    </tr>
+                               </form>
+                            </tr>
                                 
-                                </table>
-                            </form>
-                         <div class="liste">
-                        <table cellspacing="0px" id="tbl" class="table"> 
-                            
+                                
                             <tr>
-                                <th>Centres</th>
-                                <th>Service</th>
+                                <th>Hôpital</th>
+                                <th>Service/Centre d'examen</th>
                                 <th>Adresse</th>
                                 <th>Téléphone</th> 
-                                <th>Examens</th>
+                                <th>Examen</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
                                 <th></th>
@@ -340,7 +353,7 @@ jQuery(document).ready(function() {
                                         <td><?php echo $donnees11['typeExamen'] ?></td>
                                         <td><input name="date" class="datepick" type="date"/></td>
                                         <td><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" id="afficher" style="color:black"/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"/></td>
                                         
                                 </form>
                             </tr>
@@ -409,7 +422,7 @@ jQuery(document).ready(function() {
                                         <td><?php echo $dnn['typeExamen'] ?></td>
                                         <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post" style="color:black"/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post"/></td>
                                         <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
                                         
                                     </form>
@@ -431,10 +444,15 @@ jQuery(document).ready(function() {
                                     </tr>
                             
                    
-                        </table>
-                              </div>
+                        
+                            
+                              
+                             </table>
+                        </div>
+       </div>
                         </div>
                         </form>
+                        
                     </div>
                   
                 </div>
