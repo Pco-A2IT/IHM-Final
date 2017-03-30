@@ -67,6 +67,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant des rendez-vous antécédents à la date d'aujourd'hui </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table" >   
                                             <tr>
                                                 <th>Patient</th>
@@ -180,6 +182,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant des rendez-vous non planifiés </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -265,6 +269,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                         <h4>Patients dont tous les examens sont planifiés </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -342,6 +348,8 @@ include('config.php');
                                        <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant réalisé tous les examens sauf le rendez-vous neuro </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -428,6 +436,8 @@ include('config.php');
                                      <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant réalisé tous les examens </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
