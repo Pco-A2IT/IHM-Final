@@ -48,7 +48,9 @@ body{
     margin-right:auto; 
     border-radius: 5px;"
     padding-left: 0px;
+    padding-bottom: 0px;
     cursor:pointer;
+    text-align: center;
 }
 .carreGris:hover{
 
@@ -96,10 +98,11 @@ body{
     display:block;
 }
 
-h4{
+.liste h4{
     padding-left:14px; 
     margin-top:0; 
     margin-bottom: 0;
+    color:#1270B3;
 }
 
 .menu8{
@@ -132,7 +135,7 @@ h4{
 
 
 .blanc{ width: 90%;
-       height:100% ;
+       height:2000px ;
        top:70px;
        left:120px;
        bottom: 100px;
@@ -892,13 +895,12 @@ color: black;
 
 
 .liste table td {
-    text-align: center;
-	padding-left:30px;
-    padding-right: 30px;
-    width: 200px;
+    text-align: left;
+	padding-left:5px;
+    padding-right:5px;
+    width: 100px;
 	border-bottom:1px solid ##B0C4DE;
 	border-left: 1px solid ##B0C4DE;
-
 	background: #fafafa;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
@@ -1087,4 +1089,19 @@ color: #1270B3;
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
 width: 100%;
+} 
+
+#divConteneur2{ 
+ margin:10px auto;
+    margin-left: -54px;
+    
+} 
+
+.div3{ 
+ margin:20px auto;
+    margin-left: 70px;
+} 
+
+.div3 td{ 
+width: 40px; 
 } 
