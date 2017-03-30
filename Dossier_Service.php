@@ -83,12 +83,6 @@ include('config.php');
 
                                         </td>
                                     </tr>
-                                    <tr> 
-                                        <td align="right">Ville: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
-                                        </td> 
-                                    </tr>
                                     <tr>
                                         <td align="right"> Adresse: *
                                         </td> 
@@ -100,6 +94,11 @@ include('config.php');
                                         <td align="right">Code Postal: *</td> 
                                         <td align="left"> 
                                         <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
+                                        </td> 
+                                    </tr><tr> 
+                                        <td align="right">Ville: *</td> 
+                                        <td align="left"> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
                                         </td> 
                                     </tr>
                                     <tr height="60px">

@@ -1,6 +1,9 @@
-<!-- Export des données pour l'autocomplétion du nom des services/centres d'examens dans la barre de recherche de la liste des examens ; appelé depuis la page Liste_Examens.php -->
-
 <?php
+
+    ////////////////
+    /*Export des données pour l'autocomplétion du nom des services/centres d'examens dans la barre de recherche de la liste des examens ; appelé depuis la page Liste_Examens.php */
+    //////////////////
+
     include('config.php'); //connexion à la bdd
     $term = $_GET['term'];
     $requete = $bdd->prepare('SELECT * FROM service WHERE nom_s LIKE :term'); 

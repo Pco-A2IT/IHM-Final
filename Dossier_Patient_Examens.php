@@ -11,9 +11,7 @@ include('config.php');
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <link href="css/General.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-        
+        <link href="css/General.css" type="text/css" rel="stylesheet"/>        
         
         <?php $id_patient=$_GET['id_patient']; 
         $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
@@ -40,9 +38,6 @@ include('config.php');
     </head>
     
     <body>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- inclusion de jQuery et jQuery.ui-->
     <?php $id_patient=$_GET['id_patient']; ?>
     <form action="./Interaction-BDD/AjoutBDD_dossierPatient_Examens.php?id_patient=<?php echo $id_patient; ?>" method="post">
         <div class="gris">
@@ -130,7 +125,7 @@ while($dnn = $reponse->fetch()){
                                 <tr>
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
                                     <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
-                                    <td><input id="<?php echo $compteur; ?>" style="display:none" name="<?php echo "date".$compteur; ?>"  type="date"   onblur="verifDate(this);" /></td>
+                                    <td><input id="<?php echo $compteur; ?>" style="display:none" name="<?php echo "date".$compteur; ?>"  type="date"  /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
                                 
 <?php
@@ -154,17 +149,6 @@ while($dnn = $reponse->fetch()){
         </div>
         </div>
         </form>
-            <script type="text/javascript">
-                //utilisation de jQuery :
-                $(function($)   {
-                    $('#nom_m_appelant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
-                    $('#nom_m_traitant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
-                });
-            </script>  
          <script src="General.js"></script>
     </body>
 
@@ -222,7 +206,7 @@ function Cacher_1(id)
     //console.log("Bouton caché");
 }
          
-function verifDate(champ){
+/*function verifDate(champ){
     id=champ.id;
     console.log(id);
 	var date = new Date();
@@ -238,7 +222,7 @@ function verifDate(champ){
         Afficher_1("btn");
 		return true;
 	}
-}
+}*/
          
          
 function changeColor(s) {

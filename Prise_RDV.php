@@ -153,7 +153,7 @@ jQuery(document).ready(function() {
             <?php 
                 if($donnees["effectue"]=="YES"){
             ?> 
-                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><?php echo $donnees["id_examen"]; ?></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><!--?php echo $donnees["id_examen"]; ?--></td>
             <?php
                 }
                 else{

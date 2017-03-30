@@ -86,7 +86,7 @@ include('config.php');
     ?>
                            
                                         </table>
-                                        <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
+                                        <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
                                     </div>    
                                 </div> 
                             </div>                                    
