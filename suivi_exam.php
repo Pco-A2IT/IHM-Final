@@ -235,7 +235,7 @@ include('config.php');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
                                                         <td><?php echo $dnn3["typeExamen"];?></td>
-                                                        <td><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                                        <td onclick="document.location='Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>'" style="cursor:zoom-in"><input align="center" type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
                                             
                                             
                                             
