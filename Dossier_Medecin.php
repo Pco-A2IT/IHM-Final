@@ -59,6 +59,18 @@ include('config.php');
                         <br><img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey";>Nouveau Médecin </h2><br>
                  
                         <br>
+                <style>
+                    #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur3">
                 <div class="onglet_d" >
 
                     <table cellspacing="5px" class="table" style="float:left"> 
@@ -131,7 +143,7 @@ include('config.php');
                         <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                     </div>
                   
-           
+                     </div>
        </form>
             </div>
           </div>

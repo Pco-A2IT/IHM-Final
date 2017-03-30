@@ -78,9 +78,19 @@ include('config.php');
                       
                         
             
-                <div id="container">
-                    <br>
+                  <style>
+                                        #divConteneur{
+                           min-height:400px;
+                            height:400px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
                            
+                            </style>
+                        
+                              
+                        <div id="divConteneur">
 
                     <div class="position_table"> 
                         <div class="liste">
@@ -139,7 +149,7 @@ while($dnn = $reponse->fetch()){
 ?>
 
                         </table>
-                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit"  formmethod="post" /> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" /> 
                         </div>
                     </div>
                 </div>

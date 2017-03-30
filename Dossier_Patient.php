@@ -70,7 +70,18 @@ include('config.php');
                       
              
                     <br>
+                          <style>
+                                        #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
                         
+                        <div id="divConteneur3">
                             <div class="onglet_d">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                                     <br>
@@ -179,6 +190,8 @@ include('config.php');
                                    
                                 </form>
                             </div>
+                     
+                                       
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="position_submit" formmethod="post" style="cursor:e-resize;"/>
                                        
                 
@@ -187,7 +200,7 @@ include('config.php');
         </div>
             </div>
         </div>
-       
+        </div>
         </form>
         
         <script>
