@@ -106,6 +106,7 @@ include('config.php');
                                         
 <?php
 $compteur=1;
+$nbligne=0;                         
 $reponse = $bdd->query('SELECT * FROM Examen');
 while($dnn = $reponse->fetch()){
 ?>
@@ -129,18 +130,7 @@ while($dnn = $reponse->fetch()){
                                     <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
 <?php
-            }
-            
-
-            else{
-?>
-                                <tr disabled=true >
-                                                    <td><?php print_r($dnn['typeExamen']); ?></td>
-                                                    <td  background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
-                                                    <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
-                                                    <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
-                
-                
+            $nbligne=$nbligne+1;
             }
         }
     }
@@ -154,15 +144,22 @@ while($dnn = $reponse->fetch()){
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
                                 
 <?php
-        
+        $nbligne=$nbligne+1;
     }
-    $compteur=$compteur+1;
+    
 ?>
-                                </tr>
+                                
+<?php
+        $compteur=$compteur+1;
+}
+if($nbligne==0){                   
+?>
+                            <tr>
+                                      <td colspan="3"> <h4>Tous les examens ont déjà été planifiés pas SOS AIT </h4></td>
 <?php
 }
 ?>
-
+                            </tr>
                         </table>
                               <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" /> 
                         </div>
