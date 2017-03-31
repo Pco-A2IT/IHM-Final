@@ -34,5 +34,5 @@ while($dnn = $req2->fetch()){
 ?>
 
 <script>
-    //top.location.href="../Liste_Services.php";
+    top.location.href="../Liste_Services.php";
 </script>

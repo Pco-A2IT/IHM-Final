@@ -103,9 +103,9 @@ CREATE TABLE `Centre_de_sante` (
 
 
 /*!40000 ALTER TABLE `Centre_de_sante` DISABLE KEYS */;
-LOCK TABLES `Centre_de_sante` WRITE;
+/*LOCK TABLES `Centre_de_sante` WRITE;
 INSERT INTO `Centre_de_sante` VALUES (967,'Hopital Lyon EST'),(334,'Hopital Lyon 6ème'),(112,'Clinique du Tonkin');
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Centre_de_sante` ENABLE KEYS */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `Service` (
   `codePostal_s` varchar(255) NOT NULL DEFAULT '', 
   `ville_s` varchar(255) NOT NULL DEFAULT '',
   `description_s` varchar(5000) NOT NULL DEFAULT '',
-    `Examens HCL` enum('YES','NO') NOT NULL,
+    `Hospitalisation de jour` enum('YES','NO') NOT NULL,
     
   PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -160,7 +160,7 @@ CREATE TABLE `Examen` (
 
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
 LOCK TABLES `Examen` WRITE;
-INSERT INTO `Examen` VALUES (1,'Examens HCL','',"NO");
+INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioriatire',"NO");
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 

@@ -98,8 +98,18 @@ $req->closeCursor();
             <br><br><br><br>
             </div>
             
-
-            <div class="onglet" id="onglet1">
+                <style>
+                                #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        <div id="divConteneur3">
+            <div class="onglet_d">
                  
                     <table align="left" cellspacing="5px" class="table" id="modif">
                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
@@ -165,7 +175,7 @@ $req->closeCursor();
         </div>
         </div>
         </div>
-    
+        </div>
         </form>
     </body>
 

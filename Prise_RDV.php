@@ -80,17 +80,30 @@ jQuery(document).ready(function() {
                     <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h3 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h3>
                 
         
-                        <form action="Prise_RDV.php?id_patient=<?php echo $id_patient; ?>" method="post">
+                        
                              
 
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
                                     <!-- AFFICHAGE des EXAMENS PLANIFIES -->
-                                     <div class="myButton" id="Prendre_rdv">
+                                   <!--  <div class="myButton" id="Prendre_rdv">
                                             <a href="./ExportPDF/extractionPDFrealise.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
-                                        </div>
+                                        </div> !-->
+                                    
+                                      <style>
+                                        #divConteneur2{
+                           min-height:200px;
+                            height:200px;
+                            min-width:100%;
+                            width:100%;
+                          
+                            }
+                           
+                            </style>
+                        <div id="divConteneur2">
+                            
                                      <div class="liste">
                                         <table cellspacing="0px" id="tbl" class="table">   
-                                        
+                                        <tr><th colspan="8">  <h4>Récapitulatif des rendez-vous planifiés :</h4></th></tr>
                                             <tr>
                                                 <th>Examen</th>
                                                 <th>Hôpital </th>
@@ -107,7 +120,7 @@ jQuery(document).ready(function() {
 
         $req= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=?');
         $req->execute(array($id_patient));
-        $cmpt=1;
+        //$cmpt=1;
         while ($donnees = $req->fetch()){ ?>
 
                                             <tr>
@@ -121,7 +134,8 @@ jQuery(document).ready(function() {
 
                                                 <td><?php echo $dnn["typeExamen"];?></td> 
 
-            <?php } 
+            <?php 
+            } 
             if($donnees["id_service"]==0){ ?>
                                                 <td><?php echo "NC"; ?></td>
                                                 <td><?php echo "NC"; ?></td>
@@ -152,32 +166,31 @@ jQuery(document).ready(function() {
             <?php 
                 if($donnees["effectue"]=="YES"){
             ?> 
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><!--?php echo $donnees["id_examen"]; ?--></td>
             <?php
                 }
                 else{
             ?>  
-                                                <td><input type="checkbox" name="<?php echo $cmpt; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/><?php echo $donnees["id_examen"]; ?></td>
             <?php
                 }
             ?>
-                                                  <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"  id="afficher" style="color:black"/></td>
-
-                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td> 
+                                                <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" /></td>
+                                                <form>
+                                                <td><a href="./Interaction-BDD/SupprBDD_ExamPatient.php?id_examen=<?php echo $donnees["id_examen"]; ?>&amp id_patient=<?php echo $id_patient; ?>"; onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
+                                                </form>
                                               
                                             </tr>
     <?php
-            $cmpt=$cmpt+1;
+            //$cmpt=$cmpt+1;
         }
     ?>  
                                         </table>
+                                         
+                            </div>
                                      
                                     <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
-                                        <br>
-
-                                    
-                                        <br>
-                                    
+                                       
                                         
                                  
                                     </div> 
@@ -185,10 +198,10 @@ jQuery(document).ready(function() {
                                  
                                      </div>
                             
-                        </form>
+                            </form>
                        
                  
-            
+   <form action="Prise_RDV.php?id_patient=<?php echo $id_patient; ?>" method="post">         
     <?php
                     /*Compter le nombre d'examen dans la bdd*/
                     $req= $bdd->prepare('SELECT * FROM Examen');
@@ -239,10 +252,15 @@ jQuery(document).ready(function() {
                         $req2=$bdd->prepare($chaine);
                         $req2->execute();
                     }
+                    
                     ///////////////////////////////////////////
                   
                         
     ?>
+       
+                   <br>
+                    <br>
+                    <br>
                     <div class="div3">
                          
                        
@@ -256,59 +274,63 @@ jQuery(document).ready(function() {
                             }
                            
                             </style>
-                            <table  cellspacing="0px" id="tbl" class="table">
-                              <tr><td></td>
-                                <td colspan="" >   <?php
                         
-                        //marche mais ne prend pas en compte les examens déjà planifié
-                        $compteur=1;
+                        <div id="divConteneur">
                             
-                        $reponse = $bdd->query('SELECT * FROM Examen');      
-                        while($dnn = $reponse->fetch()){
-                            $dejaRealise=false;
-                            if($dnn['id_examen']!=1){
-                            
-                                $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
-                                $req1->execute(array($id_patient));
+                         <div class="liste">
+                        <table cellspacing="0px" id="tbl" class="table"> 
+                           <tr><th colspan="7"><h4>Veuillez choisir les examens et planifier les rendez-vous :</h4></th></tr>
+                            <tr>  <form>
+                                 
+                                    <td colspan="7" >   <?php
 
-                                while ($dnn2 = $req1->fetch()){
-                                    if($dnn2["typeExamen"] == $dnn["typeExamen"]){
-                                        $dejaRealise=true;
+                            //marche mais ne prend pas en compte les examens déjà planifié
+                            $compteur=1;
+
+                            $reponse = $bdd->query('SELECT * FROM Examen');      
+                            while($dnn = $reponse->fetch()){
+                                $dejaRealise=false;
+                                if($dnn['id_examen']!=1){
+
+                                    $req1= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                                    $req1->execute(array($id_patient));
+
+                                    while ($dnn2 = $req1->fetch()){
+                                        if($dnn2["typeExamen"] == $dnn["typeExamen"]){
+                                            $dejaRealise=true;
+                                        }
                                     }
-                                }
-                                if($dejaRealise==true){
+                                    if($dejaRealise==true){
 
-                        ?>     
-                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ?>     
+                                    <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES" checked/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <?php
-                                }
-                                else{
+                            <?php
+                                    }
+                                    else{
 
-                        ?>     
-                                <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ?>     
+                                    <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/><label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <?php
+                            <?php
+                                    }
+                                    
                                 }
                                 $compteur= $compteur+1;
                             }
-                        }
-                    ?></td>
+                        ?></td>
+
+                                    <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
+                               </form>
+                            </tr>
                                 
-                                <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
-                                </tr>
-                              </table>
-                         <div class="liste">
-                        <table cellspacing="0px" id="tbl" class="table"> 
-                            
+                                
                             <tr>
-                                <th>Centres</th>
-                                <th>Service</th>
+                                <th>Hôpital</th>
+                                <th>Service/Centre d'examen</th>
                                 <th>Adresse</th>
-                                 <!--<th>Contact</th>
-                               <th>Ouverture</th>
-                                <th>Fermeture</th> !-->
-                                <th>Examens</th>
+                                <th>Téléphone</th> 
+                                <th>Examen</th>
                                 <th>Jour</th>
                                 <th>Horaire</th>
                                 <th></th>
@@ -322,9 +344,7 @@ jQuery(document).ready(function() {
                                 <td><?php echo $donnees['centre_s']; ?> </td>
                                 <td><?php echo $donnees['nom_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
-                                <!--<td>/*<?php echo $donnees['telephone_s']; ?></td>
-                                <td><?php echo $donnees['horairesd_s']; ?></td>
-                                <td><?php echo $donnees['horairesf_s']; ?>*/</td> !-->
+                                <td><?php echo $donnees['telephone_s']; ?></td>
 <?php 
         $req11= $bdd->prepare('SELECT * FROM examen WHERE id_examen=1 ');
         $req11->execute();
@@ -335,7 +355,7 @@ jQuery(document).ready(function() {
                                         <td><?php echo $donnees11['typeExamen'] ?></td>
                                         <td><input name="date" class="datepick" type="date"/></td>
                                         <td><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" id="afficher" style="color:black"/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"/></td>
                                         
                                 </form>
                             </tr>
@@ -381,8 +401,6 @@ jQuery(document).ready(function() {
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesd_s']; ?></td>
-                                    <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['horairesf_s']; ?></td>
                                     
                                     <?php
 
@@ -406,7 +424,7 @@ jQuery(document).ready(function() {
                                         <td><?php echo $dnn['typeExamen'] ?></td>
                                         <td><label for="date"></label><input id="<?php echo $nb.$nbcroixValide; ?>" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
                                         <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post" style="color:black"/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="<?php echo "valider".$nb.$nbcroixValide; ?>"  class="submit" disabled formmethod="post"/></td>
                                         <td><span id="<?php echo "erreurdate".$nb.$nbcroixValide; ?>"></span></td>
                                         
                                     </form>
@@ -428,10 +446,15 @@ jQuery(document).ready(function() {
                                     </tr>
                             
                    
-                        </table>
-                              </div>
+                        
+                            
+                              
+                             </table>
+                        </div>
+       </div>
                         </div>
                         </form>
+                        
                     </div>
                   
                 </div>
@@ -484,6 +507,14 @@ function verifDate(champ)
       return false;
 	}
 }
+ 
+function test(){
+console.log("tester");
+<?php
+    echo "olaaaa";
+?>
+}
+    
 </script>
 
 

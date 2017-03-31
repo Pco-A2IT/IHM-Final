@@ -4,43 +4,38 @@ include('../config.php');
 
 
 //On récupère les champs du formulaires
-/*if($_POST['mail_p']==""){
-    $mail_p= "NC";
-}
-else{
-    $mail_p=$_POST['mail_p'];
-}*/
+
 
 if($_POST['telephone_p']==""){
-    $telephone_p= "NC";
+    $telephone_p= "";
 }
 else{
     $telephone_p=$_POST['telephone_p'];
 }
 
 if($_POST['ville_p']==""){
-    $ville_p= "NC";
+    $ville_p= "";
 }
 else{
     $ville_p=$_POST['ville_p'];
 }
 
 if($_POST['codePostal_p']==""){
-    $codePostal_p= "NC";
+    $codePostal_p= "";
 }
 else{
     $codePostal_p=$_POST['codePostal_p'];
 }
 
 if($_POST['adresse_p']==""){
-    $adresse_p= "NC";
+    $adresse_p= "";
 }
 else{
     $adresse_p=$_POST['adresse_p'];
 }
 
 if($_POST['mail_p']==""){
-    $mail_p= "NC";
+    $mail_p= "";
 }
 else{
     $mail_p=$_POST['mail_p'];
@@ -81,14 +76,14 @@ echo $civilite_p;
         $mail_m_traitant=$_POST['mail_m_traitant'];
     }
     else{
-        $mail_m_traitant="NC@mail.fr";
+        $mail_m_traitant="";
     }
 
     if($_POST['ville_m_traitant']!=""){
         $ville_m_traitant=$_POST['ville_m_traitant'];
     }
     else{
-        $ville_m_traitant="NC";
+        $ville_m_traitant="";
     }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
@@ -101,14 +96,14 @@ echo $civilite_p;
         $mail_m_appelant=$_POST['mail_m_appelant'];
     }
     else{
-        $mail_m_appelant="NC@mail.fr";
+        $mail_m_appelant="";
     }
 
     if($_POST['ville_m_appelant']!=""){
         $ville_m_appelant=$_POST['ville_m_appelant'];
     }
     else{
-        $ville_m_appelant="NC";
+        $ville_m_appelant="";
     }
     echo $mail_m_appelant;
 

@@ -53,8 +53,18 @@ include('config.php');
                                 <br><br><br><br>
                             </div>
                            
-
-                            <div class="onglet" id="onglet1">
+                            <style>
+                                #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        <div id="divConteneur3">
+                            <div class="onglet_d" >
                                 <table  cellspacing="5px" class="table" style="float:left"> 
                                     <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
@@ -83,12 +93,6 @@ include('config.php');
 
                                         </td>
                                     </tr>
-                                    <tr> 
-                                        <td align="right">Ville: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
-                                        </td> 
-                                    </tr>
                                     <tr>
                                         <td align="right"> Adresse: *
                                         </td> 
@@ -101,6 +105,11 @@ include('config.php');
                                         <td align="left"> 
                                         <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
                                         </td> 
+                                    </tr><tr> 
+                                        <td align="right">Ville: *</td> 
+                                        <td align="left"> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        </td> 
                                     </tr>
                                     <tr height="60px">
                                         <td align="center"  colspan="2">
@@ -111,6 +120,7 @@ include('config.php');
 
                             </div>
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
+                        </div>
                         </div>
                     </div>
                 </div>

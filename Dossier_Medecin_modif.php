@@ -46,8 +46,8 @@ $req2->execute(array($id_service));
     }
 }
 else{
-        $service_m="Service du médecin";
-        $centre_m="Centre du médecin";
+        $service_m="";
+        $centre_m="";
 }
     echo $service_m;
     echo $centre_m;
@@ -96,8 +96,19 @@ $req->closeCursor();
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
                     </div>
             <br>
-          
-            <div class="onglet" id="onglet1">
+                    <style>
+          #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur3">
+            <div class="onglet_d" id="onglet1">
                    
                     <table align="left" cellspacing="5px" class="table" id="modif">
                             <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
@@ -167,6 +178,7 @@ $req->closeCursor();
                             </div>
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" /> 
                         </div>
+                </div>
                     </div>
             </div>
          </form>

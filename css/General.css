@@ -48,7 +48,9 @@ body{
     margin-right:auto; 
     border-radius: 5px;"
     padding-left: 0px;
+    padding-bottom: 0px;
     cursor:pointer;
+    text-align: center;
 }
 .carreGris:hover{
 
@@ -96,10 +98,11 @@ body{
     display:block;
 }
 
-h4{
+.liste h4{
     padding-left:14px; 
     margin-top:0; 
     margin-bottom: 0;
+    color:#1270B3;
 }
 
 .menu8{
@@ -132,7 +135,7 @@ h4{
 
 
 .blanc{ width: 90%;
-       height:100% ;
+       height:2000px ;
        top:70px;
        left:120px;
        bottom: 100px;
@@ -398,20 +401,51 @@ height:100px;
 
 .title {
 	color: #337ab7;
-    margin-top:30px;
-    margin-left: 30px;
+    margin-top:20px;
+    margin-left: 10px;
     text-decoration: none; 
     line-height: 1.42857143;
     border-bottom: 1px solid #ddd;
     border-radius: 4px 4px 0 0;
-    padding: 10px 40px;
+    padding: 10px 20px;
     cursor:pointer;
     font-size:15px;
+    text-align: center;
 }
 
+#titles {
+    text-align: center;
+    
+    }
 .onglet{
     left:auto;
-    width: 90%;
+    width: 80%;
+    right: 100px;
+    display:flex;
+    flex-wrap:nowrap;
+    position: relative;
+    color:grey;
+    background:none;
+    margin:0px auto;
+    margin-top: 20px;
+    
+
+}
+
+
+
+.onglet_d input{
+    border: none;
+    background: none;
+    border-bottom: 0px solid #b2b2b2;
+     display: inline-block;
+    width: 100%;
+ 
+}
+
+.onglet_d {
+    left:auto;
+    width: 80%;
     right: 100px;
     display:flex;
     flex-wrap:nowrap;
@@ -434,7 +468,6 @@ height:100px;
     width: 100%;
  
 }
-
 
 #modif input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #555;
@@ -602,11 +635,11 @@ padding:0 9px;
 
 
 .onglet table { 
-width:50%; 
+width:90%; 
 } 
 
 .onglet tr { 
-width: 50%;
+width: 100%;
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 color: #1270B3; 
 } 
@@ -617,6 +650,8 @@ font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-ser
 height: 35px; 
 width: 100%;
 } 
+
+
 
 
 #afficher {
@@ -705,7 +740,9 @@ label {
 
 .position_table{
     
-    margin:0 auto;
+    margin:30px auto;
+    margin-left: 100px;
+   
 }
 
 
@@ -724,6 +761,23 @@ input[type="submit"]{
     text-align: right;
     
     }
+
+.form2 input[type="submit"]{
+    cursor:context-menu;
+    color:#ffffff;
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	padding:10px 15px;
+	text-decoration:none;
+    margin-top:10px;
+    margin-left:10px;
+    cursor:alias;
+    border-radius: 5px;
+    background-color: #1270b3;
+    border:none;
+    text-align: right;
+    
+    }
+
 
 
 .recherche input {
@@ -789,7 +843,7 @@ color: black;
 	background:#eaebec;
 	margin:0px auto;
 	border:#ccc 1px solid;
-    width: 85%;
+    width: 80%;
 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -812,7 +866,7 @@ color: black;
 }
 .liste table th:first-child {
 	text-align: center;
-    padding:5px;
+ 
     width: auto;
 }
 
@@ -833,7 +887,7 @@ color: black;
 
 .liste table td:first-child {
 	text-align: center;
-    padding:5px;
+ 
 	border-left: 0;
     width: auto;
     color:black;
@@ -841,12 +895,12 @@ color: black;
 
 
 .liste table td {
-    text-align: center;
-	padding:auto;
-    
+    text-align: left;
+	padding-left:5px;
+    padding-right:5px;
+    width: 100px;
 	border-bottom:1px solid ##B0C4DE;
 	border-left: 1px solid ##B0C4DE;
-
 	background: #fafafa;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
@@ -1015,3 +1069,39 @@ table td {
   width:150px;
 }
 
+.onglet_d table { 
+width:50%; 
+} 
+
+.onglet_d tr { 
+width: 50%;
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+color: #1270B3; 
+} 
+
+.onglet_d td { 
+width: 50%;
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+color: #1270B3; 
+} 
+.onglet_d input{ 
+color: #1270B3; 
+font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+height: 35px; 
+width: 100%;
+} 
+
+#divConteneur2{ 
+ margin:-10px auto;
+    margin-left: -54px;
+    
+} 
+
+.div3{ 
+ margin:30px auto;
+    margin-left: 70px;
+} 
+
+.div3 td{ 
+width: 40px; 
+} 
