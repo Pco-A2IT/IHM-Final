@@ -4,46 +4,41 @@ include('../config.php');
 
 
 //On récupère les champs du formulaires
-if($_POST['mail_p']==""){
-    $mail_p= "NC";
-}
-else{
-    $mail_p=$_POST['mail_p'];
-}
+
 
 if($_POST['telephone_p']==""){
-    $telephone_p= "NC";
+    $telephone_p= "";
 }
 else{
     $telephone_p=$_POST['telephone_p'];
 }
 
 if($_POST['ville_p']==""){
-    $ville_p= "NC";
+    $ville_p= "";
 }
 else{
     $ville_p=$_POST['ville_p'];
 }
 
 if($_POST['codePostal_p']==""){
-    $codePostal_p= "NC";
+    $codePostal_p= "";
 }
 else{
     $codePostal_p=$_POST['codePostal_p'];
 }
 
 if($_POST['adresse_p']==""){
-    $adresse_p= "NC";
+    $adresse_p= "";
 }
 else{
     $adresse_p=$_POST['adresse_p'];
 }
 
-if($_POST['adresse_p']==""){
-    $adresse_p= "NC";
+if($_POST['mail_p']==""){
+    $mail_p= "";
 }
 else{
-    $adresse_p=$_POST['adresse_p'];
+    $mail_p=$_POST['mail_p'];
 }
 
 //On récupère la date de naissance dans l'html
@@ -81,7 +76,14 @@ echo $civilite_p;
         $mail_m_traitant=$_POST['mail_m_traitant'];
     }
     else{
-        $mail_m_traitant="NC";
+        $mail_m_traitant="";
+    }
+
+    if($_POST['ville_m_traitant']!=""){
+        $ville_m_traitant=$_POST['ville_m_traitant'];
+    }
+    else{
+        $ville_m_traitant="";
     }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
@@ -94,7 +96,14 @@ echo $civilite_p;
         $mail_m_appelant=$_POST['mail_m_appelant'];
     }
     else{
-        $mail_m_appelant="NC";
+        $mail_m_appelant="";
+    }
+
+    if($_POST['ville_m_appelant']!=""){
+        $ville_m_appelant=$_POST['ville_m_appelant'];
+    }
+    else{
+        $ville_m_appelant="";
     }
     echo $mail_m_appelant;
 
@@ -121,8 +130,8 @@ $test=false;
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
-        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant));
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant, $ville_m_traitant ));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
     }
@@ -154,8 +163,8 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,\'NC\',\'NC\',\'NC\',\'NC\')');
-        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant));
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant, $ville_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();
     }
 }
@@ -170,7 +179,7 @@ else{
 // Insertion du message à l'aide d'une requête préparée
 $req =$bdd->prepare('INSERT INTO Patient(id_patient, ID_medecin_traitant, ID_medecin_autre, date_ait_p, civilite_p, nom_p, prenom_p,date_naissance, mail_p, telephone_p, ville_p, codePostal_p, adresse_p, description_p, date_creation_dossier) VALUES(NULL,?, ?,?, ? ,? , ?,?,? ,?,?, ?, ?, ?, NOW() )'); // ici le ? correspond à la valeur que l'on rentre dans le formulaire
 
-$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date,  $mail_p,$telephone_p, $ville_p,$codePostal_p ,$adresse_p,$_POST['description_p'], ));
+$req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['civilite_p'],$_POST['nom_p'], $_POST['prenom_p'],$date, $mail_p,$telephone_p, $ville_p,$codePostal_p ,$adresse_p,$_POST['description_p'], ));
 
 // Création des examens déjà réalisés
 

@@ -62,7 +62,7 @@ while($dnn = $req2->fetch()){
 $req->closeCursor();            
 ?> 
     <body>
-    <form action="./Interaction-BDD/ModifBDD_Service.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
+    <form action="./Interaction-BDD/ModifBDD_Service_Examens.php?idservice=<?php echo $_GET['idservice']; ?>" method="post">    
     <div class="gris">
               <div  class="gris2">
              <div id="menu0" class="carreGris";>
@@ -95,10 +95,10 @@ $req->closeCursor();
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
-            <br><br><br><br>
-            </div>
             
-                <style>
+         
+         
+                             <style>
                                 #divConteneur3{
                            min-height:500px;
                             height:500px;
@@ -109,78 +109,70 @@ $req->closeCursor();
                            
                             </style>
                         <div id="divConteneur3">
-            <div class="onglet_d">
-                 
-                    <table align="left" cellspacing="5px" class="table" id="modif">
-                        <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
-                        <tr> 
-                                <td align="right">Service/Centre d'examen: *</td>
-                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
-                        </tr>
-                        <tr> 
-                                <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
-                        </tr>
-                         <tr> 
-                                <td align="right">Téléphone: *</td>
-                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="<?php echo $telephone_s ?>" >
-                        </tr>    
-                    </table> 
-                    
-                    <table align="right" cellspacing="5px" class="table" id="modif"> 
-                        <tr>
-                            <td>Horaires Ouverture</td>
-                            <td>
-                                <script language="JavaScript">writeSource("js10");</script>
-                                
-                                <input id="heured" name="heured" type="time" value="<?php echo strftime("%H",strtotime($horairesd_s)).":".strftime("%M",strtotime($horairesd_s)) ?>"  /> 
-                                <br> à <br>
-                                <input id="heuref" name="heuref" type="time" value="<?php echo strftime("%H",strtotime($horairesf_s)).":".strftime("%M",strtotime($horairesf_s)) ?>"/>
-                                 
-                            </td>
-                        </tr>
-                        <tr> 
-                            <td align="right">Ville: *</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
-                            </td> 
-                            </tr> 
-                        <tr>
-                            <td align="right"> Adresse: *
-                            </td> 
-                            <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="<?php echo $adresse_s ?>" />
-                            </td> 
-                         </tr>
-                        <tr> 
-                            <td align="right">Code Postal: *</td> 
-                            <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center"  colspan="2">
-                                <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s?></TEXTAREA> 
-                            </td>
-                        </tr>
-            
-                    </table>
 
+                                <div class="liste">
+
+                                    <div class="position_table">
+                                         <table cellspacing="0px" id="tbl" class="table"> 
+                          <tr>
+                                               
+                                                <th >Examens disponibles</th>
+                                               
+                                            </tr>
+                            <?php
+                                
+                            if($idservice!=1){
+                                $compteur=1;
+                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                while($dnn = $reponse->fetch()){
+                                    if($dnn["id_examen"]!=1){
+                            ?>
+                            <tr>
+                            <td><?php print_r($dnn['typeExamen']); ?></td>
+                            <?php
+                                        $req2 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+                                        $req2->execute(array($idservice));
+                                        while($donnee = $req2->fetch()){
+                                            if($donnee[$dnn['typeExamen']]=="YES"){ ?>    
+                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" checked/></td>
+                                            <?php }else{ ?>
+                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
+                                            <?php }
+                                        }
+                                        $compteur=$compteur+1;
+
+                                    }
+                                }
+                            }
+                            else{
+                                $reponse2 = $bdd->query('SELECT * FROM Examen where id_examen=1');
+                                while($dnn2 = $reponse2->fetch()){
+                            ?>
+                           
+                                    <td><?php print_r($dnn2['typeExamen']); ?></td>
+                                    
+                                    <td><input type="checkbox" name="" value="YES" checked disabled></td>
+                                     </tr>
+                                   
+                            <?php 
+                                }
+                            }
+                            ?>
+                           
+                            </table>
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
+                </div>
+                </div> 
+                </div>
              </div>
-             <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/> 
-                
-           
-               
-             </div>
         </div>
         </div>
         </div>
         </div>
+    
         </form>
     </body>
 
 </html>
 
 <?php require 'inc/footer.php'; ?>
-
-  

@@ -1,3 +1,5 @@
+<!-- Cette page permet à l'utilisateur connecté de modifier son mot de passe -->
+
 <?php 
 require 'inc/functions.php';
 logged_only();
@@ -41,12 +43,8 @@ require 'inc/header.php';
                 <img class="icone_menu" src="Icones/hopital_blanc.png"/>
             </div>
             <div id="menu4" class="carreGris"  style="background-color:#1270B3">
-                <h4>Paramètres</h4>
+                <h4>Outils</h4>
                 <img class="icone_menu" src="Icones/parametres_blanc.png"/>      
-            </div>
-            <div id="menu5" class="carreGris">
-                <h4>Logout</h4>
-                <img class="icone_menu" src="Icones/logout.png"/>      
             </div>
     
             <div class="titre";   style="border-radius: 5px;">
@@ -54,21 +52,24 @@ require 'inc/header.php';
             </div>
             
             <div class="blanc"; style="border-radius: 5px;">
-                <h1>Changement de mot de passe</h1>
+               <div class="section4">
+                              <h1 style="color:grey">Changement de mot de passe</h1>
 
-                <form action="" method="post">
-                    <div class="form-group">
+                <form action="" method="POST">
+                    <div class="login-page">
+                        <div class="form2">
+        
                         <input class="form-control" type="password" name="password" placeholder="Nouveau mot de passe" />
-                    </div>
-                    <div class="form-group">
                         <input class="form-control" type="password" name="password_confirm" placeholder="Confirmer nouveau mot de passe" />
+                        <input type="submit" accesskey="enter" value="Changer mot de passe" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center" class="myButton1"/>
                     </div>
-                    <button class="btn btn-primary">Changer mot de passe</button>
+                    </div>
                 </form>
 
                 <script src="js/General.js"></script>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<!-- Confirmation de l'inscription d'un nouvel utilisateur.
+On y accede depuis le lien envoye a l'administrateur lors de l'inscription d'un nouvel utilisateur -->
+
 <?php
 
 $user_id = $_GET['id'];

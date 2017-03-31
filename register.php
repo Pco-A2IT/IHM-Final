@@ -1,4 +1,5 @@
-<!-- Verification des erreurs de saisi des informations -->
+<!-- Inscription d'un nouvel utilisateur -->
+
 <body style="background: #1270B3; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #22427C, #1270B3);
   background: -moz-linear-gradient(right, #22427C, #1270B3);
@@ -13,6 +14,7 @@ if(!empty($_POST)){
     $errors=array();
     require_once 'config2.php';
     
+    /* Verification de erreurs */
     if(empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])){
         $errors['username'] = "Votre pseudo n'est pas valide (ne pas mettre de caractères spéciaux)";
     }
@@ -33,6 +35,7 @@ if(!empty($_POST)){
         $errors['password'] = "Rentrez un mot de passe valide s'il vous plait";
     }
     
+    /* Inscription */
     if(empty($errors)){
         $req = $bdd->prepare("INSERT INTO users SET username = ?, password = ?, email = ?, confirmation_token = ?");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);         // cryptage du mdp pour le securiser dans la bdd
@@ -53,7 +56,6 @@ if(!empty($_POST)){
 
 <?php require 'inc/header.php'; ?>
 
-<h1>S'inscrire</h1>
 
 <!-- Affichage des erreurs -->
 <?php if(!empty($errors)): ?>
@@ -88,14 +90,16 @@ if(!empty($_POST)){
 <!-- Formulaire de saisie -->
 <form action="" method="POST">
 <div class="login-page">
-    <div class="form">
+    <div class="form2">
         <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
         <input type="text" name="email" class="form-control" placeholder="Email"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
+        <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
+        <a href="login.php" style="text-decoration:none">Déjà inscrit ?</a>
+
     </div>
 </div>    
-    <button type="submit" class="btn btn-primary">M'inscrire</button>
 </form>
 
 <?php require 'inc/footer.php'; ?>

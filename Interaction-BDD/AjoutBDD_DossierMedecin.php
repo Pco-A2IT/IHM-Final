@@ -22,7 +22,7 @@ else{
 }
 
 if($_POST['email_m']==""){
-    $email_m="NC";
+    $email_m="NC@mail.fr";
 }
 else{
     $email_m=$_POST['email_m'];

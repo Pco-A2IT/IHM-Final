@@ -1,22 +1,18 @@
 <?php
 
- include('config.php');
+    ////////////////////////
+    /* Export des données pour l'autocomplétion du nom des patients dans la barre de recherche de la liste des patients ; appelé depuis la page Liste_Patients.php */
+    /////////////////////////
 
-$term = $_GET['term'];
-
-$requete = $bdd->prepare('SELECT * FROM patient WHERE nom_p LIKE :term'); // j'effectue ma requête SQL grâce au mot-clé LIKE
-$requete->execute(array('term' => $term.'%'));
-
-$array = array(); // on créé le tableau
-$row = array();
-
-while($donnee = $requete->fetch(PDO::FETCH_ASSOC)) // on effectue une boucle pour obtenir les données
-{
-    $concat = $donnee['nom_p'];
-    array_push($array, $concat);
-}
-
-
-echo json_encode($array); // il n'y a plus qu'à convertir en JSON
-
+    include('config.php'); //connexion à la bdd
+    $term = $_GET['term'];
+    $requete = $bdd->prepare('SELECT * FROM patient WHERE nom_p LIKE :term');
+    $requete->execute(array('term' => $term.'%')); //requête SQL : les noms de médecins commençant par le terme saisi
+    $array = array(); // création d'un tableau
+    $row = array();
+    while($donnee = $requete->fetch(PDO::FETCH_ASSOC)) { // on effectue une boucle pour obtenir les données
+        array_push($array, $donnee['nom_p']); // on ajoute les données à notre tableau
+    }
+    echo json_encode($array); //  on convertit le tableau en format json
 ?>
+

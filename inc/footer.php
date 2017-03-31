@@ -1,4 +1,4 @@
-<!-- On ferme les balises ouvertes dans le footer -->
+<!-- On ferme les balises ouvertes dans le header -->
 
 </div>
 </body>

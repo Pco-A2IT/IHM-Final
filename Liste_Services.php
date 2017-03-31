@@ -83,17 +83,16 @@ include('config.php');
             <div class="blanc"; style="border-radius: 5px;">  
                 
                        <div class="myButton" id="Ajouter_liste">
-                            <a href="Dossier_Service.php" class="myButton1"> Ajouter Service</a>
+                            <a href="Dossier_Service.php" class="myButton1"  style=" cursor:copy;"> Ajouter Service</a>
                         </div>
                 <br>
                 <br>
                 <br>
                  <form id="recherche" method="post" class="recherche">
 
-                        <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
+                           <input name="saisie" id="saisie" type="text" placeholder="Rechercher Service..."  />
                         <input class="loupe" type="submit" value="" />
-                        <input  type="submit"  value="Afficher liste complète" >
-
+                        <input  type="submit" id="afficher" value="Afficher liste complète" >
                     </form>   
                 <style>
                                         #divConteneur{
@@ -106,7 +105,7 @@ include('config.php');
                            
                             </style>
 
-                <div id="divConteneur">
+                  <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
                         <th>Fiche</th>
@@ -116,8 +115,6 @@ include('config.php');
                         <th>Code postal</th>
                         <th>Ville</th>
                         <th>Téléphone</th>
-                        <th>Horaires Ouverture</th>
-                        <th>Horaires Fermeture</th>
                         <th></th>
                         <th></th>
 
@@ -125,11 +122,11 @@ include('config.php');
 <?php
 
 if(isset($_POST['saisie'])){
-    $query = 'SELECT * FROM service WHERE nom_s LIKE :term';
+    $query = 'SELECT * FROM service WHERE nom_s LIKE :term ORDER BY centre_s ';
     $term = $_POST['saisie'];
 }
 else{
-    $query = 'SELECT * FROM service ';
+    $query = 'SELECT * FROM service ORDER BY centre_s ';
     $term="";
 }
                         
@@ -144,7 +141,7 @@ while($dnn = $pdo_select->fetch() )
 {
 ?>
        
-    <tr>
+    <tr onclick="document.location='Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>'" style="cursor:zoom-in">
         <td><img class="icone_liste" src="Icones/hopital_bleu.png" width="50px" heigh="50px" alt="Photo de patient" /></td>
         <td class="left"> <?php print_r($dnn['nom_s']); ?></td>
         <td class="left"> <?php print_r($dnn['centre_s']); ?></td>
@@ -152,8 +149,6 @@ while($dnn = $pdo_select->fetch() )
         <td class="left"> <?php print_r($dnn['codePostal_s']); ?></td>
         <td class="left"> <?php print_r($dnn['ville_s']); ?></td>
         <td class="left"> <?php print_r($dnn['telephone_s']); ?></td>
-        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesd_s']))); ?></td>
-        <td class="left"> <?php print_r(strftime("%H:%M", strtotime($dnn['horairesf_s']))); ?></td>
         <td><a href="Dossier_Service_modif.php?idservice=<?php echo $dnn['id_service']; ?>"><img class="supprimer" src="Icones/button_modifier.png"></a></td>
         <td><a href="./Interaction-BDD/SupprBDD_Service.php?idservice=<?php echo $dnn['id_service']; ?>" onclick="return sure();"><img class="supprimer" src="Icones/button_supprimer.png"></a></td>
         
@@ -169,7 +164,7 @@ function sure()
     return(confirm('Etes-vous sûr de vouloir supprimer ce Service ?'));
 }                 
 </script>
-      
+       
                     </table> 
                     </div>
                 </div>

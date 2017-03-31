@@ -1,3 +1,5 @@
+<!-- Page de connexion -->
+
 <body style="background: #1270B3; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #22427C, #1270B3);
   background: -moz-linear-gradient(right, #22427C, #1270B3);
@@ -30,18 +32,17 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
 }
 ?>
 
-    <h1> Se connecter</h1>
 
         <form action="" method="POST">
-          <div class="login-page">
-               <div class="form">
-              <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
-        
-        <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
-    </div>
+            <div class="login-page">
+                <div class="form2">
+                    <input type="text" name="username" class="form-control" placeholder="Identifiant" autocomplete="off"/>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+                    <input type="submit" accesskey="enter" value="Se connecter" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
+                    <a href="register.php" style="text-decoration:none">Pas encore inscrit ?</a>
+                </div>
             </div>
-
-            <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
+
 
 <?php require 'inc/footer.php'; ?>

@@ -29,11 +29,11 @@ CREATE TABLE `Patient` (
   `prenom_p` varchar(250) NOT NULL DEFAULT '',
   `civilite_p` enum('M.','Mme') NOT NULL DEFAULT 'M.',
   `date_naissance` date,    
-  `mail_p` varchar(255) NOT NULL DEFAULT '',      
-  `telephone_p` varchar(255) NOT NULL DEFAULT '',    
+  `mail_p` varchar(255) DEFAULT '',      
+  `telephone_p` varchar(255) DEFAULT '',    
   `ville_p` varchar(255) NOT NULL DEFAULT '',
-  `codePostal_p` varchar(5) NOT NULL DEFAULT '',       
-  `adresse_p` varchar(255) NOT NULL DEFAULT '',
+  `codePostal_p` varchar(5) DEFAULT '',       
+  `adresse_p` varchar(255)  DEFAULT '',
   `description_p` varchar(5000) NOT NULL DEFAULT '',
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
@@ -103,9 +103,9 @@ CREATE TABLE `Centre_de_sante` (
 
 
 /*!40000 ALTER TABLE `Centre_de_sante` DISABLE KEYS */;
-LOCK TABLES `Centre_de_sante` WRITE;
+/*LOCK TABLES `Centre_de_sante` WRITE;
 INSERT INTO `Centre_de_sante` VALUES (967,'Hopital Lyon EST'),(334,'Hopital Lyon 6ème'),(112,'Clinique du Tonkin');
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Centre_de_sante` ENABLE KEYS */;
 
 --
@@ -124,6 +124,7 @@ CREATE TABLE `Service` (
   `codePostal_s` varchar(255) NOT NULL DEFAULT '', 
   `ville_s` varchar(255) NOT NULL DEFAULT '',
   `description_s` varchar(5000) NOT NULL DEFAULT '',
+    `Hospitalisation de jour` enum('YES','NO') NOT NULL,
     
   PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -134,10 +135,10 @@ CREATE TABLE `Service` (
 
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
-/*LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,967,'cardiologie','0423556768','10h-20h','20 rue de la fontaine','69100','Villeurbanne');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Service` ENABLE KEYS */;
+LOCK TABLES `Service` WRITE;
+INSERT INTO `Service` VALUES (1,"HC LYON","Unité neurovasculaire",'NC','00:00', '00:00','3 Quai des Célestins','69002 ','Lyon','', 'YES');
+UNLOCK TABLES;
+/*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
 --
 -- Table structure for table `Examen`
@@ -148,6 +149,7 @@ CREATE TABLE `Examen` (
   `id_examen` int(11) NOT NULL auto_increment,
   `typeExamen` varchar(255) DEFAUlT '', 
   `details` varchar(255) DEFAUlT '',
+  `neuro` ENUM("YES","NO") DEFAULT "NO",
   PRIMARY KEY  (`id_examen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -156,10 +158,10 @@ CREATE TABLE `Examen` (
 --
 
 
-/*!40000 ALTER TABLE `Examen` DISABLE KEYS */;
-/*LOCK TABLES `Examen` WRITE;
-INSERT INTO `Examen` VALUES (1,'scan_cerebral',''),(2,'angioscan',''),(3,'bilanBiologique',''),(4,'bilanCardiaque','');
-UNLOCK TABLES;*/
+/*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
+LOCK TABLES `Examen` WRITE;
+INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioriatire',"NO");
+UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
 --
@@ -171,8 +173,8 @@ CREATE TABLE `Examen_patient` (
   `id_examen` int(11) NOT NULL,  
   `id_patient` int(11) NOT NULL,
     `id_service` int(11) NOT NULL,
-  `date_examen` date default '0000-00-00',  
-  `heure_examen` varchar(255) DEFAUlT '',
+  `date_examen` date NOT NULL default '0000-00-00',  
+  `heure_examen` time NOT NULL DEFAULT '00:00',
   `effectue` enum('YES','NO') NOT NULL,
     PRIMARY KEY  (`id_examen`, `id_patient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

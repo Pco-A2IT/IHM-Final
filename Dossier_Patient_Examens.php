@@ -1,15 +1,17 @@
-<?php
-    include('config.php');
-?> 
+<?php 
+require 'inc/functions.php';
+logged_only();
+require 'inc/header.php'; 
+include('config.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <link href="css/General.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-        
+        <link href="css/General.css" type="text/css" rel="stylesheet"/>        
         
         <?php $id_patient=$_GET['id_patient']; 
         $req = $bdd->prepare('SELECT * FROM patient WHERE id_patient = ? ');
@@ -36,9 +38,6 @@
     </head>
     
     <body>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- inclusion de jQuery et jQuery.ui-->
     <?php $id_patient=$_GET['id_patient']; ?>
     <form action="./Interaction-BDD/AjoutBDD_dossierPatient_Examens.php?id_patient=<?php echo $id_patient; ?>" method="post">
         <div class="gris">
@@ -79,34 +78,78 @@
                       
                         
             
-                <div id="container">
-                    <br>
+                  <style>
+                                        #divConteneur{
+                           min-height:400px;
+                            height:400px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
                            
+                            </style>
+                        
+                              
+                        <div id="divConteneur">
 
                     <div class="position_table"> 
                         <div class="liste">
-                        <table align="center" cellspacing="5px" cellpadding="15px" class="table">
+                        <table cellspacing="0px" id="tbl" class="table"> 
 
 
                                 <tr>
                                     <th>Examen</th>
-                                    <th style="text-align:center">Réalisé</th>
-                                <?php
-                                        $compteur=1;
-                                        $reponse = $bdd->query('SELECT * FROM Examen');
-                                        while($dnn = $reponse->fetch()){
-                                    ?>
-                                    <tr>
-                                    <td><?php print_r($dnn['typeExamen']); ?></td> 
-                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-                                    <?php $compteur=$compteur+1; ?>
-                                    </tr>
-                                    <?php
-                                        };
-                                    ?>
+                                    <th style="text-align:center">Réalisé avant Prise de contact avec SOS AIT</th>
+                                    <th style="text-align:center">Date</th>
+                                </tr>
+                                
+                                        
+<?php
+$compteur=1;
+$reponse = $bdd->query('SELECT * FROM Examen');
+while($dnn = $reponse->fetch()){
+?>
+                                    
+<?php
+    $req1 = $bdd->prepare('SELECT * FROM examen_patient WHERE id_patient = ? AND id_examen=? ');
+    $req1->execute(array($id_patient,$dnn['id_examen'] ));
+                                
+    if($req1->fetch()){
+        $req2 = $bdd->prepare('SELECT * FROM examen_patient WHERE id_patient = ? AND id_examen=? ');
+        $req2->execute(array($id_patient,$dnn['id_examen'] ));
+        while($dnn2= $req2->fetch()){
+        
+        
+?>
+                                <tr disabled=true >
+                                    <td><?php print_r($dnn['typeExamen']); ?></td>
+                                    <td  background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
+                                    <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
+                                    <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
+<?php
+        }
+    }
+    else{
+        
+?>
+                                <tr>
+                                    <td><?php print_r($dnn['typeExamen']); ?></td>
+                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
+                                    <td><input id="<?php echo $compteur; ?>" style="display:none" name="<?php echo "date".$compteur; ?>"  type="date"  /></td>
+                                    <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
+                                
+<?php
+
+    }
+    $compteur=$compteur+1;
+?>
+                                </tr>
+<?php
+}
+?>
 
                         </table>
-                              <input type="submit" accesskey="enter" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  class="submit position_submit" id="btn" formmethod="post" /> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" /> 
                         </div>
                     </div>
                 </div>
@@ -116,25 +159,83 @@
         </div>
         </div>
         </form>
-            <script type="text/javascript">
-                //utilisation de jQuery :
-                $(function($)   {
-                    $('#nom_m_appelant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
-                    $('#nom_m_traitant').autocomplete({
-                        source : 'dossierPatient.php'
-                    });
-                });
-            </script>  
          <script src="General.js"></script>
     </body>
 
 </html>
 
-     <script>
+<script>
+function masquerDate(id)
+{ 
+    console.log(id);
+    document.getElementById(id).style.display="none";
+    document.getElementById(id).attributes["required"] = "";
+    document.getElementById(id).required=false;
+}
+    
+function afficherDate(id)
+{ 
+    
+    console.log(id);
+    if(document.getElementById(id).checked==false){
+        document.getElementById(id).style.display="block";
+        console.log("checker");
+        document.getElementById(id).checked=true;
+        document.getElementById(id).required=true;
+        
+        document.getElementById('erreurdate'+id).innerHTML = '';
+        document.getElementById("btn").disabled= false;
+        document.getElementById("btn").style.background="#1270B3";
+    }
+    else{
+        console.log("pas checker");
+        document.getElementById(id).style.display="none";
+        document.getElementById(id).value="";
+        document.getElementById(id).checked=false;
+        document.getElementById(id).required=false;
+        
+        document.getElementById('erreurdate'+id).innerHTML = '';
+        document.getElementById("btn").disabled= false;
+        document.getElementById("btn").style.background="#1270B3";
+    }
+    
+}
          
-         function changeColor(s) {
+function Afficher_1(id)
+{ 
+    console.log(id);
+    document.getElementById(id).disabled= false;
+    document.getElementById(id).style.background="#1270B3";
+}
+function Cacher_1(id)
+{   
+    console.log('valider'+id);
+    document.getElementById(id).disabled= true;
+    document.getElementById(id).style.background="red";
+    
+    //console.log("Bouton caché");
+}
+         
+/*function verifDate(champ){
+    id=champ.id;
+    console.log(id);
+	var date = new Date();
+	var date_n = document.getElementById(id).value;
+    console.log(date_n);
+	var date2 = new Date(date_n);
+	if(date2 < date){
+        document.getElementById('erreurdate'+id).innerHTML = 'Date déjà passée';
+        Cacher_1("btn");
+      return false;
+	}else{
+        document.getElementById('erreurdate'+id).innerHTML = '';
+        Afficher_1("btn");
+		return true;
+	}
+}*/
+         
+         
+function changeColor(s) {
     if(s.options[s.selectedIndex].value == "") {
         s.style.color = "#a9a9a9";
     }
