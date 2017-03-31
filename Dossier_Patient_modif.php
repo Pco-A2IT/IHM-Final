@@ -147,11 +147,15 @@ $req->closeCursor();
                                 </tr>
                                 <tr> 
                                     <td align="right">Civilité: *</td>
-                                    <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
-                                        <datalist id="c" style="background-color:eeeeee">
-                                                <option>M.</option>
-                                                <option>Mme</option>
-                                        </datalist>
+                                    
+                                    <td align="left"><section id="main">
+                                                <select id="choix" class="placeholder" value="<?php echo $civilite_p ?>" onchange="changeColor(this);" name="civilite_p" required style="background-color:eeeeee">
+                                                    <option value="" ><?php echo $civilite_p ?></option>
+                                                    <option value="M.">M.</option>
+                                                    <option value="Mme">Mme</option>
+
+                                                </select>
+                                            </section>
                                     </td>
                                 </tr>
                                 <tr>

@@ -86,27 +86,6 @@ INSERT INTO `Medecin` VALUES (1,'Tournesol','Jacques','jacques.tournesol@free.fr
 UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Medecin` ENABLE KEYS */;
 
---
--- Table structure for table `Centre_de_sante`
---
-
-DROP TABLE IF EXISTS `Centre_de_sante`;
-CREATE TABLE `Centre_de_sante` (
-  `num_siret` int(11) unsigned NOT NULL,
-  `nom_c` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY  (`num_siret`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `Centre_de_sante`
---
-
-
-/*!40000 ALTER TABLE `Centre_de_sante` DISABLE KEYS */;
-/*LOCK TABLES `Centre_de_sante` WRITE;
-INSERT INTO `Centre_de_sante` VALUES (967,'Hopital Lyon EST'),(334,'Hopital Lyon 6ème'),(112,'Clinique du Tonkin');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Centre_de_sante` ENABLE KEYS */;
 
 --
 -- Table structure for table `Service`
