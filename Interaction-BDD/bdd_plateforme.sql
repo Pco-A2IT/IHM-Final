@@ -136,7 +136,7 @@ CREATE TABLE `Service` (
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,"HC LYON","Unité neurovasculaire",'NC','00:00', '00:00','3 Quai des Célestins','69002 ','Lyon','', 'YES');
+INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Werthe","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
@@ -176,6 +176,7 @@ CREATE TABLE `Examen_patient` (
   `date_examen` date NOT NULL default '0000-00-00',  
   `heure_examen` time NOT NULL DEFAULT '00:00',
   `effectue` enum('YES','NO') NOT NULL,
+   `planifie_avant` enum('YES','NO') NOT NULL, 
     PRIMARY KEY  (`id_examen`, `id_patient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
