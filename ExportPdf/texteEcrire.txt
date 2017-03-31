@@ -1,2 +1,2 @@
-Hospitalisation de jour;HC LYON;Unité neurovasculaire;12-04-2017;23:22:00;oui
-ANGIOSCAN;UNV Lyon;Service angio;06-04-2017;08:10:00;oui
+Hospitalisation de jour;Hôpital Neurologique Pierre Werthe;Unité neurovasculaire;18-10-2018;11:00:00;oui
+IRM;Sainté;Urgence;11-12-2018;11:00:00;oui

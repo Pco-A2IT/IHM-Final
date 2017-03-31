@@ -163,7 +163,7 @@ jQuery(document).ready(function() {
                                                 <td><?php echo $donnees["date_examen"]; ?></td>
                                                 <td><?php echo $donnees["heure_examen"]; ?></td>
             <?php } ?>
-            <?php 
+            <?php
                 if($donnees["effectue"]=="YES"){
             ?> 
                                                 <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /></td>
@@ -285,8 +285,25 @@ jQuery(document).ready(function() {
                                     <td colspan="7" >   <?php
 
                             //marche mais ne prend pas en compte les examens déjà planifié
+                            /////////////////////////            
+                            $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=? and id_examen=1');
+                            $req3->execute(array($id_patient));
+                            if($req3->fetch()){
+                                $req4= $bdd->prepare('SELECT * FROM Examen');
+                                $req4->execute();
+                                while($dnn4 = $req4->fetch()){
+                                    if($dnn4["id_examen"]!=1){
+                            ?>
+                                        <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/> <label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn4['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <?php
+                                    }
+                                }
+                            }
+                            //////////////////////////            
+                            else{
+                                
                             $compteur=1;
-
+                            
                             $reponse = $bdd->query('SELECT * FROM Examen');      
                             while($dnn = $reponse->fetch()){
                                 $dejaRealise=false;
@@ -314,9 +331,9 @@ jQuery(document).ready(function() {
 
                             <?php
                                     }
-                                    
                                 }
                                 $compteur= $compteur+1;
+                            }
                             }
                         ?></td>
 

@@ -325,7 +325,6 @@ include('config.php');
                                         //Parcours de tous les patients
                                         $rep1= $bdd->prepare('SELECT * FROM Patient ORDER BY "date_creation_dossier"');
                                         $rep1->execute(array());
-                                   
                                         while ($dnn1= $rep1->fetch()){ ?>
                                             <tr>
                                             <?php
@@ -369,7 +368,7 @@ include('config.php');
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
                                                <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamPlanifie.php" class="myButton1"> Télécharger le récapitulatif </a> 
+                                               <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
                                                 
                                                </td>
                                         <?php
@@ -474,7 +473,7 @@ include('config.php');
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
                                                <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                                <a href="./ExportPdf/ExportExamAngioscan.php" class="myButton1"> Télécharger le récapitulatif </a> 
+                                                <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
                                                </td>
                                         <?php
                                             } ?>
@@ -577,7 +576,7 @@ include('config.php');
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
                                                <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamRealise.php" class="myButton1"> Télécharger le récapitulatif </a>  
+                                               <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a>  
                                                </td>
                                         <?php
                                             } ?>
