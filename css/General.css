@@ -943,7 +943,7 @@ table a:visited {
 
 
 table td {
-    text-align: center;
+    text-align: left;
 	padding:auto;
 	border-bottom: 1px solid #fff;
 
