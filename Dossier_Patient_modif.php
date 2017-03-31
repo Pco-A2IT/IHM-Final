@@ -116,7 +116,7 @@ $req->closeCursor();
                 
                 <div class="blanc";   style="border-radius: 5px;">
                     <div class="section4">
-
+                          <br>
                          <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
