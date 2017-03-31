@@ -336,7 +336,7 @@ jQuery(document).ready(function() {
                                 <th></th>
                             </tr>
 <?php 
-    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="HC LYON" and nom_s="Unité neurovasculaire" ');
+    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="Hôpital Neurologique Pierre Werthe" and nom_s="Unité neurovasculaire" ');
     $req1->execute();
     while($donnees= $req1->fetch()){
 ?>

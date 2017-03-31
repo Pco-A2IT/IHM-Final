@@ -118,6 +118,8 @@ while($dnn = $reponse->fetch()){
         $req2 = $bdd->prepare('SELECT * FROM examen_patient WHERE id_patient = ? AND id_examen=? ');
         $req2->execute(array($id_patient,$dnn['id_examen'] ));
         while($dnn2= $req2->fetch()){
+            if($dnn2['planifie_avant']=='YES'){
+            
         
         
 ?>
@@ -127,11 +129,24 @@ while($dnn = $reponse->fetch()){
                                     <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
 <?php
+            }
+            
+
+            else{
+?>
+                                <tr disabled=true >
+                                                    <td><?php print_r($dnn['typeExamen']); ?></td>
+                                                    <td  background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
+                                                    <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
+                                                    <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
+                
+                
+            }
         }
     }
     else{
-        
 ?>
+            
                                 <tr>
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
                                     <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
@@ -139,7 +154,7 @@ while($dnn = $reponse->fetch()){
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
                                 
 <?php
-
+        
     }
     $compteur=$compteur+1;
 ?>

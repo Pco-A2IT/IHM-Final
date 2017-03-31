@@ -13,9 +13,9 @@ echo $id_examen;
 echo $_POST["date"];
 echo $_POST["heure"];
 
-$req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue) VALUES(?, ?,?,?,?,?)');
+$req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue, planifie_avant) VALUES(?, ?,?,?,?,?, ?)');
 
-$req->execute(array( $id_examen, $id_patient, $id_service, $_POST["date"], $_POST["heure"], "NO"));
+$req->execute(array( $id_examen, $id_patient, $id_service, $_POST["date"], $_POST["heure"], "NO", "NO"));
 
 
 
