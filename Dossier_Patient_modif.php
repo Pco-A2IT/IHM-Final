@@ -121,7 +121,19 @@ $req->closeCursor();
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
                     <br>
+                         <style>
+                                        #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                       
                         
+                        <div id="divConteneur3">
                             <div class="onglet_d">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                    
@@ -233,6 +245,7 @@ $req->closeCursor();
               
                      <input type="submit" accesskey="enter" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" formmethod="post"/> <?php echo $_GET['id_patient'];?>
                  </div>
+                    </div>
                        </div>
               
          

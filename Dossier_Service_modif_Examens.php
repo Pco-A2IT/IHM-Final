@@ -95,11 +95,20 @@ $req->closeCursor();
             <div class="section4">
             <div class="div1">
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
-            <br><br><br><br>
+            
          
          
-                               <div id="container">
-                            <br>
+                             <style>
+                                #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        <div id="divConteneur3">
 
                                 <div class="liste">
 

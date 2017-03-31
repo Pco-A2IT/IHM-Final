@@ -67,6 +67,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant des rendez-vous antécédents à la date d'aujourd'hui </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table" >   
                                             <tr>
                                                 <th>Patient</th>
@@ -180,6 +182,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant des rendez-vous non planifiés </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -231,7 +235,7 @@ include('config.php');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
                                                         <td><?php echo $dnn3["typeExamen"];?></td>
-                                                        <td><input align="center" type="submit" accesskey="enter" value="RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                                        <td onclick="document.location='Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>'" style="cursor:zoom-in"><input align="center" type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
                                             
                                             
                                             
@@ -265,6 +269,8 @@ include('config.php');
                                 <div class="position_table">
                 
                                     <div class="liste">
+                                         <h4>Patients dont tous les examens sont planifiés </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -342,6 +348,8 @@ include('config.php');
                                        <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant réalisé tous les examens sauf le rendez-vous neuro </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
@@ -428,6 +436,8 @@ include('config.php');
                                      <div class="position_table">
                 
                                     <div class="liste">
+                                        <h4>Patients ayant réalisé tous les examens </h4>
+                                        <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>

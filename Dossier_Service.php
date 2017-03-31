@@ -53,7 +53,17 @@ include('config.php');
                                 <br><br><br><br>
                             </div>
                            
-
+                            <style>
+                                #divConteneur3{
+                           min-height:500px;
+                            height:500px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        <div id="divConteneur3">
                             <div class="onglet_d" >
                                 <table  cellspacing="5px" class="table" style="float:left"> 
                                     <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
@@ -110,6 +120,7 @@ include('config.php');
 
                             </div>
                             <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
+                        </div>
                         </div>
                     </div>
                 </div>
