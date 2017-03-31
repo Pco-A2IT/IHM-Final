@@ -1,0 +1,2 @@
+Hospitalisation de jour;HC LYON;Unité neurovasculaire;12-04-2017;23:22:00;oui
+ANGIOSCAN;UNV Lyon;Service angio;06-04-2017;08:10:00;oui
