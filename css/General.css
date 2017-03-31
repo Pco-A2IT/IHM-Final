@@ -895,7 +895,7 @@ color: black;
 
 
 .liste table td {
-    text-align: left;
+    text-align: center;
 	padding-left:5px;
     padding-right:5px;
     width: 100px;
@@ -943,7 +943,7 @@ table a:visited {
 
 
 table td {
-    text-align: left;
+    text-align: center;
 	padding:auto;
 	border-bottom: 1px solid #fff;
 
