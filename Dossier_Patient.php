@@ -138,13 +138,13 @@ include('config.php');
                                         <tr> 
                                             <td align="right">Code Postal:</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_p" placeholder="(ex: 69100)" /> 
+                                                <input type="text" pattern="[0-9]{5}" id="codePostal_p" name="codePostal_p" placeholder="(ex: 69100)" autocomplete="off" /> 
                                             </td> 
                                         </tr> 
                                         <tr> 
                                             <td align="right">Ville: *</td> 
                                             <td align="left" colspan="2"> 
-                                                <input type="text" name="ville_p" placeholder="(ex: Lyon)" required/> 
+                                                <input type="text" id="ville_p" name="ville_p" placeholder="(ex: Lyon)" autocomplete="off" required/> 
                                             </td> 
                                         </tr> 
                                         <tr>
@@ -153,32 +153,32 @@ include('config.php');
                                                 <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" onblur="verifDate(this)" placeholder="Nom" required/>
                                             </td>
                                             <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" required/>
+                                                <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" autocomplete="off" required/>
                                             </td>    
                                         </tr>
                                         <tr>
                                             <td align="left" class="required">
-                                                <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville" required/>
+                                                <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville" autocomplete="off" required/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" id="mail_m_traitant" name="mail_m_traitant" placeholder="Mail"/>
+                                                <input type="text" id="mail_m_traitant" name="mail_m_traitant" placeholder="Mail" autocomplete="off"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right" rowspan="2">Médecin appelant:</td> 
                                             <td align="left">             
-                                                <input type="text" id="nom_m_appelant" onblur="verifDate(this)" name="nom_m_appelant" placeholder="Nom" autocomplete="off" list="a"/> 
+                                                <input type="text" id="nom_m_appelant" onblur="verifDate(this)" name="nom_m_appelant" placeholder="Nom" autocomplete="off"/> 
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" list="a"/> 
+                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" autocomplete="off"/> 
                                             </td>
                                         </tr> 
                                         <tr>
                                              <td align="left"> 
-                                                <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="Ville"/>
+                                                <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="Ville"autocomplete="off"/>
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" id="mail_m_appelant" name="mail_m_appelant" placeholder="Mail"/>
+                                                <input type="text" id="mail_m_appelant" name="mail_m_appelant" placeholder="Mail" autocomplete="off"/>
                                             </td>
                                         </tr>
                                         <tr height="60px">
@@ -233,52 +233,82 @@ include('config.php');
 	                                   }
                                     }));
 			                     }
-	                   });
-                    },
-                    minLength: 2,
-                   // delay: 400,
-                    select : function( event, ui ){
-	                   var obj = ui.item.value;
-	                       $( "#nom_m_appelant" ).val( obj.nom_m )
-	                       $( "#prenom_m_appelant" ).val( obj.prenom_m);
-	                       $( "#mail_m_appelant" ).val( obj.mail_m);
-	                       $( "#ville_m_appelant" ).val( obj.ville_m );
-	                       return false;
-                    }
-				});
-                    $('#nom_m_traitant').autocomplete({
+	                       });
+                        },
+                        minLength: 2,
+                       // delay: 400,
+                        select : function( event, ui ){
+                           var obj = ui.item.value;
+                               $( "#nom_m_appelant" ).val( obj.nom_m )
+                               $( "#prenom_m_appelant" ).val( obj.prenom_m);
+                               $( "#mail_m_appelant" ).val( obj.mail_m);
+                               $( "#ville_m_appelant" ).val( obj.ville_m );
+                               return false;
+                        }
+                    });
+                        $('#nom_m_traitant').autocomplete({
+                            source: function(request, response) {
+                              $.ajax({
+                                    // Fichier servant à récuperer les valeurs dans la BDD
+                                    url: "autocompletionMedecin.php",
+                                    // Définition du type de données que l'on reçoit de la part de autoServeur.php
+                                    dataType: "json",
+                                    // Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+                                    data: {nom: $("#nom_m_traitant").val(), maxRows: 10},
+                                    // Type d'envoie des données vers le serveur
+                                    type: 'POST',
+                                    // En cas de succès de récupération de données JSON depuis AutocCompletion.php
+                                    success: function (data){
+                                        response( $.map( data, function( item ){ 
+                                           return {
+                                              label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
+                                              value: item
+                                           }
+                                        }));
+                                     }
+                           });
+                        },
+                        minLength: 2,
+                       // delay: 400,
+                        select : function( event, ui ){
+                           var obj = ui.item.value;
+                               $( "#nom_m_traitant" ).val( obj.nom_m )
+                               $( "#prenom_m_traitant" ).val( obj.prenom_m);
+                               $( "#mail_m_traitant" ).val( obj.mail_m);
+                               $( "#ville_m_traitant" ).val( obj.ville_m );
+                               return false;
+                        }
+                    }); 
+                    $('#ville_p').autocomplete({
                         source: function(request, response) {
-						  $.ajax({
-								// Fichier servant à récuperer les valeurs dans la BDD
-								url: "autocompletionMedecin.php",
-								// Définition du type de données que l'on reçoit de la part de autoServeur.php
-								dataType: "json",
-								// Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
-								data: {nom: $("#nom_m_traitant").val(), maxRows: 10},
-								// Type d'envoie des données vers le serveur
-								type: 'POST',
-								// En cas de succès de récupération de données JSON depuis AutocCompletion.php
-								success: function (data){
-				                    response( $.map( data, function( item ){ 
-	                                   return {
-		                                  label: item.nom_m + ", " + item.prenom_m + ", " + item.ville_m,
-		                                  value: item
-	                                   }
+                            $.ajax({
+                              // Fichier servant à récuperer les valeurs dans la BDD
+                                url: "dossierPatient_autocompletion.php",
+                                // Définition du type de données que l'on reçoit de la part de autoServeur.php
+                                dataType: "json",
+                                // Valeur que l'on envoie dans le fichier Autocompletion.php pour la requête
+                                data: {nom: $("#ville_p").val(), maxRows: 10},
+                                // Type d'envoie des données vers le serveur
+                                type: 'POST',
+                                // En cas de succès de récupération de données JSON depuis AutocCompletion.php
+                                success: function (data){
+                                    response( $.map( data, function( item ){ 
+                                       return {
+                                          label: item.ville_p + ", " + item.codePostal_p,
+                                          value: item
+                                       }
                                     }));
-			                     }
-	                   });
-                    },
-                    minLength: 2,
-                   // delay: 400,
-                    select : function( event, ui ){
-	                   var obj = ui.item.value;
-	                       $( "#nom_m_traitant" ).val( obj.nom_m )
-	                       $( "#prenom_m_traitant" ).val( obj.prenom_m);
-	                       $( "#mail_m_traitant" ).val( obj.mail_m);
-	                       $( "#ville_m_traitant" ).val( obj.ville_m );
-	                       return false;
-                    }
-				}); 
+                                 }
+                           });
+                        },
+                        minLength: 2,
+                        select : function( event, ui ){
+                           var obj = ui.item.value;
+                               $( "#ville_p" ).val( obj.ville_p )
+                               $( "#codePostal_p" ).val( obj.codePostal_p);
+                               return false;
+                        }
+                    });     
                 });
             </script>  
          <script src="General.js"></script>
