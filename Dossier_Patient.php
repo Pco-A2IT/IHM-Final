@@ -101,7 +101,7 @@ include('config.php');
                                                     <option value="Mme">Mme</option>
 
                                                 </select>
-                                        </section>
+                                            </section>
                                             </td>
                                         </tr>
                                         <tr>

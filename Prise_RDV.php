@@ -485,6 +485,12 @@ jQuery(document).ready(function() {
 
 <?php require 'inc/footer.php'; ?>
 
+ <script> 
+    function sure() {
+        return(confirm('Etes-vous sûr de vouloir supprimer ce Dossier Patient ?'));
+    }                 
+</script>
+
 <script language="JavaScript">
     
 //document.getElementsByClassName("validation").disabled= true;   
