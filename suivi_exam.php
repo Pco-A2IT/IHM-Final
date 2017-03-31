@@ -65,7 +65,19 @@ include('config.php');
                             
                             <div class="onglet" id="onglet3">
                                 <div class="position_table">
-                
+                                
+                                    <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
                                     <div class="liste">
                                         <h4>Patients ayant des rendez-vous antécédents à la date d'aujourd'hui </h4>
                                         <br>
@@ -170,6 +182,7 @@ include('config.php');
                                           
                                             </table>
                                     </div>
+                                    </div>
                             </div>
                                
 
@@ -180,7 +193,19 @@ include('config.php');
                     
                               <div class="onglet" id="onglet1">
                                 <div class="position_table">
-                
+                                    
+                                    <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
                                     <div class="liste">
                                         <h4>Patients ayant des rendez-vous non planifiés </h4>
                                         <br>
@@ -260,6 +285,7 @@ include('config.php');
                                           
                                             </table>
                                     </div>
+                                    </div>
                             </div>
                         
                                   
@@ -267,7 +293,19 @@ include('config.php');
                         </div>
                           <div class="onglet" id="onglet4">
                                 <div class="position_table">
-                
+                                
+                                    <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
                                     <div class="liste">
                                          <h4>Patients dont tous les examens sont planifiés </h4>
                                         <br>
@@ -338,6 +376,7 @@ include('config.php');
                                             }?>
                                             </table>
                                     </div>
+                                    </div>
                             </div>
                                
 
@@ -346,6 +385,18 @@ include('config.php');
                         </div>
                         <div class="onglet" id="onglet5">
                                        <div class="position_table">
+                                           <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
                 
                                     <div class="liste">
                                         <h4>Patients ayant réalisé tous les examens sauf le rendez-vous neuro </h4>
@@ -427,6 +478,7 @@ include('config.php');
                                             }?>
                                             </table>
                                     </div>
+                                </div>
                             </div>
                         
                                   
@@ -434,7 +486,19 @@ include('config.php');
                         </div>
                            <div class="onglet" id="onglet6">
                                      <div class="position_table">
-                
+                                
+                                         <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
                                     <div class="liste">
                                         <h4>Patients ayant réalisé tous les examens </h4>
                                         <br>
@@ -515,6 +579,7 @@ include('config.php');
                                             }?>
                                             </table>
                                     </div>
+                                         </div>
                             </div>
                                   
                        
