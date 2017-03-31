@@ -742,7 +742,6 @@ label {
     
     margin:30px auto;
     margin-left: 100px;
-   
 }
 
 
@@ -1069,39 +1068,4 @@ table td {
   width:150px;
 }
 
-.onglet_d table { 
-width:50%; 
-} 
 
-.onglet_d tr { 
-width: 50%;
-font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-color: #1270B3; 
-} 
-
-.onglet_d td { 
-width: 50%;
-font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-color: #1270B3; 
-} 
-.onglet_d input{ 
-color: #1270B3; 
-font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-height: 35px; 
-width: 100%;
-} 
-
-#divConteneur2{ 
- margin:-10px auto;
-    margin-left: -54px;
-    
-} 
-
-.div3{ 
- margin:30px auto;
-    margin-left: 70px;
-} 
-
-.div3 td{ 
-width: 40px; 
-} 
