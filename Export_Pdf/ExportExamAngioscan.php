@@ -7,9 +7,9 @@ header('Content-Type: text/pdf; charset=utf-8');
 fopen('texteEcrire.txt', 'w');
 
 
-$id_patient=$_GET['id_patient'];
-$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,centre_de_sante,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND centre_de_sante.nom_c=service.centre_s AND patient.id_patient=?');
-$reqExam->execute(array($id_patient));
+
+$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,centre_de_sante,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND centre_de_sante.nom_c=service.centre_s AND patient.id_patient=1');
+$reqExam->execute();
 $examen="";
 $centre="";
 $service="";
@@ -80,6 +80,11 @@ $patientPrenom="";
       # On ferme le fichier proprement
       fclose($fileopen);
       
+     
+      
+      
+      $jour = date("d-m-Y", strtotime($jour));
+      
       
       
       // horaire
@@ -97,16 +102,13 @@ $patientPrenom="";
       
       // effectue
       $effectue=$dnn["effectue"];
-     
       
-         
       if($effectue=="NO"){
            $effectue="non";
       }else{
            $effectue="oui";
       }
-      
-      
+     
       # Chemin vers fichier texte
       $file ="texteEcrire.txt";
       # Ouverture en mode écriture
@@ -146,7 +148,7 @@ function FancyTable($header, $data)
     $this->SetLineWidth(.4);
     $this->SetFont('','B');
     // En-tête
-    $w = array(40, 35, 45, 40, 30, 30);
+    $w = array(40, 35, 60, 40, 30);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -163,7 +165,6 @@ function FancyTable($header, $data)
         $this->Cell($w[2],6,$row[2],'LR',0,'L',$fill);
         $this->Cell($w[3],6,$row[3],'LR',0,'L',$fill);
         $this->Cell($w[4],6,$row[4],'LR',0,'L',$fill);
-        $this->Cell($w[5],6,$row[5],'LR',0,'L',$fill);
         
        
         $this->Ln();
@@ -188,26 +189,35 @@ $pdf = new PDF();
 // Chargement des données
 $data = $pdf->LoadData('texteEcrire.txt');
 $pdf->SetFont('Arial','',14);
-$pdf->AddPage("L");
+$pdf->AddPage();
  // Police Arial gras 15
     $pdf->SetFont('Arial','B',15);
     // Décalage à droite
-    $pdf->Cell(100);
+    $pdf->Cell(65);
     // Titre
-    $pdf->Cell(70,10,'RECAPITULATIF DES RDV',1,0,'C');
+    $pdf->Cell(70,10,'Récapitulatif ANGIOSCAN');
     // Saut de ligne
     $pdf->Ln(20);
+
+    $pdf->Cell(70,10,'Bonjour,');
+    // Saut de ligne
+    $pdf->Ln(15);
     //descriptif
-    $pdf->Cell(40,10,'Ci dessous se trouve le tableau récapitulatif des rendez-vous de '.$patientPrenom." ".$patientNom." :");
-$pdf->Ln(15);
-// Titres des colonnes
-$header = array('Examen', 'Centre', 'Service', 'Date','Heure','Réalisé');
-$pdf->FancyTable($header,$data);
+    $pdf->Cell(40,10,'Le patient '.$patientPrenom." ".$patientNom." a RDV ");
+    $pdf->Ln(15);
+    //descriptif
+    $pdf->Cell(40,10,'pour un ANGIOSCAN le '.$jour." à ".$horaire.",");
+    $pdf->Ln(15);
+    $pdf->Cell(40,10,'merci de nous faire parvenir ... ');
+    $pdf->Ln(20);
+    
 
 $pdf->Output();
 
 
+// pour le mettre sur la plateforme 
 
+/** <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a> **/
 
 ?>
 
