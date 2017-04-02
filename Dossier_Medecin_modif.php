@@ -93,6 +93,7 @@ $req->closeCursor();
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="section4">
                     <div class="div1">
+                     <br>
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
                     </div>
             <br>

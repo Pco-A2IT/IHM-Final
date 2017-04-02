@@ -6,9 +6,9 @@ header('Content-Type: text/pdf; charset=utf-8');
 
 fopen('texteEcrire.txt', 'w');
 
+$id_patient=$_GET["id_patient"];
 
-$id_patient=$_GET['id_patient'];
-$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,centre_de_sante,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND centre_de_sante.nom_c=service.centre_s AND patient.id_patient=?');
+$reqExam=$bdd->prepare('SELECT * FROM examen_patient,examen,service,patient WHERE examen.id_examen=examen_patient.id_examen AND examen_patient.id_service=service.id_service AND patient.id_patient=examen_patient.id_patient AND patient.id_patient=?');
 $reqExam->execute(array($id_patient));
 $examen="";
 $centre="";
@@ -42,7 +42,7 @@ $patientPrenom="";
       fclose($fileopen);
       
       // centre
-      $centre=$dnn["nom_c"];
+      $centre=$dnn["centre_s"];
      
       # Chemin vers fichier texte
       $file ="texteEcrire.txt";
@@ -70,6 +70,8 @@ $patientPrenom="";
       
        // jour
       $jour=$dnn["date_examen"];
+      
+      $jour = date("d-m-Y", strtotime($jour));
      
       # Chemin vers fichier texte
       $file ="texteEcrire.txt";
@@ -79,6 +81,7 @@ $patientPrenom="";
       fwrite($fileopen,";".$jour);
       # On ferme le fichier proprement
       fclose($fileopen);
+    
       
       
       
@@ -97,16 +100,13 @@ $patientPrenom="";
       
       // effectue
       $effectue=$dnn["effectue"];
-     
       
-         
       if($effectue=="NO"){
            $effectue="non";
       }else{
            $effectue="oui";
       }
-      
-      
+     
       # Chemin vers fichier texte
       $file ="texteEcrire.txt";
       # Ouverture en mode écriture
@@ -146,7 +146,7 @@ function FancyTable($header, $data)
     $this->SetLineWidth(.4);
     $this->SetFont('','B');
     // En-tête
-    $w = array(40, 35, 45, 40, 30, 30);
+    $w = array(65, 35, 60, 40, 30,20);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -207,7 +207,9 @@ $pdf->FancyTable($header,$data);
 $pdf->Output();
 
 
+// pour le mettre sur la plateforme 
 
+/** <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a> **/
 
 ?>
 

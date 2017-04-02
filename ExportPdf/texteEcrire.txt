@@ -1,0 +1,2 @@
+Hospitalisation de jour;Hôpital Neurologique Pierre Werthe;Unité neurovasculaire;18-10-2018;11:00:00;oui
+IRM;Sainté;Urgence;11-12-2018;11:00:00;oui

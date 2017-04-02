@@ -77,10 +77,12 @@ jQuery(document).ready(function() {
                             $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h3 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h3>
                 
-        
+                          <br>
+                         <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
+                          <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
+                    <br>
                              
 
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
@@ -163,15 +165,15 @@ jQuery(document).ready(function() {
                                                 <td><?php echo $donnees["date_examen"]; ?></td>
                                                 <td><?php echo $donnees["heure_examen"]; ?></td>
             <?php } ?>
-            <?php 
+            <?php
                 if($donnees["effectue"]=="YES"){
             ?> 
-                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /><!--?php echo $donnees["id_examen"]; ?--></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" value="YES" onchange="document.getElementById('btntest').style.display = 'block';" checked /></td>
             <?php
                 }
                 else{
             ?>  
-                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/><?php echo $donnees["id_examen"]; ?></td>
+                                                <td><input type="checkbox" name="<?php echo $donnees["id_examen"]; ?>" onchange="document.getElementById('btntest').style.display = 'block';" value="NO"/></td>
             <?php
                 }
             ?>
@@ -285,8 +287,25 @@ jQuery(document).ready(function() {
                                     <td colspan="7" >   <?php
 
                             //marche mais ne prend pas en compte les examens déjà planifié
+                            /////////////////////////            
+                            $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=? and id_examen=1');
+                            $req3->execute(array($id_patient));
+                            if($req3->fetch()){
+                                $req4= $bdd->prepare('SELECT * FROM Examen');
+                                $req4->execute();
+                                while($dnn4 = $req4->fetch()){
+                                    if($dnn4["id_examen"]!=1){
+                            ?>
+                                        <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/> <label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn4['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <?php
+                                    }
+                                }
+                            }
+                            //////////////////////////            
+                            else{
+                                
                             $compteur=1;
-
+                            
                             $reponse = $bdd->query('SELECT * FROM Examen');      
                             while($dnn = $reponse->fetch()){
                                 $dejaRealise=false;
@@ -314,9 +333,9 @@ jQuery(document).ready(function() {
 
                             <?php
                                     }
-                                    
                                 }
                                 $compteur= $compteur+1;
+                            }
                             }
                         ?></td>
 
@@ -336,7 +355,7 @@ jQuery(document).ready(function() {
                                 <th></th>
                             </tr>
 <?php 
-    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="HC LYON" and nom_s="Unité neurovasculaire" ');
+    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="Hôpital Neurologique Pierre Werthe" and nom_s="Unité neurovasculaire" ');
     $req1->execute();
     while($donnees= $req1->fetch()){
 ?>

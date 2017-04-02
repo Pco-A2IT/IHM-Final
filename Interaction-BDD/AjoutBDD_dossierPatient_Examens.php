@@ -31,8 +31,8 @@ while($dnn = $reponse->fetch()){
         }
         else{}*/
         
-        $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue) VALUES(?, ?,?,?,?,?)');
-        $req->execute(array( $id_examen, $id_patient, 0, $_POST[$date_cmpt], "00:00", "YES"));
+        $req = $bdd->prepare('INSERT INTO examen_patient(id_examen,id_patient, id_service, date_examen, heure_examen, effectue, planifie_avant) VALUES(?, ?,?,?,?,?,?)');
+        $req->execute(array( $id_examen, $id_patient, 0, $_POST[$date_cmpt], "00:00", "YES", "YES"));
     }
     $compteur=$compteur+1;
 }
