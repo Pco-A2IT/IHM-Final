@@ -53,12 +53,11 @@ require 'inc/header.php';
             
             <div class="blanc"; style="border-radius: 5px;">
                <div class="section4">
-                              <h1 style="color:grey">Changement de mot de passe</h1>
 
                 <form action="" method="POST">
                     <div class="login-page">
                         <div class="form2">
-        
+         <input  style="text-align:center" value="Changement de mot de passe">
                         <input class="form-control" type="password" name="password" placeholder="Nouveau mot de passe" />
                         <input class="form-control" type="password" name="password_confirm" placeholder="Confirmer nouveau mot de passe" />
                         <input type="submit" accesskey="enter" value="Changer mot de passe" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center" class="myButton1"/>

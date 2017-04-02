@@ -77,10 +77,12 @@ jQuery(document).ready(function() {
                             $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h3 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h3>
                 
-        
+                          <br>
+                         <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
+                          <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
+                    <br>
                              
 
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
