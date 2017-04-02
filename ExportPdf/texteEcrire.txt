@@ -1,2 +1,4 @@
-Hospitalisation de jour;Hôpital Neurologique Pierre Werthe;Unité neurovasculaire;18-10-2018;11:00:00;oui
-IRM;Sainté;Urgence;11-12-2018;11:00:00;oui
+Hospitalisation de jour;HC LYON;Unité neurovasculaire;23-05-2017;10:00:00;oui
+IRM;UNV Lyon;Service neuro;30-04-2017;10:00:00;oui
+Engioscan;UNV Lyon;Service neuro;03-04-2017;10:00:00;oui
+RDV neuro;UNH;neurologie test;10-04-2017;10:00:00;oui

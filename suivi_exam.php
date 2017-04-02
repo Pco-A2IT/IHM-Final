@@ -224,7 +224,7 @@ include('config.php');
                                             <tr>
                                                 <th>Patient</th>
                                                 <th colspan="4"> Examens à planifier</th>
-                                                <th>Planifier</th>
+                                                <th>Prise RDV</th>
                                             </tr>
                                             
                                            
@@ -328,8 +328,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -380,8 +380,8 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
+                                               <td>
+                                               <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                                 
                                                </td>
                                         <?php
@@ -422,8 +422,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+                                             
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -485,8 +485,8 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                                <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
+                                               <td>
+                                                      <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                                </td>
                                         <?php
                                             } ?>
@@ -525,8 +525,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+                                        
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -588,8 +588,9 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a>  
+                                               <td>
+                                                     <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
+                                             
                                                </td>
                                         <?php
                                             } ?>
