@@ -135,7 +135,16 @@ $req->closeCursor();
                     </table> 
 
                     <table align="right" cellspacing="5px" class="table" id="modif">
-                                                        <tr> 
+                            
+                        
+                            <tr> 
+                            <td align="right">Spécialité:
+                            </td> 
+                            <td align="left"> 
+                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" />
+                            </td>
+                            </tr>
+                            <tr> 
                             <td align="right"> Service/Centre d'examen:
                             </td> 
                             <td align="left"> 

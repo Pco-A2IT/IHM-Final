@@ -140,12 +140,6 @@ $req->closeCursor();
                                  
                             </td>
                         </tr>
-                        <tr> 
-                            <td align="right">Ville: *</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
-                            </td> 
-                            </tr> 
                         <tr>
                             <td align="right"> Adresse: *
                             </td> 
@@ -159,6 +153,12 @@ $req->closeCursor();
                             <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
                             </td>
                         </tr>
+                        <tr>
+                            <td align="right">Ville: *</td> 
+                            <td align="left"> 
+                            <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
+                            </td> 
+                        </tr> 
                         <tr>
                             <td align="center"  colspan="2">
                                 <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s?></TEXTAREA> 

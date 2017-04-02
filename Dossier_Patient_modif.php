@@ -226,7 +226,7 @@ $req->closeCursor();
                                         <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>"  list="a"/> 
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" onblur="verifDate1(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -345,6 +345,33 @@ $req->closeCursor();
     
 <?php require 'inc/footer.php'; ?>
     
+        <script>
+            function verifDate(champ){
+                if(champ.value!=""){
+                    document.getElementById("prenom_m_appelant").required=true;
+                }
+            }
+            function verifDate1(champ){
+                if(champ.value!=""){
+                    var r= confirm("Appuyez sur ok si vous voulez renseigner le médecin appelant du patient ou appuyer sur annuler");
+                    if(r==true){
+                        x="you pressed Ok";
+                        console.log('Press a button');
+                        document.getElementById("prenom_m_appelant").required=true;
+                        document.getElementById("nom_m_appelant").required=true;
+                        
+                    }
+                    else{
+                        x="You pressed cancel";
+                        console.log('You pressed cancel');
+                        document.getElementById("prenom_m_appelant").required=false;
+                        document.getElementById("nom_m_appelant").required=false;
+                        
+                    }
+                    
+                }
+            }
+        </script>
     <script> 
         function activer() {
             document.getElementById("prenom_m_traitant").addEventListener.onfocus();

@@ -65,6 +65,7 @@ CREATE TABLE `Medecin` (
     `id_service` int(10) unsigned NOT NULL,
     `nom_m` varchar(255) NOT NULL DEFAUlT '',
     `prenom_m` varchar(255) NOT NULL,
+    `specialite` varchar(255) DEFAULT '',
     `mail_m` varchar(255) DEFAULT '',
     `ville_m` varchar(255) DEFAULT '',
     `codePostal_m` varchar(5) NOT NULL ,
