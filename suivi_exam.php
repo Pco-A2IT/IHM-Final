@@ -223,8 +223,8 @@ include('config.php');
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
-                                                <th> Examens à planifier</th>
-                                                <th></th>
+                                                <th colspan="4"> Examens à planifier</th>
+                                                <th>Planifier</th>
                                             </tr>
                                             
                                            
@@ -258,6 +258,7 @@ include('config.php');
                                             ?>
                                                 <td rowspan="<?php echo $ecart; ?>"><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?>
                                                 </td>
+                                                
                                                 <?php
                                                 //Parcours des examens non planifiés
                                                 $rep2= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
@@ -271,11 +272,9 @@ include('config.php');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
                                                         <td><?php echo $dnn3["typeExamen"];?></td>
-                                                        <td onclick="document.location='Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>'" style="cursor:zoom-in"><input align="center" type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                                       
                                             
-                                            
-                                            
-                                                    </tr>
+                                                  
                                                         
                             
                                                     <?php 
@@ -288,7 +287,10 @@ include('config.php');
                     <?php 
                                                 }?>
                                                  
+                                         
                                                 
+                                                 <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
+                                                  </tr>
                                         <?php
                                             }
                                 }
