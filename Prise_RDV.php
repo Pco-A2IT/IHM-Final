@@ -345,6 +345,7 @@ jQuery(document).ready(function() {
                             <tr>
                                 <th>Hôpital</th>
                                 <th>Service/Centre d'examen</th>
+                                <th>Ville</th>
                                 <th>Adresse</th>
                                 <th>Téléphone</th> 
                                 <th>Examen</th>
@@ -360,6 +361,7 @@ jQuery(document).ready(function() {
                             <tr>
                                 <td><?php echo $donnees['centre_s']; ?> </td>
                                 <td><?php echo $donnees['nom_s']; ?></td>
+                                <td><?php echo $donnees['ville_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
                                 <td><?php echo $donnees['telephone_s']; ?></td>
 <?php 
@@ -391,7 +393,7 @@ jQuery(document).ready(function() {
                         //on parcourt tous les services qui effectue les examens cochés
                         $nb=1;
                         while ($donnees = $req2->fetch()){
-                            if($donnees["nom_s"]!="Unité neurovasculaire" && $donnees["centre_s"]!="HC LYON"){
+                            if($donnees["id_service"]!=1){
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
                                     
@@ -416,6 +418,7 @@ jQuery(document).ready(function() {
                                 <tr>
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['ville_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
                                     

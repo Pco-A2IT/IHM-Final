@@ -29,6 +29,10 @@ while ($donnees = $req->fetch())
     else{$prenom_m=$_POST['prenom_m'];}
     echo $prenom_m;
     
+    if($_POST['specialite_m']==''){$specialite_m= $donnees['specialite_m'];}
+    else{$specialite_m=$_POST['specialite_m'];}
+    echo $specialite_m;
+    
     if($_POST['mail_m']==''){$mail_m= $donnees['mail_m'];}
     else{$mail_m=$_POST['mail_m'];}
     echo $mail_m;
@@ -96,12 +100,13 @@ $req->closeCursor();
 //////////////////////////////////////
 
 
-$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m, description_m= :nv_description_m WHERE id_medecin = :jointure ');
+$req = $bdd->prepare('UPDATE medecin SET  id_service= :nv_id_service, telephone_m= :nv_telephone_m, nom_m= :nv_nom_m, prenom_m= :nv_prenom_m, specialite_m=: nv_specialite_m, mail_m= :nv_mail_m, adresse_m = :nv_adresse_m, codePostal_m = :nv_codePostal_m, ville_m = :nv_ville_m, description_m= :nv_description_m WHERE id_medecin = :jointure ');
 $req->execute(array(
     'nv_id_service' => $id_service,
     'nv_telephone_m' => $telephone_m,
     'nv_nom_m' => $nom_m,
     'nv_prenom_m' => $prenom_m,
+    'nv_specialite_m' => $specialite_m,
     'nv_mail_m' => $mail_m,
     'nv_adresse_m' => $adresse_m,
     'nv_codePostal_m' => $codePostal_m,

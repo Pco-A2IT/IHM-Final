@@ -150,7 +150,7 @@ include('config.php');
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" onblur="verifDate(this)" placeholder="Nom" required/>
+                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant"  placeholder="Nom" required/>
                                             </td>
                                             <td align="left" class="required"> 
                                                 <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" autocomplete="off" required/>

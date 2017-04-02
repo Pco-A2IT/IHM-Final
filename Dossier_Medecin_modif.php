@@ -27,6 +27,7 @@ while ($donnees = $req->fetch())
     $id_service=$donnees['id_service'];
     $nom_m=$donnees['nom_m'];
     $prenom_m=$donnees['prenom_m'];
+    $specialite_m=$donnees['specialite_m'];
     $mail_m=$donnees['mail_m'];
     $ville_m=$donnees['ville_m'];
     $codePostal_m=$donnees['codePostal_m'];
@@ -141,7 +142,7 @@ $req->closeCursor();
                             <td align="right">Spécialité:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" />
+                            <input type="text" id="specialite_m" name="specialite_m" value="<?php echo $specialite_m; ?>" />
                             </td>
                             </tr>
                             <tr> 
