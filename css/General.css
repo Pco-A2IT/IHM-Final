@@ -48,7 +48,7 @@ body{
     margin-right:auto; 
     border-radius: 5px;"
     padding-left: 0px;
-    padding-bottom: 0px;
+    padding-bottom: -10px;
     cursor:pointer;
     text-align: center;
 }
@@ -73,7 +73,7 @@ body{
     height:75%; 
     margin-left:auto; 
     margin-right:auto; 
-    margin-top: 0px;
+    margin-top: -10px;
     display:block;
 }
 
@@ -109,6 +109,12 @@ body{
     background-color:#1270B3;
     
 }
+
+#menu1 {
+    ;
+    
+}
+
 .extra{
     position:absolute;
     right:10px;
