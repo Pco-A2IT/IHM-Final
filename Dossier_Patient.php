@@ -90,7 +90,7 @@ include('config.php');
                                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                         <tr> 
                                             <td align="right">Date des symptomes:</td> 
-                                            <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                                            <td align="left"><input type="date" name="date_ait_p" value ="" style="color:#a9a9a9"/></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité: *</td>
@@ -114,7 +114,7 @@ include('config.php');
                                         </tr>  
                                         <tr> 
                                             <td align="right">Date de naissance:</td> 
-                                            <td align="left"><input type="date" name="birthday_p" value=""/></td> 
+                                            <td align="left"><input type="date" name="birthday_p" value="" style="color:#a9a9a9"/></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Mail:</td>

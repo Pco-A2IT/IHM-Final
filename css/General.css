@@ -1091,7 +1091,7 @@ font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-ser
 color: #1270B3; 
 } 
 .onglet_d input{ 
-color: #1270B3; 
+color: black; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
 width: 100%;
