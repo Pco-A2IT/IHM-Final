@@ -31,9 +31,9 @@ CREATE TABLE `Patient` (
   `date_naissance` date,    
   `mail_p` varchar(255) DEFAULT '',      
   `telephone_p` varchar(255) DEFAULT '',    
-  `ville_p` varchar(255) NOT NULL DEFAULT '',
-  `codePostal_p` varchar(5) DEFAULT '',       
   `adresse_p` varchar(255)  DEFAULT '',
+  `codePostal_p` varchar(5) DEFAULT '',
+  `ville_p` varchar(255) NOT NULL DEFAULT '',     
   `description_p` varchar(5000) NOT NULL DEFAULT '',
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
@@ -67,9 +67,9 @@ CREATE TABLE `Medecin` (
     `prenom_m` varchar(255) NOT NULL,
     `specialite_m` varchar(255) DEFAULT '',
     `mail_m` varchar(255) DEFAULT '',
-    `ville_m` varchar(255) DEFAULT '',
+    `adresse_m` varchar(255) DEFAULT '' ,
     `codePostal_m` varchar(5) NOT NULL ,
-    `adresse_m` varchar(255) DEFAULT '' , 
+    `ville_m` varchar(255) DEFAULT '',     
     `telephone_m` varchar(255)  DEFAULT '',
     `description_m` varchar(5000) DEFAULT '',
   
@@ -116,7 +116,7 @@ CREATE TABLE `Service` (
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Werthe","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
+INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Wertheimer","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
