@@ -101,21 +101,21 @@ include('config.php');
                             <td align="right">Spécialité:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" />
+                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" autocomplete="off" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right">Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" />
+                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" autocomplete="off"/>
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" />
+                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" autocomplete="off" />
                             </td>
                             </tr> 
                             <tr>
@@ -128,13 +128,13 @@ include('config.php');
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)"/> 
+                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)" autocomplete="off"/> 
                             </td> 
                             </tr> 
                             <tr> 
                                 <td align="right">Ville: *</td> 
                                 <td align="left"> 
-                                    <input type="text" id="ville_m" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
+                                    <input type="text" id="ville_m" name="ville_m" placeholder="(ex: Villeurbanne)" autocomplete="off" required/> 
                                 </td> 
                             </tr>
                             <tr>
@@ -159,6 +159,9 @@ include('config.php');
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function()   {
+                    $('#specialite_m').autocomplete({
+                       source : 'dossierMedecin.php' 
+                    });
                     $('#service_m').autocomplete({
                         source: function(request, response) {
 						  $.ajax({

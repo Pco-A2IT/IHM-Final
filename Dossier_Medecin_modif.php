@@ -197,6 +197,9 @@ $req->closeCursor();
                 <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function()   {
+                    $('#specialite_m').autocomplete({
+                       source : 'dossierMedecin.php' 
+                    });
                     $('#service_m').autocomplete({
                         source: function(request, response) {
 						  $.ajax({
