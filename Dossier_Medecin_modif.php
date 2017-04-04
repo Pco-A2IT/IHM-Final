@@ -176,7 +176,7 @@ $req->closeCursor();
                             <tr> 
                             <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>"/> 
+                            <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>" autocomplete="off"/> 
                             </td> 
                             </tr> 
                             <tr>

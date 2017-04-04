@@ -173,13 +173,13 @@ $req->closeCursor();
                                 <tr> 
                                     <td align="right">Mail:</td>
                                     <td align="left">
-                                        <input type="email" name="mail_p" value="<?php echo $mail_p ?>" id="email" />
+                                        <input type="email" name="mail_p" value="<?php echo $mail_p ?>" id="email" autocomplete="off" />
                                     </td> 
                                 </tr> 
                                 <tr> 
                                     <td align="right">Téléphone:</td> 
                                     <td align="left"> 
-                                        <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" /> 
+                                        <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" autocomplete="off"/> 
                                     </td> 
                                 </tr> 
                         </table>
@@ -187,54 +187,53 @@ $req->closeCursor();
                                 <tr> 
                                     <td align="right">Adresse:</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text" name="adresse_p" value="<?php echo $adresse_p ?>" />
+                                        <input type="text" name="adresse_p" value="<?php echo $adresse_p ?>" autocomplete="off"/>
                                     </td> 
                                 </tr>
                                 <tr> 
                                     <td align="right">Code Postal:</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text"  id="p" name="codePostal_p" value="<?php echo $codePostal_p ?>" /> 
+                                        <input type="text"  id="p" name="codePostal_p" value="<?php echo $codePostal_p ?>" autocomplete="off" /> 
                                     </td> 
                                 </tr> 
                                 <tr> 
                                     <td align="right">Ville: *</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text" name="ville_p" value="<?php echo $ville_p ?>"/> 
+                                        <input type="text" name="ville_p" value="<?php echo $ville_p ?>" autocomplete="off"/> 
                                     </td> 
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin traitant:</td> 
                                     <td align="left" class="required"> 
-                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
-                                        />
+                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left" class="required"> 
-                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
+                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left" class="required">
-                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>"/>
+                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
+                                        <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin appelant:</td> 
                                     <td align="left"> 
-                                        <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>"  list="a"/> 
+                                        <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" autocomplete="off"/> 
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" onblur="verifDate1(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" onblur="verifDate1(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" autocomplete="off"/> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left">
-                                        <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $ville_m_appelant;} else{ echo "Ville du médecin appelant"; } ?>"/>
+                                        <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $ville_m_appelant;} else{ echo "Ville du médecin appelant"; } ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>"/>
+                                        <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr height="60px">

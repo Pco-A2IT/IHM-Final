@@ -103,12 +103,12 @@ include('config.php');
                                     <tr> 
                                         <td align="right">Code Postal: *</td> 
                                         <td align="left"> 
-                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
+                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" autocomplete="off" required/> 
                                         </td> 
                                     </tr><tr> 
                                         <td align="right">Ville: *</td> 
                                         <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" autocomplete="off" required/> 
                                         </td> 
                                     </tr>
                                     <tr height="60px">
