@@ -83,28 +83,29 @@ jQuery(document).ready(function() {
                           <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
                     <br>
-                             
-
+                              <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
+                             <div class="liste">
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
                                     <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                    <!--  <div class="myButton" id="Prendre_rdv">
                                             <a href="./ExportPDF/extractionPDFrealise.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
                                         </div> !-->
                                     
-                                      <style>
-                                        #divConteneur2{
-                           min-height:200px;
-                            height:200px;
-                            min-width:100%;
-                            width:100%;
-                          
-                            }
-                           
-                            </style>
-                        <div id="divConteneur2">
+                                     
                             
-                                     <div class="liste">
-                                        <table cellspacing="0px" id="tbl" class="table">   
+                                    
+                                        <table cellspacing="0px" id="tbl" class="table" style="margin-left:0px">   
                                         <tr><th colspan="8">  <h4>Récapitulatif des rendez-vous planifiés :</h4></th></tr>
                                             <tr>
                                                 <th>Examen</th>
@@ -189,7 +190,7 @@ jQuery(document).ready(function() {
     ?>  
                                         </table>
                                          
-                            </div>
+                           
                                      
                                     <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
                                        
@@ -198,7 +199,6 @@ jQuery(document).ready(function() {
                                     </div> 
                                
                                  
-                                     </div>
                             
                             </form>
                        
@@ -261,25 +261,9 @@ jQuery(document).ready(function() {
     ?>
        
                    <br>
-                    <br>
-                    <br>
-                    <div class="div3">
-                         
-                       
-                        <style>
-                                        #divConteneur{
-                           min-height:630px;
-                            height:630px;
-                            min-width:100%;
-                            width:100%;
-                            overflow:auto;/*pour activer les scrollbarres*/
-                            }
-                           
-                            </style>
-                        
-                        <div id="divConteneur">
+                  
+                    
                             
-                         <div class="liste">
                         <table cellspacing="0px" id="tbl" class="table"> 
                            <tr><th colspan="7"><h4>Veuillez choisir les examens et planifier les rendez-vous :</h4></th></tr>
                             <tr>  <form>
@@ -340,6 +324,7 @@ jQuery(document).ready(function() {
                         ?></td>
 
                                     <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
+                                <td></td>
                                </form>
                             </tr>
                                 
@@ -472,9 +457,9 @@ jQuery(document).ready(function() {
                             
                               
                              </table>
-                        </div>
-       </div>
-                        </div>
+                 
+  
+                  
                         </form>
                         
                     </div>
@@ -484,7 +469,8 @@ jQuery(document).ready(function() {
     
             <script src="js/General.js"></script>
         </div>
-  
+    </div>
+    </div>
 </body>
 </html>
 
