@@ -123,12 +123,13 @@
                 ->setCellValue('B1', 'ID_service')
                 ->setCellValue('C1', 'nom')
                 ->setCellValue('D1', 'prénom')
-                ->setCellValue('E1', 'mail')
-                ->setCellValue('F1', 'ville')
-                ->setCellValue('G1', 'codePostal')
-                ->setCellValue('H1', 'adresse')
-                ->setCellValue('I1', 'téléphone')
-                ->setCellValue('J1', 'description');
+                ->setCellValue('E1','spécialité')
+                ->setCellValue('F1', 'mail')
+                ->setCellValue('G1', 'ville')
+                ->setCellValue('H1', 'codePostal')
+                ->setCellValue('I1', 'adresse')
+                ->setCellValue('J1', 'téléphone')
+                ->setCellValue('K1', 'description');
 
     $row=2;
     while($row_data=$sql->fetch(PDO::FETCH_ASSOC)) { //on effectue une boucle pour chercher l'ensemble des informations de la table médecin et on insère les données dans les différentes lignes/colonnes de l'Excel

@@ -147,11 +147,15 @@ $req->closeCursor();
                                 </tr>
                                 <tr> 
                                     <td align="right">Civilité: *</td>
-                                    <td align="left"><input type="text" name="civilite_p" value="<?php echo $civilite_p ?>" list="c"/>
-                                        <datalist id="c" style="background-color:eeeeee">
-                                                <option>M.</option>
-                                                <option>Mme</option>
-                                        </datalist>
+                                    
+                                    <td align="left"><section id="main">
+                                                <select id="choix" class="placeholder" value="<?php echo $civilite_p ?>" onchange="changeColor(this);" name="civilite_p" required style="background-color:eeeeee">
+                                                    <option value="" ><?php echo $civilite_p ?></option>
+                                                    <option value="M.">M.</option>
+                                                    <option value="Mme">Mme</option>
+
+                                                </select>
+                                            </section>
                                     </td>
                                 </tr>
                                 <tr>
@@ -169,13 +173,13 @@ $req->closeCursor();
                                 <tr> 
                                     <td align="right">Mail:</td>
                                     <td align="left">
-                                        <input type="email" name="mail_p" value="<?php echo $mail_p ?>" id="email" />
+                                        <input type="email" name="mail_p" value="<?php echo $mail_p ?>" id="email" autocomplete="off" />
                                     </td> 
                                 </tr> 
                                 <tr> 
                                     <td align="right">Téléphone:</td> 
                                     <td align="left"> 
-                                        <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" /> 
+                                        <input type="tel" pattern="[0-9]{10}" id="p" name="telephone_p" value="<?php echo $telephone_p ?>" autocomplete="off"/> 
                                     </td> 
                                 </tr> 
                         </table>
@@ -183,54 +187,53 @@ $req->closeCursor();
                                 <tr> 
                                     <td align="right">Adresse:</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text" name="adresse_p" value="<?php echo $adresse_p ?>" />
+                                        <input type="text" name="adresse_p" value="<?php echo $adresse_p ?>" autocomplete="off"/>
                                     </td> 
                                 </tr>
                                 <tr> 
                                     <td align="right">Code Postal:</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text"  id="p" name="codePostal_p" value="<?php echo $codePostal_p ?>" /> 
+                                        <input type="text"  id="p" name="codePostal_p" value="<?php echo $codePostal_p ?>" autocomplete="off" /> 
                                     </td> 
                                 </tr> 
                                 <tr> 
                                     <td align="right">Ville: *</td> 
                                     <td align="left" colspan="3"> 
-                                        <input type="text" name="ville_p" value="<?php echo $ville_p ?>"/> 
+                                        <input type="text" name="ville_p" value="<?php echo $ville_p ?>" autocomplete="off"/> 
                                     </td> 
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin traitant:</td> 
                                     <td align="left" class="required"> 
-                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" 
-                                        />
+                                        <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $nom_m_traitant;} else{echo "Nom du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left" class="required"> 
-                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" />
+                                        <input style="width:140px" type="text" name="prenom_m_traitant" id="prenom_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $prenom_m_traitant;} else{echo "Prénom du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left" class="required">
-                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>"/>
+                                        <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $ville_m_traitant;} else{echo "Ville du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>"/>
+                                        <input type="text" id="mail_m_traitant"  name="mail_m_traitant" placeholder="<?php if($ID_medecin_traitant!=0){echo $mail_m_traitant;} else{echo "Mail du médecin traitant";} ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" rowspan="2">Médecin appelant:</td> 
                                     <td align="left"> 
-                                        <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>"  list="a"/> 
+                                        <input type="text" id="nom_m_appelant" name="nom_m_appelant" onblur="verifDate(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $nom_m_appelant;} else{echo "Nom du médecin appelant";} ?>" autocomplete="off"/> 
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" list="a"/> 
+                                        <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" onblur="verifDate1(this)" placeholder="<?php if($ID_medecin_autre!=0){echo $prenom_m_appelant;} else{echo "Prénom du médecin appelant";} ?>" autocomplete="off"/> 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="left">
-                                        <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $ville_m_appelant;} else{ echo "Ville du médecin appelant"; } ?>"/>
+                                        <input type="text" id="ville_m_appelant" name="ville_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $ville_m_appelant;} else{ echo "Ville du médecin appelant"; } ?>" autocomplete="off"/>
                                     </td>
                                     <td align="left"> 
-                                        <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>"/>
+                                        <input type="text" name="mail_m_appelant" placeholder="<?php if($ID_medecin_autre!=0){echo $mail_m_appelant;} else{ echo "Mail du médecin appelant"; } ?>" autocomplete="off"/>
                                     </td>
                                 </tr>
                                 <tr height="60px">
@@ -341,6 +344,33 @@ $req->closeCursor();
     
 <?php require 'inc/footer.php'; ?>
     
+        <script>
+            function verifDate(champ){
+                if(champ.value!=""){
+                    document.getElementById("prenom_m_appelant").required=true;
+                }
+            }
+            function verifDate1(champ){
+                if(champ.value!=""){
+                    var r= confirm("Appuyez sur ok si vous voulez renseigner le médecin appelant du patient ou appuyer sur annuler");
+                    if(r==true){
+                        x="you pressed Ok";
+                        console.log('Press a button');
+                        document.getElementById("prenom_m_appelant").required=true;
+                        document.getElementById("nom_m_appelant").required=true;
+                        
+                    }
+                    else{
+                        x="You pressed cancel";
+                        console.log('You pressed cancel');
+                        document.getElementById("prenom_m_appelant").required=false;
+                        document.getElementById("nom_m_appelant").required=false;
+                        
+                    }
+                    
+                }
+            }
+        </script>
     <script> 
         function activer() {
             document.getElementById("prenom_m_traitant").addEventListener.onfocus();

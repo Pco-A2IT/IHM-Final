@@ -81,6 +81,7 @@ include('config.php');
                                     <div class="liste">
                                         <h4>Patients ayant des rendez-vous antécédents à la date d'aujourd'hui </h4>
                                         <br>
+                                        
                                         <table cellspacing="0px" id="tbl" class="table" >   
                                             <tr>
                                                 <th>Patient</th>
@@ -92,6 +93,7 @@ include('config.php');
                                                 <th>Service et Centre</th>
                                                 <th>Date du RDV</th>
                                                 <th>Réalisé</th>
+                                                <th></th>
                                                 
                                             </tr>
                                             
@@ -104,12 +106,10 @@ include('config.php');
                                         $rep1->execute(array());
                                    
                                         while ($dnn1= $rep1->fetch()){ ?>
+                                            
                                             <tr>
+                                        
                                             <?php
-                                            //Calcul du nombre d'examens
-                                            //$calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
-                                            //$nb= $calcul->fetch();
-                                            //echo $nb['NB'];
                                         //Calcul du nombre d'examenspatient non réalisés à temps
                                             $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND effectue="NO" AND date_examen<=NOW()');
                                             $calcul2->execute(array($dnn1['id_patient']));
@@ -120,6 +120,8 @@ include('config.php');
                                                 <td rowspan="<?php echo $nb2['NB2']; ?>"><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?>
                                                     <br>
                                                     <?php echo $dnn1['telephone_p']; ?>
+                                                    <br>
+                                                    <?php echo $dnn1['mail_p']; ?>
                                                 </td>
                                                 <?php
                                                 //Parcours des examens non réalisés à temps
@@ -133,7 +135,7 @@ include('config.php');
                                                     $rep3= $bdd->prepare('SELECT * FROM Examen WHERE id_examen=?');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
-                                                        <td><?php echo $dnn3["typeExamen"];?></td> 
+                                                        <td><?php $id_examen=$dnn3["id_examen"];echo $dnn3["typeExamen"];?></td> 
                             
                                                     <?php } 
                                                     if($dnn2["id_service"]==0){ ?>
@@ -161,26 +163,35 @@ include('config.php');
                                                             <?php echo "NC"; ?>
                                                         </td>
                                             <?php   }else{ ?>
-                                                        <td><?php echo $dnn2["date_examen"]; ?>
+                                                        <td><?php echo strftime("%m/%d/%y",strtotime($dnn2["date_examen"] )); ?>
                                                             <br>
                                                             <?php echo $dnn2["heure_examen"]; ?>
                                                         </td>
-                                            <?php   } ?>
+                                            <?php   
+                                            } 
                                                 
-                                                    <td><input type="checkbox" name="<?php echo $cmpt1; ?>" value="YES"/></td>
+                                            ?>
+                                                <form action="./Interaction-BDD/ModifBDD_Suivi_Examens.php?id_patient=<?php echo $dnn1["id_patient"];?> &amp; name_checkbox= <?php echo $cmpt1;?> &amp; id_examen=<?php echo $dnn2["id_examen"];?>" method="post">
+                                                    
+                                                    <td><input type="checkbox" class="regular checkbox" name="<?php echo($cmpt1);?>" value="YES"/><?php echo $cmpt1; ?></td>
+                                                    
+                                                    <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" /></td>
+                                                </form>
                                                   
                                             <?php
                                                     $cmpt1=$cmpt1+1;
                                                     $cmpt2=$cmpt2+1;
                                             ?>
                                             </tr>
+                                            
                                             <?php
                                                 }
                                         }
                                 }
                     ?>
                                           
-                                            </table>
+                                        </table>
+                                        
                                     </div>
                                     </div>
                             </div>
@@ -212,8 +223,8 @@ include('config.php');
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
                                                 <th>Patient</th>
-                                                <th> Examens à planifier</th>
-                                                <th></th>
+                                                <th colspan="4"> Examens à planifier</th>
+                                                <th>Prise RDV</th>
                                             </tr>
                                             
                                            
@@ -247,6 +258,7 @@ include('config.php');
                                             ?>
                                                 <td rowspan="<?php echo $ecart; ?>"><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?>
                                                 </td>
+                                                
                                                 <?php
                                                 //Parcours des examens non planifiés
                                                 $rep2= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
@@ -260,11 +272,9 @@ include('config.php');
                                                     $rep3->execute(array($dnn2["id_examen"]));
                                                     while ($dnn3= $rep3->fetch()){ ?>
                                                         <td><?php echo $dnn3["typeExamen"];?></td>
-                                                        <td onclick="document.location='Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>'" style="cursor:zoom-in"><input align="center" type="submit" accesskey="enter" value="Prendre RDV" id="btn" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit" formmethod="post"/></td>
+                                                       
                                             
-                                            
-                                            
-                                                    </tr>
+                                                  
                                                         
                             
                                                     <?php 
@@ -277,7 +287,10 @@ include('config.php');
                     <?php 
                                                 }?>
                                                  
+                                         
                                                 
+                                                 <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
+                                                  </tr>
                                         <?php
                                             }
                                 }
@@ -315,8 +328,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -367,8 +380,8 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
+                                               <td>
+                                               <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                                 
                                                </td>
                                         <?php
@@ -409,8 +422,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+                                             
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -472,8 +485,8 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                                <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a> 
+                                               <td>
+                                                      <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                                </td>
                                         <?php
                                             } ?>
@@ -512,8 +525,8 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-                                                <th></th>
-                                                <th></th>
+                                        
+                                                <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -575,8 +588,9 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td><img class="icone_liste" src="Icones/icon_pdf.png" width="50px" heigh="50px"/>
-                                               <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>" class="myButton1"> Télécharger le récapitulatif </a>  
+                                               <td>
+                                                     <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
+                                             
                                                </td>
                                         <?php
                                             } ?>

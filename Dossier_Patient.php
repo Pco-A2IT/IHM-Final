@@ -90,7 +90,7 @@ include('config.php');
                                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                         <tr> 
                                             <td align="right">Date des symptomes:</td> 
-                                            <td align="left"><input type="date" name="date_ait_p" value ="" /></td> 
+                                            <td align="left"><input type="date" name="date_ait_p" value ="" style="color:#a9a9a9"/></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Civilité: *</td>
@@ -101,7 +101,7 @@ include('config.php');
                                                     <option value="Mme">Mme</option>
 
                                                 </select>
-                                        </section>
+                                            </section>
                                             </td>
                                         </tr>
                                         <tr>
@@ -114,7 +114,7 @@ include('config.php');
                                         </tr>  
                                         <tr> 
                                             <td align="right">Date de naissance:</td> 
-                                            <td align="left"><input type="date" name="birthday_p" value=""/></td> 
+                                            <td align="left"><input type="date" name="birthday_p" value="" style="color:#a9a9a9"/></td> 
                                         </tr>
                                         <tr> 
                                             <td align="right">Mail:</td>
@@ -150,7 +150,7 @@ include('config.php');
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
                                             <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant" onblur="verifDate(this)" placeholder="Nom" required/>
+                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant"  placeholder="Nom" required/>
                                             </td>
                                             <td align="left" class="required"> 
                                                 <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" autocomplete="off" required/>
@@ -170,7 +170,7 @@ include('config.php');
                                                 <input type="text" id="nom_m_appelant" onblur="verifDate(this)" name="nom_m_appelant" placeholder="Nom" autocomplete="off"/> 
                                             </td>
                                             <td align="left"> 
-                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" autocomplete="off"/> 
+                                                <input type="text" id="prenom_m_appelant" name="prenom_m_appelant" placeholder="Prénom" onblur="verifDate1(this)" autocomplete="off"/>
                                             </td>
                                         </tr> 
                                         <tr>
@@ -206,7 +206,27 @@ include('config.php');
         <script>
             function verifDate(champ){
                 if(champ.value!=""){
-                    //document.getElementById("prenom_m_appelant").required=true;
+                    document.getElementById("prenom_m_appelant").required=true;
+                }
+            }
+            function verifDate1(champ){
+                if(champ.value!=""){
+                    var r= confirm("Appuyez sur ok si vous voulez renseigner le médecin appelant du patient ou appuyer sur annuler");
+                    if(r==true){
+                        x="you pressed Ok";
+                        console.log('Press a button');
+                        document.getElementById("prenom_m_appelant").required=true;
+                        document.getElementById("nom_m_appelant").required=true;
+                        
+                    }
+                    else{
+                        x="You pressed cancel";
+                        console.log('You pressed cancel');
+                        document.getElementById("prenom_m_appelant").required=false;
+                        document.getElementById("nom_m_appelant").required=false;
+                        
+                    }
+                    
                 }
             }
         </script>

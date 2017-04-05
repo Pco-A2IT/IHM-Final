@@ -55,6 +55,12 @@ if($_POST['telephone_m']==""){
 else{
     $telephone_m=$_POST['telephone_m'];
 }
+if($_POST['specialite_m']==""){
+    $specialite_m="NC";
+}
+else{
+    $specialite_m=$_POST['specialite_m'];
+}
 
 if($_POST['description_m']==""){
     $description_m="NC";
@@ -108,29 +114,10 @@ else{
     $id_service=0;
 }
 
- 
-    
-/*
-$req2 = $bdd->prepare('SELECT * FROM service WHERE centre_s = ? AND nom_s=? ');
-$req2->execute(array($centre_m, $service_m));
-
-if($centre_m!="" && $service_m!=""){
-while ($donn = $req2->fetch()){
-        $id_service=$donn['id_service'];
-        
-    }
-}
-else{
-    $id_service=0;
-}
-echo "essai".$id_service;
-
-*/
-
-$req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m, description_m) VALUES(NULL ,?, ?,?,?,?,?,?,?, ?)');
+$req = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, specialite_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m, description_m) VALUES(NULL ,?,?, ?,?,?,?,?,?,?, ?)');
 
 
-$req->execute(array( $id_service, $nom_m, $prenom_m, $email_m,  $ville_m,  $codePostal_m, $adresse_m ,$telephone_m, $description_m));
+$req->execute(array( $id_service, $nom_m, $prenom_m, $specialite_m, $email_m,  $ville_m,  $codePostal_m, $adresse_m ,$telephone_m, $description_m));
 
 
 

@@ -98,17 +98,24 @@ include('config.php');
                     
                     <table align="right" cellspacing="5px"  style="float:left"> 
                             <tr> 
+                            <td align="right">Spécialité:
+                            </td> 
+                            <td align="left"> 
+                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" autocomplete="off" />
+                            </td>
+                            </tr>
+                            <tr> 
                             <td align="right">Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" />
+                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" autocomplete="off"/>
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" />
+                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" autocomplete="off" />
                             </td>
                             </tr> 
                             <tr>
@@ -121,13 +128,13 @@ include('config.php');
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)"/> 
+                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)" autocomplete="off"/> 
                             </td> 
                             </tr> 
                             <tr> 
                                 <td align="right">Ville: *</td> 
                                 <td align="left"> 
-                                    <input type="text" id="ville_m" name="ville_m" placeholder="(ex: Villeurbanne)" required/> 
+                                    <input type="text" id="ville_m" name="ville_m" placeholder="(ex: Villeurbanne)" autocomplete="off" required/> 
                                 </td> 
                             </tr>
                             <tr>
@@ -152,6 +159,9 @@ include('config.php');
         <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function()   {
+                    $('#specialite_m').autocomplete({
+                       source : 'dossierMedecin.php' 
+                    });
                     $('#service_m').autocomplete({
                         source: function(request, response) {
 						  $.ajax({
@@ -182,10 +192,39 @@ include('config.php');
 	                       $( "#centre_m" ).val( obj.centre_s );
 	                       $( "#adresse_m" ).val( obj.adresse_s);
 	                       $( "#codePostal_m" ).val( obj.codePostal_s );
-                            $( "#ville_m").val( obj.ville_s);
+                           $( "#ville_m").val( obj.ville_s);
 	                       return false;
                     }
 				});
+                    $('#ville_m').autocomplete({
+                        source: function(request, response) {
+                            $.ajax({
+                              // Fichier servant à récuperer les valeurs dans la BDD
+                                url: "dossierPatient_autocompletion.php",
+                                // Définition du type de données que l'on reçoit de la part de autoServeur.php
+                                dataType: "json",
+                                data: {nom: $("#ville_m").val(), maxRows: 10},
+                                // Type d'envoie des données vers le serveur
+                                type: 'POST',
+                                // En cas de succès de récupération de données JSON depuis AutocCompletion.php
+                                success: function (data){
+                                    response( $.map( data, function( item ){ 
+                                       return {
+                                          label: item.ville_p + ", " + item.codePostal_p,
+                                          value: item
+                                       }
+                                    }));
+                                 }
+                           });
+                        },
+                        minLength: 2,
+                        select : function( event, ui ){
+                           var obj = ui.item.value;
+                               $( "#ville_m" ).val( obj.ville_p )
+                               $( "#codePostal_m" ).val( obj.codePostal_p);
+                               return false;
+                        }
+                    });     
                 });
         </script>
             <script src="General.js"></script>

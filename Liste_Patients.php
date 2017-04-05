@@ -84,7 +84,7 @@
                                     <th>Nom </th>
                                     <th>Prénom </th>
                                     <th>Date de naissance </th>
-                                    <th>Code postal </th>
+                                    <th>Date Symptôme </th>
                                     <th>Ville </th>
                                     <th>Téléphone </th>
                                 </tr>   
@@ -112,7 +112,7 @@
                                        <td><?php print_r($dnn['nom_p']); ?></td>
                                        <td><?php print_r($dnn['prenom_p']); ?></td>
                                        <td><?php if(($dnn['date_naissance'])!= "1900-01-01"){print_r($dnn['date_naissance']);} else{ print_r("NC");}  ?></td>
-                                       <td><?php print_r($dnn['codePostal_p']); ?></td>
+                                       <td><?php if(($dnn['date_ait_p'])!= "1900-01-01"){print_r($dnn['date_ait_p']);} else{ print_r("NC");}  ?></td>
                                        <td><?php print_r($dnn['ville_p']); ?></td>
                                        <td><?php print_r($dnn['telephone_p']); ?></td>                            
                                        <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>

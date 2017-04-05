@@ -31,9 +31,9 @@ CREATE TABLE `Patient` (
   `date_naissance` date,    
   `mail_p` varchar(255) DEFAULT '',      
   `telephone_p` varchar(255) DEFAULT '',    
-  `ville_p` varchar(255) NOT NULL DEFAULT '',
-  `codePostal_p` varchar(5) DEFAULT '',       
   `adresse_p` varchar(255)  DEFAULT '',
+  `codePostal_p` varchar(5) DEFAULT '',
+  `ville_p` varchar(255) NOT NULL DEFAULT '',     
   `description_p` varchar(5000) NOT NULL DEFAULT '',
   `date_creation_dossier` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   `ID_medecin_traitant` int(11) NOT NULL , 
@@ -65,12 +65,13 @@ CREATE TABLE `Medecin` (
     `id_service` int(10) unsigned NOT NULL,
     `nom_m` varchar(255) NOT NULL DEFAUlT '',
     `prenom_m` varchar(255) NOT NULL,
+    `specialite_m` varchar(255) DEFAULT '',
     `mail_m` varchar(255) DEFAULT '',
-    `ville_m` varchar(255) DEFAULT '',
+    `adresse_m` varchar(255) DEFAULT '' ,
     `codePostal_m` varchar(5) NOT NULL ,
-    `adresse_m` varchar(255) DEFAULT '' , 
+    `ville_m` varchar(255) DEFAULT '',     
     `telephone_m` varchar(255)  DEFAULT '',
-    `description_m` varchar(5000) NOT NULL DEFAULT '',
+    `description_m` varchar(5000) DEFAULT '',
   
   PRIMARY KEY  (`id_medecin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -86,27 +87,6 @@ INSERT INTO `Medecin` VALUES (1,'Tournesol','Jacques','jacques.tournesol@free.fr
 UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Medecin` ENABLE KEYS */;
 
---
--- Table structure for table `Centre_de_sante`
---
-
-DROP TABLE IF EXISTS `Centre_de_sante`;
-CREATE TABLE `Centre_de_sante` (
-  `num_siret` int(11) unsigned NOT NULL,
-  `nom_c` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY  (`num_siret`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `Centre_de_sante`
---
-
-
-/*!40000 ALTER TABLE `Centre_de_sante` DISABLE KEYS */;
-/*LOCK TABLES `Centre_de_sante` WRITE;
-INSERT INTO `Centre_de_sante` VALUES (967,'Hopital Lyon EST'),(334,'Hopital Lyon 6ème'),(112,'Clinique du Tonkin');
-UNLOCK TABLES;*/
-/*!40000 ALTER TABLE `Centre_de_sante` ENABLE KEYS */;
 
 --
 -- Table structure for table `Service`
@@ -136,7 +116,7 @@ CREATE TABLE `Service` (
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Werthe","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
+INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Wertheimer","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
