@@ -8,62 +8,62 @@ include('../config.php');
 ///////////////////////////////////
 
 if($_POST['nom_m']==""){
-    $nom_m="NC";
+    $nom_m="";
 }
 else{
     $nom_m=$_POST['nom_m'];
 }
 
 if($_POST['prenom_m']==""){
-    $prenom_m="NC";
+    $prenom_m="";
 }
 else{
     $prenom_m=$_POST['prenom_m'];
 }
 
 if($_POST['email_m']==""){
-    $email_m="NC@mail.fr";
+    $email_m="";
 }
 else{
     $email_m=$_POST['email_m'];
 }
 
 if($_POST['ville_m']==""){
-    $ville_m="NC";
+    $ville_m="";
 }
 else{
     $ville_m=$_POST['ville_m'];
 }
 
 if($_POST['codePostal_m']==""){
-    $codePostal_m="NC";
+    $codePostal_m="";
 }
 else{
     $codePostal_m=$_POST['codePostal_m'];
 }
 
 if($_POST['adresse_m']==""){
-    $adresse_m="NC";
+    $adresse_m="";
 }
 else{
     $adresse_m=$_POST['adresse_m'];
 }
 
 if($_POST['telephone_m']==""){
-    $telephone_m="NC";
+    $telephone_m="";
 }
 else{
     $telephone_m=$_POST['telephone_m'];
 }
 if($_POST['specialite_m']==""){
-    $specialite_m="NC";
+    $specialite_m="";
 }
 else{
     $specialite_m=$_POST['specialite_m'];
 }
 
 if($_POST['description_m']==""){
-    $description_m="NC";
+    $description_m="";
 }
 else{
     $description_m=$_POST['description_m'];
