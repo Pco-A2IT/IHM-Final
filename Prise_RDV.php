@@ -359,9 +359,10 @@ jQuery(document).ready(function() {
                                 <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $donnees11["id_examen"];?>" method="post">
                                         
                                         <td><?php echo $donnees11['typeExamen'] ?></td>
-                                        <td><input name="date" class="datepick" type="date"/></td>
-                                        <td><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"/></td>
+                                        <td><label for="date"></label><input id="1" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="valider1"  class="submit" disabled formmethod="post"/></td>
+                                        <td><span id="erreurdate1"></span></td>
                                         
                                 </form>
                             </tr>
@@ -512,7 +513,7 @@ function verifDate(champ)
     console.log(date_n);
 	var date2 = new Date(date_n);
 	if(date2 > date){
-		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne';
+		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne avant de remplir une autre ligne';
         Afficher_1(id);
 		return true;
 	}else{

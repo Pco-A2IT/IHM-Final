@@ -80,7 +80,7 @@
                         <div class="liste">
                             <table cellspacing="0px" id="tbl" class="table">   
                                 <tr>
-                                    <th>Fiche</th>
+                                    <th></th>
                                     <th>Nom </th>
                                     <th>Prénom </th>
                                     <th>Date de naissance </th>

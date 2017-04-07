@@ -224,7 +224,7 @@ include('config.php');
                                             <tr>
                                                 <th>Patient</th>
                                                 <th colspan="4"> Examens à planifier</th>
-                                                <th>Prise RDV</th>
+                                                
                                             </tr>
                                             
                                            

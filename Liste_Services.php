@@ -108,7 +108,7 @@ include('config.php');
                   <div id="divConteneur">
                 <div class="liste">
                   <table cellspacing="0px" id="tbl" class="table"> <!-- cellspacing='0' is important, must stay -->
-                        <th>Fiche</th>
+                        <th></th>
                         <th>Service/Centre d'examen</th>
                         <th>Hôpital</th>
                         <th>Adresse</th>
