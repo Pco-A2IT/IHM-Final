@@ -22,7 +22,7 @@ include('config.php');
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris"  style="background-color:#1270B3" ;>
-                <h4>Suivi</h4>
+                <h4>Tableau de bord</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             <div id="menu2" class="carreGris" ;>
