@@ -34,31 +34,7 @@ while ($donnees = $req->fetch())
     $description_s=$donnees['description_s'];
 
 }
-/* Cocher automatiquement les checkbox
 
-$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
-$req2->execute();
-$compteur3=1;
-while($dnn = $req2->fetch()){
-  $($compteur3)
-  if($_POST[$compteur3]=="YES"){
-            $bool="YES";
-  }else{
-            $bool="NO";
-  }
-  echo $bool;
-  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
-  //echo $sql;
-  //$id_boucle=7;
-  //echo $id_boucle;
-  
-  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$id_dernier."");
-  echo "prepare effectué";
-  $stmt->execute(array($bool));
-  echo "requete executée";
-  $compteur3=$compteur3+1;
-
-}*/
 $req->closeCursor();            
 ?> 
     <body>
@@ -116,15 +92,15 @@ $req->closeCursor();
                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                         <tr> 
                                 <td align="right">Service/Centre d'examen: *</td>
-                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
+                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" value="<?php echo $nom_s ?>" >
                         </tr>
                         <tr> 
                                 <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" value="<?php echo $centre_s;?>">
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone: *</td>
-                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="<?php echo $telephone_s ?>" >
+                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" value="<?php echo $telephone_s ?>" >
                         </tr>    
                     </table> 
                     
@@ -144,19 +120,19 @@ $req->closeCursor();
                             <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="<?php echo $adresse_s ?>" />
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" value="<?php echo $adresse_s ?>" />
                             </td> 
                          </tr>
                         <tr> 
                             <td align="right">Code Postal: *</td> 
                             <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
+                            <input type="text"  id="p" name="codePostal_s" placeholder="(ex: 69100)" value="<?php echo $codePostal_s ?>" > 
                             </td>
                         </tr>
                         <tr>
                             <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
+                            <input type="text" name="ville_s" placeholder="(ex: Villeurbanne)" value="<?php echo $ville_s ?>" > 
                             </td> 
                         </tr> 
                         <tr>

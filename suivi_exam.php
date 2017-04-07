@@ -251,8 +251,10 @@ include('config.php');
                                             $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
+                                            
+                            
                                             //echo $nb2['NB2'];
-                                        //Condition pour apparaître dans le tableau
+                                        //Condition pour apparaître dans le tableau si hospit de jour on affiche pas
                                             if($nb2['NB2']<$nb['NB']){ 
                                                 $ecart=$nb['NB']-$nb2['NB2'];
                                             ?>

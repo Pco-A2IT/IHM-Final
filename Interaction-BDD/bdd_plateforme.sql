@@ -82,9 +82,9 @@ CREATE TABLE `Medecin` (
 
 
 /*!40000 ALTER TABLE `Medecin` DISABLE KEYS */;
-/*LOCK TABLES `Medecin` WRITE;
-INSERT INTO `Medecin` VALUES (1,'Tournesol','Jacques','jacques.tournesol@free.fr','0412654587','435'),(2,'Sheperd','Derek','derek.sheperd@wanadoo.fr','0154348709','541'),(3,'Maboule','Robert','robert.maboule@orange.fr','0423656567','321'),(4,'House','Gregory','gregory.house@gmail.com','0943543412','111');
-UNLOCK TABLES;*/
+LOCK TABLES `Medecin` WRITE;
+INSERT INTO `Medecin` VALUES (1,0,'Tournesol','Jacques','Traitant','jacques.tournesol@free.fr','20 avenue Albert Einstein','69100','Villeurbanne','0412654587',''),(2,0,'Forestier','Benoît','Traitant','benoit.forestier@free.fr',' 1 Rue Constantine','69001','Lyon','0478695116',''),(3,0,'Godinot','Matthieu','Traitant','matthieu.godinot@free.fr','  35 Rue du Président Edouard Herriot','69002','Lyon','0478387690','');
+UNLOCK TABLES;
 /*!40000 ALTER TABLE `Medecin` ENABLE KEYS */;
 
 
@@ -117,6 +117,11 @@ CREATE TABLE `Service` (
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
 INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Wertheimer","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
+INSERT INTO `Service` VALUES (2,"I.R.M Lyon-Villeurbanne","Unité neurovasculaire",'0472112563','09:00', '18:00','75 Rue Francis de Pressensé','69100 ','Villeurbanne','', 'NO');
+INSERT INTO `Service` VALUES (3,"Hôpital de Bron","Hôpital Cardio-Vasculaire et Neurologique",'0472357862','09:00', '18:00','8 boulevard Pinel','69500 ','Bron','','NO');
+INSERT INTO `Service` VALUES (4,"Centre de Radiologie","IRM Lyon Nord",'0472001234','07:00', '20:00','1-3 Chemin du Penthod ','69300 ','Caluire-et-Cuire','', 'NO');
+INSERT INTO `Service` VALUES (5,"Clinique du Tonkin","Neurologie",'0472826702','07:00', '17:00','Bâtiment C 2ème étage 3 rue Phélypeaux ','69100 ','Villeurbanne','', 'NO');
+
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
 
@@ -141,6 +146,11 @@ CREATE TABLE `Examen` (
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
 LOCK TABLES `Examen` WRITE;
 INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioriatire',"NO");
+INSERT INTO `Examen` VALUES (2,'Angioscan','Prioriatire',"NO");
+INSERT INTO `Examen` VALUES (3,'IRM','Prioriatire',"NO");
+INSERT INTO `Examen` VALUES (4,'RDV Neurologique','',"YES");
+INSERT INTO `Examen` VALUES (5,'Scanner Cérébrale','',"YES");
+
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
 
