@@ -149,16 +149,16 @@ include('config.php');
                                         </tr> 
                                         <tr>
                                             <td align="right" rowspan="2">Médecin traitant:</td> 
-                                            <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant"  placeholder="Nom" required/>
+                                            <td align="left"> 
+                                                <input style="width:140px" type="text" id="nom_m_traitant" name="nom_m_traitant"  placeholder="Nom: *" required/>
                                             </td>
-                                            <td align="left" class="required"> 
-                                                <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom" autocomplete="off" required/>
+                                            <td align="left"> 
+                                                <input style="width:140px" type="text" id="prenom_m_traitant" name="prenom_m_traitant" placeholder="Prénom: *" autocomplete="off" required/>
                                             </td>    
                                         </tr>
                                         <tr>
-                                            <td align="left" class="required">
-                                                <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville" autocomplete="off" required/>
+                                            <td align="left">
+                                                <input style="width:140px" type="text" id="ville_m_traitant" name="ville_m_traitant" placeholder="Ville: *" autocomplete="off" required/>
                                             </td>
                                             <td align="left"> 
                                                 <input type="text" id="mail_m_traitant" name="mail_m_traitant" placeholder="Mail" autocomplete="off"/>
