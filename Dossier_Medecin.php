@@ -101,21 +101,21 @@ include('config.php');
                             <td align="right">Spécialité:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="specialite_m" name="specialite_m" placeholder="Rentrer Spécialité associée" autocomplete="off" />
+                            <input type="text" id="specialite_m" name="specialite_m" placeholder="(ex: Neurologie)" autocomplete="off" />
                             </td>
                             </tr>
                             <tr> 
                             <td align="right">Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="service_m" name="service_m" placeholder="Rentrer Service associé" autocomplete="off"/>
+                            <input type="text" id="service_m" name="service_m" placeholder="(ex:Service Neurologie)" autocomplete="off"/>
                             </td>
                             </tr>
                             <tr> 
                             <td align="right"> Hôpital: 
                             </td> 
                             <td align="left"> 
-                            <input type="text" id="centre_m" name="centre_m" placeholder="Rentrer Centre associé" autocomplete="off" />
+                            <input type="text" id="centre_m" name="centre_m" placeholder="(ex:Hôpital Pierre Weir)" autocomplete="off" />
                             </td>
                             </tr> 
                             <tr>
