@@ -164,7 +164,7 @@ if($nbligne==0){
 ?>
                             </tr>
                         </table>
-                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="margin-left:400px"/> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="margin-left:400px"/> 
                         </div>
                     </div>
                 </div>
