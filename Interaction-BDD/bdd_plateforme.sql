@@ -108,7 +108,7 @@ CREATE TABLE `Service` (
     `Angioscan` enum('YES','NO') NOT NULL,
     `IRM` enum('YES','NO') NOT NULL,
     `RDV Neurologique` enum('YES','NO') NOT NULL,
-    `Scanner Cerebrale` enum('YES','NO') NOT NULL,
+    `Scanner Cerebral` enum('YES','NO') NOT NULL,
     
   PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -149,11 +149,11 @@ CREATE TABLE `Examen` (
 
 /*!40000 ALTER TABLE `Examen` DISABLE KEYS*/ ;
 LOCK TABLES `Examen` WRITE;
-INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioriatire',"NO");
-INSERT INTO `Examen` VALUES (2,'Angioscan','Prioriatire',"NO");
-INSERT INTO `Examen` VALUES (3,'IRM','Prioriatire',"NO");
-INSERT INTO `Examen` VALUES (4,'RDV Neurologique','',"YES");
-INSERT INTO `Examen` VALUES (5,'Scanner Cerebrale','',"YES");
+INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioritaire',"NO");
+INSERT INTO `Examen` VALUES (2,'Angioscan','',"NO");
+INSERT INTO `Examen` VALUES (3,'IRM','',"NO");
+INSERT INTO `Examen` VALUES (4,'RDV Neurologique','Examen neurologique',"YES");
+INSERT INTO `Examen` VALUES (5,'Scanner Cerebral','',"NO");
 
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;

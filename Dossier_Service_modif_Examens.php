@@ -138,8 +138,9 @@ $req->closeCursor();
                                             <?php }else{ ?>
                                                 <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
                                             <?php }
+                                            $compteur=$compteur+1;
                                         }
-                                        $compteur=$compteur+1;
+                                        
 
                                     }
                                 }

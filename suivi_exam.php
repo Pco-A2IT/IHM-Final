@@ -251,6 +251,9 @@ include('config.php');
                                             $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
+                                            $bool=true;
+                                            $bool= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
+                                            $calcul2->execute(array($dnn1['id_patient']));
                                             
                             
                                             //echo $nb2['NB2'];
