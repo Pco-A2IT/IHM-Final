@@ -105,6 +105,10 @@ CREATE TABLE `Service` (
   `ville_s` varchar(255) NOT NULL DEFAULT '',
   `description_s` varchar(5000) NOT NULL DEFAULT '',
     `Hospitalisation de jour` enum('YES','NO') NOT NULL,
+    `Angioscan` enum('YES','NO') NOT NULL,
+    `IRM` enum('YES','NO') NOT NULL,
+    `RDV Neurologique` enum('YES','NO') NOT NULL,
+    `Scanner Cerebrale` enum('YES','NO') NOT NULL,
     
   PRIMARY KEY  (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -116,11 +120,11 @@ CREATE TABLE `Service` (
 
 /*!40000 ALTER TABLE `Service` DISABLE KEYS */;
 LOCK TABLES `Service` WRITE;
-INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Wertheimer","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES');
-INSERT INTO `Service` VALUES (2,"I.R.M Lyon-Villeurbanne","Unité neurovasculaire",'0472112563','09:00', '18:00','75 Rue Francis de Pressensé','69100 ','Villeurbanne','', 'NO');
-INSERT INTO `Service` VALUES (3,"Hôpital de Bron","Hôpital Cardio-Vasculaire et Neurologique",'0472357862','09:00', '18:00','8 boulevard Pinel','69500 ','Bron','','NO');
-INSERT INTO `Service` VALUES (4,"Centre de Radiologie","IRM Lyon Nord",'0472001234','07:00', '20:00','1-3 Chemin du Penthod ','69300 ','Caluire-et-Cuire','', 'NO');
-INSERT INTO `Service` VALUES (5,"Clinique du Tonkin","Neurologie",'0472826702','07:00', '17:00','Bâtiment C 2ème étage 3 rue Phélypeaux ','69100 ','Villeurbanne','', 'NO');
+INSERT INTO `Service` VALUES (1,"Hôpital Neurologique Pierre Wertheimer","Unité neurovasculaire",'0472112563','09:00', '17:00','59 Boulevard Pinel','69500 ','Bron','', 'YES','NO','NO','NO', 'NO');
+INSERT INTO `Service` VALUES (2,"I.R.M Lyon-Villeurbanne","Unité neurovasculaire",'0472112563','09:00', '18:00','75 Rue Francis de Pressensé','69100 ','Villeurbanne','', 'NO', 'NO','NO','NO', 'NO');
+INSERT INTO `Service` VALUES (3,"Hôpital de Bron","Hôpital Cardio-Vasculaire et Neurologique",'0472357862','09:00', '18:00','8 boulevard Pinel','69500 ','Bron','','NO', 'NO','NO','NO', 'NO');
+INSERT INTO `Service` VALUES (4,"Centre de Radiologie","IRM Lyon Nord",'0472001234','07:00', '20:00','1-3 Chemin du Penthod ','69300 ','Caluire-et-Cuire','', 'NO','NO','NO','NO', 'NO');
+INSERT INTO `Service` VALUES (5,"Clinique du Tonkin","Neurologie",'0472826702','07:00', '17:00','Bâtiment C 2ème étage 3 rue Phélypeaux ','69100 ','Villeurbanne','', 'NO','NO','NO','NO', 'NO');
 
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Service` ENABLE KEYS*/ ;
@@ -149,7 +153,7 @@ INSERT INTO `Examen` VALUES (1,'Hospitalisation de jour','Prioriatire',"NO");
 INSERT INTO `Examen` VALUES (2,'Angioscan','Prioriatire',"NO");
 INSERT INTO `Examen` VALUES (3,'IRM','Prioriatire',"NO");
 INSERT INTO `Examen` VALUES (4,'RDV Neurologique','',"YES");
-INSERT INTO `Examen` VALUES (5,'Scanner Cérébrale','',"YES");
+INSERT INTO `Examen` VALUES (5,'Scanner Cerebrale','',"YES");
 
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Examen` ENABLE KEYS */;
