@@ -39,11 +39,7 @@ include('config.php');
          
             
             <script src="js/General.js"></script>
-                
-            <div class="extra" id="RetourDossierPatient" style="border-radius: 5px;">
-                <img class="icone_extra" src="medecin.png"/>
-                <h4>Retour au dossier patient</h4>
-            </div>
+          
         </div>
             
     
