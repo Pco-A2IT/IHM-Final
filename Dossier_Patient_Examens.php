@@ -102,7 +102,7 @@ include('config.php');
 
                                 <tr>
                                     <th>Examen</th>
-                                    <th style="text-align:center">Réalisé avant Prise de contact avec SOS AIT</th>
+                                    <th colspan="3" style="text-align:left">Réalisé avant Prise de contact avec SOS AIT</th>
                                     <th style="text-align:center">Date</th>
                                 </tr>
                                 
@@ -129,7 +129,7 @@ while($dnn = $reponse->fetch()){
 ?>
                                 <tr disabled=true >
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
-                                    <td  background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
+                                    <td colspan="3" background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
                                     <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
 <?php
@@ -142,7 +142,7 @@ while($dnn = $reponse->fetch()){
             
                                 <tr>
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
-                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
+                                    <td colspan="3"><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
                                     <td><input id="<?php echo $compteur; ?>" style="display:none" name="<?php echo "date".$compteur; ?>"  type="date"  /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
                                 
@@ -164,7 +164,7 @@ if($nbligne==0){
 ?>
                             </tr>
                         </table>
-                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" /> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="margin-left:400px"/> 
                         </div>
                     </div>
                 </div>
