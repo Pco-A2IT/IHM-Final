@@ -69,11 +69,11 @@ include('config.php');
                                     <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
                                         <td align="right">Service/Centre d'examen: *</td>
-                                        <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/></td>
+                                        <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" autocomplete="off" required/></td>
                                     </tr>
                                     <tr> 
                                         <td align="right">Hôpital:</td>
-                                        <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
+                                        <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" autocomplete="off"/>
                                     </tr>
                                     <tr> 
                                         <td align="right">Téléphone: *</td>

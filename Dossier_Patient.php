@@ -95,7 +95,7 @@ include('config.php');
                                         <tr> 
                                             <td align="right">Civilité: *</td>
                                             <td align="left"><section id="main">
-                                                <select id="choix" class="placeholder" onchange="changeColor(this)" name="civilite_p" style="background-color:eeeeee" required>
+                                                <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" style="background-color:eeeeee" required>
                                                     <option value="" >Civilité</option>
                                                     <option value="M.">M.</option>
                                                     <option value="Mme">Mme</option>

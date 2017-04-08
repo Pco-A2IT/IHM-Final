@@ -92,15 +92,15 @@ $req->closeCursor();
                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                         <tr> 
                                 <td align="right">Service/Centre d'examen: *</td>
-                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" value="<?php echo $nom_s ?>" >
+                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" value="<?php echo $nom_s ?>" autocomplete="off">
                         </tr>
                         <tr> 
                                 <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" value="<?php echo $centre_s;?>">
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" value="<?php echo $centre_s;?>" autocomplete="off">
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone: *</td>
-                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" value="<?php echo $telephone_s ?>" >
+                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" value="<?php echo $telephone_s ?>" autocomplete="off">
                         </tr>    
                     </table> 
                     
@@ -120,19 +120,19 @@ $req->closeCursor();
                             <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" value="<?php echo $adresse_s ?>" />
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" value="<?php echo $adresse_s ?>" autocomplete="off"/>
                             </td> 
                          </tr>
                         <tr> 
                             <td align="right">Code Postal: *</td> 
                             <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_s" placeholder="(ex: 69100)" value="<?php echo $codePostal_s ?>" > 
+                            <input type="text"  id="p" name="codePostal_s" placeholder="(ex: 69100)" value="<?php echo $codePostal_s ?>" autocomplete="off"> 
                             </td>
                         </tr>
                         <tr>
                             <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="(ex: Villeurbanne)" value="<?php echo $ville_s ?>" > 
+                            <input type="text" name="ville_s" placeholder="(ex: Villeurbanne)" value="<?php echo $ville_s ?>" autocomplete="off"> 
                             </td> 
                         </tr> 
                         <tr>

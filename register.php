@@ -91,8 +91,8 @@ if(!empty($_POST)){
 <form action="" method="POST">
 <div class="login-page">
     <div class="form2">
-        <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
-        <input type="text" name="email" class="form-control" placeholder="Email"/>
+        <input type="text" name="username" class="form-control" placeholder="Identifiant" autocomplete="off"/>
+        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
         <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
