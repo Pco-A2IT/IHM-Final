@@ -271,6 +271,7 @@ jQuery(document).ready(function() {
                             $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=? and id_examen=1');
                             $req3->execute(array($id_patient));
                             if($req3->fetch()){
+                                $compteur=1;
                                 $req4= $bdd->prepare('SELECT * FROM Examen');
                                 $req4->execute();
                                 while($dnn4 = $req4->fetch()){
@@ -278,7 +279,9 @@ jQuery(document).ready(function() {
                             ?>
                                         <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/> <label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn4['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <?php
+                                        
                                     }
+                                    $compteur=$compteur+1;
                                 }
                             }
                             //////////////////////////            
@@ -337,7 +340,7 @@ jQuery(document).ready(function() {
                                 <th></th>
                             </tr>
 <?php 
-    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="Hôpital Neurologique Pierre Werthe" and nom_s="Unité neurovasculaire" ');
+    $req1= $bdd->prepare('SELECT * FROM Service WHERE id_service=1 ');
     $req1->execute();
     while($donnees= $req1->fetch()){
 ?>
