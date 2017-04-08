@@ -20,6 +20,7 @@ include('config.php');
         {
             $nom_p=$donnees['nom_p'];
             $prenom_p=$donnees['prenom_p'];
+            $telephone_p=$donnees['telephone_p'];
         }
         
         ?>
