@@ -6,7 +6,6 @@ include('../config.php');
 ///////////////////////////
 
 $idservice=$_GET['idservice'];
-echo $idservice;
 
 ///////////////////////////
 /*Récupération tuple correspondant dans la bdd*/
@@ -17,27 +16,21 @@ while ($donnees = $req->fetch())
 {       
     if($_POST['centre_s']==''){$centre_s= $donnees['centre_s'];}
     else{$centre_s=$_POST['centre_s'];}
-    echo $centre_s;
     
     if($_POST['telephone_s']==''){$telephone_s= $donnees['telephone_s'];}
     else{$telephone_s=$_POST['telephone_s'];}
-    echo $telephone_s;
     
     if($_POST['adresse_s']==''){$adresse_s= $donnees['adresse_s'];}
     else{$adresse_s=$_POST['adresse_s'];}
-    echo $adresse_s;
     
     if($_POST['codePostal_s']==''){$codePostal_s= $donnees['codePostal_s'];}
     else{$codePostal_s=$_POST['codePostal_s'];}
-    echo $codePostal_s;
     
     if($_POST['ville_s']==''){$ville_s= $donnees['ville_s'];}
     else{$ville_s=$_POST['ville_s'];}
-    echo $ville_s;
     
     if($_POST['description_s']==''){$description_s= $donnees['description_s'];}
     else{$description_s=$_POST['description_s'];}
-    echo $description_s;
     
     
     

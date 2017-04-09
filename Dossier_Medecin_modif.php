@@ -170,7 +170,7 @@ $req->closeCursor();
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="text"  id="codePostal_m" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
+                            <input type="text" pattern="{6}" id="codePostal_m" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
                             </td> 
                             </tr> 
                             <tr> 

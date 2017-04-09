@@ -74,10 +74,8 @@ else{
 ///////////////////////////////////
 
   $service_m=$_POST['service_m'];
-    echo "Le service rentré est ".$service_m;
     
   $centre_m=$_POST['centre_m'];
-    echo "Le service rentré est ".$centre_m;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +94,6 @@ $test=false;
         if($service_m==$donn['nom_s'] && $centre_m==$donn['centre_s']){
             $test=true;
             if($test==true){
-                echo "olaaaaa";
                 $id_service=$donn['id_service'];
             }
         }

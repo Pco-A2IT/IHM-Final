@@ -49,6 +49,7 @@ while ($donnees = $req->fetch())
     $codePostal_p=$donnees['codePostal_p'];
     $adresse_p=$donnees['adresse_p'];
     $description_p=$donnees['description_p'];
+    $date_creation=strftime("%m/%d/%y",strtotime($donnees["date_creation_dossier"] ));
 
     
     $ID_medecin_traitant=$donnees['ID_medecin_traitant'];
@@ -132,13 +133,19 @@ $req->closeCursor();
                            
                             </style>
                        
-                        
+                       
                         <div id="divConteneur3">
                             <div class="onglet_d">
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                    
                 
                             <br>
+                             <table>
+                                <tr>
+                                    <td align="right">Date de création du dossier patient :</td>
+                                    <td align="right"><?php echo $date_creation; ?></td>
+                                </tr>
+                            </table>
                             <table cellspacing="5px" class="table" id="modif" style="float:left">
                                 <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                 <tr> 

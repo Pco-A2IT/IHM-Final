@@ -3,8 +3,6 @@
 include('../config.php');
 $exam= $_POST['type_examen'];
 $details= $_POST['details_examen'];
-echo $exam;
-echo $details;
 
 $existe=false;
 $req4=$bdd->prepare('SELECT typeExamen FROM Examen');
@@ -27,7 +25,6 @@ $req->execute(array($_POST['type_examen'],$_POST['details_examen'],$neuro));
 
 
 $req2 = $bdd->prepare("ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'");
-echo "ALTER TABLE Service ADD `".$exam."` ENUM('YES','NO') NOT NULL DEFAULT 'NO'";
 $req2->execute();
   
 }

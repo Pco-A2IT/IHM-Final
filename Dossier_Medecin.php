@@ -128,7 +128,7 @@ include('config.php');
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="number" pattern="[0-9]{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)" autocomplete="off"/> 
+                            <input type="text" pattern="{6}" id="codePostal_m" name="codePostal_m" placeholder="(ex: 69100)" autocomplete="off"/> 
                             </td> 
                             </tr> 
                             <tr> 

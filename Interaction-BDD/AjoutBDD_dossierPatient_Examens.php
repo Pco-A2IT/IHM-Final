@@ -4,7 +4,6 @@ include('../config.php');
 
 
 $id_patient=$_GET['id_patient'];
-echo $id_patient;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -18,7 +17,6 @@ $reponse = $bdd->query('SELECT * FROM Examen');
 while($dnn = $reponse->fetch()){
     $id_examen=$dnn['id_examen'];
     $date_cmpt="date".$compteur;
-    echo $date_cmpt;
     
     $req1 = $bdd->prepare('SELECT * FROM examen_patient WHERE id_patient = ? AND id_examen=? ');
     $req1->execute(array($id_patient,$dnn['id_examen'] ));

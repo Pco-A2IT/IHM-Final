@@ -7,7 +7,6 @@ include('../config.php');
 ///////////////////////////
 
 $id_patient=$_GET['id_patient'];
-echo $id_patient;
 
 ///////////////////////////
 /*Récupération tuple correspondant dans la bdd*/
@@ -20,77 +19,58 @@ while ($donnees = $req->fetch())
     else{
     $date_ait_p=$_POST['date_ait_p'];
     }
-    echo $date_ait_p;
     
     if($_POST['nom_p']==''){$nom_p= $donnees['nom_p'];}//s'il ne l'est pas la variable prend la valeur déjà existante dans la bdd
     else{$nom_p=$_POST['nom_p'];}//si le champ est rempli on modifie la bdd
     
     if($_POST['prenom_p']==''){$prenom_p= $donnees['prenom_p'];}
     else{$prenom_p=$_POST['prenom_p'];}
-    echo $prenom_p;
     
     if($_POST['civilite_p']==''){$civilite_p= $donnees['civilite_p'];}
     else{$civilite_p=$_POST['civilite_p'];}
-    echo $civilite_p;
     
     if($_POST['telephone_p']==''){$telephone_p= $donnees['telephone_p'];}
     else{$telephone_p=$_POST['telephone_p'];}
-    echo $telephone_p;
     
     
     if($_POST['mail_p']==''){$mail_p= $donnees['mail_p'];}
     else{$mail_p=$_POST['mail_p'];}
-    echo $mail_p;
     
     if($_POST['codePostal_p']==''){$codePostal_p= $donnees['codePostal_p'];}
     else{$codePostal_p=$_POST['codePostal_p'];}
-    echo $codePostal_p;
-    
+
     if($_POST['ville_p']==''){$ville_p= $donnees['ville_p'];}
     else{$ville_p=$_POST['ville_p'];}
-    echo $ville_p;
     
     if($_POST['adresse_p']==''){$adresse_p= $donnees['adresse_p'];}
     else{$adresse_p=$_POST['adresse_p'];}
-    echo $adresse_p;
     
     if($_POST['description_p']==''){$description_p= $donnees['description_p'];}
     else{$description_p=$_POST['description_p'];}
-    echo $description_p;
     
     if($_POST['birthday_p']==''){$birthday_p= $donnees['date_naissance'];}
     else{
     $birthday_p=$_POST['birthday_p'];
-    echo $birthday_p;
     }
     
     $id_medecin_traitant= $donnees['ID_medecin_traitant'];
-    echo $id_medecin_traitant;
     
     $id_medecin_appelant= $donnees['ID_medecin_autre'];
-    echo $id_medecin_appelant;
     
     ///////////////////////////////////
     /*Récupération des champs médecin*/
     ///////////////////////////////////
     $nom_m_traitant=$_POST['nom_m_traitant'];
-    echo $nom_m_traitant;
     
     $prenom_m_traitant=$_POST['prenom_m_traitant'];
-    echo $prenom_m_traitant;
     
     $mail_m_traitant=$_POST['mail_m_traitant'];
-    echo $mail_m_traitant;
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
-    echo $nom_m_appelant;
     
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
-    echo $prenom_m_appelant;
     
     $mail_m_appelant=$_POST['mail_m_appelant'];
-    echo $mail_m_appelant;
-    
 }
 
 
@@ -109,7 +89,6 @@ $test=false;
         if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
             $test=true;
             if($test==true){
-                echo "olaaaaa";
                 $id_medecin_traitant=$donn['id_medecin'];
             }
         }

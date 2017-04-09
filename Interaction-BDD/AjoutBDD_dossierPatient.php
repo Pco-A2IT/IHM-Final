@@ -87,10 +87,8 @@ echo $civilite_p;
     }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
-    echo $nom_m_appelant;
     
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
-    echo $prenom_m_appelant;
 
     if($_POST['mail_m_appelant']!=""){
         $mail_m_appelant=$_POST['mail_m_appelant'];
@@ -105,7 +103,6 @@ echo $civilite_p;
     else{
         $ville_m_appelant="";
     }
-    echo $mail_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*      ID_medecin_traitant                                                          */
@@ -123,7 +120,6 @@ $test=false;
         if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
             $test=true;
             if($test==true){
-                echo "olaaaaa";
                 $id_medecin_traitant=$donn['id_medecin'];
             }
         }
@@ -184,7 +180,6 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['
 // Création des examens déjà réalisés
 
 $id_patient = $bdd->lastInsertId();
-echo $id_patient;
 
 ?>
 

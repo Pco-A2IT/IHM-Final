@@ -509,9 +509,16 @@ function verifDate(champ)
     console.log(id);
 	var date = new Date();
 	var date_n = document.getElementById(id).value;
-    console.log(date_n);
 	var date2 = new Date(date_n);
-	if(date2 > date){
+    console.log(date);
+    console.log(date_n);
+    console.log(date2);
+    console.log(date2-date);
+    
+    var WNbJours = date2.getTime() - date.getTime();
+	console.log(Math.ceil(WNbJours/(1000*60*60*24)));
+    
+	if(Math.ceil(WNbJours/(1000*60*60*24))>=0){
 		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne avant de remplir une autre ligne';
         Afficher_1(id);
 		return true;

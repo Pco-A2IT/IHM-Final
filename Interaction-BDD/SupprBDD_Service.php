@@ -6,7 +6,6 @@ include('../config.php');
 ///////////////////////////
 
 $idservice=$_GET['idservice'];
-echo $idservice;
 
 ///////////////////////////
 /*Suppression du tuple correspondant*/

@@ -110,6 +110,9 @@ include('config.php');
                                             <tr>
                                         
                                             <?php
+                                            $req2= $bdd->prepare('SELECT * FROM examen_patient WHERE id_patient=?');
+                                            $req2->execute(array($dnn1['id_patient']));
+                                                           
                                         //Calcul du nombre d'examenspatient non réalisés à temps
                                             $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND effectue="NO" AND date_examen<=NOW()');
                                             $calcul2->execute(array($dnn1['id_patient']));
