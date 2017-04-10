@@ -85,10 +85,6 @@ include('config.php');
                                         <table cellspacing="0px" id="tbl" class="table" >   
                                             <tr>
                                                 <th>Patient</th>
-                                                <th colspan=5>A réaliser aujourd'hui au plus tard</th>
-                                            </tr>
-                                            <tr>
-                                                <th></th>
                                                 <th >Examen</th>
                                                 <th>Service et Centre</th>
                                                 <th>Date du RDV</th>
@@ -176,7 +172,7 @@ include('config.php');
                                             ?>
                                                 <form action="./Interaction-BDD/ModifBDD_Suivi_Examens.php?id_patient=<?php echo $dnn1["id_patient"];?> &amp; name_checkbox= <?php echo $cmpt1;?> &amp; id_examen=<?php echo $dnn2["id_examen"];?>" method="post">
                                                     
-                                                    <td><input type="checkbox" class="regular checkbox" name="<?php echo($cmpt1);?>" value="YES"/><?php echo $cmpt1; ?></td>
+                                                    <td><input type="checkbox" class="regular checkbox" name="<?php echo($cmpt1);?>" value="YES"/></td>
                                                     
                                                     <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post" /></td>
                                                 </form>
@@ -225,8 +221,9 @@ include('config.php');
                                         <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
-                                                <th>Patient</th>
-                                                <th colspan="4"> Examens à planifier</th>
+                                                <th colspan=2>Patient</th>
+                                                
+                                                <th> Examens à planifier</th>
                                                 
                                             </tr>
                                             
@@ -237,11 +234,11 @@ include('config.php');
                                         
                                         
                                         //Parcours de tous les patients
-                                        $rep1= $bdd->prepare('SELECT * FROM Patient ORDER BY "date_creation_dossier"');
+                                        $rep1= $bdd->prepare('SELECT * FROM Patient WHERE id_patient NOT IN (SELECT id_patient FROM Examen_patient WHERE id_examen=1) ORDER BY "date_creation_dossier"');
                                         $rep1->execute(array());
                                    
                                         while ($dnn1= $rep1->fetch()){ ?>
-                                            <tr>
+                                        <tr>
                                             <?php
                                             //Calcul du nombre d'examens
                                             //$calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
@@ -251,43 +248,43 @@ include('config.php');
                                             $calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
                                             $nb= $calcul->fetch();
                                         //Calcul du nombre d'examens planifiés pour le patient
-                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND id_examen<>1');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
-                                            $bool=true;
-                                            $bool= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
-                                            $calcul2->execute(array($dnn1['id_patient']));
+                                            //$bool=true;
+                                            //$bool= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? ');
+                                            //$calcul2->execute(array($dnn1['id_patient']));
                                             
                             
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau si hospit de jour on affiche pas
-                                            if($nb2['NB2']<$nb['NB']){ 
-                                                $ecart=$nb['NB']-$nb2['NB2'];
+                                            if($nb2['NB2']<$nb['NB']-1){ 
+                                                $ecart=$nb['NB']-1-$nb2['NB2'];
                                             ?>
                                                 <td rowspan="<?php echo $ecart; ?>"><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?>
                                                 </td>
+                                                <td rowspan="<?php echo $ecart; ?>"><a href="Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
                                                 
                                                 <?php
                                                 //Parcours des examens non planifiés
-                                                $rep2= $bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
+                                                $rep2= $bdd->prepare('SELECT * FROM Examen WHERE id_examen<>1 AND id_examen NOT IN(SELECT id_examen FROM examen_patient WHERE id_patient=?)');
                                                 $rep2->execute(array($dnn1['id_patient']));
                                                 
-                                                
+                                                ?>
+                                               
+                                                <?php
                                                 
                                                 while($dnn2=$rep2->fetch()){?>
-                                                <?php 
-                                                    $rep3= $bdd->prepare('SELECT * FROM Examen WHERE id_examen=?');
-                                                    $rep3->execute(array($dnn2["id_examen"]));
-                                                    while ($dnn3= $rep3->fetch()){ ?>
-                                                        <td><?php echo $dnn3["typeExamen"];?></td>
-                                                       
+                                                    <td><?php echo $dnn2["typeExamen"];?> </td>
+                                                    
+                                                    
+                                            </tr>
+                                                
+                 
+                                            <?php 
+                                                }
+                                            ?>
                                             
-                                                  
-                                                        
-                            
-                                                    <?php 
-                                                    }
-                                                    ?>
                                                         
                                                 
                                                   
@@ -297,11 +294,12 @@ include('config.php');
                                                  
                                          
                                                 
-                                                 <td><a href="Prise_RDV.php?id_patient=<?php echo $dnn1['id_patient'];?>"> <img class="supprimer" src="Icones/bouton_rdv.png"> </a></td>
-                                                  </tr>
+                                                 
+                                    
                                         <?php
                                             }
-                                }
+                                
+                                            
                     ?>
                                           
                                             </table>
@@ -354,12 +352,15 @@ include('config.php');
                                             $nb= $calcul->fetch();
                                             //echo $nb['NB'];
                                         //Calcul du nombre d'examenspatient
-                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND id_examen <>1');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
+                                            $calc=$bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND id_examen =1');
+                                            $calc->execute(array($dnn1['id_patient']));
+                                            $nb3=$calc->fetch();
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau
-                                            if($nb2['NB2']==$nb['NB']){ ?>
+                                            if($nb2['NB2']==$nb['NB']-1 || $nb3['NB3']==1){ ?>
                                                 <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
                                                 <?php
                                                 if($dnn1['ID_medecin_traitant']==0){?>
@@ -454,17 +455,17 @@ include('config.php');
                                             $nb= $calcul->fetch();
                                             //echo $nb['NB'];
                                         //Calcul du nombre d'examens réalisés sauf neuro
-                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES" AND id_examen <> ?');
+                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES" AND id_examen <> ? AND id_examen <> 1');
                                             $calcul3->execute(array($dnn1['id_patient'],$idef['ID']));
                                             $nb3=$calcul3->fetch();
                                         //Calcul du nombre d'examens plannifiés
-                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND id_examen <> 1');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
                                             
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau
-                                            if($nb2['NB2']==$nb['NB'] && $nb3['NB3']==$nb['NB']-1){ ?>
+                                            if($nb2['NB2']==$nb['NB']-1 && $nb3['NB3']==$nb['NB']-2){ ?>
                                                 <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
                                                 <?php
                                                 if($dnn1['ID_medecin_traitant']==0){?>
@@ -556,18 +557,21 @@ include('config.php');
                                             $calcul = $bdd->query('SELECT COUNT(*) AS NB FROM Examen');
                                             $nb= $calcul->fetch();
                                             //echo $nb['NB'];
-                                        //Calcul du nombre d'examens réalisés sauf neuro
-                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES"');
+                                        //Calcul du nombre d'examens réalisés
+                                            $calcul3= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB3 FROM Examen_patient WHERE id_patient=? AND effectue="YES" AND id_examen <> 1');
                                             $calcul3->execute(array($dnn1['id_patient']));
                                             $nb3=$calcul3->fetch();
                                         //Calcul du nombre d'examens plannifiés
-                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=?');
+                                            $calcul2= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB2 FROM Examen_patient WHERE id_patient=? AND id_examen <> 1');
                                             $calcul2->execute(array($dnn1['id_patient']));
                                             $nb2=$calcul2->fetch();
+                                            $calcul4= $bdd->prepare('SELECT COUNT(DISTINCT id_examen) AS NB4 FROM Examen_patient WHERE id_patient=? AND id_examen=1 AND effectue="YES"');
+                                            $calcul4->execute(array($dnn1['id_patient']));
+                                            $nb4=$calcul4->fetch();
                                             
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau
-                                            if($nb2['NB2']==$nb['NB'] && $nb3['NB3']==$nb['NB']){ ?>
+                                            if($nb2['NB2']==$nb['NB']-1 && $nb3['NB3']==$nb['NB']-1 || $nb4['NB4']==1){ ?>
                                                 <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
                                                 <?php
                                                 if($dnn1['ID_medecin_traitant']==0){?>
