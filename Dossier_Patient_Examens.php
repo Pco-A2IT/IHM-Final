@@ -68,7 +68,7 @@ include('config.php');
                 <script src="js/General.js"></script>
                 
                 <div class="titre";   style="border-radius: 5px;">
-                    <h1 class="titreGauche">Patients</h1>
+                    <h1 class="titreGauche">Patient</h1>
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
