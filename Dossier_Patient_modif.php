@@ -139,19 +139,19 @@ $req->closeCursor();
                                 <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
                    
                 
-                            <br>
-                             <table>
-                                <tr>
+                            <table cellspacing="5px" class="table" id="modif" style="float:left">
+                        
+    
+                                <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
+                                  <tr>
                                     <td align="right">Date de création du dossier patient :</td>
                                     <td align="right"><?php echo $date_creation; ?></td>
                                 </tr>
-                            </table>
-                            <table cellspacing="5px" class="table" id="modif" style="float:left">
-                                <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                 <tr> 
                                     <td align="right">Date des symptomes:</td> 
                                     <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
                                 </tr>
+                               
                                 <tr> 
                                     <td align="right">Civilité: *</td>
                                     <td align="left">

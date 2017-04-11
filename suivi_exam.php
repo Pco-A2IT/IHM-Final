@@ -221,8 +221,8 @@ include('config.php');
                                         <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
-                                                <th colspan=2>Patient</th>
-                                                
+                                                <th>Patient</th>
+                                                <th>Planifier</th>
                                                 <th> Examens à planifier</th>
                                                 
                                             </tr>
@@ -432,7 +432,7 @@ include('config.php');
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
                                              
-                                                <th>Récapitulatif</th>
+                                        
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                     <?php
@@ -494,9 +494,7 @@ include('config.php');
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
                                                <td></td>
-                                               <td>
-                                                      <a href="./ExportPdf/ExportExamAngioscan.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
-                                               </td>
+                                             
                                         <?php
                                             } ?>
                                             </tr>
