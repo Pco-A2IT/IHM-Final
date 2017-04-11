@@ -63,33 +63,9 @@
                         $mail_m_traitant=$donn['mail_m'];
                         $ville_m_traitant=$donn['ville_m'];
                     }
-                
-<<<<<<< HEAD
-                            <table cellspacing="5px" class="table" id="modif" style="float:left">
-                        
-    
-                                <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
-                                  <tr>
-                                    <td align="right">Date de création du dossier patient :</td>
-                                    <td align="right"><?php echo $date_creation; ?></td>
-                                </tr>
-                                <tr> 
-                                    <td align="right">Date des symptomes:</td> 
-                                    <td align="left"><input type="date" name="date_ait_p" value ="<?php echo $date_ait_p; ?>" color="black" /></td> 
-                                </tr>
-                               
-                                <tr> 
-                                    <td align="right">Civilité: *</td>
-                                    <td align="left">
-                                        <section id="main">
-                                            <select id="choix" class="placeholder" onchange="changeColor(this);" name="civilite_p" required style="background-color:eeeeee">
-                                                    <option value=""><?php echo $civilite_p ?></option>
-                                                    <option value="M.">M.</option>
-                                                    <option value="Mme">Mme</option>
-=======
                 $req3 = $bdd->prepare('SELECT * FROM medecin WHERE id_medecin = ? ');
                 $req3->execute(array($ID_medecin_autre));
->>>>>>> origin/master
+
 
                     while ($don = $req3->fetch()) {
                         $nom_m_appelant=$don['nom_m'];
@@ -150,16 +126,14 @@
                             <div id="divConteneur3">
                                     <div class="onglet_d">
                                         <form action="./Interaction-BDD/AjoutBDD_dossierPatient.php" method="post">
-                                            <br>
-                                            <table>
-                                                <tr>
-                                                    <td align="right">Date de création du dossier patient :</td>
-                                                    <td align="right"><?php echo $date_creation; ?></td>
-                                                </tr>
-                                            </table>
+                                            
                                             <table cellspacing="5px" class="table" id="modif" style="float:left">
                                                 <tr>
                                                     <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td align="right">Date de création du dossier patient :</td>
+                                                    <td align="right"><?php echo $date_creation; ?></td>
                                                 </tr>
                                                 <tr> 
                                                     <td align="right">Date des symptomes:</td> 
