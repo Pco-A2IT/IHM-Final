@@ -54,11 +54,11 @@ include('config.php');
                 <div id="container">
                     <br>
                             <div id="titles"> 
-                                <span class="title active" target="onglet1">Planification</span> 
-                                <span class="title" target="onglet3">Suivi</span>
-                                <span class="title" target="onglet4"> Récapitulatif 1</span>
-                                <span class="title" target="onglet5"> Récapitulatif 2</span>
-                                <span class="title" target="onglet6"> Récapitulatif 3</span>
+                                <span class="title active" target="onglet1">RDV à planifier</span> 
+                                <span class="title" target="onglet3">Suivi des RDV</span>
+                                <span class="title" target="onglet4"> RDV planifiés</span>
+                                <span class="title" target="onglet5"> RDV effectués avant bilan </span>
+                                <span class="title" target="onglet6"> RDV effectués</span>
                                 
                             </div>
                              
