@@ -87,6 +87,8 @@ $patientPrenom="";
       
       // horaire
       $horaire=$dnn["heure_examen"];
+      
+      $horaire = date("H:m", strtotime($horaire));
      
       # Chemin vers fichier texte
       $file ="texteEcrire.txt";
@@ -140,13 +142,13 @@ function LoadData($file)
 function FancyTable($header, $data)
 {
     // Couleurs, épaisseur du trait et police grasse
-    $this->SetFillColor(74,115,232);
+    $this->SetFillColor(18,112,179);
     $this->SetTextColor(255);
-    $this->SetDrawColor(74,115,232);
+    $this->SetDrawColor(18,112,179);
     $this->SetLineWidth(.4);
     $this->SetFont('','B');
     // En-tête
-    $w = array(65, 35, 60, 40, 30);
+    $w = array(65, 100, 60, 30, 15);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -206,9 +208,12 @@ $pdf->FancyTable($header,$data);
 $pdf->Output();
 
 
-// pour le mettre sur la plateforme 
+// couleur plateforme
 
-/** <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a> **/
+/** Rouge : 18
+Vert : 112
+Bleu : 179**/
+
 
 ?>
 
