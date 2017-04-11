@@ -751,6 +751,13 @@ label {
    
 }
 
+.position_table2{
+    
+    margin:50px auto;
+    margin-left: 200px;
+   
+}
+
 
 input[type="submit"]{
     cursor:context-menu;

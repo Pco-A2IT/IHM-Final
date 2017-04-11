@@ -64,7 +64,7 @@ include('config.php');
                              
                             
                             <div class="onglet" id="onglet3">
-                                <div class="position_table">
+                                <div class="position_table2">
                                 
                                     <style>
                                         #divConteneur{
@@ -79,7 +79,7 @@ include('config.php');
                         
                         <div id="divConteneur">
                                     <div class="liste">
-                                        <h4>Patients ayant des rendez-vous antécédents à la date d'aujourd'hui </h4>
+                                        <h4>Suivi des patients ayant des rendez-vous antécédents à la date d'aujourd'hui, à contacter </h4>
                                         <br>
                                         
                                         <table cellspacing="0px" id="tbl" class="table" >   
@@ -202,7 +202,7 @@ include('config.php');
                     <br>
                     
                               <div class="onglet" id="onglet1">
-                                <div class="position_table">
+                                <div class="position_table2">
                                     
                                     <style>
                                         #divConteneur{
@@ -217,7 +217,7 @@ include('config.php');
                         
                         <div id="divConteneur">
                                     <div class="liste">
-                                        <h4>Patients ayant des rendez-vous non planifiés </h4>
+                                        <h4>Planification des examens pour les patients ayant des rendez-vous non planifiés </h4>
                                         <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
@@ -311,7 +311,7 @@ include('config.php');
                             
                         </div>
                           <div class="onglet" id="onglet4">
-                                <div class="position_table">
+                                <div class="position_table2">
                                 
                                     <style>
                                         #divConteneur{
@@ -326,7 +326,7 @@ include('config.php');
                         
                         <div id="divConteneur">
                                     <div class="liste">
-                                         <h4>Patients dont tous les examens sont planifiés </h4>
+                                         <h4>Envoi récapitulatif aux médecins traitants des patients dont tous les examens sont planifiés </h4>
                                         <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
@@ -334,7 +334,6 @@ include('config.php');
                                                 <th>Medecin Traitant </th>
                                                 <th>Medecin Appelant</th>
                                                 <th>Date de création du dossier</th>
-
                                                 <th>Récapitulatif</th>
                                             </tr>
                             <!-- AFFICHAGE des EXAMENS PLANIFIES -->
@@ -388,7 +387,7 @@ include('config.php');
                                         <?php       }
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
-                                               <td></td>
+                        
                                                <td>
                                                <a href="./ExportPdf/ExportExamPlanifie.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                                 
@@ -408,7 +407,7 @@ include('config.php');
                                   
                         </div>
                         <div class="onglet" id="onglet5">
-                                       <div class="position_table">
+                                       <div class="position_table2">
                                            <style>
                                         #divConteneur{
                            min-height:630px;
@@ -509,7 +508,7 @@ include('config.php');
                             
                         </div>
                            <div class="onglet" id="onglet6">
-                                     <div class="position_table">
+                                     <div class="position_table2">
                                 
                                          <style>
                                         #divConteneur{
@@ -524,7 +523,7 @@ include('config.php');
                         
                         <div id="divConteneur">
                                     <div class="liste">
-                                        <h4>Patients ayant réalisé tous les examens </h4>
+                                        <h4>Envoi des récapitulatifs aux médecins des patients ayant réalisé tous les examens </h4>
                                         <br>
                                         <table cellspacing="0px" id="tbl" class="table">   
                                             <tr>
@@ -597,7 +596,7 @@ include('config.php');
                                         <?php       }
                                                }?>
                                                <td><?php echo strftime("%d/%m/%Y",strtotime($dnn1['date_creation_dossier'])); ?></td>
-                                               <td></td>
+                                               
                                                <td>
                                                      <a href="./ExportPdf/ExportExamRealise.php?id_patient=<?php echo $dnn1["id_patient"];?>"> <img class="icone_liste" src="Icones/icon_pdf.png" width="60px" heigh="60px"/></a> 
                                              
