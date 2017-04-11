@@ -43,12 +43,27 @@ if(!empty($_POST)){
         $req->execute([$_POST['username'], $password, $_POST['email'], $token]);
         $user_id = $bdd->lastInsertId(); // preparation de l'id a envoyer dans le mail
         
-        //--ajouter ici l'envoi du mail--//
+        
+        
+          /*
+        
+        //--FONCTION ENVOI DE MAIL--//
         die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token<br><br>ATTENTION : Remplacez http://localhost/GitHub/IHM-Final/ par le chemin correspondant sur votre poste !!"); // Envoie d'un mail pour valider le compte
         
         $_SESSION['flash']['success'] = 'Un lien de confirmation vous a été envoyé pour valider votre compte';
-        header('Location: login.php');
+        header('Location: index.php');
         exit();
+        
+        */
+        
+        //FONCTION A SUPPRIMER UNE FOIS L'ENVOI DE MAIL REALISE
+        
+          die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token<br><br>ATTENTION : Remplacez http://localhost/GitHub/IHM-Final/ par le chemin correspondant sur votre poste !!"); // Envoie d'un mail pour valider le compte
+        
+        $_SESSION['flash']['success'] = 'Un lien de confirmation vous a été envoyé pour valider votre compte';
+        header('Location: index.php');
+        exit();
+        
     }
 
 }
