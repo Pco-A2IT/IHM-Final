@@ -30,7 +30,9 @@
                 ->setCellValue('L1', 'commentaire')
                 ->setCellValue('M1', 'date_création_dossier')
                 ->setCellValue('N1', 'ID_médecin_traitant')
-                ->setCellValue('O1', 'ID_médecin_appelant');
+                ->setCellValue('O1', 'ID_médecin_appelant')
+                ->setCellValue('P1', 'récapitulatif_planification')
+                ->setCellValue('Q1', 'récapitulatif_réalisation');
 
     $row=2;
     while($row_data=$sql->fetch(PDO::FETCH_ASSOC)) { //on effectue une boucle pour chercher l'ensemble des informations de la table patient et on insère les données dans les différentes lignes/colonnes de l'Excel
