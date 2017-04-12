@@ -70,7 +70,7 @@ $req->closeCursor();
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
-                <h4>Suivi</h4>
+                <h4>Tableau de bord</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             <div id="menu2" class="carreGris" ;>
@@ -138,8 +138,9 @@ $req->closeCursor();
                                             <?php }else{ ?>
                                                 <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" /></td>
                                             <?php }
+                                            $compteur=$compteur+1;
                                         }
-                                        $compteur=$compteur+1;
+                                        
 
                                     }
                                 }
@@ -160,7 +161,7 @@ $req->closeCursor();
                             ?>
                            
                             </table>
-                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   
+                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post" style="margin-left:-300px"/>   
                 </div>
                 </div> 
                 </div>

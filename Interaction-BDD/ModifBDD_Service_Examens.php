@@ -6,10 +6,9 @@ include('../config.php');
 ///////////////////////////
 
 $idservice=$_GET['idservice'];
-echo $idservice;
 
 
-$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
+$req2=$bdd->prepare('SELECT * FROM Examen WHERE id_examen NOT IN(SELECT id_examen FROM Examen WHERE id_examen=1)');
 $req2->execute();
 $compteur3=1;
 while($dnn = $req2->fetch()){
@@ -18,18 +17,15 @@ while($dnn = $req2->fetch()){
   }else{
             $bool="NO";
   }
-  echo $bool;
   
   
   $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$idservice."");
-  echo "prepare effectué";
+  //echo "UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$idservice."";
   $stmt->execute(array($bool));
-  echo "requete executée";
   $compteur3=$compteur3+1;
 
 }
 
-//header('Location: ../Dossier_Service_modif_Examens.php');
 
 ?>
 

@@ -6,7 +6,6 @@ include('../config.php');
 ///////////////////////////
 
 $id_patient=$_GET['id_patient'];
-echo $id_patient;
 
 ///////////////////////////
 /*Suppression du tuple correspondant*/

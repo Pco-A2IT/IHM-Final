@@ -87,10 +87,8 @@ echo $civilite_p;
     }
     
     $nom_m_appelant=$_POST['nom_m_appelant'];
-    echo $nom_m_appelant;
     
     $prenom_m_appelant=$_POST['prenom_m_appelant'];
-    echo $prenom_m_appelant;
 
     if($_POST['mail_m_appelant']!=""){
         $mail_m_appelant=$_POST['mail_m_appelant'];
@@ -105,7 +103,6 @@ echo $civilite_p;
     else{
         $ville_m_appelant="";
     }
-    echo $mail_m_appelant;
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /*      ID_medecin_traitant                                                          */
@@ -123,14 +120,13 @@ $test=false;
         if($nom_m_traitant==$donn['nom_m'] && $prenom_m_traitant==$donn['prenom_m']){
             $test=true;
             if($test==true){
-                echo "olaaaaa";
                 $id_medecin_traitant=$donn['id_medecin'];
             }
         }
     }
     //s'il n'existe pas on le crée en renseignant juste le minimum
     if($test!=true){
-        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmt = $bdd->prepare('INSERT INTO medecin(id_medecin,id_service, nom_m, prenom_m, specialite_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?, \'\', ?,?,\'\',\'\',\'\')');
         $reqmt->execute(array($nom_m_traitant, $prenom_m_traitant, $mail_m_traitant, $ville_m_traitant ));
         //$id_medecin_traitant est celui du medecin qu'on vient de créer
         $id_medecin_traitant=$bdd->lastInsertId();
@@ -163,7 +159,7 @@ if($nom_m_appelant!="" && $prenom_m_appelant!="" ){
     }
     if($test2!=true){
         //s'il n'existe pas on le crée en renseignant juste le minimum
-        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?,?,?,\'NC\',\'NC\',\'NC\')');
+        $reqmu = $bdd->prepare('INSERT INTO medecin(id_medecin, id_service, nom_m, prenom_m, specialite_m, mail_m, ville_m, codePostal_m, adresse_m, telephone_m) VALUES(NULL, 0, ?,?, \'\', ?,?,\'\',\'\',\'\')');
         $reqmu->execute(array($nom_m_appelant, $prenom_m_appelant, $mail_m_appelant, $ville_m_appelant));
         $id_medecin_appelant=$bdd->lastInsertId();
     }
@@ -184,7 +180,6 @@ $req->execute(array($id_medecin_traitant, $id_medecin_appelant, $date1, $_POST['
 // Création des examens déjà réalisés
 
 $id_patient = $bdd->lastInsertId();
-echo $id_patient;
 
 ?>
 

@@ -20,6 +20,7 @@ include('config.php');
         {
             $nom_p=$donnees['nom_p'];
             $prenom_p=$donnees['prenom_p'];
+            $telephone_p=$donnees['telephone_p'];
         }
         
         ?>
@@ -47,7 +48,7 @@ include('config.php');
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>  
                 </div>
                 <div id="menu1" class="carreGris";>
-                    <h4>Suivi</h4>
+                    <h4>Tableau de bord</h4>
                     <img class="icone_suivi" src="Icones/recapitulatif.png"/>
                 </div>
                 <div id="menu2" class="carreGris" ;>
@@ -67,16 +68,19 @@ include('config.php');
                 <script src="js/General.js"></script>
                 
                 <div class="titre";   style="border-radius: 5px;">
-                    <h1 class="titreGauche">Patients</h1>
+                    <h1 class="titreGauche">Patient</h1>
                 </div>
                 
                 <div class="blanc";   style="border-radius: 5px;">
                   
                     <div class="section4">
                         <div class="div1">
-                            <br><img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";><?php echo $prenom_p." ".$nom_p ; ?><br></h2>
-                      
+
+                          <br>
+                         <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
+                          <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
+                    <br>
             
                   <style>
                                         #divConteneur{
@@ -99,7 +103,7 @@ include('config.php');
 
                                 <tr>
                                     <th>Examen</th>
-                                    <th style="text-align:center">Réalisé avant Prise de contact avec SOS AIT</th>
+                                    <th colspan="3" style="text-align:left">Réalisé avant Prise de contact avec SOS AIT</th>
                                     <th style="text-align:center">Date</th>
                                 </tr>
                                 
@@ -126,7 +130,7 @@ while($dnn = $reponse->fetch()){
 ?>
                                 <tr disabled=true >
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
-                                    <td  background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
+                                    <td colspan="3" background="#1270B3"><input type="checkbox" disabled=true  name="<?php echo($compteur); ?>" value="YES" checked /></td>
                                     <td align="left"><input disabled=true background="#1270B3" type="date" id="<?php echo "date".$compteur; ?>" name="<?php echo "date".$compteur; ?>" color="#1270B3" value="<?php echo $dnn2["date_examen"];?>"   /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
 <?php
@@ -139,7 +143,7 @@ while($dnn = $reponse->fetch()){
             
                                 <tr>
                                     <td><?php print_r($dnn['typeExamen']); ?></td>
-                                    <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
+                                    <td colspan="3"><input type="checkbox" name="<?php echo($compteur); ?>" value="YES" onclick="afficherDate(<?php echo($compteur); ?>)" /></td>
                                     <td><input id="<?php echo $compteur; ?>" style="display:none" name="<?php echo "date".$compteur; ?>"  type="date"  /></td>
                                     <td><span id="<?php echo "erreurdate".$compteur; ?>"></span></td>
                                 
@@ -161,7 +165,7 @@ if($nbligne==0){
 ?>
                             </tr>
                         </table>
-                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Prendre RDV" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" /> 
+                              <input type="submit" accesskey="enter" id="Prendre_rdv" value="Valider" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="margin-left:400px"/> 
                         </div>
                     </div>
                 </div>

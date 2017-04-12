@@ -48,7 +48,7 @@ body{
     margin-right:auto; 
     border-radius: 5px;"
     padding-left: 0px;
-    padding-bottom: 0px;
+    padding-bottom: -10px;
     cursor:pointer;
     text-align: center;
 }
@@ -69,11 +69,11 @@ body{
 }
 
 .icone_suivi{
-    width:80%; 
-    height:75%; 
+    width:65%; 
+    height:60%; 
     margin-left:auto; 
     margin-right:auto; 
-    margin-top: 0px;
+    margin-top: -20px;
     display:block;
 }
 
@@ -109,6 +109,12 @@ body{
     background-color:#1270B3;
     
 }
+
+#menu1 {
+    ;
+    
+}
+
 .extra{
     position:absolute;
     right:10px;
@@ -135,7 +141,7 @@ body{
 
 
 .blanc{ width: 90%;
-       height:2000px ;
+       height:1500px ;
        top:70px;
        left:120px;
        bottom: 100px;
@@ -745,6 +751,13 @@ label {
    
 }
 
+.position_table2{
+    
+    margin:50px auto;
+    margin-left: 200px;
+   
+}
+
 
 input[type="submit"]{
     cursor:context-menu;
@@ -943,7 +956,7 @@ table a:visited {
 
 
 table td {
-    text-align: center;
+    text-align: left;
 	padding:auto;
 	border-bottom: 1px solid #fff;
 
@@ -961,6 +974,7 @@ table td {
 {
      width:59px; 
     height:66px; 
+    cursor:none;
 
 }
 
@@ -1085,7 +1099,7 @@ font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-ser
 color: #1270B3; 
 } 
 .onglet_d input{ 
-color: #1270B3; 
+color: black; 
 font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 height: 35px; 
 width: 100%;

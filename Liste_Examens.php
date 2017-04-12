@@ -23,7 +23,7 @@
                         <img class="icone_menu" src="Icones/patient_blanc.png"/>
                     </div> 
                     <div id="menu1" class="carreGris";>
-                        <h4>Suivi</h4>
+                        <h4>Tableau de bord</h4>
                         <img class="icone_suivi" src="Icones/recapitulatif.png"/>
                     </div>
                     <div id="menu2" class="carreGris";>
@@ -84,7 +84,7 @@
                                         <tr> 
                                             <td class="left">Description:</td> 
                                             <td class="left"> 
-                                                <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)" autocomplete="off"/>
+                                                <input type="text" name="details_examen" placeholder="(ex: prioritaire)" autocomplete="off"/>
                                             </td> 
                                         </tr>
                                         <tr> 

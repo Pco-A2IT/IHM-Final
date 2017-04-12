@@ -82,16 +82,11 @@ $compteur2=1;
 $statique1=$statique1.') ';
 $statique2=$statique2.') ';
 $statique=$statique1.$statique2;
-//echo $statique;
-//echo $statique;
 $req1=$bdd->prepare($statique);
-echo $statique;
 
 $req1->execute(array($centre_s,$service_s, $telephone_s, $heured, $heuref, $adresse_s, $codePostal_s ,$ville_s, $descr));
-echo "c'est pas req1 execute qui merde";
 //Modification des attributs enum examens (la construction les initialise à NON)
 $id_service=$bdd->lastInsertId();
-echo $id_service;
 ?>
 
 <script>

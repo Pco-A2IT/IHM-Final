@@ -27,6 +27,7 @@ while ($donnees = $req->fetch())
     $id_service=$donnees['id_service'];
     $nom_m=$donnees['nom_m'];
     $prenom_m=$donnees['prenom_m'];
+    $specialite_m=$donnees['specialite_m'];
     $mail_m=$donnees['mail_m'];
     $ville_m=$donnees['ville_m'];
     $codePostal_m=$donnees['codePostal_m'];
@@ -68,7 +69,7 @@ $req->closeCursor();
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
-                <h4>Suivi</h4>
+                <h4>Tableau de bord</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             <div id="menu2" class="carreGris" style="background-color:#1270B3";>
@@ -93,6 +94,7 @@ $req->closeCursor();
             <div class="blanc";   style="border-radius: 5px;">
                 <div class="section4">
                     <div class="div1">
+                     <br>
                      <img src='Icones/medecin_bleu.png' align='left' alt='sorry' width="60px" heigh="60px"><h2 style="color:grey"><?php echo $prenom_m." ".$nom_m ?></h2><br>
                     </div>
             <br>
@@ -134,7 +136,16 @@ $req->closeCursor();
                     </table> 
 
                     <table align="right" cellspacing="5px" class="table" id="modif">
-                                                        <tr> 
+                            
+                        
+                            <tr> 
+                            <td align="right">Spécialité:
+                            </td> 
+                            <td align="left"> 
+                            <input type="text" id="specialite_m" name="specialite_m" value="<?php echo $specialite_m; ?>" />
+                            </td>
+                            </tr>
+                            <tr> 
                             <td align="right"> Service/Centre d'examen:
                             </td> 
                             <td align="left"> 
@@ -159,13 +170,13 @@ $req->closeCursor();
                             <tr> 
                             <td align="right">Code Postal:</td> 
                             <td align="left"> 
-                            <input type="text"  id="codePostal_m" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
+                            <input type="text" pattern="{6}" id="codePostal_m" name="codePostal_m" value="<?php echo $codePostal_m ?>" /> 
                             </td> 
                             </tr> 
                             <tr> 
                             <td align="right">Ville: *</td> 
                             <td align="left"> 
-                            <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>"/> 
+                            <input type="text" id="ville_m" name="ville_m" value="<?php echo $ville_m ?>" autocomplete="off"/> 
                             </td> 
                             </tr> 
                             <tr>
@@ -186,6 +197,9 @@ $req->closeCursor();
                 <script type="text/javascript">
                 //utilisation de jQuery :
                 $(function()   {
+                    $('#specialite_m').autocomplete({
+                       source : 'dossierMedecin.php' 
+                    });
                     $('#service_m').autocomplete({
                         source: function(request, response) {
 						  $.ajax({

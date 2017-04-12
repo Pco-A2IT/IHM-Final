@@ -80,8 +80,9 @@ include('config.php');
     
                                             </tr>
     <?php
+                $compteur=$compteur+1;
             }
-            $compteur=$compteur+1;
+            
         }
     ?>
                            

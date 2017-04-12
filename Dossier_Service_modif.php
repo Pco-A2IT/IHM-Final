@@ -34,31 +34,7 @@ while ($donnees = $req->fetch())
     $description_s=$donnees['description_s'];
 
 }
-/* Cocher automatiquement les checkbox
 
-$req2=$bdd->prepare('SELECT typeExamen FROM Examen');
-$req2->execute();
-$compteur3=1;
-while($dnn = $req2->fetch()){
-  $($compteur3)
-  if($_POST[$compteur3]=="YES"){
-            $bool="YES";
-  }else{
-            $bool="NO";
-  }
-  echo $bool;
-  //$sql = "UPDATE Service SET `".$dnn['typeExamen']."`= :`nv".$dnn['typeExamen']."`";
-  //echo $sql;
-  //$id_boucle=7;
-  //echo $id_boucle;
-  
-  $stmt = $bdd->prepare("UPDATE Service SET`".$dnn['typeExamen']."`= ? WHERE id_service =".$id_dernier."");
-  echo "prepare effectué";
-  $stmt->execute(array($bool));
-  echo "requete executée";
-  $compteur3=$compteur3+1;
-
-}*/
 $req->closeCursor();            
 ?> 
     <body>
@@ -70,7 +46,7 @@ $req->closeCursor();
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
-                <h4>Suivi</h4>
+                <h4>Tableau de bord</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             <div id="menu2" class="carreGris" ;>
@@ -94,6 +70,7 @@ $req->closeCursor();
         <div class="blanc";   style="border-radius: 5px;">
             <div class="section4">
             <div class="div1">
+            <br>
              <img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey;vertical-align:middle"><?php echo "Service ".$nom_s." du centre ".$centre_s ?> </h2><br>
             <br><br><br><br>
             </div>
@@ -115,15 +92,15 @@ $req->closeCursor();
                         <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                         <tr> 
                                 <td align="right">Service/Centre d'examen: *</td>
-                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="<?php echo $nom_s ?>" >
+                                <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" value="<?php echo $nom_s ?>" autocomplete="off">
                         </tr>
                         <tr> 
                                 <td align="right">Hôpital:</td>
-                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="<?php echo $centre_s;?>">
+                                <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" value="<?php echo $centre_s;?>" autocomplete="off">
                         </tr>
                          <tr> 
                                 <td align="right">Téléphone: *</td>
-                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="<?php echo $telephone_s ?>" >
+                                <td align="left"><input type="text" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" value="<?php echo $telephone_s ?>" autocomplete="off">
                         </tr>    
                     </table> 
                     
@@ -139,25 +116,25 @@ $req->closeCursor();
                                  
                             </td>
                         </tr>
-                        <tr> 
-                            <td align="right">Ville: *</td> 
-                            <td align="left"> 
-                            <input type="text" name="ville_s" placeholder="<?php echo $ville_s ?>" > 
-                            </td> 
-                            </tr> 
                         <tr>
                             <td align="right"> Adresse: *
                             </td> 
                             <td align="left"> 
-                            <input type="text" name="adresse_s" placeholder="<?php echo $adresse_s ?>" />
+                            <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" value="<?php echo $adresse_s ?>" autocomplete="off"/>
                             </td> 
                          </tr>
                         <tr> 
                             <td align="right">Code Postal: *</td> 
                             <td align="left"> 
-                            <input type="text"  id="p" name="codePostal_s" placeholder="<?php echo $codePostal_s ?>" > 
+                            <input type="text"  id="p" name="codePostal_s" placeholder="(ex: 69100)" value="<?php echo $codePostal_s ?>" autocomplete="off"> 
                             </td>
                         </tr>
+                        <tr>
+                            <td align="right">Ville: *</td> 
+                            <td align="left"> 
+                            <input type="text" name="ville_s" placeholder="(ex: Villeurbanne)" value="<?php echo $ville_s ?>" autocomplete="off"> 
+                            </td> 
+                        </tr> 
                         <tr>
                             <td align="center"  colspan="2">
                                 <TEXTAREA name="description_s" rows="3" cols="30" placeholder="Commentaires"><?php echo $description_s?></TEXTAREA> 

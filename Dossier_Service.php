@@ -25,7 +25,7 @@ include('config.php');
                         <img class="icone_menu" src="Icones/patient_blanc.png"/>
                     </div> 
                     <div id="menu1" class="carreGris";>
-                        <h4>Suivi</h4>
+                        <h4>Tableau de bord</h4>
                         <img class="icone_suivi" src="Icones/recapitulatif.png"/>
                     </div>
                     <div id="menu2" class="carreGris" ;>
@@ -69,11 +69,11 @@ include('config.php');
                                     <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
                                     <tr> 
                                         <td align="right">Service/Centre d'examen: *</td>
-                                        <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" required/></td>
+                                        <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" autocomplete="off" required/></td>
                                     </tr>
                                     <tr> 
                                         <td align="right">Hôpital:</td>
-                                        <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)"/>
+                                        <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" autocomplete="off"/>
                                     </tr>
                                     <tr> 
                                         <td align="right">Téléphone: *</td>
@@ -103,12 +103,12 @@ include('config.php');
                                     <tr> 
                                         <td align="right">Code Postal: *</td> 
                                         <td align="left"> 
-                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" required/> 
+                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" autocomplete="off" required/> 
                                         </td> 
                                     </tr><tr> 
                                         <td align="right">Ville: *</td> 
                                         <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" required/> 
+                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" autocomplete="off" required/> 
                                         </td> 
                                     </tr>
                                     <tr height="60px">

@@ -7,10 +7,8 @@ include('../config.php');
 ///////////////////////////
 
 $id_patient=$_GET['id_patient'];
-echo $id_patient;
 
 $id_examen=$_GET['id_examen'];
-echo $id_examen;
 
 ///////////////////////////
 /*Suppression du tuple correspondant*/

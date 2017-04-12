@@ -84,19 +84,7 @@ $patientPrenom="";
     
       
       
-      
-      // horaire
-      $horaire=$dnn["heure_examen"];
      
-      # Chemin vers fichier texte
-      $file ="texteEcrire.txt";
-      # Ouverture en mode écriture
-      $fileopen=(fopen("$file",'a'));
-      # Ecriture de "Début du fichier" dansle fichier texte
-      fwrite($fileopen,";".$horaire);
-      # On ferme le fichier proprement
-      fclose($fileopen);
-      
       
       // effectue
       $effectue=$dnn["effectue"];
@@ -140,13 +128,13 @@ function LoadData($file)
 function FancyTable($header, $data)
 {
     // Couleurs, épaisseur du trait et police grasse
-    $this->SetFillColor(74,115,232);
+    $this->SetFillColor(18,112,179);
     $this->SetTextColor(255);
-    $this->SetDrawColor(74,115,232);
+    $this->SetDrawColor(18,112,179);
     $this->SetLineWidth(.4);
     $this->SetFont('','B');
     // En-tête
-    $w = array(65, 35, 60, 40, 30,20);
+    $w = array(65, 100, 60, 30, 25);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -163,7 +151,7 @@ function FancyTable($header, $data)
         $this->Cell($w[2],6,$row[2],'LR',0,'L',$fill);
         $this->Cell($w[3],6,$row[3],'LR',0,'L',$fill);
         $this->Cell($w[4],6,$row[4],'LR',0,'L',$fill);
-        $this->Cell($w[5],6,$row[5],'LR',0,'L',$fill);
+
         
        
         $this->Ln();
@@ -201,7 +189,7 @@ $pdf->AddPage("L");
     $pdf->Cell(40,10,'Ci dessous se trouve le tableau récapitulatif des rendez-vous de '.$patientPrenom." ".$patientNom." :");
 $pdf->Ln(15);
 // Titres des colonnes
-$header = array('Examen', 'Centre', 'Service', 'Date','Heure','Réalisé');
+$header = array('Examen', 'Centre', 'Service', 'Date','Réalisé');
 $pdf->FancyTable($header,$data);
 
 $pdf->Output();

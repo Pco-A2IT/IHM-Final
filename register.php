@@ -43,12 +43,27 @@ if(!empty($_POST)){
         $req->execute([$_POST['username'], $password, $_POST['email'], $token]);
         $user_id = $bdd->lastInsertId(); // preparation de l'id a envoyer dans le mail
         
-        //--ajouter ici l'envoi du mail--//
+        
+        
+          /*
+        
+        //--FONCTION ENVOI DE MAIL--//
         die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token<br><br>ATTENTION : Remplacez http://localhost/GitHub/IHM-Final/ par le chemin correspondant sur votre poste !!"); // Envoie d'un mail pour valider le compte
         
         $_SESSION['flash']['success'] = 'Un lien de confirmation vous a été envoyé pour valider votre compte';
-        header('Location: login.php');
+        header('Location: index.php');
         exit();
+        
+        */
+        
+        //FONCTION A SUPPRIMER UNE FOIS L'ENVOI DE MAIL REALISE
+        
+          die("Rendez vous à l'adresse suivante pour valider votre inscription :<br><br>http://localhost/GitHub/IHM-Final/confirm.php?id=$user_id&token=$token<br><br>ATTENTION : Remplacez http://localhost/GitHub/IHM-Final/ par le chemin correspondant sur votre poste !!"); // Envoie d'un mail pour valider le compte
+        
+        $_SESSION['flash']['success'] = 'Un lien de confirmation vous a été envoyé pour valider votre compte';
+        header('Location: index.php');
+        exit();
+        
     }
 
 }
@@ -91,12 +106,12 @@ if(!empty($_POST)){
 <form action="" method="POST">
 <div class="login-page">
     <div class="form2">
-        <input type="text" name="username" class="form-control" placeholder="Identifiant"/>
-        <input type="text" name="email" class="form-control" placeholder="Email"/>
+        <input type="text" name="username" class="form-control" placeholder="Identifiant" autocomplete="off"/>
+        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off"/>
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
         <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
-        <a href="login.php" style="text-decoration:none">Déjà inscrit ?</a>
+        <a href="index.php" style="text-decoration:none">Déjà inscrit ?</a>
 
     </div>
 </div>    

@@ -29,7 +29,7 @@
                     <img class="icone_menu" src="Icones/patient_blanc.png"/>
                 </div> 
                 <div id="menu1" class="carreGris";>
-                    <h4>Suivi</h4>
+                    <h4>Tableau de bord</h4>
                     <img class="icone_suivi" src="Icones/recapitulatif.png"/>
                 </div>
                 <div id="menu2" class="carreGris"  style="background-color:#1270B3"  ;>
@@ -93,12 +93,14 @@
                                 <th>Prénom </th>
                                 <th>Email </th>
                                 <th>Téléphone</th>
-                                <th>Ville</th>
+                                <th>Spécialité</th>
+                                <th>Service </th>
+                                <th>Hôpital</th>
                                 <th></th>
                         
                                 <?php
                                     if(isset($_POST['saisie'])){
-                                        $query = 'SELECT * FROM medecin ORDER BY nom_m WHERE nom_m LIKE :term';
+                                        $query = 'SELECT * FROM medecin WHERE nom_m LIKE :term ORDER BY nom_m ';
                                         $term = $_POST['saisie'];
                                     }
                                     else{
@@ -119,8 +121,27 @@
                                         <td><?php print_r($dnn['prenom_m']); ?></td>
                                         <td><?php print_r($dnn['mail_m']); ?></td>
                                         <td><?php print_r($dnn['telephone_m']); ?></td>
-                                        <td><?php print_r($dnn['ville_m']); ?></td>
-                                        <td><a href="Dossier_Medecin_modif.php?idmedecin=<?php echo $dnn['id_medecin']; ?>"> <img class="supprimer" src="Icones/button_modifier.png"> </a></td>
+                                        <td><?php print_r($dnn['specialite_m']); ?></td>
+                                <?php
+                                    if($dnn['id_service']==0){
+                                ?>
+                                        <td>NC</td>
+                                        <td>NC</td>
+                                 <?php       
+                                    }
+                                    else{    
+                                        $req21 = $bdd->prepare('SELECT * FROM service WHERE id_service = ? ');
+                                        $req21->execute(array($dnn['id_service']));
+                                        while ($dnn21 = $req21->fetch()){
+                                ?>
+                                        <td><?php print_r($dnn21['nom_s']); ?></td>
+                                        <td><?php print_r($dnn21['centre_s']); ?></td>
+                                        
+                                <?php
+                                        }
+                                    }
+                                        ?>
+                                       
                                         <td><a href="./Interaction-BDD/SupprBDD_Medecin.php?idmedecin=<?php echo $dnn['id_medecin']; ?>" onclick="return sure();"> <img class="supprimer" src="Icones/button_supprimer.png"> </a></td>
                                     </tr>
 

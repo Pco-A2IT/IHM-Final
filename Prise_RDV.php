@@ -20,7 +20,7 @@ include('config.php');
                 <img class="icone_menu" src="Icones/patient_blanc.png"/>
             </div> 
             <div id="menu1" class="carreGris";>
-                <h4>Suivi</h4>
+                <h4>Tableau de bord</h4>
                 <img class="icone_suivi" src="Icones/recapitulatif.png"/>
             </div>
             <div id="menu2" class="carreGris" ;>
@@ -39,11 +39,7 @@ include('config.php');
          
             
             <script src="js/General.js"></script>
-                
-            <div class="extra" id="RetourDossierPatient" style="border-radius: 5px;">
-                <img class="icone_extra" src="medecin.png"/>
-                <h4>Retour au dossier patient</h4>
-            </div>
+          
         </div>
             
     
@@ -77,32 +73,35 @@ jQuery(document).ready(function() {
                             $adresse_p=$donnees['adresse_p'];
                         }
                     ?>
-                    <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"/><h3 style="color:black";><?php echo $prenom_p." ".$nom_p; ?><br><br><?php echo $telephone_p; ?><br></h3>
                 
-        
+                          <br>
+                         <img src='Icones/patient_bleu.png' align='left' alt='sorry' width="50px" heigh="50px">
+                          <h2 style="color:grey";><?php echo $nom_p." ".$prenom_p ?><br><br><?php echo $telephone_p; ?></h2>
                         
-                             
-
+                    <br>
+                              <style>
+                                        #divConteneur{
+                           min-height:630px;
+                            height:630px;
+                            min-width:100%;
+                            width:100%;
+                            overflow:auto;/*pour activer les scrollbarres*/
+                            }
+                           
+                            </style>
+                        
+                        <div id="divConteneur">
+                             <div class="liste">
                                  <form action='./Interaction-BDD/ModifBDD_Patient_Examens.php?id_patient=<?php echo $id_patient; ?>' id= "form" class ="form" namemethod="post">    <div class="position_table">
                                     <!-- AFFICHAGE des EXAMENS PLANIFIES -->
                                    <!--  <div class="myButton" id="Prendre_rdv">
                                             <a href="./ExportPDF/extractionPDFrealise.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a>
                                         </div> !-->
                                     
-                                      <style>
-                                        #divConteneur2{
-                           min-height:200px;
-                            height:200px;
-                            min-width:100%;
-                            width:100%;
-                          
-                            }
-                           
-                            </style>
-                        <div id="divConteneur2">
+                                     
                             
-                                     <div class="liste">
-                                        <table cellspacing="0px" id="tbl" class="table">   
+                                    
+                                        <table cellspacing="0px" id="tbl" class="table" style="margin-left:0px">   
                                         <tr><th colspan="8">  <h4>Récapitulatif des rendez-vous planifiés :</h4></th></tr>
                                             <tr>
                                                 <th>Examen</th>
@@ -187,7 +186,7 @@ jQuery(document).ready(function() {
     ?>  
                                         </table>
                                          
-                            </div>
+                           
                                      
                                     <!-- AFFICHAGE des EXAMENS A PLANIFIER -->
                                        
@@ -196,7 +195,6 @@ jQuery(document).ready(function() {
                                     </div> 
                                
                                  
-                                     </div>
                             
                             </form>
                        
@@ -259,25 +257,9 @@ jQuery(document).ready(function() {
     ?>
        
                    <br>
-                    <br>
-                    <br>
-                    <div class="div3">
-                         
-                       
-                        <style>
-                                        #divConteneur{
-                           min-height:630px;
-                            height:630px;
-                            min-width:100%;
-                            width:100%;
-                            overflow:auto;/*pour activer les scrollbarres*/
-                            }
-                           
-                            </style>
-                        
-                        <div id="divConteneur">
+                  
+                    
                             
-                         <div class="liste">
                         <table cellspacing="0px" id="tbl" class="table"> 
                            <tr><th colspan="7"><h4>Veuillez choisir les examens et planifier les rendez-vous :</h4></th></tr>
                             <tr>  <form>
@@ -289,6 +271,7 @@ jQuery(document).ready(function() {
                             $req3= $bdd->prepare('SELECT * FROM Examen_patient WHERE id_patient=? and id_examen=1');
                             $req3->execute(array($id_patient));
                             if($req3->fetch()){
+                                $compteur=1;
                                 $req4= $bdd->prepare('SELECT * FROM Examen');
                                 $req4->execute();
                                 while($dnn4 = $req4->fetch()){
@@ -296,7 +279,9 @@ jQuery(document).ready(function() {
                             ?>
                                         <input type="checkbox" name="<?php echo $compteur; ?>" class="regular checkbox" value="YES"/> <label for="<?php echo($compteur); ?>"></label>&nbsp;<?php print_r($dnn4['typeExamen']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <?php
+                                        
                                     }
+                                    $compteur=$compteur+1;
                                 }
                             }
                             //////////////////////////            
@@ -338,6 +323,7 @@ jQuery(document).ready(function() {
                         ?></td>
 
                                     <td><input align="center" type="submit" accesskey="enter" value="Rechercher" id="btnrecherche" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post"/></td>
+                                <td></td>
                                </form>
                             </tr>
                                 
@@ -345,6 +331,7 @@ jQuery(document).ready(function() {
                             <tr>
                                 <th>Hôpital</th>
                                 <th>Service/Centre d'examen</th>
+                                <th>Ville</th>
                                 <th>Adresse</th>
                                 <th>Téléphone</th> 
                                 <th>Examen</th>
@@ -353,13 +340,14 @@ jQuery(document).ready(function() {
                                 <th></th>
                             </tr>
 <?php 
-    $req1= $bdd->prepare('SELECT * FROM Service WHERE centre_s="Hôpital Neurologique Pierre Werthe" and nom_s="Unité neurovasculaire" ');
+    $req1= $bdd->prepare('SELECT * FROM Service WHERE id_service=1 ');
     $req1->execute();
     while($donnees= $req1->fetch()){
 ?>
                             <tr>
                                 <td><?php echo $donnees['centre_s']; ?> </td>
                                 <td><?php echo $donnees['nom_s']; ?></td>
+                                <td><?php echo $donnees['ville_s']; ?></td>
                                 <td><?php echo $donnees['adresse_s']; ?></td>
                                 <td><?php echo $donnees['telephone_s']; ?></td>
 <?php 
@@ -370,9 +358,10 @@ jQuery(document).ready(function() {
                                 <form action="./Interaction-BDD/AjoutBDD_ExamPatient.php?id_patient=<?php echo $id_patient;?> &amp; idservice= <?php echo $donnees["id_service"];?> &amp; idexamen=<?php echo $donnees11["id_examen"];?>" method="post">
                                         
                                         <td><?php echo $donnees11['typeExamen'] ?></td>
-                                        <td><input name="date" class="datepick" type="date"/></td>
-                                        <td><input id="heure" name="heure" type="time" value="" required/></td>
-                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" class="submit" formmethod="post"/></td>
+                                        <td><label for="date"></label><input id="1" name="date" class="datepick" type="date"  onblur="verifDate(this);" value=""/></td>
+                                        <td><label for="heure"></label><input id="heure" name="heure" type="time" value="" required/></td>
+                                        <td><input align="center" type="submit" accesskey="enter" value="Valider" sytle="color:black" id="valider1"  class="submit" disabled formmethod="post"/></td>
+                                        <td><span id="erreurdate1"></span></td>
                                         
                                 </form>
                             </tr>
@@ -391,7 +380,7 @@ jQuery(document).ready(function() {
                         //on parcourt tous les services qui effectue les examens cochés
                         $nb=1;
                         while ($donnees = $req2->fetch()){
-                            if($donnees["nom_s"]!="Unité neurovasculaire" && $donnees["centre_s"]!="HC LYON"){
+                            if($donnees["id_service"]!=1){
                                     $req3= $bdd->prepare('SELECT * FROM Examen');
                                     $req3->execute();
                                     
@@ -416,6 +405,7 @@ jQuery(document).ready(function() {
                                 <tr>
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['centre_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['nom_s']; ?></td>
+                                    <td rowspan="<?php echo $comptspan; ?>"> <?php echo $donnees['ville_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['adresse_s']; ?></td>
                                     <td rowspan="<?php echo $comptspan; ?>"><?php echo $donnees['telephone_s']; ?></td>
                                     
@@ -467,9 +457,9 @@ jQuery(document).ready(function() {
                             
                               
                              </table>
-                        </div>
-       </div>
-                        </div>
+                 
+  
+                  
                         </form>
                         
                     </div>
@@ -479,11 +469,18 @@ jQuery(document).ready(function() {
     
             <script src="js/General.js"></script>
         </div>
-  
+    </div>
+    </div>
 </body>
 </html>
 
 <?php require 'inc/footer.php'; ?>
+
+ <script> 
+    function sure() {
+        return(confirm('Etes-vous sûr de vouloir supprimer ce rendez-vous ?'));
+    }                 
+</script>
 
 <script language="JavaScript">
     
@@ -512,10 +509,17 @@ function verifDate(champ)
     console.log(id);
 	var date = new Date();
 	var date_n = document.getElementById(id).value;
-    console.log(date_n);
 	var date2 = new Date(date_n);
-	if(date2 > date){
-		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne';
+    console.log(date);
+    console.log(date_n);
+    console.log(date2);
+    console.log(date2-date);
+    
+    var WNbJours = date2.getTime() - date.getTime();
+	console.log(Math.ceil(WNbJours/(1000*60*60*24)));
+    
+	if(Math.ceil(WNbJours/(1000*60*60*24))>=0){
+		document.getElementById('erreurdate'+id).innerHTML = 'Valider la ligne avant de remplir une autre ligne';
         Afficher_1(id);
 		return true;
 	}else{
