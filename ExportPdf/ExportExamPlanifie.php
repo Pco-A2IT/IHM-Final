@@ -207,6 +207,10 @@ $pdf->FancyTable($header,$data);
 
 $pdf->Output();
 
+$req1 = $bdd->prepare('UPDATE Patient SET recap1=?');
+$req1->execute(array("NO"));
+
+
 
 // couleur plateforme
 
