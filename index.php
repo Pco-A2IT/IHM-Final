@@ -25,7 +25,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         header('Location: Liste_Patients.php');
         exit();        
     }else{
-        $_SESSION['flash']['danger']='Identifiant ou mot de passe incorrecte';
+        $_SESSION['flash']['danger']='Identifiant ou mot de passe incorrects';
     }
     
 

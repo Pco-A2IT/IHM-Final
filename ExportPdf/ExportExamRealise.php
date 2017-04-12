@@ -199,5 +199,7 @@ $pdf->Output();
 
 /** <a href="./ExportPDF/extractionPDF.php?id_patient=<?php echo $id_patient;?>" class="myButton1"> Télécharger le récapitulatif </a> **/
 
+$req1 = $bdd->prepare('UPDATE Patient SET recap2=?');
+$req1->execute(array("NO"));
 ?>
 

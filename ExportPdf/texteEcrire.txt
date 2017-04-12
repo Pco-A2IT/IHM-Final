@@ -1,4 +1,1 @@
-Hospitalisation de jour;HC LYON;Unité neurovasculaire;23-05-2017;10:00:00;oui
-IRM;UNV Lyon;Service neuro;30-04-2017;10:00:00;oui
-Engioscan;UNV Lyon;Service neuro;03-04-2017;10:00:00;oui
-RDV neuro;UNH;neurologie test;10-04-2017;10:00:00;oui
+Hospitalisation de jour;Hôpital Neurologique Pierre Wertheimer;Unité neurovasculaire;10-08-2017;oui

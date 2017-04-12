@@ -359,7 +359,7 @@ include('config.php');
                                             $nb3=$calc->fetch();
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau
-                                            if($nb2['NB2']==$nb['NB']-1 || $nb3['NB3']==1){ ?>
+                                            if(($nb2['NB2']==$nb['NB']-1 || $nb3['NB3']==1)&& $dnn1['recap1']=="YES"){ ?>
                                                 <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
                                                 <?php
                                                 if($dnn1['ID_medecin_traitant']==0){?>
@@ -568,7 +568,7 @@ include('config.php');
                                             
                                             //echo $nb2['NB2'];
                                         //Condition pour apparaître dans le tableau
-                                            if($nb2['NB2']==$nb['NB']-1 && $nb3['NB3']==$nb['NB']-1 || $nb4['NB4']==1){ ?>
+                                            if(($nb2['NB2']==$nb['NB']-1 && $nb3['NB3']==$nb['NB']-1 || $nb4['NB4']==1)&& $dnn1['recap2']=="YES"){ ?>
                                                 <td><?php echo $dnn1['prenom_p'].' '.$dnn1['nom_p']; ?></td>
                                                 <?php
                                                 if($dnn1['ID_medecin_traitant']==0){?>
