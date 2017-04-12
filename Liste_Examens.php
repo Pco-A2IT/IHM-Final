@@ -1,4 +1,4 @@
-<!--fichier permettant d'afficher la liste des médecins ; appelé depuis le fichier Paramètres.php, en appuyant sur le bouton Outils (id=menu4)-->
+<!--fichier permettant d'afficher la liste des examens ; appelé depuis le fichier Paramètres.php, en appuyant sur le bouton Outils (id=menu4)-->
 
 <!--authentification-->
 <?php 

@@ -1,3 +1,7 @@
+<!-- Page pour l'affichage d'un dossier patient. Y sont gérés :
+-L'affichage du menu
+-L’autocomplétion des champs du service et la spécialité du médecin -->
+
 <?php 
     require 'inc/functions.php';
     logged_only();

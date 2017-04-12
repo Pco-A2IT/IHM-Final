@@ -1,8 +1,15 @@
+<!-- Page permettant de gérer l’affichage dynamique des examens inscrits sur la plateforme.  Y sont gérés :
+-	L'affichage du menu ; 
+-	L'affichage de la page (en HTML) ; 
+-	L'affichage dynamique des examens disponibles ;
+-	La validation des examens disponibles dans le centre d'examen. -->
+
+<!--authentification-->
 <?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+    require 'inc/functions.php';
+    logged_only();
+    require 'inc/header.php'; 
+    include('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +22,9 @@ include('config.php');
         <title>Service</title>    
 
     </head>
-<?php
-    $id_service=$_GET['id_service'];
-?>
+    <?php
+        $id_service=$_GET['id_service'];
+    ?>
     
     <body>
         <form action="./Interaction-BDD/AjoutBDD_Service_Examens.php?id_service=<?php echo $id_service; ?>" method="post">    
@@ -55,36 +62,36 @@ include('config.php');
                                 <br><img src='Icones/hopital_bleu.png' align='left' alt='sorry' width="50px" heigh="50px"><h2 style="color:grey";>Nouveau Service<br></h2>
                                 <br><br><br><br>
                             </div>
-                           <div id="container">
+                            <div id="container">
                             <br>
-
                                 <div class="liste">
-
                                     <div class="position_table">
                                          <table cellspacing="0px" id="tbl" class="table"> 
-                          <tr>
-                                               
+                                            <tr>
                                                 <th colspan="2">Examens disponibles</th>
-                                               
                                             </tr>
-    <?php
-        $compteur=1;
-        $reponse = $bdd->query('SELECT * FROM Examen');
-        while($dnn = $reponse->fetch()){
-            if($dnn["id_examen"]!=1){
-    ?>
+                                             
+                                            <?php
+                                                $compteur=1;
+                                                $reponse = $bdd->query('SELECT * FROM Examen');
+                                                while($dnn = $reponse->fetch()){
+                                                    if($dnn["id_examen"]!=1){
+                                            ?>
+                                             
                                             <tr>
                                                 <td><?php print_r($dnn['typeExamen']); ?></td> 
                                                 <td></td>
-                                                <td><input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/></td>
-    
+                                                <td>
+                                                    <input type="checkbox" name="<?php echo($compteur); ?>" value="YES"/>
+                                                </td>
                                             </tr>
-    <?php
-                $compteur=$compteur+1;
-            }
-            
-        }
-    ?>
+                                            
+                                             <?php
+                                                        $compteur=$compteur+1;
+                                                    }
+
+                                                }
+                                            ?>
                            
                                         </table>
                                         <input type="submit" accesskey="enter" value="Valider"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>   

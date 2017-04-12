@@ -84,37 +84,19 @@ if(!empty($_POST)){
 </div>
 <?php endif; ?>
 
- <!-- <div class="login-page">
-        <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="Identifiant"/>
-                <input type="password" placeholder="Mot de passe"/>
-                <input type="text" placeholder="Email"/>
-                <button>create</button>
-                <p class="message">Déjà inscrit? <a href="#">Connexion</a></p>
-            </form>
-            <form class="login-form">
-                <input type="text" placeholder="Identifiant"/>
-                <input type="password" placeholder="Mot de passe"/>
-                <a href="Liste_Patients.php">Se connecter</a>
-                <p class="message">Pas encore inscrit? <a href="#">Inscription</a></p>
-            </form>
-      </div>
-    </div> -->
-
 <!-- Formulaire de saisie -->
 <form action="" method="POST">
-<div class="login-page">
-    <div class="form2">
-        <input type="text" name="username" class="form-control" placeholder="Identifiant" autocomplete="off"/>
-        <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off"/>
-        <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
-        <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
-        <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
-        <a href="index.php" style="text-decoration:none">Déjà inscrit ?</a>
+    <div class="login-page">
+        <div class="form2">
+            <input type="text" name="username" class="form-control" placeholder="Identifiant" autocomplete="off"/>
+            <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off"/>
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
+            <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
+            <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
+            <a href="index.php" style="text-decoration:none">Déjà inscrit ?</a>
 
-    </div>
-</div>    
+        </div>
+    </div>    
 </form>
 
 <?php require 'inc/footer.php'; ?>

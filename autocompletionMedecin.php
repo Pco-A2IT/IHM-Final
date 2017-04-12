@@ -1,7 +1,7 @@
 <?php
 
     ////////////////////////
-    /* Export des données pour l'autocomplétion du nom des médecins dans le dossier patient et le dossier patient modifiable ; appelé depuis la page Dossier_patient.php et Dossier_patient_modif.php*/
+    /* Export des données pour l'autocomplétion du nom des médecins dans le dossier patient et le dossier patient modifiable ; appelé depuis la page Dossier_patient.php et Dossier_patient_modif.php Cette page est liée à autoCompletionNomMedecin.php et ne peut fonctionner sans.*/
     ////////////////////////
 
     include('config.php'); //connexion à la bdd

@@ -1,3 +1,4 @@
+<!--authentification-->
 <?php 
 require 'inc/functions.php';
 logged_only();

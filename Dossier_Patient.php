@@ -1,3 +1,10 @@
+<!-- Page affichant le dossier d’un patient vide. Y sont gérés :
+-	L'affichage du menu
+-	L'affichage de la page (en HTML) ; 
+-	L’autocomplétion des champs relatifs aux médecins ;
+-	L’ajout d’un médecin traitant et/ou d’un médecin appelant lié(s) au patient. -->
+
+<!--authentification-->
 <?php 
     require 'inc/functions.php';
     logged_only();

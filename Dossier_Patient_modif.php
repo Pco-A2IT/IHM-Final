@@ -1,3 +1,11 @@
+<!-- Page affichant le dossier d’un patient prérempli avec les informations déjà connues dans la BDD. Y sont gérés :
+-	L'affichage du menu
+-	L'affichage de la page (en HTML) ; 
+-	L’autocomplétion des champs relatifs aux médecins ;
+-	L’ajout d’un médecin traitant et/ou d’un médecin appelant lié(s) au patient ;
+-	La récupération des valeurs des champs dans la BDD (nom, prénom, date de naissance, ville, etc…). -->
+
+<!--authentification-->
 <?php 
     require 'inc/functions.php';
     logged_only();

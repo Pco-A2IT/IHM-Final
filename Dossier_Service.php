@@ -1,8 +1,13 @@
+<!-- Page affichant le dossier d’un service vide. Y sont gérés :
+-	L'affichage du menu ;
+-	L'affichage de la page (en HTML). -->
+
+<!--authentification-->
 <?php 
-require 'inc/functions.php';
-logged_only();
-require 'inc/header.php'; 
-include('config.php');
+    require 'inc/functions.php';
+    logged_only();
+    require 'inc/header.php'; 
+    include('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -55,72 +60,71 @@ include('config.php');
                            
                             <style>
                                 #divConteneur3{
-                           min-height:500px;
-                            height:500px;
-                            min-width:100%;
-                            width:100%;
-                            overflow:auto;/*pour activer les scrollbarres*/
-                            }
-                           
-                            </style>
-                        <div id="divConteneur3">
-                            <div class="onglet_d" >
-                                <table  cellspacing="5px" class="table" style="float:left"> 
-                                    <tr> <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td></tr>
-                                    <tr> 
-                                        <td align="right">Service/Centre d'examen: *</td>
-                                        <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" autocomplete="off" required/></td>
-                                    </tr>
-                                    <tr> 
-                                        <td align="right">Hôpital:</td>
-                                        <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" autocomplete="off"/>
-                                    </tr>
-                                    <tr> 
-                                        <td align="right">Téléphone: *</td>
-                                        <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off" required/>
-                                    </tr>    
-                                </table> 
+                                   min-height:500px;
+                                   height:500px;
+                                   min-width:100%;
+                                   width:100%;
+                                   overflow:auto;/*pour activer les scrollbarres*/
+                                }
+                            </style>                            
+                        
+                            <div id="divConteneur3">
+                                <div class="onglet_d" >
+                                    <table  cellspacing="5px" class="table" style="float:left"> 
+                                        <tr> 
+                                            <td align="left" style="color:grey" style="font-style:italic">* Champs obligatoires </td>
+                                        </tr>
+                                        <tr> 
+                                            <td align="right">Service/Centre d'examen: *</td>
+                                            <td align="left"><input type="text" name="service_s" id="nom_s" placeholder="(ex: Service Neurologie)" autocomplete="off" required/></td>
+                                        </tr>  
+                                        <tr> 
+                                            <td align="right">Hôpital:</td>
+                                            <td align="left"><input type="text" name="centre_s" id="centre_s" placeholder="(ex: UNV Lyon)" autocomplete="off"/>
+                                        </tr>
+                                        <tr> 
+                                            <td align="right">Téléphone: *</td>
+                                            <td align="left"><input type="tel" pattern="[0-9]{10}" name="telephone_s" id="telephone_s" placeholder="(ex: 0946243546)" autocomplete="off" required/>
+                                        </tr>    
+                                    </table> 
                     
-                                <table cellspacing="5px" class="table" style="float:left"> 
-                                    <tr>
-                                        <td>Horaires ouverture</td>
-                                        <td>
-                                            <script language="JavaScript">writeSource("js10");</script>
+                                    <table cellspacing="5px" class="table" style="float:left"> 
+                                        <tr>
+                                            <td>Horaires ouverture</td>
+                                            <td>
+                                                <script language="JavaScript">writeSource("js10");</script>
+                                                <input id="heured" name="heured" type="time" value=""/> 
+                                                <br> à <br>
+                                                <input id="heuref" name="heuref" type="time" value=""/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"> Adresse: * </td> 
+                                            <td align="left"> 
+                                                <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
+                                            </td> 
+                                        </tr>
+                                        <tr> 
+                                            <td align="right">Code Postal: *</td> 
+                                            <td align="left"> 
+                                                <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" autocomplete="off" required/> 
+                                            </td> 
+                                        </tr><tr> 
+                                            <td align="right">Ville: *</td> 
+                                            <td align="left"> 
+                                                <input type="text" name="ville_s" placeholder="(ex: Bron)" autocomplete="off" required/> 
+                                            </td> 
+                                        </tr>
+                                        <tr height="60px">
+                                            <td align="center"  colspan="2">
+                                                <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                                            <input id="heured" name="heured" type="time" value=""/> 
-                                            <br> à <br>
-                                            <input id="heuref" name="heuref" type="time" value=""/>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="right"> Adresse: *
-                                        </td> 
-                                        <td align="left"> 
-                                        <input type="text" name="adresse_s" placeholder="(ex: 26, rue de l'hôpital)" autocomplete="off" required/>
-                                        </td> 
-                                    </tr>
-                                    <tr> 
-                                        <td align="right">Code Postal: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" pattern="[0-9]{5}" id="p" name="codePostal_s" placeholder="(ex: 69100)" autocomplete="off" required/> 
-                                        </td> 
-                                    </tr><tr> 
-                                        <td align="right">Ville: *</td> 
-                                        <td align="left"> 
-                                        <input type="text" name="ville_s" placeholder="(ex: Bron)" autocomplete="off" required/> 
-                                        </td> 
-                                    </tr>
-                                    <tr height="60px">
-                                        <td align="center"  colspan="2">
-                                            <TEXTAREA name="description_s" rows="3" cols="40" placeholder="Commentaires"></TEXTAREA> 
-                                        </td>
-                                    </tr>
-                                </table>
-
+                                </div>
+                                <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
                             </div>
-                            <input type="submit" accesskey="enter" value="Suivant"  onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');" class="submit position_submit" id="btn" formmethod="post"/>                                    
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -131,31 +135,29 @@ include('config.php');
     
 <?php require 'inc/footer.php'; ?>
 
-     <script>
+ <script>
 
-        $(document).ready(function(){
+    $(document).ready(function(){
 
-           
-            //Initialisation : on cache tous les onglets puis on affiche le premier
-            $('.onglet').hide();
-            $('#onglet1').show();
+        //Initialisation : on cache tous les onglets puis on affiche le premier
+        $('.onglet').hide();
+        $('#onglet1').show();
 
-            //Quand on clique sur un titre
-            $('.title').on('click',function(){
+        //Quand on clique sur un titre
+        $('.title').on('click',function(){
 
-                // On recupere le div global id = container
-                var container = $(this).parent().parent();
+            // On recupere le div global id = container
+            var container = $(this).parent().parent();
 
-                $('.active').removeClass('active');
+            $('.active').removeClass('active');
 
-                
-                // On cache tous les onglets
-                container.children('.onglet').hide();
 
-                //On affiche celui correspondant à l'attribut target
-                container.children('#'+$(this).attr('target')).show();
-                $(this).addClass("active");
-            });
-         }); 
-        
-    </script>
+            // On cache tous les onglets
+            container.children('.onglet').hide();
+
+            //On affiche celui correspondant à l'attribut target
+            container.children('#'+$(this).attr('target')).show();
+            $(this).addClass("active");
+        });
+     }); 
+</script>

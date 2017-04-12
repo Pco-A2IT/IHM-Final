@@ -1,3 +1,6 @@
+<!--Page permettant d'afficher la liste des patients ; appelée depuis la page le menu principal, en appuyant sur le bouton Patients (id=menu0). -->
+
+<!-- authentification -->
 <?php 
     require 'inc/functions.php';
     logged_only();
