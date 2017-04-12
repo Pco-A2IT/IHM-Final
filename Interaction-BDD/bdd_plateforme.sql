@@ -51,9 +51,9 @@ CREATE TABLE `Patient` (
 
 
 /*!40000 ALTER TABLE `Patient` DISABLE KEYS */;
-LOCK TABLES `Patient` WRITE;
+/*LOCK TABLES `Patient` WRITE;
 INSERT INTO `Patient` VALUES (1,'2017-04-09','Pasteur','Vincent','M.','1995-08-25','vincent.pasteur@insa-lyon.fr','0645345654','85 rue étoile','77176','Savigny','',NOW(),1,1,"YES","YES"),(2,'2017-03-09','Billet','Mélanie','Mme','1995-09-25','billet.melanie@insa-lyon.fr','0648545654','75 rue Alsace','69100','Villeurbanne','',NOW(),1,1,"YES","YES"), (3,'2017-03-28','Benchekroun','Amine','M.','1995-02-12','amine.benchekroun@insa-lyon.fr','0712325411','10 impasse Million','69100','Villeurbanne','',NOW(),2,2,"YES","YES"),(4,'2017-04-05','Combe','Eliot','M.','1996-02-12','eliot.combe@insa-lyon.fr','0717425411','12 cours zola','69100','Villeurbanne','',NOW(),2,2,"YES","YES");
-UNLOCK TABLES;
+UNLOCK TABLES;*/
 /*!40000 ALTER TABLE `Patient` ENABLE KEYS */;
 
 --
