@@ -478,7 +478,7 @@ jQuery(document).ready(function() {
 
  <script> 
     function sure() {
-        return(confirm('Etes-vous sûr de vouloir supprimer ce Dossier Patient ?'));
+        return(confirm('Etes-vous sûr de vouloir supprimer ce rendez-vous ?'));
     }                 
 </script>
 

@@ -111,7 +111,7 @@ if(!empty($_POST)){
         <input type="password" name="password" class="form-control" placeholder="Mot de passe"/>
         <input type="password" name="password_confirm" class="form-control" placeholder="Confirmez votre mot de passe"/>
         <input type="submit" accesskey="enter" value="S'inscrire" onmousemove="changeBgColor('btn')" onmouseout="recoverBgColor('btn');"  formmethod="post" style="text-align:center"/> 
-        <a href="login.php" style="text-decoration:none">Déjà inscrit ?</a>
+        <a href="index.php" style="text-decoration:none">Déjà inscrit ?</a>
 
     </div>
 </div>    

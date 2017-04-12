@@ -84,7 +84,7 @@
                                         <tr> 
                                             <td class="left">Description:</td> 
                                             <td class="left"> 
-                                                <input type="text" name="details_examen" placeholder="(ex: visualiser le cerveau)" autocomplete="off"/>
+                                                <input type="text" name="details_examen" placeholder="(ex: prioritaire)" autocomplete="off"/>
                                             </td> 
                                         </tr>
                                         <tr> 

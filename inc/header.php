@@ -47,7 +47,7 @@ if(session_status() == PHP_SESSION_NONE){
                         <li><img class="supprimer" src="Icones/logout.png"  align='right' alt='sorry' style="margin-left:10px"><a href="logout.php" style="text-decoration:none"><div style="color:#ffffff">Se déconnecter</div></a></li>              
     <?php else: ?>
                         <li><a href="register.php" style="text-decoration:none";style="color:none"><div style="color:#22427C" >S'inscrire</div></a></li>
-                        <li><a href="login.php" style="text-decoration:none"> <div style="color:#22427C">Se connecter</div></a></li>
+                        <li><a href="index.php" style="text-decoration:none"> <div style="color:#22427C">Se connecter</div></a></li>
     <?php endif; ?>
                         
                     </ul>
